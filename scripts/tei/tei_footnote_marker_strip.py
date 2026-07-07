@@ -19,7 +19,7 @@ versioniert), ueberschreibt ein Re-Run (`tei_unified --reassemble`) die Korrektu
 `--apply`-Lauf stellt sie deterministisch wieder her. Verifiziert: 4 Docs (110, 130, 1140, 1500),
 16 Notes. Aendert die CER NICHT (Fussnoten sind vom Vergleich ausgeschlossen, E5); rein konformitaet.
 
-Befund + Methodik: reports/welle2-rest-verifikation-2026-06-08.md.
+Befund + Methodik: knowledge/final-report.md (Konformitaets-Audit Welle 2).
 
   python -m scripts.tei.tei_footnote_marker_strip --dry-run            # Kandidaten zeigen (Default)
   python -m scripts.tei.tei_footnote_marker_strip --dry-run --doc 110  # ein Doc

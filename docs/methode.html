@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Methode &amp; Qualitaet — Hersch Pipeline</title>
+  <title>Method &amp; Quality &middot; Hersch Pipeline</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -19,15 +19,15 @@
         <span>Pipeline</span>
       </a>
       <div class="site-header__center">
-        <p class="site-header__sub">Nachlass Jeanne Hersch, ZBZ &middot; OCR / Layout / TEI</p>
+        <p class="site-header__sub">Jeanne Hersch papers, ZBZ &middot; OCR / Layout / TEI</p>
         <span class="site-header__exp-badge"
-              title="Experimentelle Inspektions-Umgebung der laufenden OCR-/TEI-Pipeline. Gebaut nach der Methode des Promptotyping (dhcraft.org/promptotyping). Inhalte sind generierte Pipeline-Ergebnisse, nicht editorisch geprueft.">Experimentell</span>
+              title="Experimental inspection environment of the running OCR/TEI pipeline. Built with the Promptotyping method (dhcraft.org/promptotyping). Contents are generated pipeline results, not editorially reviewed.">Experimental</span>
       </div>
-      <nav class="site-header__nav" aria-label="Hauptnavigation">
-        <a href="index.html">Korpus</a>
-        <a href="methode.html" aria-current="page">Methode</a>
+      <nav class="site-header__nav" aria-label="Main navigation">
+        <a href="index.html">Corpus</a>
+        <a href="methode.html" aria-current="page">Method</a>
         <a href="about.html">About</a>
-        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-header__icon" aria-label="GitHub-Repository" title="GitHub-Repository"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-header__icon" aria-label="GitHub repository" title="GitHub repository"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
       </nav>
     </div>
   </header>
@@ -35,172 +35,171 @@
   <main class="prose">
 
     <header class="intro">
-      <h1>Methode &amp; Qualitaet</h1>
+      <h1>Method &amp; Quality</h1>
       <p class="lede">
-        Wie wir die Pipeline messen, was die Zahlen bedeuten und wo ihre Grenzen liegen.
-        Wissenschaftlich fundierte CER-Evaluation, zuletzt korrigiert am 8.&nbsp;Juni&nbsp;2026
-        (BCa-Bootstrap, Seed&nbsp;42, B&nbsp;=&nbsp;10.000). Volle Methodik im Repo unter
-        <code>knowledge/quality.md</code>.
+        How we measure the pipeline, what the numbers mean, and where their limits lie.
+        Scientifically grounded CER evaluation, last corrected 2026-06-08
+        (BCa bootstrap, seed&nbsp;42, B&nbsp;=&nbsp;10,000). Full methodology in the repo under
+        <code>knowledge/specification.md</code>; measured values in <code>knowledge/final-report.md</code>.
       </p>
     </header>
 
     <section>
-      <h2>Was wird gemessen</h2>
+      <h2>What is measured</h2>
       <p>
-        <strong>Character Error Rate (CER)</strong> als Levenshtein-Distanz zwischen
-        Pipeline-TEI und Referenz-TEI, normiert auf die Referenz-Laenge. Referenz sind 25
-        manuell in Transkribus erstellte ZBZ-TEIs. Alle Werte werden ueber <strong>alle 25</strong>
-        Referenzen gerechnet (kein Doc-Ausschluss). Die <strong>Fidelity-CER</strong> ist die
-        belastbare Qualitaetszahl; Volltext und Scope sind Diagnose-Groessen. Verglichen
-        wird das Pipeline-Endprodukt (<code>output/tei_final/</code>) mit der menschlichen
-        Transkription, nicht der OCR-Rohtext.
+        <strong>Character Error Rate (CER)</strong> as the Levenshtein distance between
+        pipeline TEI and reference TEI, normalized to the reference length. The reference is 25
+        ZBZ TEIs created manually in Transkribus. All values are computed over <strong>all 25</strong>
+        references (no document exclusion). The <strong>fidelity CER</strong> is the
+        reliable quality figure; full text and scope are diagnostic quantities. The comparison
+        takes the pipeline end product (<code>output/tei_final/</code>) against the human
+        transcription, not the raw OCR text.
       </p>
       <p>
-        Textextraktion mit <code>&lt;choice&gt;</code>-Korrektur, Fussnoten exkludiert,
-        symmetrische Unicode-Normalisierung (NFC, Quotes, Apostroph, Whitespace).
-        Aggregations-Einheit ist das Dokument, nicht die Seite &mdash;
-        <em>content-aligned</em>-Vergleich macht die Messung immun gegen Page-Numbering-Drift.
-        Bootstrap (B&nbsp;=&nbsp;10.000) liefert 95&nbsp;%-Konfidenzintervalle nach
-        BCa-Methode (Bias-Corrected and Accelerated).
+        Text extraction with <code>&lt;choice&gt;</code> resolution, footnotes excluded,
+        symmetric Unicode normalization (NFC, quotes, apostrophe, whitespace).
+        The aggregation unit is the document, not the page; the full-text comparison is
+        immune to page-numbering drift. The bootstrap (B&nbsp;=&nbsp;10,000) yields 95&nbsp;%
+        confidence intervals via the BCa method (bias-corrected and accelerated).
       </p>
     </section>
 
     <section>
-      <h2>Headline-Werte (alle n = 25)</h2>
+      <h2>Headline values (all n = 25)</h2>
       <table>
-        <caption>CER der Pipeline-TEI gegen die ZBZ-Referenz-TEI, zerlegt in echte Fehler und Mehrtext</caption>
+        <caption>CER of the pipeline TEI against the ZBZ reference TEI, decomposed into real errors and surplus text</caption>
         <thead>
-          <tr><th>Metrik</th><th class="num">Mean</th><th class="num">Median</th><th class="num">95 %-CI (Mean)</th></tr>
+          <tr><th>Metric</th><th class="num">Mean</th><th class="num">Median</th><th class="num">95&nbsp;% CI (mean)</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Fidelity-CER (primaer)</strong> &mdash; echte Fehler</td><td class="num">2.71 %</td><td class="num">1.40 %</td><td class="num">[1.77, 3.82]</td></tr>
-          <tr><td>Volltext-CER <em>(Diagnose, scope-inkl. &mdash; kein Qualitaetsmass)</em></td><td class="num">18.94 %</td><td class="num">12.13 %</td><td class="num">[10.26, 30.09]</td></tr>
-          <tr><td>Scope-Rate (Pipeline-Mehrtext, kein Fehler)</td><td class="num">16.23 %</td><td class="num">7.06 %</td><td class="num">&mdash;</td></tr>
-          <tr><td>Pipeline-Mehrwert vs. reine OCR (paired, E2E)</td><td class="num">&minus;9.45 pp</td><td class="num">&mdash;</td><td class="num">p = 0.013</td></tr>
-          <tr><td>HCPR (Diakritik-Erhalt)</td><td class="num">~99 %</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+          <tr><td><strong>Fidelity CER (primary)</strong>, real errors</td><td class="num">2.71&nbsp;%</td><td class="num">1.40&nbsp;%</td><td class="num">[1.77, 3.82]</td></tr>
+          <tr><td>Full-text CER <em>(diagnosis, scope included; no quality measure)</em></td><td class="num">18.94&nbsp;%</td><td class="num">12.13&nbsp;%</td><td class="num">[10.26, 30.09]</td></tr>
+          <tr><td>Scope rate (pipeline surplus text, no error)</td><td class="num">16.23&nbsp;%</td><td class="num">7.06&nbsp;%</td><td class="num">&ndash;</td></tr>
+          <tr><td>Pipeline gain vs. raw OCR (paired, end to end)</td><td class="num">&minus;9.45&nbsp;pp</td><td class="num">&ndash;</td><td class="num">p = 0.013</td></tr>
+          <tr><td>HCPR (diacritics preservation)</td><td class="num">~99&nbsp;%</td><td class="num">&ndash;</td><td class="num">&ndash;</td></tr>
         </tbody>
       </table>
       <p class="note">
-        <strong>Warum drei Zahlen?</strong> Die ZBZ-Referenz-TEIs sind teils selektive
-        Teiltranskriptionen (z.&nbsp;B. nur eine von mehreren Rezensionen einer Seite); die Pipeline ist
-        oft vollstaendiger. Grosse Text-Einfuegungen der Pipeline (&ge;&nbsp;50 Zeichen) sind daher
-        <em>kein</em> Fehler, sondern Mehrtext (Scope). Die <strong>Fidelity-CER</strong> misst nur
-        die echten Fehler und ist die belastbare Qualitaetszahl: <code>Fidelity + Scope = Volltext</code>.
-        Die Transkribus-Qualitaetsbaender (&lt;&nbsp;2&nbsp;% exzellent, 2&ndash;5&nbsp;% gut) stammen
-        primaer aus der HTR-Praxis (Handschrift) und schmeicheln einer reinen Druck-OCR-Aufgabe;
-        massgeblich ist der Print-OCR-Literaturvergleich unten. Der Fidelity-Median (1.40&nbsp;%) ist
-        fuer historischen Druck solide, aber nicht an der Spitze.
+        <strong>Why three numbers?</strong> The ZBZ reference TEIs are in part selective
+        partial transcriptions (for example only one of several reviews on a page); the pipeline is
+        often more complete. Large text insertions by the pipeline (&ge;&nbsp;50 characters) are therefore
+        <em>not</em> errors but surplus text (scope). The <strong>fidelity CER</strong> measures only
+        the real errors and is the reliable quality figure: <code>fidelity + scope = full text</code>.
+        The Transkribus quality bands (&lt;&nbsp;2&nbsp;% excellent, 2&ndash;5&nbsp;% good) stem
+        primarily from handwriting recognition practice and flatter a pure print OCR task;
+        decisive is the print OCR literature comparison below. The fidelity median (1.40&nbsp;%) is
+        solid for historical print but not at the top.
       </p>
       <p class="note">
-        Der fruehere Wert „&minus;14.83&nbsp;pp" fuer den Pipeline-Mehrwert war ein Artefakt des
-        getrimmten Vergleichs und ist zurueckgezogen; nach den referenz-verifizierten
-        Fussnoten-Demotionen (E85) betraegt der Mehrwert &minus;9.45&nbsp;pp und ist statistisch
-        signifikant (p&nbsp;=&nbsp;0.013, n&nbsp;=&nbsp;25). Die fruehere
-        scope-bereinigte Subset-Auswahl (n&nbsp;=&nbsp;19) wurde entfernt: sie folgte keinem
-        reproduzierbaren Kriterium. Alle Werte rechnen jetzt ueber alle 25 Referenzen.
+        The earlier figure of &minus;14.83&nbsp;pp for the pipeline gain was an artifact of the
+        trimmed comparison and is retracted; after the reference-verified footnote
+        demotions (E85) the gain is &minus;9.45&nbsp;pp and statistically
+        significant (p&nbsp;=&nbsp;0.013, n&nbsp;=&nbsp;25). The earlier
+        scope-cleaned subset selection (n&nbsp;=&nbsp;19) was removed: it followed no
+        reproducible criterion. All values now compute over all 25 references.
       </p>
     </section>
 
     <section>
-      <h2>Stratifiziert (Volltext-Diagnose, scope-inkl., n = 25)</h2>
+      <h2>Stratified (full-text diagnosis, scope included, n = 25)</h2>
       <p>
-        Die folgenden Werte sind die <strong>Volltext-CER</strong> (inkl. Pipeline-Mehrtext) &mdash;
-        eine <em>Diagnose</em>-Groesse, kein Qualitaetsmass. Sie liegen deutlich ueber der
-        Fidelity-Headline, weil die ZBZ-Referenzen teils selektive Teiltranskriptionen sind und der
-        Pipeline-Mehrtext hier als Abweichung zaehlt. Eine fidelity-genaue Aufschluesselung pro
-        Stratum liegt derzeit nicht vor.
+        The following values are the <strong>full-text CER</strong> (including pipeline surplus text),
+        a <em>diagnostic</em> quantity, not a quality measure. They sit clearly above the
+        fidelity headline because the ZBZ references are in part selective partial transcriptions and the
+        pipeline surplus text counts as deviation here. A fidelity-exact breakdown per
+        stratum is currently not available.
       </p>
       <table>
-        <caption>Nach Layout-Typ</caption>
+        <caption>By layout type</caption>
         <thead>
-          <tr><th>Typ</th><th class="num">n</th><th class="num">Mean</th><th class="num">Median</th></tr>
+          <tr><th>Type</th><th class="num">n</th><th class="num">Mean</th><th class="num">Median</th></tr>
         </thead>
         <tbody>
-          <tr><td>A (einspaltig)</td><td class="num">12</td><td class="num">27.1 %</td><td class="num">12.2 %</td></tr>
-          <tr><td>B (zweispaltig)</td><td class="num">7</td><td class="num">17.0 %</td><td class="num">16.9 %</td></tr>
-          <tr><td>C (Monografie)</td><td class="num">2</td><td class="num">3.9 %</td><td class="num">3.9 %</td></tr>
-          <tr><td>D (Spezial)</td><td class="num">4</td><td class="num">13.3 %</td><td class="num">10.1 %</td></tr>
+          <tr><td>A (single-column)</td><td class="num">12</td><td class="num">27.1&nbsp;%</td><td class="num">12.2&nbsp;%</td></tr>
+          <tr><td>B (two-column)</td><td class="num">7</td><td class="num">17.0&nbsp;%</td><td class="num">16.9&nbsp;%</td></tr>
+          <tr><td>C (monograph)</td><td class="num">2</td><td class="num">3.9&nbsp;%</td><td class="num">3.9&nbsp;%</td></tr>
+          <tr><td>D (special)</td><td class="num">4</td><td class="num">13.3&nbsp;%</td><td class="num">10.1&nbsp;%</td></tr>
         </tbody>
       </table>
 
       <table>
-        <caption>Nach Sprache</caption>
+        <caption>By language</caption>
         <thead>
-          <tr><th>Sprache</th><th class="num">n</th><th class="num">Mean</th><th class="num">Median</th></tr>
+          <tr><th>Language</th><th class="num">n</th><th class="num">Mean</th><th class="num">Median</th></tr>
         </thead>
         <tbody>
-          <tr><td>Franzoesisch</td><td class="num">18</td><td class="num">21.8 %</td><td class="num">9.6 %</td></tr>
-          <tr><td>Deutsch</td><td class="num">7</td><td class="num">16.1 %</td><td class="num">13.8 %</td></tr>
+          <tr><td>French</td><td class="num">18</td><td class="num">21.8&nbsp;%</td><td class="num">9.6&nbsp;%</td></tr>
+          <tr><td>German</td><td class="num">7</td><td class="num">16.1&nbsp;%</td><td class="num">13.8&nbsp;%</td></tr>
         </tbody>
       </table>
       <p class="note">
-        Zweispaltige Druckwerke (Typ&nbsp;B) bleiben am schwierigsten (hoechster Median) &mdash; meist
-        Spaltenerkennung im Layout-Stadium. Solche Dokumente sind Reprocessing-Kandidaten, z.&nbsp;B.
+        Two-column print (type&nbsp;B) remains the hardest (highest median), mostly
+        column recognition at the layout stage. Such documents are reprocessing candidates, for example
         <code>python -m scripts.layout.layout_qa_gemini --mode detect --doc {ID}</code>.
       </p>
     </section>
 
     <section>
-      <h2>Vergleich mit der Forschungsliteratur (gedruckte historische Dokumente)</h2>
+      <h2>Comparison with the research literature (printed historical documents)</h2>
       <table>
         <thead>
-          <tr><th>Quelle</th><th>Methode</th><th>Sprache</th><th class="num">CER</th></tr>
+          <tr><th>Source</th><th>Method</th><th>Language</th><th class="num">CER</th></tr>
         </thead>
         <tbody>
-          <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 + Gemini 2.0 Post-Korrektur</td><td>deu Fraktur</td><td class="num">0.84 %</td></tr>
-          <tr><td>Crosilla et&nbsp;al. 2025</td><td>Gemini 2.0 Flash zero-shot</td><td>deu</td><td class="num">1.27 %</td></tr>
-          <tr><td><strong>Hersch-Pipeline (eigen)</strong></td><td>Mistral + Docling + Gemini-TEI</td><td>fra/deu</td><td class="num"><strong>1.40 %</strong></td></tr>
-          <tr><td>arXiv 2510.06743</td><td>Gemini 2.5 Pro</td><td>rus 18.&nbsp;Jh.</td><td class="num">3.36 %</td></tr>
-          <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 allein</td><td>deu</td><td class="num">3.67 %</td></tr>
-          <tr><td>Crosilla et&nbsp;al. 2025</td><td>GPT-4o direkt</td><td>deu</td><td class="num">6.31 %</td></tr>
-          <tr><td>arXiv 2510.06743</td><td>traditional OCR</td><td>rus</td><td class="num">21&ndash;45 %</td></tr>
+          <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 + Gemini 2.0 post-correction</td><td>deu (Fraktur)</td><td class="num">0.84&nbsp;%</td></tr>
+          <tr><td>Crosilla et&nbsp;al. 2025</td><td>Gemini 2.0 Flash zero-shot</td><td>deu</td><td class="num">1.27&nbsp;%</td></tr>
+          <tr><td><strong>Hersch pipeline (own)</strong></td><td>Mistral + Docling + Gemini TEI</td><td>fra/deu</td><td class="num"><strong>1.40&nbsp;%</strong></td></tr>
+          <tr><td>Levchenko 2025</td><td>Gemini 2.5 Pro</td><td>rus (18th c.)</td><td class="num">3.36&nbsp;%</td></tr>
+          <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 alone</td><td>deu</td><td class="num">3.67&nbsp;%</td></tr>
+          <tr><td>Crosilla et&nbsp;al. 2025</td><td>GPT-4o direct</td><td>deu</td><td class="num">6.31&nbsp;%</td></tr>
+          <tr><td>Levchenko 2025</td><td>traditional OCR</td><td>rus</td><td class="num">21&ndash;45&nbsp;%</td></tr>
         </tbody>
       </table>
       <p class="note">
-        Hersch-Median (1.40&nbsp;%) liegt zwischen Crosillas bestem Stack
-        (Transkribus + LLM-Post-Korrektur, 0.84&nbsp;%) und Transkribus allein (3.67&nbsp;%) &mdash;
-        besser als Gemini&nbsp;2.5&nbsp;Pro zero-shot auf vergleichbarem Material. Ausschliesslich
-        Quellen ab 2025 zitiert, vollstaendige Liste im Repo.
+        The Hersch median (1.40&nbsp;%) lies between Crosilla's best stack
+        (Transkribus + LLM post-correction, 0.84&nbsp;%) and Transkribus alone (3.67&nbsp;%),
+        better than Gemini&nbsp;2.5&nbsp;Pro zero-shot on comparable material. Only
+        sources from 2025 onward are cited; the complete list is in the repo.
       </p>
     </section>
 
     <section>
       <h2>Limitations</h2>
       <ul class="feature-list">
-        <li><strong>n = 25</strong> &mdash; gemessen wird gegen 25 ZBZ-Referenz-TEIs; Korpus-Aussagen jenseits dieser 25 Dokumente (Gesamtkorpus 285) sind Schaetzungen, nicht Messungen.</li>
-        <li><strong>Selektionsbias n_chars (p = 0.041)</strong> &mdash; das Referenz-Subset weicht im Char-Volumen signifikant vom Gesamtkorpus ab. Median-CER (volumen-unabhaengig) ist davon weniger betroffen als Mean-CER.</li>
-        <li><strong>Stability nicht gemessen</strong> &mdash; Pipeline-Stages 5 (Mistral) und 6 (Gemini TEI-Gen) sind nicht-deterministisch. Run-zu-Run-Varianz unbekannt, Pilot pending API-Budget-Freigabe.</li>
-        <li><strong>HCPR ist frequenz-basiert</strong> &mdash; vergleicht Diakritik-Zaehlungen, nicht Positionen. Unterschaetzt Substitutions-Fehler.</li>
-        <li><strong>Multi-Norm-Regimes wenig differenziert</strong> &mdash; vorgeschaltete Normalisierung macht die nominellen Normalisierungs-Stufen praktisch identisch.</li>
-        <li><strong>Korpus-Proxy generalisiert nicht</strong> &mdash; Composite-OLS aus Dictionary-Hit-Rate hat LOOCV-R&sup2;&nbsp;&lt;&nbsp;0. Die Korpus-Schaetzung von 6.20&nbsp;% Mean ist eine Plausibilitaets-Schranke, kein Schaetzer.</li>
-        <li><strong>Kein Inter-Engine-Vergleich</strong> &mdash; nur ein OCR-Engine-Run (Mistral), keine zweite Quelle als Cross-Validation.</li>
+        <li><strong>n = 25</strong>: measurement runs against 25 ZBZ reference TEIs; corpus statements beyond these 25 documents (full corpus 285) are estimates, not measurements.</li>
+        <li><strong>Selection bias n_chars (p = 0.041)</strong>: the reference subset deviates significantly from the full corpus in character volume. The median CER (volume-independent) is less affected than the mean CER.</li>
+        <li><strong>Stability not yet measured</strong>: pipeline stages 5 (Mistral) and 6 (Gemini TEI generation) are non-deterministic. The run-to-run variance is unknown; the measurement (5 documents, 3 runs each) is released and executes at the project workstation.</li>
+        <li><strong>HCPR is frequency-based</strong>: it compares diacritics counts, not positions, and underestimates substitution errors.</li>
+        <li><strong>Multi-normalization regimes differ little</strong>: the upstream normalization makes the nominal normalization levels practically identical.</li>
+        <li><strong>The corpus proxy does not generalize</strong>: the composite OLS from the dictionary hit rate has LOOCV R&sup2;&nbsp;&lt;&nbsp;0. The corpus estimate of 6.20&nbsp;% mean is a plausibility bound, not an estimator.</li>
+        <li><strong>No inter-engine comparison</strong>: only one OCR engine run (Mistral), no second source as cross-validation.</li>
       </ul>
       <p class="note">
-        Die Honest-Disclosure dieser Punkte ist Teil der Methodik. Wer die Headline-Zahlen
-        zitiert, sollte die Limitations mitzitieren.
+        The honest disclosure of these points is part of the methodology. Whoever cites the
+        headline numbers should cite the limitations with them.
       </p>
     </section>
 
     <section>
-      <h2>Werkzeuge &amp; Reproduzierbarkeit</h2>
+      <h2>Tools &amp; reproducibility</h2>
       <dl class="meta-list">
-        <dt>Statistik-Library</dt><dd><code>scripts/eval/cer_statistics.py</code> (55 Tests gruen)</dd>
+        <dt>Statistics library</dt><dd><code>scripts/eval/cer_statistics.py</code></dd>
         <dt>Orchestrator</dt><dd><code>scripts/eval/cer_statistics_full.py</code></dd>
-        <dt>Test-Suite</dt><dd><code>python -m pytest tests/test_cer_statistics.py -q</code></dd>
-        <dt>JSON-Generierung</dt><dd><code>python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000</code></dd>
-        <dt>Output</dt><dd><code>docs/data/cer_statistics.json</code> (deterministisch bei Seed&nbsp;42, derzeit nicht eingecheckt)</dd>
-        <dt>Methodik-Doku</dt><dd><a href="https://github.com/chpollin/zbz-ocr-tei/blob/main/knowledge/quality.md" target="_blank" rel="noopener">knowledge/quality.md</a></dd>
-        <dt>Schema</dt><dd><code>data/schema/zbz_hersch.rng</code> (TEI P5 4.10.2 projektspezifisch, 551 Definitionen)</dd>
+        <dt>Test suite</dt><dd><code>python -m pytest tests/test_cer_statistics.py -q</code></dd>
+        <dt>JSON generation</dt><dd><code>python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000</code></dd>
+        <dt>Output</dt><dd><code>docs/data/cer_statistics.json</code> (deterministic at seed&nbsp;42, versioned in the repo)</dd>
+        <dt>Methodology docs</dt><dd><a href="https://github.com/chpollin/zbz-ocr-tei/blob/main/knowledge/specification.md" target="_blank" rel="noopener">knowledge/specification.md</a> (method), <a href="https://github.com/chpollin/zbz-ocr-tei/blob/main/knowledge/final-report.md" target="_blank" rel="noopener">knowledge/final-report.md</a> (values)</dd>
+        <dt>Schema</dt><dd><code>data/schema/zbz_hersch.rng</code> (TEI P5 4.10.2 project-specific, 551 definitions)</dd>
       </dl>
     </section>
 
     <section>
-      <h2>Forschungsliteratur (Auswahl, alle 2025+)</h2>
+      <h2>Research literature (selection, all 2025+)</h2>
       <ul class="feature-list">
-        <li><strong>Singh 2025</strong>, "When +1% Is Not Enough", arXiv:2511.19794 &mdash; Paired-Bootstrap-Protokoll</li>
-        <li><strong>Nosova et&nbsp;al. 2025</strong>, arXiv:2510.06743 &mdash; HCPR/AIR-Adaption, no-GT-Methodik, Stabilitaets-Tests</li>
-        <li><strong>Crosilla, Klic, Colavizza 2025</strong>, arXiv:2503.15195 &mdash; LLM-HTR-Vergleichsbenchmarks</li>
-        <li><strong>Kanerva &amp; Ledins 2025</strong>, arXiv:2502.01205 &mdash; Sprachabhaengigkeit der LLM-Post-Korrektur ("No Free Lunches")</li>
+        <li><strong>Singh 2025</strong>, "When +1% Is Not Enough", arXiv:2511.19794: paired-bootstrap protocol</li>
+        <li><strong>Levchenko 2025</strong>, arXiv:2510.06743: HCPR/AIR adaption, no-ground-truth methodology, stability tests</li>
+        <li><strong>Crosilla, Klic, Colavizza 2025</strong>, arXiv:2503.15195: LLM-HTR comparison benchmarks</li>
+        <li><strong>Kanerva &amp; Ledins 2025</strong>, arXiv:2502.01205: language dependence of LLM post-correction ("No Free Lunches")</li>
       </ul>
     </section>
 
@@ -210,11 +209,11 @@
     <div class="site-footer__inner">
       <div class="site-footer__col">
         <span>Edition: Zentralbibliothek Zuerich</span>
-        <span>Technische Umsetzung: <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft OG</a></span>
+        <span>Technical implementation: <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft OG</a></span>
       </div>
       <div class="site-footer__col site-footer__col--right">
-        <a href="impressum.html">Impressum</a>
-        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-footer__icon" aria-label="GitHub-Repository">
+        <a href="impressum.html">Legal notice</a>
+        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-footer__icon" aria-label="GitHub repository">
           <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
         </a>
       </div>

@@ -1,143 +1,148 @@
 # Claude Code Rules
 
-Projekt-Konstitution. Operative Regeln und Konventionen, die bei jedem Pipeline-Schritt gelten.
+Project constitution. Operative rules and conventions that apply at every pipeline step.
 
 ## Workflow
 
-1. **Journal fuehren:** jede Sitzung als Eintrag nach der Journal-Vorlage v0.2 in [knowledge/journal.md](knowledge/journal.md) dokumentieren: neuester Eintrag ganz oben unter "Eintraege", Felder Anlass / Ziel / Verlauf / Entscheidungen / Stand / Naechste Schritte (Format-Kontrakt + kopierbares Eintrags-Template stehen im Journal selbst). Sitzungen 1-68 bleiben unveraendert im Kompakt-Archiv.
-2. **Wissen in `knowledge/`:** nicht in CLAUDE.md duplizieren. Single Source of Truth pro Fakt.
-3. **Output nicht versionieren:** generierte Dateien gehoeren in `output/` (gitignored). Ausnahme: `data/curated_tei/` (vorgesehen fuer von Hand verifizierte TEI, derzeit leer).
-4. **Vor Aenderungen testen:** Evaluierung laufen lassen, Metriken vergleichen.
-5. **Single Source of Truth:** jeder Fakt steht in genau einem Dokument. Andere Dokumente verweisen via Cross-Reference.
+1. Keep the journal: document each session as an entry following journal template v0.2 in [knowledge/journal.md](knowledge/journal.md); newest entry at the very top of the entries section, with the fields Occasion / Goal / Course / Decisions / Status / Next steps (the format contract and a copyable entry template live in the journal itself). Sessions 1-68 remain unchanged in the compact archive.
+2. Knowledge lives in `knowledge/`: do not duplicate it in CLAUDE.md. Single source of truth per fact.
+3. Do not version output: generated files belong in `output/` (gitignored). The exception is `data/curated_tei/` (reserved for hand-verified TEI, currently empty).
+4. Test before changing: run the evaluation, compare metrics.
+5. Single source of truth: every fact lives in exactly one document. Other documents point to it via cross-reference.
 
 ## Knowledge Base
 
-Einstiegspunkt: [knowledge/index.md](knowledge/index.md) — Navigation, Abhaengigkeiten, Schluesselkonzepte.
+The entry point is [knowledge/index.md](knowledge/index.md), covering navigation, dependencies, and key concepts.
 
-12 thematisch klar getrennte Dokumente:
+Thematically separated documents:
 
-- [projekt.md](knowledge/projekt.md) — Auftrag, Korpus, ZBZ-Workflow, Status
-- [pipeline.md](knowledge/pipeline.md) — 6-Stufen-Pipeline, Engines, TEI-Mapping
-- [workflow.md](knowledge/workflow.md) — End-to-End-Datenfluss, Save/Round-Trip, Provenance
-- [quality.md](knowledge/quality.md) — CER + Validierung + Screening
-- [viewer.md](knowledge/viewer.md) — Pipeline-Viewer (Faksimile + OCR + Layout + TEI + Editor)
-- [frontend-gaps.md](knowledge/frontend-gaps.md) — Frontend-Befunde (Bugs/UX/A11y/Performance) je Schweregrad
-- [oekosystem-synthese.md](knowledge/oekosystem-synthese.md) — Gesamtbild der drei Projekte (zbz / szd-htr / teiCrafter)
-- [infrastruktur.md](knowledge/infrastruktur.md) — Azure, Podman, CI/CD
-- [methodik.md](knowledge/methodik.md) — Promptotyping + epistemische Infrastruktur
-- [decisions.md](knowledge/decisions.md) — Entscheidungsregister
-- [journal.md](knowledge/journal.md) — chronologischer Sitzungs-Ueberblick
-- [index.md](knowledge/index.md) — Navigation + Schluesselkonzepte
+- [project.md](knowledge/project.md): mission, corpus, ZBZ workflow, status
+- [specification.md](knowledge/specification.md): requirements, quality method, validation rule catalog, epics + user stories
+- [pipeline.md](knowledge/pipeline.md): 6-stage pipeline, engines, TEI mapping
+- [workflow.md](knowledge/workflow.md): end-to-end data flow, viewer + editors, save/round-trip, provenance
+- [ecosystem-synthesis.md](knowledge/ecosystem-synthesis.md): overall picture of the three projects (zbz / szd-htr / teiCrafter) + frontend gap survey
+- [infrastructure.md](knowledge/infrastructure.md): Azure, Podman, CI/CD, viewer deployment
+- [methodology.md](knowledge/methodology.md): Promptotyping + epistemic infrastructure
+- [decisions.md](knowledge/decisions.md): decision register
+- [final-report.md](knowledge/final-report.md): final work report with the measured quality values
+- [journal.md](knowledge/journal.md): chronological session overview
+- [index.md](knowledge/index.md): navigation + key concepts
 
 ## Security
 
-- **NIEMALS `.env` lesen:** die `.env`-Datei enthaelt API-Keys und darf unter keinen Umstaenden gelesen, angezeigt oder in Ausgaben aufgenommen werden
-- **keine Secrets in Code oder Doku:** API-Keys, Tokens und Passwoerter ausschliesslich in Environment-Variablen
+- NEVER read `.env`: the `.env` file contains API keys and must under no circumstances be read, displayed, or included in output
+- no secrets in code or docs: API keys, tokens, and passwords live exclusively in environment variables
 
-## Code-Konventionen
+## Code Conventions
 
-- **Code-Kommentare:** ausschliesslich Englisch, kompakt, und nur wo wirklich noetig — fuer Constraints, die der Code selbst nicht zeigt. Keine Erklaerungen des Offensichtlichen, keine Herkunfts- oder Aenderungsnotizen (kein "added 2026-06-10", kein "fixes H1") im Code; Entscheidungs-Provenienz gehoert in [knowledge/decisions.md](knowledge/decisions.md) bzw. ins Journal.
-- **Keine Personennamen in Markdown:** in Repo-Markdown (knowledge/, README, reports/) Rollen und Organisationen verwenden (ZBZ, DHCraft, Projektleitung). Jeanne Hersch als Gegenstand des Korpus ist davon ausgenommen.
-- **Keine Kostenangaben:** in Doku, Reports und Code keine Geldbetraege/Budgets (USD/$/CHF/EUR) nennen. Betriebshinweise wie `kostenlos`/`kostenpflichtig` (= kein/ein API-Call) sind erlaubt, da sie Aufrufe steuern, keine Kosten beziffern.
-- **Windows-Encoding:** keine Unicode-Sonderzeichen in Print-Statements
-- **Pfade:** absolute Pfade oder `pathlib`
-- **Output:** JSON fuer Daten, HTML fuer Reports
-- **Frontend:** ES6+ JavaScript (`const`/`let`, Arrow-Functions, Template-Literals, IIFE-Wrappers), `ZBZ.*` / `TeiViewer.*` Namespaces
-- **Frontend-Dependencies:** zur Laufzeit via CDN nachgeladen, keine npm/Build-Pipeline:
-  - OpenSeadragon 5.0.1 (jsDelivr) — Faksimile-Renderer im View-Modus (E58)
-  - JSZip 3.10.1 (cdnjs) — ZIP-Bundle fuer Export-Modul (E61)
+- Code comments: English only, compact, and only where genuinely needed, for constraints the code itself cannot show. No explanations of the obvious, no origin or change notes (no "added 2026-06-10", no "fixes H1") in code; decision provenance belongs in [knowledge/decisions.md](knowledge/decisions.md) or the journal.
+- No personal names in Markdown: in repo Markdown (knowledge/, README, reports/) use roles and organizations (ZBZ, DHCraft, project management). Jeanne Hersch as the subject of the corpus is exempt.
+- No cost figures: do not name monetary amounts or budgets (USD/$/CHF/EUR) in docs, reports, or code. Operational hints such as `free`/`paid` (= no/one API call) are allowed, since they steer calls rather than quantify costs.
+- Markdown style (prospective): in new repo Markdown no `**` bold as emphasis (a paragraph label becomes a heading of the appropriate level or running text) and no `&mdash;` or dash as a connector (use a comma, a semicolon, a colon before a list set on its own lines, or a separate sentence). This applies prospectively; existing text is not rewritten wholesale. Exception: the bold field labels of the journal template remain.
+- No volatile quantities in durable documents: document and page counts, percentages, and test counts do not belong in durable Markdown documents (README, permanent knowledge/ docs); phrase them qualitatively and point to the generating source (`corpus_audit` for corpus counts, validator/audit for tallies, `docs/data/cer_statistics.json` for CER values). Fixed defining quantities remain (the 25 ground-truth reference TEIs, pinned library versions, dates, decision/warning identifiers, document IDs). Dated snapshot documents (journal.md entries, the decisions.md register, reports/) and generator-bound tables (e.g. project.md §Corpus) are exempt; there the number is the point.
+- Windows encoding: no Unicode special characters in print statements
+- Paths: absolute paths or `pathlib`
+- Output: JSON for data, HTML for reports
+- Frontend: ES6+ JavaScript (`const`/`let`, arrow functions, template literals, IIFE wrappers), `ZBZ.*` / `TeiViewer.*` namespaces
+- Frontend dependencies: loaded at runtime via CDN, no npm/build pipeline:
+  - OpenSeadragon 5.0.1 (jsDelivr): facsimile renderer in view mode (E58)
+  - JSZip 3.10.1 (cdnjs): planned for the ZIP export module (E61), not yet included in the code
 
 ## Design
 
-Bei UI- oder Frontend-Generierung ist [knowledge/viewer.md §Hersch Design-System](knowledge/viewer.md) die Wertequelle. Imperative Designprinzipien:
+For UI or frontend generation, the token catalog `docs/assets/css/tokens.css` is the authority for values; the design rationale is in [knowledge/workflow.md](knowledge/workflow.md), Hersch Design System section. Imperative design principles:
 
-- ausschliesslich `--h-*`-Tokens, niemals Hex-Werte direkt im Komponenten-CSS
-- Akzentfarben (Ziegelrot, Preussischblau, Olivgruen) gelten fuer Akzente und Status-Indikatoren, nicht fuer Flaechen
-- keine reinen Schwarz/Weiss-Werte; immer den warmen Anthrazit `--h-text` und das warme Cream `--h-bg`
-- bei neuen Komponenten zuerst pruefen, ob ein bestehender Token oder eine Komponente in `base.css` traegt
+- exclusively `--h-*` tokens, never hex values directly in component CSS
+- accent colors (brick red, Prussian blue, olive green) apply to accents and status indicators, not to surfaces
+- no pure black/white values; always the warm anthracite `--h-text` and the warm cream `--h-bg`
+- for new components, first check whether an existing token or a component in `base.css` already covers it
 
-Token-Katalog: `docs/assets/css/tokens.css`. Basis-Komponenten: `docs/assets/css/base.css`. Viewer-spezifisch: `docs/assets/css/viewer.css`.
+The token catalog lives in `docs/assets/css/tokens.css`, base components in `docs/assets/css/base.css`, viewer-specific styles in `docs/assets/css/viewer.css`.
 
-## Projektstruktur & Datenfluss
+## Project Structure & Data Flow
 
-### Verzeichnisse (Orientierung)
+### Directories (orientation)
 
-- `data/` — Eingangs- und Referenzdaten. `source/` = ZB-Lieferung (immutabler Input, grösstenteils gitignored): `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, `guidelines/` (Editionsrichtlinien). Projekt-Autorität (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (vorgesehen fuer von Hand verifizierte TEI, derzeit leer). Generiert: `doc_metadata.json` (Gemini-Cache)
-- `scripts/` — Pipeline + Werkzeuge, nach Domaene gruppiert: `ocr/`, `layout/`, `tei/`, `eval/`, `edition/`, `core/` (nur `config.py` + `utils.py` top-level). Inventar: [scripts/README.md](scripts/README.md)
-- `output/` — alle generierten Datenströme (gitignored, NICHT versioniert)
-- `docs/` — statische Inspektions-/Demo-Site (GitHub-Pages-tauglich): HTML, `assets/` (`css/` + `js/`), `data/` (generierter Mirror), `images/`
-- `knowledge/` — Wissensbasis (12 Docs), Einstieg [knowledge/index.md](knowledge/index.md)
-- `tests/` — pytest-Suites
+- `data/`: input and reference data. `source/` = ZB delivery (immutable input, mostly gitignored) with `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, and `guidelines/` (editorial guidelines, Editionsrichtlinien). Project authority (git-tracked): `schema/zbz_hersch.rng` and `curated_tei/` (reserved for hand-verified TEI, currently empty). Generated: `doc_metadata.json` (Gemini cache)
+- `scripts/`: pipeline + tools, grouped by domain into `ocr/`, `layout/`, `tei/`, `eval/`, `edition/`, `core/` (only `config.py` + `utils.py` top-level). Inventory: [scripts/README.md](scripts/README.md)
+- `output/`: all generated data streams (gitignored, NOT versioned)
+- `docs/`: static inspection/demo site (GitHub-Pages-ready) with HTML, `assets/` (`css/` + `js/`), `data/` (generated mirror), `images/`
+- `knowledge/`: knowledge base, entry point [knowledge/index.md](knowledge/index.md)
+- `tests/`: pytest suites
 
-### Objekt = Bündel paralleler Datenströme
+### Object = bundle of parallel data streams
 
-Ein **Objekt** (Dokument) trägt mehrere Ströme, alle nach `{doc_id}_p{N}`-Konvention:
+An object (document) carries several streams, all following the `{doc_id}_p{N}` convention:
 
-- **OCR** — `output/mistral_results/` (Basis); alt. Engines: `output/ocr_results/`, `gemini_corrected_{a,b}/`, `llm_corrected_c/`
-- **Layout / PAGE-XML** — `output/layout/` (Docling + Gemini, JSON) → `output/page_xml/` (PAGE-XML + METS-Export)
-- **TEI** — `output/tei_unified/` (Pipeline-Output) → `output/tei_final/` (final, ausgeliefert)
-- **Pro-Objekt-Metadaten** — `{doc_id}_manifest.json` (Workflow-Status je Strom + History + Leerseiten, E65/E66) neben dem finalen TEI. Legacy: `_screening_legacy.json` (abgeschafftes Agent-Screening, nur als Diagnose-Spur, gitignored).
+- OCR: `output/mistral_results/` (base); alternative engines: `output/ocr_results/`, `gemini_corrected_{a,b}/`, `llm_corrected_c/`
+- Layout / PAGE-XML: `output/layout/` (Docling + Gemini, JSON) -> `output/page_xml/` (PAGE-XML + METS export)
+- TEI: `output/tei_unified/` (pipeline output) -> `output/tei_final/` (final, delivered)
+- Per-object metadata: `{doc_id}_manifest.json` (workflow status per stream + history + blank pages, E65/E66) next to the final TEI. Legacy: `_screening_legacy.json` (abolished agent screening, kept only as a diagnostic trace, gitignored).
 
-Detaillierte Stufen / Skripte / Engines: [knowledge/pipeline.md](knowledge/pipeline.md).
+Detailed stages, scripts, and engines are in [knowledge/pipeline.md](knowledge/pipeline.md).
 
-### Source of Truth → generierter Mirror (verbindlich)
+### Source of truth -> generated mirror (binding)
 
-- **`output/tei_final/{doc}_final.xml` ist die Single Source of Truth der ausgelieferten TEI-Daten** (E43). Nur `tei_final/` wird angezeigt. Jedes finale TEI traegt `<revisionDesc>` mit Pipeline-Status (E42); der Workflow-Status pro Strom wird beim ZBZ-Uebergabe-Schritt via `tei_status_marker.py` aus dem Manifest in den `<revisionDesc>` projiziert (E66).
-- **`docs/data/pages/{doc}/` ist ein GENERIERTER Mirror — niemals direkt editieren.** Erzeugt von `scripts/edition/generate_edition_data.py` aus: per-Seiten-TEI (aus `tei_final` gesplittet) + Mistral-`.md` + Layout-JSON. Nach Aenderungen an der Quelle Mirror neu generieren.
-- `output/tei_unified/` ist Pipeline-Output (nicht editieren). Von Hand verifizierte TEIs sind fuer `data/curated_tei/` (git-tracked) vorgesehen; der Ordner ist derzeit leer.
+- `output/tei_final/{doc}_final.xml` is the single source of truth of the delivered TEI data (E43). Only `tei_final/` is displayed. Every final TEI carries a `<revisionDesc>` with pipeline status (E42); at the ZBZ handover step the per-stream workflow status is projected from the manifest into the `<revisionDesc>` via `tei_status_marker.py` (E66).
+- `docs/data/pages/{doc}/` is a GENERATED mirror; never edit it directly. It is produced by `scripts/edition/generate_edition_data.py` from per-page TEI (split from `tei_final`) + Mistral `.md` + layout JSON. After changes to the source, regenerate the mirror.
+- `output/tei_unified/` is pipeline output (do not edit). Hand-verified TEIs are intended for `data/curated_tei/` (git-tracked); the folder is currently empty.
 
-## Methodik
+## Methodology
 
-Dreischichtung Command / Artifact / Tool — Details: [knowledge/methodik.md](knowledge/methodik.md).
+Three-layer split Command / Artifact / Tool; details in [knowledge/methodology.md](knowledge/methodology.md).
 
-- **Command** = Entscheidungsregel (wann was tun)
-- **Artifact** = materielles Werkzeug im Repo (Script, Index, Report)
-- **Tool** = konkreter Aufruf eines Artifacts durch den Agent
+- Command = decision rule (when to do what)
+- Artifact = material tool in the repo (script, index, report)
+- Tool = a concrete invocation of an artifact by the agent
 
-Verifikationskaskade (oekonomisch geordnet): automatisch → kontextuell → visuell → fachlich.
-Operative Werkzeuge und Arbeitszyklus: [knowledge/methodik.md](knowledge/methodik.md).
+Verification cascade (ordered by economy): automatic -> contextual -> visual -> domain-expert.
+Operative tools and the working cycle are in [knowledge/methodology.md](knowledge/methodology.md).
 
 ---
 
-# Commands (CLI-Referenz)
+# Commands (CLI reference)
 
-Operative Werkzeuge fuer den Promptotyping-Zyklus. Jede Operation erzeugt Qualitaetssignale,
-die den naechsten Schritt informieren. Der Critical Expert in the Loop entscheidet.
+Operative tools for the Promptotyping cycle. Every operation produces quality signals
+that inform the next step. The Critical Expert in the Loop decides.
 
-Methodische Einbettung (Diagnose → Exploration → Ausfuehrung → Re-Validierung → Eskalation):
-[knowledge/methodik.md](knowledge/methodik.md). Konventionen (`--dry-run`, `--force`, `--reassemble`): siehe dort.
+The methodological embedding (diagnosis -> exploration -> execution -> re-validation -> escalation)
+is described in [knowledge/methodology.md](knowledge/methodology.md), as are the conventions
+for `--dry-run`, `--force`, and `--reassemble`.
 
-## Diagnose
+## Diagnosis
 
 ```bash
-python -m scripts.tei.tei_validator --doc {DOC_ID}             # TEI-Validierung
-python -m scripts.tei.tei_validator --all --html-report         # Korpus-Report
-python -m scripts.tei.tei_validator --compare-ref               # Referenz-Vergleich (25 ZBZ-Referenz-TEIs)
-python -m scripts.eval.evaluate_ocr --all                            # OCR-Metriken
-python -m scripts.eval.quality_proxy --all --html                    # Quality Proxy (Hit Rate)
-python -m scripts.eval.completeness_check --html                     # Vollstaendigkeits-Check (Seiten)
-python -m scripts.eval.benchmark_cer --all --html                    # CER-Benchmark (25 GT-Docs)
-python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # wiss. CER-Statistik (BCa-CIs, Paired, HCPR)
-python -m scripts.eval.corpus_audit                             # Korpus-Audit: Trichter 325->289->286->285 + Drift-Check
-python -m scripts.eval.structure_audit                          # Struktur-Audit: Pipeline-TEI vs 25 Ground Truth (Diagnose, kein Gate; E84)
-python -m pytest tests/test_cer_statistics.py -q                # 55 Tests fuer Statistik-Library
-python -m pytest tests/test_corpus_audit.py -q                  # 24 Tests: Korpus-Invarianten + delivered-Verteilung + Vollstaendigkeits-Gate
-python -m pytest tests/test_scripts_health.py -q                # Script-Health: Syntax + interne Imports (alle scripts/)
-python -m pytest tests/test_tei_schema.py -q                    # Schema-Gate: tei_final gegen zbz_hersch.rng (E68)
-python -m pytest tests/test_tei_header.py -q                    # teiHeader-Liefer-Vertrag: idno + biblStruct + langUsage (E69)
-python -m pytest tests/test_tei_validator.py -q                 # Validator: Referenz-CER in Prozent (O24/E69)
-python -m pytest tests/test_pb_split.py -q                      # <pb>-Segmentierung: pb_split.py byte-identisch (E69)
-python -m pytest tests/test_tei_conformance.py -q               # Konformitaets-Fixes: div-n/type, figure-xmlid, head-lemma, title-main, foreign-lang (E84)
+python -m scripts.tei.tei_validator --doc {DOC_ID}             # TEI validation
+python -m scripts.tei.tei_validator --all --html-report         # corpus report
+python -m scripts.tei.tei_validator --compare-ref               # reference comparison (25 ZBZ reference TEIs)
+python -m scripts.eval.evaluate_ocr --all                            # OCR metrics
+python -m scripts.eval.quality_proxy --all --html                    # quality proxy (hit rate)
+python -m scripts.eval.completeness_check --html                     # completeness check (pages)
+python -m scripts.eval.benchmark_cer --all --html                    # CER benchmark (25 GT docs)
+python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # scientific CER statistics (BCa CIs, paired, HCPR)
+python -m scripts.eval.corpus_audit                             # corpus audit: corpus funnel + drift check
+python -m scripts.eval.structure_audit                          # structure audit: pipeline TEI vs 25 ground truth (diagnosis, no gate; E84)
+python -m scripts.eval.reading_order_audit                      # W19 triage robust/fragile (E90, basis of the M3 view; --worklist: fragile pages per document)
+python -m scripts.tei.tei_reassemble_preview --all              # M3 dry run: reassembly preview -> output/tei_preview + report, tei_final untouched
+python -m pytest tests/test_cer_statistics.py -q                # statistics library (BCa/paired/HCPR)
+python -m pytest tests/test_corpus_audit.py -q                  # corpus invariants + delivered distribution + completeness gate
+python -m pytest tests/test_scripts_health.py -q                # script health: syntax + internal imports (all scripts/)
+python -m pytest tests/test_tei_schema.py -q                    # schema gate: tei_final against zbz_hersch.rng (E68)
+python -m pytest tests/test_tei_header.py -q                    # teiHeader delivery contract: idno + biblStruct + langUsage (E69)
+python -m pytest tests/test_tei_validator.py -q                 # validator: reference CER in percent (O24/E69)
+python -m pytest tests/test_pb_split.py -q                      # <pb> segmentation: pb_split.py byte-identical (E69)
+python -m pytest tests/test_tei_conformance.py -q               # conformance fixes: div-n/type, figure-xmlid, head-lemma, title-main, foreign-lang (E84)
+python -m pytest tests/test_reading_order.py tests/test_reading_order_audit.py tests/test_reassemble_preview.py -q  # reading order: permutation + W19 triage + M3 preview (E90)
 ```
 
-Output `docs/data/cer_statistics.json` (regenerierbar, derzeit nicht eingecheckt). Das interaktive CER-Dashboard wurde mit E56 abgeschafft. Methodik: [knowledge/quality.md §CER-Methodik](knowledge/quality.md).
+The output `docs/data/cer_statistics.json` is versioned as evidence of the published CER values and deterministically regenerable with seed 42. The interactive CER dashboard was abolished with E56. The methodology is covered in [knowledge/specification.md](knowledge/specification.md), quality measurement section.
 
-## Textschicht
+## Text layer
 
 ```bash
-python scripts/ocr/ocr_pipeline.py -i data/source/pdf/{DOC_ID}.pdf -e mistral    # Basis-OCR
-python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --variant B          # Gemini-Korrektur
-python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --dry-run            # Vorschau
+python scripts/ocr/ocr_pipeline.py -i data/source/pdf/{DOC_ID}.pdf -e mistral    # base OCR
+python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --variant B          # Gemini correction
+python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --dry-run            # preview
 ```
 
 ## Layout
@@ -145,111 +150,116 @@ python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --dry-run            # V
 ```bash
 python -m scripts.layout.run_layout_analysis --doc {DOC_ID}                     # Docling
 python -m scripts.layout.layout_qa_gemini --doc {DOC_ID}                        # Gemini QA
-python -m scripts.layout.layout_qa_gemini --mode detect --doc {DOC_ID}          # Neudetektion
-python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      # Overlay
+python -m scripts.layout.layout_qa_gemini --mode detect --doc {DOC_ID}          # re-detection
+python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      # overlay
 ```
 
-## TEI erzeugen
+## Generate TEI
 
 ```bash
-python -m scripts.tei.tei_unified --doc {DOC_ID}                         # Standard (3 Stufen)
-python -m scripts.tei.tei_unified --doc {DOC_ID} --step 1                # nur Scaffold (kostenlos)
-python -m scripts.tei.tei_unified --doc {DOC_ID} --reassemble            # Re-Assembly (Gemini-Cache; kuratierte Seiten je 1 Call)
-python -m scripts.tei.tei_unified --doc {DOC_ID} --force                 # alles neu (inkl. Gemini)
-python -m scripts.tei.tei_unified --doc {DOC_ID} --dry-run               # Prompt-Vorschau
-python -m scripts.tei.tei_unified --all --reassemble                     # Korpus Re-Assembly
+python -m scripts.tei.tei_unified --doc {DOC_ID}                         # standard (3 stages)
+python -m scripts.tei.tei_unified --doc {DOC_ID} --step 1                # scaffold only (free)
+python -m scripts.tei.tei_unified --doc {DOC_ID} --reassemble            # re-assembly (Gemini cache; curated pages 1 call each)
+python -m scripts.tei.tei_unified --doc {DOC_ID} --force                 # everything anew (incl. Gemini)
+python -m scripts.tei.tei_unified --doc {DOC_ID} --dry-run               # prompt preview
+python -m scripts.tei.tei_unified --all --reassemble                     # corpus re-assembly
 ```
 
-## Validierung (Qualitaetsgate)
+## Validation (quality gate)
 
 ```bash
-python -m scripts.tei.tei_validator --doc {DOC_ID}                       # Einzeldokument
-python -m scripts.tei.tei_validator --all --report                       # JSON-Report
-python -m scripts.tei.tei_validator --all --html-report                  # HTML-Report
+python -m scripts.tei.tei_validator --doc {DOC_ID}                       # single document
+python -m scripts.tei.tei_validator --all --report                       # JSON report
+python -m scripts.tei.tei_validator --all --html-report                  # HTML report
 ```
 
-## Quality Screening (deprecated, E66)
+## Quality screening (deprecated, E66)
 
-Das Agent-basierte 7-Schichten-Screening ist seit E66 (2026-05-26) **abgeschafft**. Keiner der
-285/285 "APPROVED"-Status kam von einem Menschen — der Agent zertifizierte sich selbst mit
-eingebauter Ignorier-Liste (W3/W6/W10 als "normal"). Befunde leben jetzt als `_screening_legacy.json`
-(reine Diagnose-Spur, nicht im Mirror). Ersatz: **Workflow-Status pro Strom** (siehe unten).
+The agent-based 7-layer screening has been abolished since E66 (2026-05-26). None of the
+285/285 "APPROVED" statuses came from a human; the agent certified itself with a built-in
+ignore list (W3/W6/W10 as "normal"). Findings now live as `_screening_legacy.json`
+(a pure diagnostic trace, not in the mirror). The replacement is the workflow status
+per stream (see below).
 
-Tools fuer Validierung bleiben:
+Tools for validation remain:
 
 ```bash
-python -m scripts.tei.tei_validator --doc {DOC_ID}                       # RelaxNG + Projektregeln
-python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID}         # gegen ZBZ-Referenz
+python -m scripts.tei.tei_validator --doc {DOC_ID}                       # RelaxNG + project rules
+python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID}         # against ZBZ reference
 ```
 
-## Pro-Objekt-Manifest (Leerseiten + Workflow-Status, E65/E66)
+## Per-object manifest (blank pages + workflow status, E65/E66)
 
 ```bash
-python -m scripts.edition.page_manifest                                          # alle 285 Docs (idempotent: status+history bleiben)
-python -m scripts.edition.page_manifest --doc {DOC_ID}                           # Einzeldokument
-python -m scripts.edition.page_manifest --dry-run                                # nur Bericht, nichts schreiben
-python -m scripts.tei.tei_blank_marker --dry-run                         # Leerseiten-Marker: Vorschau
-python -m scripts.tei.tei_blank_marker                                   # <pb type="blank"/> in tei_final schreiben (mit Backup)
-python -m scripts.tei.tei_status_marker --dry-run                        # Workflow-History -> revisionDesc: Vorschau
-python -m scripts.tei.tei_status_marker                                  # History als <change> in tei_final schreiben (mit Backup, ZBZ-Uebergabe)
+python -m scripts.edition.page_manifest                                          # all docs (idempotent: status+history preserved)
+python -m scripts.edition.page_manifest --doc {DOC_ID}                           # single document
+python -m scripts.edition.page_manifest --dry-run                                # report only, write nothing
+python -m scripts.tei.tei_blank_marker --dry-run                         # blank-page marker: preview
+python -m scripts.tei.tei_blank_marker                                   # write <pb type="blank"/> into tei_final (with backup)
+python -m scripts.tei.tei_status_marker --dry-run                        # workflow history -> revisionDesc: preview
+python -m scripts.tei.tei_status_marker                                  # write history as <change> into tei_final (with backup, ZBZ handover)
 ```
 
-Pro-Objekt-Manifest `output/tei_final/{DOC_ID}_manifest.json` ist der **Annotations-Slot pro Objekt**:
-- `streams.{ocr,layout,tei}.status` — Workflow-Status (unverifiziert | in_arbeit | verifiziert, drei Stufen seit E77). Ampel-Mapping im UI: neutral/grau fuer `unverifiziert`, gelb fuer `in_arbeit`, gruen fuer `verifiziert`, rot reserviert fuer einen kuenftigen Problem-Status.
-- `streams.{ocr,layout,tei}.history` — Provenienz der menschlichen Bearbeitungsschritte
-- `pages.{N}` — Ausnahme-Seiten (aktuell nur sichere Leerseiten; OCR-Regel + Docling=0)
+The per-object manifest `output/tei_final/{DOC_ID}_manifest.json` is the annotation slot per object:
+- `streams.{ocr,layout,tei}.status`: workflow status (unverifiziert | in_arbeit | verifiziert, three levels since E77). Traffic-light mapping in the UI: neutral/gray for `unverifiziert`, yellow for `in_arbeit`, green for `verifiziert`, red reserved for a future problem status.
+- `streams.{ocr,layout,tei}.history`: provenance of the human editing steps
+- `pages.{N}`: exception pages (currently only safe blank pages; OCR rule + Docling=0)
 
-`page_manifest` befuellt automatisch nur Engine-Deskriptoren und die sichere `blank`-Klasse;
-Status/History werden ausschliesslich vom Viewer (Klick auf Status-Pill) ergaenzt und bleiben
-ueber Re-Laeufe erhalten. `tei_blank_marker` projiziert Leerseiten als `<pb type="blank"/>`;
-`tei_status_marker` projiziert die Workflow-History deterministisch als `<change>` in den
-`<revisionDesc>` und raeumt dabei die irrefuehrenden Agent-Screening-Eintraege weg. Danach Mirror neu:
-`python -m scripts.edition.generate_edition_data --mirror-only`. Details: [knowledge/decisions.md](knowledge/decisions.md) E63/E65/E66.
+`page_manifest` automatically fills only engine descriptors and the safe `blank` class;
+status/history are added exclusively by the viewer (click on the status pill) and survive
+re-runs. `tei_blank_marker` projects blank pages as `<pb type="blank"/>`;
+`tei_status_marker` deterministically projects the workflow history as `<change>` entries into the
+`<revisionDesc>` and clears away the misleading agent-screening entries in the process. Afterwards
+regenerate the mirror: `python -m scripts.edition.generate_edition_data --mirror-only`.
+Details are in [knowledge/decisions.md](knowledge/decisions.md) E63/E65/E66.
 
-## Viewer-Daten
+## Viewer data
 
 ```bash
-python -m scripts.edition.generate_edition_data                                  # Katalog (data/catalog.json) + Per-Seiten-Mirror
+python -m scripts.edition.generate_edition_data                                  # catalog (data/catalog.json) + per-page mirror
 ```
 
-Der Viewer (`docs/viewer.html`) ist eine statische Single-Page-App ohne Backend. **Ein** "Speichern"-Knopf
-sichert alle ungespeicherten Stroeme zugleich (Layout, Text/TEI, Manifest, E78); geschrieben wird direkt
-in den Working Tree (File System Access API, Chromium) oder als Datei-Download (Fallback). Jede
-Speicher-Aktion legt die Nutzlast doppelt ab: kanonisch nach `output/` (von `--reassemble` real konsumiert, E72)
-und in den Mirror `docs/data/`, damit der server-lose Viewer (Docroot `docs/`) den Stand nach einem Reload zeigt (E79).
-Einzel-Downloads pro Strom liegen im "Export ▾"-Dropdown. Siehe [knowledge/viewer.md §Persistenz](knowledge/viewer.md).
+The viewer (`docs/viewer.html`) is a static single-page app without a backend. A single "Save"
+button persists all unsaved streams at once (layout, text/TEI, manifest, E78); writes go
+directly into the working tree (File System Access API, Chromium) or fall back to a file download.
+Every save action stores the payload twice: canonically to `output/` (really consumed by
+`--reassemble`, E72) and into the mirror `docs/data/`, so the server-less viewer (docroot `docs/`)
+shows the saved state after a reload (E79). Per-stream single downloads live in the "Export"
+dropdown. See [knowledge/workflow.md](knowledge/workflow.md), persistence section.
 
-## Visuelle Artefakte
+## Visual artifacts
 
 ```bash
-python scripts/edition/extract_pages.py --pdf {DOC_ID}.pdf --dpi 300             # Seitenbilder
-python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      # Layout-Overlay
+python scripts/edition/extract_pages.py --pdf {DOC_ID}.pdf --dpi 300             # page images
+python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      # layout overlay
 ```
 
-## Transkribus-Export / Upload (PAGE-XML-Round-Trip)
+## Transkribus export / upload (PAGE-XML round trip)
 
-Pipeline-PAGE-XML (`output/page_xml/`) zurueck nach Transkribus: erst Bundle bauen, dann via REST hochladen.
-Konzept + Dialekt-Details: [knowledge/pipeline.md §Transkribus-Export](knowledge/pipeline.md).
+Pipeline PAGE-XML (`output/page_xml/`) goes back to Transkribus in two steps: first build the bundle,
+then upload via REST. Concept and dialect details are in
+[knowledge/pipeline.md §Transkribus Export](knowledge/pipeline.md).
 
 ```bash
-python -m scripts.edition.transkribus_export --sample                            # stratifizierte Stichprobe (~18) -> output/transkribus_upload/
-python -m scripts.edition.transkribus_export --all                               # kompletter Korpus
-python -m scripts.edition.transkribus_export --reference                         # die 24 Objekte, die ZBZ schon in Transkribus hat
-python -m scripts.edition.transkribus_export --doc {DOC_ID} [--zip]              # gezielt (+ optional ein .zip je Objekt)
+python -m scripts.edition.transkribus_export --sample                            # stratified sample -> output/transkribus_upload/
+python -m scripts.edition.transkribus_export --all                               # full corpus
+python -m scripts.edition.transkribus_export --reference                         # the reference objects ZBZ already has in Transkribus
+python -m scripts.edition.transkribus_export --doc {DOC_ID} [--zip]              # targeted (+ optionally one .zip per object)
 ```
 
-Upload braucht den Login als Umgebungsvariablen (NIE im Code/Repo/.env): `TRANSKRIBUS_USER`, `TRANSKRIBUS_PASSWORD`,
-optional `TRANSKRIBUS_COLLECTION`. Jeder Lauf legt NEUE Dokumente an (kein Dedup) -- erst `--dry-run`, dann ein Testobjekt.
+The upload needs the login as environment variables (NEVER in code/repo/.env): `TRANSKRIBUS_USER`,
+`TRANSKRIBUS_PASSWORD`, optionally `TRANSKRIBUS_COLLECTION`. Every run creates NEW documents
+(no dedup); run `--dry-run` first, then upload one test object.
 
 ```bash
-python -m scripts.edition.transkribus_upload --dry-run --collection {COLL}       # Login + Collection-Zugriff pruefen, nichts hochladen
-python -m scripts.edition.transkribus_upload --doc {DOC_ID} --collection {COLL}  # ein Objekt testweise hochladen
-python -m scripts.edition.transkribus_upload --collection {COLL}                 # ganzes Bundle hochladen
+python -m scripts.edition.transkribus_upload --dry-run --collection {COLL}       # check login + collection access, upload nothing
+python -m scripts.edition.transkribus_upload --doc {DOC_ID} --collection {COLL}  # upload one object as a test
+python -m scripts.edition.transkribus_upload --collection {COLL}                 # upload the whole bundle
 ```
 
 ---
 
-# Hilfe
+# Help
 
-- `/help` — Hilfe zur Verwendung von Claude Code
+- `/help`: help on using Claude Code
 - Feedback: https://github.com/anthropics/claude-code/issues

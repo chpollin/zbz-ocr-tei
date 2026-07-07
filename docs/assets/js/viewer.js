@@ -1,15 +1,15 @@
 /**
- * viewer.js — Pipeline-Viewer fuer ein einzelnes Dokument
+ * viewer.js — Pipeline viewer for a single document
  *
- * Verantwortlich fuer:
- *  - Doc-Metadaten aus catalog.json laden (per ?doc= URL-Parameter)
- *  - Seitennavigation (Prev/Next, Pfeiltasten)
- *  - Mode-Switching (view / layout / text)
- *  - Faksimile + Layout-Overlay (links)
- *  - Text-Panel (OCR/TEI/XML) rechts
- *  - Download-Aktionen
+ * Responsible for:
+ *  - Loading doc metadata from catalog.json (via ?doc= URL parameter)
+ *  - Page navigation (Prev/Next, arrow keys)
+ *  - Mode switching (view / layout / text)
+ *  - Facsimile + layout overlay (left panel)
+ *  - Text panel (OCR/TEI/XML) on the right
+ *  - Download actions
  *
- * Die Korpus-Uebersicht (Doc-Liste, Filter) liegt in docs/index.html.
+ * The corpus overview (doc list, filters) lives in docs/index.html.
  *
  * Namespace: ZBZ.Viewer
  */
@@ -20,7 +20,7 @@
     const $$ = ZBZ.$$;
 
     // ---- State ----
-    // E60 (2026-05-25): mode -> imageEdit + textEdit (zwei unabhaengige Edit-States).
+    // E60 (2026-05-25): mode -> imageEdit + textEdit (two independent edit states).
     const state = {
         catalog: null,
         doc: null,
@@ -29,30 +29,30 @@
         ocrSource: 'mistral',
         layout: null,
         teiXml: null,
-        osdViewer: null,      // OpenSeadragon-Instanz (nur wenn !imageEdit aktiv)
-        imageEdit: false,     // Faksimile-Edit-Toggle: aktiviert Layout-Editor (img + Eigenbau-Overlay)
-        textEdit: false,      // Text-Edit-Toggle: aktiviert Transcription-Editor fuer aktive Quelle
+        osdViewer: null,      // OpenSeadragon instance (only when !imageEdit is active)
+        imageEdit: false,     // facsimile edit toggle: activates layout editor (img + custom overlay)
+        textEdit: false,      // text edit toggle: activates transcription editor for active source
         _currentText: null,
         _currentEditedText: null,
-        _isBlank: false,      // Leerseite (Vorsatz/Rueckseite/Durchschlag) — kein echter Text
-        manifest: null,       // E66: Pro-Objekt-Manifest mit streams.{ocr,layout,tei}.{status,history}
-        manifestDirty: false, // ungespeicherte Status-Aenderungen
-        dirtyStreams: new Set(), // welche Stroeme seit dem letzten Speichern geaendert wurden
-        layoutDirty: false,   // ungespeicherte Layout-Aenderung (aktuelle Seite)
-        textDirty: false      // ungespeicherte Text-Aenderung (aktuelle Seite)
+        _isBlank: false,      // blank page (endpaper/verso/carbon copy), no real text
+        manifest: null,       // E66: per-object manifest with streams.{ocr,layout,tei}.{status,history}
+        manifestDirty: false, // unsaved status changes
+        dirtyStreams: new Set(), // which streams have changed since the last save
+        layoutDirty: false,   // unsaved layout change (current page)
+        textDirty: false      // unsaved text change (current page)
     };
 
-    // E77: Workflow-Status pro Strom, drei Stufen -- unverifiziert -> in_arbeit -> verifiziert -> unverifiziert
-    // `unverifiziert` heisst: Pipeline-Output existiert, kein Mensch hat verifiziert (neutral/grau).
-    // `in_arbeit` = in Bearbeitung (gelb). `verifiziert` = menschlich freigegeben (gruen).
-    // Rot bleibt reserviert fuer einen spaeteren expliziten Problem-Status.
+    // E77: workflow status per stream, three levels: unverifiziert -> in_arbeit -> verifiziert -> unverifiziert
+    // `unverifiziert`: pipeline output exists, no human has verified it yet (neutral/gray).
+    // `in_arbeit`: work in progress (yellow). `verifiziert`: human-approved (green).
+    // Red is reserved for a future explicit problem status.
     const STATUS_CYCLE = ['unverifiziert', 'in_arbeit', 'verifiziert'];
     const STATUS_LABEL = {
-        unverifiziert: 'unverifiziert',
-        in_arbeit:     'in Arbeit',
-        verifiziert:   'verifiziert'
+        unverifiziert: 'unverified',
+        in_arbeit:     'in progress',
+        verifiziert:   'verified'
     };
-    // Legacy-Mapping fuer aeltere Manifeste/Mirror (offen, bearbeitet, fertig)
+    // Legacy mapping for older manifests/mirror (offen, bearbeitet, fertig)
     const STATUS_LEGACY = { offen: 'unverifiziert', bearbeitet: 'in_arbeit', fertig: 'verifiziert' };
     const STREAM_LABEL = { ocr: 'OCR', layout: 'Layout', tei: 'TEI-XML' };
 
@@ -60,7 +60,7 @@
 
     const cache = new ZBZ.Cache(40);
 
-    // ---- DOM-Refs ----
+    // ---- DOM refs ----
     const refs = {
         subbar:         $('#doc-subbar'),
         docMeta:        $('#doc-meta'),
@@ -76,7 +76,7 @@
         textTitle:      $('#text-panel-title'),
         regionCount:    $('#region-count'),
         layoutToolbar:  $('#layout-toolbar'),
-        // Speichern + Export-Dropdown + Identitaets-Chip
+        // Save + export dropdown + identity chip
         btnSave:        $('#btn-save'),
         btnExportMenu:  $('#btn-export-menu'),
         exportMenu:     $('#export-menu'),
@@ -90,7 +90,7 @@
         fsaInfo:        $('#fsa-info'),
         fsaInfoGo:      $('#fsa-info-go'),
         fsaInfoCancel:  $('#fsa-info-cancel'),
-        // E66: Workflow-Status-Controls
+        // E66: workflow status controls
         statusOcr:      $('#status-ocr'),
         statusLayout:   $('#status-layout'),
         statusTei:      $('#status-tei'),
@@ -103,7 +103,7 @@
         bindEvents();
 
         renderIdentity();
-        // Persistierten Repo-Ordner wiederherstellen (File System Access)
+        // Restore persisted repo folder (File System Access)
         if (ZBZ.FsAccess) { await ZBZ.FsAccess.init(); }
 
         const urlDoc = ZBZ.getParam('doc');
@@ -114,7 +114,7 @@
 
         const data = await ZBZ.fetchJSON('data/catalog.json');
         if (!data) {
-            renderError('catalog.json nicht gefunden. <code>python -m scripts.edition.generate_edition_data</code>');
+            renderError('catalog.json not found. <code>python -m scripts.edition.generate_edition_data</code>');
             return;
         }
         state.catalog = data;
@@ -122,7 +122,7 @@
         const list = data.documents || data.docs || [];
         const doc = list.find(d => String(d.id) === String(urlDoc));
         if (!doc) {
-            renderError('Dokument <code>' + ZBZ.esc(urlDoc) + '</code> nicht im Katalog. <a href="index.html">Zurueck zum Korpus</a>');
+            renderError('Document <code>' + ZBZ.esc(urlDoc) + '</code> not in catalog. <a href="index.html">Back to Corpus</a>');
             return;
         }
 
@@ -133,7 +133,7 @@
 
     function renderNoDoc() {
         refs.imageBody.innerHTML =
-            '<div class="empty">Kein Dokument ausgewaehlt. <a href="index.html">Zur Korpus-Uebersicht</a></div>';
+            '<div class="empty">No document loaded. <a href="index.html">Back to Corpus</a></div>';
         refs.textBody.innerHTML =
             '<div class="empty">—</div>';
     }
@@ -143,7 +143,7 @@
         refs.textBody.innerHTML  = '<div class="empty">—</div>';
     }
 
-    // ============================================================ Doc selektieren ============================================================
+    // ============================================================ Doc selection ============================================================
 
     async function selectDoc(doc, startPage) {
         state.doc = doc;
@@ -153,13 +153,13 @@
         state.manifest = null;
         state.manifestDirty = false;
         ZBZ.setParams({ doc: doc.id, page: state.page });
-        document.title = (doc.title ? doc.title.slice(0, 60) + ' — ' : '') + 'Hersch Pipeline-Viewer';
+        document.title = (doc.title ? doc.title.slice(0, 60) + ' — ' : '') + 'Hersch Pipeline Viewer';
 
-        // Sub-Bar zeigen + befuellen
+        // Show and populate sub-bar
         refs.subbar.hidden = false;
         renderDocMeta(doc);
 
-        // Buttons enablen
+        // Enable buttons
         refs.btnPrev.disabled = state.page <= 1;
         refs.btnNext.disabled = state.page >= (doc.page_count || 1);
         if (refs.pageGoto) {
@@ -172,18 +172,18 @@
         if (refs.btnExportMenu) refs.btnExportMenu.disabled = false;
         renderSaveState();
 
-        // E66: Manifest fuer Workflow-Status laden (parallel zu Seitenrendering)
+        // E66: load manifest for workflow status (parallel to page rendering)
         loadManifest(doc.id);
 
         await loadPage();
     }
 
-    // ============================================================ Workflow-Status (E66) ============================================================
+    // ============================================================ Workflow status (E66) ============================================================
 
     async function loadManifest(docId) {
         const m = await ZBZ.fetchJSON('data/manifests/' + encodeURIComponent(docId) + '_manifest.json');
         if (m && m.streams) {
-            // Legacy-Status-Werte migrieren (v2 -> v3)
+            // Migrate legacy status values (v2 -> v3)
             ['ocr', 'layout', 'tei'].forEach(s => {
                 const stream = m.streams[s];
                 if (stream && STATUS_LEGACY[stream.status]) {
@@ -198,7 +198,7 @@
             });
             state.manifest = m;
         } else {
-            // Fallback: synthetisches Manifest, falls Mirror nicht aktuell (defensiv)
+            // Fallback: synthetic manifest if the mirror is out of date (defensive)
             state.manifest = {
                 doc_id: docId,
                 page_count: state.doc && state.doc.page_count,
@@ -216,7 +216,7 @@
         refs.btnDlManifest.disabled = false;
     }
 
-    // Kuerzel aus dem Identitaets-Chip (localStorage). KEIN blockierendes prompt().
+    // Initials from the identity chip (localStorage). No blocking prompt().
     function getAuthor() {
         const fromStore = (window.localStorage && localStorage.getItem('zbz.workflow.by')) || '';
         return fromStore || 'anonym';
@@ -236,19 +236,19 @@
             if (!btn) return;
             btn.disabled = !enable;
             const status = streamStatus(stream);
-            // Klassen aktualisieren (alte Status-Klassen wegnehmen)
+            // Update classes (remove old status classes)
             btn.className = 'status-pill status-pill--' + status + (state.dirtyStreams.has(stream) ? ' status-pill--dirty' : '');
             const sm = (state.manifest && state.manifest.streams && state.manifest.streams[stream]) || {};
             const history = sm.history || [];
             const last = history.length ? history[history.length - 1] : null;
             const baseLine = (status === 'unverifiziert')
-                ? STREAM_LABEL[stream] + ': Pipeline-Output existiert, noch nicht menschlich verifiziert'
+                ? STREAM_LABEL[stream] + ': pipeline output exists, not yet human-verified'
                 : STREAM_LABEL[stream] + ': ' + STATUS_LABEL[status];
             btn.title = baseLine
-                + (last ? '\nzuletzt: ' + last.to + ' · ' + (last.by || '?') + ' · ' + (last.at || '').slice(0, 16) : '')
-                + '\nKlick wechselt: unverifiziert -> in Arbeit -> verifiziert';
+                + (last ? '\nlast: ' + last.to + ' · ' + (last.by || '?') + ' · ' + (last.at || '').slice(0, 16) : '')
+                + '\nClick cycles: unverified -> in progress -> verified';
             // announce the current status, not just "set status" (a11y)
-            btn.setAttribute('aria-label', STREAM_LABEL[stream] + '-Status: ' + STATUS_LABEL[status] + ' (Klick wechselt)');
+            btn.setAttribute('aria-label', STREAM_LABEL[stream] + ' status: ' + STATUS_LABEL[status] + ' (click to cycle)');
             btn.innerHTML =
                 '<span class="status-pill__stream">' + STREAM_LABEL[stream] + '</span>'
                 + '<span class="status-pill__dot"></span>'
@@ -256,7 +256,7 @@
         });
         refs.btnDlManifest.disabled = !state.manifest;
         refs.statusHint.textContent = state.manifestDirty
-            ? 'ungespeicherter Status · Speichern'
+            ? 'Unsaved status · Save'
             : '';
     }
 
@@ -290,16 +290,16 @@
     }
 
     function autoStartArbeit(stream) {
-        // Beim ersten Touch eines Edit-Toggles: unverifiziert -> in_arbeit
+        // On first touch of an edit toggle: unverifiziert -> in_arbeit
         if (!state.manifest) return;
         if (streamStatus(stream) === 'unverifiziert') {
-            setStreamStatus(stream, 'in_arbeit', { note: 'auto: Edit-Toggle aktiviert' });
+            setStreamStatus(stream, 'in_arbeit', { note: 'auto: edit toggle activated' });
         }
     }
 
-    // ============================================================ Identitaets-Chip (Kuerzel) ============================================================
+    // ============================================================ Identity chip (Initials) ============================================================
 
-    let identityCancelling = false; // ESC bricht ab, ohne dass das Blur-Commit speichert
+    let identityCancelling = false; // ESC cancels without the blur handler committing
 
     function currentAuthor() {
         return (window.localStorage && localStorage.getItem('zbz.workflow.by')) || '';
@@ -307,7 +307,7 @@
     function renderIdentity() {
         if (!refs.identityWho) return;
         const v = currentAuthor();
-        refs.identityWho.textContent = v || 'Kuerzel';
+        refs.identityWho.textContent = v || 'Initials';
         refs.btnIdentity.classList.toggle('identity-chip--empty', !v);
     }
     function startIdentityEdit() {
@@ -334,17 +334,17 @@
         refs.btnIdentity.hidden = false;
     }
 
-    // ============================================================ Speichern (alle Stroeme direkt ins Repo) ============================================================
+    // ============================================================ Save (all streams directly to repo) ============================================================
 
-    // Schreibt direkt in den verbundenen Repo-Ordner; faellt pro Datei auf Download
-    // zurueck, wenn nicht verbunden oder der Schreibzugriff scheitert. Ohne eigenen Toast
-    // (saveAll meldet gesammelt).
+    // Writes directly to the connected repo folder; falls back per file to download
+    // if not connected or if the write fails. No individual toast
+    // (saveAll reports collectively).
     async function persistSilent(fsWrite, dlFallback) {
-        // Auf Chromium (File System Access verfuegbar) wird ausschliesslich direkt ins Repo
-        // geschrieben; saveAll hat die Verbindung vorher sichergestellt. Ein Schreibfehler
-        // propagiert nach saveAll und wird dort sichtbar gemeldet -- KEIN stiller Download,
-        // der sonst verwirrende Dateien im Downloads-Ordner ablegt. Der Download bleibt nur
-        // der Weg, wenn die API gar nicht verfuegbar ist (Nicht-Chromium-Browser).
+        // On Chromium (File System Access available) writes go exclusively to the repo;
+        // saveAll has established the connection beforehand. A write error propagates
+        // to saveAll and is reported visibly there -- NO silent download that would
+        // deposit confusing files in the Downloads folder. Download is only the path
+        // when the API is unavailable (non-Chromium browsers).
         if (ZBZ.FsAccess && ZBZ.FsAccess.available) {
             await fsWrite();
             return true;
@@ -354,52 +354,52 @@
     }
 
     function renderSaveState() {
-        // Was ist ungespeichert? (zugleich Grundlage fuer den zustandsabhaengigen Tooltip)
+        // What is unsaved? (also the basis for the state-dependent tooltip)
         const parts = [];
-        if (state.layoutDirty) parts.push('Layout S.' + state.page);
-        if (state.textDirty)   parts.push((state.textSource === 'xml' || state.textSource === 'tei') ? 'TEI' : 'Text S.' + state.page);
+        if (state.layoutDirty) parts.push('Layout p.' + state.page);
+        if (state.textDirty)   parts.push((state.textSource === 'xml' || state.textSource === 'tei') ? 'TEI' : 'Text p.' + state.page);
         if (state.manifestDirty) parts.push('Status');
         const dirty = parts.length > 0;
         if (!refs.btnSave) return;
         refs.btnSave.disabled = !state.doc || !dirty;
         refs.btnSave.classList.toggle('btn--dirty', dirty);
         if (!dirty) {
-            refs.btnSave.title = 'Nichts zu speichern. Bearbeite Layout, Text oder Workflow-Status, dann wird gespeichert.';
+            refs.btnSave.title = 'Nothing to save. Edit layout, text, or workflow status first.';
         } else {
             const target = (ZBZ.FsAccess && ZBZ.FsAccess.available)
-                ? (ZBZ.FsAccess.isConnected() ? 'direkt ins Repo' : 'ins Repo (fragt einmal nach dem Ordner)')
-                : 'als Download';
-            refs.btnSave.title = 'Speichert ' + target + ': ' + parts.join(', ');
+                ? (ZBZ.FsAccess.isConnected() ? 'directly to repo' : 'to repo (will ask for folder once)')
+                : 'as download';
+            refs.btnSave.title = 'Saves ' + target + ': ' + parts.join(', ');
         }
     }
 
-    // Vor einem Seitenwechsel pruefen: Layout/Text-Edits sind per-Seite und gingen beim
-    // Wechsel verloren. Manifest-Dirty ist per-Dokument und ueberlebt die Navigation,
-    // blockiert sie also nicht. Gibt true zurueck, wenn der Wechsel erfolgen darf.
+    // Check before a page change: layout/text edits are per-page and are lost on navigation.
+    // Manifest dirty is per-document and survives navigation, so it does not block it.
+    // Returns true if the navigation may proceed.
     function confirmLeavePage() {
         if (!state.layoutDirty && !state.textDirty) return true;
-        return window.confirm('Ungespeicherte Aenderungen auf dieser Seite gehen verloren. Trotzdem wechseln?');
+        return window.confirm('Unsaved changes on this page will be lost. Navigate anyway?');
     }
 
-    // "Speichern" = alle ungespeicherten Stroeme als ein Akt: Layout (Seite), Text (Seite,
-    // OCR oder TEI je nach Quelle) und das Manifest (Workflow-Status + Provenienz). Jeder
-    // Strom landet an seiner richtigen Stelle im Repo. Kein Download (ausser Fallback).
+    // Save = all unsaved streams as one action: layout (page), text (page, OCR or TEI
+    // depending on source), and the manifest (workflow status + provenance). Each stream
+    // goes to its correct location in the repo. No download (except fallback).
     async function saveAll() {
         if (!state.doc) return;
         const dl = state.layoutDirty && state.layout && Array.isArray(state.layout.regions);
         const dt = state.textDirty;
         const dm = state.manifestDirty;
-        if (!dl && !dt && !dm) { ZBZ.toast('Nichts zu speichern', 'warn'); return; }
+        if (!dl && !dt && !dm) { ZBZ.toast('Nothing to save', 'warn'); return; }
 
-        // Direkt-Speichern: Auf Chromium MUSS ein Repo-Ordner verbunden sein. Ist er es nicht,
-        // einmal verbinden (mit Erst-Info). Klappt das nicht (Nutzer bricht ab oder erteilt kein
-        // Schreibrecht), brechen wir mit klarer Meldung ab, statt die Datei still in den
-        // Downloads-Ordner zu legen. Die Stroeme bleiben ungespeichert, nichts geht verloren;
-        // ein erneuter Klick (oder Export -> Download) ist moeglich.
+        // Direct save: on Chromium a repo folder must be connected. If not,
+        // connect once (with first-use info). If that fails (user cancels or denies
+        // write access), abort with a clear message instead of silently depositing the
+        // file in the Downloads folder. Streams remain unsaved, nothing is lost;
+        // a second click (or Export -> Download) is possible.
         if (ZBZ.FsAccess && ZBZ.FsAccess.available && !ZBZ.FsAccess.isConnected()) {
             await connectWithInfo();
             if (!ZBZ.FsAccess.isConnected()) {
-                ZBZ.toast('Nicht gespeichert: Repo-Ordner nicht verbunden oder kein Schreibrecht erteilt. Ordner "zbz-ocr-tei" verbinden und erneut Speichern (oder ueber Export herunterladen).', 'warn');
+                ZBZ.toast('Not saved: repo folder not connected or write access denied. Connect the "zbz-ocr-tei" folder and try Save again (or use Export to download).', 'warn');
                 return;
             }
         }
@@ -414,8 +414,8 @@
                     () => ZBZ.Download.layout(state.doc.id, state.page, state.layout.regions, meta)
                 ))) downloaded = true;
                 state.layoutDirty = false;
-                if (refs.regionCount) refs.regionCount.textContent = state.layout.regions.length + ' Regionen';
-                saved.push('Layout S.' + state.page);
+                if (refs.regionCount) refs.regionCount.textContent = state.layout.regions.length + ' regions';
+                saved.push('Layout p.' + state.page);
             }
             if (dt) {
                 const content = (state._currentEditedText != null) ? state._currentEditedText : state._currentText;
@@ -426,7 +426,7 @@
                     if (isTei) {
                         // writeTei replaces the whole SoT file -- only accept a complete TEI document
                         if (content.indexOf('<teiHeader') === -1 || content.indexOf('</TEI>') === -1) {
-                            ZBZ.toast('TEI nicht gespeichert: Inhalt ist kein vollstaendiges TEI-Dokument (teiHeader/TEI-Wurzel fehlt). Edit bleibt ungespeichert erhalten.', 'err');
+                            ZBZ.toast('TEI not saved: content is not a complete TEI document (teiHeader/TEI root missing). Edit is retained unsaved.', 'err');
                         } else {
                             if (!(await persistSilent(
                                 () => ZBZ.FsAccess.writeTei(state.doc.id, content),
@@ -442,7 +442,7 @@
                             () => ZBZ.Download.text(state.doc.id, state.page, content)
                         ))) downloaded = true;
                         state.textDirty = false;
-                        saved.push('Text S.' + state.page);
+                        saved.push('Text p.' + state.page);
                     }
                 }
             }
@@ -456,7 +456,7 @@
                 saved.push('Status');
             }
         } catch (err) {
-            ZBZ.toast('Speichern fehlgeschlagen: ' + (err && err.message), 'err');
+            ZBZ.toast('Save failed: ' + (err && err.message), 'err');
         }
 
         renderStatusPills();
@@ -464,24 +464,24 @@
         if (saved.length) {
             // a download is not a repo write -- be explicit about it (H2)
             if (downloaded) {
-                ZBZ.toast('Download erzeugt (Dateien manuell ins Repo legen): ' + saved.join(', '), 'warn');
+                ZBZ.toast('Download created (copy files to repo manually): ' + saved.join(', '), 'warn');
             } else {
-                ZBZ.toast('Gespeichert (Repo): ' + saved.join(', '), 'ok');
+                ZBZ.toast('Saved (repo): ' + saved.join(', '), 'ok');
             }
         }
     }
 
-    // ============================================================ Export-Dropdown (Einzel-Download) ============================================================
+    // ============================================================ Export dropdown (single-file download) ============================================================
 
     function exportLayout() {
-        if (!state.doc || !state.layout) { ZBZ.toast('Keine Layout-Daten', 'warn'); return; }
+        if (!state.doc || !state.layout) { ZBZ.toast('No layout data', 'warn'); return; }
         ZBZ.Download.layout(state.doc.id, state.page, state.layout.regions, layoutSourceMeta());
         closeExportMenu();
     }
     function exportText() {
         if (!state.doc) return;
         const content = (state._currentEditedText != null) ? state._currentEditedText : state._currentText;
-        if (!content) { ZBZ.toast('Kein Text geladen', 'warn'); return; }
+        if (!content) { ZBZ.toast('No text loaded', 'warn'); return; }
         ZBZ.Download.text(state.doc.id, state.page, content);
         closeExportMenu();
     }
@@ -489,12 +489,12 @@
         if (!state.doc) return;
         let xml = state._currentEditedText;
         if (!xml || state.textSource !== 'xml') xml = await loadTeiFinal(state.doc.id);
-        if (!xml) { ZBZ.toast('Kein TEI verfuegbar', 'warn'); return; }
+        if (!xml) { ZBZ.toast('No TEI available', 'warn'); return; }
         ZBZ.Download.tei(state.doc.id, xml, 'curated');
         closeExportMenu();
     }
     function exportManifest() {
-        if (!state.manifest) { ZBZ.toast('Kein Manifest geladen', 'warn'); return; }
+        if (!state.manifest) { ZBZ.toast('No manifest loaded', 'warn'); return; }
         ZBZ.Download.manifest(state.doc.id, state.manifest);
         closeExportMenu();
     }
@@ -517,10 +517,10 @@
         if (!refs.exportMenu.contains(e.target) && e.target !== refs.btnExportMenu) closeExportMenu();
     }
 
-    // ============================================================ Repo-Ordner (File System Access) ============================================================
+    // ============================================================ Repo folder (File System Access) ============================================================
 
-    // Einmalige Info beim ersten Verbinden: erklaert WELCHEN Ordner waehlen + WAS passiert,
-    // bevor der native Ordner-Dialog aufgeht. Danach gemerkt (localStorage).
+    // One-time info on first connect: explains WHICH folder to choose and WHAT happens
+    // before the native folder dialog opens. Remembered afterwards (localStorage).
     function connectWithInfo() {
         return new Promise((resolve) => {
             if (!ZBZ.FsAccess || !ZBZ.FsAccess.available) { resolve(false); return; }
@@ -535,7 +535,7 @@
             showFsaInfo(proceed, cancel);
         });
     }
-    // modal a11y: focus restore target + document-level key handler (ESC, Tab trap)
+    // Modal a11y: focus restore target + document-level key handler (ESC, Tab trap)
     let fsaInfoPrevFocus = null;
     let fsaInfoKeydown = null;
 
@@ -565,7 +565,7 @@
         fsaInfoPrevFocus = null;
     }
 
-    // ============================================================ Page laden ============================================================
+    // ============================================================ Page loading ============================================================
 
     // Only the newest page load may render (rapid paging overlaps async fetches)
     let pageLoadSeq = 0;
@@ -574,8 +574,8 @@
         if (!state.doc) return;
         const seq = ++pageLoadSeq;
         const doc = state.doc, page = state.page;
-        // Seitenwechsel: Layout/Text sind per-Seite -> Dirty-Zustand der alten Seite
-        // verfaellt (Manifest-Dirty bleibt, da per-Dokument).
+        // Page change: layout/text are per-page, so the dirty state of the old page
+        // expires (manifest dirty persists as it is per-document).
         state.layoutDirty = false;
         state.textDirty = false;
         state._currentEditedText = null;
@@ -585,8 +585,8 @@
         refs.btnNext.disabled = page >= (doc.page_count || 1);
         ZBZ.setParams({ page });
 
-        // Leerseite vorab bestimmen (aus Mistral-Basis-OCR), damit Faksimile UND Text
-        // konsistent reagieren: keine Phantom-Regionen, kein OCR-Muell.
+        // Detect blank page upfront (from Mistral base OCR) so facsimile AND text
+        // respond consistently: no phantom regions, no OCR garbage.
         state._isBlank = await detectBlankPage(doc.id, page);
         if (seq !== pageLoadSeq) return;
 
@@ -596,9 +596,9 @@
     }
 
     async function detectBlankPage(doc, page) {
-        // E63 Schritt 3: primaer den <pb type="blank"/>-Marker aus der per-Seiten-TEI
-        // lesen (deterministisch, vom Korpus-Skript projiziert). Fallback auf die
-        // OCR-Heuristik (isBlankPageText), falls die per-Seiten-TEI fehlt.
+        // E63 step 3: primarily read the <pb type="blank"/> marker from the per-page TEI
+        // (deterministic, projected by the corpus script). Falls back to the
+        // OCR heuristic (isBlankPageText) if the per-page TEI is missing.
         const ck = 'blank:' + doc + ':' + page;
         if (cache.has(ck)) return cache.get(ck);
         let blank = false;
@@ -614,7 +614,7 @@
     }
 
     async function renderFacsimile() {
-        // Alten OSD-Viewer immer destroyen vor Re-Render
+        // Always destroy the old OSD viewer before re-rendering
         destroyOsd();
         refs.imageBody.innerHTML = '';
 
@@ -632,7 +632,7 @@
         }
     }
 
-    // ---- OSD-Variante (View-Modus, pan + zoom) ----
+    // ---- OSD variant (view mode, pan + zoom) ----
     async function renderFacsimileOsd() {
         const doc = state.doc, page = state.page;
         refs.imageBody.classList.add('panel__body--canvas');
@@ -640,24 +640,24 @@
         const container = ZBZ.el('div', { cls: 'facsimile-osd', attrs: { id: 'osd-container' } });
         refs.imageBody.appendChild(container);
 
-        // Lade-Hinweis: OSD laedt das komplette (oft mehrere MB grosse) PNG ungetilet und
-        // dekodiert es vor der ersten Darstellung -> ohne Hinweis bliebe das Panel sekundenlang
-        // leer. Wird bei 'open' (Erfolg) bzw. 'open-failed' (Fehler ersetzt innerHTML) entfernt.
-        const loading = ZBZ.el('div', { cls: 'facsimile-loading', text: 'Lade Faksimile…' });
+        // Loading hint: OSD loads the full (often several MB) PNG untiled and decodes it
+        // before the first render, so without a hint the panel would stay blank for seconds.
+        // Removed on 'open' (success) or replaced by an error message on 'open-failed'.
+        const loading = ZBZ.el('div', { cls: 'facsimile-loading', text: 'Loading facsimile...' });
         refs.imageBody.appendChild(loading);
 
-        // Layout vorab laden, Overlays werden nach OSD-'open' angehaengt
+        // Load layout upfront; overlays are attached after OSD 'open'
         const layout = await fetchLayout(doc.id, page);
         if (state.doc !== doc || state.page !== page || state.imageEdit) return; // race guard
         state.layout = layout;
-        // Leerseite: Phantom-Regionen (Gemini halluziniert Kaesten in den Durchschlag)
-        // nicht zeichnen und die irrefuehrende Zahl durch 'Leerseite' ersetzen.
+        // Blank page: do not draw phantom regions (Gemini hallucinates boxes on carbon copies)
+        // and replace the misleading count with a blank-page label.
         if (state._isBlank) {
-            refs.regionCount.textContent = 'Leerseite';
+            refs.regionCount.textContent = 'Blank page, no text';
         } else {
             refs.regionCount.textContent = (layout && layout.regions)
-                ? layout.regions.length + ' Regionen'
-                : 'keine Layout-Daten';
+                ? layout.regions.length + ' regions'
+                : 'no layout data';
         }
 
         const imgUrl = ZBZ.path.image(doc.id, page);
@@ -691,7 +691,7 @@
             if (state.osdViewer !== viewer) return;
             destroyOsd(); // before innerHTML, else canvas + listeners leak
             refs.imageBody.innerHTML =
-                '<div class="empty">Faksimile nicht verfuegbar fuer Seite ' + page +
+                '<div class="empty">Facsimile not available for page ' + page +
                 '<br><code style="font-size:0.85em">' + ZBZ.esc(imgUrl) + '</code></div>';
         });
     }
@@ -716,7 +716,7 @@
         });
     }
 
-    // ---- Img-Variante (Layout-Edit-Modus, statisch, mit altem Editor) ----
+    // ---- Img variant (layout edit mode, static, with custom editor) ----
     async function renderFacsimileImg() {
         const doc = state.doc, page = state.page;
         refs.imageBody.classList.remove('panel__body--canvas');
@@ -724,11 +724,11 @@
         const facs = ZBZ.el('div', { cls: 'facsimile' });
         const img = ZBZ.el('img', {
             cls: 'facsimile__img',
-            attrs: { src: ZBZ.path.image(doc.id, page), alt: 'Faksimile Seite ' + page, loading: 'eager' }
+            attrs: { src: ZBZ.path.image(doc.id, page), alt: 'Facsimile page ' + page, loading: 'eager' }
         });
         img.addEventListener('error', () => {
             refs.imageBody.innerHTML =
-                '<div class="empty">Faksimile nicht verfuegbar fuer Seite ' + page +
+                '<div class="empty">Facsimile not available for page ' + page +
                 '<br><code style="font-size:0.85em">' + ZBZ.esc(ZBZ.path.image(doc.id, page)) + '</code></div>';
         });
 
@@ -741,10 +741,10 @@
         if (state.doc !== doc || state.page !== page || !state.imageEdit) return;
         state.layout = layout;
         if (layout && layout.regions) {
-            refs.regionCount.textContent = layout.regions.length + ' Regionen';
+            refs.regionCount.textContent = layout.regions.length + ' regions';
             renderRegionOverlay(overlay, layout.regions);
         } else {
-            refs.regionCount.textContent = 'keine Layout-Daten';
+            refs.regionCount.textContent = 'no layout data';
         }
 
         if (state.imageEdit && ZBZ.LayoutEditor) {
@@ -784,18 +784,18 @@
     function onLayoutChanged(regions) {
         if (!state.layout) state.layout = { regions: [] };
         state.layout.regions = regions;
-        refs.regionCount.textContent = regions.length + ' Regionen (geaendert)';
+        refs.regionCount.textContent = regions.length + ' regions (edited)';
         state.layoutDirty = true;
         renderSaveState();
-        // E66: erste echte Layout-Aenderung -> Strom auf in_arbeit
+        // E66: first real layout change -> set stream to in_arbeit
         autoStartArbeit('layout');
     }
 
-    // ============================================================ Text-Panel ============================================================
+    // ============================================================ Text panel ============================================================
 
     function textPanelTitle() {
-        if (state.textSource === 'tei') return 'TEI · gerendert';
-        if (state.textSource === 'xml') return 'TEI · XML (Gesamtdokument)';
+        if (state.textSource === 'tei') return 'TEI · rendered';
+        if (state.textSource === 'xml') return 'TEI · XML (full document)';
         return 'OCR · ' + state.ocrSource;
     }
 
@@ -805,27 +805,27 @@
         // True once doc/page/source changed mid-fetch -- a stale response must not render.
         const stale = () => (state.doc !== doc || state.page !== page || state.textSource !== src);
 
-        // Leerseite: ruhiger Hinweis statt OCR-Muell ('.', '^{}[]', leere Tabelle).
-        // Im Text-Edit-Modus normal rendern, damit der Rohtext bei Bedarf bereinigt
-        // werden kann. XML mode is exempt (shows the whole document).
+        // Blank page: show a quiet notice instead of OCR garbage ('.', '^{}[]', empty table).
+        // In text edit mode render normally so the raw text can be cleaned if needed.
+        // XML mode is exempt (shows the whole document).
         if (state._isBlank && !state.textEdit && state.textSource !== 'xml') {
             refs.textTitle.textContent = textPanelTitle();
             refs.textBody.innerHTML = '';
             refs.textBody.appendChild(ZBZ.el('div', {
-                cls: 'empty empty--blank-page', text: 'Leerseite — kein Text'
+                cls: 'empty empty--blank-page', text: 'Blank page, no text'
             }));
             state._currentText = null;
             return;
         }
 
-        refs.textBody.innerHTML = '<div class="empty">Lade…</div>';
+        refs.textBody.innerHTML = '<div class="empty">Loading...</div>';
 
         if (state.textSource === 'ocr') {
             refs.textTitle.textContent = 'OCR · ' + state.ocrSource;
             const res = await ZBZ.fetchFirstOk(ZBZ.path.ocr(state.ocrSource, doc.id, page));
             if (stale()) return;
             if (!res) {
-                renderLoadError('Keine OCR-Daten fuer ' + state.ocrSource + ' / Seite ' + page);
+                renderLoadError('No OCR data for ' + state.ocrSource + ' / page ' + page);
                 state._currentText = null;
                 return;
             }
@@ -833,11 +833,11 @@
             renderOcrText(res.text);
         }
         else if (state.textSource === 'tei') {
-            refs.textTitle.textContent = 'TEI · gerendert';
+            refs.textTitle.textContent = 'TEI · rendered';
             const xml = await loadTeiPage(doc.id, page);
             if (stale()) return;
             if (!xml) {
-                renderLoadError('Kein TEI fuer Seite ' + page);
+                renderLoadError('No TEI for page ' + page);
                 return;
             }
             state.teiXml = xml;
@@ -847,11 +847,11 @@
         else if (state.textSource === 'xml') {
             // Must load the FULL final TEI: saving overwrites {doc}_final.xml as a
             // whole (E72). Loading a single page here would destroy the rest on save.
-            refs.textTitle.textContent = 'TEI · XML (Gesamtdokument)';
+            refs.textTitle.textContent = 'TEI · XML (full document)';
             const xml = await loadTeiFinal(doc.id);
             if (stale()) return;
             if (!xml) {
-                renderLoadError('Kein finales TEI fuer Dokument ' + doc.id);
+                renderLoadError('No final TEI for document ' + doc.id);
                 return;
             }
             state.teiXml = xml;
@@ -863,14 +863,14 @@
     // Failed loads: name the cause (missing file vs network) and offer a retry.
     function renderLoadError(what) {
         const cause = (ZBZ.lastFetchError === 'network')
-            ? 'Netzwerkfehler — Verbindung pruefen.'
-            : 'Datei nicht vorhanden (404).';
+            ? 'Network error, check connection.'
+            : 'File not found (404).';
         refs.textBody.innerHTML = '';
         const box = ZBZ.el('div', { cls: 'empty' });
         box.appendChild(ZBZ.el('div', { text: what + '. ' + cause }));
         box.appendChild(ZBZ.el('button', {
             cls: 'btn btn--sm empty__retry',
-            text: 'Erneut versuchen',
+            text: 'Retry',
             on: { click: () => renderTextPanel() }
         }));
         refs.textBody.appendChild(box);
@@ -878,8 +878,8 @@
 
     function renderOcrText(text) {
         refs.textBody.innerHTML = '';
-        // Im Text-Edit-Modus erwartet der Editor den Markdown-Rohtext im DOM.
-        // Sonst wird Markdown -> HTML gerendert fuer Lesbarkeit.
+        // In text edit mode the editor expects the raw Markdown in the DOM.
+        // Otherwise Markdown is rendered to HTML for readability.
         if (state.textEdit) {
             const div = ZBZ.el('div', { cls: 'text text--raw', text });
             refs.textBody.appendChild(div);
@@ -901,13 +901,13 @@
         if (doc.title)  parts.push(ZBZ.el('span', { cls: 'meta-item meta-item--title', text: doc.title }));
         if (doc.author) parts.push(ZBZ.el('span', { cls: 'meta-item', text: doc.author }));
         if (doc.lang)   parts.push(ZBZ.el('span', { cls: 'meta-item', text: doc.lang }));
-        parts.push(ZBZ.el('span', { cls: 'meta-item', text: 'Typ ' + (doc.type || '—') }));
-        parts.push(ZBZ.el('span', { cls: 'meta-item', text: (doc.page_count || '?') + ' S.' }));
+        parts.push(ZBZ.el('span', { cls: 'meta-item', text: 'Type ' + (doc.type || '—') }));
+        parts.push(ZBZ.el('span', { cls: 'meta-item', text: (doc.page_count || '?') + ' pp.' }));
         parts.forEach((node, i) => {
             if (i > 0) meta.appendChild(ZBZ.el('span', { cls: 'sep', text: '·' }));
             meta.appendChild(node);
         });
-        // E66: Screening-Badge wurde durch Workflow-Status-Pills (zweite Subbar-Zeile) abgeloest.
+        // E66: screening badge replaced by workflow status pills (second subbar row).
     }
 
     function ensureTextEditableState() {
@@ -916,7 +916,7 @@
                 state._currentEditedText = newContent;
                 state.textDirty = true;
                 renderSaveState();
-                // E66: erste echte Text-Aenderung -> zugehoerigen Strom auf in_arbeit
+                // E66: first real text change -> set corresponding stream to in_arbeit
                 autoStartArbeit(state.textSource === 'ocr' ? 'ocr' : 'tei');
             });
         }
@@ -940,23 +940,23 @@
         return xml;
     }
 
-    // ============================================================ Edit-Toggles (E60) ============================================================
+    // ============================================================ Edit toggles (E60) ============================================================
 
     function setImageEdit(on) {
         const prev = state.imageEdit;
         state.imageEdit = !!on;
         refs.btnImageEdit.setAttribute('aria-pressed', state.imageEdit ? 'true' : 'false');
 
-        // Layout-Toolbar toggle (zeigt + Region, Loeschen, Typ-Selector)
+        // Layout toolbar toggle (shows: add region, delete, type selector)
         refs.layoutToolbar.classList.toggle('hidden', !state.imageEdit);
 
         if (prev !== state.imageEdit) {
-            // Editor immer detachen vor Re-Render (greift auf altes DOM zu)
+            // Always detach editor before re-rendering (it holds references to the old DOM)
             if (ZBZ.LayoutEditor) ZBZ.LayoutEditor.detach();
-            // Faksimile-Variante wechselt: OSD (view) <-> img (edit). renderFacsimileImg() attached Editor.
+            // Facsimile variant switches: OSD (view) <-> img (edit). renderFacsimileImg() attaches the editor.
             renderFacsimile();
-            // Hinweis: Der Status-Uebergang offen -> in_arbeit erfolgt erst bei der ERSTEN
-            // echten Region-Aenderung (onLayoutChanged), nicht schon beim Oeffnen des Editors.
+            // Note: the status transition unverifiziert -> in_arbeit happens only on the FIRST
+            // real region change (onLayoutChanged), not on opening the editor.
         }
     }
 
@@ -967,29 +967,28 @@
 
         if (prev === state.textEdit) return;
 
-        // Editor immer detachen bevor Mode-Wechsel; ensureTextEditableState() re-attached wenn noetig
+        // Always detach editor before mode switch; ensureTextEditableState() re-attaches when needed
         if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
 
-        // TEI-Bearbeitung nur im XML-Modus: die gerenderte TEI laesst sich nicht zurueck-
-        // serialisieren (transcription-editor liest nur innerText) und Speichern/Export nehmen
-        // TEI-Edits ausschliesslich aus dem XML-Modus mit. Wuerde man hier auf der gerenderten
-        // TEI editieren, gingen die Aenderungen beim Speichern verloren. Daher beim
-        // Aktivieren von Text-Edit auf gerenderter TEI auf die XML-Quelle umschalten.
+        // TEI editing only in XML mode: the rendered TEI cannot be round-tripped
+        // (transcription-editor reads innerText only), and save/export take TEI edits
+        // exclusively from XML mode. Editing on the rendered TEI would lose changes on save.
+        // Switch to the XML source when text edit is activated on rendered TEI.
         if (state.textEdit && state.textSource === 'tei') {
-            ZBZ.toast('TEI-Bearbeitung im XML-Modus (gerendert ist Lese-Ansicht)', 'info');
-            setTextSource('xml');   // rendert XML + ensureTextEditableState() attached den Editor
+            ZBZ.toast('TEI editing uses XML mode (rendered view is read-only)', 'info');
+            setTextSource('xml');   // renders XML + ensureTextEditableState() attaches the editor
             return;
         }
 
-        // OCR-Panel rendering wechselt: gerenderter Markdown <-> Rohtext.
-        // renderTextPanel() deckt Leerseite (Hinweis) und Edit/Lese-Modus konsistent ab.
+        // OCR panel rendering switches: rendered Markdown <-> raw text.
+        // renderTextPanel() handles blank page (notice) and edit/read mode consistently.
         if (state.textSource === 'ocr') {
             renderTextPanel();
         } else {
             ensureTextEditableState();
         }
-        // Hinweis: Der Status-Uebergang offen -> in_arbeit erfolgt erst bei der ERSTEN
-        // echten Text-Aenderung (onChange in ensureTextEditableState), nicht beim Oeffnen.
+        // Note: the status transition unverifiziert -> in_arbeit happens only on the FIRST
+        // real text change (onChange in ensureTextEditableState), not on opening.
     }
 
     function setTextSource(src) {
@@ -998,15 +997,15 @@
         renderTextPanel();
     }
 
-    // ============================================================ Speichern (Direkt-Schreiben oder Download) ============================================================
+    // ============================================================ Save (direct write or download) ============================================================
 
-    // Wenn ein Repo-Ordner verbunden ist (File System Access API), direkt in den Working
-    // Tree schreiben; sonst (oder bei Schreibfehler) auf ZBZ.Download zurueckfallen.
+    // If a repo folder is connected (File System Access API), write directly to the working tree;
+    // otherwise (or on write error) fall back to ZBZ.Download.
     function layoutSourceMeta() {
         return {
             source: 'curated',
             original_source: state.layout.source || 'gemini',
-            // Bildgroesse mitschreiben, damit die kuratierte JSON selbsttragend ist
+            // Record image dimensions so the curated JSON is self-contained
             image_width: state.layout.image_width || 0,
             image_height: state.layout.image_height || 0
         };
@@ -1054,7 +1053,7 @@
         refs.btnTextEdit.addEventListener('click', () => setTextEdit(!state.textEdit));
         refs.textSourceBtns.forEach(b => b.addEventListener('click', () => setTextSource(b.getAttribute('data-text-source'))));
 
-        // Speichern (alle Stroeme direkt ins Repo) + Export-Dropdown (Einzel-Download)
+        // Save (all streams directly to repo) + Export dropdown (single-file download)
         if (refs.btnSave) refs.btnSave.addEventListener('click', saveAll);
         if (refs.btnExportMenu) refs.btnExportMenu.addEventListener('click', (e) => { e.stopPropagation(); toggleExportMenu(); });
         refs.btnDlLayout.addEventListener('click', exportLayout);
@@ -1062,7 +1061,7 @@
         refs.btnDlTei.addEventListener('click', exportTei);
         refs.btnDlManifest.addEventListener('click', exportManifest);
 
-        // Identitaets-Chip (Kuerzel): Klick -> Inline-Feld; Enter/Blur speichert, ESC bricht ab.
+        // Identity chip (Initials): click -> inline field; Enter/blur commits, ESC cancels.
         if (refs.btnIdentity) refs.btnIdentity.addEventListener('click', startIdentityEdit);
         if (refs.identityInput) {
             refs.identityInput.addEventListener('blur', commitIdentityEdit);
@@ -1072,12 +1071,12 @@
             });
         }
 
-        // E66: Status-Pills klick = naechster Status (Cycle)
+        // E66: status pill click = cycle to next status
         refs.statusOcr.addEventListener('click', () => cycleStatus('ocr'));
         refs.statusLayout.addEventListener('click', () => cycleStatus('layout'));
         refs.statusTei.addEventListener('click', () => cycleStatus('tei'));
 
-        // Warnen vor Verlassen mit ungespeicherten Status-Aenderungen
+        // Warn before leaving with unsaved status changes
         window.addEventListener('beforeunload', (e) => {
             if (state.manifestDirty || state.layoutDirty || state.textDirty) {
                 e.preventDefault();

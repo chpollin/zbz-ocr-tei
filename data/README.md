@@ -2,10 +2,10 @@
 
 Input and reference data. Two categories with different versioning rules:
 
-- **`source/`** — delivered by ZBZ, immutable input ("what we started with").
-  Mostly **not versioned** (in `.gitignore`); only the editorial guidelines (text) are tracked.
-- **everything else** — project-built authority, **git-tracked**: schema and curated
-  gold TEI. Plus a generated classification cache.
+- `source/`: delivered by ZBZ, immutable input ("what we started with").
+  Mostly not versioned (in `.gitignore`); only the editorial guidelines (text) are tracked.
+- everything else is project-built authority and git-tracked: schema, the reserved
+  curated gold TEI folder, and a generated classification cache.
 
 ## Structure
 
@@ -33,7 +33,7 @@ data/
 | Catalog + steering | `source/masterfile/Masterfile.xlsx` | ZBZ Alma / swisscovery + project workflow |
 | Editorial guidelines | `source/guidelines/` | ZBZ (DTA base format + ZBZ-specific deviations) |
 
-**Corpus counts are deliberately not recorded here.** Quantities (delivered docs, pages,
+Corpus counts are deliberately not recorded here. Quantities (delivered docs, pages,
 languages, genres) live only in the generated audit artifact, bound to a
 `(source, unit, extraction)` triple:
 
@@ -41,8 +41,9 @@ languages, genres) live only in the generated audit artifact, bound to a
 python -m scripts.eval.corpus_audit
 ```
 
-See [knowledge/projekt.md](../knowledge/projekt.md) for the funnel and
-[knowledge/quality.md](../knowledge/quality.md) for the reference-TEI role.
+See [knowledge/project.md](../knowledge/project.md) for the funnel and
+[knowledge/specification.md](../knowledge/specification.md) for the reference-TEI role
+in the quality measurement.
 
 ## Note
 

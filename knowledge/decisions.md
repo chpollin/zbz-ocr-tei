@@ -9,525 +9,346 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-02-18
-updated: 2026-06-10
+updated: 2026-07-07
 tags: [zbz-ocr-tei, decisions, open, decided]
 ---
 
 # Decisions
 
-Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, sammelt aus allen Dokumenten.
+Consolidated register of all decisions and open questions. Cross-cutting, collected from all documents. Entries are dated records; later corrections are inline update annotations, never silent rewrites.
 
 ---
 
-## Entschieden (E1-E63)
+## Decided (E1-E63)
 
-| # | Entscheidung | Begruendung | Datum | Dokument |
+| # | Decision | Rationale | Date | Document |
 |---|---|---|---|---|
-| E1 | Hybrid Pipeline: Docling (Layout) + LLM-OCR (Text) | Layout-Analyse ohne OCR, OCR separat | 2026-01-29 | [pipeline.md](pipeline.md) |
-| E2 | Docling nur fuer Layout, nicht fuer OCR | RapidOCR hat Encoding-Probleme (`e → O`) bei FR | 2026-01-29 | [pipeline.md](pipeline.md) |
-| E3 | Deterministisch zuerst, LLM nur fuer komplexe Faelle | reproduzierbar, kosteneffizient, debuggbar | 2026-01-29 | [pipeline.md](pipeline.md) |
-| E4 | 4 Dokumenttypen (A-D) klassifiziert | unterschiedliche Pipeline-Strategien | 2026-01-29 | [projekt.md](projekt.md) |
-| E6 | Mistral OCR 3 als Production Engine | ZBZ hat Azure-Zugang, keine GPU noetig | 2026-02-14 | [pipeline.md](pipeline.md) |
-| E7 | Honorar unveraendert | Azure-Integration ohne Mehrkosten | 2026-02-14 | [projekt.md](projekt.md) |
-| E8 | konfigurierbare API-Endpoints | Wechsel zwischen lokal und Azure | 2026-02-14 | [infrastruktur.md](infrastruktur.md) |
-| E9 | Containerisierung mit Podman | ZBZ nutzt kein Docker, Podman OCI-kompatibel | 2026-02-14 | [infrastruktur.md](infrastruktur.md) |
-| E10 | Fork auf GitLab Uni Zuerich | ZBZ betreibt eigene Instanz | 2026-02-14 | [infrastruktur.md](infrastruktur.md) |
-| E13 | Export als PAGE-XML + METS fuer coOCR | coOCR erwartet PAGE-XML 2013-07-15 + PNG | 2026-02-20 | [pipeline.md](pipeline.md) |
-| E14 | Markdown-Formatierung bewahren | coOCR speichert Text as-is in `<Unicode>` | 2026-02-20 | [pipeline.md](pipeline.md) |
-| E15 | Dashboard-Redesign: Multi-Page UI mit shared CSS/JS | Unified Design System, statische JSON-Daten | 2026-02-25 | [pipeline.md](pipeline.md) |
-| E16 | Page-by-page Comparison fuer Monografien (>10 TEI-Seiten) | Global Alignment scheitert ab ~50 Seiten | 2026-02-25 | [pipeline.md](pipeline.md) |
-| E17 | LLM-Korrektur optional, nicht default | verschlechtert Docs mit CER <5% | 2026-02-25 | [pipeline.md](pipeline.md) |
-| E18 | Content-based Page Matching statt fester Offset | TEI-facs-Nummern ≠ PDF-Seiten | 2026-02-25 | [pipeline.md](pipeline.md) |
-| E19 | Layout: Docling + Gemini hybrid | Docling mAP 0.699, 17 Klassen, free; Gemini als Validator | 2026-02-25 | [pipeline.md](pipeline.md) |
-| E20 | Docling 2.75 als Layout-Engine bestaetigt | Type-Sample bestanden, 0.4-3.3s/Seite | 2026-02-25 | [pipeline.md](pipeline.md) |
-| E21 | Scope-Expansion: volle Pipeline in zbz-ocr-tei | Meeting 25.02.: OCR + Layout + PAGE-XML + NER + TEI | 2026-02-25 | [pipeline.md](pipeline.md) |
-| E22 | TEI-Generator direkt aus Layout+OCR (ohne PAGE-XML) | spaeter erweitert bei NER/PAGE-XML | 2026-02-25 | [pipeline.md](pipeline.md) |
-| E23 | Datenlieferung Feb 2026: 286 PDFs + 25 TEI-XMLs + 24 PAGE-XML-Exports | PAGE-XML Schema 2013-07-15, leer | 2026-02-27 | [projekt.md](projekt.md) |
-| E24 | docling-serve API fuer Layout (keine lokale GPU) | Docker Container, identisches Output-Format | 2026-03-03 | [pipeline.md](pipeline.md) |
-| E25 | Gemini 3.1 Flash Lite als Layout-QA-Validator | Overlay-PNG + Layout-JSON → korrigiertes JSON, Structured Output | 2026-03-03 | [pipeline.md](pipeline.md) |
-| E26 | Gemini Layout-Detect-Modus | Docling scheitert auf ~15% (landscape, multi-column), 3 Modi qa/detect/auto | 2026-03-04 | [pipeline.md](pipeline.md) |
-| E27 | Gemini-Dokumentklassifikation (Stage 1a) | 271/286 ohne Metadaten, Heuristiken versagen (7/15 falsch) | 2026-03-05 | [pipeline.md](pipeline.md) |
-| E28 | Online-Demo: 4 DEMO-Docs auf GitHub Pages | volle Daten nur lokal (gitignored) | 2026-03-05 | [pipeline.md](pipeline.md) |
-| E29 | Gemini OCR-Korrektur Stage 2b | 2-Schritt (Analyse + Korrektur), Variant A/B | 2026-03-05 | [pipeline.md](pipeline.md) |
-| E30 | Gemini Vision TEI Generator + dokumenttypspezifische Prompts | 4-Ebenen-Prompts (Layout-Typ, Pub-Form, Genre, Sprache), 12 Genre-Prompts | 2026-03-06 | [pipeline.md](pipeline.md) |
-| E31 | Layout-QA Full Run + Overlay-Generator | `--mode auto --force` auf 286 Docs, 14.708 Korrekturen | 2026-03-06 | [pipeline.md](pipeline.md) |
-| E32 | Unified TEI Pipeline (Scaffold + Gemini + Assembly) | 4 Stufen, 50/50 VALID im Pilot | 2026-03-07 | [pipeline.md](pipeline.md) |
-| E33 | Digitale Edition (`docs/`) | oeffentliche Website neben internem Dashboard | 2026-03-06 | [viewer.md](viewer.md) |
-| E34 | NER Pipeline + Entity Index (Phase 3) | Post-hoc NER via Gemini Flash Lite (6 Typen), Wikidata als Primaer-ID | 2026-03-07 | [pipeline.md](pipeline.md) |
-| E35 | NER Production-Ready (Phase 3 Scale-Up) | 7 Qualitaetsverbesserungen vor Production Run (Known-Entities-Hint, Diakritik-Matching, Surname-Fallback, 4-Stufen-Konfidenz, OCR-Chunking) | 2026-03-08 | [pipeline.md](pipeline.md) |
-| E36 | Curation Editor (Editor in the Loop) | FastAPI Server, 11 API-Endpoints, WYSIWYG | 2026-03-08 | [viewer.md](viewer.md) |
-| E37 | TEI Validation Quality Gate + Entity-Tagging Fix | 2-Ebenen (Errors blockierend / Warnings informativ), W1-W10, HTML-Report Default | 2026-03-15 | [pipeline.md](pipeline.md) |
-| E38 | Entity-Tagging typkorrekt mit internen IDs | `annotate_entities()` nutzt Entity Index fuer typkorrekte Tags mit interner ID als ref | 2026-03-15 | [pipeline.md](pipeline.md) |
-| E39 | Sprach-Mapping + facsimile/pb Fix | mehrsprachige Codes (`fra/deu`) korrekt mappen, leere `<surface>` fuer Seiten ohne Layout-Zones | 2026-03-15 | [pipeline.md](pipeline.md) |
-| E40 | div-Merge: Seiten-divs zu Dokument-divs | Post-Assembly-Fix `_merge_page_divs()`, Referenz-Vergleich `--compare-ref` | 2026-03-15 | [pipeline.md](pipeline.md) |
-| E41 | Agent-Based Quality Screening als Pre-Curation | strukturiertes 7-Schichten-Review, Review-JSON pro Doc | 2026-03-15 | [quality.md](quality.md) |
-| E42 | `<revisionDesc>` als Screening-Status im TEI-Header | Status reist mit dem Dokument | 2026-03-15 | [pipeline.md](pipeline.md) |
-| E43 | `output/tei_final/` als Single Source of Truth | nur gescreente TEIs werden publiziert | 2026-03-15 | [pipeline.md](pipeline.md) |
-| E44 | Entity-Stopwort-Erweiterung noetig | Screening zeigt: Mensch, Est, Gott, Rolle, Wahl, Christ → False Positives | 2026-03-15 | [pipeline.md](pipeline.md) |
-| E45 | Entity-Stopwort-Erweiterung durchgefuehrt | 20 neue Eintraege, Reassembly 32 Docs, alle VALID | 2026-03-15 | [pipeline.md](pipeline.md) |
-| E46 | OCR-Deduplizierung als deterministische Nachbearbeitung | `ocr_dedup.py`: Token-Loops, Barcode-Artefakte, Jahrzahl-Wiederholungen | 2026-03-15 | [pipeline.md](pipeline.md) |
-| E47 | `div type="essay"` kein valider DTA-Typ | `type="text"` als generischer Ersatz fuer philosophische Essays | 2026-03-15 | [pipeline.md](pipeline.md) |
-| E48 | projektspezifisches Schema `zbz_hersch.rng` | generisches `tei_all.rng` ersetzt durch projektspezifisches Schema (aus ODD, 551 Definitionen) | 2026-03-26 | [pipeline.md](pipeline.md), [quality.md](quality.md) |
-| E49 | Editionsrichtlinien ZBZ als verbindliche Referenz | vollstaendige Richtlinien als `data/source/guidelines/Editionsrichtlinien_ZBZ.md` | 2026-03-26 | [pipeline.md](pipeline.md) |
-| E50 | Dual-Attribut-Strategie fuer Entity-Referenzen | `ref="GND:..."` (primaer) + `corresp="#zbz-p.N"` (intern) | 2026-03-26 | [pipeline.md](pipeline.md) |
-| E51 | End-to-End CER-Benchmark (TEI vs TEI) | 25 ZBZ-Referenz-TEIs als Ground Truth, `benchmark_cer.py` mit stratifizierter Analyse | 2026-03-26 | [quality.md](quality.md) |
-| E54 | wissenschaftliche CER-Re-Evaluation | BCa-Bootstrap (B=10000, Seed=42), Paired Bootstrap E2E vs OCR-only, HCPR (Nosova 2025), Multi-Norm, content-aligned Eval. Headline n=19: Mean 4.10% [2.01,6.75]%, Median 1.83% [0.84,5.14]% (historischer Stand 2026-04-27; aktuelle Headline siehe [[E85]]: Mean 2.71%/Median 1.40%, n=25). 55 Tests gruen | 2026-04-27 | [quality.md](quality.md) |
-| E55 | interaktives CER-Dashboard | `docs/infrastruktur/cer.html` (12 Sektionen) + `docs/js/cer-dashboard.js` (vanilla SVG) + `infra.css` additiv. CIs visuell, Limitations sticky, Lit-Vergleich mit comparable-Enum. **Mit E56 abgeschafft** (CER-Dashboard und Diagnostik wurden ersatzlos entfernt — Daten weiterhin als JSON unter `docs/data/cer_statistics.json` verfuegbar) | 2026-04-27 | [quality.md](quality.md) |
-| E56 | Frontend-Reduktion auf Pipeline-Viewer | Edition (Landing, Katalog, Reader, Register, About), Curation Editor (FastAPI), Diagnostik und CER-Dashboard ersatzlos abgeschafft. Neue Single-Page-App `docs/viewer.html` mit Sidebar (Doc-Liste), Faksimile + Layout-Overlay + OCR/TEI-Panel, drei Modi: Anzeigen / Layout bearbeiten / Transkription bearbeiten. Layout-Editor unterstuetzt BBox-Drag, Resize, Add, Delete und Reading-Order-Drag. Persistenz nur via Datei-Download (kein Backend). Volumen: 9→1 HTML, 23→6 JS (7.509→1.420 Z., −81%), 5.023→806 Z. CSS (−84%). E33/E36 ueberholt. `scripts/server/curation_server.py` wird vom Frontend nicht mehr angesteuert (mit E57 aus dem Repo entfernt) | 2026-04-27 | [viewer.md](viewer.md) |
-| E57 | Per-Seiten-Mirror + GitHub-Pages-Deploy | `scripts/edition/generate_edition_data.py` mit `mirror_per_page_data()` erweitert: spiegelt Layout-JSONs, Mistral-OCR und per-Seiten-TEI (extrahiert aus `_final.xml` via `<pb>`-Splitting, sequentielle Position 1..N statt n-Attribut wegen Pagination-Drift) fuer alle 285 Docs nach `docs/data/pages/` (8083 Layout + 4117 OCR + 4115 TEI-Seiten, ~99 MB / 16.564 Dateien). Damit funktioniert der Viewer ohne lokalen Server fuer das gesamte Korpus. `core.js`-Pfadresolver mit dreistufiger Fallback-Kette (`pages/` → `examples/` → `../output/`). `docs/.nojekyll` fuer Pages. Bildlieferung weiterhin lokal-only (4 GB PNG via `.gitignore` ausgenommen, nur DEMO-Bilder versioniert). CLI-Flags `--no-mirror`, `--mirror-only`, `--verbose` | 2026-05-25 | [viewer.md](viewer.md) |
-| E58 | OpenSeadragon 5.0.1 als Faksimile-Renderer (View-Modus) | Pan + Zoom + Rotate fuer komfortable Faksimile-Arbeit; einfaches Image-Loading (kein Deep-Zoom-Tiling — Pipeline unveraendert); CDN-Bezug via jsDelivr, keine npm/Build-Pipeline. Im Layout-Edit-Modus weiterhin statisches `<img>` mit Eigenbau-Editor — Editor-Integration in OSD per `viewport.viewerElementToImageCoordinates()` ist Folge-Schritt. Renderer in `viewer.js` zweigeteilt: `renderFacsimileOsd()` / `renderFacsimileImg()`, `setMode()` re-rendert bei Variant-Wechsel | 2026-05-25 | [viewer.md](viewer.md) |
-| E59 | Polygon-Support nicht eingefuehrt | Hersch-Faksimiles sind sauber gesetzter Druck (1926-2000, Verlagsdruck), Rechtecke decken alle benoetigten Region-Typen (Heading, Paragraph, Footnote, Caption, Filter, Skip). Bedarf an Polygonen entstuende erst bei schraegen Spalten, runden Initialen oder mehrteiligen Regionen — irrelevant fuer dieses Korpus. Damit Annotorious und vergleichbare DH-Libraries explizit nicht noetig; TEI-Datenmodell bleibt `bbox.x_pct/y_pct/w_pct/h_pct` | 2026-05-25 | [viewer.md](viewer.md), [pipeline.md](pipeline.md) |
-| E60 | Mode-Button-Redesign Option C: Edit-Toggle pro Panel | Aufloesung der Wort-Redundanz zwischen globalem Mode-Button "Transkription" und Text-Source-Switch "OCR". Globale Mode-Leiste (Anzeigen / Layout / Transkription) entfaellt. Jedes Panel bekommt einen kleinen Bearbeiten-Toggle im Panel-Header. Faksimile-Toggle aktiviert Layout-Editor; Text-Toggle aktiviert Transkriptions-Editor fuer aktive Text-Quelle. `setMode()` in `setImageEdit()` + `setTextEdit()` zerlegt | 2026-05-25 | [viewer.md](viewer.md) |
-| E61 | Export-Modul mit JSZip 3.10.1 | Per-Doc-Export-Drawer (Doc-Subbar "Alles ↓") + Multi-Select-Bulk-Export aus Korpus-Uebersicht. Auswahlbare Datentypen: Faksimile-PNGs, OCR pro Engine, Layout-JSON, TEI per-Seite, TEI final, Review-JSON, PAGE-XML. Eine Datei: direkter Download. Mehrere: ZIP mit Verzeichnis-Struktur `{doc_id}/{kategorie}/...` + `manifest.json`. ZIP-Erzeugung im Browser, keine Server-Komponente. Limit bei Multi-Doc-Export ueber 50 Docs (Browser-Memory) | 2026-05-25 | [viewer.md](viewer.md) |
-| E62 | Methode-Seite `docs/methode.html` | Schlanke statische Seite (Prose-Layout wie About) mit Headline-CER, stratifizierten Werten (Layout-Typ + Sprache), Forschungs-Literatur-Vergleich, Limitations und Werkzeug-Doku. Daten statisch eingebettet (kein Lazy-Load aus `cer_statistics.json`, da JSON nicht eingecheckt). Bewusst kein interaktives Dashboard (E55 wurde mit E56 abgeschafft) — wer Bootstrap-Verteilungen visuell sehen will, regeneriert das JSON ueber `cer_statistics_full.py`. Nav-Eintrag "Methode" in allen 3 Hauptseiten; About-Qualitaets-Absatz verweist auf Methode-Seite. `.prose table` zu `base.css` additiv hinzugefuegt. **Niemals LLMs fuer Entity-ID-Linking** als implizite Methodik-Position (siehe [[feedback-no-llm-for-id-linking]]) | 2026-05-26 | [viewer.md](viewer.md) |
-| E63 | Leerseiten-Erkennung + Viewer-Handling (Phase 1) | 79 Leerseiten korpusweit (Vorsatz/Rueck/Durchschlag): trivialer OCR-Muell (`.`, `^{}[]`, leeres Tabellengeruest) + explizite "Blank Page"-Marker. Ursache Phantom-Regionen: Gemini-Layout-QA halluziniert Boxen (bis 21), Docling sagt korrekt 0 — Doppelsignal. Viewer-Fix **interim/heuristisch** (`core.js` `isBlankPageText`: <=5 Zeichen ODER keine Buchstaben/Ziffern): leere Seiten zeigen "Leerseite — kein Text", Phantom-Kaesten unterdrueckt. **Phase 2 umgesetzt: siehe E65.** Grauzone (Nur-Bild ~10, OCR-Schleifen) NICHT automatisch — zwei Auto-Detektoren erzeugten Fehlalarme (Zeitungskoepfe, Inhaltsverzeichnisse), Experten-Review im Manifest noetig | 2026-05-26 | [viewer.md](viewer.md) |
+| E1 | Hybrid pipeline: Docling (layout) plus LLM OCR (text) | layout analysis without OCR, OCR separate | 2026-01-29 | [pipeline.md](pipeline.md) |
+| E2 | Docling for layout only, not for OCR | RapidOCR has encoding problems (`e -> O`) on French | 2026-01-29 | [pipeline.md](pipeline.md) |
+| E3 | Deterministic first, LLM only for complex cases | reproducible, cost-efficient, debuggable | 2026-01-29 | [pipeline.md](pipeline.md) |
+| E4 | Four document types (A-D) classified | different pipeline strategies | 2026-01-29 | [project.md](project.md) |
+| E6 | Mistral OCR 3 as production engine | ZBZ has Azure access, no GPU needed | 2026-02-14 | [pipeline.md](pipeline.md) |
+| E7 | Fee unchanged | Azure integration without extra cost | 2026-02-14 | [project.md](project.md) |
+| E8 | Configurable API endpoints | switch between local and Azure | 2026-02-14 | [infrastructure.md](infrastructure.md) |
+| E9 | Containerisation with Podman | ZBZ does not use Docker; Podman is OCI-compatible | 2026-02-14 | [infrastructure.md](infrastructure.md) |
+| E10 | Fork on GitLab University of Zurich | ZBZ runs its own instance | 2026-02-14 | [infrastructure.md](infrastructure.md) |
+| E13 | Export as PAGE-XML plus METS for coOCR | coOCR expects PAGE-XML 2013-07-15 plus PNG | 2026-02-20 | [pipeline.md](pipeline.md) |
+| E14 | Preserve Markdown formatting | coOCR stores text as-is in `<Unicode>` | 2026-02-20 | [pipeline.md](pipeline.md) |
+| E15 | Dashboard redesign: multi-page UI with shared CSS/JS | unified design system, static JSON data | 2026-02-25 | [pipeline.md](pipeline.md) |
+| E16 | Page-by-page comparison for monographs (>10 TEI pages) | global alignment fails from ~50 pages | 2026-02-25 | [pipeline.md](pipeline.md) |
+| E17 | LLM correction optional, not default | degrades documents with CER below 5 % | 2026-02-25 | [pipeline.md](pipeline.md) |
+| E18 | Content-based page matching instead of fixed offset | TEI facs numbers differ from PDF pages | 2026-02-25 | [pipeline.md](pipeline.md) |
+| E19 | Layout: Docling plus Gemini hybrid | Docling mAP 0.699, 17 classes, free; Gemini as validator | 2026-02-25 | [pipeline.md](pipeline.md) |
+| E20 | Docling 2.75 confirmed as layout engine | type sample passed, 0.4-3.3 s/page | 2026-02-25 | [pipeline.md](pipeline.md) |
+| E21 | Scope expansion: full pipeline in zbz-ocr-tei | meeting 2026-02-25: OCR plus layout plus PAGE-XML plus NER plus TEI | 2026-02-25 | [pipeline.md](pipeline.md) |
+| E22 | TEI generator directly from layout plus OCR (no PAGE-XML) | extended later for NER/PAGE-XML | 2026-02-25 | [pipeline.md](pipeline.md) |
+| E23 | Data delivery Feb 2026: 286 PDFs, 25 TEI-XML, 24 PAGE-XML exports | PAGE-XML schema 2013-07-15, empty | 2026-02-27 | [project.md](project.md) |
+| E24 | docling-serve API for layout (no local GPU) | Docker container, identical output format | 2026-03-03 | [pipeline.md](pipeline.md) |
+| E25 | Gemini 3.1 Flash Lite as layout QA validator | overlay PNG plus layout JSON to corrected JSON, structured output | 2026-03-03 | [pipeline.md](pipeline.md) |
+| E26 | Gemini layout detect mode | Docling fails on ~15 % (landscape, multi-column); three modes qa/detect/auto | 2026-03-04 | [pipeline.md](pipeline.md) |
+| E27 | Gemini document classification (stage 1a) | 271/286 without metadata, heuristics fail (7/15 wrong) | 2026-03-05 | [pipeline.md](pipeline.md) |
+| E28 | Online demo: 4 demo documents on GitHub Pages | full data local only (gitignored) | 2026-03-05 | [pipeline.md](pipeline.md) |
+| E29 | Gemini OCR correction stage 2b | two-step (analysis plus correction), variants A/B | 2026-03-05 | [pipeline.md](pipeline.md) |
+| E30 | Gemini vision TEI generator plus type-specific prompts | four-level prompts (layout type, pub form, genre, language), 12 genre prompts | 2026-03-06 | [pipeline.md](pipeline.md) |
+| E31 | Layout QA full run plus overlay generator | `--mode auto --force` over 286 documents, 14,708 corrections | 2026-03-06 | [pipeline.md](pipeline.md) |
+| E32 | Unified TEI pipeline (scaffold plus Gemini plus assembly) | four stages, 50/50 VALID in the pilot | 2026-03-07 | [pipeline.md](pipeline.md) |
+| E33 | Digital edition (`docs/`) | public website next to the internal dashboard | 2026-03-06 | superseded by E56 |
+| E34 | NER pipeline plus entity index (phase 3) | post-hoc NER via Gemini Flash Lite (6 types), Wikidata as primary id | 2026-03-07 | removed by E71 |
+| E35 | NER production-ready (phase 3 scale-up) | seven quality improvements before the production run | 2026-03-08 | removed by E71 |
+| E36 | Curation editor (editor in the loop) | FastAPI server, 11 API endpoints, WYSIWYG | 2026-03-08 | superseded by E56 |
+| E37 | TEI validation quality gate plus entity tagging fix | two levels (errors blocking, warnings informative), W1-W10, HTML report default | 2026-03-15 | [pipeline.md](pipeline.md) |
+| E38 | Entity tagging type-correct with internal ids | `annotate_entities()` uses the entity index for type-correct tags | 2026-03-15 | removed by E71 |
+| E39 | Language mapping plus facsimile/pb fix | map multilingual codes (`fra/deu`) correctly; empty `<surface>` for pages without layout zones | 2026-03-15 | [pipeline.md](pipeline.md) |
+| E40 | div merge: page divs to document divs | post-assembly fix `_merge_page_divs()`, reference comparison `--compare-ref` | 2026-03-15 | [pipeline.md](pipeline.md) |
+| E41 | Agent-based quality screening as pre-curation | structured 7-layer review, review JSON per document | 2026-03-15 | abolished by E66 |
+| E42 | `<revisionDesc>` as status in the TEI header | status travels with the document | 2026-03-15 | [pipeline.md](pipeline.md) |
+| E43 | `output/tei_final/` as single source of truth | only final TEI are published | 2026-03-15 | [pipeline.md](pipeline.md) |
+| E44 | Entity stopword extension needed | screening showed generic nouns as false positives | 2026-03-15 | removed by E71 |
+| E45 | Entity stopword extension done | 20 new entries, reassembly of 32 documents, all VALID | 2026-03-15 | removed by E71 |
+| E46 | OCR deduplication as deterministic post-processing | `ocr_dedup.py`: token loops, barcode artifacts, year repetitions | 2026-03-15 | removed by E75 |
+| E47 | `div type="essay"` is not a valid DTA type | `type="text"` as generic replacement for philosophical essays | 2026-03-15 | [pipeline.md](pipeline.md) |
+| E48 | Project-specific schema `zbz_hersch.rng` | generic `tei_all.rng` replaced by a project schema (from ODD, 551 definitions) | 2026-03-26 | [pipeline.md](pipeline.md) |
+| E49 | ZBZ editorial guidelines as binding reference | full guidelines as `data/source/guidelines/Editionsrichtlinien_ZBZ.md` | 2026-03-26 | [pipeline.md](pipeline.md) |
+| E50 | Dual-attribute strategy for entity references | `ref="GND:..."` (primary) plus `corresp="#zbz-p.N"` (internal) | 2026-03-26 | removed by E71 |
+| E51 | End-to-end CER benchmark (TEI versus TEI) | 25 ZBZ reference TEIs as ground truth, `benchmark_cer.py` with stratified analysis | 2026-03-26 | [quality: see specification.md and final-report.md] |
+| E54 | Scientific CER re-evaluation | BCa bootstrap (B=10000, seed 42), paired bootstrap E2E versus OCR-only, HCPR, multi-norm, content-aligned eval. Headline then n=19: mean 4.10 % [2.01, 6.75], median 1.83 % [0.84, 5.14] (historical state 2026-04-27; current headline see E85: mean 2.71 % / median 1.40 %, n=25) | 2026-04-27 | [final-report.md](final-report.md) |
+| E55 | Interactive CER dashboard | 12 sections, vanilla SVG. Abolished with E56; data remains as `docs/data/cer_statistics.json` | 2026-04-27 | superseded |
+| E56 | Frontend reduction to the pipeline viewer | edition site, curation editor (FastAPI), diagnostics, and CER dashboard abolished without replacement. New single-page app `docs/viewer.html` (sidebar, facsimile plus layout overlay plus OCR/TEI panel; layout editor with bbox drag, resize, add, delete, reading-order drag; persistence via file download at that time). Volume 9 to 1 HTML, 23 to 6 JS (minus 81 %), CSS minus 84 %. E33/E36 superseded | 2026-04-27 | [workflow.md](workflow.md) |
+| E57 | Per-page mirror plus GitHub Pages deploy | `generate_edition_data.py` mirrors layout JSON, Mistral OCR, and per-page TEI (split from `_final.xml` via `<pb>` at sequential position 1..N because of pagination drift) for all 285 documents to `docs/data/pages/`; three-stage path resolver in `core.js`; `.nojekyll`; image delivery stays local (only demo images versioned) | 2026-05-25 | [workflow.md](workflow.md) |
+| E58 | OpenSeadragon 5.0.1 as facsimile renderer (view mode) | pan, zoom, rotate; plain image loading (no deep-zoom tiling); CDN via jsDelivr, no build pipeline. Layout edit mode keeps the static `<img>` editor | 2026-05-25 | [workflow.md](workflow.md) |
+| E59 | Polygon support not introduced | Hersch facsimiles are cleanly set print (1926-2000); rectangles cover all region types. Annotorious and similar libraries explicitly unnecessary; data model stays `bbox.x_pct/y_pct/w_pct/h_pct` | 2026-05-25 | [pipeline.md](pipeline.md) |
+| E60 | Mode button redesign, option C: edit toggle per panel | global mode bar removed; each panel gets a small edit toggle in its header; `setMode()` split into `setImageEdit()` plus `setTextEdit()` | 2026-05-25 | [workflow.md](workflow.md) |
+| E61 | Export module with JSZip 3.10.1 | per-document export drawer plus multi-select bulk export; ZIP built in the browser, no server component; planned, not yet wired in | 2026-05-25 | [workflow.md](workflow.md) |
+| E62 | Method page `docs/methode.html` | lean static page with headline CER, stratified values, literature comparison, limitations, tool documentation; deliberately no interactive dashboard. Implicit methodology position: never LLMs for entity-id linking | 2026-05-26 | [specification.md](specification.md) |
+| E63 | Blank-page detection plus viewer handling (phase 1) | 79 blank pages corpus-wide; phantom regions from layout QA hallucination countered by the Docling zero signal; viewer fix interim/heuristic; phase 2 in E65 | 2026-05-26 | [workflow.md](workflow.md) |
 
 ---
 
-## Entschieden (E64-E91, Detail)
+## Decided (E64-E91, detail)
 
-Juengere Entscheidungen mit ausfuehrlicher Begruendung als eigene Abschnitte
-(Reihenfolge wie zuvor in der Tabelle).
+More recent decisions with full rationale as dedicated sections.
 
-### E64 — Viewer-Verdichtung: OCR-Quellen-Umschalter entfernt, Leisten fusioniert, Edit-Toggles benannt (2026-05-26)
+### E64 Viewer condensation: OCR source switcher removed, bars fused, edit toggles named (2026-05-26)
 
-OCR-Source-Dropdown (5 Engines: Mistral/Gemini A/Gemini B/LLM Haiku/DeepSeek) aus dem Viewer entfernt. Befund: der ausgelieferte Mirror (`docs/data/pages/`) enthaelt nur Mistral; die Alt-Engines zeigen auf `../output/` (gitignored, nicht deployed) und sind reine Benchmark-/Forschungs-Artefakte (E51/E54), auf der Live-Seite tot. Prinzip: **Viewer = ausgelieferte Edition = Mistral**; Engine-Vergleich ist separate Forschung, nicht im Viewer-UI. `ocrSource` fest auf `mistral`. Doc-Subbar + Toolbar **fusioniert** (Etappe 2.10 teilweise erledigt): Seitennav wandert in die Doc-Subbar, separate `.toolbar` entfaellt (war nach Dropdown-Wegfall fast leer); `.toolbar`/`.toolbar__inner`/`.toolbar__group--right` CSS entfernt, `.doc-subbar__inner` erbt `--v-toolbar-height`. Edit-Toggles umbenannt "Bearbeiten"/"Bearbeiten" → **"Layout"/"Text"** (Objekt-Label; Aktiv-Zustand zeigt der anthrazit-gefuellte Button — User-Entscheidung gegen Label-Wechsel/Icons). Verifiziert in Chrome (Konsole sauber, Aktiv-Zustand visuell bestaetigt; `getComputedStyle` im isolierten Browser-Kontext liefert bei nativen Buttons irrefuehrende Werte — Bodenwahrheit ist das Bild)
+The OCR source dropdown (5 engines) was removed from the viewer. Finding: the delivered mirror contains only Mistral; the alternative engines point to `../output/` (gitignored, not deployed) and are pure benchmark artifacts, dead on the live site. Principle: viewer = delivered edition = Mistral; engine comparison is separate research. `ocrSource` fixed to `mistral`. Doc subbar and toolbar fused; edit toggles renamed to object labels, the active state shown by the filled button.
 
-Dokumente: [viewer.md](viewer.md)
+Documents: [workflow.md](workflow.md)
 
-### E65 — Leerseiten-Manifest + TEI-Marker (E63 Phase 2, Schritt 1+2) (2026-05-26)
+### E65 Blank-page manifest plus TEI marker (E63 phase 2, steps 1+2) (2026-05-26)
 
-`scripts/edition/page_manifest.py` erzeugt pro Objekt `output/tei_final/{doc}_manifest.json` (gitignored, regenerierbar; nur Ausnahme-Seiten; Felder `class`/`source`/`review`/`evidence` + `streams`-Header) — Detektor (OCR-Regel identisch `ZBZ.isBlankPageText` + Blank-Marker, UND Docling `num_regions==0` als Gegensignal) findet **79 sichere Leerseiten in 15 Docs, alle cross-validiert, 0 Konflikte**. `scripts/tei/tei_blank_marker.py` projiziert daraus `<pb type="blank"/>` in die finalen TEI (Seite = sequenzielle pb-Position, identisch zum Mirror-Splitter) und **leert den Seiten-Body** (User-Entscheidung: bestaetigte Leerseite = nur Marker; entfernt symbolischen Muell + "blank"-Woerter + LLM-Korrektur-Kommentar + Seitenzahlen; leer gewordene `<div>` eingeklappt, strukturelle div-Grenzen bewahrt). 82 Junk-Elemente entfernt, 0 Residual, **0 Schema-Regression** (Backup vs. editiert je 4 Fehler unveraendert — die 4 sind der vorbestehende idno-Header-Befund [[O23]]). Mirror via `--mirror-only` neu (94 Dateien), in Chrome verifiziert (doc 20). Sicherheit: Dry-Run, Backup, Residual-/Konsistenzpruefung. **Offen (Schritt 3):** Viewer von Heuristik auf Manifest/Marker umstellen
+`page_manifest.py` produces per object `output/tei_final/{doc}_manifest.json` (regenerable; exception pages only). The detector (OCR rule identical to the viewer heuristic plus blank markers, AND Docling `num_regions==0` as counter-signal) finds 79 safe blank pages in 15 documents, all cross-validated, 0 conflicts. `tei_blank_marker.py` projects `<pb type="blank"/>` into the final TEI (page = sequential pb position, identical to the mirror splitter) and empties the page body (user decision: a confirmed blank page carries only the marker). 82 junk elements removed, 0 residual, 0 schema regression. Safety: dry run, backup, residual check.
 
-Dokumente: [viewer.md](viewer.md)
+Documents: [workflow.md](workflow.md)
 
-### E67 — Catalog-UI-Refactor + Ampel-Reframing + Site-Konsistenz (2026-05-26)
+### E67 Catalog UI refactor plus traffic-light reframing plus site consistency (2026-05-26)
 
-Iterativer UI-Pass auf der Korpus-Uebersicht (`docs/index.html`) und site-weit: (a) Tabelle komplett ueberarbeitet -- ein Schriftbild (Body EB Garamond, mono nur fuer Doc-IDs/Stream-Labels), Header sitzt im gleichen Surface wie der Body (kein zweikartiges Bild), klickbare Spaltenheader mit Sortier-Affordance im Ruhezustand (gedimmtes `↕`-Pfeil, aktiv `↑`/`↓` in Ziegelrot), Autor + Datum als separate Spalten, Workflow-Spalte vertikal mit OCR/Layout/TEI-XML-Labels rechts neben den Ampel-Dots, einheitliche 32-px-Hoehe fuer Filter-Bar-Eingaben + Reset-Button in einer Reihe; (b) **Ampel-Reframing**: User-Befund "kein Mensch hat approved" plus "Pipeline-Output EXISTIERT, ist nur nicht verifiziert" → die fruehere `offen=rot`-Lesart war epistemisch schief. Datenstatus `offen` umbenannt in `unverifiziert` (Default fuer alle 285 Docs), Migration in [page_manifest.py](../scripts/edition/page_manifest.py) idempotent. Ampel-Mapping: **gelb** = `unverifiziert|in_arbeit|bearbeitet` (vorhanden, nicht freigegeben), **gruen** = `fertig`. **Rot reserviert** fuer einen kuenftigen expliziten Problem-/Reject-Status. Tooltip im Catalog erklaert das fuer den Default-Fall ("Pipeline-Output existiert, noch nicht menschlich verifiziert"); (c) sticky Filter-Bar + single Page-Scroll loest fruehere Doppel-Scroll-Insel; (d) Site-weiter Footer (Edition / Tech-Umsetzung / Impressum / GitHub-Icon), `Experimentell`-Badge im Header-Zentrum mit Tooltip, [impressum.html](../docs/impressum.html) als Stub mit Verantwortlichkeiten; (e) Author-Namen normalisiert in `generate_edition_data._normalize_author` (HARTE-Caps wie "JEANNE HERSCH" → "Jeanne Hersch"); (f) [E63 Phase 2 Schritt 3]: Viewer liest jetzt primär `<pb type="blank"/>` aus der per-Seiten-TEI (Marker-getrieben), Heuristik `isBlankPageText` bleibt nur als Fallback fuer Faelle ohne TEI.
+Iterative UI pass on the corpus overview and site-wide: table reworked (one typeface logic, sortable headers, author and date as columns, workflow column with per-stream lamps); the traffic-light reframing follows the user finding "no human approved anything" plus "pipeline output EXISTS, it is merely unverified": the earlier reading of `offen` as red was epistemically wrong. Status `offen` renamed to `unverifiziert` (default for all 285 documents), migration idempotent. Red reserved for a future explicit problem status. Sticky filter bar, site-wide footer, legal notice stub, author-name normalisation. Viewer reads `<pb type="blank"/>` marker-driven, heuristic only as fallback.
 
-Dokumente: [viewer.md](viewer.md), [quality.md §Workflow-Status](quality.md)
+Documents: [workflow.md](workflow.md)
 
-### E68 — `zbz_hersch.rng` um weggelassene Standard-TEI-Elemente erweitert (2026-05-27)
+### E68 `zbz_hersch.rng` extended by omitted standard TEI elements (2026-05-27)
 
-Das ODD-Subset von E48 (2026-01-28) hatte `revisionDesc`/`change` (E42/E66), `langUsage`/`language`, `idno` (im `publicationStmt`) und `monogr`/`imprint` (im `biblStruct`) weggelassen -- alles Standard-TEI/DTA, das die Pipeline regulaer erzeugt. Folge: **0/285** ausgelieferte TEI valide gegen ihr eigenes Schema (gegen das alte `tei_all.rng` aber 8/8 valide), nie aufgefallen, weil `tei_final` flach abgelegt ist und durch `validate_all` (erwartet verschachtelt wie `tei_unified`) durchfaellt und die `tei_blank_marker`/`tei_status_marker`-Schritte ohne Re-Validierung dort schreiben. Fix: 7 Definitionen ergaenzt + 4 Inhaltsmodelle verdrahtet (teiHeader, publicationStmtPart.detail, profileDescPart, biblStruct), Inhaltsmodelle bewusst minimal am real erzeugten Datenvertrag (korpusweite Kind-Element-Erhebung). `source-metadata` als kuratierter div-Typ in `config.py` registriert (Doc 1170). Ergebnis **285/285 valide**. Neues pytest-Gate `tests/test_tei_schema.py` (Schema kompiliert + synthetischer E68-Header valide + jedes `tei_final` valide; lokal volle Zaehne, skippt auf frischem Clone, da `output/` gitignored). Loest [[O23]] -- der dort nur `idno` benannte, tatsaechlich waren es vier Ursachen
+The ODD subset of E48 had omitted `revisionDesc`/`change`, `langUsage`/`language`, `idno` (publicationStmt), and `monogr`/`imprint` (biblStruct), all standard TEI/DTA that the pipeline regularly produces. Consequence: 0/285 delivered TEI valid against their own schema, never noticed because `tei_final` is laid out flat and fell through `validate_all`. Fix: seven definitions added, four content models wired, deliberately minimal against the actually produced data contract. Result 285/285 valid. New pytest gate `tests/test_tei_schema.py` (skips on a fresh clone, `output/` is gitignored). Resolves O23, which had named only `idno`; in truth there were four causes.
 
-Dokumente: [quality.md](quality.md), [pipeline.md](pipeline.md)
+Documents: [specification.md](specification.md), [pipeline.md](pipeline.md)
 
-### E66 — Agent-Screening abschaffen, Workflow-Status pro Strom einfuehren (2026-05-26)
+### E66 Abolish agent screening, introduce per-stream workflow status (2026-05-26)
 
-User-Befund: kein Mensch hat die 285 "APPROVED" gegeben -- der Agent screent sich selbst mit eingebauter Ignorier-Liste (W3/W6/W10 als "normal" deklariert), und das Etikett ist gegenueber ZBZ epistemisch irrefuehrend. Ersatz: vier Statuswerte (`offen | in_arbeit | bearbeitet | fertig`) je Datenstrom (`ocr`, `layout`, `tei`), gesetzt von Menschen im Viewer. Datenmodell: das Pro-Objekt-Manifest aus [[E65]] wird erweitert -- `streams.*` wird vom statischen Engine-Deskriptor zum Objekt `{engine|engines|source, status, history}` mit voller History-Provenienz (`[{at, by, from, to, note}]`). `page_manifest.py` ist idempotent: Re-Lauf bewahrt status+history, schreibt fuer alle 285 Docs (vorher nur Docs mit Leerseiten). UI: drei Bars (OCR/Layout/TEI) plus Filter `Strom × Status` in [index.html](../docs/index.html), Status-Pills in der Doc-Subbar des Viewers mit Klick-Cycle; erstes Edit-Toggle setzt automatisch `offen → in_arbeit`. Mirror nach `docs/data/manifests/{doc}_manifest.json`. ZBZ-Uebergabe: `scripts/tei/tei_status_marker.py` projiziert die History deterministisch als `<change when= who= status= n={stream}>...</change>` in den `<revisionDesc>` und entfernt dabei alle Eintraege mit `who` matched `^(agent-screening|quality-screen|quality-pass|claude)` -- der `who="pipeline"`-Eintrag bleibt. Legacy: `_review.json` -> `_screening_legacy.json` (gitignored), Stand bleibt als Diagnose-Spur. Stand: 285/285 Docs auf `offen`, der ehrliche Anker
+User finding: no human granted the 285 "APPROVED"; the agent screened itself with a built-in ignore list, and the label was epistemically misleading toward ZBZ. Replacement: status values per data stream (`ocr`, `layout`, `tei`), set by humans in the viewer. Data model: the per-object manifest from E65 extended to `{engine, status, history}` with full provenance history. `page_manifest.py` is idempotent: re-runs preserve status and history. UI: three bars plus stream-by-status filter in the catalog, status pills in the viewer with click cycle. ZBZ handover: `tei_status_marker.py` projects the history deterministically as `<change>` entries into `<revisionDesc>` and removes all agent-screening entries. Legacy findings live on as `_screening_legacy.json` (gitignored diagnosis trace). All 285 documents start at the honest anchor `unverifiziert`.
 
-Dokumente: [viewer.md](viewer.md), [quality.md §Workflow-Status](quality.md)
+Documents: [workflow.md](workflow.md), [specification.md](specification.md)
 
-### E70 — CER-Methodik korrigiert: Drei-Zahlen-Zerlegung (Fidelity/Scope/Full), kein Trimming, case-sensitiv, drei Pfade vereinheitlicht (2026-05-27)
+### E70 CER methodology corrected: three-figure decomposition (fidelity/scope/full), no trimming, case-sensitive, three paths unified (2026-05-27)
 
-Tiefe Pruefung der CER-Erzeugung (User-Auftrag "ganz genau und richtig"), extern verifiziert gegen OCR-D/dinglehopper/Transkribus/jiwer/Singh 2025. **Kernbefund**: die ZBZ-Referenz-TEIs sind selektive Teiltranskriptionen (Doc 580: 2 Rezensionen vs 1; Doc 570: Masthead fehlt; Doc 90: Inhaltsverzeichnis), die Pipeline ist oft vollstaendiger. Das alte `find_best_alignment`-Trimming verbarg Insertions UND Verluste (+ Padding-auf-Referenzlaenge = Deflation); naive Volltext-CER bestraft umgekehrt das Vollstaendiger-Sein (Doc 570: 113%). **Loesung**: `classify_edit_operations` zerlegt jede Editieroperation -> **Fidelity-CER** (Substitutionen + kleine Indels + ALLE Loeschungen = echte Fehler) vs **Scope-Rate** (grosse Einfuegungen >=50 Zeichen = Pipeline-Mehrtext, kein Fehler); `cer_fidelity + scope_insertion_rate = cer`. Headline = Fidelity, **Mean 4.26% / Median 1.83% ueber ALLE 25 Docs** (kein zirkulaerer Ausschluss noetig) -- reproduziert die fruehere Zahl sauber. Weitere Fixes: (a) pauschales `.lower()` raus, case-sensitiv als Default (Effekt ~0, Case nur in Versal-Lauftiteln); (b) drei CER-Pfade (`benchmark_cer`, `cer_statistics_full`, `tei_validator --compare-ref`) auf `extract_text_for_comparison`+`calculate_cer` vereinheitlicht, `--compare-ref` nutzt `tei_final/` statt rohem `itertext()` aus `tei_unified/{id}/`; (c) zirkulaeres `cer>50%`-Ausschlusskriterium entfernt (nur noch struktureller Seitenzahl-Filter), latenter Bug `ref_pages_total`->`ref_pages` behoben; (d) Blank-`<pb>` aus Page-Count; (e) Fehlerkategorien via `rapidfuzz.opcodes` (summieren exakt zur Levenshtein-Distanz) statt `difflib`; (f) Paired-Test like-for-like auf Fidelity: **-7.12pp, p=0.14 (n=19, nicht signifikant)** -- die fruehere Angabe "-14.83pp p=0.0004" war ein Trimming-Artefakt und ist zurueckgezogen. Zitation korrigiert: arXiv:2510.06743 ist Levchenko 2025, nicht "Nosova et al.". Neue goldene Tests `tests/test_cer_extraction.py` (18). Suite **507 gruen**. JSON `docs/data/cer_statistics.json` neu (Seed 42). OFFEN (User-Entscheidung): ob Topf A (Pipeline-Mehrtext: Masthead/Nachbar-Rezensionen) erwuenschter Editions-Inhalt oder rauszufilternder Beifang ist
+Deep audit of CER production, externally verified against OCR-D/dinglehopper/Transkribus/jiwer. Core finding: the ZBZ reference TEIs are selective partial transcriptions; the pipeline is often more complete. The old alignment trimming hid insertions and losses; naive full-text CER conversely punishes completeness (doc 570: 113 %). Solution: `classify_edit_operations` decomposes every edit operation into fidelity CER (substitutions, small indels, all deletions = real errors) versus scope rate (insertions >= 50 characters = pipeline surplus text, not an error); fidelity plus scope equals full CER. Headline = fidelity over ALL 25 documents (no circular exclusion). Further fixes: case-sensitive default; three CER paths unified on `extract_text_for_comparison` plus `calculate_cer`; circular exclusion criterion removed; error categories via rapidfuzz opcodes (sum exactly to the Levenshtein distance); paired test like-for-like on fidelity (then -7.12 pp, p=0.14, n=19, not significant; the earlier "-14.83 pp p=0.0004" was a trimming artifact and is withdrawn). Citation corrected (arXiv:2510.06743 is Levchenko 2025). 18 golden tests.
 
-Dokumente: [quality.md §Korrektheits-Welle](quality.md)
+Documents: [final-report.md](final-report.md)
 
-### E69 — Korrektheits-Welle: O24-Fix + `<pb>`-Segmentierung zentralisiert + teiHeader-Generator auf Liefer-Vertrag + MMSID (2026-05-27)
+### E69 Correctness wave: O24 fix, `<pb>` segmentation centralised, teiHeader generator on the delivery contract (2026-05-27)
 
-Drei stille Korrektheitsprobleme geschlossen, alle mit Test-Gate. (a) **O24**: `tei_validator._compute_cer` importierte ein nicht existentes `compute_cer` -> still auf Laengen-Approximation gefallen; Fix `calculate_cer` * 100 (Ratio->Prozent), `except` auf `ImportError`. (b) **`<pb>`-DRY**: die Regel "Seitenzahl = 1-basierte sequenzielle pb-Position" war in `generate_edition_data.py` und `tei_blank_marker.py` dupliziert (nur per Kommentar synchron) -> neuer Helfer `scripts/tei/pb_split.py` (`PB_RE`, `BODY_INNER_RE`, `iter_page_spans`); byte-identisch verifiziert ueber alle 285 Finals + 15 Blank-Reports (Baseline-Snapshot). (c) **teiHeader-Armut**: `build_tei_header` erzeugte docID nur als Kommentar + einfaches `<bibl>` + kein `langUsage` -> ein `tei_unified`-Neulauf regressierte jeden Header (Verlust von `<idno>`/`biblStruct`, die [[E68]] erst schema-valide machte). Neufassung deckungsgleich zum Liefer-Vertrag (`<idno type="docID">` + `<biblStruct>`/`<monogr>`/`<imprint>` + `<langUsage>` je Sprachcode). (d) **MMSID/[[O8]]**: `scripts/core/masterfile.py` liest die Alma-MMSID aus der Masterfile, Header fuehrt sie als `<idno type="MMSID">` (konditional; **Teil (d) mit [[E76]] 2026-06-03 wieder entfernt**). Verifiziert: Header valide in allen Kanten, `--reassemble` doc 100 end-to-end VALID, Suite 503 gruen
+Three silent correctness problems closed, each test-gated. (a) O24: the validator imported a non-existent `compute_cer` and silently fell back to a length approximation; fixed with `calculate_cer` times 100 and a narrowed except. (b) `<pb>` DRY: the rule "page number = 1-based sequential pb position" was duplicated in two scripts; new helper `scripts/tei/pb_split.py`, byte-identical verified over all 285 finals. (c) teiHeader poverty: `build_tei_header` regressed headers on regeneration (losing `idno`/`biblStruct` that E68 needed); rewritten congruent with the delivery contract (`<idno type="docID">`, `<biblStruct>`, `<langUsage>`). (d) An MMSID projection introduced here was removed again with E76.
 
-Dokumente: [quality.md](quality.md), [pipeline.md](pipeline.md)
+Documents: [specification.md](specification.md), [pipeline.md](pipeline.md)
 
-### E71 — NER / Entity-Linking vollstaendig entfernt (2026-05-27)
+### E71 NER / entity linking fully removed (2026-05-27)
 
-Named-Entity-Recognition + Entity-Linking aus der Pipeline genommen (User-Entscheidung). Befund: die Verlinkung war im ausgelieferten TEI nicht funktionsfaehig -- nur ~2.6% der ~30.500 getaggten Erwaehnungen trugen eine echte GND-ID, der Rest `GND:unknown` (1.274x) oder interne `#zbz-`-IDs; das dokumentierte Dual-Attribut [[E50]] existierte im Output gar nicht (0x `corresp="#zbz-"`). Entfernt: NER-Schritt aus `tei_unified` (`--ner`), Entity-Seeding + Mapping-Table-Section-4 aus `tei_mapping_prompt`, `annotate_entities` (`tei_generator`/`tei_step1`) + `reannotate_entities` (`tei_step2`), `scripts/ner/` (6 Module), `data/entities/*.xml`, `docs/data/entity_index.json`, NER-Konstanten in `config.py`, `export_entity_index` in `generate_edition_data`, Viewer-Entity-Highlighting (`tei-render.js` + `.tei__entity*` in `viewer.css`), About-NER-Bullet. Deterministischer Body-Strip ueber alle 285 TEI (3 Ablagen: `tei_final`, `docs/data/tei`, Per-Seiten-Mirror): `<persName>`/`<orgName>`/`<placeName>` + Inline-Werk-`<bibl>` aufgeloest; `<bibl>` in `<listBibl>` + Review-`<head>` als bibliografische Struktur behalten (ref/corresp entfernt). 285/285 schema-valide (`test_tei_schema`), Script-Health gruen. Macht [[R3]]/[[R10]] hinfaellig. Restposten: stale Entity-Prosa in 7 `<revisionDesc>`-`<change>`-Eintraegen (Agent-Screening-Log im teiHeader)
+User decision. Finding: linking was not functional in the delivered TEI; only ~2.6 % of ~30,500 tagged mentions carried a real GND id, the rest `GND:unknown` or internal ids; the documented dual attribute (E50) did not exist in the output at all. Removed: the NER step from `tei_unified`, entity seeding from the mapping prompt, annotation functions, `scripts/ner/` (6 modules), entity data and index, viewer entity highlighting. Deterministic body strip over all 285 TEI in all three locations; `<bibl>` inside `<listBibl>` kept as bibliographic structure. 285/285 schema-valid. Makes risks R3/R10 obsolete. Honest removal over placeholder noise.
 
-Dokumente: [pipeline.md](pipeline.md)
+Documents: [pipeline.md](pipeline.md)
 
-### E72 — Direkt-Schreiben-Loop fuer die Viewer-Kuration (File System Access API + Backend-Konsumenten) (2026-05-27)
+### E72 Direct-write loop for viewer curation (File System Access API plus backend consumers) (2026-05-27)
 
-Die Kuration persistierte bisher nur per Browser-Download + manuelles Ablegen; zudem hatten die kuratierten Layout-/OCR-Dateien **gar keinen Konsumenten** in der Pipeline (nur das Manifest war verdrahtet), der dokumentierte Round-Trip war also teils aspirativ. Zwei Haelften umgesetzt: (a) **Frontend** -- neues Modul `docs/assets/js/fs-access.js` (`ZBZ.FsAccess`) schreibt kuratierte Dateien per File System Access API direkt in den vom Nutzer einmal freigegebenen Repo-Ordner (Handle in IndexedDB persistiert; Schreibrecht pro Sitzung per Geste re-granted). `viewer.js` Save-Handler nutzen FSA bei Verbindung, sonst `ZBZ.Download` (Fallback fuer Firefox/Safari); neuer "Ordner verbinden"-Button in der Doc-Subbar. (b) **Backend** -- `load_layout_gemini` liest `{doc}_p{NNN}_layout_curated.json` vor Gemini/Docling; `OCR_CURATED_DIR` (`output/ocr_curated/`) als erstes Element in `_OCR_DIRS` (`scripts/core/loaders.py`), damit `--reassemble` die Edits real verwendet. Regeneration per dokumentiertem One-Liner (`tei_unified --reassemble` + `generate_edition_data --mirror-only`). Caveat: TEI-XML-Direktedit ueberschreibt `tei_final/{doc}_final.xml` (SoT) und wird von einem spaeteren `--reassemble` wieder regeneriert -- empfohlener Pfad sind Layout/OCR-Edits. Gate: `tests/test_curated_loaders.py` (9 Tests, Loader-Praezedenz). Sicherheit: kein Token, kein Auto-Write -- Zugriff nur nach expliziter Ordnerwahl + readwrite-Grant. Out of scope (Nutzer-Entscheidung): lokaler Watcher + GitHub-Actions-Regeneration
+Curation previously persisted only via browser download plus manual filing, and the curated layout/OCR files had no consumer in the pipeline; the documented round trip was partly aspirational. Both halves built: (a) frontend module `fs-access.js` writes curated files via the File System Access API directly into the user-granted repo folder (handle persisted in IndexedDB; Chromium, download fallback); (b) backend: `load_layout_gemini` reads `_layout_curated.json` first, curated OCR directory first in the OCR source order, so `--reassemble` really consumes the edits. Caveat: direct TEI editing overwrites the SoT and is regenerated by a later `--reassemble`; the recommended path is layout/OCR edits. Gate `tests/test_curated_loaders.py`. Security: no token, no auto-write, access only after explicit folder grant.
 
-Dokumente: [viewer.md §Persistenz](viewer.md)
+Documents: [workflow.md](workflow.md)
 
-### E73 — CER-Scope: hartkodierte 6er-Ausschlussliste (`SCOPE_MISMATCH_REASONS`) entfernt, alle Metriken ueber alle 25 Docs (2026-05-27)
+### E73 CER scope: hard-coded six-document exclusion list removed, all metrics over all 25 documents (2026-05-27)
 
-Rohdaten-Verifikation (User-Auftrag "ganz genau in die Daten schauen"): die Liste (1440, 30, 300, 3020, 760, 830) folgte **keinem reproduzierbaren Kriterium** -- schloss Doc 570 (112% Mehrtext, Voll-CER 113%, Fidelity 0.9%) NICHT aus, markierte aber 3020/760/830 (scope_insertion ~0.5-1.2% = kein Inhalts-Mismatch, nur feinere `<pb>`-Segmentierung der Referenz). Zwei Code-Kommentare faktisch falsch (1440: Seitenzahlen vertauscht; 30: "Anfangsausschnitt" -- real hat die Referenz mehr Seiten + gleiche Zeichenzahl). Die Liste diente nur, eine scope-inklusive Subset-Kennzahl "fair" zu machen. **`_override_scope` setzt jetzt alle `scope_status="full"`** (kein Ausschluss). **Fidelity-CER bleibt unveraendert: Mean 4.26% / Median 1.83% (n=25)** -- sie rechnet schon ueber alle Docs und ist via `classify_edit_operations` scope-robust. Der rohe `end_to_end` (jetzt n=25, Mean 20.75%) ist als **Diagnose, kein Qualitaetsmass** gekennzeichnet; Paired-Test jetzt n=25: **-7.90pp, p=0.07** (war -7.12pp/n=19, weiterhin n.s.). 55 CER-Tests + Suite (524) gruen; `methode.html` + Arbeitsbericht 6.1 nachgezogen. Schliesst den OFFEN-Punkt aus [[E70]]
+Raw-data verification: the list followed no reproducible criterion (it did not exclude doc 570 with 112 % surplus, but flagged documents whose scope insertion was negligible), and two code comments were factually wrong. `_override_scope` now sets all documents to full scope. Fidelity CER unchanged (it already computes over all documents and is scope-robust); the raw end-to-end figure is marked as diagnosis, not a quality measure. Paired test then n=25: -7.90 pp, p=0.07, not significant. Closes the OPEN point from E70.
 
-Dokumente: [quality.md](quality.md)
+Documents: [final-report.md](final-report.md)
 
-### E74 — Eingebettete Schematron-Regeln bewusst NICHT ausgefuehrt (dokumentiert statt gebaut) (2026-05-27)
+### E74 Embedded Schematron rules deliberately NOT executed (documented instead of built) (2026-05-27)
 
-`tei_validator` prueft `zbz_hersch.rng` als RelaxNG-Grammatik (285/285 valide). Frage: sollen die 36 eingebetteten `sch:rule` (50 `assert` + 24 `report`) zusaetzlich laufen? Spike-Verifikation (`lxml.isoschematron`, 3 Wegwerf-Skripte): (a) **14/36 Regeln brauchen XPath 2.0** (`gt`/`cast as xs:date`/`tokenize`/`current-date`) -- libxslt ist XSLT 1.0, nicht lauffaehig; (b) die **22 lauffaehigen** Regeln zielen auf TEI-ODD/Schema-Konstrukte (`elementSpec`, `attDef`, `schemaSpec`, `@validUntil`, `addSpan`) und finden ueber **alle 285 Editionen 0 Treffer** (Harness mit synthetischer Immer-Fehl-Regel als korrekt bewiesen). Es ist generisches TEI-P5-Boilerplate, keine editorischen Editions-Regeln. Ein lxml-Pass liefe nur halb und meldete immer "0" = irrefuehrendes Validierungs-Theater. **Entscheidung: nicht bauen.** Echte editorische Validierung waeren NEUE projektspezifische Regeln (separates Vorhaben, ggf. via Saxon/XSLT-2.0 fuer volle Abdeckung)
+Question: should the 36 embedded `sch:rule` run in addition to RelaxNG? Spike verification: 14/36 rules need XPath 2.0 (not runnable on libxslt); the 22 runnable ones target TEI-ODD/schema constructs and find 0 hits over all 285 editions (harness proven correct with a synthetic always-fail rule). Generic TEI P5 boilerplate, not editorial rules; a partial pass would be misleading validation theatre. Decision: do not build. Real editorial validation would be new project-specific rules (separate undertaking, possibly Saxon/XSLT 2.0).
 
-Dokumente: [quality.md](quality.md)
+Documents: [specification.md](specification.md)
 
-### E75 — Tote OCR-Wege entfernt: `ocr_dedup` + DoclingOCR-Engine (2026-05-27)
+### E75 Dead OCR paths removed: `ocr_dedup` plus DoclingOCR engine (2026-05-27)
 
-Aufraeum-Welle (User-Auftrag). (a) `ocr_dedup.py` ([[E46]]) war **verwaist** (kein Code-Importeur), las hartkodiert `output/ocr_results` (falsch/leer statt `mistral_results`) und mutierte OCR in-place **ohne Backup** -> entfernt statt repariert (Reparatur haette ein destruktives Tool auf der Basis-OCR scharfgeschaltet). (b) `DoclingOCR` als OCR-Engine schrieb Single-File `_docling.md` (**Sackgasse**, von der `_p{N}.md`-Pipeline nie konsumiert), `auto`-Modus routete `TWO_COLUMN_DOCS` dorthin (latentes **Fehlrouting**) -> Klasse + `docling`-Choice + auto-Routing entfernt; auto/mistral/gemini schreiben jetzt einheitlich nach `mistral_results/`. Docling als **Layout**-Engine ([[E19]]/[[E20]], war nie OCR) unberuehrt. 524 Tests gruen
+Cleanup wave. (a) `ocr_dedup.py` (E46) was orphaned (no code importer), read a hard-coded wrong directory, and mutated OCR in place without backup; removed instead of repaired (repair would have armed a destructive tool on the base OCR). (b) `DoclingOCR` as an OCR engine wrote a dead-end single file never consumed by the pipeline, and auto mode routed two-column documents there (latent misrouting); class, choice, and routing removed. Docling as layout engine untouched.
 
-Dokumente: [pipeline.md](pipeline.md)
+Documents: [pipeline.md](pipeline.md)
 
-### E76 — MMSID-Projektion aus der Pipeline entfernt (Header-Metadaten = ZBZ-Domaene) (2026-06-03)
+### E76 MMSID projection removed from the pipeline (header metadata = ZBZ domain) (2026-06-03)
 
-User-Entscheidung: die mit [[E69]] Teil (d) eingefuehrte MMSID-Projektion wird wieder entfernt. Begruendung: Header-Metadaten aus Alma sind laut [[O8]] ZBZ-seitig; die MMSID war zudem nur im Code, **nie in einem ausgelieferten TEI** (0/285). Entfernt: `scripts/core/masterfile.py` (ganzes Modul, nur von `tei_unified` importiert), Import + `metadata["mmsid"]`-Aufruf in `tei_unified`, Emission + Docstring in `tei_step3.build_tei_header`, MMSID-Test + Schema-Fall in `tests/test_tei_header.py`, Doku in CLAUDE.md + scripts/README.md. Suite 524 -> **520 gruen**, keine Regression. **Spec-Konflikt bewusst in Kauf genommen:** die ZBZ-Editionsrichtlinien (`data/source/guidelines/Editionsrichtlinien_ZBZ.md`, [[E49]]) fordern ID+MMSID+PubForm im Header — mit ZBZ zu klaeren ([[O8]]). Unberuehrt: ZBZs Richtlinien-Datei (immutabler Input) und der faktische Masterfile-Spalten-Hinweis im Arbeitsbericht (beschreibt nur die Quelle, kein Header-Claim)
+User decision: the MMSID projection introduced with E69 part (d) is removed again. Header metadata from Alma is ZBZ-side per O8; the MMSID existed only in code, never in a delivered TEI (0/285). Removed: `scripts/core/masterfile.py` (whole module), the call sites, the emission, tests, and docs. Spec conflict knowingly accepted: the editorial guidelines demand ID plus MMSID plus PubForm in the header; to be clarified with ZBZ (O8). Untouched: ZBZ's guidelines file (immutable input).
 
-Dokumente: [decisions.md](decisions.md)
+Documents: [decisions.md](decisions.md)
 
-### E77 — Workflow-Status von vier auf drei Stufen kollabiert (Variante A) (2026-06-07)
+### E77 Workflow status collapsed from four to three stages (variant A) (2026-06-07)
 
-User-Entscheidung. Statt `unverifiziert|in_arbeit|bearbeitet|fertig` jetzt **`unverifiziert|in_arbeit|verifiziert`** je Strom. Befund: die vier Stufen kollabierten im UI ohnehin auf nur zwei Ampel-Farben (gelb fuer die ersten drei, gruen fuer `fertig`), und `bearbeitet` vs `fertig` war eine unscharfe Naht ("bearbeitet, aber nicht fertig" = in Arbeit). Drei Stufen geben **eine Farbe je Stufe**: neutral/grau (`unverifiziert`, `--h-text-muted`), gelb (`in_arbeit`, `--h-ocker`), gruen (`verifiziert`, `--h-olivgruen`). **Rot bleibt reserviert** fuer einen spaeteren expliziten Problem/Reject-Status -- bewusst Variante A, **E67-konform** (unverifiziert ist neutral, kein Alarm; literale rot/gelb/gruen-Ampel verworfen). Migration alt->neu (idempotent): `bearbeitet`->`in_arbeit`, `fertig`->`verifiziert`, `offen`->`unverifiziert` in `page_manifest.py` (`STATUS_MIGRATION`/`_migrate_streams`, inkl. History-`from`/`to`), `generate_edition_data.py` (Mirror-Lesen), `viewer.js` + `catalog.js` (`STATUS_LEGACY`). Timing ideal: alle 285 Docs standen auf `unverifiziert`, History leer -> **kein Datenverlust, keine Mirror-Regeneration noetig** (vorhandene `catalog.json`/Manifeste schon konform; verifiziert via Grep + Histogramm). Geaendert: 3 Python-Module, `viewer.js`/`catalog.js` (`STATUS_CYCLE`/`LABEL`/`LEGACY` + Tooltips), Status-Filter in `index.html` (4->3 Optionen), Pill-/Ampel-Farben + Kommentare in `viewer.css`/`catalog.css`. Neues Gate `tests/test_workflow_status.py` (5 Tests). Suite **520 -> 525 gruen**. [[E67]] bleibt gueltig (Reframing-Begruendung); seine 4-Stufen-Ampel-Tabelle ist durch E77 ueberholt
+User decision. Instead of `unverifiziert|in_arbeit|bearbeitet|fertig` now `unverifiziert|in_arbeit|verifiziert` per stream. Finding: the four stages collapsed to only two lamp colours in the UI anyway, and `bearbeitet` versus `fertig` was a blurred seam. Three stages give one colour per stage: neutral grey, yellow, green; red stays reserved for a future explicit problem status (E67-conformant; a literal red/yellow/green reading was rejected). Migration old-to-new idempotent across manifest, mirror reading, and both frontends; timing ideal because all 285 documents stood at `unverifiziert` with empty history, so no data loss and no mirror regeneration. New gate `tests/test_workflow_status.py`. E67 remains valid; its four-stage table is superseded.
 
-Dokumente: [quality.md](quality.md), [viewer.md](viewer.md)
+Documents: [workflow.md](workflow.md), [specification.md](specification.md)
 
-### E78 — Viewer-Kuration: **ein** Speichern-Knopf statt drei Einzel-Downloads (2026-06-07)
+### E78 Viewer curation: one save button instead of three separate downloads (2026-06-07)
 
-User-Entscheidung: "ich will einen gemeinsamen Speichern-Button, und das darf kein Download sein, das muss an der richtigen Stelle im Repo abgelegt werden". Die drei Edit-Modi lieferten bisher je einen separaten Download (Layout ↓ / Text ↓ / Manifest ↓), den der Nutzer manuell ablegen musste. Neu: **ein "Speichern"** sichert alle ungespeicherten Stroeme als einen Akt -- Layout (Seite), Text bzw. TEI (Seite, je nach Quelle) UND das Manifest (Workflow-Status + Provenienz). Jeder Strom landet an seiner kanonischen Stelle im Repo (`saveAll()` in `viewer.js`, `persistSilent()` = FSA-mit-Download-Fallback). Die Einzel-Downloads wandern in ein **"Export ▾"**-Dropdown (Layout/Text/TEI/Manifest je einzeln). Weitere UI-Verdichtung: **Identity-Chip** (Bearbeiterkuerzel/ZBZ-Partner) neben dem Speichern-Knopf statt separatem Inline-Feld; **Seitennavigation** (prev/page-info/next) aus der Doc-Subbar in den **Faksimile-Panel-Header** verschoben (naeher am Bild, wo auch "X Regionen" steht); Edit-Toggles umbenannt **"Layout"/"Text" -> "Layout bearbeiten"/"Text bearbeiten"**; "Ordner verbinden" als eigener Menuepunkt **entfernt** -- die Repo-Verbindung passiert nur noch beim ersten Speichern (`connectWithInfo()`), mit **Erst-Info-Modal** (erklaert: Projekt-Wurzelordner `zbz-ocr-tei` waehlen, was geschrieben wird) und **Ordner-Plausibilitaetscheck** (`looksLikeRepoRoot`: warnt, wenn kein `docs/`+`scripts/`). Status-Tooltip am Speichern-Knopf ist zustandsabhaengig (was wird wohin gespeichert). [[E72]] (FSA-Schreibweg) bleibt die Grundlage; E78 ist die UI-Vereinheitlichung darueber
+User decision: "one shared save button, and it must not be a download, it must land at the right place in the repo". One "Speichern" (save) action now persists all unsaved streams at once: layout (page), text or TEI (page, by source), and the manifest (workflow status plus provenance), each to its canonical repo location (`saveAll()`, FSA with download fallback). The individual downloads moved into an export dropdown. Further condensation: identity chip next to the save button, page navigation moved into the facsimile panel header, edit toggles renamed to "edit layout"/"edit text", the separate connect-folder menu item removed (connection happens on first save, with a first-use modal and a folder plausibility check). E72 remains the foundation; E78 is the UI unification on top.
 
-Dokumente: [viewer.md §Persistenz](viewer.md)
+Documents: [workflow.md](workflow.md)
 
-### E79 — Mirror-Write: Save spiegelt nach `docs/data/`, Viewer liest kuratiertes Layout zuerst (2026-06-07)
+### E79 Mirror write: save mirrors to `docs/data/`, viewer reads curated layout first (2026-06-07)
 
-User-Bug: Layout bearbeitet, "Speichern", Reload -> Edit weg. Ursachenanalyse: der server-lose Viewer laeuft mit **Docroot=`docs/`** und liest beim Reload **ausschliesslich** aus `docs/data/` -- `output/` ist von dort nicht erreichbar. [[E72]] schrieb die Kuration aber nur nach `output/` (kanonisch, Pipeline-Konsum), also ueberlebte **kein** Edit (Layout/Text/Status) den Reload. Zweite Ursache: `fetchLayout` in `viewer.js` las nur `_layout_gemini.json`/`_layout.json`, **nie** `_layout_curated.json` (anders als die Pipeline `loaders.load_layout_gemini`, die curated zuerst liest). Fix zweiteilig: (a) **jeder FSA-Write spiegelt die identische Nutzlast zusaetzlich in den Mirror** (`fs-access.js`): Layout -> `docs/data/pages/{doc}/{doc}_p{NNN}_layout_curated.json`, Text -> `docs/data/pages/{doc}/{doc}_p{N}.md`, Manifest -> `docs/data/manifests/{doc}_manifest.json`, TEI-Final -> `docs/data/pages/{doc}/{doc}_final.xml`; der kanonische `output/`-Schrieb bleibt unveraendert. (b) **Viewer liest curated zuerst** -- neuer Pfad-Helfer `ZBZ.path.layoutCurated` (`core.js`), `fetchLayout` probiert `layoutCurated > gemini > docling` (analog Pipeline). `generate_edition_data --mirror-only` reproduziert exakt dieselben Mirror-Dateien (Layout via `_layout*.json`-Glob, Manifest via `mirror_manifests`) -> kein Drift. Caveat: Per-Seiten-TEI-Splits entstehen erst beim `--reassemble`; der Text-Mirror ueberschreibt die Mistral-Mirror-`.md` (Label "OCR · mistral" bleibt, Inhalt ist curated). Cache-Bust `core.js?v=2`/`fs-access.js?v=3`/`viewer.js?v=12`; node --check + HTTP-200 verifiziert
+User bug: layout edited, saved, reload, edit gone. Root cause: the server-less viewer runs with docroot `docs/` and on reload reads exclusively from `docs/data/`, but E72 wrote curation only to `output/`; additionally `fetchLayout` never read `_layout_curated.json`. Two-part fix: (a) every FSA write mirrors the identical payload into `docs/data/` (layout, text, manifest, TEI final), the canonical `output/` write unchanged; (b) the viewer reads curated first (`layoutCurated > gemini > docling`, analogous to the pipeline loaders). `generate_edition_data --mirror-only` reproduces exactly the same mirror files, so no drift. Caveat: per-page TEI splits only appear on `--reassemble`.
 
-Dokumente: [viewer.md §Persistenz](viewer.md), [workflow.md §3](workflow.md)
+Documents: [workflow.md](workflow.md)
 
-### E80 — CER-Einordnung print-kalibriert: HTR-Baender schmeicheln, Headline an Print-Literatur verankert (2026-06-08)
+### E80 CER framing print-calibrated: HTR bands flatter, headline anchored to print literature (2026-06-08)
 
-User-Befund (Critical Expert): Das Korpus ist reiner **Druck**, kein HTR; die Transkribus-Qualitaetsbaender (<2 % exzellent / publikationsreif) stammen aber aus der Handschriften-Praxis und schmeicheln einer Druck-OCR-Aufgabe, wo die Messlatte hoeher liegt. Drift: Headline-Worte „exzellent/State-of-the-Art/publikationsreif" widersprachen dem eigenen, bereits vorhandenen Print-Literaturvergleich (Crosilla et al. 2025: bester Stack 0.84 %, Transkribus allein 3.67 %). Korrektur (keine Zahlenaenderung, nur Framing): Median 1.83 % = **solide, nicht SotA** (liegt zwischen 0.84 % und 3.67 %); SotA nur fuer beste Einzeldocs (0.3-0.8 %); CER misst zudem gegen eine selbst fehlerbehaftete Referenz (Doc 1440) und ist damit eine Obergrenze. Geaendert: `quality.md` (Headline-Block + Lesehilfe), `methode.html` (Baender-Absatz), `reports/2026-05-27_arbeitsbericht.md` (§6.3 Headline-Satz, jetzt mit Print-Vergleich)
+User finding (critical expert): the corpus is pure print, not handwriting; the Transkribus quality bands (below 2 % excellent / publication-ready) come from HTR practice and flatter a print OCR task. Headline words like "excellent/state of the art/publication-ready" contradicted the project's own print literature comparison (Crosilla et al. 2025: best specialised stack 0.84 %, Transkribus alone 3.67 %). Correction without changing any number: the median is solid for historical print, not state of the art; SotA only for the best individual documents; CER additionally measures against a reference that itself contains errors, so it is an upper bound.
 
-Dokumente: [quality.md](quality.md), [methode.html](../docs/methode.html)
+Documents: [final-report.md](final-report.md), [methode.html](../docs/methode.html)
 
-### E81 — Transkribus-Export + REST-Upload: PAGE-XML-Round-Trip in eine Collection (2026-06-08)
+### E81 Transkribus export plus REST upload: PAGE-XML round trip into a collection (2026-06-08)
 
-Die Stufe-4-PAGE-XML (`output/page_xml/`, Standard-PAGE 2013-07-15) ist verlustfrei nach Transkribus rueckspielbar -- fuer manuelle Nachkorrektur oder HTR-Training. Zwei Skripte in `scripts/edition/`: **`transkribus_export.py`** baut die Transkribus-Ordnerkonvention (`{doc}/` Bilder oben + gleichnamige PAGE-XML im `page/`-Unterordner) aus `page_xml/` + `docs/images/` nach `output/transkribus_upload/` (gitignored); Auswahl `--sample` (stratifiziert Seitenzahl x Sprache), `--all`, `--reference` (24 ZBZ-Overlap-Objekte), `--doc`; pro Seite verifiziert es PNG-Mass == deklariertes `imageWidth/Height` (Koordinaten alignt) und faehrt ueber die PAGE-XML statt die Bilder (Leerseiten ohne Layout bleiben aussen vor). **`transkribus_upload.py`** laedt die Bundles ueber die Legacy-TrpServer-REST-API (`transkribus.eu/TrpServer/rest`: `POST /auth/login` -> `POST /uploads?collId=` JSON-Manifest -> `PUT /uploads/{id}` Bild+XML je Seite). **Verifiziert 2026-06-08**: die Legacy-API schreibt korrekt in eine Collection der **neuen** Plattform (app.transkribus.org, colId 2426839 "zbz hersch"); Testobjekt doc 1500 erschien mit Layout-Regionen (heading/paragraph) + Text + Reading-Order. Auth ausschliesslich ueber Env-Vars (`TRANSKRIBUS_USER/PASSWORD/COLLECTION`), nie im Code/Repo/.env. Kein Dedup -- jeder Lauf legt neue Dokumente an, daher `--dry-run` + Testobjekt vor Vollupload. Dialekt-Caveat: Pipeline-PAGE hat Zeilen-Polygone, **keine Baselines** (Import/Anzeige ok, nur HTR-Training braucht sie). Abzugrenzen vom Viewer-Round-Trip ([[E72]]/[[E79]]): andere Richtung (Pipeline-Layout raus statt Edits rein)
+The stage-4 PAGE-XML (standard PAGE 2013-07-15) is losslessly playable back into Transkribus for manual post-correction or HTR training. Two scripts: `transkribus_export.py` builds the Transkribus folder convention from `page_xml/` plus `docs/images/` (selection `--sample` stratified, `--all`, `--reference`, `--doc`; verifies PNG size equals declared image size so coordinates align). `transkribus_upload.py` uploads bundles via the legacy TrpServer REST API; verified 2026-06-08 against a collection of the new platform (test object doc 1500 appeared with regions, text, and reading order). Auth exclusively via environment variables, never in code or repo. No dedup: every run creates new documents, hence dry run plus test object first. Dialect caveat: line polygons, no baselines (import fine, HTR training would need them).
 
-Dokumente: [pipeline.md §Transkribus-Export](pipeline.md)
+Documents: [pipeline.md §Transkribus Export](pipeline.md)
 
-### E82 — Doc-30-Dedup publiziert + Korpus-Mean 3.99 % (vorher 4.26) + Tail-Ursachen-Register (2026-06-08)
+### E82 Doc-30 dedup published, corpus mean 3.99 % (was 4.26), tail-cause register (2026-06-08)
 
-Bei Doc 30 wurde ein OCR-**Block**duplikat (ein doppelt erfasster Absatz, in Mistral x2) entfernt; Fidelity-CER 18.25 -> 11.59 %, publiziert nach `tei_final/30` (revisionDesc erhalten) + Mirror `docs/data/pages/30/`. Dadurch Korpus-Mean Fidelity **4.26 -> 3.99 %** (CI [2.36; 5.96]), Median 1.83 % unveraendert; `cer_statistics.json` neu (Seed 42, B=10000). **4.26 entfaellt als aktuelle Zahl** (User-Entscheidung: nur der aktuelle/echte CER zaehlt); konsistent gezogen in `quality.md`, `methode.html`, `about.html`, `oekosystem-synthese.md`. Caveat: 3.99 = 24 Docs reines Pipeline-Output + 1 manuell entdupliziertes (Doc 30), weil **keine automatische Block-Deduplikation existiert** -- das in Arbeitsbericht Anhang A und CLAUDE.md referenzierte `scripts/ocr/ocr_dedup.py` ist NICHT im Repo (nur verwaiste `.pyc`); Doku-Drift, separat zu klaeren. Tail-Ursachen belegt + in Bericht 6.3 (25-Objekt-Tabelle) / 7 (Problem-Uebersicht): die hohen CER sind strukturell, NICHT Zeichenerkennung. **Offene Defekte registriert:** (a) Gemini-Layout-QA ueber-detektiert Fussnoten -> Body-als-`<note>` (290/1910/90), nicht sicher auto-fixbar wg. echter langer Fussnoten in 1520/40/3040; (b) Doppelseiten-Lesereihenfolge -- `match_paragraphs_to_regions` (tei_step1) sortiert nur nach y, ignoriert x + `reading_order` (30/760) **[Update [[E90]] (2026-06-21): (b) generatorseitig behoben (spalten-/bandbewusste Lesereihenfolge), Validator-Warnung W19 macht den noch nicht neugenerierten Bestand sichtbar, Auslieferung M3 operator-gated; (a) Fussnoten-Ueberdetektion bleibt offen]**. [[E80]] (print-kalibriert) bleibt gueltig
+In document 30 a duplicated OCR block was removed; fidelity CER 18.25 to 11.59 %, published to the SoT and mirror. Corpus mean fidelity 4.26 to 3.99 % (CI [2.36; 5.96]), median unchanged; statistics JSON regenerated (seed 42). The old figure is retired (user decision: only the current CER counts). Caveat: 3.99 = 24 documents pure pipeline output plus one manually deduplicated, because no automatic block deduplication exists; the `ocr_dedup.py` once referenced in work-report appendix A and CLAUDE.md is not in the repo [update 2026-07-07: clarified; CLAUDE.md has not referenced it since Session 73, the script itself was removed with E75]. Tail causes documented: the high CER values are structural, not character recognition. Open defects registered: (a) the layout QA over-detects footnotes, body-as-note on 290/1910/90, not safely auto-fixable because of real long footnotes in 1520/40/3040; (b) double-page reading order, sorted only by y [update E90 (2026-06-21): (b) fixed generator-side, validator warning W19 scopes the not-yet-regenerated corpus, delivery M3 operator-gated; (a) remains open]. E80 remains valid.
 
-Dokumente: [quality.md](quality.md), [reports/2026-05-27_arbeitsbericht.md](../reports/2026-05-27_arbeitsbericht.md)
+Documents: [final-report.md](final-report.md)
 
-### E83 — Code-Doku-Drift behoben; Header-Metadaten bleiben ZBZ-Domaene (E76/O8 bestaetigt) (2026-06-08)
+### E83 Code-doc drift fixed; header metadata stays ZBZ domain (E76/O8 confirmed) (2026-06-08)
 
-User-Auftrag: "fixe den Code-Doku-Drift; baue nur das wirklich Sinnvolle". (a) **Doku-Drift behoben (bleibt):** pipeline.md `revisionDesc` auf Workflow-Status ([[E66]]/[[E77]]) statt altem "APPROVED"; toter Verweis `knowledge/TEI-MAPPING.md` im Mapping-Prompt -> Editionsrichtlinien + pipeline.md; Scope-Notiz im Mapping-Prompt (Step 2 liefert nur ein per-Seiten-`<div>`-Fragment, daher front/back/anchor/unclear NICHT automatisch erzeugbar); teiHeader-Kommentar "aus ALMA" -> ehrlich `doc_metadata.json`; `tei_unified`-Docstring "4-Stufen" -> "3 + Validierung"; Validator-Kommentar W1-W8 -> W1-W14. (b) **MMSID/Zitat-Header-Projektion testweise gebaut, dann nach Ruecksprache WIEDER VERWORFEN:** Katalog-Nummer + bibliografisches Zitat gehoeren nicht zu OCR/Layout/TEI-Inhalt, sondern sind Bibliotheks-/ZBZ-Domaene -- bestaetigt [[E76]]/[[O8]]. Der gebaute Masterfile-Leser (`scripts/core/masterfile.py`) + Header-Emission wurden in derselben Sitzung wieder entfernt; `build_tei_header` ist wieder wie vor der Sitzung. (Notiz fuer kuenftige Sitzungen: nicht erneut versuchen ohne ausdrueckliche ZBZ-Anforderung.) (c) **Bestaetigt:** front/back/anchor/unclear werden NICHT automatisch erzeugt (Datenquelle Freitext / zu selten / Bild-Urteil; Haeufigkeit in 25 GT: front 6, back 5, anchor 1, unclear 0, epigraph 1) -- bleiben Kuration; Widmungen/Paratext bewusst draussen (Editionsrichtlinien-Auslassungen). Suite gruen.
+User assignment: "fix the code-doc drift; build only what is genuinely sensible". (a) Drift fixed (kept): revisionDesc documentation on workflow status instead of the old "APPROVED"; dead reference in the mapping prompt replaced; scope note added (step 2 delivers only a per-page div fragment, so front/back/anchor/unclear cannot be produced automatically); header comment honest about the data source; docstring and validator comments corrected. (b) An MMSID/citation header projection was built as a test and REJECTED again after consultation: catalog numbers and bibliographic citations are library domain (confirms E76/O8; note for future sessions: do not retry without an explicit ZBZ requirement). (c) Confirmed: front/back/anchor/unclear stay curation (data source free text, too rare, or image judgment).
 
-Dokumente: [pipeline.md](pipeline.md), [decisions.md](decisions.md)
+Documents: [pipeline.md](pipeline.md), [decisions.md](decisions.md)
 
-### E84 — Konformitaets-Audit Pipeline vs Editionsrichtlinien + Welle-1/2-Generator-Fixes (implementiert, Deploy operator-gated) (2026-06-08)
+### E84 Conformity audit pipeline versus editorial guidelines plus wave-1/2 generator fixes (implemented, deploy operator-gated) (2026-06-08)
 
-Auftrag "arbeite zum naechsten Milestone": erschoepfender Abgleich der ausgelieferten TEI-Struktur gegen die Editionsrichtlinien als Multi-Agent-Workflow (126 Agenten, 62 Regeln, adversarisch verifiziert), Bericht `reports/tei-konformitaet-audit-welle1-2026-06-08.md`. **18 echte Generator-Defekte** belegt. **Korrektur:** `div type="text"` ist KEIN Verstoss (Orphan-Wrapper, gleichwertig + schema-valide) -- die zuvor (zaehl-Audit) behauptete Richtlinienwidrigkeit war falsch. **Welle 1 implementiert+getestet:** `_fix_div_n_type_exclusive` (entfernt @n von divs mit @type, 73 Faelle, GT hat 0), `_assign_figure_ids` (fortlaufende xml:id figN, 0/52 -> alle), head type="lemma" fuer encyclopedia (tei_step1). **Welle 2 teilweise:** `_wrap_first_title` (erste Dokument-`<head>` -> `<title type="main">`, 207/285 Docs), `_normalize_foreign_lang` (`<foreign xml:lang>` auf 639-2/B, de->deu, fre->fra). Alle als fehlertolerante Post-Assembly-Paesse in `tei_step3.assemble_document`, DRY ueber Helfer `_transform_tree`. **Validator W15-W18** (nicht-blockierend): div type+n, figure ohne xml:id, leerer speaker, foreign-Code. **sp-speaker-p (groesster Defekt, 62% leere speaker) bewusst NICHT umgebaut:** GT kodiert Sprecher via `<persName ref="GND:...">`, GND-Linking ist mit [[E71]] aus der Pipeline -> leeres `<speaker/>` ist Kurations-Slot (User-Entscheidung, E71-konsistent), kein Bug. Tests `tests/test_tei_conformance.py`; Suite 554 gruen. **Code-Review (2026-06-08, 39 Agenten, adversarisch):** drei CONFIRMED-Befunde -- `_wrap_first_title` ignoriert jetzt Bildunterschrift-Heads (nur Struktur-Heads unter div/body); `_normalize_foreign_lang` + W18 teilen eine Quelle `normalize_lang_code` in `tei_xml_utils` (639-2/T, deckungsgleich, kein duplizierter Varianten-Satz); figure-id-Ueberschreiben ist beabsichtigt (dokumentweite Neunummerierung, kein Guard). Vorbestands-Befund `debate`->`interview` vs `conversation` an Operator gereicht. **Deploy operator-gated:** Fixes wirken erst nach Korpus-Neugenerierung (`tei_unified --all --reassemble`), die wegen aktiver Kurations-Lanes (Fussnoten 1910/290/90) NICHT eigenmaechtig laeuft. **Welle-2-Rest klassifiziert (Workflow + Korpus-Messung 2026-06-08):** kein sicher-deterministischer Fix mehr -- footnote-inline-anchor + footnote-n = COLLISION (Fussnoten-Lane/CER), review-bibl = CURATION_SLOT (freie Bibliographie/GND, E71), pb-blank = ZBZ_BLOCKED (Pipeline `<pb type="blank"/>` widerspricht Richtlinie `<p>[Leer]</p>`), lb-break-no-hyphenation = NON-DEFEKT (0 echte Silbentrennungs-Faelle, 301 Strich-Zeilen sind Listen/Preise). Deterministisch-sichere Konformitaets-Flaeche damit ausgeschoepft. Welle 3/4 offen. reference_tei/1520.xml = kaputtes XML, an ZBZ
+Exhaustive comparison of the delivered TEI structure against the editorial guidelines as a multi-agent workflow (126 agents, 62 rules, adversarially verified). 18 real generator defects proven; one earlier claim corrected (`div type="text"` is NOT a violation). Wave 1 implemented and tested: exclusive div n/type, sequential figure ids, `head type="lemma"` for encyclopedias. Wave 2 partial: first document head as `<title type="main">`, `<foreign xml:lang>` normalised to 639-2/B. All as fault-tolerant post-assembly passes; validator warnings W15-W18 added (non-blocking). The largest defect (62 % empty speakers) deliberately NOT rebuilt: the ground truth encodes speakers via GND persName, GND linking left the pipeline with E71, so the empty `<speaker/>` is a curation slot, not a bug. Adversarial code review (39 agents) confirmed three findings, all addressed. Deploy operator-gated: fixes take effect only after corpus regeneration, which must be coordinated with the curation lanes. Wave-2 remainder classified: no safely deterministic fix remains (collision, curation slot, ZBZ-blocked, or non-defect). reference_tei/1520.xml is broken XML, escalated to ZBZ.
 
-Dokumente: [reports/tei-konformitaet-audit-welle1-2026-06-08.md](../reports/tei-konformitaet-audit-welle1-2026-06-08.md), [pipeline.md](pipeline.md)
+Documents: [pipeline.md](pipeline.md), [specification.md](specification.md)
 
-### E85 — Referenz-verifizierte Fussnoten-Demotion (3,99->2,71%) + #sup-Marker-Strip (Welle-2-Rest footnote-n) (2026-06-08)
+### E85 Reference-verified footnote demotion (3.99 to 2.71 %) plus sup-marker strip (2026-06-08)
 
-Zwei referenz-belegte Fussnoten-Konformitaets-Korrekturen als idempotente, reversible Post-Paesse auf `tei_final` (gitignored, nach Neugenerierung re-applizierbar). **(a) Demotion (3,99->2,71%):** manche `<note place="foot">` trugen in Wahrheit Fliesstext (Gemini Stufe 6); steht ein zusammenhaengender >=150-Zeichen-Ausschnitt im GT-Body (Fussnoten ausgeschlossen, [[E5]]), ist der Block beweisbar Fliesstext -> nach `<p>` demotet. 14 Bloecke/5 Docs (290/1910/90 + nach Operator-Anweisung 40/1520). Korpus-Fidelity-Mean **3,99->2,71%**, Median 1,40%, micro 2,13%; Pipeline-Mehrwert ggue. reiner OCR dadurch signifikant (-9,45pp, p=0,013). Tool `tei_footnote_demote.py` (Backup, HOLD={40,1520}, --include-hold). **(b) #sup-Marker-Strip (Welle-2-Rest footnote-n):** fuehrender `<hi rendition="#sup">`-Druckmarker aus dem Notentext entfernt -- Editionsrichtlinie Z.354 (Marke nur via @n), 0/25 GT-Notes oeffnen mit Marker. 16 Notes/4 Docs (110/130/1140/1500), alle schema+regel-valide, CER-neutral. Tool `tei_footnote_marker_strip.py`. **Welle-2-Rest per Workflow klassifiziert** (10 Agenten, GT-gegruendet, adversarisch): footnote-n war [[E84]] als Fussnoten-Lane an diese Lane gepunktet und ist der einzige sichere Fix; inline-anchor (243/251 ohne Anker), review-bibl (GND-Linking verboten, [[feedback_no_llm_for_id_linking]]), pb-blank (110 wird schema-invalid -> ZBZ), lb-break-no (Rest = Preise/Komposita) evidenz-begruendet als Diagnose/Kuration/ZBZ verworfen -- 3 W19-Diagnose-Specs an die TEI-Struktur-Lane uebergeben. Tests: test_footnote_demote.py + test_footnote_marker_strip.py (14)
+Two reference-backed footnote conformity corrections as idempotent, reversible post-passes on `tei_final`. (a) Demotion: some `<note place="foot">` actually carried body text; if a contiguous stretch of at least 150 characters appears in the ground-truth body (footnotes excluded), the block is provably body text and is demoted to `<p>`. 14 blocks in 5 documents (290/1910/90 plus, on operator instruction, 40/1520). Corpus fidelity mean 3.99 to 2.71 %, median 1.40 %; the pipeline's advantage over raw OCR thereby significant (-9.45 pp, p=0.013). Tool `tei_footnote_demote.py` (backup, hold list, `--include-hold`). (b) Sup-marker strip: leading print markers removed from note text per the guidelines (mark only via `@n`); 16 notes in 4 documents, CER-neutral. Wave-2 remainder classified by a ground-truth-based adversarial workflow; footnote-n was the only safe fix. The note "3 W19 diagnosis specs handed over" was a provisional label, superseded by E90.
 
-Dokumente: [quality.md](quality.md), [reports/welle2-rest-verifikation-2026-06-08.md](../reports/welle2-rest-verifikation-2026-06-08.md)
+Documents: [final-report.md](final-report.md)
 
-### E86 — Repo-Audit-Welle: Viewer-Datenverlust-Fix (H1) + CI-Gate + Doku-Konsistenz (2026-06-10)
+### E86 Repo audit wave: viewer data-loss fix (H1) plus CI gate plus documentation consistency (2026-06-10)
 
-Vier parallele Audits (Doku/Python/Frontend/Prozesse), Befunde in einer Welle umgesetzt. (a) **H1 behoben (Datenverlust):** der XML-Modus lud die per-Seiten-TEI, `writeTei` ueberschreibt aber `{doc}_final.xml` als Ganzes -- ein Seiten-Edit konnte das gesamte Dokument ersetzen. Fix: XML-Modus laedt das Gesamtdokument (`loadTeiFinal`), Save-Guard verweigert Inhalte ohne `teiHeader`/`TEI`-Wurzel, Session-Cache wird nach Save aktualisiert. Dazu H2 (Download-Fallback meldet sich ehrlich als Download), M2 (`pageLoadSeq` + stale-Guards gegen Seitenwechsel-Races), N4 (`destroyOsd()` vor Fehler-DOM), M4 (Titel-Spalte sortiert nach Titel), A11y H3/H5/M6/M7 (Layout-Editor auf Pointer-Events + Pfeiltasten-Nudge inkl. `touch-action:none`; Modal-Fokus-Trap/ESC/Fokus-Rueckgabe; Editor-ARIA `role=textbox`; dynamische Status-Pill-Labels), N5 (Token `--h-overlay`). Befund-Register [frontend-gaps.md](frontend-gaps.md) nachgezogen (10 behoben, offen: H4/M1/M3/M5/N1-N3/N6/N7). (b) **CI eingefuehrt:** `.github/workflows/tests.yml` (volle pytest-Suite bei Push/PR; datenabhaengige Tests skippen auf frischem Checkout) -- erste automatisierte Absicherung bei parallel committenden Instanzen. (c) **requirements.txt lauffaehig:** top-level importierte Pakete ergaenzt (`python-dotenv`, `numpy`, `scipy`, `pyspellchecker`), tote entfernt (`fastapi`, `uvicorn`, `jiwer`, `torchvision`, `transformers`, `accelerate`), `torch` als optional/lazy dokumentiert. (d) **Python-Hygiene:** `ExitStack` in `transkribus_upload.put_page` (Handle-Leak bei fehlgeschlagenem zweiten `open()`), with-Block fuer `_selection.json` in `transkribus_export`. (e) **Doku-Konsistenz:** stale CER-Headline (4,26 %/1,83 %) in README, methode.html, about.html, oekosystem-synthese.md, index.md auf kanonisch **2,71 %/1,40 %** (CI [1,77; 3,82]) gezogen, Paired-Mehrwert -9,45 pp p=0,013 nachgefuehrt; CLAUDE.md fuehrt 12 statt 10 Knowledge-Docs; E-Range E1-E85; E54 als historisch markiert. Code-Kommentar-Konvention ab jetzt: kompakt, englisch, nur wo noetig. Suite 563 gruen, node --check sauber
+Four parallel audits, findings implemented in one wave. (a) H1 fixed (data loss): the XML mode loaded a single page while save overwrote the whole `_final.xml`; the mode now loads the whole document and a save guard rejects content without a TEI root. Plus honest download fallback labelling, stale-guards against page-switch races, accessibility fixes (pointer events, arrow-key nudge, modal focus trap, editor ARIA), and a sort fix. (b) CI introduced: GitHub Actions runs the full pytest suite on every push/PR (data-dependent tests skip on fresh checkouts). (c) `requirements.txt` made runnable for fresh environments (missing packages added, six dead ones removed, torch documented as optional). (d) Python hygiene: file handles closed on error paths in the Transkribus scripts. (e) Documentation: stale CER headline pulled to the canonical 2.71 % / 1.40 % site-wide; code-comment convention from now on: compact, English, only where needed.
 
-Dokumente: [frontend-gaps.md](frontend-gaps.md), [viewer.md](viewer.md)
+Documents: [specification.md](specification.md), [workflow.md](workflow.md)
 
-### E87 — `zbz_hersch.rng` um teiCrafter-standOff-Register + `name`-Mentions erweitert (2026-06-21)
+### E87 `zbz_hersch.rng` extended by teiCrafter standOff register plus name mentions (2026-06-21)
 
-> **Ueberholt durch [[E88]] (2026-06-21).** Das am selben Tag uebergebene ZBZ-Material
-> hat das Auszeichnungsmodell zugunsten Inline-GND entschieden; das standOff-Register ist
-> fuer die Auslieferung gegenstandslos und wurde aus dem aktiven Schema wieder entfernt.
-> Der Eintrag bleibt als Herleitung stehen.
+> Superseded by E88 (2026-06-21). The ZBZ material handed over the same day decided the
+> markup model in favour of inline GND; the standOff register is irrelevant for delivery
+> and was removed from the active schema again. The entry remains as derivation.
 
-Der Kurations-Editor teiCrafter schreibt beim Annotieren ein `<standOff>`-Register
-(`listPerson`/`listPlace`/`listOrg`/`listEvent`/`listBibl` mit `person`/`place`/`org`/
-`event`/`bibl`, je ein Namens-Element plus optionale Normdaten als `<idno type="GND|GeoNames|Wikidata">`),
-eine editoriale `<note target="#id">`, einen `<respStmt xml:id="ai">` mit `<name>AI</name>`
-und In-Text-Mentions `<name ref="#id">`; AI-vorgeschlagene, noch nicht menschlich
-gepruefte Eintraege tragen `resp="#ai"` (Datenvertrag exakt aus `ResearchTools/teiCrafter`,
-`docs/js/editor/standoff.js`). Das ODD-Subset (E48) hatte `standOff` samt aller
-Register-Elemente und das generische `<name>` weggelassen, weil die Pipeline sie nie
-erzeugt; seit [[E71]] ist das ausgelieferte TEI entitaetenfrei. Folge: ein im teiCrafter
-kuratiertes ZBZ-Dokument war gegen sein eigenes Schema invalide, obwohl `{id}_final.xml`
-teiCrafters natives Format ist.
-
-Fix nach Muster [[E68]] (Inhaltsmodelle minimal am real erzeugten Datenvertrag,
-verdrahtet an die bestehenden TEI-Klassen): `tei_standOff` in `tei_model.resource`
-gehaengt (kanonischer `model.resourceLike`-Slot neben `text`/`facsimile`), `tei_name`
-in `tei_model.nameLike.agent` (deckt in einem Zug die Inline-Mentions in `<p>`/`<head>`/`<l>`
-und das `<name>AI</name>` im `respStmt` ab). Elf neue Element-Defines (`standOff`,
-`listPerson`/`listPlace`/`listOrg`/`listEvent`, `person`/`place`/`org`/`event`, `label`,
-`name`) plus ein dediziertes `tei_standOff.listBibl`/`tei_standOff.bibl`, weil das
-geteilte ODD-reduzierte `tei_bibl` (teiHeader/Body) weder `<title>` noch `@resp` zulaesst
-und unangetastet bleiben soll. `@resp`/`@ref`/`@target` reiten auf den schon vorhandenen
-Klassen `att.global.responsibility`/`att.canonical`/`att.pointing`; keine neue
-Attribut-Definition noetig. `standOff` als `zeroOrMore` der Listen modelliert, damit ein
-verlustfrei editiertes, transient leeres Register nicht invalidiert.
-
-Verifiziert: Schema kompiliert; synthetisches teiCrafter-kuratiertes Dokument (alle
-Strukturen) valide; **285/285 `tei_final` weiterhin valide, keine Regression**; neues
-git-getracktes Gate `test_schema_accepts_teicrafter_standoff` haelt die Erweiterung fest,
-Suite gruen.
-
-Faksimile-Anbindung (geprueft, Entscheidung offen, siehe [[O25]]): die Pipeline erzeugt
-`<facsimile>`/`<surface ulx uly lrx lry>`/`<zone>` und die `@facs`-Bindung bereits
-selbst und vollstaendig; was fehlt, ist der Surface->Bild-Zeiger `<graphic url>` im
-Normalfall (zonenbehaftete Seite) -- nur der Leerseiten-Zweig in `build_facsimile`
-([tei_step3.py](../scripts/tei/tei_step3.py) Z. 117) schreibt einen blossen Dateinamen
-`{seite}.png`. Den dauerhaften Einbau leistet ein `<graphic>` als erstes `<surface>`-Kind
-(Schema verlangt graphic vor zone, verifiziert); das macht das Faksimile selbst-enthaltend
-und loest teiCrafters hartcodierten Demo-Bildpfad ab. Offen bleibt das URL-Schema
-(relativ `<id>_p{KKK}.png` vs. absolute GitHub-Pages-URL vs. IIIF) und dass der Einbau
-alle 285 `tei_final` (SoT) neu schreibt -- beides operator-gated.
-
-Offen (Richtlinien-Konformitaet, siehe [[O26]]): E87 richtet sich am teiCrafter-Datenvertrag
-aus, nicht an den ZBZ-Editionsrichtlinien (E49). Die Richtlinien fordern Inline-Auszeichnung
-am Erwaehnungsort (`<persName ref="GND:...">`/`<orgName>`/`<bibl>`, alle `@ref` auf die GND),
-nicht ein standOff-Register mit `<name ref="#id">` und GND als `<idno>`. E87 macht das
-Tool-Modell valide, ohne zu entscheiden, ob es das Liefermodell ist; beide Modelle sind jetzt
-schema-erlaubt. Welches gilt, ist ZBZ-/Operator-Sache.
-
-Dokumente: [quality.md](quality.md), [pipeline.md](pipeline.md)
-
-### E88 — Inline-GND als maßgebliches Auszeichnungsmodell; standOff (E87) aus dem aktiven Schema entfernt (2026-06-21)
-
-Loest [[O26]]. Das von ZBZ uebergebene Material (`data/source/zbz-lieferung-2026-06-21/`,
-README = vollstaendige Editionsrichtlinie, `zbz_hersch.rng` = ZBZ-Pruefvorlage) entscheidet
-das Auszeichnungsmodell: Personen, Organisationen und Werke werden **inline an der
-Erwaehnungsstelle** ausgezeichnet, jede Nennung mit `ref="GND:..."` auf die GND, kein
-separates Register. Belegstellen der README: `<persName ref="GND:118815679">Hersch</persName>`,
-`<orgName ref="GND:1010450-1">Universitaet Genf</orgName>`, `<bibl ref="GND:1088036961">L'etre
-et la forme</bibl>`; nur Person/Organisation/Werk, keine Orte/Events, keine GeoNames/Wikidata,
-keine Auszeichnung in Bildunterschriften. Die ZBZ-Pruefvorlage kennt kein `standOff`. Order
-der Forschungsleitstelle (2026-06-21): nur die ZBZ-Editionsregeln gelten.
-
-Schema-Konsequenz: das standOff-Register aus [[E87]] ist fuer die Auslieferung gegenstandslos
-und wurde aus dem aktiven `data/schema/zbz_hersch.rng` wieder entfernt: die elf E87-Defines
-(`standOff`, `listPerson`/`listPlace`/`listOrg`/`listEvent`, `person`/`place`/`org`/`event`,
-`label`, `name`) samt `tei_standOff.listBibl`/`tei_standOff.bibl`, der `tei_standOff`-Ref in
-`tei_model.resource` und der `tei_name`-Ref in `tei_model.nameLike.agent`. Zusaetzlich die drei
-`@ref`-Pattern von `(GND:...|#zbz-...)` auf `GND:...` verengt (Inline-GND-only, keine internen
-Register-Verweise). Die E68-Kopf-Elemente (revisionDesc/change, langUsage/language, idno,
-monogr/imprint) bleiben erhalten. Damit ist das aktive Schema **exakt die ZBZ-Pruefvorlage plus
-E68**; der vollstaendige Diff zwischen beiden besteht nur noch aus den E68-Elementen
-(verifiziert). Begruendung fuer additiv-minus-E87 statt roher Schema-Uebernahme: die ZBZ-Vorlage
-ist aelter als der Repo-Stand, ihr fehlen die E68-Kopf-Elemente, die die Pipeline regulaer
-erzeugt (revisionDesc/langUsage/idno in allen 285); eine rohe Uebernahme wuerde alle 285
-invalidieren (Widerspruch im ZBZ-Material, das im Header `idno`/Metadaten fordert, vgl. [[O8]]).
-
-Verifiziert: Schema kompiliert; Inline-GND-Dokument (persName/orgName/bibl mit GND) valide;
-standOff-Dokument jetzt **abgelehnt** (neuer Guard `test_schema_rejects_standoff_register`);
-neuer Positiv-Test `test_schema_accepts_inline_gnd`; **285/285 `tei_final` weiterhin valide**
-(der ausgelieferte Bestand ist seit [[E71]] entitaetenfrei, daher keine Migration noetig);
-Suite gruen (289). Der frueher hinzugefuegte Test `test_schema_accepts_teicrafter_standoff`
-ist durch die beiden neuen ersetzt.
-
-Wirkung auf teiCrafter (lane teicrafter-editor): der Editor erzeugt bisher standOff; sein
-Ausgabemodell ist an Inline-GND anzugleichen, damit sein `{id}_final.xml` gegen das
-maßgebliche Schema valide bleibt. Nur-lesend aus dieser Lane beruehrt, keine Schreibzugriffe
-ausserhalb von zbz-ocr-tei; als Delta an die Forschungsleitstelle gemeldet.
-
-Dokumente: [quality.md](quality.md), [pipeline.md](pipeline.md), [index.md](index.md)
-
-### E89 — Seitenbild-Anbindung ZBZ-konform: `<graphic>` als erstes Kind jeder `<surface>` (2026-06-21)
-
-Loest [[O25]]. Order der Forschungsleitstelle (2026-06-21, Punkt 3): die Seitenbild-Anbindung
-richtet sich vollstaendig nach den ZBZ-Regeln; Adressschema technische Entscheidung der Lane,
-kein Operator-Gate.
-
-Befund (die geforderte Pruefung). Die ZBZ-Edition ist primaer eine Leseausgabe (zeichengetreuer
-Lesetext). Die bindende Verknuepfungsform fuer Seitenbilder ist `<pb facs="#facs_N" n="Seitenzahl"/>`
-(README §Seitenumbrueche) -- ein Verweis auf die Digitalisat-Surface, vorhanden auf allen 285
-(Konformitaetsregel Z6). Ein Surface-`<graphic>` schreibt die README nicht zwingend vor; sie
-zeigt `<graphic url>` explizit nur fuer Inhalts-Abbildungen (`<figure>`, relativer Pfad). Das
-ZBZ-Schema erlaubt `<graphic>` in `<surface>` (graphic vor zone). Damit der `<pb facs>`-Verweis
-selbst-enthaltend zum Bild aufloest (und nicht ueber teiCrafters hartcodierten Demo-Pfad), traegt
-jede `<surface>` ein `<graphic url>` als erstes Kind.
-
-Adressschema (technische Entscheidung der Lane): relativer Dateiname `{doc_id}_p{NNN}.png`
-(3-stellig, 1-basiert, sequenziell zu `facs_N`), real abgelegt unter `docs/images/{doc_id}/`.
-Nackter Dateiname ohne Verzeichnis, der Konsument loest relativ zum Bildordner des Dokuments auf
-(wie der frueheren Leerseiten-Platzhalter, nur korrekt). Verworfen: absolute GitHub-Pages-URL und
-IIIF (Hosting noch offen, ein relativer Pfad bleibt portabel und ist die ZBZ-Vorgabe -- "die
-graphic url bezeichnet den relationalen Pfad zum Bild").
-
-Umsetzung zweiteilig: `build_facsimile` ([tei_step3.py](../scripts/tei/tei_step3.py)) erzeugt das
-`<graphic>` direkt fuer frische Pipeline-Laeufe; der Post-Schritt
-[tei_surface_graphic.py](../scripts/tei/tei_surface_graphic.py) bringt den bereits ausgelieferten
-Bestand ohne OCR/Layout-Neulauf auf denselben Stand (idempotent, Backup je Datei). Behebt den
-fehlerhaften Leerseiten-Platzhalter `{N}.png` (zeigte auf eine nicht existente Datei) und ergaenzt
-das fehlende `<graphic>` auf den zonenbehafteten Surfaces.
-
-Verifiziert: 4108 Surfaces in 285 Dokumenten tragen je ein `<graphic>` als erstes Kind; alle 4108
-referenzierten Seitenbilder existieren im Bildordner; 285/285 schema-valide (graphic vor zone),
-285/285 konform; committetes Gate `tests/test_tei_surface_graphic.py` (Synthetik + Korpus); volle
-Suite gruen.
-
-Dokumente: [pipeline.md](pipeline.md), [quality.md](quality.md)
+The curation editor teiCrafter wrote a `<standOff>` register when annotating (person/place/org/event/bibl lists with authority `<idno>`, editorial notes, an AI respStmt, in-text `<name ref>` mentions; data contract lifted exactly from the teiCrafter source). The ODD subset had omitted standOff and generic `<name>`; since E71 the delivered TEI is entity-free. Consequence: a document curated in teiCrafter was invalid against its own schema although `{id}_final.xml` is teiCrafter's native format. Fix following the E68 pattern: standOff attached to `model.resource`, name to `model.nameLike.agent`, eleven element defines plus a dedicated standOff work register (the shared ODD-reduced bibl stays untouched). Verified: synthetic curated document valid, 285/285 still valid, tracked gate. The facsimile check in the same session found the missing surface-to-image pointer (opened O25). Which model would be the delivery model was left open (O26): the guidelines demand inline markup at the mention site, E87 only made the tool model schema-legal.
+
+Documents: [pipeline.md](pipeline.md)
+
+### E88 Inline GND as the binding markup model; standOff (E87) removed from the active schema (2026-06-21)
+
+Resolves O26. The ZBZ material (`data/source/zbz-lieferung-2026-06-21/`, README = complete editorial guideline, `zbz_hersch.rng` = ZBZ check template) decides the markup model: persons, organisations, and works are tagged inline at the mention site, every mention with `ref="GND:..."`, no separate register; only person/organisation/work, no places or events, no GeoNames or Wikidata, no tagging in captions. The ZBZ template knows no standOff. Order of research coordination: only the ZBZ editorial rules apply. Schema consequence: the eleven E87 defines and both model refs removed, the three `@ref` patterns narrowed from `(GND:...|#zbz-...)` to `GND:...` (inline GND only). The E68 header elements remain, so the active schema is exactly the ZBZ template plus E68 (full diff verified). Rationale for additive-minus-E87 instead of raw template adoption: the ZBZ template is older than the repo state and lacks the E68 header elements the pipeline regularly produces; raw adoption would invalidate all 285. Verified: inline GND document valid, standOff document now rejected (guard test), 285/285 still valid (the corpus is entity-free since E71, no migration needed). Effect on teiCrafter: its output model must be aligned to inline GND; delta reported to research coordination.
+
+Documents: [pipeline.md](pipeline.md), [specification.md](specification.md), [index.md](index.md)
+
+### E89 Page-image linking ZBZ-conformant: `<graphic>` as first child of every `<surface>` (2026-06-21)
+
+Resolves O25. Order of research coordination: page-image linking follows the ZBZ rules entirely; the address scheme is a technical decision of the lane, no operator gate. Finding: the binding linking form is `<pb facs="#facs_N" n="..."/>`, present on all 285 (conformity rule Z6); the README does not mandate a surface `<graphic>` but the schema allows it (graphic before zone). So that the `<pb facs>` reference resolves self-contained to the image, every surface now carries `<graphic url="{doc_id}_p{NNN}.png"/>` as first child (three-digit, 1-based, sequential to `facs_N`), a bare relative filename resolved against the document's image folder. Rejected: absolute GitHub Pages URL and IIIF (hosting open; the relative path is the ZBZ requirement). Implemented twice: `build_facsimile` for fresh runs and the idempotent post-step `tei_surface_graphic.py` for the delivered corpus (also fixes the broken blank-page placeholder). Verified: 4108 surfaces carry the graphic, all referenced images exist, 285/285 valid and conformant, committed gate.
+
+Documents: [pipeline.md](pipeline.md), [specification.md](specification.md)
+
+### E90 Reading order column- and band-aware (generator fix, M1) plus validator warning W19 (M2) (2026-06-21)
+
+Resolves open defect (b) from the doc-30/CER entry generator-side. Milestone round of research coordination.
+
+Finding: `match_paragraphs_to_regions` sorted the layout regions purely by `y_pct` (live and legacy call site, identical bug). Layout detection already delivers regions left-column-first; pure y-sorting re-interleaves left and right columns on two-column and double-page layouts (30/760). No stored reading-order field, only bbox geometry. Structural tail cause, not character recognition (E80).
+
+M1 (generator fix): shared pure function `reading_order_permutation` in `tei_xml_utils.py`: full-width blocks (w >= 60 %) segment the page into horizontal bands; within a band, columns split at an x-center gap above 12 % are read left to right, top to bottom per column. A single-column page falls back exactly to the old y-order, hence regression-free. Both call sites converge on this one function. Tests `tests/test_reading_order.py` (9). Commit `6f51eac2`.
+
+M2 (diagnosis): non-blocking validator warning W19 (`_check_reading_order`) compares the delivered block order per page against the canonical order of the same zones, reusing the same function. It fires only on the not-yet-regenerated corpus and thereby scopes exactly the M3 documents. Tests in `tests/test_tei_validator.py` (4). Commit `f72743ac`.
+
+W19 naming clarification: the implemented W19 is the reading-order warning; the E85 note "3 W19 diagnosis specs" was a provisional label for never-implemented proposals, superseded; future specs take identifiers from W20 upward.
+
+Delivery to the corpus: M3, operator-gated. Corpus regeneration (`tei_unified --all --reassemble`) rewrites the SoT and must be coordinated with the curation lanes (E84-consistent). Green criteria: `tei_validator --all` reports 0 W19; schema and ZBZ conformity stay 285/285; the fidelity CER of 30/760 drops.
+
+M3 preparation (audit instrument plus triage, 2026-06-21, commit `8aa3a87d`): behaviour-preserving refactor first (shared `iter_page_zone_bboxes`, optional threshold parameters on the permutation). The tool `reading_order_audit.py` recomputes the canonical permutation per affected page under threshold perturbation (WIDE 60 +/-5, GAP 12 +/-3): stable = robust, flipping = fragile. Measurement over `tei_final`: 831 pages over 216 documents, 557 robust, 274 fragile, 145 documents with at least one fragile page (spread: doc 810 54/33, doc 520 9/0). Recommendation: trust the robust majority after a review sample; review the fragile worklist (`--worklist`) at the facsimile. Robust means threshold-independent, not proven correct. Deliberately no new register number; rollout unratified.
+
+M3 preview (reversible dry run, 2026-06-21): the tool `tei_reassemble_preview.py` reassembles every affected document (steps 1+3, M1 acts in step 1) into `output/tei_preview`; `output/tei_final` is never touched (hash- and test-verified). Offline and free (`dry_run=True`): the preview proves the reading order, not the text refinement, which is independent and reserved for the gated delivery. Tests `tests/test_reassemble_preview.py` (6, one gated pipeline test on doc 890), full suite 1187. Report `reports/m3-reassemble-preview.md`, deterministic.
+
+Finding that sharpens the green criterion: reassembly lowers W19 from 831 to 39 pages; 188 documents reach 0, 28 keep 39 pages (heavy cases collapse: 810 54 to 1, 1520 40 to 1, 1830 11 to 1; largest rest 1240 13 to 7). The literal criterion "0 W19" is not reachable by reassembly alone.
+
+Cause of the 39 remaining pages (diagnostically isolated, no geometry gap): the permutation is idempotent. 35 of 39 pages carry an OCR-paragraph versus layout-region count mismatch (810 p.56: 3 against 236; 1240 p.3: 50 against 61); in the mismatch branch, paragraphs pair by index to a slice of the re-sorted regions, the emitted zone slice is non-canonical, W19 fires correctly. The remaining 4 pages have 1:1 counts but geometry that breaks column detection (sub-60 % header protruding into the second column, 460 p.1). Both mean the same: the 39 are exactly the pages where automatic correction is unreliable, the facsimile-review worklist for M3, largely congruent with the fragile triage. Rejected: re-sorting the emitted zone slice to force W19 to 0 (silences the signal without fixing the upstream segmentation problem). No new register number; rollout stays operator-gated.
+
+Documents: [journal.md](journal.md) sessions 74, 75, 77, 78
+
+### E91 Independent CER counter-check confirms the source of truth (2026-07-03)
+
+Occasion: operator doubt about the solidity of the CER figures, examined from an external session
+(promptotyping-paper lane). The counter-check imported no repo code. Extraction and normalization
+were re-implemented from the documented specification, python-Levenshtein ran as a second engine
+besides rapidfuzz, and the aggregation was independent. It added secondary metrics (WER,
+case-insensitive CER, alignment-free bag-of-chars miss, bag-of-words recall), a content pass over
+the top error blocks of all 25 ground-truth documents, and two facsimile spot checks (docs 30 and 100).
+
+Result: every headline and per-document value reproduced exactly; genuine text loss is the
+exception. The fidelity values depend on the scope threshold (`SCOPE_BLOCK_MIN = 50`), so any
+citation of them must name the threshold. The fidelity drivers were classified as apparatus
+insertions under 50 characters (no recognition error), genuine losses (double page in doc 30,
+facsimile-verified; passages in 1910; citation references in 1520; picture captions in 760),
+convention divergences of the reference (capitalized titles in doc 100, facsimile-verified), and
+rare genuine misrecognitions. Current figures are produced by
+`python -m scripts.eval.benchmark_cer --all` and
+`python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000`; the counter-check
+report with its measured values is
+[cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md), and the counter-check
+scripts live in the paper repo (DHCraft/promptotyping-paper, `verification/`).
+
+Consequence: the upper-bound passage in [final-report.md](final-report.md) is concretized by the
+two cause classes that inflate fidelity without a recognition error (apparatus insertions,
+capitalization divergence). Open follow-up: ellipsis normalization (U+2026 versus `...`), a
+possible dedicated reporting category for apparatus insertions, and the doc 30/760 stock
+correction via M3 (operator-gated, E90).
+
+Documents: [final-report.md](final-report.md), [cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md)
 
 ---
 
-### E90 — Lesereihenfolge spalten-/bandbewusst (Generator-Fix, M1) + Validator-Warnung W19 (M2) (2026-06-21)
+## Open items
 
-Loest den offenen Defekt (b) aus dem Doc-30/CER-Eintrag generatorseitig. Milestone-Runde der
-Forschungsleitstelle, naechste zwei Milestones aus der Editionsphilologie-Persona.
-
-Befund. `match_paragraphs_to_regions` sortierte die Layout-Regionen rein nach `y_pct`
-([tei_step1.py](../scripts/tei/tei_step1.py) live, [tei_generator.py](../scripts/tei/tei_generator.py)
-Legacy, identischer Bug). Die Layout-Erkennung liefert die Regionen aber bereits linke-Spalte-zuerst;
-die reine y-Sortierung verschraenkt linke und rechte Spalte bei Zwei-Spaltern und Doppelseiten wieder
-(30/760). Kein gespeichertes `reading_order`-Feld, nur die Bbox-Geometrie. Strukturelle Tail-Ursache,
-nicht Zeichenerkennung ([[E80]]).
-
-M1 (Generator-Fix). Geteilte reine Funktion `reading_order_permutation` in
-[tei_xml_utils.py](../scripts/tei/tei_xml_utils.py): vollbreite Bloecke (w >= 60%) segmentieren die
-Seite in waagrechte Baender, innerhalb eines Bands liest man Spalte fuer Spalte (x-Mitten-Abstand
-> 12% = Spaltensteg) links nach rechts, je Spalte oben nach unten. Eine einspaltige Seite faellt
-exakt auf die alte y-Reihenfolge zurueck, daher regressionsfrei. Beide Aufrufstellen ziehen jetzt auf
-diese eine Funktion (Bug-Duplikat aufgeloest). Tests `tests/test_reading_order.py` (9). Commit `6f51eac2`.
-
-M2 (Diagnose). Nicht-blockierende Validator-Warnung W19 (`_check_reading_order`,
-[tei_validator.py](../scripts/tei/tei_validator.py)): vergleicht je Seite die ausgelieferte
-Block-Reihenfolge (Body-`@facs` -> Zonen-Geometrie) gegen die kanonische Lesereihenfolge derselben
-Zonen, dieselbe Funktion wiederverwendet. Weicht sie ab, liegt eine Spalten-Verschraenkung vor. Feuert
-nur auf dem noch nicht neugenerierten Bestand (neu generierte Dokumente sind kanonisch) und scoped damit
-genau die M3-Dokumente. Tests `tests/test_tei_validator.py` (4). Commit `f72743ac`.
-
-Kennungs-Klarstellung W19. Das implementierte W19 ist die Lesereihenfolge-Warnung. Die [[E85]]-Notiz
-"3 W19-Diagnose-Specs an die TEI-Struktur-Lane uebergeben" war ein provisorisches Sammel-Label fuer drei
-nie als Regel implementierte Diagnose-Vorschlaege (footnote-inline-anchor, pb-blank, lb-break, als
-Diagnose/Kuration/ZBZ verworfen); der Validator reichte real nur bis W18. Dieses Label ist mit E90
-ueberholt; werden jene Specs spaeter implementiert, nehmen sie freie Kennungen ab W20.
-
-Auslieferung an den Bestand. M3, operator-gated: die Korpus-Neugenerierung
-(`tei_unified --all --reassemble`) schreibt die SoT neu und ist mit den Kurations-Lanes zu koordinieren
-([[E84]]-konsistent). Der M1-Fix wirkt auf kuenftige Generierung; der ausgelieferte 285er-Bestand ist
-erst nach Neugenerierung korrigiert. Gruen-Kriterium M3: `tei_validator --all` meldet 0 W19, Schema und
-ZBZ-Konformitaet bleiben 285/285, der Fidelity-CER von 30/760 sinkt.
-
-Verifiziert: volle Suite 1168 passed (je Milestone neue Tests); git-deterministisch (HEAD `26c8fcd6`,
-synchron 0/0). Keine neue Validierungs- oder Konformitaetsregel-Klasse, ein Bugfix plus eine Diagnose.
-
-M3-Vorbereitung (Audit-Instrument + Triage, 2026-06-21, Commit `8aa3a87d`). Damit der gated Rollout
-nicht blind ueber den ganzen Bestand laeuft, triagiert ein Diagnose-Werkzeug die W19-Menge.
-Verhaltenswahrender Refactor zuerst: die Seiten-/Zonen-Extraktion aus `_check_reading_order` als
-geteilten Generator `iter_page_zone_bboxes` ([tei_xml_utils.py](../scripts/tei/tei_xml_utils.py))
-gezogen (Validator-W19 und Audit sehen exakt dieselbe Seitenmenge), `reading_order_permutation` um
-optionale Schwellwert-Parameter erweitert (Defaults verhaltenswahrend). Das Werkzeug
-[reading_order_audit.py](../scripts/eval/reading_order_audit.py) rechnet je umzusortierender Seite die
-kanonische Permutation unter Schwellwert-Perturbation (WIDE 60 +/-5, GAP 12 +/-3) nach: bleibt sie
-gleich, ist die Seite robust (schwellwert-unabhaengig), kippt sie, ist sie fragil (geometrischer
-Grenzfall, etwa ein Block nahe der Vollbreiten-Schwelle wie 760 S.1). Messung ueber `tei_final`
-(reproduzierbar via `python -m scripts.eval.reading_order_audit`): 831 umzusortierende Seiten ueber 216
-Dokumente, davon 557 robust und 274 fragil, 145 Dokumente mit mindestens einer fragilen Seite; stark
-gestreut (Dok 810: 54/33, Dok 520: 9/0). Empfehlung fuer den M3-Zuschnitt: die robuste Mehrheit nach
-einer Sicht-Stichprobe vertrauen, die fragile Worklist (`--worklist`) einzeln am Faksimile sichten;
-"robust" heisst schwellwert-unabhaengig, nicht bewiesen korrekt. Bewusst keine neue E-Nummer, der
-Rollout bleibt unratifiziert und operator-gated; das Gruen-Kriterium M3 (0 W19 nach Neugenerierung)
-ist unveraendert. Volle Suite 1179.
-
-M3-Vorschau (reversibler Trockenlauf, 2026-06-21). Der Leitstellen-Auftrag dieser Iteration: einen
-verifizierten Trockenlauf bauen, der beweist, dass die Korpus-Neugenerierung die betroffenen Seiten
-korrigiert, ohne die SoT zu ueberschreiben. Werkzeug
-[tei_reassemble_preview.py](../scripts/tei/tei_reassemble_preview.py): reassembliert je betroffenes
-Dokument (Step 1+3 neu, M1 wirkt in Step 1) und kopiert das Ergebnis flach nach `output/tei_preview`;
-`output/tei_final` wird nie beruehrt (per Hash und Test verifiziert). Offline und kostenfrei
-(`dry_run=True`, kein Gemini-Call): die Vorschau beweist die Lesereihenfolge, nicht die
-Text-Verfeinerung, die von der Reihenfolge unabhaengig ist und der gated Auslieferung vorbehalten
-bleibt. W19 mit derselben geteilten Logik gezaehlt wie Validator und Audit. Tests
-`tests/test_reassemble_preview.py` (6, davon ein gated Pipeline-Test auf Dok 890), volle Suite 1187.
-Bericht [reports/m3-reassemble-preview.md](../reports/m3-reassemble-preview.md), deterministisch.
-
-Befund, der das M3-Gruen-Kriterium praezisiert. Die Reassemblierung senkt W19 von 831 auf 39 Seiten
-ueber 216 Dokumente; 188 Dokumente gehen vollstaendig auf 0, 28 behalten zusammen 39 Restseiten (die
-schweren Faelle kollabieren stark: 810 54->1, 1520 40->1, 1830 11->1; groesster Rest 1240 13->7). Das
-literale Gruen-Kriterium "0 W19" wird durch Reassemblierung allein also nicht erreicht.
-
-Ursache der 39 Restseiten (diagnostisch isoliert, kein Geometrie-Gap). `reading_order_permutation` ist
-idempotent (Nicht-Idempotenz ausgeschlossen). 35 der 39 Restseiten haben einen OCR-Absatz-gegen-
-Layout-Region-Count-Mismatch (z.B. 810 S.56: 3 Absaetze gegen 236 Regionen, 1240 S.3: 50 gegen 61):
-`match_paragraphs_to_regions` paart im Mismatch-Zweig die Absaetze per Index an einen Ausschnitt der
-umsortierten Regionen, der emittierte Zonen-Ausschnitt ist daher nicht kanonisch und W19 schlaegt zu
-Recht an. Die uebrigen 4 Restseiten haben 1:1-Count, aber eine Layout-Geometrie, die die
-Spaltenerkennung bricht (etwa ein sub-60%-breiter Kopf, dessen Mitte in die zweite Spalte ragt, wie
-460 S.1). Beides heisst dasselbe: die 39 sind genau die Seiten, auf denen die automatische Korrektur
-unzuverlaessig ist, also die Faksimile-Sicht-Worklist fuer M3, weitgehend deckungsgleich mit der
-fragilen Triage. Verworfen: den emittierten Zonen-Ausschnitt nachsortieren, um W19 auf 0 zu zwingen,
-das schaltet das Signal stumm, ohne den Count-Mismatch (ein Upstream-Segmentierungsproblem) zu beheben
-(Wegdokumentieren-Antipattern). Keine neue E-Nummer, Rollout bleibt operator-gated.
-
-Dokumente: [journal.md](journal.md) Sitzung 74, Sitzung 75, Sitzung 77, Sitzung 78
-
-### E91 — Unabhaengige CER-Gegenprobe bestaetigt SoT; Arbeitsbericht 6.3 auf E82/E85-Stand gebracht (2026-07-03)
-
-Anlass: Operator-Zweifel an der Soliditaet der CER-Zahlen, geprueft aus einer externen Session
-(Promptotyping-Paper-Lane). Gegenprobe ohne jeden Repo-Code-Import: Extraktion und Normalisierung aus
-der dokumentierten Spec neu implementiert, python-Levenshtein als zweite Engine neben rapidfuzz,
-eigene Aggregation; dazu Zweitmetriken (WER, case-insensitive CER, alignmentfreier Bag-of-chars-Miss,
-Bag-of-words-Recall), inhaltlicher Durchgang der Top-Fehlerbloecke aller 25 GT-Docs und zwei
-Faksimile-Sichtpruefungen (30, 100).
-
-Ergebnis. Alle Headline- und Einzelwerte reproduzieren exakt (2.71/1.40, micro 2.13, Volltext
-18.94/12.13, Scope 16.23/7.06; Vorher-Vektoren 3.99/1.83 und 4.26/1.83). Bag-of-chars-Miss Median
-0.01 %, echter Textverlust ist die Ausnahme. Schwellen-Sensitivitaet SCOPE_BLOCK_MIN 30/50/100 ergibt
-Mean 2.38/2.71/3.33 %; die Schwelle 50 gehoert in jede Zitierung. Fidelity-Treiber klassifiziert:
-Apparat-Einfuegungen <50 Zeichen (kein Erkennungsfehler), echte Verluste (30 Doppelseite, am Faksimile
-verifiziert; 1910 Passagen; 1520 Zitatnachweise; 760 Bildlegenden), Konventionsdivergenzen der
-Referenz (Versalien-Titel Doc 100, am Faksimile verifiziert), seltene echte Fehlerkennungen. Bericht:
-[cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md); Gegenprobe-Skripte im
-Paper-Repo (DHCraft/promptotyping-paper, `verification/`).
-
-Umgesetzt. Arbeitsbericht 6.3 stand auf dem 12:58-Zwischenstand 3.99/1.83 und traegt jetzt einen
-Update-Vermerk plus den SoT (Headline inkl. CI und micro, Volltext/Scope, per-Doc-Tabelle auf
-Nach-E85-Werte, Einordnungs-Passage mit Obergrenze/Schwelle/Stichprobe/Handkorrektur/Einzellauf,
-Kennzahl-Entwicklung 4.26 -> 3.99 -> 2.71); Problem-Tabelle Zeile 2 (E90-Stand) und Zeile 3
-(E85-Kuration) nachgezogen, Zeile 5 um die Versalien-Divergenz (100) erweitert; Anhang-A-Hinweis,
-dass `ocr_dedup.py` derzeit nicht im Repo liegt. quality.md Obergrenzen-Passage konkretisiert.
-Offen als Folgearbeit: Ellipsen-Normalisierung (U+2026 vs "..."), Apparat-Einfuegungen ggf. als
-eigene Ausweiskategorie, Doc-30/760-Bestandskorrektur via M3 (operator-gated, E90).
-
----
-
-## Offene Punkte
-
-| # | Frage | Kontext | Blockiert | Klaerung |
+| # | Question | Context | Blocks | Clarification |
 |---|---|---|---|---|
-| O8 | Metadaten aus ALMA/MMSID | ID + MMSID + PubForm im `teiHeader` (laut ZBZ-Editionsrichtlinien) | Phase 3 TEI | **offen, an ZBZ (Stand 2026-06-08, [[E76]]/[[E83]] bestaetigt):** Header-Metadaten aus Alma (inkl. MMSID) gelten als ZBZ-Domaene und gehoeren nicht in die OCR/Layout/TEI-Pipeline. Eine MMSID-Projektion wurde mit [[E69]] eingefuehrt, mit [[E76]] entfernt und mit [[E83]] erneut verworfen. Achtung Spec-Konflikt: die Editionsrichtlinien (`data/source/guidelines/Editionsrichtlinien_ZBZ.md`, E49) fordern ID+MMSID+PubForm im Header; mit ZBZ zu klaeren (wer zieht aus Alma, welche Felder). **Entscheider: ZBZ gemeinsam mit DHCraft.** Solange offen, tragen 195/285 ausgelieferte Header einen leeren Container-Titel (beabsichtigt, kein Defekt) |
-| O13 | TEI-Editorial-Details (Schlagworte) | wer erstellt diese? Im Header? Richtlinien: "in Abklaerung" | Phase 3 TEI | **Entscheider: ZBZ** (Richtlinien selbst sagen "in Abklaerung"). Haengt ab von der ZBZ-internen Festlegung, wer Schlagworte vergibt und wo sie im Header stehen. Solange bleiben die Header ohne Schlagworte; kein Pipeline-Blocker |
-| O18 | multimodale LLM-Korrektur testen (Scan-Bild + OCR-Text) | Forschung: <1% CER (Crosilla 2025). Infrastruktur steht | Quality | **Entscheider: DHCraft (Projektleitung)**, eigener Test. Haengt ab von Priorisierung nach der ZBZ-Abnahme; blockiert nichts (reines Verbesserungs-Experiment auf der bestehenden Gemini-Infrastruktur), [quality.md](quality.md) |
-| ~~O25~~ | Faksimile-`<graphic url>` pipeline-seitig erzeugen — **GEKLAERT (2026-06-21, [[E89]])** | Die Pipeline erzeugt `surface`/`zone`/`@facs` selbst; der Surface->Bild-Zeiger `<graphic>` fehlte im Normalfall, der Leerseiten-Platzhalter `{N}.png` zeigte auf eine nicht existente Datei. | macht Faksimile selbst-enthaltend, loest teiCrafter-Demo-Bildpfad ab | Order (2026-06-21): Adressschema technische Entscheidung der Lane, kein Gate. Umgesetzt in [[E89]]: `<graphic url="{doc_id}_p{NNN}.png"/>` als erstes Surface-Kind, in `build_facsimile` + Post-Schritt `tei_surface_graphic.py`; 4108 Surfaces, alle Bilder existieren, 285/285 valide+konform, committetes Gate |
-| ~~O26~~ | teiCrafter-Annotationsmodell vs. ZBZ-Editionsrichtlinien — **GEKLAERT (2026-06-21, [[E88]])** | Die Richtlinien fordern Inline `<persName ref="GND:...">`/`<orgName>`/`<bibl>` am Erwaehnungsort (alle `@ref` auf die GND); E87 hatte zusaetzlich ein standOff-Register schema-erlaubt gemacht. | — | Order der Forschungsleitstelle (2026-06-21): nur die ZBZ-Editionsregeln gelten, Inline-GND ist das Liefermodell. Umgesetzt in [[E88]]: standOff aus dem aktiven Schema entfernt, `@ref` auf GND-only verengt, aktives Schema = ZBZ-Pruefvorlage + E68; 285/285 valide, Guard-Test gegen Wiedereinzug. teiCrafter-Ausgabemodell ist anzugleichen (Delta an Leitstelle gemeldet) |
-| O27 | ZBZ-README widerspricht sich bei Bildunterschriften | §Registereintraege: "Entitaeten in Bildunterschriften werden nicht ausgezeichnet"; das §Abbildungen-Beispiel zeichnet aber eine `<orgName ref="GND:...">` innerhalb einer `<figure>` aus. Bei der Konformitaetspruefung ([[E88]], `zbz_conformity.py`) entdeckt. | nichts (auf dem entitaetenfreien Bestand kein Effekt; betrifft kuenftigen teiCrafter-Output) | **Entscheider: ZBZ.** Bewusst nicht maschinell erzwungen, solange der Widerspruch offen ist. Rueckfrage: gilt das Verbot fuer die Bildunterschrift (`<head>`) oder den ganzen `<figure>`-Block inkl. Erlaeuterung (`<p>`)? |
-| ~~O22~~ | 289 vs 286 PDF-Diskrepanz — **GEKLAERT** (2026-05-27) | Masterfile hat 325 Texte, davon 289 `digitalisiert`, davon 286 als PDF geliefert; die 3 nicht gelieferten: `1745`, `1750`, `1970`. Verifiziert via `python -m scripts.eval.corpus_audit` | — | erledigt |
-| ~~O23~~ | `tei_final`-Header nicht schema-valide — **GEKLAERT (2026-05-27, E68)** | Diagnose bei E65 nannte nur `<idno>`; die korpusweite Validierung zeigte vier Ursachen (`idno`, `langUsage`, `revisionDesc`/`change`, `biblStruct/monogr`), alle vom ODD-Subset weggelassen. Behoben durch Schema-Erweiterung E68; alle 285 ausgelieferten TEI valide; gegen Regression abgesichert durch `tests/test_tei_schema.py`. | — | erledigt |
-| ~~O24~~ | `tei_validator --compare-ref` zeigt falschen Referenz-CER — **GEKLAERT (2026-05-27, E69)** | `compute_cer`-Import schlug still fehl (Funktion heisst `calculate_cer`), Validator fiel auf Laengen-Approximation zurueck. Fix: `calculate_cer` * 100 (Ratio->Prozent, passend zur Report-Formatierung), `except` auf `ImportError` verengt. Gate `tests/test_tei_validator.py`. | — | erledigt |
+| O8 | Metadata from Alma/MMSID | ID plus MMSID plus PubForm in the `teiHeader` (per the ZBZ editorial guidelines) | phase 3 TEI | Open, with ZBZ (state 2026-06-08, E76/E83 confirmed): header metadata from Alma including the MMSID is ZBZ domain and does not belong in the OCR/layout/TEI pipeline. A projection was introduced with E69, removed with E76, rejected again with E83. Spec conflict: the guidelines demand these fields; to be clarified with ZBZ (who pulls from Alma, which fields). Decider: ZBZ together with DHCraft. While open, most delivered headers carry an empty container title (intended, not a defect). |
+| O13 | TEI editorial details (subject headings) | who creates them, where in the header? Guidelines say "being clarified" | phase 3 TEI | Decider: ZBZ. Until settled, headers stay without subject headings; no pipeline blocker. |
+| O18 | Test multimodal LLM correction (scan image plus OCR text) | research reports sub-1 % CER (Crosilla 2025); infrastructure exists | quality | Decider: DHCraft (project lead), own experiment; blocks nothing. |
+| ~~O25~~ | Surface `<graphic url>` produced pipeline-side. RESOLVED (2026-06-21, E89) | the surface-to-image pointer was missing; blank-page placeholder pointed to a non-existent file | makes the facsimile self-contained | Implemented in E89; all surfaces carry the graphic, committed gate. |
+| ~~O26~~ | teiCrafter annotation model versus ZBZ editorial guidelines. RESOLVED (2026-06-21, E88) | guidelines demand inline GND at the mention site; E87 had additionally schema-allowed a standOff register | none | Order: only the ZBZ rules apply; inline GND is the delivery model. Implemented in E88; teiCrafter output model to be aligned. |
+| O27 | ZBZ README contradicts itself on captions | the register section says entities in captions are not tagged; the figures example tags an `<orgName ref="GND:...">` inside a `<figure>`. Found during the conformity check (E88) | nothing (no effect on the entity-free corpus; concerns future teiCrafter output) | Decider: ZBZ. Deliberately not machine-enforced while the contradiction is open. Question: does the ban cover the caption (`<head>`) or the whole `<figure>` block including the explanation (`<p>`)? |
+| ~~O22~~ | 289 versus 286 PDF discrepancy. RESOLVED (2026-05-27) | Masterfile has 325 texts, 289 digitised, 286 delivered as PDF; the three undelivered: 1745, 1750, 1970; verified via corpus_audit | none | done |
+| ~~O23~~ | `tei_final` headers not schema-valid. RESOLVED (2026-05-27, E68) | diagnosis had named only `idno`; corpus-wide validation showed four causes, all omitted by the ODD subset; fixed by E68, gated by `tests/test_tei_schema.py` | none | done |
+| ~~O24~~ | `tei_validator --compare-ref` showed a wrong reference CER. RESOLVED (2026-05-27, E69) | a silent import failure fell back to a length approximation; fixed and gated | none | done |
 
-### Stabilitaet (LLM-Non-Determinismus, pending User-Entscheidung)
+### Stability (LLM non-determinism, released 2026-07-07, execution at the workstation)
 
-- (a) **Stabilitaets-Pilot:** 5 Docs × 3 Pipeline-Re-Runs, Std-Dev der Per-Doc-CER. Aktuell `stability.status: open` im JSON.
-- (b) **Inter-Engine-CER:** zweiter OCR-Run mit anderer Engine als Cross-Validation. Mittlerer Aufwand.
+- (a) Stability pilot: 5 documents x 3 pipeline re-runs, standard deviation of per-document CER. Currently `stability.status: open` in the JSON.
+- (b) Inter-engine CER: a second OCR run with a different engine as cross-validation. Medium effort.
 
-### Geschlossene Fragen
+### Closed questions
 
-- ~~O6~~ Normalisierung vs Quelltreue → E49 (vorlagengetreu mit definierten Normalisierungen)
-- ~~O9~~ `div-type`-Werte front/back-Matter → E49 (front: editorial, dedication; back: translation, reprint, otherEdition)
-- ~~O11~~ Entities ohne GND-Eintrag → E38/E50 (interne IDs als primaere Referenz, GND in `ref` wenn vorhanden)
-- ~~O21~~ Layout-Region Post-Processing → E25/E26 (Gemini QA + Detect, kein manueller Heuristik-Fix)
+- ~~O6~~ Normalisation versus source fidelity: E49 (source-faithful with defined normalisations)
+- ~~O9~~ `div type` values for front/back matter: E49 (front: editorial, dedication; back: translation, reprint, otherEdition)
+- ~~O11~~ Entities without GND entry: E38/E50 (internal ids as primary reference; removed with E71)
+- ~~O21~~ Layout region post-processing: E25/E26 (Gemini QA plus detect, no manual heuristic fix)
 
 ---
 
-## Risiken
+## Risks
 
-| # | Risiko | Impact | Mitigation | Status |
+| # | Risk | Impact | Mitigation | Status |
 |---|---|---|---|---|
-| R2 | TEI-Komplexitaet + Schema-Inkompatibilitaet | hoch | E48 (`zbz_hersch.rng`) + E49 (Richtlinien) | mitigiert |
-| R3 | GND-Halluzinationen | mittel | — | hinfaellig (E71: NER entfernt) |
-| R5 | Fork-Divergenz DHCraft vs ZBZ | mittel | Merge-Strategie + CI-Tests definieren | offen |
-| R7 | Transkribus-Inkompatibilitaet PAGE-XML | hoch | Schema 2013-07-15, ID-Schema `{NNNN}_p{NNN}`, JPG. `@type`/`@custom` nicht verifizierbar (leere TextRegions) | teilweise geklaert (E23) |
-| R10 | NER-Qualitaet auf Franzoesisch (66% Korpus) | mittel | — | hinfaellig (E71: NER entfernt) |
+| R2 | TEI complexity plus schema incompatibility | high | E48 (`zbz_hersch.rng`) plus E49 (guidelines) | mitigated |
+| R3 | GND hallucinations | medium | none | obsolete (E71: NER removed) |
+| R5 | Fork divergence DHCraft versus ZBZ | medium | define merge strategy plus CI tests | open |
+| R7 | Transkribus incompatibility PAGE-XML | high | schema 2013-07-15, id scheme `{NNNN}_p{NNN}`, JPG; `@type`/`@custom` not verifiable (empty TextRegions) | partly resolved (E23, E81) |
+| R10 | NER quality on French (66 % of corpus) | medium | none | obsolete (E71: NER removed) |
 
 ---
 
-## Verweise
+## References
 
-- [projekt.md](projekt.md) — Meilensteine + Status
-- [pipeline.md](pipeline.md) — Pipeline-Entscheidungen
-- [workflow.md](workflow.md) — End-to-End-Workflow, Round-Trip, Save-Mechanismus, Provenance-Konzept
-- [viewer.md](viewer.md) — Edition + Curation (E33, E36, E42, E56, E57, E58, E59, E60, E61, E62, E63)
-- [quality.md](quality.md) — CER + Screening (E41-E47, E51, E54/E55)
-- [journal.md](journal.md) — chronologische Sitzungs-Historie
+- [project.md](project.md): milestones plus status
+- [pipeline.md](pipeline.md): pipeline decisions
+- [workflow.md](workflow.md): end-to-end workflow, viewer, round trip, save mechanism, provenance concept
+- [specification.md](specification.md): requirements, gates, epics
+- [final-report.md](final-report.md): measured quality state, delivery synthesis
+- [journal.md](journal.md): chronological session history

@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hersch Pipeline-Viewer</title>
+  <title>Hersch Pipeline Viewer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -14,46 +14,46 @@
 </head>
 <body class="viewer-body">
 
-  <!-- ============================================================ Site-Header (shared) ============================================================ -->
+  <!-- ============================================================ Site header (shared) ============================================================ -->
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__brand" href="index.html" title="Zurueck zur Korpus-Uebersicht">
+      <a class="site-header__brand" href="index.html" title="Back to the corpus overview">
         <strong>Hersch</strong>
         <span>Pipeline</span>
       </a>
       <div class="site-header__center">
-        <p class="site-header__sub">Pipeline-Viewer fuer ein einzelnes Dokument</p>
+        <p class="site-header__sub">Pipeline viewer for a single document</p>
         <span class="site-header__exp-badge"
-              title="Experimentelle Inspektions-Umgebung der laufenden OCR-/TEI-Pipeline. Gebaut nach der Methode des Promptotyping (dhcraft.org/promptotyping). Inhalte sind generierte Pipeline-Ergebnisse, nicht editorisch geprueft.">Experimentell</span>
+              title="Experimental inspection environment of the running OCR/TEI pipeline. Built with the Promptotyping method (dhcraft.org/promptotyping). Contents are generated pipeline results, not editorially reviewed.">Experimental</span>
       </div>
-      <nav class="site-header__nav" aria-label="Hauptnavigation">
-        <a href="index.html">Korpus</a>
-        <a href="methode.html">Methode</a>
+      <nav class="site-header__nav" aria-label="Main navigation">
+        <a href="index.html">Corpus</a>
+        <a href="methode.html">Method</a>
         <a href="about.html">About</a>
-        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-header__icon" aria-label="GitHub-Repository" title="GitHub-Repository"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-header__icon" aria-label="GitHub repository" title="GitHub repository"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
       </nav>
     </div>
   </header>
 
   <div class="app">
 
-    <!-- ============================================================ Doc-Subbar (Seitennav + Meta + Downloads) ============================================================ -->
+    <!-- ============================================================ Doc subbar (page nav + meta + downloads) ============================================================ -->
     <div class="doc-subbar" id="doc-subbar" hidden>
       <div class="doc-subbar__inner">
         <div class="doc-subbar__meta" id="doc-meta" aria-live="polite"></div>
         <div class="doc-subbar__actions">
-          <button class="identity-chip identity-chip--empty" id="btn-identity" type="button" title="Bearbeiter-Kuerzel (lokal im Browser gespeichert; steht in jedem Speicher-Eintrag). Klick zum Aendern.">
+          <button class="identity-chip identity-chip--empty" id="btn-identity" type="button" title="Editor initials (stored locally in the browser; recorded in every save entry). Click to change.">
             <span class="identity-chip__icon" aria-hidden="true">&#64;</span>
-            <span class="identity-chip__who" id="identity-who">Kuerzel</span>
+            <span class="identity-chip__who" id="identity-who">Initials</span>
           </button>
-          <input class="input identity-input" type="text" id="identity-input" maxlength="12" placeholder="Kuerzel" autocomplete="off" aria-label="Bearbeiter-Kuerzel" hidden>
-          <button class="btn btn--sm btn--primary" id="btn-save" title="Alle Aenderungen (Layout, Text, Workflow-Status) direkt im verbundenen Repo-Ordner speichern" disabled>Speichern</button>
+          <input class="input identity-input" type="text" id="identity-input" maxlength="12" placeholder="Initials" autocomplete="off" aria-label="Editor initials" hidden>
+          <button class="btn btn--sm btn--primary" id="btn-save" title="Save all changes (layout, text, workflow status) directly into the connected repo folder" disabled>Save</button>
           <div class="export-wrap">
-            <button class="btn btn--sm" id="btn-export-menu" type="button" aria-haspopup="true" aria-expanded="false" title="Einzelne Dateien herunterladen / Repo-Ordner verbinden" disabled>Export &#9662;</button>
+            <button class="btn btn--sm" id="btn-export-menu" type="button" aria-haspopup="true" aria-expanded="false" title="Download individual files / connect repo folder" disabled>Export &#9662;</button>
             <div class="export-menu" id="export-menu" role="menu" hidden>
-              <div class="export-menu__label">Einzel-Export (Download)</div>
-              <button class="export-menu__item" id="btn-download-layout" type="button" role="menuitem" disabled>Layout (Seite) &darr;</button>
-              <button class="export-menu__item" id="btn-download-text" type="button" role="menuitem" disabled>Text (Seite) &darr;</button>
+              <div class="export-menu__label">Single export (download)</div>
+              <button class="export-menu__item" id="btn-download-layout" type="button" role="menuitem" disabled>Layout (page) &darr;</button>
+              <button class="export-menu__item" id="btn-download-text" type="button" role="menuitem" disabled>Text (page) &darr;</button>
               <button class="export-menu__item" id="btn-download-tei" type="button" role="menuitem" disabled>TEI (final) &darr;</button>
               <button class="export-menu__item" id="btn-download-manifest" type="button" role="menuitem" disabled>Manifest &darr;</button>
             </div>
@@ -61,33 +61,33 @@
         </div>
       </div>
       <div class="doc-subbar__inner doc-subbar__inner--status">
-        <div class="status-controls" role="group" aria-label="Workflow-Status pro Strom">
+        <div class="status-controls" role="group" aria-label="Workflow status per stream">
           <span class="status-controls__label">Workflow</span>
-          <button class="status-pill" type="button" id="status-ocr"    data-stream="ocr"    aria-label="OCR-Status setzen" disabled></button>
-          <button class="status-pill" type="button" id="status-layout" data-stream="layout" aria-label="Layout-Status setzen" disabled></button>
-          <button class="status-pill" type="button" id="status-tei"    data-stream="tei"    aria-label="TEI-Status setzen" disabled></button>
+          <button class="status-pill" type="button" id="status-ocr"    data-stream="ocr"    aria-label="Set OCR status" disabled></button>
+          <button class="status-pill" type="button" id="status-layout" data-stream="layout" aria-label="Set layout status" disabled></button>
+          <button class="status-pill" type="button" id="status-tei"    data-stream="tei"    aria-label="Set TEI status" disabled></button>
           <span class="status-controls__hint" id="status-hint"></span>
         </div>
-        <!-- Layout-Editor-Werkzeuge: nur im Layout-Edit-Modus sichtbar, in der Status-Zeile (E78) -->
-        <div class="editor-toolbar hidden" id="layout-toolbar" aria-label="Layout-Editor-Werkzeuge">
+        <!-- Layout editor tools: visible only in layout edit mode, in the status row (E78) -->
+        <div class="editor-toolbar hidden" id="layout-toolbar" aria-label="Layout editor tools">
           <div class="editor-toolbar__group">
-            <button class="btn btn--sm" id="btn-region-add"    title="Region hinzufuegen (Klick + Drag auf Faksimile)">+ Region</button>
-            <button class="btn btn--sm" id="btn-region-delete" title="Selektierte Region loeschen (Entf)" disabled>Loeschen</button>
+            <button class="btn btn--sm" id="btn-region-add"    title="Add region (click + drag on the facsimile)">+ Region</button>
+            <button class="btn btn--sm" id="btn-region-delete" title="Delete selected region (Del)" disabled>Delete</button>
           </div>
           <div class="toolbar__divider"></div>
           <div class="editor-toolbar__group" id="region-type-selector">
-            <label class="toolbar__label" for="region-type">Typ</label>
+            <label class="toolbar__label" for="region-type">Type</label>
             <select class="input toolbar__select" id="region-type" disabled>
               <option value="zb_heading">Heading</option>
               <option value="zb_paragraph">Paragraph</option>
-              <option value="footnote">Fussnote</option>
+              <option value="footnote">Footnote</option>
               <option value="caption">Caption</option>
               <option value="_filter">Filter</option>
               <option value="_skip">Skip</option>
             </select>
           </div>
           <div class="toolbar__divider"></div>
-          <div class="editor-toolbar__group region-coords" id="region-coords" aria-label="Koordinaten der selektierten Region in Prozent">
+          <div class="editor-toolbar__group region-coords" id="region-coords" aria-label="Coordinates of the selected region in percent">
             <span class="toolbar__label">BBox</span>
             <label class="region-coords__field"><span>X</span><input class="input region-coords__input" type="number" step="0.1" min="0" max="100" id="rc-x" disabled></label>
             <label class="region-coords__field"><span>Y</span><input class="input region-coords__input" type="number" step="0.1" min="0" max="100" id="rc-y" disabled></label>
@@ -98,50 +98,50 @@
       </div>
     </div>
 
-    <!-- ============================================================ Main: Panels ============================================================ -->
+    <!-- ============================================================ Main: panels ============================================================ -->
     <main class="main" id="main">
 
-      <!-- Panels: Faksimile (links) + Text (rechts) -->
+      <!-- Panels: facsimile (left) + text (right) -->
       <div class="panels" id="panels">
 
-        <section class="panel panel--facsimile" id="panel-image" aria-label="Faksimile mit Layout-Overlay">
+        <section class="panel panel--facsimile" id="panel-image" aria-label="Facsimile with layout overlay">
           <div class="panel__header">
-            <span class="panel__title">Faksimile</span>
+            <span class="panel__title">Facsimile</span>
             <span class="panel__hint" id="region-count"></span>
             <div class="panel__header-actions">
-              <div class="page-nav" role="group" aria-label="Seitennavigation">
-                <button class="btn btn--sm btn--icon" id="btn-prev" title="Vorherige Seite (Pfeil links)" disabled>&blacktriangleleft;</button>
+              <div class="page-nav" role="group" aria-label="Page navigation">
+                <button class="btn btn--sm btn--icon" id="btn-prev" title="Previous page (arrow left)" disabled>&blacktriangleleft;</button>
                 <span class="page-info" id="page-info">&mdash; / &mdash;</span>
-                <button class="btn btn--sm btn--icon" id="btn-next" title="Naechste Seite (Pfeil rechts)" disabled>&blacktriangleright;</button>
+                <button class="btn btn--sm btn--icon" id="btn-next" title="Next page (arrow right)" disabled>&blacktriangleright;</button>
                 <input class="input page-goto" id="page-goto" type="number" min="1" inputmode="numeric"
-                       aria-label="Gehe zu Seite" title="Gehe zu Seite (Enter springt; Home/End = erste/letzte Seite)" placeholder="S." disabled>
+                       aria-label="Go to page" title="Go to page (Enter jumps; Home/End = first/last page)" placeholder="p." disabled>
               </div>
               <button class="panel__edit-toggle" id="btn-image-edit" aria-pressed="false"
-                      title="Layout bearbeiten (Bounding-Boxes, Reading-Order)">Layout bearbeiten</button>
+                      title="Edit layout (bounding boxes, reading order)">Edit layout</button>
             </div>
           </div>
           <div class="panel__body" id="image-body">
-            <div class="empty">Kein Dokument geladen</div>
+            <div class="empty">No document loaded</div>
           </div>
         </section>
 
         <div class="panel__divider" id="divider" aria-hidden="true"></div>
 
-        <section class="panel panel--text" id="panel-text" aria-label="Transkription + TEI">
+        <section class="panel panel--text" id="panel-text" aria-label="Transcription + TEI">
           <div class="panel__header">
-            <span class="panel__title" id="text-panel-title">Transkription</span>
+            <span class="panel__title" id="text-panel-title">Transcription</span>
             <div class="panel__header-actions">
-              <div role="group" aria-label="Text-Quelle" class="toolbar__mode toolbar__mode--inline">
-                <button class="mode-btn" data-text-source="ocr" aria-pressed="true"  title="OCR-Rohtext">OCR</button>
-                <button class="mode-btn" data-text-source="tei" aria-pressed="false" title="TEI gerendert">TEI</button>
-                <button class="mode-btn" data-text-source="xml" aria-pressed="false" title="TEI als XML-Quelle">XML</button>
+              <div role="group" aria-label="Text source" class="toolbar__mode toolbar__mode--inline">
+                <button class="mode-btn" data-text-source="ocr" aria-pressed="true"  title="Raw OCR text">OCR</button>
+                <button class="mode-btn" data-text-source="tei" aria-pressed="false" title="TEI rendered">TEI</button>
+                <button class="mode-btn" data-text-source="xml" aria-pressed="false" title="TEI as XML source">XML</button>
               </div>
               <button class="panel__edit-toggle" id="btn-text-edit" aria-pressed="false"
-                      title="Aktuelle Text-Quelle bearbeiten">Text bearbeiten</button>
+                      title="Edit the current text source">Edit text</button>
             </div>
           </div>
           <div class="panel__body panel__body--paper" id="text-body">
-            <div class="empty">Kein Dokument geladen</div>
+            <div class="empty">No document loaded</div>
           </div>
         </section>
 
@@ -149,22 +149,22 @@
     </main>
   </div>
 
-  <!-- Einmalige Info beim ersten Verbinden des Repo-Ordners -->
+  <!-- One-time info when first connecting the repo folder -->
   <div class="modal-overlay" id="fsa-info" hidden>
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="fsa-info-title">
-      <h2 class="modal__title" id="fsa-info-title">Repo-Ordner verbinden</h2>
+      <h2 class="modal__title" id="fsa-info-title">Connect repo folder</h2>
       <p class="modal__text">
-        Waehle im naechsten Schritt den Projekt-Ordner <strong>zbz-ocr-tei</strong>, also den Ordner,
-        der <code>output/</code>, <code>docs/</code> und <code>scripts/</code> direkt enthaelt.
+        In the next step, pick the project folder <strong>zbz-ocr-tei</strong>, that is the folder
+        directly containing <code>output/</code>, <code>docs/</code>, and <code>scripts/</code>.
       </p>
       <p class="modal__text">
-        Deine Korrekturen werden dann <strong>direkt dorthin geschrieben</strong>: Layout und OCR nach
-        <code>output/</code>, Workflow-Status und TEI nach <code>output/tei_final/</code>. Nichts wird
-        hochgeladen, alles bleibt lokal. Der Browser fragt einmal nach Schreibrechten.
+        Your corrections are then <strong>written directly there</strong>: layout and OCR to
+        <code>output/</code>, workflow status and TEI to <code>output/tei_final/</code>. Nothing is
+        uploaded, everything stays local. The browser asks once for write permission.
       </p>
       <div class="modal__actions">
-        <button class="btn btn--ghost btn--sm" id="fsa-info-cancel" type="button">Abbrechen</button>
-        <button class="btn btn--primary btn--sm" id="fsa-info-go" type="button">Ordner waehlen</button>
+        <button class="btn btn--ghost btn--sm" id="fsa-info-cancel" type="button">Cancel</button>
+        <button class="btn btn--primary btn--sm" id="fsa-info-go" type="button">Choose folder</button>
       </div>
     </div>
   </div>
@@ -173,11 +173,11 @@
     <div class="site-footer__inner">
       <div class="site-footer__col">
         <span>Edition: Zentralbibliothek Zuerich</span>
-        <span>Technische Umsetzung: <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft OG</a></span>
+        <span>Technical implementation: <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft OG</a></span>
       </div>
       <div class="site-footer__col site-footer__col--right">
-        <a href="impressum.html">Impressum</a>
-        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-footer__icon" aria-label="GitHub-Repository">
+        <a href="impressum.html">Legal notice</a>
+        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-footer__icon" aria-label="GitHub repository">
           <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
         </a>
       </div>
@@ -185,12 +185,12 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="assets/js/core.js?v=4"></script>
-  <script src="assets/js/tei-render.js?v=2"></script>
-  <script src="assets/js/download.js?v=1"></script>
-  <script src="assets/js/fs-access.js?v=4"></script>
-  <script src="assets/js/layout-editor.js?v=2"></script>
-  <script src="assets/js/transcription-editor.js?v=2"></script>
-  <script src="assets/js/viewer.js?v=14"></script>
+  <script src="assets/js/core.js?v=5"></script>
+  <script src="assets/js/tei-render.js?v=3"></script>
+  <script src="assets/js/download.js?v=2"></script>
+  <script src="assets/js/fs-access.js?v=5"></script>
+  <script src="assets/js/layout-editor.js?v=3"></script>
+  <script src="assets/js/transcription-editor.js?v=3"></script>
+  <script src="assets/js/viewer.js?v=15"></script>
 </body>
 </html>

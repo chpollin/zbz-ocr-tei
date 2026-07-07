@@ -2,7 +2,7 @@
  * core.js — Foundation Layer
  *
  * DOM/URL/Fetch/Format helpers + Data-Path-Resolver.
- * Geladen als ERSTES Script.
+ * Loaded as the FIRST script.
  *
  * Namespace: window.ZBZ
  */
@@ -37,10 +37,10 @@
     };
 
     // ---- Markdown ----
-    // Minimal-Renderer fuer OCR-Output (Mistral & Co. liefern Markdown).
-    // Unterstuetzt: # / ## Headings, **bold**, *italic*, Absatz-Bloecke via Leerzeilen,
-    // strippt Bild-Refs (das Faksimile zeigt das Original), decodet HTML-Entities.
-    // Eingabe wird zuerst HTML-escapet, dann auf der escapten Repraesentation transformiert.
+    // Minimal renderer for OCR output (Mistral and similar engines deliver Markdown).
+    // Supports: # / ## headings, **bold**, *italic*, paragraph blocks via blank lines;
+    // strips image refs (the facsimile shows the original), decodes HTML entities.
+    // Input is HTML-escaped first, then transformations run on the escaped representation.
     ZBZ.decodeEntities = (s) => {
         if (s == null) return '';
         return String(s)
@@ -54,17 +54,17 @@
     };
     ZBZ.renderMarkdown = (text) => {
         if (text == null || text === '') return '';
-        // 1) Entities aus dem Quelltext decoden (z.B. '&amp;' -> '&'), damit der spaetere
-        //    Escape-Pass eine konsistente Repraesentation produziert.
+        // 1) Decode entities in the source text (e.g. '&amp;' -> '&') so the later
+        //    escape pass produces a consistent representation.
         let src = ZBZ.decodeEntities(String(text));
-        // 2) Bild-Markdown entfernen (vor Escape, weil ![..](..) sonst sichtbar bleibt).
+        // 2) Remove image Markdown before escaping (![..](..) would otherwise stay visible).
         src = src.replace(/!\[[^\]]*\]\([^)]*\)/g, '');
-        // 3) HTML-escapen.
+        // 3) HTML-escape.
         let s = ZBZ.esc(src);
-        // 4) Inline-Markdown auf den escapten String anwenden.
+        // 4) Apply inline Markdown to the escaped string.
         s = s.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
         s = s.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, '$1<em>$2</em>');
-        // 5) Zeilenweise zu Bloecken (## / # / Absatz) zusammenstellen.
+        // 5) Assemble lines into blocks (## / # / paragraph).
         const lines = s.split(/\r?\n/);
         const out = [];
         let para = [];
@@ -87,16 +87,16 @@
         return out.join('\n');
     };
 
-    // ---- Leerseiten-Erkennung ----
-    // Vorsatz-/Rueck-/Durchschlagseiten liefern nur Muell-OCR ('.', '^{}[]', eine
-    // Seitenzahl oder ein leeres Tabellengeruest). Validierte Regel (Korpus-Scan, 285 Docs,
-    // 77 Treffer, 0 Fehlalarme): leer, wenn der getrimmte Text <= 5 Zeichen lang ist ODER
-    // keinerlei Buchstaben/Ziffern enthaelt. Quelle ist immer der Mistral-Basis-OCR.
+    // ---- Blank-page detection ----
+    // End-paper, back-matter, and carbon-copy pages produce only garbage OCR ('.', '^{}[]',
+    // a page number, or an empty table skeleton). Validated rule: blank when trimmed text
+    // is <= 5 characters long OR contains no letters or digits. Source is always the
+    // Mistral base OCR.
     ZBZ.isBlankPageText = (text) => {
-        if (text == null) return false;                 // unbekannt -> nicht als leer behandeln
+        if (text == null) return false;                 // unknown -> do not treat as blank
         const s = String(text).trim();
-        if (s.length <= 5) return true;                 // '.', '^{}[]', Seitenzahlen
-        if (!/[A-Za-zÀ-ÿ0-9]/.test(s)) return true;     // nur Satzzeichen / leeres Tabellengeruest
+        if (s.length <= 5) return true;                 // '.', '^{}[]', page numbers
+        if (!/[A-Za-zÀ-ÿ0-9]/.test(s)) return true;     // punctuation only / empty table skeleton
         return false;
     };
 
@@ -140,11 +140,11 @@
     };
 
     // ---- Fetch ----
-    // cache: 'no-cache' = vor Nutzung der Browser-Kopie immer revalidieren (304 bleibt moeglich,
-    // Caching wird NICHT abgeschaltet). Noetig fuer den lokalen Kurations-Loop: 'Speichern'
-    // ueberschreibt die Datendateien (OCR/Layout/Manifest/TEI); ohne Revalidierung zeigte ein
-    // Reload die alte gecachte Datei und der Edit wirkte verloren. Bilder (OSD-Tiles) laufen
-    // nicht ueber diese Helfer und behalten normales Caching.
+    // cache: 'no-cache' = always revalidate before using the browser copy (304 still possible,
+    // caching is NOT disabled). Required for the local curation loop: Save overwrites the data
+    // files (OCR/layout/manifest/TEI); without revalidation a reload would show the old cached
+    // file and the edit would appear lost. Images (OSD tiles) do not go through these helpers
+    // and keep normal caching.
     ZBZ.fetchText = (url) => fetch(url, { cache: 'no-cache' }).then(r => r.ok ? r.text() : null).catch(() => null);
     ZBZ.fetchJSON = (url) => fetch(url, { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null);
     // 'missing' (HTTP error, e.g. 404) vs 'network' (fetch threw) -- consumed by error UI
@@ -171,15 +171,15 @@
     };
 
     // ---- Data-Paths ----
-    // Primaer: data/pages/{doc}/  (gemirrort durch generate_edition_data.py, alle 285 Docs)
-    // Fallback: ../output/...     (nur bei lokalem Server mit Projekt-Root als DocRoot,
-    //                              fuer alternative OCR-Engines die nicht versioniert sind)
+    // Primary: data/pages/{doc}/  (mirrored by generate_edition_data.py for all docs)
+    // Fallback: ../output/...     (only with a local server using the project root as docroot,
+    //                              for alternative OCR engines that are not versioned)
     const padded = (page) => ZBZ.padPage(page);
     ZBZ.path = {
         image: (doc, page) => `images/${doc}/${doc}_p${padded(page)}.png`,
 
-        // Menschlich kuratiertes Layout (Viewer-Direktschreiben) hat Vorrang vor den
-        // Engine-Outputs -- analog zu loaders.load_layout_gemini (curated > gemini > docling).
+        // Human-curated layout (written directly by the viewer) takes priority over
+        // engine outputs, analogous to loaders.load_layout_gemini (curated > gemini > docling).
         layoutCurated: (doc, page) => [
             `data/pages/${doc}/${doc}_p${padded(page)}_layout_curated.json`,
             `../output/layout/${doc}/${doc}_p${padded(page)}_layout_curated.json`
@@ -220,11 +220,11 @@
         ]
     };
 
-    // ---- Layout-Region-Konstanten ----
+    // ---- Layout-region constants ----
     ZBZ.REGION_TYPES = [
         { value: 'zb_heading',   label: 'Heading',   cls: 'region--heading' },
         { value: 'zb_paragraph', label: 'Paragraph', cls: 'region--paragraph' },
-        { value: 'footnote',     label: 'Fussnote',  cls: 'region--footnote' },
+        { value: 'footnote',     label: 'Footnote',  cls: 'region--footnote' },
         { value: 'caption',      label: 'Caption',   cls: 'region--caption' },
         { value: '_filter',      label: 'Filter',    cls: 'region--filter' },
         { value: '_skip',        label: 'Skip',      cls: 'region--skip' }
@@ -254,7 +254,7 @@
         }, 2800);
     };
 
-    // ---- LRU Cache ----
+    // ---- LRU cache ----
     ZBZ.Cache = class {
         constructor(maxSize) { this._max = maxSize || 50; this._m = new Map(); }
         get(k) {
@@ -281,7 +281,7 @@
         };
     };
 
-    // ---- Event-Bus (simpel) ----
+    // ---- Event bus (simple) ----
     ZBZ.bus = (() => {
         const subs = new Map();
         return {

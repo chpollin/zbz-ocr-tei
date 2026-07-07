@@ -461,7 +461,7 @@ def main():
         'min_cer': min(cers),
         'max_cer': max(cers),
         'avg_wer': statistics.mean(wers),
-        # Drei-Zahlen-Zerlegung (siehe classify_edit_operations / quality.md):
+        # Three-bucket decomposition (see classify_edit_operations / knowledge/specification.md):
         'avg_cer_fidelity': statistics.mean(fids),
         'median_cer_fidelity': statistics.median(fids),
         'avg_scope_insertion_rate': statistics.mean(scopes),

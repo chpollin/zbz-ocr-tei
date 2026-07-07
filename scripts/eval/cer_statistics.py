@@ -467,7 +467,7 @@ class DocCERRecord:
     gibt `weighted_cer` genau diesen Wert zurueck -- die page_cers/page_ref_chars
     dienen nur noch der Per-Seiten-Outlier-Visualisierung, nicht der Headline.
     Die frueher hier dokumentierte char-gewichtete Per-Page-Aggregation wurde
-    aufgegeben (Page-Numbering-Drift, siehe knowledge/quality.md). Aggregat-Statistik
+    aufgegeben (Page-Numbering-Drift, siehe knowledge/final-report.md). Aggregat-Statistik
     bootstraped ueber Per-Dok-Werte (n=Docs), nicht ueber Per-Page-Werte.
     """
     doc_id: str
@@ -728,7 +728,7 @@ def build_statistics(
                 "selektiven Referenz) ausgeschlossen -- ueber ALLE Docs, kein Scope-Filter noetig. "
                 "end_to_end = volle Volltext-Divergenz (scope-inkl.), case-sensitiv, kein Trimming. "
                 "end_to_end_casefold = wie end_to_end, aber case-insensitiv. "
-                "Siehe knowledge/quality.md, Topf A/B/C-Zerlegung."
+                "Siehe knowledge/specification.md, Abschnitt Quality measurement."
             ),
             "scope_filter_note": (
                 f"end_to_end nutzt n={len(scope_clean)} scope-bereinigte Docs "

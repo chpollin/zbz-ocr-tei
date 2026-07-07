@@ -1,34 +1,34 @@
 /**
- * fs-access.js — Direkt-Schreiben in den Working Tree (File System Access API)
+ * fs-access.js — Direct write to the working tree (File System Access API)
  *
- * Alternative zu ZBZ.Download: schreibt kuratierte Dateien direkt in den vom Nutzer
- * einmal freigegebenen Repo-Ordner, statt sie als Download anzubieten. Damit entfaellt
- * das manuelle Ablegen. Anschliessend regeneriert ein Pipeline-Lauf das TEI:
+ * Alternative to ZBZ.Download: writes curated files directly into the repo folder
+ * the user has granted access to once, instead of offering them as downloads. This
+ * removes the need to place files manually. A subsequent pipeline run regenerates the TEI:
  *
  *   python -m scripts.tei.tei_unified --doc {DOC} --reassemble ; \
  *   python -m scripts.edition.generate_edition_data --mirror-only
  *
- * Verfuegbar nur in Chromium (showDirectoryPicker) und im secure context (localhost
- * oder HTTPS). Wo nicht verfuegbar, bleibt ZBZ.Download der Pfad (Fallback in viewer.js).
- * Der Verzeichnis-Handle wird in IndexedDB persistiert (structured-cloneable; in
- * localStorage nicht serialisierbar). Schreibrecht muss pro Sitzung per Geste re-granted
- * werden -- daher bleibt der Verbinden-Button sichtbar.
+ * Available only in Chromium (showDirectoryPicker) and in a secure context (localhost
+ * or HTTPS). Where unavailable, ZBZ.Download remains the path (fallback in viewer.js).
+ * The directory handle is persisted in IndexedDB (structured-cloneable; not serializable
+ * in localStorage). Write permission must be re-granted per session via a user gesture,
+ * so the "Connect repo folder" button stays visible.
  *
- * Zielpfade (kanonisch, an die Backend-Konsumenten in scripts/core/loaders.py angelehnt):
+ * Canonical target paths (aligned with the backend consumers in scripts/core/loaders.py):
  *   Layout   -> output/layout/{doc}/{doc}_p{NNN}_layout_curated.json
  *   OCR/Text -> output/ocr_curated/{doc}_p{N}.md
  *   Manifest -> output/tei_final/{doc}_manifest.json
- *   TEI      -> output/tei_final/{doc}_final.xml   (ueberschreibt die Single Source of Truth)
+ *   TEI      -> output/tei_final/{doc}_final.xml   (overwrites the single source of truth)
  *
- * Mirror-Pfade (zusaetzlich): Der server-lose Viewer laeuft mit Docroot=docs/ und liest beim
- * Reload AUSSCHLIESSLICH aus docs/data/ -- output/ ist von dort nicht erreichbar. Damit
- * 'Speichern' die Kuration sofort (ohne Backend-Lauf) auch nach einem Reload zeigt, schreibt
- * jede Funktion die identische Nutzlast zusaetzlich in den Mirror:
- *   Layout   -> docs/data/pages/{doc}/{doc}_p{NNN}_layout_curated.json  (fetchLayout liest curated zuerst)
- *   OCR/Text -> docs/data/pages/{doc}/{doc}_p{N}.md                     (Viewer-Quelle 'mistral')
- *   Manifest -> docs/data/manifests/{doc}_manifest.json                (Viewer + Katalog-Statusspalte)
- *   TEI      -> docs/data/pages/{doc}/{doc}_final.xml                   (Per-Seiten-TEI erst nach --reassemble)
- * Ein spaeterer `generate_edition_data --mirror-only` reproduziert exakt dieselben Mirror-Dateien.
+ * Mirror paths (additional): the server-less viewer runs with docroot=docs/ and reads
+ * exclusively from docs/data/ on reload -- output/ is not reachable from there. So that
+ * "Save" shows the curated state immediately (without a backend run) even after a reload,
+ * each function also writes the identical payload to the mirror:
+ *   Layout   -> docs/data/pages/{doc}/{doc}_p{NNN}_layout_curated.json  (fetchLayout reads curated first)
+ *   OCR/Text -> docs/data/pages/{doc}/{doc}_p{N}.md                     (viewer source 'mistral')
+ *   Manifest -> docs/data/manifests/{doc}_manifest.json                 (viewer + catalog status column)
+ *   TEI      -> docs/data/pages/{doc}/{doc}_final.xml                   (per-page TEI only after --reassemble)
+ * A later `generate_edition_data --mirror-only` reproduces exactly the same mirror files.
  *
  * Namespace: ZBZ.FsAccess
  */
@@ -38,18 +38,18 @@
     const available = typeof window.showDirectoryPicker === 'function';
 
     const state = {
-        root: null,        // FileSystemDirectoryHandle des Repo-Roots
+        root: null,        // FileSystemDirectoryHandle for the repo root
         connected: false
     };
 
-    // ---- IndexedDB: kleiner Promise-Wrapper fuer einen einzigen Handle ----
+    // ---- IndexedDB: minimal Promise wrapper for a single handle ----
     const IDB_NAME = 'zbz-fs';
     const IDB_STORE = 'handles';
     const IDB_KEY = 'repoRoot';
 
     function idbOpen() {
         return new Promise((resolve, reject) => {
-            if (!window.indexedDB) { reject(new Error('IndexedDB nicht verfuegbar')); return; }
+            if (!window.indexedDB) { reject(new Error('IndexedDB not available')); return; }
             const req = indexedDB.open(IDB_NAME, 1);
             req.onupgradeneeded = () => req.result.createObjectStore(IDB_STORE);
             req.onsuccess = () => resolve(req.result);
@@ -86,67 +86,67 @@
 
     // ---- Permission ----
     async function ensurePermission(handle, request) {
-        if (!handle || !handle.queryPermission) return true; // aeltere Impl: optimistisch
+        if (!handle || !handle.queryPermission) return true; // older impl: optimistic
         const opts = { mode: 'readwrite' };
         if (await handle.queryPermission(opts) === 'granted') return true;
         if (request && await handle.requestPermission(opts) === 'granted') return true;
         return false;
     }
 
-    // ---- Ordner-Plausibilitaet ----
+    // ---- Folder plausibility ----
     async function hasChild(handle, name) {
         try { await handle.getDirectoryHandle(name); return true; }
         catch (e) { return false; }
     }
-    /** Heuristik: ist das der Projekt-Wurzelordner? (docs/ + scripts/ sind git-getrackt). */
+    /** Heuristic: is this the project root folder? (docs/ + scripts/ are git-tracked). */
     async function looksLikeRepoRoot(handle) {
         return (await hasChild(handle, 'docs')) || (await hasChild(handle, 'scripts'));
     }
 
-    // ---- Verbindung ----
+    // ---- Connection ----
 
-    /** Beim Laden: persistierten Handle wiederherstellen (ohne Permission-Prompt). */
+    /** On load: restore a persisted handle (without a permission prompt). */
     async function init() {
         if (!available) return;
         const handle = await idbGet(IDB_KEY);
         if (!handle) return;
-        // queryPermission OHNE request (kein Gesture-Kontext beim Laden)
+        // queryPermission WITHOUT request (no gesture context on load)
         if (await ensurePermission(handle, false)) {
             state.root = handle;
             state.connected = true;
-            ZBZ.log('FsAccess', 'Repo-Ordner wiederverbunden: ' + (handle.name || '?'));
+            ZBZ.log('FsAccess', 'repo folder reconnected: ' + (handle.name || '?'));
         } else {
-            state.root = handle; // Handle behalten, Permission muss per Klick re-granted werden
+            state.root = handle; // keep handle, permission must be re-granted via click
         }
     }
 
-    /** Per User-Geste: Repo-Ordner waehlen und Schreibrecht erteilen. */
+    /** Via user gesture: choose the repo folder and grant write access. */
     async function connect() {
-        if (!available) { ZBZ.toast('Direkt-Speichern wird von diesem Browser nicht unterstuetzt', 'warn'); return false; }
+        if (!available) { ZBZ.toast('Direct save is not supported by this browser', 'warn'); return false; }
         try {
-            // Falls ein Handle existiert, zuerst dort Permission anfragen (kein erneuter Picker)
+            // If a handle already exists, request permission there first (no new picker)
             if (state.root && await ensurePermission(state.root, true)) {
                 state.connected = true;
-                ZBZ.log('FsAccess', 'Schreibrecht erteilt: ' + (state.root.name || '?'));
+                ZBZ.log('FsAccess', 'write access granted: ' + (state.root.name || '?'));
                 return true;
             }
             const handle = await window.showDirectoryPicker({ mode: 'readwrite', id: 'zbz-repo' });
             if (!(await ensurePermission(handle, true))) {
-                ZBZ.toast('Kein Schreibrecht erteilt', 'warn');
+                ZBZ.toast('Write access not granted', 'warn');
                 return false;
             }
             state.root = handle;
             state.connected = true;
             await idbPut(IDB_KEY, handle);
-            ZBZ.log('FsAccess', 'Repo-Ordner verbunden: ' + (handle.name || '?'));
+            ZBZ.log('FsAccess', 'repo folder connected: ' + (handle.name || '?'));
             if (!(await looksLikeRepoRoot(handle))) {
-                ZBZ.toast('Achtung: "' + (handle.name || '?') + '" sieht nicht nach dem Projekt-Ordner aus (erwartet zbz-ocr-tei mit docs/ und scripts/). Ggf. neu verbinden.', 'warn');
+                ZBZ.toast('Warning: "' + (handle.name || '?') + '" does not look like the project folder (expected zbz-ocr-tei with docs/ and scripts/). Reconnect if needed.', 'warn');
             }
             return true;
         } catch (err) {
-            if (err && err.name === 'AbortError') return false; // Nutzer hat Picker abgebrochen
-            ZBZ.log('FsAccess', 'connect-Fehler: ' + (err && err.message));
-            ZBZ.toast('Verbinden fehlgeschlagen: ' + (err && err.message), 'error');
+            if (err && err.name === 'AbortError') return false; // user cancelled the picker
+            ZBZ.log('FsAccess', 'connect error: ' + (err && err.message));
+            ZBZ.toast('Connect failed: ' + (err && err.message), 'error');
             return false;
         }
     }
@@ -155,21 +155,21 @@
         state.root = null;
         state.connected = false;
         await idbDel(IDB_KEY);
-        ZBZ.log('FsAccess', 'Repo-Ordner getrennt');
+        ZBZ.log('FsAccess', 'repo folder disconnected');
     }
 
     function isConnected() { return state.connected && !!state.root; }
 
-    // ---- Schreiben ----
+    // ---- Write ----
 
-    /** Schreibt content nach relPath (relativ zum Repo-Root); legt Verzeichnisse an. */
+    /** Writes content to relPath (relative to repo root), creating directories as needed. */
     async function writeFile(relPath, content) {
-        if (!isConnected()) throw new Error('nicht verbunden');
-        // Schreibrecht nur PRUEFEN (queryPermission), nicht neu anfordern: requestPermission
-        // braucht eine frische Nutzer-Geste, die nach dem Ordner-Dialog bereits verbraucht ist.
-        // Das Recht wurde beim Verbinden (connect, mit Geste) erteilt -- hier genuegt die Pruefung.
+        if (!isConnected()) throw new Error('not connected');
+        // Only CHECK write permission (queryPermission), do not request it: requestPermission
+        // needs a fresh user gesture, which is already consumed after the folder dialog.
+        // Permission was granted during connect (with gesture) -- checking it here is sufficient.
         if (!(await ensurePermission(state.root, false))) {
-            throw new Error('Schreibrecht nicht aktiv -- Repo-Ordner erneut verbinden');
+            throw new Error('write access not active -- reconnect the repo folder');
         }
         const segs = relPath.split('/').filter(Boolean);
         const fileName = segs.pop();
@@ -181,7 +181,7 @@
         const writable = await fileHandle.createWritable();
         await writable.write(content);
         await writable.close();
-        ZBZ.log('FsAccess', 'geschrieben: ' + relPath + ' (' + (content.length / 1024).toFixed(1) + ' KB)');
+        ZBZ.log('FsAccess', 'written: ' + relPath + ' (' + (content.length / 1024).toFixed(1) + ' KB)');
         return relPath;
     }
 
@@ -200,26 +200,26 @@
         });
         const json = JSON.stringify(out, null, 2);
         const canonical = await writeFile(layoutPath(doc, page), json);
-        await writeFile(layoutMirrorPath(doc, page), json);  // Mirror -> Viewer-Reload
+        await writeFile(layoutMirrorPath(doc, page), json);  // Mirror -> viewer reload
         return canonical;
     }
 
     async function writeText(doc, page, content) {
         const canonical = await writeFile(`output/ocr_curated/${doc}_p${page}.md`, content);
-        await writeFile(`docs/data/pages/${doc}/${doc}_p${page}.md`, content);  // Mirror -> Viewer-Reload
+        await writeFile(`docs/data/pages/${doc}/${doc}_p${page}.md`, content);  // Mirror -> viewer reload
         return canonical;
     }
 
     async function writeTei(doc, xml) {
         const canonical = await writeFile(`output/tei_final/${doc}_final.xml`, xml);
-        await writeFile(`docs/data/pages/${doc}/${doc}_final.xml`, xml);  // Mirror (Final; Per-Seite erst nach --reassemble)
+        await writeFile(`docs/data/pages/${doc}/${doc}_final.xml`, xml);  // Mirror (final; per-page only after --reassemble)
         return canonical;
     }
 
     async function writeManifest(doc, manifestObj) {
         const json = JSON.stringify(manifestObj, null, 2);
         const canonical = await writeFile(`output/tei_final/${doc}_manifest.json`, json);
-        await writeFile(`docs/data/manifests/${doc}_manifest.json`, json);  // Mirror -> Viewer + Katalog
+        await writeFile(`docs/data/manifests/${doc}_manifest.json`, json);  // Mirror -> viewer + catalog
         return canonical;
     }
 
@@ -235,5 +235,5 @@
         writeTei,
         writeManifest
     };
-    ZBZ.log('FsAccess', 'ready' + (available ? '' : ' (nicht unterstuetzt)'));
+    ZBZ.log('FsAccess', 'ready' + (available ? '' : ' (not supported)'));
 })();
