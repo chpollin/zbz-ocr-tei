@@ -128,6 +128,32 @@ COMPARISON_LIT = [
 # Helfer
 # ---------------------------------------------------------------------------
 
+def _load_stability_block() -> dict:
+    """stability-Block aus dem Pilot-Artefakt (scripts/eval/stability_pilot.py).
+
+    Ohne Artefakt bleibt der Block offen; mit Artefakt gilt der Pilot als Messung
+    und die per-doc-Streuung wandert in das versionierte Statistik-JSON.
+    """
+    pilot_path = PROJECT_ROOT / "output" / "audits" / "stability_pilot.json"
+    if not pilot_path.exists():
+        return {
+            "status": "open",
+            "reason": "Re-Run-Pilot (5 Docs x 3 Laeufe) noch nicht gefahren.",
+            "n_docs": None, "n_runs": None, "per_doc_std": None,
+        }
+    pilot = json.loads(pilot_path.read_text(encoding="utf-8"))
+    return {
+        "status": "measured",
+        "source": "scripts/eval/stability_pilot.py",
+        "generated": pilot.get("generated"),
+        "model": pilot.get("model"),
+        "n_docs": pilot.get("n_docs"),
+        "n_runs": pilot.get("n_runs"),
+        "per_doc_std": {d: v["std"] for d, v in pilot.get("per_doc", {}).items()},
+        "summary": pilot.get("summary"),
+    }
+
+
 def _normalize_lang(lang: str | None) -> str:
     if not lang or lang == "?":
         return "unknown"
@@ -1098,13 +1124,7 @@ def main(argv: list[str] | None = None) -> int:
         "strata": strata,
         "multi_norm": multi_norm,
         "paired_test": paired_test,
-        "stability": {
-            "status": "open",
-            "reason": ("API-Budget pending user decision (Forschungsplan v2 §9 b); "
-                       "stability not measured in this iteration. Re-Run-Pilot 5 Docs x 3 "
-                       "Gemini-Calls vorgemerkt."),
-            "n_docs": None, "n_runs": None, "per_doc_std": None,
-        },
+        "stability": _load_stability_block(),
         "domain_metrics": domain_metrics,
         "error_categories": error_categories,
         "per_doc": per_doc,
