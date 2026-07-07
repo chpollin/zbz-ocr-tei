@@ -3,7 +3,7 @@ CER Statistics — Full Pipeline (Schema v0.3).
 
 Ergaenzt das Geruest in `cer_statistics.py` + `cer_statistics_runner.py` um:
 - OCR-only Block (Mistral Stage-2 vs Referenz-TEI)
-- paired_test (E2E vs OCR-only, Singh 2025 paired bootstrap)
+- paired_test (E2E vs OCR-only, Du 2025 paired bootstrap)
 - HCPR-Adaption (Levchenko 2025) zusaetzlich zu Diakritik-Erhaltung
 - Proxies B'1-B'3 (hit_rate, suspicious_char_ratio + composite + corpus_estimate)
 - Per-doc within-doc Bootstrap CIs
@@ -12,7 +12,7 @@ Ergaenzt das Geruest in `cer_statistics.py` + `cer_statistics_runner.py` um:
 - Kanonische Scope-Filter aus Session 39 (NICHT auto-heuristisch)
 
 Methodik (alle Quellen 2025+, User-Constraint 2026-04-27):
-- Singh 2025 (arXiv:2511.19794): paired bootstrap, BCa, Reproduzierbarkeit
+- Du 2025 (arXiv:2511.19794): paired bootstrap, BCa, Reproduzierbarkeit
 - Levchenko 2025 (arXiv:2510.06743): HCPR/AIR Domain-Metriken
 - Crosilla, Klic, Colavizza 2025 (arXiv:2503.15195): like-for-like
 - Kanerva & Ledins 2025 (arXiv:2502.01205): no-GT Methodik
@@ -92,7 +92,7 @@ HCPR_CLASSES = {
 }
 
 LITERATURE_REFS = [
-    "Singh 2025 (arXiv:2511.19794) - paired bootstrap protocol",
+    "Du 2025 (arXiv:2511.19794) - paired bootstrap protocol",
     "Levchenko 2025 (arXiv:2510.06743) - HCPR/AIR domain metrics",
     "Crosilla, Klic, Colavizza 2025 (arXiv:2503.15195) - HTR like-for-like",
     "Kanerva & Ledins 2025 (arXiv:2502.01205) - no-GT methodology",
@@ -411,7 +411,7 @@ def build_overall(records: list[DocCERRecord], rng: np.random.Generator,
         "max": round(max(cers_e2e), 6) if cers_e2e else None,
         "q1": round(float(np.percentile(cers_e2e, 25)), 6),
         "q3": round(float(np.percentile(cers_e2e, 75)), 6),
-        "ci_method": f"Doc-level Perzentil-Bootstrap (block=doc, n={len(cers_e2e)}), B={n_resamples}, Singh 2025",
+        "ci_method": f"Doc-level Perzentil-Bootstrap (block=doc, n={len(cers_e2e)}), B={n_resamples}, Du 2025",
         "definition": "DIAGNOSE, KEIN Qualitaetsmass: volle Volltext-Divergenz von der Referenz inkl. Pipeline-Mehrtext (scope-inklusiv), ueber ALLE Docs. Das Qualitaetsmass ist fidelity (rechnet den Mehrtext heraus).",
     }
 
@@ -545,7 +545,7 @@ def build_multi_norm(records: list[DocCERRecord], rng: np.random.Generator,
     return {
         "regimes": list(NORM_REGIMES),
         "results": results,
-        "diff_method": f"paired bootstrap on identical doc set (n={len(full)}), B={n_resamples}, Singh 2025",
+        "diff_method": f"paired bootstrap on identical doc set (n={len(full)}), B={n_resamples}, Du 2025",
         "caveat": (
             "extract_text_for_comparison() applies a baseline normalization "
             "(NFC + smart-quote/hyphen mapping + casefold) before regime-specific "
@@ -934,7 +934,7 @@ def build_proxies(records: list[DocCERRecord], all_doc_ids: list[str],
                           for i in range(len(bucket_edges) - 1)]
         counts, _ = np.histogram(all_pred, bins=bucket_edges)
         corpus_estimate = {
-            "method": "composite proxy (hit_rate + suspicious_char_ratio) via OLS, propagated regression uncertainty (Singh 2025)",
+            "method": "composite proxy (hit_rate + suspicious_char_ratio) via OLS, propagated regression uncertainty (Du 2025)",
             "estimated_mean_cer": round(est_mean, 6),
             "estimated_mean_inner_ci95": [round(inner_ci[0], 6), round(inner_ci[1], 6)],
             "estimated_mean_total_ci95": [round(total_ci[0], 6), round(total_ci[1], 6)],
@@ -1009,7 +1009,7 @@ def _training_corpus() -> dict:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="CER Statistics Full (Schema v0.3, Singh 2025 / Levchenko 2025)",
+        description="CER Statistics Full (Schema v0.3, Du 2025 / Levchenko 2025)",
     )
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--bootstrap-n", type=int, default=10000)
@@ -1088,7 +1088,7 @@ def main(argv: list[str] | None = None) -> int:
             ],
             "seed": args.seed,
             "bootstrap_n": n_boot,
-            "bootstrap_method": "BCa blockwise (block=doc) + Perzentil for paired/within-doc, Singh 2025",
+            "bootstrap_method": "BCa blockwise (block=doc) + Perzentil for paired/within-doc, Du 2025",
             "literature_refs": LITERATURE_REFS,
         },
         "corpus": {

@@ -139,7 +139,7 @@ python -m pytest tests/test_pb_split.py -q                      # <pb> segmentat
 python -m pytest tests/test_tei_conformance.py -q               # conformance fixes: div-n/type, figure-xmlid, head-lemma, title-main, foreign-lang (E84)
 python -m pytest tests/test_reading_order.py tests/test_reading_order_audit.py tests/test_reassemble_preview.py -q  # reading order: permutation + W19 triage + M3 preview (E90)
 python -m pytest tests/test_char_lint_audit.py tests/test_pb_number_audit.py tests/test_hi_preservation_audit.py tests/test_relation_integrity_audit.py tests/test_body_note_audit.py -q  # guideline-conformity audits (E92)
-python -m pytest tests/test_char_normalize.py tests/test_pb_folio.py tests/test_body_note_demote.py tests/test_status_marker.py tests/test_completeness_check.py tests/test_step1_filter.py -q  # stock-correction tools + step-1 fixes (E92/E94)
+python -m pytest tests/test_char_normalize.py tests/test_pb_folio.py tests/test_body_note_demote.py tests/test_marker_common.py tests/test_status_marker.py tests/test_completeness_check.py tests/test_step1_filter.py -q  # stock-correction tools + shared marker scaffolding + step-1 fixes (E92/E94)
 ```
 
 The output `docs/data/cer_statistics.json` is versioned as evidence of the published CER values and deterministically regenerable with seed 42. The interactive CER dashboard was abolished with E56. The methodology is covered in [knowledge/specification.md](knowledge/specification.md), quality measurement section.

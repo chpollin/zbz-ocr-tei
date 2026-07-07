@@ -302,14 +302,15 @@ correction via M3 (operator-gated, E90).
 
 Documents: [final-report.md](final-report.md), [cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md)
 
-### E92 Guideline conformity quantified corpus-wide: four audit instruments plus step-1 generator fixes (2026-07-07)
+### E92 Guideline conformity quantified corpus-wide: five audit instruments plus step-1 generator fixes (2026-07-07)
 
-Occasion: operator question whether the delivered TEI satisfies the ZBZ editorial guidelines beyond schema validity. The session built a ground-truth map of the 25 reference TEIs (consolidated as Appendix B of [final-report.md](final-report.md), including the exception catalog of reference-side defects and the ill-formed 1520.xml) and quantified every suspicion with four new offline audit instruments in `scripts/eval/`, each test-gated, JSON output to `output/audits/`:
+Occasion: operator question whether the delivered TEI satisfies the ZBZ editorial guidelines beyond schema validity. The session built a ground-truth map of the 25 reference TEIs (consolidated as Appendix B of [final-report.md](final-report.md), including the exception catalog of reference-side defects and the ill-formed 1520.xml) and quantified every suspicion with five new offline audit instruments in `scripts/eval/`, each test-gated, JSON output to `output/audits/`:
 
 - `char_lint_audit.py`: typewriter apostrophe U+0027 between letters, guillemet deviations, space before punctuation (incl. U+00A0), U+00AC residue.
 - `pb_number_audit.py`: scan-sequence suspicion on pb@n, digit-only paragraphs in the body, cross-check against layout footer regions.
 - `hi_preservation_audit.py`: survival of the OCR emphasis signal into the delivered TEI (per page, via `pb_split.iter_page_spans`).
 - `relation_integrity_audit.py`: `@next`/`@prev` pairs, anchor pairs, title-main cardinality, `sp`/`speaker` context.
+- `body_note_audit.py`: body-text-as-footnote candidates via a marker/length/position score; its candidate set feeds the facsimile verification consumed by E94.
 
 Measured state (snapshot 2026-07-07): character normalization is the largest gap (241 documents with letter-internal U+0027 at 88,978 occurrences; 228 with guillemet deviations at 16,013; 215 with space-before-punctuation at 9,928); print pagination is broadly missing (245 documents with scan-sequence pb@n, 226 with a layout-footer/pb mismatch, 191 with digit-only paragraphs); hi survival is nearly clean pipeline-side (18 pages in 12 documents); relations are nearly clean (one `@next`/`@prev` case in doc 1350; `sp`/`speaker` outside interview context concentrated in doc 1240).
 

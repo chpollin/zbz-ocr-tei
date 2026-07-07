@@ -5,7 +5,7 @@ Dr. Christopher Pollin, Digital Humanities Craft OG
 * v3, 07.07.2026; v2, 07.07.2026; v1, 27.05.2026
 * AI-Unterstützung: Claude Opus 4.7, Opus 4.8, Fable 5, Claude Code
 
-Drei Werte stehen zum Zeitpunkt dieser Fassung noch aus und sind im Text als Leerstellen markiert: die Ergebniszahlen der zwei letzten Bestandskorrektur-Läufe (Seitenzahlen, Fussnoten-Demotion), die finale Warnungsbilanz der Validierung danach und die Einordnung des Dokuments 30 nach der ausstehenden Adjudikation.
+Drei Werte stehen zum Zeitpunkt dieser Fassung noch aus und sind im Text als Leerstellen markiert, nämlich die Ergebniszahlen der zwei letzten Bestandskorrektur-Läufe (Seitenzahlen, Fussnoten-Demotion), die finale Warnungsbilanz der Validierung danach und die Einordnung des Dokuments 30 nach der ausstehenden Adjudikation.
 
 ## 1 Projektkontext und Zielsetzung
 
@@ -125,7 +125,7 @@ Die Qualität der Pipeline wird auf zwei Wegen geprüft. Die Zeichenfehlerrate (
 
 Die CER ist der Anteil der Zeichen im Referenztext, die im erzeugten Text abweichen. Sie ist definiert als die Levenshtein-Distanz zwischen Referenz und Hypothese, geteilt durch die Zeichenzahl der Referenz.
 
-Die Levenshtein-Distanz ist die minimale Anzahl an Einzelzeichen-Operationen (Einfügung, Löschung, Ersetzung), um die Hypothese in die Referenz zu überführen.[^12] Diese Operationen werden nicht vorgegeben, sondern ergeben sich aus der Distanzberechnung. Die Überführungsrichtung (Hypothese zu Referenz) ist im gesamten Kapitel einheitlich, sodass die Benennung der Operationstypen über alle Beispiele konsistent bleibt; die Distanz selbst ist richtungsunabhängig. Implementiert ist sie über `rapidfuzz.distance.Levenshtein`.
+Die Levenshtein-Distanz ist die minimale Anzahl an Einzelzeichen-Operationen (Einfügung, Löschung, Ersetzung), um die Hypothese in die Referenz zu überführen.[^12] Diese Operationen ergeben sich aus der Distanzberechnung selbst. Die Überführungsrichtung (Hypothese zu Referenz) ist im gesamten Kapitel einheitlich, sodass die Benennung der Operationstypen über alle Beispiele konsistent bleibt; die Distanz selbst ist richtungsunabhängig. Implementiert ist sie über `rapidfuzz.distance.Levenshtein`.
 
 Aggregationseinheit ist das Dokument. Das Korpus-Bootstrap-Verfahren (n = 25 Referenz-TEIs, B = 10 000, Seed 42, Bootstrap auf Dokumentebene) liefert daraus Mittelwert und 95-%-Vertrauensbereich. Zur Einordnung der Werte dient die Transkribus-Konvention, nach der unter 2 % als publikationsreif, 2 bis 5 % als forschungstauglich und 5 bis 10 % als brauchbar für Volltextsuche gilt.[^12] Eine hohe CER bedeutet dabei nicht zwingend schlechte Texterkennung; sie kann ebenso aus fehlerhafter Lesereihenfolge bei komplexem Layout folgen[^12] oder daraus, dass Mistral Document AI ein generelles, nicht auf historische Schrift spezialisiertes Modell ist. Die Berechnung selbst ist ein einzelner Funktionsaufruf;[^13] die methodische Substanz liegt in der Aufbereitung der beiden Texte und in der Wahl der Referenz.
 
@@ -139,7 +139,7 @@ Die Wahl der kuratierten Zielfassung hat eine messbare Konsequenz, die Beispiel 
 
 #### Zerlegung der Fehler in Fidelity und Scope
 
-Die Editieroperationen werden in zwei Kategorien zerlegt, die unterschiedliche Fehlerursachen trennen. Fidelity erfasst echte Erkennungsfehler und bildet das Maß für die Lesequalität im engeren Sinn; hierunter fallen Substitutionen (gezählt als Länge des größeren Blocks), sämtliche Löschungen und Einfügungen unterhalb der Schwelle. Scope erfasst zusammenhängende Einfügungen ab einer Schwelle von 50 Zeichen (`SCOPE_BLOCK_MIN` in `scripts/eval/evaluate_ocr.py`), die typischerweise nicht aus Erkennungsfehlern stammen, sondern aus Textbestandteilen, welche die Pipeline erfasst, die selektiv transkribierte Referenz aber nicht enthält, etwa Mastheads, Autorzeilen oder Editionsmetadaten. Die Fidelity-CER wertet nur die erste Kategorie, die Volltext-CER schließt den Scope-Anteil als Diagnosegröße ein. Beide Kategorien summieren sich zeichengenau zur Levenshtein-Distanz; ein Regressionstest schreibt diese Summenidentität fest. Da die Fidelity-Werte von der Schwelle abhängen, nennt jede Zitation die Schwelle mit, eine Regel, die aus der unabhängigen Gegenprobe in 6.4 hervorgegangen ist.
+Die Editieroperationen werden in zwei Kategorien zerlegt, die unterschiedliche Fehlerursachen trennen. Fidelity erfasst echte Erkennungsfehler und bildet das Maß für die Lesequalität im engeren Sinn; hierunter fallen Substitutionen (gezählt als Länge des größeren Blocks), sämtliche Löschungen und Einfügungen unterhalb der Schwelle. Scope erfasst zusammenhängende Einfügungen ab einer Schwelle von 50 Zeichen (`SCOPE_BLOCK_MIN` in `scripts/eval/evaluate_ocr.py`), die typischerweise aus Textbestandteilen stammen, welche die Pipeline erfasst, die selektiv transkribierte Referenz aber nicht enthält, etwa Mastheads, Autorzeilen oder Editionsmetadaten. Erkennungsfehler sind sie in der Regel nicht. Die Fidelity-CER wertet nur die erste Kategorie, die Volltext-CER schließt den Scope-Anteil als Diagnosegröße ein. Beide Kategorien summieren sich zeichengenau zur Levenshtein-Distanz; ein Regressionstest schreibt diese Summenidentität fest. Da die Fidelity-Werte von der Schwelle abhängen, nennt jede Zitation die Schwelle mit, eine Regel, die aus der unabhängigen Gegenprobe in 6.4 hervorgegangen ist.
 
 #### TEI-Extraktion
 
@@ -194,7 +194,7 @@ Alle 285 finalen TEI validieren gegen `zbz_hersch.rng`, mit null blockierenden V
 
 Jedes Beispiel nennt Doc-ID, Layout-Typ und Sprache, stellt eine Referenzstelle der zugehörigen Pipeline-Stelle gegenüber, identifiziert die Differenzen, verweist auf die anwendbaren Regeln und gibt die lokale CER an.
 
-#### Beispiel 1: Dokument 130 (Typ A, Französisch, Zeitschriftenartikel), Titel im Versalsatz
+#### Beispiel 1: Dokument 130 (Typ A, Französisch, Sammelbandbeitrag), Titel im Versalsatz
 
 Referenz (`data/source/reference_tei/130.xml`):
 
@@ -209,7 +209,7 @@ Nach Extraktion (E2, E6, E9): `L'école de nos périls Le problème de l'élite 
 
 OCR (`output/mistral_results/130_p3.md`): `L'ÉCOLE DE NOS PÉRILS LE PROBLÈME DE L'ÉLITE OUVRIÈRE`
 
-Die kasusbehafteten Buchstaben unterscheiden sich durchgängig in der Groß- und Kleinschreibung und zählen als Substitutionen; Leerzeichen und Apostrophe bleiben gleich. Die Levenshtein-Distanz beträgt exakt 41, die Zählbasis 53 Zeichen einschließlich Leerzeichen und Apostrophen, die lokale CER 41/53 ≈ 77 %. Versalsatz wird nicht normalisiert (siehe 6.1), da er eine Schreibvariante ist. Im Gesamtdokument verdünnt sich der Effekt, denn der Titel umfasst 53 Zeichen, der Volltext rund 33 000; die Dokument-CER bleibt einstellig.
+Die kasusbehafteten Buchstaben unterscheiden sich durchgängig in der Groß- und Kleinschreibung und zählen als Substitutionen; Leerzeichen und Apostrophe bleiben gleich. Die Levenshtein-Distanz beträgt exakt 41, die Zählbasis 53 Zeichen einschließlich Leerzeichen und Apostrophen, die lokale CER 41/53 ≈ 77 %. Versalsatz wird nicht normalisiert (siehe 6.1), da er eine Schreibvariante ist. Im Gesamtdokument verdünnt sich der Effekt, denn der Titel umfasst 53 Zeichen, die Zählbasis des Dokuments 24 382 Referenzzeichen; die Dokument-CER bleibt einstellig.
 
 #### Beispiel 2: Dokument 1060 (Typ A, Deutsch), `<choice>` und Schweizer gegen deutsche Orthografie
 
@@ -265,7 +265,7 @@ Das OCR schreibt Guillemets und ein korrektes „Informationsbulletin". Nach N1/
 
 ### 6.3 Korpus-Ergebnis und Datenlage
 
-Headline-Resultat des aktuellen Korpus (n = 25, Seed 42, B = 10 000, Stand der Werte 2026-06-08): Die Fidelity-CER, die echte Lese- und Auslassungsfehler ohne selektiv transkribierten Begleittext erfasst (Scope-Schwelle 50 Zeichen), liegt bei einem Median von 1,40 % (95-%-CI [1,09 %; 2,61 %]) und einem Mittel von 2,71 % (95-%-CI [1,77 %; 3,82 %]). Die Volltext-CER als Diagnosegröße, die den Pipeline-Mehrtext gegenüber den selektiv transkribierten Referenzen einschließt, liegt bei einem Median von 12,13 % und einem Mittel von 18,94 %; der Scope-Anteil allein beträgt im Mittel 16,23 %. Nach Transkribus-Konvention liegt der Median der Fidelity-CER im Bereich publikationsreif, der Mittelwert im Bereich forschungstauglich. Der paired Bootstrap gegen die Roh-OCR zeigt den Pipeline-Gewinn auf Dokumentebene, mit 16 von 25 Dokumenten verbessert und 9 verschlechtert.
+Headline-Resultat des aktuellen Korpus (n = 25, Seed 42, B = 10 000, Stand der Werte 2026-06-08). Die Fidelity-CER, die echte Lese- und Auslassungsfehler ohne selektiv transkribierten Begleittext erfasst (Scope-Schwelle 50 Zeichen), liegt bei einem Median von 1,40 % (95-%-CI [1,09 %; 2,61 %]) und einem Mittel von 2,71 % (95-%-CI [1,77 %; 3,82 %]). Die Volltext-CER als Diagnosegröße, die den Pipeline-Mehrtext gegenüber den selektiv transkribierten Referenzen einschließt, liegt bei einem Median von 12,13 % und einem Mittel von 18,94 %; der Scope-Anteil allein beträgt im Mittel 16,23 %. Nach Transkribus-Konvention liegt der Median der Fidelity-CER im Bereich publikationsreif, der Mittelwert im Bereich forschungstauglich. Der paired Bootstrap gegen die Roh-OCR zeigt den Pipeline-Gewinn auf Dokumentebene, mit 16 von 25 Dokumenten verbessert und 9 verschlechtert.
 
 Der Weg zu diesen Werten ist selbst Teil des Ergebnisses. Die erste Messung wies ein Fidelity-Mittel von 4,26 % aus. Die Fehleranalyse der Ausreißer führte auf einen Generator-Defekt, die Überdetektion von Fußnoten, bei der Haupttext in ausgeschlossene `<note>`-Elemente geriet und in der Messung als Löschung zählte. Eine referenzverifizierte Demotion, die einen Block nur dann in den Fließtext zurückführt, wenn ein zusammenhängender Lauf von mindestens 150 Zeichen seines Textes im Referenz-Body nachweisbar ist, senkte das Mittel dokumentiert über 3,99 % auf 2,71 %. Jede Stufe dieses Verlaufs ist im Entscheidungsregister mit Datum und Methode festgehalten; eine Fortsetzung dieser Reparatur für Dokumente ohne Referenzabdeckung beschreibt 6.4.
 
@@ -281,7 +281,7 @@ Die erste Ebene ist die deterministische Validierung, also Schema, Projektregeln
 
 Auf der Audit-Ebene vermessen fünf Werkzeuge die Richtlinienkonformität korpusweit, mit folgendem Stand vor den Bestandskorrekturen: Die Zeichennormalisierung war die größte Lücke (88 978 gerade Apostrophe zwischen Buchstaben in 241 Dokumenten, daneben Guillemet- und Leerzeichenklassen, von denen sich die Leerzeichenklasse auf französischen Seiten überwiegend als korrekte Typografie und damit als umzudeutende Audit-Klasse erwies). Die gedruckte Paginierung fehlte breit (224 Dokumente führten in `pb@n` die Scan-Position, 18 die Druckfolio, 9 gemischt). Das OCR-Kursivsignal überlebt die Pipeline nahezu vollständig (18 betroffene Seiten in 12 Dokumenten); die Hauptursache fehlender `<hi>`-Auszeichnung liegt in der OCR-Engine selbst, weshalb eine bildbasierte Nacherkennung per LLM geprüft und verworfen wurde, da sie nicht deterministisch wäre und das Präzedenzmuster der Fußnoten-Überdetektion wiederholen würde. Die Relationenintegrität ist nahezu sauber. Ein fünftes Audit adressiert die Fußnoten-Überdetektion für Dokumente ohne Referenzabdeckung und fand 63 Kandidaten-Noten in 26 Dokumenten.
 
-Auf der Verifikationsebene wurden alle 63 Kandidaten am Faksimile geprüft, mit klarem Ergebnis: 59 sind laufender Haupttext, der fälschlich als Fußnote gerahmt wurde, 2 sind abgesetzte Zitate, 2 sind echte Fußnoten (Audit-Falsch-Positive). Auf 39 der Seiten zeigt sich ein Rollentausch, denn die echte Fußnote der Seite liegt als gewöhnlicher Absatz mit ihrem Originalmarker im Body, während der Haupttext den Fußnotenrahmen erhielt. Eine Kalibrierungsrunde über weitere stratifizierte Seiten ergab zudem, dass das Lesereihenfolge-Warnsignal als Prädiktor für tatsächlich falsche Reihenfolge schwach ist (5 von 6 geprüften Verdachtsseiten waren korrekt), beim Hinsehen aber andere reale Defekte zutage fördert, etwa still fallengelassene Nicht-Artikel-Blöcke auf Zeitschriftenseiten und eine geleakte Modell-Absage im Text eines Dokuments, deren Ursache eine Wiederholungsschleife der Basis-OCR ist.
+Auf der Verifikationsebene wurden alle 63 Kandidaten am Faksimile geprüft, mit klarem Ergebnis. 59 sind laufender Haupttext, der fälschlich als Fußnote gerahmt wurde, 2 sind abgesetzte Zitate, 2 sind echte Fußnoten (Audit-Falsch-Positive). Auf 39 der Seiten zeigt sich ein Rollentausch, denn die echte Fußnote der Seite liegt als gewöhnlicher Absatz mit ihrem Originalmarker im Body, während der Haupttext den Fußnotenrahmen erhielt. Eine Kalibrierungsrunde über weitere stratifizierte Seiten ergab zudem, dass das Lesereihenfolge-Warnsignal als Prädiktor für tatsächlich falsche Reihenfolge schwach ist (5 von 6 geprüften Verdachtsseiten waren korrekt), beim Hinsehen aber andere reale Defekte zutage fördert, etwa still fallengelassene Nicht-Artikel-Blöcke auf Zeitschriftenseiten und eine geleakte Modell-Absage im Text eines Dokuments, deren Ursache eine Wiederholungsschleife der Basis-OCR ist.
 
 Eine unabhängige Gegenprobe hat die publizierten CER-Werte von außen reproduziert, ohne Code aus dem Repository, mit eigenständig implementierter Extraktion und Normalisierung, einer zweiten Levenshtein-Engine und eigener Aggregation. Alle Headline- und Einzelwerte wurden exakt bestätigt; die inhaltliche Klassifikation der größten Fehlerblöcke ergab, dass echter Textverlust die Ausnahme ist und Apparat-Einfügungen unter der Scope-Schwelle sowie Konventionsdivergenzen der Referenz die Fidelity-Werte nach oben treiben, ohne Erkennungsfehler zu sein.
 
@@ -355,6 +355,7 @@ Validierung und Audits
 - `eval/structure_audit.py` vergleicht die Pipeline-TEIs strukturell mit den 25 Referenzen.
 - `eval/reading_order_audit.py` trianguliert die Lesereihenfolge-Verdachtsseiten in robust und fragil.
 - `eval/char_lint_audit.py`, `eval/pb_number_audit.py`, `eval/hi_preservation_audit.py`, `eval/relation_integrity_audit.py` und `eval/body_note_audit.py` vermessen die Richtlinienkonformität (Zeichennormalisierung, Paginierungssemantik, Kursivsignal, Relationen, Fußnoten-Fehlklassifikation).
+- `eval/audit_common.py` liefert den Audits die geteilte TEI-Erkennung und das Report-Gerüst.
 
 Bestandskorrekturen (reversibel, mit Backup)
 
@@ -366,6 +367,7 @@ Bestandskorrekturen (reversibel, mit Backup)
 - `tei/tei_pb_folio.py` stellt `pb@n` auf die geklammerte Druckfolio um und entfernt Seitenzahl-Echo-Absätze.
 - `tei/tei_body_note_demote.py` setzt die faksimile-verifizierten Urteile zur Fußnoten-Fehlklassifikation um, inklusive der Rückführung vertauschter echter Fußnoten.
 - `tei/tei_reassemble_preview.py` baut den von der Lesereihenfolge-Umstellung betroffenen Bestand reversibel in eine Vorschau, ohne das ausgelieferte TEI zu berühren.
+- `tei/marker_common.py` liefert den Marker-Läufen das geteilte Trockenlauf- und Backup-Gerüst.
 
 Bearbeitungsstatus und Viewer-Daten
 

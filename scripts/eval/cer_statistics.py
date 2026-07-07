@@ -10,14 +10,14 @@ Methodik (alle Quellen 2025+):
 - Blockwise Resampling mit Block = Dokument: Pages innerhalb eines Docs sind
   korreliert (gleicher Scan, gleicher Engine-Run); naiver Page-Bootstrap
   ueberschaetzt die Praezision. Methodisch begruendet ueber:
-    Singh 2025, "When +1% Is Not Enough: A Paired Bootstrap Protocol",
+    Du 2025, "When +1% Is Not Enough: A Paired Bootstrap Protocol",
     arXiv:2511.19794 (Reproduzierbarkeitsprotokoll, Per-Seed-Metrics).
 - Paired Bootstrap fuer Per-Doc-Differenzen (Pipeline vs. Pre-Pipeline-OCR).
 - Selektionsbias-Tests: chi-square fuer kategoriale Strata, KS fuer Seitenzahl;
   Referenz-Subset (n=25) vs. Gesamtkorpus (n=285).
 - Domain-Metrik: Diakritik-Erhaltungsrate (HCPR-Adaption) fuer franzoesische
   und deutsche Sonderzeichen. Methodisch ueber:
-    Nosova et al. 2025, "Evaluating LLMs for Historical Document OCR",
+    Levchenko 2025, "Evaluating LLMs for Historical Document OCR",
     arXiv:2510.06743.
 - Multi-Normalisierungs-Regimes: raw / nfc / nfc_hyphen / nfc_hyphen_case --
   publiziert alle, damit die Wirkung jeder Normalisierung transparent ist.
@@ -49,7 +49,7 @@ except ImportError:
 
 __version__ = "0.1.0"
 
-# Diakritika fuer Domain-Metrik (HCPR-Adaption Nosova 2025).
+# Diakritika fuer Domain-Metrik (HCPR-Adaption Levchenko 2025).
 # Pro Sprache: erwartete Sonderzeichen aus FR/DE-Korpora.
 DIACRITICS = {
     "fra": set("éèàçùâêîôûëïüœÉÈÀÇÙÂÊÎÔÛËÏÜŒ"),
@@ -428,7 +428,7 @@ def diacritic_preservation_rate(
     hypothesis: str,
     language: str,
 ) -> dict:
-    """HCPR-Adaption (Nosova 2025): Anteil der Referenz-Diakritika, die in der
+    """HCPR-Adaption (Levchenko 2025): Anteil der Referenz-Diakritika, die in der
     Hypothese an *plausibler Stelle* erhalten sind. Wir vergleichen Frequenzen
     pro Zeichen, nicht Position -- das ist eine konservative Adaption (echte
     HCPR braucht Alignment).
@@ -622,7 +622,7 @@ def _stability_open_block() -> dict:
         "n_runs": 0,
         "per_doc_std": {},
         "reason": "API-Budget pending user decision; stability not measured "
-                  "in this iteration. Methodisch siehe Nosova 2025 (arXiv:2510.06743).",
+                  "in this iteration. Methodisch siehe Levchenko 2025 (arXiv:2510.06743).",
     }
 
 
@@ -692,8 +692,8 @@ def build_statistics(
             "bootstrap_n": n_resamples,
             "ci_method": "BCa blockwise (block=doc)",
             "literature": [
-                "Singh 2025, arXiv:2511.19794",
-                "Nosova et al. 2025, arXiv:2510.06743",
+                "Du 2025, arXiv:2511.19794",
+                "Levchenko 2025, arXiv:2510.06743",
                 "Crosilla, Klic, Colavizza 2025, arXiv:2503.15195",
                 "Kanerva & Ledins 2025, arXiv:2502.01205",
             ],
@@ -893,12 +893,12 @@ def _comparison_lit_2025_plus() -> list[dict]:
          "language": "deu Fraktur", "cer": 0.0127,
          "comparable": "partial",
          "caveat": "deutsche Fraktur, ohne Post-Korrektur."},
-        {"source": "Nosova et al. 2025 (arXiv:2510.06743)",
+        {"source": "Levchenko 2025 (arXiv:2510.06743)",
          "method": "Gemini 2.5 Pro",
          "language": "rus 18. Jh.", "cer": 0.0336,
          "comparable": False,
          "caveat": "Russisch, 18. Jh. Civil Font; nicht like-for-like."},
-        {"source": "Nosova et al. 2025 (arXiv:2510.06743)",
+        {"source": "Levchenko 2025 (arXiv:2510.06743)",
          "method": "GPT-4o",
          "language": "rus 18. Jh.", "cer": 0.0923,
          "comparable": False,

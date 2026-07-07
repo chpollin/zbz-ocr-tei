@@ -36,7 +36,7 @@ principle is a single source of truth per domain, one file per topic.
 | [ecosystem-synthesis.md](ecosystem-synthesis.md) | Overall picture of the three projects (zbz / szd-htr / teiCrafter): setup + gates + critical path, per-project pipeline/status, ALL user stories, integration + image gap, methodology, frontend gap survey, open points, SSoT assignment |
 | [infrastructure.md](infrastructure.md) | How is it deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD, viewer deployment (GitHub Pages) |
 | [methodology.md](methodology.md) | How do we work? Epistemic infrastructure, verification cascade, Critical Expert in the Loop, three-layer model, operational CLI |
-| [decisions.md](decisions.md) | What has been decided? Decision register (E entries up to E90), open points (O8/O13/O27 with ZBZ, O18 DHCraft; O25/O26 closed), risks |
+| [decisions.md](decisions.md) | What has been decided? Decision register (E entries up to E94), open points (O8/O13/O27 with ZBZ, O18 DHCraft; O25/O26 closed), risks |
 | [final-report.md](final-report.md) | What was delivered and how good is it? Dated delivery synthesis with the measured values: CER headline + per-document breakdown, proxy, validation state, examples, limits |
 | [journal.md](journal.md) | What was done when? Compact session overview (since Jan 2026), recurring patterns |
 
