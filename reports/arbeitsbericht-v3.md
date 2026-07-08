@@ -16,9 +16,6 @@ updated: 2026-07-08
 audience:
   type: client
   name: Zentralbibliothek Zürich (ZBZ)
-report-period:
-  from: 2026-01-29
-  to: 2026-07-07
 report-genre: abschlussbericht
 authors: [Christopher Pollin]
 ---
