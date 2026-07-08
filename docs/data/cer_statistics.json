@@ -2,12 +2,12 @@
   "schema_version": "0.3",
   "meta": {
     "tool_version": "0.1.0",
-    "git_sha": "8217ec2669ee3802613bcbb591261ea434770c8a",
-    "git_dirty": true,
-    "generated_at": "2026-07-07T19:06:57.133218+00:00",
+    "git_sha": "f2f23eab352b4e83f49a8b399c5c74795b4fe91c",
+    "git_dirty": false,
+    "generated_at": "2026-07-08T16:06:18.796878+00:00",
     "python_version": "3.11.9",
-    "numpy_version": "2.3.5",
-    "scipy_version": "1.17.0",
+    "numpy_version": "2.2.6",
+    "scipy_version": "1.14.1",
     "cer_lib": "rapidfuzz char-level Levenshtein (Fallback: cer_statistics.levenshtein)",
     "alignment_algo": "Volltext-Levenshtein OHNE Trimming (calculate_cer). Drei-Zahlen-Zerlegung via classify_edit_operations: fidelity (echte Fehler) + scope (Pipeline-Mehrtext) = full. find_best_alignment nur noch fuer Diagnose/within-doc-chunks.",
     "normalization_pipeline": [
