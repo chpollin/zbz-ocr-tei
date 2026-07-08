@@ -1,3 +1,28 @@
+---
+title: "Arbeitsbericht zbz-ocr-tei: LLM-gestützte OCR- und TEI-Pipeline für die digitale Edition der Schriften von Jeanne Hersch"
+project:
+  name: zbz-ocr-tei
+  repository: https://github.com/chpollin/zbz-ocr-tei.git
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+template:
+  name: Vorlage Report
+  version: 0.1
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/report
+status: complete
+created: 2026-05-27
+updated: 2026-07-08
+audience:
+  type: client
+  name: Zentralbibliothek Zürich (ZBZ)
+report-period:
+  from: 2026-01-29
+  to: 2026-07-07
+report-genre: abschlussbericht
+authors: [Christopher Pollin]
+---
+
 # Arbeitsbericht: LLM-gestützte OCR- und TEI-Pipeline für die digitale Edition der Schriften von Jeanne Hersch
 
 Dr. Christopher Pollin, Digital Humanities Craft OG
@@ -269,9 +294,72 @@ Headline-Resultat des aktuellen Korpus (n = 25, Seed 42, B = 10 000, Stand der W
 
 Der Weg zu diesen Werten ist selbst Teil des Ergebnisses. Die erste Messung wies ein Fidelity-Mittel von 4,26 % aus. Die Fehleranalyse der Ausreißer führte auf einen Generator-Defekt, die Überdetektion von Fußnoten, bei der Haupttext in ausgeschlossene `<note>`-Elemente geriet und in der Messung als Löschung zählte. Eine referenzverifizierte Demotion, die einen Block nur dann in den Fließtext zurückführt, wenn ein zusammenhängender Lauf von mindestens 150 Zeichen seines Textes im Referenz-Body nachweisbar ist, senkte das Mittel dokumentiert über 3,99 % auf 2,71 %; die Bestandsläufe vom 07.07.2026, vor allem die Entfernung der Seitenzahl-Echos und die urteilsgesteuerte Demotion (6.4), senkten es weiter auf 2,50 %, und die Reparatur der verlorenen Doppelseiten-Hälfte des Dokuments 30 (6.4) auf 2,08 %. Jede Stufe dieses Verlaufs ist im Entscheidungsregister mit Datum und Methode festgehalten; eine Fortsetzung dieser Reparatur für Dokumente ohne Referenzabdeckung beschreibt 6.4.
 
-Die Reproduktion erfolgt über `python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000`; das Ergebnis liegt versioniert als `docs/data/cer_statistics.json` vor, die Methodik in `knowledge/specification.md`, die vollständige Werte- und Ursachenanalyse in `knowledge/final-report.md`.
+Die Reproduktion erfolgt über `python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000`; das Ergebnis liegt versioniert als `docs/data/cer_statistics.json` vor, die Methodik in `knowledge/specification.md` und `knowledge/cer-methodology.md`, der Forschungsstandvergleich in `knowledge/literature-comparison.md`.
 
 Auf der Datenseite gilt der in Abschnitt 2 beschriebene Trichter. Von den 286 gelieferten Dokumenten besitzen 285 ein finales TEI; das gelieferte PDF ohne finales TEI (Dokument 10) ist registriert und extern zu klären. Die früher offene Differenz zwischen Masterfile-Texten und geliefertem Bestand ist durch das Korpus-Audit aufgeklärt und reproduzierbar belegt.
+
+#### Werte je Dokument
+
+Die folgende Tabelle schlüsselt alle 25 gemessenen Dokumente nach Fidelity-CER auf und ordnet jedem erhöhten Wert seine Hauptursache zu. Die Streuung stammt aus drei strukturellen Mustern; die Zeichenerkennung selbst trägt sie nicht.
+
+- Mehrtext gegen selektive Referenzen (Scope, kein Fehler)
+- Fehlklassifikation von Fließtext als Fußnote (für die demotierten Dokumente behoben)
+- Lesereihenfolge-Verdachtssignal auf Doppelseiten, das überwiegend korrupte Zonen-Zuordnungen über korrektem Text markiert (6.4)
+
+Die vollständige Drei-Zahlen-Zerlegung je Dokument liegt in `docs/data/cer_statistics.json`.
+
+| Doc | Typ | Sprache | Fidelity % | Hauptursache |
+| :---- | :---- | :---- | ----: | :---- |
+| 1440 | B | DE | 5,87 | Scope plus fehlerbehaftete Referenz |
+| 760 | D | FR | 5,87 | Doppelseite, verlorene Bildunterschriften und unsegmentierte Paginierung, gegenprobenverifiziert (E91); die Lesereihenfolge selbst hält am Faksimile |
+| 300 | D | FR | 5,00 | Scope plus Zusatzseiten |
+| 1410 | B | FR | 4,24 | Scope plus Zusatzseiten |
+| 130 | A | FR | 2,93 | nahezu sauber |
+| 1910 | B | DE | 2,81 | Rest durch die urteilsgesteuerte Demotion beseitigt (E94) |
+| 290 | A | FR | 2,56 | durch Fußnoten-Demotion behoben |
+| 560 | A | FR | 2,50 | sauber |
+| 2310 | A | FR | 2,46 | Scope (JSTOR-Deckblatt) |
+| 1520 | C | FR | 2,22 | Zusatzseiten; Fußnoten-Demotion angewandt |
+| 2530 | B | FR | 1,83 | sauber |
+| 890 | B | DE | 1,37 | Scope |
+| 90 | A | DE | 1,28 | durch Fußnoten-Demotion behoben |
+| 3040 | B | FR | 1,26 | Scope (Fußnoten) |
+| 40 | C | FR | 1,20 | sauber; Fußnoten-Demotion angewandt |
+| 1060 | A | DE | 1,14 | Scope |
+| 1180 | A | FR | 1,08 | sauber |
+| 3020 | B | DE | 1,06 | sauber |
+| 1330 | D | FR | 1,03 | Scope |
+| 30 | A | FR | 0,90 | repariert, verlorene linke Hälfte der Doppelseite 1 ergänzt, Zonen korrigiert (E97/E98) |
+| 100 | A | FR | 0,85 | sauber |
+| 570 | A | FR | 0,79 | Scope (extrem) |
+| 2635 | A | DE | 0,73 | sauber |
+| 830 | D | FR | 0,69 | sauber |
+| 580 | A | FR | 0,30 | Scope (extrem) |
+
+#### Einordnung in den Forschungsstand
+
+Print-kalibriert gelesen liegt der Fidelity-Median von 1,28 % zwischen dem besten spezialisierten Druck-Stack (Transkribus mit LLM-Nachkorrektur, 0,84 %; Crosilla et al. 2025) und Transkribus allein (3,67 %), solide für historischen Druck, aber nicht an der Spitze; das technische Optimum erreichen nur die besten Einzeldokumente (0,3 bis 0,8 %). Die Transkribus-Bewertungsbänder stammen primär aus der Handschriftenerkennung und setzen die Latte niedriger, als eine reine Druck-OCR-Aufgabe es rechtfertigt.
+
+| Quelle | Verfahren | Sprache | CER |
+| :---- | :---- | :---- | :---- |
+| Crosilla et al. 2025 | Transkribus Print M1 + Gemini 2.0 Flash Nachkorrektur | deu (Fraktur) | 0,84 % |
+| Crosilla et al. 2025 | Gemini 2.0 Flash zero-shot | deu | 1,27 % |
+| Crosilla et al. 2025 | Transkribus Print M1 allein | deu | 3,67 % |
+| Crosilla et al. 2025 | GPT-4o direkt | deu | 6,31 % |
+| Levchenko 2025 | Gemini 2.5 Pro | rus (18. Jh.) | 3,36 % |
+| Levchenko 2025 | Gemini 2.5 Flash | rus | 4,94 % |
+| Levchenko 2025 | traditionelle OCR | rus | 21–45 % |
+| Transkribus-Dokumentation | Richtwert | allgemein | 0,5–2 % |
+
+Kein Eintrag ist ein Like-for-like-Benchmark; die Vergleichbarkeitsdimensionen je Eintrag stehen maschinenlesbar in `docs/data/cer_statistics.json` und ausführlich in `knowledge/literature-comparison.md`.
+
+#### Korpusweite Plausibilitätsschätzung und Sprach-Audit
+
+Für die 260 Dokumente ohne Ground Truth dient die Dictionary Hit Rate als Proxy, der Anteil der OCR-Wörter, die in französischen und deutschen Wörterbüchern stehen (nach Stroebel et al. 2022). Der Median liegt bei 97,7 %, 92 % der Dokumente erreichen mindestens 90 % Trefferquote, und die Ausreißer unter 75 % sind korrekt klassifizierte fremdsprachige Dokumente. Der zusammengesetzte Schätzer des Proxys generalisiert statistisch nicht (negatives LOOCV-R², siehe Abschnitt 7), weshalb der korpusweite Wert eine Plausibilitätsschranke bleibt und keine Messung ist. Ein Nebenbefund des Sprach-Audits ist, dass 284 der 285 Dokumente korrekt sprachklassifiziert sind; drei Etiketten wurden dabei korrigiert.
+
+#### Grenzen der Messung
+
+Die bekannten Grenzen sind mit den Werten offengelegt. Ground Truth existiert nur für 25 Dokumente, sodass Korpusaussagen Schätzungen bleiben. Das Referenz-Subset weicht auf der Zeichenmenge signifikant vom Korpus ab (Kolmogorov-Smirnov-Test auf `n_chars` mit p = 0,0139, `comparable=false`), während die vier weiteren Variablen (Sprache, Layout-Typ, Publikationsform, Seitenzahl) vergleichbar sind; die Abweichung ist in der JSON offen deklariert. Die CER misst zudem gegen eine selbst fehlerbehaftete Transkribus-Referenz (Beispiel 5) und ist damit eine Obergrenze der wahren Fehlerrate; der Fehlerbestand der Referenzen ist in `knowledge/ground-truth-map.md` systematisch katalogisiert. Die Run-zu-Run-Varianz der nicht-deterministischen LLM-Stufe ist vernachlässigbar (Abschnitt 7), und die frequenzbasierte HCPR-Adaption unterschätzt Substitutionen.
 
 ### 6.4 Qualitätssicherung jenseits der CER
 
@@ -285,7 +373,7 @@ Auf der Verifikationsebene wurden alle 63 Kandidaten am Faksimile geprüft, mit 
 
 Eine unabhängige Gegenprobe hat die publizierten CER-Werte von außen reproduziert, ohne Code aus dem Repository, mit eigenständig implementierter Extraktion und Normalisierung, einer zweiten Levenshtein-Engine und eigener Aggregation. Alle Headline- und Einzelwerte wurden exakt bestätigt; die inhaltliche Klassifikation der größten Fehlerblöcke ergab, dass echter Textverlust die Ausnahme ist und Apparat-Einfügungen unter der Scope-Schwelle sowie Konventionsdivergenzen der Referenz die Fidelity-Werte nach oben treiben, ohne Erkennungsfehler zu sein.
 
-Die Ground Truth selbst wurde vollständig inventarisiert. Die 25 Referenz-TEIs sind in den tragenden Körper-Konventionen richtlinienkonform, tragen aber korpusweit einen Transkribus-Stub als Header und einen eigenen, inzwischen katalogisierten Fehlerbestand, darunter Normdaten-Präfix-Drift, Migrationsreste und eine nicht wohlgeformte Datei (1520.xml, drei überkreuzte Element-Verschachtelungen). Für diese Datei liegt eine reparierte Kopie samt Änderungsnachweis vor; die Meldung an die ZBZ ist vorbereitet. Landkarte und Ausnahmekatalog stehen als Anhang des internen Abschlussberichts (`knowledge/final-report.md`).
+Die Ground Truth selbst wurde vollständig inventarisiert. Die 25 Referenz-TEIs sind in den tragenden Körper-Konventionen richtlinienkonform, tragen aber korpusweit einen Transkribus-Stub als Header und einen eigenen, inzwischen katalogisierten Fehlerbestand, darunter Normdaten-Präfix-Drift, Migrationsreste und eine nicht wohlgeformte Datei (1520.xml, drei überkreuzte Element-Verschachtelungen). Für diese Datei liegt eine reparierte Kopie samt Änderungsnachweis vor; die Meldung an die ZBZ ist vorbereitet. Landkarte und Ausnahmekatalog stehen im Referenzdokument `knowledge/ground-truth-map.md`.
 
 Aus Audits und Verifikation folgen die Bestandskorrekturen, ausgeführt als nachgelagerte deterministische Läufe auf dem ausgelieferten Korpus, jeweils mit Backup, idempotent und mit Audit-Messung vorher und nachher, also vollständig reversibel und überprüfbar. Ratifiziert sind drei Festlegungen: `pb@n` trägt die gedruckte Seitenzahl in eckigen Klammern, wie es die Referenzen durchgängig tun, mit der Scan-Nummer als ehrlichem Fallback ohne sicheres Signal; korrigiert wird hybrid, sichere Klassen maschinell und unsichere als Kurations-Worklists; die Verifikationstiefe ist die gezielte Adjudikation bekannter Konflikte samt Ergänzungsstichproben. Der erste Lauf ist vollzogen. Die Apostroph-Normalisierung senkte die betroffene Audit-Klasse von 88 978 Vorkommen auf null, bei unverändert grüner Schema-, Header- und Validator-Prüfung. Die zwei Folgeläufe, die Umstellung auf die Druckfolio (nach Vorschau: 1 753 Seiten aus Fußzeilen-Erkennung, 1 033 aus Interpolation, 151 aus stabilem Offset, 970 verbleibende Scan-Nummern, dazu 1 212 zu entfernende Seitenzahl-Echo-Absätze) und die urteilsgesteuerte Fußnoten-Demotion (59 Rückführungen, 2 Zitat-Überführungen, 19 Marker-Promotionen), sind gebaut und im Trockenlauf verifiziert worden.
 

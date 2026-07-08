@@ -128,8 +128,8 @@ In the PAGE-XML detail, the 24 Transkribus exports contain 302 pages in total, a
 
 ## Status
 
-For current metrics (CER, file counts, validation) see the corpus overview `docs/index.html`
-and [final-report.md](final-report.md).
+For current metrics (CER, file counts, validation) see the corpus overview `docs/index.html`,
+the report `reports/arbeitsbericht-v3.md`, and the canonical values in `docs/data/cer_statistics.json`.
 
 ### Milestones
 
@@ -241,6 +241,7 @@ Since E21, zbz-ocr-tei replaces or complements the following steps:
 
 - [pipeline.md](pipeline.md): technical pipeline details
 - [specification.md](specification.md): quality method and validation rules
-- [final-report.md](final-report.md): measured quality values
+- `reports/arbeitsbericht-v3.md`: the project report; measured values in `docs/data/cer_statistics.json`
+- [cer-methodology.md](cer-methodology.md): CER measurement method
 - [decisions.md](decisions.md): open points and decisions
 - [infrastructure.md](infrastructure.md): deployment + APIs

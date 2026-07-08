@@ -12,7 +12,7 @@ language: en
 created: 2026-07-07
 updated: 2026-07-07
 tags: [zbz-ocr-tei, specification, requirements, epics]
-related: [decisions, project, pipeline, workflow, final-report]
+related: [decisions, project, pipeline, workflow, cer-methodology]
 ---
 
 # Specification
@@ -100,9 +100,11 @@ HTR quality bands (E80). The method is binding since the correctness wave
   Gemini stages) is released for measurement and executes at the workstation
   (5 docs x 3 runs; see [decisions.md](decisions.md)).
 
-No figure is published without its method. The measured values live in
-[final-report.md](final-report.md) and, deterministically regenerable with
-seed 42, in `docs/data/cer_statistics.json` (rendered by `docs/methode.html`).
+No figure is published without its method. The detailed measurement method is in
+[cer-methodology.md](cer-methodology.md). The measured values live,
+deterministically regenerable with seed 42, in `docs/data/cer_statistics.json`
+(rendered by `docs/methode.html`) and are reported in
+`reports/arbeitsbericht-v3.md`, section 6.3.
 
 ## Validation rule catalog
 
@@ -183,7 +185,7 @@ markup inside captions) is an open ZBZ question (O27).
 ### Frontend requirements (deferred until after ZBZ acceptance)
 
 Finding IDs from the dated gap analysis (surveyed 2026-06-07; the H and M
-findings were fixed 2026-06-10, provenance in [final-report.md](final-report.md)):
+findings were fixed 2026-06-10, provenance in `reports/arbeitsbericht-v3.md`, section 5):
 
 - N1: no multi-select/bulk export in the catalog; the ZIP bundle (JSZip) of
   roadmap E61 is not yet integrated, only per-stream single export exists.
