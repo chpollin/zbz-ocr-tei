@@ -9,7 +9,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-06-07
-updated: 2026-07-07
+updated: 2026-07-08
 tags: [ecosystem, synthesis, zbz-ocr-tei, szd-htr, teicrafter]
 ---
 
@@ -128,11 +128,13 @@ teiCrafter is the bottleneck.
   correct in the rendered text -> save back byte-identical (except what was edited).
   The motto "One workbench, two ways in" combines a deterministic editor path with an
   optional "New from text (LLM)" on-ramp.
-- Tool boundary (binding, 2026-06-07): teiCrafter edits arbitrary TEI (a tool).
-  EditionCrafter is a separate, independent line and builds whole editions
-  (display/apparatus/publication); the Editopia Hersch demonstrator is EditionCrafter v0,
-  NOT teiCrafter. The static ZBZ/SZD viewers belong to their respective pipelines, not to
-  teiCrafter. Mnemonic: teiCrafter creates/edits TEI, EditionCrafter creates the edition.
+- Tool boundary (binding, 2026-06-07): teiCrafter edits arbitrary TEI, so it is a tool.
+  EditionCrafter is a separate, independent line that builds whole editions
+  (display/apparatus/publication). It is a future project with no bearing on the Editopia
+  talk (operator decision 2026-07-08); the convergence point demonstrated in the Editopia
+  talk is teiCrafter (decision 2026-06-09). The static ZBZ/SZD viewers belong to their
+  respective pipelines, not to teiCrafter. Mnemonic: teiCrafter creates and edits TEI,
+  EditionCrafter creates the edition.
 - Core mechanics: the raw string is canonical, every change is an offset splice on it,
   `serialize()` is byte-identical (DOM-free, no DOMParser/XMLSerializer when serializing).
   Granularity emerges from the document: word level with `<w xml:id>` (Wenzelsbibel),

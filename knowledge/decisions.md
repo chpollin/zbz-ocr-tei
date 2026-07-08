@@ -9,7 +9,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-02-18
-updated: 2026-07-07
+updated: 2026-07-08
 tags: [zbz-ocr-tei, decisions, open, decided]
 ---
 
@@ -71,7 +71,7 @@ Consolidated register of all decisions and open questions. Cross-cutting, collec
 | E49 | ZBZ editorial guidelines as binding reference | full guidelines as `data/source/guidelines/Editionsrichtlinien_ZBZ.md` | 2026-03-26 | [pipeline.md](pipeline.md) |
 | E50 | Dual-attribute strategy for entity references | `ref="GND:..."` (primary) plus `corresp="#zbz-p.N"` (internal) | 2026-03-26 | removed by E71 |
 | E51 | End-to-end CER benchmark (TEI versus TEI) | 25 ZBZ reference TEIs as ground truth, `benchmark_cer.py` with stratified analysis | 2026-03-26 | [quality: see specification.md and final-report.md] |
-| E54 | Scientific CER re-evaluation | BCa bootstrap (B=10000, seed 42), paired bootstrap E2E versus OCR-only, HCPR, multi-norm, content-aligned eval. Headline then n=19: mean 4.10 % [2.01, 6.75], median 1.83 % [0.84, 5.14] (historical state 2026-04-27; current headline see E85: mean 2.71 % / median 1.40 %, n=25) | 2026-04-27 | [final-report.md](final-report.md) |
+| E54 | Scientific CER re-evaluation | BCa bootstrap (B=10000, seed 42), paired bootstrap E2E versus OCR-only, HCPR, multi-norm, content-aligned eval. Headline then n=19: mean 4.10 % [2.01, 6.75], median 1.83 % [0.84, 5.14] (historical state 2026-04-27; current headline see E98/E99: mean 2.08 % / median 1.28 %, n=25) | 2026-04-27 | [final-report.md](final-report.md) |
 | E55 | Interactive CER dashboard | 12 sections, vanilla SVG. Abolished with E56; data remains as `docs/data/cer_statistics.json` | 2026-04-27 | superseded |
 | E56 | Frontend reduction to the pipeline viewer | edition site, curation editor (FastAPI), diagnostics, and CER dashboard abolished without replacement. New single-page app `docs/viewer.html` (sidebar, facsimile plus layout overlay plus OCR/TEI panel; layout editor with bbox drag, resize, add, delete, reading-order drag; persistence via file download at that time). Volume 9 to 1 HTML, 23 to 6 JS (minus 81 %), CSS minus 84 %. E33/E36 superseded | 2026-04-27 | [workflow.md](workflow.md) |
 | E57 | Per-page mirror plus GitHub Pages deploy | `generate_edition_data.py` mirrors layout JSON, Mistral OCR, and per-page TEI (split from `_final.xml` via `<pb>` at sequential position 1..N because of pagination drift) for all 285 documents to `docs/data/pages/`; three-stage path resolver in `core.js`; `.nojekyll`; image delivery stays local (only demo images versioned) | 2026-05-25 | [workflow.md](workflow.md) |
@@ -415,6 +415,20 @@ Execution: new harness `scripts/eval/stability_pilot.py` runs full `--force` reg
 Result: per-document standard deviation of fidelity CER across runs 0.000 to 0.129 percentage points (mean 0.040, doc 2310 exactly 0); the refinement stage is practically deterministic in its text effect. The `stability` block in `docs/data/cer_statistics.json` is closed (`status: measured`) via a loader in `cer_statistics_full` that consumes `output/audits/stability_pilot.json`. Side finding: the ABSOLUTE fidelity of fresh regenerations lies far above the delivered corpus values (the delivered tei_final embodies accumulated corrections the pipeline caches do not reproduce), which independently reinforces the E99 ban on regenerating the delivered corpus. The pilot's absolute values are therefore not comparable to the headline; only the within-pilot spread is the measurement.
 
 Documents: [journal.md](journal.md) session 89
+
+---
+
+### E101 Scan-versus-text mismatch resolved by the fidelity/scope decomposition, no document excluded (2026-07-08)
+
+Occasion: operator question (vault register W5.1), the delivered TEI text and the ZBZ reference diverge in extent; does that force excluding the affected documents from the CER measurement? Write-up delegated to the agent on 2026-07-08.
+
+Finding: the divergence is structural, not a recognition error. The ZBZ reference TEIs are selective partial transcriptions, so the pipeline is often the more complete text (journal masthead, a neighbouring review, a table of contents). A naive full-text CER punishes that completeness (doc 570 reaches an end-to-end CER above 100 percent purely from surplus text). The correct instrument is already in place and needs no new code. `classify_edit_operations` (`scripts/eval/evaluate_ocr.py`, `SCOPE_BLOCK_MIN = 50`) splits every Levenshtein operation into fidelity (substitutions, all deletions, small insertions under the threshold) and scope (contiguous insertions at or above the threshold). The split is exact, `cer_fidelity + scope_insertion_rate == cer_full` per document, and asymmetric by design: being more complete than the reference is not an error, being less complete is. Genuine losses stay in fidelity as deletions and are not absorbed into scope.
+
+Verification against the data (2026-07-08): the decomposition reproduces exactly, `cer_fidelity + scope_insertion_rate == cer_end_to_end` for all 25 documents in `docs/data/cer_statistics.json` (0 mismatches), the recomputed fidelity mean is 2.08 percent and median 1.28 percent, identical to `overall.end_to_end_fidelity`. All 25 documents remain in the measurement (`n_excluded = 0`); the circular exclusion list was already removed by E73. The genuine text-loss case that the decomposition does not mask (doc 30, a double-page half) was adjudicated (E97) and repaired (E98) on its own track, which independently confirms that the decomposition isolates surplus text without hiding real loss. The independent counter-check (E91) reproduced every value from the documented specification without importing repo code.
+
+Decision (resolves W5.1): keep all 25 ground-truth documents in the CER measurement; the reported quality figure is the end-to-end fidelity CER, mean 2.08 percent and median 1.28 percent (n=25, `docs/data/cer_statistics.json`). It is stated as an upper bound of the recognition error rate (E80, E91: the reference itself is fallible, and apparatus insertions inflate it without a recognition error). The scope-inclusive end-to-end CER stays a diagnosis figure, never a quality measure. Consequence for the talk and the project report: cite the fidelity headline with n=25 and the source file, name the `SCOPE_BLOCK_MIN = 50` threshold when the fidelity values are quoted (E91), and carry the `n_chars` selection-bias caveat when generalizing beyond the 25 documents (`selection_bias` in the JSON). No document is dropped, no separate mismatch metric is introduced.
+
+Documents: [final-report.md](final-report.md), [journal.md](journal.md), [cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md)
 
 ---
 
