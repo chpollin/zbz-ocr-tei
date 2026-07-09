@@ -70,8 +70,8 @@ Consolidated register of all decisions and open questions. Cross-cutting, collec
 | E48 | Project-specific schema `zbz_hersch.rng` | generic `tei_all.rng` replaced by a project schema (from ODD, 551 definitions) | 2026-03-26 | [pipeline.md](pipeline.md) |
 | E49 | ZBZ editorial guidelines as binding reference | full guidelines as `data/source/guidelines/Editionsrichtlinien_ZBZ.md` | 2026-03-26 | [pipeline.md](pipeline.md) |
 | E50 | Dual-attribute strategy for entity references | `ref="GND:..."` (primary) plus `corresp="#zbz-p.N"` (internal) | 2026-03-26 | removed by E71 |
-| E51 | End-to-end CER benchmark (TEI versus TEI) | 25 ZBZ reference TEIs as ground truth, `benchmark_cer.py` with stratified analysis | 2026-03-26 | [quality: see specification.md and final-report.md] |
-| E54 | Scientific CER re-evaluation | BCa bootstrap (B=10000, seed 42), paired bootstrap E2E versus OCR-only, HCPR, multi-norm, content-aligned eval. Headline then n=19: mean 4.10 % [2.01, 6.75], median 1.83 % [0.84, 5.14] (historical state 2026-04-27; current headline see E98/E99: mean 2.08 % / median 1.28 %, n=25) | 2026-04-27 | [final-report.md](final-report.md) |
+| E51 | End-to-end CER benchmark (TEI versus TEI) | 25 ZBZ reference TEIs as ground truth, `benchmark_cer.py` with stratified analysis | 2026-03-26 | [quality: see specification.md and arbeitsbericht-v3.md] |
+| E54 | Scientific CER re-evaluation | BCa bootstrap (B=10000, seed 42), paired bootstrap E2E versus OCR-only, HCPR, multi-norm, content-aligned eval. Headline then n=19: mean 4.10 % [2.01, 6.75], median 1.83 % [0.84, 5.14] (historical state 2026-04-27; current headline see E98/E99: mean 2.08 % / median 1.28 %, n=25) | 2026-04-27 | [arbeitsbericht-v3.md](arbeitsbericht-v3.md) |
 | E55 | Interactive CER dashboard | 12 sections, vanilla SVG. Abolished with E56; data remains as `docs/data/cer_statistics.json` | 2026-04-27 | superseded |
 | E56 | Frontend reduction to the pipeline viewer | edition site, curation editor (FastAPI), diagnostics, and CER dashboard abolished without replacement. New single-page app `docs/viewer.html` (sidebar, facsimile plus layout overlay plus OCR/TEI panel; layout editor with bbox drag, resize, add, delete, reading-order drag; persistence via file download at that time). Volume 9 to 1 HTML, 23 to 6 JS (minus 81 %), CSS minus 84 %. E33/E36 superseded | 2026-04-27 | [workflow.md](workflow.md) |
 | E57 | Per-page mirror plus GitHub Pages deploy | `generate_edition_data.py` mirrors layout JSON, Mistral OCR, and per-page TEI (split from `_final.xml` via `<pb>` at sequential position 1..N because of pagination drift) for all 285 documents to `docs/data/pages/`; three-stage path resolver in `core.js`; `.nojekyll`; image delivery stays local (only demo images versioned) | 2026-05-25 | [workflow.md](workflow.md) |
@@ -122,7 +122,7 @@ Documents: [workflow.md](workflow.md), [specification.md](specification.md)
 
 Deep audit of CER production, externally verified against OCR-D/dinglehopper/Transkribus/jiwer. Core finding: the ZBZ reference TEIs are selective partial transcriptions; the pipeline is often more complete. The old alignment trimming hid insertions and losses; naive full-text CER conversely punishes completeness (doc 570: 113 %). Solution: `classify_edit_operations` decomposes every edit operation into fidelity CER (substitutions, small indels, all deletions = real errors) versus scope rate (insertions >= 50 characters = pipeline surplus text, not an error); fidelity plus scope equals full CER. Headline = fidelity over ALL 25 documents (no circular exclusion). Further fixes: case-sensitive default; three CER paths unified on `extract_text_for_comparison` plus `calculate_cer`; circular exclusion criterion removed; error categories via rapidfuzz opcodes (sum exactly to the Levenshtein distance); paired test like-for-like on fidelity (then -7.12 pp, p=0.14, n=19, not significant; the earlier "-14.83 pp p=0.0004" was a trimming artifact and is withdrawn). Citation corrected (arXiv:2510.06743 is Levchenko 2025). 18 golden tests.
 
-Documents: [final-report.md](final-report.md)
+Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
 
 ### E69 Correctness wave: O24 fix, `<pb>` segmentation centralised, teiHeader generator on the delivery contract (2026-05-27)
 
@@ -146,7 +146,7 @@ Documents: [workflow.md](workflow.md)
 
 Raw-data verification: the list followed no reproducible criterion (it did not exclude doc 570 with 112 % surplus, but flagged documents whose scope insertion was negligible), and two code comments were factually wrong. `_override_scope` now sets all documents to full scope. Fidelity CER unchanged (it already computes over all documents and is scope-robust); the raw end-to-end figure is marked as diagnosis, not a quality measure. Paired test then n=25: -7.90 pp, p=0.07, not significant. Closes the OPEN point from E70.
 
-Documents: [final-report.md](final-report.md)
+Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
 
 ### E74 Embedded Schematron rules deliberately NOT executed (documented instead of built) (2026-05-27)
 
@@ -188,7 +188,7 @@ Documents: [workflow.md](workflow.md)
 
 User finding (critical expert): the corpus is pure print, not handwriting; the Transkribus quality bands (below 2 % excellent / publication-ready) come from HTR practice and flatter a print OCR task. Headline words like "excellent/state of the art/publication-ready" contradicted the project's own print literature comparison (Crosilla et al. 2025: best specialised stack 0.84 %, Transkribus alone 3.67 %). Correction without changing any number: the median is solid for historical print, not state of the art; SotA only for the best individual documents; CER additionally measures against a reference that itself contains errors, so it is an upper bound.
 
-Documents: [final-report.md](final-report.md), [methode.html](../docs/methode.html)
+Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [methode.html](../docs/methode.html)
 
 ### E81 Transkribus export plus REST upload: PAGE-XML round trip into a collection (2026-06-08)
 
@@ -200,7 +200,7 @@ Documents: [pipeline.md §Transkribus Export](pipeline.md)
 
 In document 30 a duplicated OCR block was removed; fidelity CER 18.25 to 11.59 %, published to the SoT and mirror. Corpus mean fidelity 4.26 to 3.99 % (CI [2.36; 5.96]), median unchanged; statistics JSON regenerated (seed 42). The old figure is retired (user decision: only the current CER counts). Caveat: 3.99 = 24 documents pure pipeline output plus one manually deduplicated, because no automatic block deduplication exists; the `ocr_dedup.py` once referenced in work-report appendix A and CLAUDE.md is not in the repo [update 2026-07-07: clarified; CLAUDE.md has not referenced it since Session 73, the script itself was removed with E75]. Tail causes documented: the high CER values are structural, not character recognition. Open defects registered: (a) the layout QA over-detects footnotes, body-as-note on 290/1910/90, not safely auto-fixable because of real long footnotes in 1520/40/3040; (b) double-page reading order, sorted only by y [update E90 (2026-06-21): (b) fixed generator-side, validator warning W19 scopes the not-yet-regenerated corpus, delivery M3 operator-gated; (a) remains open]. E80 remains valid.
 
-Documents: [final-report.md](final-report.md)
+Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
 
 ### E83 Code-doc drift fixed; header metadata stays ZBZ domain (E76/O8 confirmed) (2026-06-08)
 
@@ -218,7 +218,7 @@ Documents: [pipeline.md](pipeline.md), [specification.md](specification.md)
 
 Two reference-backed footnote conformity corrections as idempotent, reversible post-passes on `tei_final`. (a) Demotion: some `<note place="foot">` actually carried body text; if a contiguous stretch of at least 150 characters appears in the ground-truth body (footnotes excluded), the block is provably body text and is demoted to `<p>`. 14 blocks in 5 documents (290/1910/90 plus, on operator instruction, 40/1520). Corpus fidelity mean 3.99 to 2.71 %, median 1.40 %; the pipeline's advantage over raw OCR thereby significant (-9.45 pp, p=0.013). Tool `tei_footnote_demote.py` (backup, hold list, `--include-hold`). (b) Sup-marker strip: leading print markers removed from note text per the guidelines (mark only via `@n`); 16 notes in 4 documents, CER-neutral. Wave-2 remainder classified by a ground-truth-based adversarial workflow; footnote-n was the only safe fix. The note "3 W19 diagnosis specs handed over" was a provisional label, superseded by E90.
 
-Documents: [final-report.md](final-report.md)
+Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
 
 ### E86 Repo audit wave: viewer data-loss fix (H1) plus CI gate plus documentation consistency (2026-06-10)
 
@@ -294,17 +294,17 @@ report with its measured values is
 [cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md), and the counter-check
 scripts live in the paper repo (DHCraft/promptotyping-paper, `verification/`).
 
-Consequence: the upper-bound passage in [final-report.md](final-report.md) is concretized by the
+Consequence: the upper-bound passage in [arbeitsbericht-v3.md](arbeitsbericht-v3.md) is concretized by the
 two cause classes that inflate fidelity without a recognition error (apparatus insertions,
 capitalization divergence). Open follow-up: ellipsis normalization (U+2026 versus `...`), a
 possible dedicated reporting category for apparatus insertions, and the doc 30/760 stock
 correction via M3 (operator-gated, E90).
 
-Documents: [final-report.md](final-report.md), [cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md)
+Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md)
 
 ### E92 Guideline conformity quantified corpus-wide: five audit instruments plus step-1 generator fixes (2026-07-07)
 
-Occasion: operator question whether the delivered TEI satisfies the ZBZ editorial guidelines beyond schema validity. The session built a ground-truth map of the 25 reference TEIs (consolidated as Appendix B of [final-report.md](final-report.md), including the exception catalog of reference-side defects and the ill-formed 1520.xml) and quantified every suspicion with five new offline audit instruments in `scripts/eval/`, each test-gated, JSON output to `output/audits/`:
+Occasion: operator question whether the delivered TEI satisfies the ZBZ editorial guidelines beyond schema validity. The session built a ground-truth map of the 25 reference TEIs (consolidated as Appendix B of [arbeitsbericht-v3.md](arbeitsbericht-v3.md), including the exception catalog of reference-side defects and the ill-formed 1520.xml) and quantified every suspicion with five new offline audit instruments in `scripts/eval/`, each test-gated, JSON output to `output/audits/`:
 
 - `char_lint_audit.py`: typewriter apostrophe U+0027 between letters, guillemet deviations, space before punctuation (incl. U+00A0), U+00AC residue.
 - `pb_number_audit.py`: scan-sequence suspicion on pb@n, digit-only paragraphs in the body, cross-check against layout footer regions.
@@ -316,7 +316,7 @@ Measured state (snapshot 2026-07-07): character normalization is the largest gap
 
 Generator fixes (step 1, test-first): `detect_page_number` reads the printed page number from layout `_filter`/`_skip` footer regions into pb@n (fallback stays the scan number), and `drop_filter_echoes` stops filtered-region text (footer page numbers, cover boilerplate) from leaking into the body through positional paragraph matching. Verified on the doc 570 scaffold regeneration. Both act on regeneration; correcting the delivered corpus runs over the operator-gated marker path (deterministic post-steps on `tei_final` with backup and before/after audit measurement).
 
-Documents: [final-report.md](final-report.md) (Appendix B), [journal.md](journal.md) session 83
+Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md) (Appendix B), [journal.md](journal.md) session 83
 
 ### E93 Image-based italics re-detection rejected; `<hi>` stays OCR-signal-bound (2026-07-07)
 
@@ -326,7 +326,7 @@ The apparent fixes, sharpening the Gemini prompt from verify to detect or adding
 
 Consequence: `<hi>` in pipeline output remains bound to the OCR emphasis signal, guarded by `hi_preservation_audit` (E92). Complete rendering markup per guideline vocabulary (`#i` etc.) is downstream curation at the facsimile, in the viewer or in teiCrafter.
 
-Documents: [final-report.md](final-report.md), [specification.md](specification.md)
+Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [specification.md](specification.md)
 
 ### E94 Stock-correction wave ratified: printed-folio pb@n, hybrid correction mode, targeted verification depth (2026-07-07)
 
@@ -376,7 +376,7 @@ Occasion: E94 left open the contradiction between the counter-check (E91: the CE
 
 Adjudication (facsimile-verified): the three missing blocks of doc 30 (540/451/194 normalized characters via the canonical alignment) all sit at reference positions 0-6 percent, i.e. on the left half of the FIRST double page (printed page [222]). The scan shows this text fully legible; it is absent from the delivered TEI and from every OCR stream (grep across mistral/ocr_results/gemini_corrected/llm_corrected). Both prior findings are therefore correct: the calibration sample (facs 2-4) did not include the affected page, and only its generalization to "pure alignment problem" was wrong.
 
-Consequence: the fidelity outlier (11.59 percent) is genuine recognition loss of one double-page half; a reading-order correction cannot recover it. Repair path: targeted single-page re-OCR of scan page 1 following the E96 pattern (gated). The adjudication slot in `reports/arbeitsbericht-v3.md` is filled.
+Consequence: the fidelity outlier (11.59 percent) is genuine recognition loss of one double-page half; a reading-order correction cannot recover it. Repair path: targeted single-page re-OCR of scan page 1 following the E96 pattern (gated). The adjudication slot in `arbeitsbericht-v3.md` is filled.
 
 Documents: [journal.md](journal.md) session 88
 
@@ -428,7 +428,7 @@ Verification against the data (2026-07-08): the decomposition reproduces exactly
 
 Decision (resolves W5.1): keep all 25 ground-truth documents in the CER measurement; the reported quality figure is the end-to-end fidelity CER, mean 2.08 percent and median 1.28 percent (n=25, `docs/data/cer_statistics.json`). It is stated as an upper bound of the recognition error rate (E80, E91: the reference itself is fallible, and apparatus insertions inflate it without a recognition error). The scope-inclusive end-to-end CER stays a diagnosis figure, never a quality measure. Consequence for the talk and the project report: cite the fidelity headline with n=25 and the source file, name the `SCOPE_BLOCK_MIN = 50` threshold when the fidelity values are quoted (E91), and carry the `n_chars` selection-bias caveat when generalizing beyond the 25 documents (`selection_bias` in the JSON). No document is dropped, no separate mismatch metric is introduced.
 
-Documents: [final-report.md](final-report.md), [journal.md](journal.md), [cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md)
+Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [journal.md](journal.md), [cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md)
 
 ---
 
@@ -478,5 +478,5 @@ Documents: [final-report.md](final-report.md), [journal.md](journal.md), [cer-ge
 - [pipeline.md](pipeline.md): pipeline decisions
 - [workflow.md](workflow.md): end-to-end workflow, viewer, round trip, save mechanism, provenance concept
 - [specification.md](specification.md): requirements, gates, epics
-- [final-report.md](final-report.md): measured quality state, delivery synthesis
+- [arbeitsbericht-v3.md](arbeitsbericht-v3.md): measured quality state, delivery synthesis
 - [journal.md](journal.md): chronological session history

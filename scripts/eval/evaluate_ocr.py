@@ -7,7 +7,7 @@ Generiert visuellen HTML-Report mit Diff-Ansicht.
 CER-VERTRAG (kanonische Definition, gilt fuer das ganze Projekt)
 =====================================================================
 Verbindlich verifiziert gegen OCR-D, dinglehopper, Transkribus, jiwer
-(siehe knowledge/final-report.md, Abschnitt Externe Verifikation).
+(siehe knowledge/cer-methodology.md, Abschnitt Verification of the Measurement Methodology).
 
 - Formel:        CER = Levenshtein(ref, hyp) / len(ref)   (Transkribus-Konvention,
                  Denominator = Referenzlaenge). Kann >1.0 werden; das wird NICHT

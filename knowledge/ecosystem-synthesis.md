@@ -70,7 +70,7 @@ teiCrafter is the bottleneck.
   manifest carries workflow status plus history.
   Important: `{id}_final.xml` IS teiCrafter's native format; it opens directly, text editing
   without conversion.
-- Quality (E70/E73/E85, SoT): the measured values live in [final-report.md](final-report.md)
+- Quality (E70/E73/E85, SoT): the measured values live in [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
   section 6 and `docs/data/cer_statistics.json` (reproducible via
   `python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000`); any citation
   of the fidelity values must name the scope threshold `SCOPE_BLOCK_MIN = 50` (E91).

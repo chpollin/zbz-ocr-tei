@@ -10,7 +10,7 @@ method:
 status: draft
 language: en
 created: 2026-01-29
-updated: 2026-07-07
+updated: 2026-07-09
 tags: [zbz-ocr-tei, journal]
 template:
   name: Vorlage Journal
@@ -56,6 +56,28 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+
+### 2026-07-09 Session 90: final report moved to knowledge/, stub retired
+
+**Occasion** Operator decision that the final report lives in `knowledge/` under a
+versioned filename, as a single document instead of report plus stub.
+
+**Goal** One canonical location for the project report and consistent references
+across the repository.
+
+**Course** `reports/arbeitsbericht-v3.md` moved to `knowledge/arbeitsbericht-v3.md`
+(git mv, history preserved); the superseded stub `knowledge/final-report.md`
+deleted. Living references updated: CLAUDE.md, README, [index.md](index.md), the
+domain docs, [decisions.md](decisions.md) link targets, `docs/methode.html`, and
+four script docstrings whose pointers now name the surviving source
+([cer-methodology.md](cer-methodology.md) for the CER contract and aggregation,
+decisions.md E85 for the footnote instruments). Dated snapshots (journal entries,
+the 2026-07-07 verification report) remain unchanged per format contract.
+
+**Status** Script health suite green. Outside dated snapshots no reference to the
+old paths remains (grep-verified).
+
+**Next steps** 1. None; housekeeping session closed.
 
 ### 2026-07-07 Session 89: backlog plan executed; doc 30 repaired (E98), machine reordering falsified (E99), stability measured (E100)
 

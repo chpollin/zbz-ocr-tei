@@ -19,7 +19,7 @@ HOLD: 40 und 1520 sind referenz-verifiziert, aber editorisch heikel (Doc 1520 is
 Jaspers-Anthologie mit plausibel echten langen Zitat-Fussnoten). Sie werden nur mit
 `--include-hold` angefasst -- der Body/Fussnote-Entscheid liegt bei ZBZ.
 
-Worklist + Methodik: knowledge/final-report.md (Abschnitt Fussnoten-Demotion).
+Worklist + Methodik: knowledge/decisions.md (E85); Ergebnis in knowledge/arbeitsbericht-v3.md.
 
   python -m scripts.tei.tei_footnote_demote --dry-run                 # alle Kandidaten zeigen
   python -m scripts.tei.tei_footnote_demote --dry-run --doc 290       # ein Doc

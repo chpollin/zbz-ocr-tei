@@ -24,7 +24,7 @@ extraction and normalization rules that turn structured TEI into comparison text
 The consolidated requirement view is in [specification.md](specification.md),
 quality-measurement section; the measured values live in
 `docs/data/cer_statistics.json` (deterministically regenerable, seed 42) and are
-reported in `reports/arbeitsbericht-v3.md`, section 6.3. This document carries the
+reported in `arbeitsbericht-v3.md`, section 6.3. This document carries the
 detailed method behind those values.
 
 ## What the CER Measures and How It Is Defined Here

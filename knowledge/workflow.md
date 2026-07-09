@@ -571,7 +571,7 @@ and the planned pipeline wave (`_complete.xml` + `provenance.json`, sections 5 a
 
 - [pipeline.md](pipeline.md): pipeline stages, engines, TEI mapping
 - [specification.md](specification.md): requirements, quality method, validation rule catalog, frontend requirements
-- `reports/arbeitsbericht-v3.md`: the project report (CER, proxy, validation state); [cer-methodology.md](cer-methodology.md): CER measurement method
+- `arbeitsbericht-v3.md`: the project report (CER, proxy, validation state); [cer-methodology.md](cer-methodology.md): CER measurement method
 - [decisions.md](decisions.md): decision register, open items
 - [methodology.md](methodology.md): Promptotyping, verification cascade, three-layer model
 - [journal.md](journal.md): chronological session history

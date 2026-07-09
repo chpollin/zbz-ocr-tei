@@ -63,7 +63,7 @@ literature rather than HTR quality bands (E80), placing the pipeline in the soli
 historical print. Caveat: the ZBZ reference TEIs are partial transcriptions, so naive full-text CER
 is a diagnostic artifact, not a quality measure. Full methodology, stratified values, limitations,
 and the literature comparison, with all current values: [docs/methode.html](docs/methode.html) and
-[knowledge/final-report.md](knowledge/final-report.md); the normative method is in
+[knowledge/arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md); the normative method is in
 [knowledge/specification.md](knowledge/specification.md).
 
 Live corpus overview with current per-document status:
@@ -155,7 +155,7 @@ Complete CLI reference: [CLAUDE.md §Commands](CLAUDE.md).
 | Ecosystem synthesis (zbz / szd-htr / teiCrafter) | [knowledge/ecosystem-synthesis.md](knowledge/ecosystem-synthesis.md) |
 | Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastructure.md](knowledge/infrastructure.md) |
 | Methodology + Promptotyping | [knowledge/methodology.md](knowledge/methodology.md) |
-| Final work report (delivery synthesis) | [knowledge/final-report.md](knowledge/final-report.md) |
+| Final work report (delivery synthesis, German) | [knowledge/arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md) |
 | Decisions + open items | [knowledge/decisions.md](knowledge/decisions.md) |
 | Session journal | [knowledge/journal.md](knowledge/journal.md) |
 

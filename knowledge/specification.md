@@ -104,7 +104,7 @@ No figure is published without its method. The detailed measurement method is in
 [cer-methodology.md](cer-methodology.md). The measured values live,
 deterministically regenerable with seed 42, in `docs/data/cer_statistics.json`
 (rendered by `docs/methode.html`) and are reported in
-`reports/arbeitsbericht-v3.md`, section 6.3.
+`arbeitsbericht-v3.md`, section 6.3.
 
 ## Validation rule catalog
 
@@ -185,7 +185,7 @@ markup inside captions) is an open ZBZ question (O27).
 ### Frontend requirements (deferred until after ZBZ acceptance)
 
 Finding IDs from the dated gap analysis (surveyed 2026-06-07; the H and M
-findings were fixed 2026-06-10, provenance in `reports/arbeitsbericht-v3.md`, section 5):
+findings were fixed 2026-06-10, provenance in `arbeitsbericht-v3.md`, section 5):
 
 - N1: no multi-select/bulk export in the catalog; the ZIP bundle (JSZip) of
   roadmap E61 is not yet integrated, only per-stream single export exists.

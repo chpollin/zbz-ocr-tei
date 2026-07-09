@@ -27,7 +27,7 @@ Thematically separated documents:
 - [cer-methodology.md](knowledge/cer-methodology.md): CER measurement method (definition, reference choice, fidelity/scope, extraction and normalization rules, verification)
 - [literature-comparison.md](knowledge/literature-comparison.md): print-OCR state of research and comparability caveats
 - [ground-truth-map.md](knowledge/ground-truth-map.md): the 25 reference TEIs, phenomenon map and exception catalog
-- [final-report.md](knowledge/final-report.md): superseded stub; the report is `reports/arbeitsbericht-v3.md`, measured values are in `docs/data/cer_statistics.json`
+- [arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md): the project report (German, client-facing); measured values are in `docs/data/cer_statistics.json`
 - [journal.md](knowledge/journal.md): chronological session overview
 - [index.md](knowledge/index.md): navigation + key concepts
 

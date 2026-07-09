@@ -21,7 +21,7 @@ Reference document that places the pipeline's fidelity CER in the state of
 research on OCR of printed historical documents. It carries the comparison table
 and the comparability caveats that a report can only reference in compact form.
 The pipeline's own headline values are in `docs/data/cer_statistics.json` and are
-reported in `reports/arbeitsbericht-v3.md`, section 6.3; the measurement method is
+reported in `arbeitsbericht-v3.md`, section 6.3; the measurement method is
 in [cer-methodology.md](cer-methodology.md).
 
 ## Where the Pipeline Sits

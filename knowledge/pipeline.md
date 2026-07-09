@@ -383,7 +383,7 @@ supersedes teiCrafter's hard-coded demo path.
 | 2 | PAGE-XML generator + METS | Done (full corpus) |
 | 3 | NER + Wikidata linking | Removed (E71, 2026-05-27) |
 | 4 | TEI-XML with PAGE-XML | Done (schema-valid, gate-tested) |
-| 5 | Extended evaluation (CER benchmark) | Done, see `reports/arbeitsbericht-v3.md` and [cer-methodology.md](cer-methodology.md) |
+| 5 | Extended evaluation (CER benchmark) | Done, see `arbeitsbericht-v3.md` and [cer-methodology.md](cer-methodology.md) |
 | 6 | Production run + scholarly curation | In progress: full corpus generated, workflow status `unverifiziert` (E66), curation open |
 
 Cross-cutting (parallel to phases 3-6): pipeline viewer with edit mode, see [workflow.md](workflow.md). The earlier public reading edition (E33) and the curation editor (E36) were retired with E56.
