@@ -139,7 +139,7 @@ the report `arbeitsbericht-v3.md`, and the canonical values in `docs/data/cer_st
 | M1 | OCR validated | >=93% accuracy for all types | Done |
 | M2 | Layout + PAGE-XML | regions + bbox + PAGE-XML for all docs | Done |
 | M3 | NER + Wikidata | recall >70%, linking >50% | Removed (E71, 2026-05-27; linking in the output not deliverable) |
-| M4 | TEI-XML | DTA-conformant, schema-valid | Done (whole corpus valid against `zbz_hersch.rng`, gate `tests/test_tei_schema.py`) |
+| M4 | TEI-XML | schema-valid against `zbz_hersch.rng` (E102) | Done (whole corpus valid, gate `tests/test_tei_schema.py`) |
 | M5 | Data handover to ZBZ | full corpus processed + delivered schema-valid; scholarly verification is a ZBZ task (tracked via workflow status) | Data delivered; all streams `unverifiziert` as handover default (E66/E67); scholarly curation lies with ZBZ |
 
 > The identifier "M3" carries a second meaning. In the current substantive roadmap

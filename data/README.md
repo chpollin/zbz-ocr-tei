@@ -31,7 +31,7 @@ data/
 | Reference / gold TEI | `source/reference_tei/` | ZBZ Transkribus (Collection 1886177), finished annotations |
 | PAGE-XML exports | `source/transkribus_page_xml/` | ZBZ Transkribus |
 | Catalog + steering | `source/masterfile/Masterfile.xlsx` | ZBZ Alma / swisscovery + project workflow |
-| Editorial guidelines | `source/guidelines/` | ZBZ (DTA base format + ZBZ-specific deviations) |
+| Editorial guidelines | `source/guidelines/` | ZBZ (the guidelines reference the DTA-Basisformat with documented deviations; format authority is `schema/zbz_hersch.rng`, E102) |
 
 Corpus counts are deliberately not recorded here. Quantities (delivered docs, pages,
 languages, genres) live only in the generated audit artifact, bound to a

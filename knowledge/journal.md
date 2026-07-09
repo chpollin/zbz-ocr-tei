@@ -57,6 +57,41 @@ session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
 
+### 2026-07-09 Session 91: DTA conformity claim tested, refuted, and removed (E102)
+
+**Occasion** Operator question whether the delivered TEI is really valid against the
+DTA-Basisformat, as the report's opening sentence claimed; the repository had never
+validated against the DTA schema.
+
+**Goal** An evidence-based answer and a consistent format claim across the repository.
+
+**Course** The official `basisformat.rng` was fetched from deutschestextarchiv.de and
+the corpus validated with RelaxNG (lxml): 0 of 285 `tei_final` documents valid, and,
+decisively, 0 of 25 ZBZ reference TEIs. Minimal-case isolation located the violation
+classes: the delivery-contract header (idno types, biblStruct), `revisionDesc` and
+`facsimile` (absent from the DTA schema entirely), and body conventions such as
+`div type="text"`, `pb type="blank"`, and `head@facs`. The operator decided to drop
+the DTA claim entirely; the format authority is the project schema `zbz_hersch.rng`
+(TEI P5 subset formalizing the ZBZ editorial guidelines). All living documents were
+reworded ([arbeitsbericht-v3.md](arbeitsbericht-v3.md) including footnote 2,
+[pipeline.md](pipeline.md) TEI-mapping section, [index.md](index.md),
+[project.md](project.md) M4, data READMEs) and the step-2 prompt plus two docstrings
+(`tei_mapping_prompt.py`, `tei_generator.py`) updated; the prompt change affects only
+future refinement runs, which are operator-gated (E99). Dated register and journal
+entries stay unchanged as snapshots; the ZB guidelines' own DTA reference remains
+documented as source data.
+
+**Decisions** E102: DTA-Basisformat conformity claim refuted and removed, no parallel
+DTA validation; rejected alternatives (corpus transformation, stripped "DTA view"
+gate) in the register entry.
+
+**Status** All rewordings applied, `pytest tests/test_scripts_health.py` green after
+the script edits, no DTA mention left in living documents.
+
+**Next steps**
+
+1. None; the reworded report is ready for the next delivery cycle.
+
 ### 2026-07-09 Session 90: final report moved to knowledge/, stub retired
 
 **Occasion** Operator decision that the final report lives in `knowledge/` under a

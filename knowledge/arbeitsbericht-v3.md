@@ -24,10 +24,8 @@ authors: [Christopher Pollin]
 
 Dr. Christopher Pollin, Digital Humanities Craft OG
 
-* v3, 07.07.2026; v2, 07.07.2026; v1, 27.05.2026
+* v2, 09.07.2026; v1, 27.05.2026
 * AI-Unterstützung: Claude Opus 4.7, Opus 4.8, Fable 5, Claude Code
-
-Gegenüber der Erstfassung von v3 sind nachgetragen: die Ergebniszahlen der zwei letzten Bestandskorrektur-Läufe (Seitenzahlen, Fußnoten-Demotion), die finale Warnungsbilanz der Validierung, die adjudizierte und inzwischen behobene Doppelseiten-Reparatur des Dokuments 30, die empirische Widerlegung der maschinellen Lesereihenfolge-Umstellung und die Run-zu-Run-Stabilitätsmessung. Alle im Text genannten Werte sind gemessen.
 
 ## 1 Projektkontext und Zielsetzung
 
@@ -35,7 +33,7 @@ Dieser Bericht dokumentiert ein Experiment im Rahmen der digitalen Neuauflage de
 
 Parallel zum etablierten ZBZ-Workflow wurde dieselbe Strecke ein zweites Mal durchlaufen, diesmal agentenbasiert über Large Language Models (LLMs) und Vision-Language Models (VLMs). Leitfrage ist, ob ein solcher Ansatz den etablierten Workflow in Textqualität und Aufwand erreicht. Die Vergleichsgrundlage stammt aus derselben Parallelführung, denn die manuell über Transkribus erstellten Referenz-TEIs dienen dem Experiment als Ground Truth (siehe 6.1).
 
-Gegenstand ist eine Pipeline, die ausgehend von PDF-Scans TEI-XML im DTA-Basisformat erzeugt und in einem zugehörigen Webinterface anzeigbar und kuratierbar macht. Das DTA-Basisformat ist ein TEI-Subset für die einheitliche Auszeichnung digitalisierter Drucktexte.[^2] Das Vorhaben liefert editionsfertige Daten samt Kurationswerkzeug; die Edition selbst entsteht stromabwärts bei der ZBZ, und der maschinelle Ausgangszustand aller Datenströme heißt darum bewusst unverifiziert. Die Pipeline simuliert die Digitalisierung ausgehend von den PDFs und erzeugt Transkription, Layouterkennung und TEI-XML durchgängig über LLMs und VLMs. Pipeline wie Webinterface entstehen durch Promptotyping,[^3] eine Context-Engineering-Arbeitsweise zur Erzeugung von Forschungsartefakten aus Forschungsdaten und Forschungskontexten.[^4] Die Codeerzeugung erfolgte vollständig innerhalb von Claude Code mit den jeweils aktuellen Opus-Modellen über mehrere Sessions hinweg;[^5] der Erzeugungsprozess ist über die Commit-Historie des offen vorliegenden Repositorys nachvollziehbar.[^6]
+Gegenstand ist eine Pipeline, die ausgehend von PDF-Scans TEI-XML nach dem projektspezifischen Schema `zbz_hersch.rng` erzeugt und in einem zugehörigen Webinterface anzeigbar und kuratierbar macht. Das Schema ist ein TEI-P5-Subset, das die verbindlichen Editionsrichtlinien der ZBZ für die Hersch-Edition formalisiert.[^2] Das Vorhaben liefert editionsfertige Daten samt Kurationswerkzeug; die Edition selbst entsteht stromabwärts bei der ZBZ, und der maschinelle Ausgangszustand aller Datenströme heißt darum bewusst unverifiziert. Die Pipeline simuliert die Digitalisierung ausgehend von den PDFs und erzeugt Transkription, Layouterkennung und TEI-XML durchgängig über LLMs und VLMs. Pipeline wie Webinterface entstehen durch Promptotyping,[^3] eine Context-Engineering-Arbeitsweise zur Erzeugung von Forschungsartefakten aus Forschungsdaten und Forschungskontexten.[^4] Die Codeerzeugung erfolgte vollständig innerhalb von Claude Code mit den jeweils aktuellen Opus-Modellen über mehrere Sessions hinweg;[^5] der Erzeugungsprozess ist über die Commit-Historie des offen vorliegenden Repositorys nachvollziehbar.[^6]
 
 ## 2 Datengrundlage
 
@@ -80,7 +78,7 @@ Der Ordner `docs/` ist für GitHub Pages konfiguriert und enthält das Frontend,
 
 ## 4 Die Pipeline
 
-Die Pipeline überführt PDF-Scans in TEI-XML. Je Dokument entstehen drei Datenströme, ein OCR-Datenstrom mit dem erkannten Text, ein Layout-Datenstrom mit der Seitenstruktur und als edierte Fassung der daraus abgeleitete TEI-Datenstrom, ein DTA-konformes, die Textstrukturen (Überschriften, Absätze, Seiten- und Zeilenumbrüche) abbildendes TEI-XML. Die Verarbeitung ist durchgängig defensiv ausgelegt, sodass eine fehlschlagende Einzelkorrektur die Eingabe unverändert weiterreicht, statt den Lauf abzubrechen.
+Die Pipeline überführt PDF-Scans in TEI-XML. Je Dokument entstehen drei Datenströme, ein OCR-Datenstrom mit dem erkannten Text, ein Layout-Datenstrom mit der Seitenstruktur und als edierte Fassung der daraus abgeleitete TEI-Datenstrom, ein gegen das Projektschema valides, die Textstrukturen (Überschriften, Absätze, Seiten- und Zeilenumbrüche) abbildendes TEI-XML. Die Verarbeitung ist durchgängig defensiv ausgelegt, sodass eine fehlschlagende Einzelkorrektur die Eingabe unverändert weiterreicht, statt den Lauf abzubrechen.
 
 ### Vom Scan zum Seitenbild
 
@@ -112,7 +110,7 @@ Auf das ausgelieferte Korpus wirken schließlich nachgelagerte deterministische 
 
 ### Validierung
 
-Das erzeugte TEI wird mehrstufig geprüft. Die erste Stufe validiert gegen das projektspezifische RelaxNG-Schema `zbz_hersch.rng`, das auf dem DTA-Basisformat aufbaut und um die verbindlichen ZBZ-Editionsrichtlinien ergänzt ist. Die zweite Stufe setzt projekteigene Regeln blockierend durch (R1 bis R7), etwa den Dokumenttyp, die Präsenz von Header und Body und gültige Gliederungstypen. Informative Hinweise (W1 bis W19) markieren prüfenswerte Stellen wie leere Sprecher-Slots oder Abweichungen von der kanonischen Lesereihenfolge, ohne die Gültigkeit zu blockieren. Eine dritte Ebene prüft die ZBZ-Konformitätsregeln, die ein RelaxNG nicht ausdrücken kann, etwa das Rendering-Vokabular und die Form der Seitenumbrüche; die Entitätsregeln dieser Ebene werden erst auf kuratiertem, inline-GND-annotiertem Output scharf, weil das gelieferte Korpus bewusst entitätsfrei ist. Die quantitativen Ergebnisse stehen in 6.1.
+Das erzeugte TEI wird mehrstufig geprüft. Die erste Stufe validiert gegen das projektspezifische RelaxNG-Schema `zbz_hersch.rng`, das als TEI-P5-Subset die verbindlichen ZBZ-Editionsrichtlinien formalisiert. Die zweite Stufe setzt projekteigene Regeln blockierend durch (R1 bis R7), etwa den Dokumenttyp, die Präsenz von Header und Body und gültige Gliederungstypen. Informative Hinweise (W1 bis W19) markieren prüfenswerte Stellen wie leere Sprecher-Slots oder Abweichungen von der kanonischen Lesereihenfolge, ohne die Gültigkeit zu blockieren. Eine dritte Ebene prüft die ZBZ-Konformitätsregeln, die ein RelaxNG nicht ausdrücken kann, etwa das Rendering-Vokabular und die Form der Seitenumbrüche; die Entitätsregeln dieser Ebene werden erst auf kuratiertem, inline-GND-annotiertem Output scharf, weil das gelieferte Korpus bewusst entitätsfrei ist. Die quantitativen Ergebnisse stehen in 6.1.
 
 ### Bearbeitungsstatus
 
@@ -463,7 +461,7 @@ Bearbeitungsstatus und Viewer-Daten
 
 [^1]: Zentralbibliothek Zürich. „Jeanne Hersch: Digitale Neuauflage der Schriften". [https://www.zb.uzh.ch/de/jeanne-hersch-digitale-neuauflage-der-schriften](https://www.zb.uzh.ch/de/jeanne-hersch-digitale-neuauflage-der-schriften).
 
-[^2]: Deutsches Textarchiv. „DTA-Basisformat". [https://www.deutschestextarchiv.de/doku/basisformat](https://www.deutschestextarchiv.de/doku/basisformat).
+[^2]: TEI Consortium. „TEI P5: Guidelines for Electronic Text Encoding and Interchange". [https://tei-c.org/guidelines/p5/](https://tei-c.org/guidelines/p5/). Das Projektschema `data/schema/zbz_hersch.rng` ist aus einer ODD-Spezifikation auf Basis von TEI P5 4.10.2 generiert (Entscheidungsregister E48).
 
 [^3]: [https://dhcraft.org/Promptotyping](https://dhcraft.org/Promptotyping/)
 

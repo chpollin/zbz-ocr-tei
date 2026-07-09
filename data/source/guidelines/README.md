@@ -12,13 +12,14 @@ Projekt-Interpretation -- diese leben in [knowledge/pipeline.md](../../../knowle
 
 ## DTA-Basisformat
 
-Die Edition folgt dem **DTA-Basisformat** des Deutschen Textarchivs. Die vollstaendige
-Spezifikation ist kein Projekt-Artefakt, sondern ein stabiler oeffentlicher Standard und
-wird daher nur verlinkt (nicht als Kopie versioniert):
+Die Editionsrichtlinien der ZB berufen sich weitgehend auf das DTA-Basisformat des
+Deutschen Textarchivs und dokumentieren ihre Abweichungen in
+`Editionsrichtlinien_ZBZ.md`. Fuer den Projekt-Output besteht kein
+DTA-Konformitaetsanspruch; Formatautoritaet ist `data/schema/zbz_hersch.rng`
+(empirische Pruefung und Entscheidung: knowledge/decisions.md, E102). Die
+DTA-Spezifikation ist ein stabiler oeffentlicher Standard und wird nur verlinkt
+(nicht als Kopie versioniert):
 
 - Grundsaetze: https://www.deutschestextarchiv.de/doku/basisformat/trGrundsaetze.html
 - TEI-Struktur: https://www.deutschestextarchiv.de/doku/basisformat/TEIStruktur.html
 - Einstiegsseite: https://www.deutschestextarchiv.de/doku/basisformat/
-
-Abweichungen und Ergaenzungen der ZB gegenueber dem DTA-Basisformat sind in
-`Editionsrichtlinien_ZBZ.md` dokumentiert.

@@ -1,7 +1,7 @@
 """
 TEI-XML Generator: Layout-JSON + OCR-Markdown -> seitenweises TEI-XML.
 
-Erzeugt TEI-XML nach DTA-Basisformat mit projektspezifischen Anpassungen
+Erzeugt TEI-XML nach dem Projektschema zbz_hersch.rng, TEI-P5-Subset
 (type="naegeli"). Nutzt Layout-Regionen fuer Strukturerkennung und
 OCR-Markdown fuer den Textinhalt.
 

@@ -6,7 +6,7 @@ Unified TEI Pipeline. Kein Few-Shot-Prompting -- stattdessen eine
 vollstaendige Tabelle aller Phaenomen-zu-TEI-Zuordnungen.
 
 Quellen: data/source/guidelines/Editionsrichtlinien_ZBZ.md (verbindlich)
-         + knowledge/pipeline.md, Abschnitt "TEI-Mapping" (DTA-Basisformat + ZBZ-Anpassungen)
+         + knowledge/pipeline.md, Abschnitt "TEI-Mapping" (ZBZ Hersch Schema)
 """
 
 import sys
@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 MAPPING_TABLE = r"""
 === TEI TRANSFORMATION MAPPING TABLE ===
-(DTA-Basisformat + ZBZ Jeanne Hersch Edition)
+(ZBZ Jeanne Hersch Edition, project schema zbz_hersch.rng)
 
 You MUST follow these rules EXACTLY. Each row defines how a phenomenon
 maps to a TEI element with specific attributes.
@@ -268,7 +268,7 @@ def build_mapping_prompt(doc_context: dict) -> str:
         genre_block = "\n" + GENRE_RULES[genre]
 
     prompt = f"""You are a TEI-XML refiner for the Jeanne Hersch Edition (ZBZ Zurich).
-You follow the DTA-Basisformat with project-specific adaptations.
+You follow the project TEI schema (TEI P5 subset) and the ZBZ editorial guidelines.
 
 You receive a RULE-BASED TEI scaffold that needs semantic enrichment.
 Compare it against the scanned page image and the original OCR text.

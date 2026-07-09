@@ -148,20 +148,22 @@ between 30+ formats (hOCR, PAGE-XML, ALTO, TEI).
 
 ---
 
-## TEI Mapping (DTA-Basisformat + ZBZ Adaptations)
+## TEI Mapping (ZBZ Hersch Schema)
 
-Transformation rules from the source text to TEI-XML following DTA-Basisformat with
-project-specific extensions. Binding since E48/E49 (2026-03-26).
+Transformation rules from the source text to TEI-XML following the project schema
+`zbz_hersch.rng` and the binding ZBZ editorial guidelines. Binding since E48/E49
+(2026-03-26). The earlier DTA-Basisformat conformity claim was tested against the
+official DTA schema and dropped (E102); the guidelines' own DTA reference stays
+documented in [data/source/guidelines/README.md](../data/source/guidelines/README.md).
 
 Sources:
 - `data/source/guidelines/Editionsrichtlinien_ZBZ.md`: the binding editorial guidelines (Editionsrichtlinien)
-- DTA-Basisformat: external standard, linked in [data/source/guidelines/README.md](../data/source/guidelines/README.md) (deutschestextarchiv.de)
-- `data/schema/zbz_hersch.rng`: project-specific RelaxNG schema (TEI P5 v4.10.2)
+- `data/schema/zbz_hersch.rng`: project-specific RelaxNG schema (TEI P5 v4.10.2), the single format authority
 
 ### Core Principles
 
 1. Reading-text transcription true to the original, with index annotation
-2. DTA-Basisformat as foundation plus project-specific adaptations
+2. The project schema `zbz_hersch.rng` (TEI P5 subset) as the single format authority
 3. Defined normalizations (no diplomatic transcription)
 4. Transcription faithful to the source
 

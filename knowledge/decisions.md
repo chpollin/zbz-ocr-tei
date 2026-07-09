@@ -432,6 +432,18 @@ Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [journal.md](journal.md
 
 ---
 
+### E102 DTA-Basisformat conformity claim empirically refuted and removed; `zbz_hersch.rng` is the single format authority (2026-07-09)
+
+Occasion: operator question whether the delivered TEI is actually valid against the DTA-Basisformat, as the report's opening sentence ("TEI-XML im DTA-Basisformat") claimed. The repository had never validated against the DTA schema; the validation authority has always been the project schema `zbz_hersch.rng` (E48, ODD-generated TEI P5 4.10.2 subset).
+
+Finding (2026-07-09, official `basisformat.rng` fetched from deutschestextarchiv.de, RelaxNG validation via lxml): 0 of 285 `tei_final` documents are DTA-valid. The violations fall into deliberate project features on three levels. Header: the delivery-contract header (E68/E69) uses `idno@type` values and `biblStruct`/`bibl` in `sourceDesc` outside the DTA model (DTA requires `biblFull`). Infrastructure: `<revisionDesc>` (workflow-status projection, E42/E66) and `<facsimile>` (zone coordinates) do not exist in the DTA schema at all (zero definitions). Body: minimal-case isolation shows `div type="text"` (the E47 replacement value, valid in the project schema, is itself not a DTA type), `pb type="blank"` (E65), `head@facs`, and further project conventions violate the DTA content models. Decisively, ZBZ's own 25 reference TEIs also validate 0 of 25 against DTA, with genuine body-level violations (`TEI@type`, `div`/`pb` placement, `title` inside `head`); the ZBZ guidelines themselves claim only to follow the DTA "weitgehend" with documented deviations. Strict DTA conformity therefore contradicts the delivery contract, the provenance and facsimile deliverables, and the reference style the project is measured against.
+
+Decision (operator, 2026-07-09): the project's format claim is the project schema `zbz_hersch.rng`, a TEI P5 subset formalizing the binding ZBZ editorial guidelines; the DTA-Basisformat conformity claim is removed from all living documents (report, pipeline.md, index.md, project.md, data READMEs, step-2 prompt, docstrings). No parallel DTA validation is introduced. Rejected alternatives: (a) transforming the corpus to DTA validity, which would strip delivered features and move the output away from the ZBZ reference style; (b) a stripped-down "DTA view" gate, tested and refuted because even the text bodies fail the DTA content models, so the gate would guard a format no project consumer requires. The guidelines' own DTA reference remains documented as source data (`data/source/guidelines/`); dated register and journal entries mentioning the DTA stay unchanged as snapshots.
+
+Documents: [pipeline.md](pipeline.md), [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [journal.md](journal.md) session 91
+
+---
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |

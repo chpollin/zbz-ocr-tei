@@ -22,7 +22,7 @@ SOURCE_DIR = DATA_DIR / "source"
 SCANS_DIR = SOURCE_DIR / "pdf"                                 # PDF-Scans (ZB-Digitalisate)
 REFERENCE_TEI_DIR = SOURCE_DIR / "reference_tei"               # Transkribus-erstellte Referenz-/Gold-TEI
 TRANSKRIBUS_PAGE_XML_DIR = SOURCE_DIR / "transkribus_page_xml"  # PAGE-XML-Exporte aus Transkribus
-GUIDELINES_DIR = SOURCE_DIR / "guidelines"                     # Editionsrichtlinien (ZBZ + DTA)
+GUIDELINES_DIR = SOURCE_DIR / "guidelines"                     # Editionsrichtlinien (ZBZ)
 MASTERFILE_DIR = SOURCE_DIR / "masterfile"                     # Masterfile.xlsx (Katalog + Steuerung)
 MASTERFILE_PATH = MASTERFILE_DIR / "Masterfile.xlsx"
 

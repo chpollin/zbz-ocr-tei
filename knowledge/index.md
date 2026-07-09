@@ -32,12 +32,12 @@ principle is a single source of truth per domain, one file per topic.
 |---|---|
 | [project.md](project.md) | What is the project? Commission, corpus funnel + page balance (generated via corpus_audit), ZBZ workflow, status |
 | [specification.md](specification.md) | What must the system do? Requirements, quality measurement method, validation rule catalog (R/W/Z), gates, epics + user stories, open frontend requirements |
-| [pipeline.md](pipeline.md) | How is the pipeline built? Stages PDF -> TEI, engines (Mistral, Docling, Gemini), TEI mapping (DTA + ZBZ), round-trip section |
+| [pipeline.md](pipeline.md) | How is the pipeline built? Stages PDF -> TEI, engines (Mistral, Docling, Gemini), TEI mapping (ZBZ Hersch schema), round-trip section |
 | [workflow.md](workflow.md) | How does the end-to-end data flow run? Data-flow diagram, data formats per stage, the viewer (pages, modes, editors, blank pages, workflow status, design system), save mechanism, round trip from edit to regenerated TEI, provenance concept, planned `_complete.xml` variant, roadmap |
 | [ecosystem-synthesis.md](ecosystem-synthesis.md) | Overall picture of the three projects (zbz / szd-htr / teiCrafter): setup + gates + critical path, per-project pipeline/status, ALL user stories, integration + image gap, methodology, frontend gap survey, open points, SSoT assignment |
 | [infrastructure.md](infrastructure.md) | How is it deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD, viewer deployment (GitHub Pages) |
 | [methodology.md](methodology.md) | How do we work? Epistemic infrastructure, verification cascade, Critical Expert in the Loop, three-layer model, operational CLI |
-| [decisions.md](decisions.md) | What has been decided? Decision register (E entries up to E94), open points (O8/O13/O27 with ZBZ, O18 DHCraft; O25/O26 closed), risks |
+| [decisions.md](decisions.md) | What has been decided? Decision register (E entries up to E102), open points (O8/O13/O27 with ZBZ, O18 DHCraft; O25/O26 closed), risks |
 | [cer-methodology.md](cer-methodology.md) | How is the CER measured? Definition, choice of reference, fidelity/scope decomposition, extraction rules E1-E12, normalization N1-N21, verification of the measurement |
 | [literature-comparison.md](literature-comparison.md) | How good is it against the state of research? Print-OCR comparison table and comparability caveats |
 | [ground-truth-map.md](ground-truth-map.md) | What do the 25 reference TEIs contain and where do they deviate? Phenomenon map and exception catalog (former Appendix B) |
@@ -78,8 +78,7 @@ journal: chronological, compact overview
 |---|---|---|
 | 6-Stage Pipeline | images -> OCR -> layout -> PAGE-XML -> TEI-XML -> evaluation | [pipeline.md](pipeline.md) |
 | Document types A-D | single-column / two-column / monograph / special | [project.md](project.md) |
-| DTA-Basisformat | TEI base schema with ZBZ adaptations | [pipeline.md §TEI-Mapping](pipeline.md) |
-| `zbz_hersch.rng` (E48/E49, extended E68) | project-specific RelaxNG schema for the delivered TEI; active state = ZBZ review template (`data/source/zbz-lieferung-2026-06-21/`) + E68 header elements. Markup model inline GND (E88): `persName`/`orgName`/`bibl` with `ref="GND:..."` at the point of mention, no standOff register | [pipeline.md](pipeline.md), [decisions.md §E88](decisions.md) |
+| `zbz_hersch.rng` (E48/E49, extended E68) | project-specific RelaxNG schema for the delivered TEI, the single format authority (E102); active state = ZBZ review template (`data/source/zbz-lieferung-2026-06-21/`) + E68 header elements. Markup model inline GND (E88): `persName`/`orgName`/`bibl` with `ref="GND:..."` at the point of mention, no standOff register | [pipeline.md](pipeline.md), [decisions.md §E88](decisions.md) |
 | Hybrid pipeline | Docling layout + LLM-OCR text | [pipeline.md](pipeline.md) |
 | Unified TEI Pipeline (E32) | scaffold + Gemini refinement + assembly + validation | [pipeline.md](pipeline.md) |
 | Agent-based quality screening (E41, deprecated E66) | 7-layer pre-curation, review JSON per doc; abolished as a quality signal because no human was involved; legacy retained as `_screening_legacy.json` | [decisions.md §E66](decisions.md) |
