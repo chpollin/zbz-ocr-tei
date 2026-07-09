@@ -38,9 +38,9 @@
       <h1>Method &amp; Quality</h1>
       <p class="lede">
         How we measure the pipeline, what the numbers mean, and where their limits lie.
-        Scientifically grounded CER evaluation, last corrected 2026-06-08
+        Scientifically grounded CER evaluation, last regenerated 2026-07-08
         (BCa bootstrap, seed&nbsp;42, B&nbsp;=&nbsp;10,000). Full methodology in the repo under
-        <code>knowledge/specification.md</code>; measured values in <code>knowledge/arbeitsbericht-v3.md</code>.
+        <code>knowledge/specification.md</code>; measured values in <code>docs/data/cer_statistics.json</code>.
       </p>
     </header>
 
@@ -72,11 +72,11 @@
           <tr><th>Metric</th><th class="num">Mean</th><th class="num">Median</th><th class="num">95&nbsp;% CI (mean)</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Fidelity CER (primary)</strong>, real errors</td><td class="num">2.71&nbsp;%</td><td class="num">1.40&nbsp;%</td><td class="num">[1.77, 3.82]</td></tr>
-          <tr><td>Full-text CER <em>(diagnosis, scope included; no quality measure)</em></td><td class="num">18.94&nbsp;%</td><td class="num">12.13&nbsp;%</td><td class="num">[10.26, 30.09]</td></tr>
-          <tr><td>Scope rate (pipeline surplus text, no error)</td><td class="num">16.23&nbsp;%</td><td class="num">7.06&nbsp;%</td><td class="num">&ndash;</td></tr>
-          <tr><td>Pipeline gain vs. raw OCR (paired, end to end)</td><td class="num">&minus;9.45&nbsp;pp</td><td class="num">&ndash;</td><td class="num">p = 0.013</td></tr>
-          <tr><td>HCPR (diacritics preservation)</td><td class="num">~99&nbsp;%</td><td class="num">&ndash;</td><td class="num">&ndash;</td></tr>
+          <tr><td><strong>Fidelity CER (primary)</strong>, real errors</td><td class="num">2.08&nbsp;%</td><td class="num">1.28&nbsp;%</td><td class="num">[1.51, 2.73]</td></tr>
+          <tr><td>Full-text CER <em>(diagnosis, scope included; no quality measure)</em></td><td class="num">18.36&nbsp;%</td><td class="num">9.59&nbsp;%</td><td class="num">[9.57, 29.49]</td></tr>
+          <tr><td>Scope rate (pipeline surplus text, no error)</td><td class="num">16.28&nbsp;%</td><td class="num">7.03&nbsp;%</td><td class="num">&ndash;</td></tr>
+          <tr><td>Pipeline gain vs. raw OCR (paired, fidelity)</td><td class="num">&minus;10.08&nbsp;pp</td><td class="num">&ndash;</td><td class="num">p = 0.0034</td></tr>
+          <tr><td>HCPR (diacritics preservation)</td><td class="num">99.8&nbsp;%</td><td class="num">&ndash;</td><td class="num">[99.6, 100]</td></tr>
         </tbody>
       </table>
       <p class="note">
@@ -87,14 +87,14 @@
         the real errors and is the reliable quality figure: <code>fidelity + scope = full text</code>.
         The Transkribus quality bands (&lt;&nbsp;2&nbsp;% excellent, 2&ndash;5&nbsp;% good) stem
         primarily from handwriting recognition practice and flatter a pure print OCR task;
-        decisive is the print OCR literature comparison below. The fidelity median (1.40&nbsp;%) is
+        decisive is the print OCR literature comparison below. The fidelity median (1.28&nbsp;%) is
         solid for historical print but not at the top.
       </p>
       <p class="note">
         The earlier figure of &minus;14.83&nbsp;pp for the pipeline gain was an artifact of the
         trimmed comparison and is retracted; after the reference-verified footnote
-        demotions (E85) the gain is &minus;9.45&nbsp;pp and statistically
-        significant (p&nbsp;=&nbsp;0.013, n&nbsp;=&nbsp;25). The earlier
+        demotions (E85) and the stock corrections (E94&ndash;E98) the gain is &minus;10.08&nbsp;pp
+        and statistically significant (p&nbsp;=&nbsp;0.0034, n&nbsp;=&nbsp;25, 17/25 documents improved). The earlier
         scope-cleaned subset selection (n&nbsp;=&nbsp;19) was removed: it followed no
         reproducible criterion. All values now compute over all 25 references.
       </p>
@@ -115,9 +115,9 @@
           <tr><th>Type</th><th class="num">n</th><th class="num">Mean</th><th class="num">Median</th></tr>
         </thead>
         <tbody>
-          <tr><td>A (single-column)</td><td class="num">12</td><td class="num">27.1&nbsp;%</td><td class="num">12.2&nbsp;%</td></tr>
-          <tr><td>B (two-column)</td><td class="num">7</td><td class="num">17.0&nbsp;%</td><td class="num">16.9&nbsp;%</td></tr>
-          <tr><td>C (monograph)</td><td class="num">2</td><td class="num">3.9&nbsp;%</td><td class="num">3.9&nbsp;%</td></tr>
+          <tr><td>A (single-column)</td><td class="num">12</td><td class="num">24.4&nbsp;%</td><td class="num">6.3&nbsp;%</td></tr>
+          <tr><td>B (two-column)</td><td class="num">7</td><td class="num">15.3&nbsp;%</td><td class="num">16.9&nbsp;%</td></tr>
+          <tr><td>C (monograph)</td><td class="num">2</td><td class="num">3.2&nbsp;%</td><td class="num">3.2&nbsp;%</td></tr>
           <tr><td>D (special)</td><td class="num">4</td><td class="num">13.3&nbsp;%</td><td class="num">10.1&nbsp;%</td></tr>
         </tbody>
       </table>
@@ -128,8 +128,8 @@
           <tr><th>Language</th><th class="num">n</th><th class="num">Mean</th><th class="num">Median</th></tr>
         </thead>
         <tbody>
-          <tr><td>French</td><td class="num">18</td><td class="num">21.8&nbsp;%</td><td class="num">9.6&nbsp;%</td></tr>
-          <tr><td>German</td><td class="num">7</td><td class="num">16.1&nbsp;%</td><td class="num">13.8&nbsp;%</td></tr>
+          <tr><td>French</td><td class="num">18</td><td class="num">20.3&nbsp;%</td><td class="num">6.0&nbsp;%</td></tr>
+          <tr><td>German</td><td class="num">7</td><td class="num">13.3&nbsp;%</td><td class="num">13.8&nbsp;%</td></tr>
         </tbody>
       </table>
       <p class="note">
@@ -148,7 +148,7 @@
         <tbody>
           <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 + Gemini 2.0 post-correction</td><td>deu (Fraktur)</td><td class="num">0.84&nbsp;%</td></tr>
           <tr><td>Crosilla et&nbsp;al. 2025</td><td>Gemini 2.0 Flash zero-shot</td><td>deu</td><td class="num">1.27&nbsp;%</td></tr>
-          <tr><td><strong>Hersch pipeline (own)</strong></td><td>Mistral + Docling + Gemini TEI</td><td>fra/deu</td><td class="num"><strong>1.40&nbsp;%</strong></td></tr>
+          <tr><td><strong>Hersch pipeline (own)</strong></td><td>Mistral + Docling + Gemini TEI</td><td>fra/deu</td><td class="num"><strong>1.28&nbsp;%</strong></td></tr>
           <tr><td>Levchenko 2025</td><td>Gemini 2.5 Pro</td><td>rus (18th c.)</td><td class="num">3.36&nbsp;%</td></tr>
           <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 alone</td><td>deu</td><td class="num">3.67&nbsp;%</td></tr>
           <tr><td>Crosilla et&nbsp;al. 2025</td><td>GPT-4o direct</td><td>deu</td><td class="num">6.31&nbsp;%</td></tr>
@@ -156,7 +156,7 @@
         </tbody>
       </table>
       <p class="note">
-        The Hersch median (1.40&nbsp;%) lies between Crosilla's best stack
+        The Hersch median (1.28&nbsp;%) lies between Crosilla's best stack
         (Transkribus + LLM post-correction, 0.84&nbsp;%) and Transkribus alone (3.67&nbsp;%),
         better than Gemini&nbsp;2.5&nbsp;Pro zero-shot on comparable material. Only
         sources from 2025 onward are cited; the complete list is in the repo.
@@ -167,11 +167,11 @@
       <h2>Limitations</h2>
       <ul class="feature-list">
         <li><strong>n = 25</strong>: measurement runs against 25 ZBZ reference TEIs; corpus statements beyond these 25 documents (full corpus 285) are estimates, not measurements.</li>
-        <li><strong>Selection bias n_chars (p = 0.041)</strong>: the reference subset deviates significantly from the full corpus in character volume. The median CER (volume-independent) is less affected than the mean CER.</li>
-        <li><strong>Stability not yet measured</strong>: pipeline stages 5 (Mistral) and 6 (Gemini TEI generation) are non-deterministic. The run-to-run variance is unknown; the measurement (5 documents, 3 runs each) is released and executes at the project workstation.</li>
+        <li><strong>Selection bias n_chars (p = 0.0139)</strong>: the reference subset deviates significantly from the full corpus in character volume. The median CER (volume-independent) is less affected than the mean CER.</li>
+        <li><strong>Stability measured on a pilot only</strong>: the LLM stages are non-deterministic. A pilot (5 documents, 3 runs each, 2026-07-07) measured a mean run-to-run standard deviation of 0.04&nbsp;pp fidelity CER (max 0.13&nbsp;pp, max range 0.25&nbsp;pp); the variance is negligible at this scale, but the pilot covers 5 of the 25 reference documents.</li>
         <li><strong>HCPR is frequency-based</strong>: it compares diacritics counts, not positions, and underestimates substitution errors.</li>
         <li><strong>Multi-normalization regimes differ little</strong>: the upstream normalization makes the nominal normalization levels practically identical.</li>
-        <li><strong>The corpus proxy does not generalize</strong>: the composite OLS from the dictionary hit rate has LOOCV R&sup2;&nbsp;&lt;&nbsp;0. The corpus estimate of 6.20&nbsp;% mean is a plausibility bound, not an estimator.</li>
+        <li><strong>The corpus proxy does not generalize</strong>: the composite OLS from the dictionary hit rate has LOOCV R&sup2;&nbsp;&lt;&nbsp;0. The corpus estimate of 22.4&nbsp;% mean (full-text scale, scope included) is a plausibility bound, not an estimator.</li>
         <li><strong>No inter-engine comparison</strong>: only one OCR engine run (Mistral), no second source as cross-validation.</li>
       </ul>
       <p class="note">
@@ -189,7 +189,7 @@
         <dt>JSON generation</dt><dd><code>python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000</code></dd>
         <dt>Output</dt><dd><code>docs/data/cer_statistics.json</code> (deterministic at seed&nbsp;42, versioned in the repo)</dd>
         <dt>Methodology docs</dt><dd><a href="https://github.com/chpollin/zbz-ocr-tei/blob/main/knowledge/specification.md" target="_blank" rel="noopener">knowledge/specification.md</a> (method), <a href="https://github.com/chpollin/zbz-ocr-tei/blob/main/knowledge/arbeitsbericht-v3.md" target="_blank" rel="noopener">knowledge/arbeitsbericht-v3.md</a> (values)</dd>
-        <dt>Schema</dt><dd><code>data/schema/zbz_hersch.rng</code> (TEI P5 4.10.2 project-specific, 551 definitions)</dd>
+        <dt>Schema</dt><dd><code>data/schema/zbz_hersch.rng</code> (project-specific RelaxNG, the format authority for the delivered TEI)</dd>
       </dl>
     </section>
 
