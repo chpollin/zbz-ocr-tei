@@ -882,7 +882,7 @@ footer {{ margin-top: 3em; padding-top: 1em; border-top: 1px solid #e0e6ed; colo
 
 <h2>Errors (blockierend)</h2>
 <div class="rule-desc">
-  Schema-Fehler (RelaxNG TEI-All) und Projekt-Regeln (R1-R7).
+  Schema-Fehler (RelaxNG zbz_hersch.rng) und Projekt-Regeln (R1-R7).
   Dokumente mit Errors gelten als INVALID.
 </div>
 {"<p>Keine Errors gefunden.</p>" if not error_freq_rows else f'''
@@ -893,7 +893,7 @@ footer {{ margin-top: 3em; padding-top: 1em; border-top: 1px solid #e0e6ed; colo
 
 <h2>Warnings (informativ fuer Editoren)</h2>
 <div class="rule-desc">
-  Quality-Checks (W1-W14). Nicht blockierend -- zeigen Probleme,
+  Quality-Checks (W1-W19). Nicht blockierend -- zeigen Probleme,
   die bei der Kuration geprueft werden sollten.
 </div>
 {"<p>Keine Warnings.</p>" if not warning_freq_rows else f'''
@@ -909,7 +909,7 @@ footer {{ margin-top: 3em; padding-top: 1em; border-top: 1px solid #e0e6ed; colo
 </table>
 
 <footer>
-  <p>Errors: RelaxNG TEI-All + R1 (type=naegeli), R2 (teiHeader), R3 (body), R4 (div), R5 (div-types), R6 (note place)</p>
+  <p>Errors: RelaxNG zbz_hersch.rng + R1 (type=naegeli), R2 (teiHeader), R3 (body), R4 (div), R5 (div-types), R6 (note place), R7 (figure in p)</p>
   <p>Warnings: W1 (Sprache), W2 (Header-Felder), W3 (facsimile/pb), W4 (leere div), W5 (Text-Volumen), W6 (lb-Dichte), W7 (graphic url), W11 (div-Merge), W12 (Fussnoten-n), W13 (Fussnoten-xml:id), W14 (back/div-Typ), W15 (div type+n), W16 (figure xml:id), W17 (leerer speaker), W18 (foreign lang), W19 (Lesereihenfolge)</p>
 </footer>
 
