@@ -146,17 +146,17 @@
           <tr><th>Source</th><th>Method</th><th>Language</th><th class="num">CER</th></tr>
         </thead>
         <tbody>
-          <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 + Gemini 2.0 post-correction</td><td>deu (Fraktur)</td><td class="num">0.84&nbsp;%</td></tr>
-          <tr><td>Crosilla et&nbsp;al. 2025</td><td>Gemini 2.0 Flash zero-shot</td><td>deu</td><td class="num">1.27&nbsp;%</td></tr>
+          <tr><td>Greif et&nbsp;al. 2025</td><td>Transkribus M1 + Gemini 2.0 post-correction</td><td>deu (mostly Fraktur)</td><td class="num">0.84&nbsp;%</td></tr>
+          <tr><td>Greif et&nbsp;al. 2025</td><td>Gemini 2.0 Flash zero-shot</td><td>deu (mostly Fraktur)</td><td class="num">1.27&nbsp;%</td></tr>
           <tr><td><strong>Hersch pipeline (own)</strong></td><td>Mistral + Docling + Gemini TEI</td><td>fra/deu</td><td class="num"><strong>1.28&nbsp;%</strong></td></tr>
           <tr><td>Levchenko 2025</td><td>Gemini 2.5 Pro</td><td>rus (18th c.)</td><td class="num">3.36&nbsp;%</td></tr>
-          <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 alone</td><td>deu</td><td class="num">3.67&nbsp;%</td></tr>
-          <tr><td>Crosilla et&nbsp;al. 2025</td><td>GPT-4o direct</td><td>deu</td><td class="num">6.31&nbsp;%</td></tr>
+          <tr><td>Greif et&nbsp;al. 2025</td><td>Transkribus M1 alone</td><td>deu (mostly Fraktur)</td><td class="num">3.67&nbsp;%</td></tr>
+          <tr><td>Greif et&nbsp;al. 2025</td><td>GPT-4o direct</td><td>deu (mostly Fraktur)</td><td class="num">6.31&nbsp;%</td></tr>
           <tr><td>Levchenko 2025</td><td>traditional OCR</td><td>rus</td><td class="num">21&ndash;45&nbsp;%</td></tr>
         </tbody>
       </table>
       <p class="note">
-        The Hersch median (1.28&nbsp;%) lies between Crosilla's best stack
+        The Hersch median (1.28&nbsp;%) lies between Greif's best stack
         (Transkribus + LLM post-correction, 0.84&nbsp;%) and Transkribus alone (3.67&nbsp;%),
         better than Gemini&nbsp;2.5&nbsp;Pro zero-shot on comparable material. Only
         sources from 2025 onward are cited; the complete list is in the repo.
@@ -197,8 +197,8 @@
       <h2>Research literature (selection, all 2025+)</h2>
       <ul class="feature-list">
         <li><strong>Du 2025</strong>, "When +1% Is Not Enough", arXiv:2511.19794: paired-bootstrap protocol</li>
-        <li><strong>Levchenko 2025</strong>, arXiv:2510.06743: HCPR/AIR adaption, no-ground-truth methodology, stability tests</li>
-        <li><strong>Crosilla, Klic, Colavizza 2025</strong>, arXiv:2503.15195: LLM-HTR comparison benchmarks</li>
+        <li><strong>Levchenko 2025</strong>, arXiv:2510.06743 (peer-reviewed: LM4DH 2025 workshop at RANLP 2025, Varna, pp.&nbsp;75&ndash;85, DOI 10.26615/978-954-452-106-6-007): HCPR/AIR adaption, no-ground-truth methodology, stability tests</li>
+        <li><strong>Greif, Griesshaber &amp; Greif 2025</strong>, arXiv:2504.00414: multimodal LLMs for OCR and OCR post-correction on German-language address books (the printed-OCR comparison values above)</li>
         <li><strong>Kanerva &amp; Ledins 2025</strong>, arXiv:2502.01205: language dependence of LLM post-correction ("No Free Lunches")</li>
       </ul>
     </section>

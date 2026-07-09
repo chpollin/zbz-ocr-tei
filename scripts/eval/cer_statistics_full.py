@@ -14,7 +14,7 @@ Ergaenzt das Geruest in `cer_statistics.py` + `cer_statistics_runner.py` um:
 Methodik (alle Quellen 2025+, User-Constraint 2026-04-27):
 - Du 2025 (arXiv:2511.19794): paired bootstrap, BCa, Reproduzierbarkeit
 - Levchenko 2025 (arXiv:2510.06743): HCPR/AIR Domain-Metriken
-- Crosilla, Klic, Colavizza 2025 (arXiv:2503.15195): like-for-like
+- Greif, Griesshaber, Greif 2025 (arXiv:2504.00414): printed-OCR comparison values
 - Kanerva & Ledins 2025 (arXiv:2502.01205): no-GT Methodik
 - arXiv:2501.18243 (2025), arXiv:2509.04013 (2025)
 
@@ -89,23 +89,23 @@ HCPR_CLASSES = {
 LITERATURE_REFS = [
     "Du 2025 (arXiv:2511.19794) - paired bootstrap protocol",
     "Levchenko 2025 (arXiv:2510.06743) - HCPR/AIR domain metrics",
-    "Crosilla, Klic, Colavizza 2025 (arXiv:2503.15195) - HTR like-for-like",
+    "Greif, Griesshaber, Greif 2025 (arXiv:2504.00414) - printed-OCR comparison values",
     "Kanerva & Ledins 2025 (arXiv:2502.01205) - no-GT methodology",
     "arXiv:2501.18243 (2025) - statistical multi-metric evaluation",
     "arXiv:2509.04013 (2025) - robustness of LLM benchmark evaluation",
 ]
 
 COMPARISON_LIT = [
-    {"source": "Crosilla, Klic, Colavizza 2025", "arxiv_id": "2503.15195",
+    {"source": "Greif, Griesshaber, Greif 2025", "arxiv_id": "2504.00414",
      "method": "Transkribus Print M1 + Gemini 2.0 Flash multimodal post-correction",
-     "lang": "deu Fraktur", "year": 2025, "cer": 0.0084,
+     "lang": "deu (ueberwiegend Fraktur)", "year": 2025, "cer": 0.0084,
      "comparable": "partial", "caveat_dimensions": ["script", "corpus", "method"],
-     "caveat": "Deutsche Fraktur, anderes Korpus, multimodale Post-Korrektur. Untergrenze des Forschungsstands."},
-    {"source": "Crosilla et al. 2025", "arxiv_id": "2503.15195",
+     "caveat": "Deutschsprachige Adressbuecher 1754-1870, ueberwiegend Fraktur, anderes Korpus, multimodale Post-Korrektur. Untergrenze des Forschungsstands."},
+    {"source": "Greif, Griesshaber, Greif 2025", "arxiv_id": "2504.00414",
      "method": "Gemini 2.0 Flash zero-shot",
-     "lang": "deu Fraktur", "year": 2025, "cer": 0.0127,
+     "lang": "deu (ueberwiegend Fraktur)", "year": 2025, "cer": 0.0127,
      "comparable": "partial", "caveat_dimensions": ["script", "corpus"],
-     "caveat": "Deutsche Fraktur, ohne Post-Korrektur."},
+     "caveat": "Deutschsprachige Adressbuecher, ueberwiegend Fraktur, ohne Post-Korrektur."},
     {"source": "Kanerva & Ledins 2025", "arxiv_id": "2502.01205",
      "method": "GPT-4o LLM-as-judge OCR evaluation (no GT)",
      "lang": "multilingual historical", "year": 2025, "cer": 0.063,

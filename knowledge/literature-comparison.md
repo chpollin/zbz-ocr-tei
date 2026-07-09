@@ -10,7 +10,7 @@ method:
 status: reviewed
 language: en
 created: 2026-07-07
-updated: 2026-07-08
+updated: 2026-07-09
 tags: [zbz-ocr-tei, cer, literature, benchmark]
 related: [cer-methodology, specification, decisions]
 ---
@@ -28,7 +28,7 @@ in [cer-methodology.md](cer-methodology.md).
 
 The fidelity median of 1.28% (n = 25, canonical value from
 `docs/data/cer_statistics.json`) lies between the best specialized print stack
-(Transkribus with LLM post-correction, 0.84%; Crosilla et al. 2025) and
+(Transkribus with LLM post-correction, 0.84%; Greif et al. 2025) and
 Transkribus alone (3.67%). That is solid for historical print but not at the top;
 the technical optimum is reached only by the best individual documents (0.3 to
 0.8%). The comparison reads print-calibrated, since the Transkribus quality bands
@@ -40,10 +40,10 @@ warrants.
 
 | Source | Method | Language | CER |
 | :---- | :---- | :---- | :---- |
-| Crosilla et al. 2025 | Transkribus Print M1 + Gemini 2.0 Flash post-correction | deu (Fraktur) | 0.84% |
-| Crosilla et al. 2025 | Gemini 2.0 Flash zero-shot | deu | 1.27% |
-| Crosilla et al. 2025 | Transkribus Print M1 alone | deu | 3.67% |
-| Crosilla et al. 2025 | GPT-4o direct | deu | 6.31% |
+| Greif et al. 2025 | Transkribus Print M1 + Gemini 2.0 Flash post-correction | deu (mostly Fraktur) | 0.84% |
+| Greif et al. 2025 | Gemini 2.0 Flash zero-shot | deu (mostly Fraktur) | 1.27% |
+| Greif et al. 2025 | Transkribus Print M1 alone | deu (mostly Fraktur) | 3.67% |
+| Greif et al. 2025 | GPT-4o direct | deu (mostly Fraktur) | 6.31% |
 | Kanerva and Ledins 2025 | GPT-4o LLM-as-judge (no ground truth) | multilingual historical | 6.30% |
 | Levchenko 2025 | Gemini 2.5 Pro | rus (18th c.) | 3.36% |
 | Levchenko 2025 | Gemini 2.5 Flash | rus | 4.94% |
@@ -57,17 +57,21 @@ least one dimension. The machine-readable comparability flags in
 `docs/data/cer_statistics.json` (block `comparison_lit`) record these dimensions
 per entry.
 
-- Crosilla et al. 2025 (arXiv:2503.15195): German Fraktur, a different corpus, and
-  in the leading row a multimodal post-correction. This is the lower bound of the
+- Greif et al. 2025 (arXiv:2504.00414): German-language address books 1754-1870,
+  predominantly Fraktur with one Antiqua source, a different corpus, and in the
+  leading row a multimodal post-correction. This is the lower bound of the
   state of research and the most demanding reference point; comparability partial
-  (script, corpus, method).
+  (script, corpus, method). The values were previously misattributed here to
+  Crosilla, Klic, Colavizza 2025 (arXiv:2503.15195), an HTR benchmark that does
+  not contain them; corrected 2026-07-09 (see decisions.md).
 - Kanerva and Ledins 2025 (arXiv:2502.01205): GPT-4o-class, no-ground-truth
   evaluation. Methodologically related to the dictionary-hit-rate proxy but on
   different corpora; comparability partial (method, corpus).
 - Levchenko 2025 (arXiv:2510.06743): Russian, 18th-century Civil Font, not
   like-for-like with French and German Antiqua; comparability false (language,
   script, corpus). Also the source of the frequency-based HCPR adaption used for
-  diacritic preservation.
+  diacritic preservation. A peer-reviewed version appeared in the LM4DH 2025
+  workshop at RANLP 2025 (Varna, pages 75-85, DOI 10.26615/978-954-452-106-6-007).
 - The Transkribus guide value is a general orientation band, not a measured
   corpus result.
 

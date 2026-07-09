@@ -444,13 +444,25 @@ Documents: [pipeline.md](pipeline.md), [arbeitsbericht-v3.md](arbeitsbericht-v3.
 
 ---
 
+### E103 Print-OCR comparison values re-attributed from Crosilla to Greif et al.; Levchenko peer-reviewed version added (2026-07-09)
+
+Occasion: verification of the literature comparison table against the cited full texts (web search) revealed that the four printed-OCR reference values (0.84% Transkribus Print M1 + Gemini 2.0 Flash post-correction, 1.27% Gemini 2.0 Flash zero-shot, 3.67% Transkribus Print M1 alone, 6.31% GPT-4o) were attributed to the wrong paper.
+
+Finding (2026-07-09): the four values stem from Greif, Griesshaber and Greif, "Multimodal LLMs for OCR, OCR Post-Correction, and Named Entity Recognition in Historical Documents", arXiv:2504.00414, 2025 (German-language address books 1754-1870, predominantly Fraktur with one Antiqua source). The repository attributed them to "Crosilla et al. 2025 (arXiv:2503.15195)", which is Crosilla, Klic and Colavizza, "Benchmarking Large Language Models for Handwritten Text Recognition", an HTR benchmark that does not contain these values. The Levchenko 2025 attribution (arXiv:2510.06743, full-page CER Gemini 2.5 Pro 3.36%, Flash 4.94%, traditional OCR 21.55-45.96%) was verified correct; a peer-reviewed version exists (LM4DH 2025 workshop at RANLP 2025, Varna, pp. 75-85, DOI 10.26615/978-954-452-106-6-007).
+
+Decision: the misattribution is corrected everywhere the four values appear (literature-comparison.md, docs/methode.html, the COMPARISON_LIT/LITERATURE_REFS blocks in scripts/eval/cer_statistics_full.py and cer_statistics.py, and the regenerated docs/data/cer_statistics.json). The "like-for-like" characterization tied to the old Crosilla reference was false (Greif is printed OCR, Crosilla is HTR) and was dropped. The Crosilla HTR paper is not retained as a separate reference in these documents because it served no independent function there. Regeneration of docs/data/cer_statistics.json changed only literature and meta fields; all measured CER values, confidence intervals and per_doc records stayed byte-identical.
+
+Documents: [literature-comparison.md](literature-comparison.md), [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
+
+---
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |
 |---|---|---|---|---|
 | O8 | Metadata from Alma/MMSID | ID plus MMSID plus PubForm in the `teiHeader` (per the ZBZ editorial guidelines) | phase 3 TEI | Open, with ZBZ (state 2026-06-08, E76/E83 confirmed): header metadata from Alma including the MMSID is ZBZ domain and does not belong in the OCR/layout/TEI pipeline. A projection was introduced with E69, removed with E76, rejected again with E83. Spec conflict: the guidelines demand these fields; to be clarified with ZBZ (who pulls from Alma, which fields). Decider: ZBZ together with DHCraft. While open, most delivered headers carry an empty container title (intended, not a defect). |
 | O13 | TEI editorial details (subject headings) | who creates them, where in the header? Guidelines say "being clarified" | phase 3 TEI | Decider: ZBZ. Until settled, headers stay without subject headings; no pipeline blocker. |
-| O18 | Test multimodal LLM correction (scan image plus OCR text) | research reports sub-1 % CER (Crosilla 2025); infrastructure exists | quality | Decider: DHCraft (project lead), own experiment; blocks nothing. |
+| O18 | Test multimodal LLM correction (scan image plus OCR text) | research reports sub-1 % CER (Greif et al. 2025); infrastructure exists | quality | Decider: DHCraft (project lead), own experiment; blocks nothing. |
 | ~~O25~~ | Surface `<graphic url>` produced pipeline-side. RESOLVED (2026-06-21, E89) | the surface-to-image pointer was missing; blank-page placeholder pointed to a non-existent file | makes the facsimile self-contained | Implemented in E89; all surfaces carry the graphic, committed gate. |
 | ~~O26~~ | teiCrafter annotation model versus ZBZ editorial guidelines. RESOLVED (2026-06-21, E88) | guidelines demand inline GND at the mention site; E87 had additionally schema-allowed a standOff register | none | Order: only the ZBZ rules apply; inline GND is the delivery model. Implemented in E88; teiCrafter output model to be aligned. |
 | O27 | ZBZ README contradicts itself on captions | the register section says entities in captions are not tagged; the figures example tags an `<orgName ref="GND:...">` inside a `<figure>`. Found during the conformity check (E88) | nothing (no effect on the entity-free corpus; concerns future teiCrafter output) | Decider: ZBZ. Deliberately not machine-enforced while the contradiction is open. Question: does the ban cover the caption (`<head>`) or the whole `<figure>` block including the explanation (`<p>`)? |

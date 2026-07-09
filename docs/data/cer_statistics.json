@@ -2,12 +2,12 @@
   "schema_version": "0.3",
   "meta": {
     "tool_version": "0.1.0",
-    "git_sha": "f2f23eab352b4e83f49a8b399c5c74795b4fe91c",
-    "git_dirty": false,
-    "generated_at": "2026-07-08T16:06:18.796878+00:00",
+    "git_sha": "0d305f179d6eb61ce3912736e5aae5f4ac405791",
+    "git_dirty": true,
+    "generated_at": "2026-07-09T10:01:06.245925+00:00",
     "python_version": "3.11.9",
-    "numpy_version": "2.2.6",
-    "scipy_version": "1.14.1",
+    "numpy_version": "2.3.5",
+    "scipy_version": "1.17.0",
     "cer_lib": "rapidfuzz char-level Levenshtein (Fallback: cer_statistics.levenshtein)",
     "alignment_algo": "Volltext-Levenshtein OHNE Trimming (calculate_cer). Drei-Zahlen-Zerlegung via classify_edit_operations: fidelity (echte Fehler) + scope (Pipeline-Mehrtext) = full. find_best_alignment nur noch fuer Diagnose/within-doc-chunks.",
     "normalization_pipeline": [
@@ -47,7 +47,7 @@
     "literature_refs": [
       "Du 2025 (arXiv:2511.19794) - paired bootstrap protocol",
       "Levchenko 2025 (arXiv:2510.06743) - HCPR/AIR domain metrics",
-      "Crosilla, Klic, Colavizza 2025 (arXiv:2503.15195) - HTR like-for-like",
+      "Greif, Griesshaber, Greif 2025 (arXiv:2504.00414) - printed-OCR comparison values",
       "Kanerva & Ledins 2025 (arXiv:2502.01205) - no-GT methodology",
       "arXiv:2501.18243 (2025) - statistical multi-metric evaluation",
       "arXiv:2509.04013 (2025) - robustness of LLM benchmark evaluation"
@@ -1567,10 +1567,10 @@
   ],
   "comparison_lit": [
     {
-      "source": "Crosilla, Klic, Colavizza 2025",
-      "arxiv_id": "2503.15195",
+      "source": "Greif, Griesshaber, Greif 2025",
+      "arxiv_id": "2504.00414",
       "method": "Transkribus Print M1 + Gemini 2.0 Flash multimodal post-correction",
-      "lang": "deu Fraktur",
+      "lang": "deu (ueberwiegend Fraktur)",
       "year": 2025,
       "cer": 0.0084,
       "comparable": "partial",
@@ -1579,13 +1579,13 @@
         "corpus",
         "method"
       ],
-      "caveat": "Deutsche Fraktur, anderes Korpus, multimodale Post-Korrektur. Untergrenze des Forschungsstands."
+      "caveat": "Deutschsprachige Adressbuecher 1754-1870, ueberwiegend Fraktur, anderes Korpus, multimodale Post-Korrektur. Untergrenze des Forschungsstands."
     },
     {
-      "source": "Crosilla et al. 2025",
-      "arxiv_id": "2503.15195",
+      "source": "Greif, Griesshaber, Greif 2025",
+      "arxiv_id": "2504.00414",
       "method": "Gemini 2.0 Flash zero-shot",
-      "lang": "deu Fraktur",
+      "lang": "deu (ueberwiegend Fraktur)",
       "year": 2025,
       "cer": 0.0127,
       "comparable": "partial",
@@ -1593,7 +1593,7 @@
         "script",
         "corpus"
       ],
-      "caveat": "Deutsche Fraktur, ohne Post-Korrektur."
+      "caveat": "Deutschsprachige Adressbuecher, ueberwiegend Fraktur, ohne Post-Korrektur."
     },
     {
       "source": "Kanerva & Ledins 2025",

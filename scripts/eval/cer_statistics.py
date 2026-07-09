@@ -693,7 +693,7 @@ def build_statistics(
             "literature": [
                 "Du 2025, arXiv:2511.19794",
                 "Levchenko 2025, arXiv:2510.06743",
-                "Crosilla, Klic, Colavizza 2025, arXiv:2503.15195",
+                "Greif, Griesshaber, Greif 2025, arXiv:2504.00414",
                 "Kanerva & Ledins 2025, arXiv:2502.01205",
             ],
         },
@@ -882,16 +882,16 @@ def _aggregate_error_categories(records: Sequence[DocCERRecord]) -> dict:
 def _comparison_lit_2025_plus() -> list[dict]:
     """Hardcoded Literatur-Vergleich, ausschliesslich 2025+ (User-Constraint)."""
     return [
-        {"source": "Crosilla, Klic, Colavizza 2025 (arXiv:2503.15195)",
+        {"source": "Greif, Griesshaber, Greif 2025 (arXiv:2504.00414)",
          "method": "Transkribus Print M1 + Gemini 2.0 Flash multimodal post-correction",
-         "language": "deu Fraktur", "cer": 0.0084,
+         "language": "deu (ueberwiegend Fraktur)", "cer": 0.0084,
          "comparable": "partial",
-         "caveat": "Anderes Korpus, deutsche Fraktur, multimodale Post-Korrektur."},
-        {"source": "Crosilla et al. 2025 (arXiv:2503.15195)",
+         "caveat": "Deutschsprachige Adressbuecher, ueberwiegend Fraktur, anderes Korpus, multimodale Post-Korrektur."},
+        {"source": "Greif, Griesshaber, Greif 2025 (arXiv:2504.00414)",
          "method": "Gemini 2.0 Flash zero-shot",
-         "language": "deu Fraktur", "cer": 0.0127,
+         "language": "deu (ueberwiegend Fraktur)", "cer": 0.0127,
          "comparable": "partial",
-         "caveat": "deutsche Fraktur, ohne Post-Korrektur."},
+         "caveat": "Deutschsprachige Adressbuecher, ueberwiegend Fraktur, ohne Post-Korrektur."},
         {"source": "Levchenko 2025 (arXiv:2510.06743)",
          "method": "Gemini 2.5 Pro",
          "language": "rus 18. Jh.", "cer": 0.0336,
