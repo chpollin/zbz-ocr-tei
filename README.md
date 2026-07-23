@@ -162,3 +162,10 @@ Complete CLI reference: [CLAUDE.md §Commands](CLAUDE.md).
 ## Team
 
 A project of the Zentralbibliothek Zurich (ZBZ) in collaboration with DHCraft.
+
+## Licence
+
+The code in this repository is released under the MIT Licence (see `LICENSE`).
+Documentation, knowledge documents, and other textual content are licensed under
+CC BY 4.0. Third-party research data is excluded from these terms; the source
+material and the edition texts remain with the Zentralbibliothek Zürich.
