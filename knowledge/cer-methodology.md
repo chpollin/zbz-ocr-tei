@@ -13,6 +13,7 @@ created: 2026-07-07
 updated: 2026-07-08
 tags: [zbz-ocr-tei, cer, methodology, evaluation]
 related: [specification, ground-truth-map, literature-comparison, decisions]
+authors: [Christopher Pollin]
 ---
 
 # CER Measurement Methodology

@@ -11,6 +11,11 @@ status: complete
 created: 2026-02-18
 updated: 2026-07-07
 tags: [zbz-ocr-tei, infrastructure, azure, podman, cicd]
+template:
+  name: Vorlage Architecture
+  version: 0.3
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/architecture
+authors: [Christopher Pollin]
 ---
 
 # Infrastructure

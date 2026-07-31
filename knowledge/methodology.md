@@ -12,6 +12,7 @@ created: 2026-03-15
 updated: 2026-07-07
 dependencies: [pipeline, workflow]
 source: "papers/Paper.md (workshop contribution DHd/DH, DHCraft & ZBZ)"
+authors: [Christopher Pollin]
 ---
 
 # Methodology

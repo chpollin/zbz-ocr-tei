@@ -9,8 +9,9 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-02-18
-updated: 2026-07-08
+updated: 2026-07-31
 tags: [zbz-ocr-tei, decisions, open, decided]
+authors: [Christopher Pollin]
 ---
 
 # Decisions
@@ -453,6 +454,20 @@ Finding (2026-07-09): the four values stem from Greif, Griesshaber and Greif, "M
 Decision: the misattribution is corrected everywhere the four values appear (literature-comparison.md, docs/methode.html, the COMPARISON_LIT/LITERATURE_REFS blocks in scripts/eval/cer_statistics_full.py and cer_statistics.py, and the regenerated docs/data/cer_statistics.json). The "like-for-like" characterization tied to the old Crosilla reference was false (Greif is printed OCR, Crosilla is HTR) and was dropped. The Crosilla HTR paper is not retained as a separate reference in these documents because it served no independent function there. Regeneration of docs/data/cer_statistics.json changed only literature and meta fields; all measured CER values, confidence intervals and per_doc records stayed byte-identical.
 
 Documents: [literature-comparison.md](literature-comparison.md), [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
+
+---
+
+### E104 Knowledge base aligned post hoc with the Promptotyping convention Knowledge Documents; frontmatter only, no renames (2026-07-31)
+
+Occasion: the method paper "Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering" cites this repository as evidence for a Promptotyping knowledge base. The paper's evidence citations pin the pre-alignment state to commit 5b78b69d. The knowledge documents already carried the mandatory core of the convention with nested `project` and `method` blocks; what was missing was the machine-readable link to the catalogue template each document follows, which only the journal and the project report carried.
+
+Execution (2026-07-31, additive frontmatter pass): every document under `knowledge/` except the project report received the recommended `authors` field, and every document whose function matches a catalogue template additionally received the `template` object with name, version and latest URL. Mapped are index.md to Vorlage Index, project.md to Vorlage Projekt-Wissensdokument, specification.md to Vorlage Specification, journal.md to Vorlage Journal (already present, verified against the catalogue), and pipeline.md, workflow.md and infrastructure.md to Vorlage Architecture, whose scope section names `pipeline.md` for the flow through processing stages and `infrastruktur.md` for deployment and CI/CD as the regular splits of the Architecture function in larger systems. [index.md](index.md) gained a section that maps each document to its convention function.
+
+Deliberately left freehand, because no catalogue template carries the function: decisions.md (the register split out of the Specification function; the catalogue has no template of its own for a decision register), cer-methodology.md (the convention names `cer-methodik.md` in OCR projects as a legitimate function without a template), ground-truth-map.md (a specialisation of the Material function as a deviation catalogue, without the corpus description that the Datengrundlage template structures), literature-comparison.md (state of research, no function in the catalogue), methodology.md (the working method of the project rather than scholarly domain knowledge, so Vorlage Domänenwissen does not carry), ecosystem-synthesis.md (a cross-project survey without the bilateral delivery contract that triggers the Integration function). A reasoned gap is a design decision and is marked as such in the index.
+
+Kept unchanged, with reason: all file names, the document order and the whole prose layer, so that the paper's evidence citations against 5b78b69d stay readable. The `status` vocabulary of the repository (complete, reviewed, draft) extends the convention enum draft/active/archived and carries a review state the enum cannot express; the Promptotyping repository's own knowledge base carries the same extension, so the values stay. The `type` field from the vault vocabulary stays. `created` and `updated` stay as semantic project dates, older in part than the git history of the files, which starts after the consolidation of 2026-04-27. `generated-with` was set nowhere: the co-author trailers of each document span several model versions across its history, so a per-document value would state less than the git history does. The `authors` field names the human with curatorial responsibility, which the convention reserves for persons; the repository rule on personal names governs running prose, and the project report already carried the field. `arbeitsbericht-v3.md` was excluded from the pass because it carried an uncommitted working state.
+
+Documents: [index.md](index.md), [journal.md](journal.md) session 92
 
 ---
 

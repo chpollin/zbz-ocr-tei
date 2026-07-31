@@ -11,6 +11,11 @@ status: complete
 created: 2026-02-18
 updated: 2026-07-07
 tags: [zbz-ocr-tei, project, corpus, zbz, workflow]
+template:
+  name: Vorlage Projekt-Wissensdokument
+  version: 0.2
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/project
+authors: [Christopher Pollin]
 ---
 
 # Project

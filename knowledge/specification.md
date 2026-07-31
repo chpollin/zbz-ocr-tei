@@ -13,6 +13,11 @@ created: 2026-07-07
 updated: 2026-07-07
 tags: [zbz-ocr-tei, specification, requirements, epics]
 related: [decisions, project, pipeline, workflow, cer-methodology]
+template:
+  name: Vorlage Specification
+  version: 0.3
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/specification
+authors: [Christopher Pollin]
 ---
 
 # Specification

@@ -10,13 +10,14 @@ method:
 status: draft
 language: en
 created: 2026-01-29
-updated: 2026-07-09
+updated: 2026-07-31
 tags: [zbz-ocr-tei, journal]
 template:
   name: Vorlage Journal
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/journal
 related: [decisions, index]
+authors: [Christopher Pollin]
 ---
 
 # Work Journal
@@ -56,6 +57,46 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+
+### 2026-07-31 Session 92: knowledge base aligned post hoc with the Promptotyping convention (E104)
+
+**Occasion** The method paper "Promptotyping. Translating Research Data into Research Artefacts
+through Context Engineering and Agentic Engineering" cites this repository as evidence for a
+Promptotyping knowledge base. The alignment was commissioned for that paper and is post hoc by
+design; the paper's evidence citations pin the pre-alignment state to commit 5b78b69d.
+
+**Goal** Every knowledge document names its convention function machine-readably, with no file
+renamed, moved, or rewritten.
+
+**Course** The Convention Knowledge Documents and the template catalogue of the Promptotyping site
+were read against the actual frontmatter of the knowledge base. The mandatory core was already
+complete throughout, with nested `project` and `method` blocks, so the gap lay in the recommended
+layer: the `template` object and the `authors` field. Seven documents now carry a template mapping
+(index, project, specification, pipeline, workflow, infrastructure, plus journal, which already
+carried it and was verified against the catalogue), six stay freehand with a stated reason,
+[index.md](index.md) gained a function table, [decisions.md](decisions.md) the register entry E104
+with the full rationale. `generated-with` was set nowhere, because the co-author trailers of each
+document span several model versions and a per-document value would state less than the git history.
+[arbeitsbericht-v3.md](arbeitsbericht-v3.md) was excluded from the pass, since it carried an
+uncommitted working state.
+
+**Decisions** E104: post-hoc convention alignment, additive frontmatter only, no renames and no
+prose changes. The repository status vocabulary (complete, reviewed) stays as an extension of the
+convention enum draft/active/archived, the same extension the Promptotyping repository's own
+knowledge base carries; rejected alternative was normalising the values, which would drop the review
+state. infrastructure.md is mapped onto Vorlage Architecture because that template's scope section
+names `infrastruktur.md` as a regular split of the Architecture function for deployment and CI/CD.
+
+**Status** Twelve knowledge documents changed in the frontmatter, index.md and decisions.md
+additionally in content. No code touched, `python -m pytest tests/ -x -q` green (1390 passed,
+1 skipped, the data-dependent case self-skipping).
+
+**Next steps**
+1. Give arbeitsbericht-v3.md the same additive pass once its working state is committed.
+2. Decide whether the repository-wide `version:` schema field of the convention's refactor checklist
+   is introduced; no document carries it today.
+3. Settle the status vocabulary, either by adopting the convention enum here or by recording the
+   extension in the convention itself.
 
 ### 2026-07-09 Session 91: DTA conformity claim tested, refuted, and removed (E102)
 

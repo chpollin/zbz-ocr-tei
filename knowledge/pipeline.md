@@ -11,6 +11,11 @@ status: complete
 created: 2026-01-29
 updated: 2026-07-07
 tags: [zbz-ocr-tei, pipeline, ocr, layout, tei, engines]
+template:
+  name: Vorlage Architecture
+  version: 0.3
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/architecture
+authors: [Christopher Pollin]
 ---
 
 # Pipeline

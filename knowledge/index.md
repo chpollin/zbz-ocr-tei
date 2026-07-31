@@ -9,8 +9,13 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-01-29
-updated: 2026-07-07
+updated: 2026-07-31
 tags: [zbz-ocr-tei, index, navigation]
+template:
+  name: Vorlage Index
+  version: 0.2
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/index
+authors: [Christopher Pollin]
 ---
 
 # Knowledge Base zbz-ocr-tei
@@ -37,7 +42,7 @@ principle is a single source of truth per domain, one file per topic.
 | [ecosystem-synthesis.md](ecosystem-synthesis.md) | Overall picture of the three projects (zbz / szd-htr / teiCrafter): setup + gates + critical path, per-project pipeline/status, ALL user stories, integration + image gap, methodology, frontend gap survey, open points, SSoT assignment |
 | [infrastructure.md](infrastructure.md) | How is it deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD, viewer deployment (GitHub Pages) |
 | [methodology.md](methodology.md) | How do we work? Epistemic infrastructure, verification cascade, Critical Expert in the Loop, three-layer model, operational CLI |
-| [decisions.md](decisions.md) | What has been decided? Decision register (E entries up to E102), open points (O8/O13/O27 with ZBZ, O18 DHCraft; O25/O26 closed), risks |
+| [decisions.md](decisions.md) | What has been decided? Decision register (E entries up to E104), open points (O8/O13/O27 with ZBZ, O18 DHCraft; O25/O26 closed), risks |
 | [cer-methodology.md](cer-methodology.md) | How is the CER measured? Definition, choice of reference, fidelity/scope decomposition, extraction rules E1-E12, normalization N1-N21, verification of the measurement |
 | [literature-comparison.md](literature-comparison.md) | How good is it against the state of research? Print-OCR comparison table and comparability caveats |
 | [ground-truth-map.md](ground-truth-map.md) | What do the 25 reference TEIs contain and where do they deviate? Phenomenon map and exception catalog (former Appendix B) |
@@ -45,6 +50,31 @@ principle is a single source of truth per domain, one file per topic.
 | [journal.md](journal.md) | What was done when? Compact session overview (since Jan 2026), recurring patterns |
 
 Constitution + commands: [CLAUDE.md](../CLAUDE.md) (top level, project-wide rules).
+
+---
+
+## Convention Functions
+
+Each document carries one function of the [Convention Knowledge Documents](https://dhcraft.org/Promptotyping/_content/konvention.md) of the Promptotyping method. Where a catalogue template carries the function, the document names it in its `template` frontmatter field and the table gives it here; where the catalogue holds no template, the document is freehand and the reason stands in the last column. A reasoned gap is a design decision, not an omission. The mapping was recorded post hoc (E104); no document was renamed, moved, or rewritten for it.
+
+| Document | Function | Template or reason for freehand |
+|---|---|---|
+| [index.md](index.md) | Navigation | Vorlage Index |
+| [project.md](project.md) | Charter (with Material: corpus funnel and page balance) | Vorlage Projekt-Wissensdokument |
+| [specification.md](specification.md) | Specification (requirements, rule catalog, epics and user stories) | Vorlage Specification |
+| [pipeline.md](pipeline.md) | Architecture (stages, engines, TEI mapping) | Vorlage Architecture |
+| [workflow.md](workflow.md) | Architecture (end-to-end data flow, viewer, persistence, provenance) | Vorlage Architecture |
+| [infrastructure.md](infrastructure.md) | Architecture (deployment, CI/CD) | Vorlage Architecture |
+| [journal.md](journal.md) | Provenance | Vorlage Journal |
+| [arbeitsbericht-v3.md](arbeitsbericht-v3.md) | Reporting (client-facing) | Vorlage Report |
+| [decisions.md](decisions.md) | Decision record, split out of Specification | freehand: the catalogue carries decisions as a section of the specification and holds no template for a standing register |
+| [cer-methodology.md](cer-methodology.md) | Domain Knowledge (CER measurement method) | freehand: the convention names this function in OCR projects as one without a template |
+| [ground-truth-map.md](ground-truth-map.md) | Material (specialisation: reference corpus and deviation catalog) | freehand: a deviation catalog, not the corpus description the Datengrundlage template structures |
+| [literature-comparison.md](literature-comparison.md) | Domain Knowledge (print-OCR state of research) | freehand: no function in the catalogue |
+| [methodology.md](methodology.md) | Working method of the project | freehand: describes the way of working, not the scholarly domain, so Domänenwissen does not carry |
+| [ecosystem-synthesis.md](ecosystem-synthesis.md) | Cross-project overall picture | freehand: a survey without the bilateral delivery contract that triggers the Integration function |
+
+The action layer lies in the repository root as [CLAUDE.md](../CLAUDE.md), per convention outside `knowledge/`.
 
 ---
 

@@ -11,6 +11,7 @@ status: complete
 created: 2026-06-07
 updated: 2026-07-08
 tags: [ecosystem, synthesis, zbz-ocr-tei, szd-htr, teicrafter]
+authors: [Christopher Pollin]
 ---
 
 # Ecosystem Synthesis: Hersch / SZD / teiCrafter

@@ -13,6 +13,7 @@ created: 2026-07-07
 updated: 2026-07-08
 tags: [zbz-ocr-tei, ground-truth, reference, tei]
 related: [cer-methodology, specification, decisions]
+authors: [Christopher Pollin]
 ---
 
 # Ground-Truth Map and Reference Deviations

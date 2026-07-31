@@ -11,6 +11,11 @@ status: complete
 created: 2026-05-25
 updated: 2026-07-07
 tags: [zbz-ocr-tei, workflow, dataflow, viewer, persistence, provenance, complete-tei, round-trip]
+template:
+  name: Vorlage Architecture
+  version: 0.3
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/architecture
+authors: [Christopher Pollin]
 ---
 
 # Workflow + Data Flow

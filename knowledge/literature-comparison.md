@@ -13,6 +13,7 @@ created: 2026-07-07
 updated: 2026-07-09
 tags: [zbz-ocr-tei, cer, literature, benchmark]
 related: [cer-methodology, specification, decisions]
+authors: [Christopher Pollin]
 ---
 
 # Literature Comparison (Print OCR State of Research)
