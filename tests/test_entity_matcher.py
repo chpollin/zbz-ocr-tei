@@ -277,6 +277,14 @@ def test_anchored_surname_after_full_name(lex):
     assert all(c["tier"] == 1 for c in cands)
 
 
+def test_surname_before_the_full_name_is_anchored_document_wide(lex):
+    xml = _tei("<p>Pour Marcel, la question reste.</p><p>Gabriel Marcel schrieb.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["rule"] for c in cands] == ["anchored-surname", "full-name"]
+    assert all(c["tier"] == 1 for c in cands)
+    assert all(c["gid"] == "118577190" for c in cands)
+
+
 def test_bare_surname_without_anchor_is_tier2(lex):
     xml = _tei("<p>Pour Marcel, la question reste.</p>")
     cands = em.find_candidates(xml, lex)

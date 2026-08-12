@@ -540,7 +540,14 @@ def find_candidates(xml_string: str, lexicon: dict) -> list[dict]:
     zones = _scan_zones(xml_string)
     norm = _normalize(xml_string, zones)
     speaker_hits = _speaker_hits(norm, zones, lexicon)
-    return _scan(xml_string, norm, zones, lexicon, speaker_hits)
+    # Anchors count document-wide (operator decision 2026-08-12): the first pass
+    # collects the tier-1 person gids, the second applies them everywhere, so a
+    # bare surname BEFORE the first full-name mention anchors as well.
+    first_pass = _scan(xml_string, norm, zones, lexicon, speaker_hits)
+    anchors = {c["gid"] for c in first_pass if c["tier"] == 1 and c["category"] == "person"}
+    if not anchors:
+        return first_pass
+    return _scan(xml_string, norm, zones, lexicon, speaker_hits, anchors)
 
 
 def _scan(
@@ -549,11 +556,12 @@ def _scan(
     zones: _Zones,
     lexicon: dict,
     speaker_hits: dict[int, tuple],
+    seed_anchors: set[str] | None = None,
 ) -> list[dict]:
-    """Single left-to-right pass; anchors only count when they lie before the hit."""
+    """Left-to-right pass; `seed_anchors` carries the document-wide tier-1 anchors."""
     text = norm.text
     out: list[dict] = []
-    anchored: set[str] = set()
+    anchored: set[str] = set(seed_anchors or ())
     pos = 0
     while pos < len(text):
         if not _is_word(text[pos]) or (pos > 0 and _is_word(text[pos - 1])):
