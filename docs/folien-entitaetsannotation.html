@@ -24,7 +24,7 @@
   .deck { position: relative; height: 100vh; }
   .slide {
     position: absolute; inset: 0; display: none; flex-direction: column;
-    justify-content: center; padding: 3.5rem clamp(1.5rem, 8vw, 9rem) 5rem;
+    justify-content: center; padding: 3rem clamp(1.5rem, 5vw, 5rem) 5rem;
     background: var(--bg);
   }
   .slide.active { display: flex; }
@@ -32,32 +32,31 @@
     .slide.active { animation: rise 300ms ease-out; }
     @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
   }
-  .inner { width: 100%; max-width: 58rem; margin: 0 auto; }
+  .inner { width: 100%; max-width: 74rem; margin: 0 auto; }
 
   .eyebrow {
     font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.24em;
-    text-transform: uppercase; color: var(--red); margin-bottom: 1.5rem;
+    text-transform: uppercase; color: var(--red); margin-bottom: 1.4rem;
   }
   .eyebrow .chap { color: var(--muted); margin-right: 1rem; font-variant-numeric: tabular-nums; }
   h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 500; line-height: 1.1; text-wrap: balance; letter-spacing: -0.01em; }
-  h2 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); font-weight: 500; line-height: 1.15; text-wrap: balance; margin-bottom: 1.8rem; }
+  h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); font-weight: 500; line-height: 1.15; text-wrap: balance; margin-bottom: 1.6rem; }
   .rule { width: 4.5rem; height: 2px; background: var(--red); border: 0; margin: 1.8rem 0; }
 
   p.body {
-    font-size: clamp(1rem, 1.75vw, 1.19rem); line-height: 1.62;
-    max-width: 44rem; margin-bottom: 1.1rem;
+    font-size: clamp(1rem, 1.7vw, 1.17rem); line-height: 1.6;
+    max-width: 58rem; margin-bottom: 1rem;
   }
-  p.body strong { font-weight: 600; }
-  .subtitle { font-size: clamp(1.05rem, 2vw, 1.35rem); color: var(--text-2); max-width: 42rem; line-height: 1.5; }
+  .subtitle { font-size: clamp(1.05rem, 2vw, 1.35rem); color: var(--text-2); max-width: 46rem; line-height: 1.5; }
   .titlemeta { margin-top: 2.4rem; font-family: var(--sans); font-size: 0.8rem; color: var(--muted); display: flex; gap: 2rem; flex-wrap: wrap; }
   .titlemeta .src { font-family: var(--mono); font-size: 0.74rem; }
   .accent { color: var(--red); }
   .quiet { color: var(--text-2); }
 
   pre.code {
-    font-family: var(--mono); font-size: clamp(0.72rem, 1.35vw, 0.88rem);
+    font-family: var(--mono); font-size: clamp(0.72rem, 1.3vw, 0.88rem);
     line-height: 1.55; background: var(--bg-alt); color: var(--text);
-    padding: 1.1rem 1.3rem; margin: 1.1rem 0 1.4rem;
+    padding: 1.1rem 1.3rem; margin: 1rem 0 1.3rem;
     overflow-x: auto; white-space: pre; max-width: 100%;
   }
   pre.code .k { color: var(--blue); }
@@ -66,26 +65,29 @@
   pre.code .c { color: var(--muted); }
   .caption {
     font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--muted); margin-top: -0.9rem; margin-bottom: 1.2rem;
+    text-transform: uppercase; color: var(--muted); margin-top: -0.8rem; margin-bottom: 1.1rem;
   }
+  .live {
+    font-family: var(--sans); font-size: 0.8rem; color: var(--text-2);
+    margin-top: 0.8rem;
+  }
+  .live a { color: var(--blue); text-decoration-color: rgba(61,90,115,0.4); word-break: break-all; }
+  .live a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
-  .flow { display: flex; align-items: stretch; flex-wrap: wrap; gap: 0.6rem; margin: 1.6rem 0; }
+  .flow { display: flex; align-items: stretch; flex-wrap: wrap; gap: 0.6rem; margin: 1.5rem 0; }
   .flow .step {
-    background: var(--bg-alt); padding: 0.85rem 1.1rem; max-width: 13.5rem;
-    display: flex; flex-direction: column; gap: 0.3rem; flex: 1 1 9rem;
+    background: var(--bg-alt); padding: 0.85rem 1.1rem; max-width: 16rem;
+    display: flex; flex-direction: column; gap: 0.3rem; flex: 1 1 10rem;
   }
   .flow .step .sname { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-2); }
-  .flow .step .sdesc { font-size: 0.88rem; line-height: 1.45; }
+  .flow .step .sdesc { font-size: 0.9rem; line-height: 1.45; }
   .flow .arrow { align-self: center; color: var(--muted); font-family: var(--sans); font-size: 1.2rem; flex: 0 0 auto; }
   .flow .step.mark { box-shadow: inset 3px 0 0 var(--red); }
   .flow .step.work { box-shadow: inset 3px 0 0 var(--blue); }
 
-  .split { display: flex; gap: 2.8rem; flex-wrap: wrap; }
-  .split > div { flex: 1 1 20rem; min-width: 0; }
-
   .chrome {
     position: fixed; left: 0; right: 0; bottom: 0; display: flex; align-items: center;
-    justify-content: space-between; padding: 1rem clamp(1.5rem, 8vw, 9rem);
+    justify-content: space-between; padding: 1rem clamp(1.5rem, 5vw, 5rem);
     font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--muted);
     background: linear-gradient(to top, var(--bg) 55%, rgba(245,240,232,0));
@@ -98,7 +100,7 @@
   .counter { font-variant-numeric: tabular-nums; letter-spacing: 0.14em; }
   .navhint { display: none; }
   @media (min-width: 720px) { .navhint { display: inline; } }
-  .navzone { position: fixed; top: 0; bottom: 4rem; width: 14%; cursor: pointer; background: none; border: 0; }
+  .navzone { position: fixed; top: 0; bottom: 4rem; width: 12%; cursor: pointer; background: none; border: 0; }
   .navzone:focus-visible { outline: 2px solid var(--blue); outline-offset: -4px; }
   .navzone.prev { left: 0; } .navzone.next { right: 0; }
 
@@ -134,11 +136,11 @@
     <div class="inner">
       <p class="eyebrow"><span class="chap">01</span>Ausgangslage</p>
       <h2>Eine kuratierte Entitätsliste als kontrolliertes Vokabular</h2>
-      <p class="body"><strong>Bestand.</strong> 285 ausgelieferte TEI-Dokumente (OCR-basiert,
-      mehrsprachig), davon 25 mit handannotierter Referenzfassung der Bibliothek.</p>
-      <p class="body"><strong>Vokabular.</strong> Die Bibliothek kuratiert die Entitätsliste
-      mit 288 Einträgen in drei Klassen (Personen, Organisationen, Werke). Jeder Eintrag
-      trägt eine GND-Kennung als persistenten Identifikator.</p>
+      <p class="body">Der ausgelieferte Bestand umfasst 285 TEI-Dokumente aus OCR-Verarbeitung,
+      mehrsprachig; für 25 davon liegt eine handannotierte Referenzfassung der Bibliothek vor.
+      Die Bibliothek kuratiert die Entitätsliste mit 288 Einträgen in drei Klassen (Personen,
+      Organisationen, Werke); jeder Eintrag trägt eine GND-Kennung als persistenten
+      Identifikator.</p>
       <pre class="code">{ <span class="k">"GND_id"</span>: <span class="s">"118557106"</span>,
   <span class="k">"name"</span>: <span class="s">"Jaspers, Karl"</span>,
   <span class="k">"description"</span>: [<span class="s">"Philosoph"</span>, <span class="s">"Arzt"</span>, <span class="s">"Herausgeber"</span>, <span class="s">"Psychiater"</span>],
@@ -152,17 +154,16 @@
     <div class="inner">
       <p class="eyebrow"><span class="chap">02</span>Zielmodell</p>
       <h2>Inline-GND-Markup im TEI</h2>
-      <p class="body"><strong>Auszeichnung.</strong> Jede sichere Nennung wird mit dem
-      klassenspezifischen TEI-Element umschlossen; das <span class="accent">ref</span>-Attribut
-      trägt die GND-Kennung. Personen werden zu persName, Organisationen zu orgName,
-      Werke zu bibl.</p>
+      <p class="body">Jede sichere Nennung wird mit dem klassenspezifischen TEI-Element
+      umschlossen, persName für Personen, orgName für Organisationen, bibl für Werke;
+      das ref-Attribut trägt die GND-Kennung.</p>
       <pre class="code"><span class="c">vorher</span>   ... la transformation, selon Karl Jaspers, de la ...
 
 <span class="c">nachher</span>  ... la transformation, selon
          <span class="hl">&lt;persName ref="GND:118557106"&gt;</span>Karl Jaspers<span class="hl">&lt;/persName&gt;</span>, de la ...</pre>
-      <p class="body"><strong>Anschlussfähigkeit.</strong> Über die GND-Kennung ist jede
-      Nennung mit Normdatei, Katalog und Linked-Data-Diensten (lobid, Wikidata-Mapping)
-      verknüpfbar; die Edition wird im Sinne der Entity Reconciliation anschlussfähig.</p>
+      <p class="body">Über die GND-Kennung ist jede Nennung an Normdatei, Katalog und
+      Linked-Data-Dienste anschlussfähig (lobid, Wikidata-Mapping).</p>
+      <p class="live">Beispiel im Viewer&ensp;·&ensp;<a href="viewer.html?doc=1520&amp;page=105&amp;entities=1">viewer.html?doc=1520&amp;page=105&amp;entities=1</a></p>
     </div>
   </section>
 
@@ -171,39 +172,38 @@
     <div class="inner">
       <p class="eyebrow"><span class="chap">03</span>Grundsatz</p>
       <h2>Deterministische Reconciliation</h2>
-      <p class="body"><strong>Kontrolliertes Vokabular.</strong> Verknüpft wird ausschließlich gegen
-      die kuratierte Liste (Closed-World-Prinzip). Die Zuordnung von Kennung und Textstelle trifft immer
-      ein deterministisches, wiederholbares Verfahren; ein Sprachmodell vergibt niemals eine
+      <p class="body">Verknüpft wird ausschließlich gegen die kuratierte Liste
+      (Closed-World-Prinzip). Die Zuordnung von Kennung und Textstelle trifft immer ein
+      deterministisches, wiederholbares Verfahren; ein Sprachmodell vergibt niemals eine
       Kennung. Das sichert Reproduzierbarkeit und Nachvollziehbarkeit jeder einzelnen
       Verknüpfung.</p>
-      <p class="body"><strong>Rollenverteilung Verfahren und Modell.</strong> Sprachmodelle
-      arbeiten an zwei festgehaltenen Stellen zu, als Prüfinstanz über vorhandene
-      Namensformen und als geplante Vorsortierung der Worklist. Beide Ergebnisse liegen
-      versioniert im Repository und werden deterministisch konsumiert; jeder Lauf bleibt
-      ohne Modellbeteiligung reproduzierbar.</p>
-      <p class="body"><strong>NIL-Mentions.</strong> Häufige Namen ohne Listeneintrag
-      werden ohne Kennungsvergabe erfasst und der Bibliothek als Kandidaten für die Listenerweiterung
+      <p class="body">Sprachmodelle arbeiten an zwei festgehaltenen Stellen zu, als
+      Review-Instanz über vorhandene Namensformen und als geplante Vorsortierung der
+      Worklist. Beide Ergebnisse liegen versioniert im Repository und werden deterministisch
+      konsumiert; jeder Lauf bleibt ohne Modellbeteiligung reproduzierbar.</p>
+      <p class="body">Häufige Namen ohne Listeneintrag werden als NIL-Mentions ohne
+      Kennungsvergabe erfasst und der Bibliothek als Kandidaten für die Listenerweiterung
       vorgelegt (Spitzenkandidat des Snapshots, Raymond Aron mit 115 Nennungen).</p>
     </div>
   </section>
 
-  <!-- 5 · Namensformen -->
-  <section class="slide" aria-label="Namensformen">
+  <!-- 5 · Namensvarianten -->
+  <section class="slide" aria-label="Namensvarianten">
     <div class="inner">
       <p class="eyebrow"><span class="chap">04</span>Namensformen</p>
-      <h2>Normdaten-Varianz ist Reichtum und Risiko zugleich</h2>
-      <p class="body"><strong>Kandidatengenerierung.</strong> Zu jeder Kennung liefert die
-      lobid-Schnittstelle die in der GND verzeichneten Namensvarianten in einen lokalen
-      Cache; der Altbestand des Projekts ergänzt belegte Formen. So wird der Geburtsname
-      einer Person ebenso findbar wie eine französische Schreibvariante.</p>
+      <h2>Namensvarianten aus der Normdatei</h2>
+      <p class="body">Zu jeder Kennung liefert die lobid-Schnittstelle die in der GND
+      verzeichneten Namensvarianten in einen lokalen Cache; der Altbestand des Projekts
+      ergänzt belegte Formen. So wird der Geburtsname einer Person ebenso findbar wie eine
+      französische Schreibvariante.</p>
       <pre class="code">{ <span class="k">"preferred_name"</span>: <span class="s">"Pestalozzi, Johann Heinrich"</span>,
   <span class="k">"variant_names"</span>: [<span class="s">"Pestalocci, I.G."</span>, <span class="hl">"J. H."</span>, <span class="s">"Pestalozzi, G. E."</span>,
                      <span class="s">"Pestalozzi, Jan Henryk"</span>, ...] }</pre>
       <p class="caption">data/entities/gnd_cache.json · rohe Varianz einer einzigen Person</p>
-      <p class="body"><strong>Risiko.</strong> Rohe Varianten enthalten Initialenkürzel,
-      Transliterationsfragmente und Verwechslungsformen. Die Form <span class="accent">J. H.</span>
-      beanspruchte im Pilotbetrieb jede gleichlautende Kürzelnennung eines Interviews für
-      die falsche Person; ungefiltert vergiftet solche Varianz die gesamte Annotation.</p>
+      <p class="body">Rohe Varianten enthalten Initialenkürzel, Transliterationsfragmente und
+      Verwechslungsformen. Die Form <span class="accent">J. H.</span> beanspruchte im
+      Pilotbetrieb jede gleichlautende Kürzelnennung eines Interviews für die falsche Person;
+      ungefiltert erzeugt solche Varianz systematische Falschzuordnungen.</p>
     </div>
   </section>
 
@@ -211,17 +211,16 @@
   <section class="slide" aria-label="Verdict-Governance">
     <div class="inner">
       <p class="eyebrow"><span class="chap">05</span>Governance der Namensformen</p>
-      <h2>Jede Form trägt ein versioniertes Verdict</h2>
-      <p class="body"><strong>Prüfung.</strong> Alle 4916 aus dem Cache übernommenen Formen
-      wurden modellgestützt geprüft; das Ergebnis liegt als Verdict-Datei im Repository
-      (4252 approve, 149 suspect, 515 reject) und wird von der Projektleitung kuratiert.</p>
+      <h2>Ein versioniertes Verdict je Namensform</h2>
+      <p class="body">Alle 4916 aus dem Cache übernommenen Formen wurden modellgestützt
+      geprüft; das Ergebnis liegt als Verdict-Datei im Repository (4252 approve, 149 suspect,
+      515 reject) und wird von der Projektleitung kuratiert.</p>
       <pre class="code"><span class="k">"J. H."</span>: { <span class="k">"verdict"</span>: <span class="hl">"reject"</span>, <span class="k">"reason"</span>: <span class="s">"initials-only (already filtered)"</span> }</pre>
       <p class="caption">data/entities/variant_review.json · Verdict unter dem Träger 118592912</p>
-      <p class="body"><strong>Wirkprinzip.</strong> Verworfene Formen erreichen das
-      Suchlexikon nie, weder als Vollform noch über den Nachnamen-Index. Verdachtsformen
-      erzeugen ausschließlich Worklist-Einträge. Eine Form, die der Prüfstand nicht
-      kennt (Cache jünger als Prüfung), gilt als Verdachtsform, Vorsicht ist der
-      Default.</p>
+      <p class="body">Verworfene Formen erreichen das Suchlexikon nie, weder als Vollform noch
+      über den Nachnamen-Index. Verdachtsformen erzeugen ausschließlich Worklist-Einträge.
+      Eine Form, die die Prüfung nicht kennt, weil der Cache jünger ist, gilt als
+      Verdachtsform, bis eine neue Prüfung läuft.</p>
     </div>
   </section>
 
@@ -252,10 +251,10 @@
   <section class="slide" aria-label="Kandidaten-Contract">
     <div class="inner">
       <p class="eyebrow"><span class="chap">07</span>Kandidaten-Contract</p>
-      <h2>Jeder Fund dokumentiert seine eigene Provenienz</h2>
-      <p class="body"><strong>Nachvollziehbarkeit.</strong> Ein Kandidat benennt die Regel,
-      die ihn erzeugt hat, die getroffene Lexikonform und deren Herkunft. Die Annotation
-      bleibt dadurch bis in die Einzelentscheidung erklärbar.</p>
+      <h2>Provenienz im Kandidaten-Contract</h2>
+      <p class="body">Ein Kandidat benennt die Regel, die ihn erzeugt hat, die getroffene
+      Lexikonform und deren Herkunft; die Annotation bleibt bis in die Einzelentscheidung
+      erklärbar.</p>
       <pre class="code">{ <span class="k">"doc"</span>: <span class="s">"100"</span>, <span class="k">"surface"</span>: <span class="s">"Karl Jaspers"</span>, <span class="k">"gid"</span>: <span class="s">"118557106"</span>,
   <span class="k">"tier"</span>: <span class="hl">1</span>, <span class="k">"rule"</span>: <span class="s">"full-name"</span>, <span class="k">"form_source"</span>: <span class="s">"headword"</span> }
 
@@ -263,28 +262,27 @@
   <span class="k">"rule"</span>: <span class="s">"bare-surname<span class="hl">:ambiguous</span>"</span>,
   <span class="k">"alternatives"</span>: [<span class="s">"117085391"</span>, <span class="s">"118557106"</span>] }</pre>
       <p class="caption">output/audits/entity_corpus_scan.json · zwei reale Kandidaten</p>
-      <p class="body"><strong>Disambiguierung.</strong> Der nackte Nachname Jaspers kann
-      Karl oder Gertrud Jaspers meinen; der Kandidat führt beide Träger als alternatives
-      und geht in die Worklist; die Entscheidung bleibt der Kuration vorbehalten.</p>
+      <p class="body">Der nackte Nachname Jaspers kann Karl oder Gertrud Jaspers meinen. Der
+      Kandidat führt beide Träger als alternatives und geht in die Worklist; die Entscheidung
+      bleibt der Kuration vorbehalten.</p>
+      <p class="live">Beispiel im Viewer&ensp;·&ensp;<a href="viewer.html?doc=1350&amp;page=1&amp;entities=1">viewer.html?doc=1350&amp;page=1&amp;entities=1</a></p>
     </div>
   </section>
 
-  <!-- 9 · Zweistufigkeit in Zahlen -->
-  <section class="slide" aria-label="Zweistufigkeit">
+  <!-- 9 · Two-Tier im Snapshot -->
+  <section class="slide" aria-label="Two-Tier im Snapshot">
     <div class="inner">
       <p class="eyebrow"><span class="chap">08</span>Two-Tier-Matching</p>
-      <h2>Sicheres auszeichnen, Unsicheres zurückhalten</h2>
-      <p class="body"><strong>Stand des Snapshots.</strong> Der Korpuslauf erzeugt
-      4043 Tier-1-Auszeichnungen und hält 3688 Stellen in der Worklist zurück, darunter
-      1650 mit mehreren möglichen Trägern.</p>
-      <p class="body"><strong>Homographenverdacht.</strong> Deterministische Signale stufen
-      verwechselbare Oberflächen herab. Ein kleingeschriebener Zwilling im selben Dokument
-      (weil neben Weil), ein angrenzendes unbekanntes großgeschriebenes Wort oder eine
-      komplett kleingeschriebene Phrasenform führen zur Herabstufung mit dem Suffix
-      <span class="accent">:suspect</span>.</p>
-      <p class="body"><strong>Systematische Härtung.</strong> Jeder im Betrieb bestätigte
-      Fehler wird als Regressionstest fixiert; die Testsuite hält den Fall dauerhaft fest
-      (Weil als Konjunktion, das Initialenkürzel, die Jaspers-Ambiguität).</p>
+      <h2>Two-Tier-Matching im Snapshot</h2>
+      <p class="body">Der Korpuslauf erzeugt 4043 Tier-1-Auszeichnungen und hält 3688 Stellen
+      in der Worklist zurück, darunter 1650 mit mehreren möglichen Trägern.</p>
+      <p class="body">Deterministische Signale stufen verwechselbare Oberflächen mit dem
+      Suffix <span class="accent">:suspect</span> herab, etwa bei einem kleingeschriebenen
+      Zwilling im selben Dokument (weil neben Weil), einem angrenzenden unbekannten
+      großgeschriebenen Wort oder einer komplett kleingeschriebenen Phrasenform.</p>
+      <p class="body">Jeder im Betrieb bestätigte Fehler wird als Regressionstest fixiert;
+      die Testsuite hält den Fall dauerhaft fest (Weil als Konjunktion, das Initialenkürzel,
+      die Jaspers-Ambiguität).</p>
     </div>
   </section>
 
@@ -292,59 +290,53 @@
   <section class="slide" aria-label="Invarianten">
     <div class="inner">
       <p class="eyebrow"><span class="chap">09</span>Invarianten</p>
-      <h2>Vorschau statt Eingriff, zwei maschinelle Beweise</h2>
-      <p class="body"><strong>Vorschauprinzip.</strong> Die Auszeichnung wird in
-      Vorschaudateien geschrieben; der Lieferbestand bleibt unberührt, bis ein
-      freigegebener, reversibler Bestandslauf sie übernimmt.</p>
+      <h2>Vorschauprinzip und maschinelle Invarianten</h2>
+      <p class="body">Die Auszeichnung wird in Vorschaudateien geschrieben; der Lieferbestand
+      bleibt unberührt, bis ein freigegebener, reversibler Bestandslauf sie übernimmt.</p>
       <pre class="code">python -m scripts.tei.tei_entity_preview --docs 100 1520 ...
 
   [12/14] 1520: wrapped 61, worklist 284, <span class="hl">schema PASS</span>, <span class="hl">text PASS</span>
   Schema PASS: 285/285   text invariance PASS: 285/285</pre>
       <p class="caption">Korpuslauf des Snapshots · beide Invarianten je Dokument</p>
-      <p class="body"><strong>Die zwei Beweise.</strong> Jede Vorschau validiert gegen das
-      Projektschema (RelaxNG), und der Textinhalt des TEI bleibt zeichenidentisch. Die
-      Auszeichnung fügt ausschließlich Markup hinzu; sie kann den Text nicht verändern,
-      und das wird pro Dokument maschinell nachgewiesen.</p>
+      <p class="body">Jede Vorschau validiert gegen das Projektschema (RelaxNG), und der
+      Textinhalt des TEI bleibt zeichenidentisch. Die Auszeichnung fügt ausschließlich Markup
+      hinzu; beides wird pro Dokument maschinell nachgewiesen.</p>
     </div>
   </section>
 
-  <!-- 11 · Kuration -->
-  <section class="slide" aria-label="Kuration">
+  <!-- 11 · Human Validation -->
+  <section class="slide" aria-label="Human Validation">
     <div class="inner">
       <p class="eyebrow"><span class="chap">10</span>Kuration</p>
-      <h2>Der Mensch setzt den Status, das System vergisst ihn nicht</h2>
-      <p class="body"><strong>Human Validation im Viewer.</strong> Der statische Viewer zeigt
-      Markierungen mit Kandidaten und Herkunft der Namensform, die Worklist im
-      Textzusammenhang und das Faksimile daneben
-      (<span class="accent">viewer.html?doc=100&amp;entities=1</span>).</p>
-      <p class="body"><strong>Workflow-Status.</strong> Die Entitätsannotation ist der
-      vierte Bearbeitungsstrom neben OCR, Layout und TEI. Jeder Strom durchläuft die
-      Statusfolge unverifiziert, in Arbeit, verifiziert; den Wechsel setzt ausschließlich
-      ein Mensch per Klick.</p>
+      <h2>Human Validation und Workflow-Status</h2>
+      <p class="body">Der statische Viewer zeigt Markierungen mit Kandidaten und Herkunft der
+      Namensform, die Worklist im Textzusammenhang und das Faksimile daneben. Die
+      Entitätsannotation ist der vierte Bearbeitungsstrom neben OCR, Layout und TEI; jeder
+      Strom durchläuft die Statusfolge unverifiziert, in Arbeit, verifiziert, und den Wechsel
+      setzt ausschließlich ein Mensch.</p>
       <pre class="code"><span class="k">"streams"</span>: { <span class="k">"entities"</span>: { <span class="k">"status"</span>: <span class="s">"unverifiziert"</span>, <span class="k">"history"</span>: [...] } }</pre>
       <p class="caption">{doc}_manifest.json · der Status überlebt jeden Neulauf der Pipeline</p>
+      <p class="live">Beispiele&ensp;·&ensp;<a href="index.html">Korpusübersicht mit Workflow-Ampeln</a>&ensp;·&ensp;<a href="viewer.html?doc=100&amp;page=2&amp;entities=1">viewer.html?doc=100&amp;page=2&amp;entities=1</a></p>
     </div>
   </section>
 
-  <!-- 12 · Warum Stichprobe -->
-  <section class="slide" aria-label="Warum Stichprobe">
+  <!-- 12 · Grenzen des Referenzvergleichs -->
+  <section class="slide" aria-label="Grenzen des Referenzvergleichs">
     <div class="inner">
       <p class="eyebrow"><span class="chap">11</span>Evaluation, Befund</p>
-      <h2>Warum der Referenzvergleich als Maßstab nicht genügt</h2>
-      <p class="body"><strong>Trendindikator mit Verzerrung.</strong> Der Gold-Benchmark, der automatische
-      Vergleich mit den 25 Referenz-TEIs, meldete im Snapshot 51 Abweichungen.
-      Die Einzelprüfung am Faksimile ergab, 2 echte Annotationsfehler, 4 Lücken der
-      Referenz, 45 Struktur- und Zonenartefakte, davon 39 in einem einzigen Dokument mit
-      nicht gekennzeichnetem Literaturverzeichnis.</p>
-      <p class="body"><strong>Konsequenz.</strong> Referenzen, die selbst
-      Teiltranskriptionen sind und intern uneinheitlich annotieren, können Präzision und
-      Vollständigkeit nicht beziffern. Der Wahrheitsmaßstab ist das Faksimile; die Messung
-      braucht ein eigenes Stichprobenprotokoll.</p>
+      <h2>Grenzen des Referenzvergleichs</h2>
+      <p class="body">Der Gold-Benchmark, der automatische Vergleich mit den 25 Referenz-TEIs,
+      meldete im Snapshot 51 Abweichungen. Die Einzelprüfung am Faksimile ergab 2 echte
+      Annotationsfehler, 4 Lücken der Referenz und 45 Struktur- und Zonenartefakte, davon 39
+      in einem einzigen Dokument mit nicht gekennzeichnetem Literaturverzeichnis.</p>
+      <p class="body">Referenzen, die selbst Teiltranskriptionen sind und intern uneinheitlich
+      annotieren, können Präzision und Vollständigkeit nicht beziffern. Wahrheitsmaßstab ist
+      das Faksimile; die Messung braucht ein eigenes Stichprobenprotokoll.</p>
     </div>
   </section>
 
-  <!-- 13 · Prozess Evaluation -->
-  <section class="slide" aria-label="Prozess Evaluation">
+  <!-- 13 · Stichprobenprotokoll -->
+  <section class="slide" aria-label="Stichprobenprotokoll">
     <div class="inner">
       <p class="eyebrow"><span class="chap">12</span>Prozessdarstellung</p>
       <h2>Das Stichprobenprotokoll</h2>
@@ -365,40 +357,39 @@
     </div>
   </section>
 
-  <!-- 14 · Adjudikation konkret -->
-  <section class="slide" aria-label="Adjudikation konkret">
+  <!-- 14 · Adjudikation -->
+  <section class="slide" aria-label="Adjudikation">
     <div class="inner">
       <p class="eyebrow"><span class="chap">13</span>Adjudikation</p>
-      <h2>Ein Fall, ein Urteil, eine Begründung</h2>
+      <h2>Adjudikation der gezogenen Fälle</h2>
       <pre class="code">{ <span class="k">"case_id"</span>: <span class="s">"p001"</span>, <span class="k">"doc"</span>: <span class="s">"760"</span>, <span class="k">"page"</span>: 18,
   <span class="k">"surface"</span>: <span class="s">"Stedelijk Van Abbe-Museum"</span>, <span class="k">"rule"</span>: <span class="s">"org-name"</span>,
   <span class="k">"facsimile"</span>: <span class="s">"docs/images/760/760_p018.png"</span>,
   <span class="k">"verdict"</span>: <span class="hl">null</span>, <span class="k">"reason"</span>: <span class="hl">null</span> }</pre>
       <p class="caption">output/audits/eval_sample/precision_cases.json · vor der Adjudikation</p>
-      <p class="body"><strong>Verdict-Klassen (Präzision).</strong> correct, wrong_entity,
-      wrong_span, not_in_source, undecidable; genau ein Wert je Fall, mit
-      Begründungssatz.</p>
-      <p class="body"><strong>Fehlertaxonomie (Recall).</strong> Jede übersehene Nennung wird
-      klassifiziert als Lexikonlücke, Regellücke oder OCR-Korruption; die Taxonomie ist
+      <p class="body">Für die Präzisionsfrage erhält jeder Fall genau einen Wert aus den
+      Verdict-Klassen correct, wrong_entity, wrong_span, not_in_source oder undecidable,
+      jeweils mit Begründungssatz.</p>
+      <p class="body">Für die Recall-Frage wird jede übersehene Nennung in der Fehlertaxonomie
+      klassifiziert, als Lexikonlücke, Regellücke oder OCR-Korruption; die Taxonomie ist
       unmittelbar die Reparaturliste der nächsten Iteration.</p>
     </div>
   </section>
 
-  <!-- 15 · Rollen und Grenzen -->
-  <section class="slide" aria-label="Rollen und Grenzen">
+  <!-- 15 · Rollenverteilung und Geltungsgrenzen -->
+  <section class="slide" aria-label="Rollenverteilung und Geltungsgrenzen">
     <div class="inner">
-      <p class="eyebrow"><span class="chap">14</span>Rollenverteilung und Grenzen</p>
-      <h2>Verantwortung bleibt beim Menschen</h2>
-      <p class="body"><strong>Agenten</strong> übernehmen operative Arbeit, Voradjudikation
-      der gezogenen Fälle, erschöpfende Seitenlektüre, Statistikläufe.</p>
-      <p class="body"><strong>Projektleitung</strong> kontrolliert Stichproben der Urteile,
-      entscheidet strittige Fälle und gibt jeden Bestandseingriff frei.</p>
-      <p class="body"><strong>Bibliothek</strong> entscheidet Spezifikationsfragen der
-      Annotationspraxis und die Erweiterung der Entitätsliste.</p>
-      <p class="body"><strong>Geltungsgrenzen.</strong> Korrektheit gilt relativ zur
-      kuratierten Liste und zur dokumentierten Spezifikation. Zonenregeln setzen korrekte
-      Strukturauszeichnung der Pipeline-TEI voraus; Einzeldokumente mit defekter
-      Seitenzuordnung warten auf eine eigene, freigabepflichtige Reparatur.</p>
+      <p class="eyebrow"><span class="chap">14</span>Rollenverteilung und Geltungsgrenzen</p>
+      <h2>Rollenverteilung und Geltungsgrenzen</h2>
+      <p class="body">Agenten übernehmen operative Arbeit, Voradjudikation der gezogenen
+      Fälle, erschöpfende Seitenlektüre und Statistikläufe. Die Projektleitung kontrolliert
+      Stichproben der Urteile, entscheidet strittige Fälle und gibt jeden Bestandseingriff
+      frei. Die Bibliothek entscheidet Spezifikationsfragen der Annotationspraxis und die
+      Erweiterung der Entitätsliste.</p>
+      <p class="body">Korrektheit gilt relativ zur kuratierten Liste und zur dokumentierten
+      Spezifikation. Zonenregeln setzen korrekte Strukturauszeichnung der Pipeline-TEI
+      voraus; Einzeldokumente mit defekter Seitenzuordnung warten auf eine eigene,
+      freigabepflichtige Reparatur.</p>
     </div>
   </section>
 
