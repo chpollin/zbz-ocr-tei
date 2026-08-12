@@ -1,0 +1,50 @@
+{
+  "doc": "2650",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "6": [
+      {
+        "gid": "118630148",
+        "category": "person",
+        "surface": "Weil",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
+        "context": "issen das. Warum hat der Mensch Rechte? Weil er die Fähigkeit hat, aus sich ein frei",
+        "text": "Weil",
+        "occurrence": 1
+      },
+      {
+        "gid": "117085391",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "bare-surname:ambiguous",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "estimmten Sinn einzig ist. Mein Lehrer, Jaspers, der selbst Arzt war, brauchte oft dies",
+        "text": "Jaspers",
+        "occurrence": 1
+      },
+      {
+        "gid": "117085391",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "bare-surname:ambiguous",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "erantwortlich zu werden. Ich sprach von Jaspers. Er sagte: «Die Hoffnung ist, dass zwis",
+        "text": "Jaspers",
+        "occurrence": 2
+      }
+    ]
+  }
+}

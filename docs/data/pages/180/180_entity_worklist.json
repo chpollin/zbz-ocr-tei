@@ -1,0 +1,32 @@
+{
+  "doc": "180",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "2": [
+      {
+        "gid": "118622110",
+        "category": "person",
+        "surface": "Thomas",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Thomas",
+        "form_source": "surname-index",
+        "context": "ent est centré sur la doctrine de saint Thomas d’Aquin, mais on étudie l’histoire de l",
+        "text": "Thomas",
+        "occurrence": 1
+      },
+      {
+        "gid": "118622110",
+        "category": "person",
+        "surface": "Aquin",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Aquin, Thomas von",
+        "form_source": "cache-variant",
+        "context": "entré sur la doctrine de saint Thomas d’Aquin, mais on étudie l’histoire de la philos",
+        "text": "Aquin",
+        "occurrence": 1
+      }
+    ]
+  }
+}

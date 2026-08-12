@@ -1,0 +1,122 @@
+{
+  "doc": "560",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "2": [
+      {
+        "gid": "118559796",
+        "category": "person",
+        "surface": "Kant",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
+        "context": "tiques, selon l’auteur, s’unissent chez Kant, mais elles échouent toutes deux, elles",
+        "text": "Kant",
+        "occurrence": 1
+      },
+      {
+        "gid": "1382846452",
+        "category": "work",
+        "surface": "recherche de la liberté",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "Recherche de la liberté",
+        "form_source": "cache-variant",
+        "context": "t toutes deux, elles n’ouvrent pas « la recherche de la liberté ». Et les analyses phénoménologiques mo",
+        "text": "recherche de la liberté",
+        "occurrence": 1
+      },
+      {
+        "gid": "11860564X",
+        "category": "person",
+        "surface": "Sartre",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Sartre",
+        "form_source": "surname-index",
+        "context": "d’existence, ne réussissent pas mieux. Sartre et même Merleau-Ponty — qui, après son",
+        "text": "Sartre",
+        "occurrence": 1
+      },
+      {
+        "gid": "118818619",
+        "category": "person",
+        "surface": "Merleau",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Merleau, Maurice",
+        "form_source": "cache-variant",
+        "context": "e réussissent pas mieux. Sartre et même Merleau-Ponty — qui, après son analyse si préci",
+        "text": "Merleau",
+        "occurrence": 1
+      },
+      {
+        "gid": "118818619",
+        "category": "person",
+        "surface": "Ponty",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Ponty, Maurice Merleau-",
+        "form_source": "cache-variant",
+        "context": "ssent pas mieux. Sartre et même Merleau-Ponty — qui, après son analyse si précise du",
+        "text": "Ponty",
+        "occurrence": 1
+      },
+      {
+        "gid": "1078795312",
+        "category": "work",
+        "surface": "Nietzsche",
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "1078795312",
+          "118587943"
+        ],
+        "matched_form": "Nietzsche",
+        "form_source": "headword",
+        "context": "de la liberté radicale, comme celles de Nietzsche ou de Sartre, est dû au fait que ces pe",
+        "evidence": "none",
+        "text": "Nietzsche",
+        "occurrence": 1
+      },
+      {
+        "gid": "11860564X",
+        "category": "person",
+        "surface": "Sartre",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Sartre",
+        "form_source": "surname-index",
+        "context": "dicale, comme celles de Nietzsche ou de Sartre, est dû au fait que ces penseurs sont r",
+        "text": "Sartre",
+        "occurrence": 2
+      },
+      {
+        "gid": "11860564X",
+        "category": "person",
+        "surface": "Sartre",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Sartre",
+        "form_source": "surname-index",
+        "context": "sur le problème du temps. Il reproche à Sartre, avec raison, me semble-t-il, d’avoir f",
+        "text": "Sartre",
+        "occurrence": 3
+      }
+    ],
+    "4": [
+      {
+        "gid": "118594893",
+        "category": "person",
+        "surface": "Platon",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Platon, dÁthènes",
+        "form_source": "cache-variant",
+        "context": "ude. Il est vrai que l’auteur remonte à Platon. Mais parmi les modernes, et même parmi",
+        "text": "Platon",
+        "occurrence": 1
+      }
+    ]
+  }
+}

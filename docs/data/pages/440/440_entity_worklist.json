@@ -1,0 +1,126 @@
+{
+  "doc": "440",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "1": [
+      {
+        "gid": "118627813",
+        "category": "person",
+        "surface": "BAZIN",
+        "rule": "caps-surname",
+        "alternatives": [],
+        "matched_form": "Bazin, abbé",
+        "form_source": "cache-variant",
+        "context": "FAN ANDRÈS | 11 | | --- | --- | | Hervé BAZIN | 14 | | MARC BERNARD | 17 | | PRINCESS",
+        "text": "BAZIN",
+        "occurrence": 1
+      }
+    ],
+    "2": [
+      {
+        "gid": "13143568X",
+        "category": "person",
+        "surface": "BAUER",
+        "rule": "caps-surname",
+        "alternatives": [],
+        "matched_form": "Bauer",
+        "form_source": "surname-index",
+        "context": "E RONDE CHARLES BAUDOUIN ... 131 GÉRARD BAUER ... 132 ANDRÉ BEUCLER ... 133 FÉLIX BRA",
+        "text": "BAUER",
+        "occurrence": 1
+      },
+      {
+        "gid": "118577484",
+        "category": "person",
+        "surface": "MARCEL",
+        "rule": "caps-surname",
+        "alternatives": [],
+        "matched_form": "Marcel",
+        "form_source": "surname-index",
+        "context": "152 ADAM WAZYK ... 153 Textes résumés : MARCEL BRION ... 155 JOHN BROWN ... 155 YAACOV",
+        "text": "MARCEL",
+        "occurrence": 1
+      }
+    ],
+    "3": [
+      {
+        "gid": "118509578",
+        "category": "person",
+        "surface": "Bergson",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Bergson",
+        "form_source": "surname-index",
+        "context": "rmi lesquels les Images dans l’œuvre de Bergson, l’Illusion philosophique, Temps altern",
+        "text": "Bergson",
+        "occurrence": 1
+      },
+      {
+        "gid": "118648802",
+        "category": "person",
+        "surface": "Amiel",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Amiel",
+        "form_source": "surname-index",
+        "context": "), l’Être et la Forme. Lauréate du Prix Amiel. Il m’est difficile, pour toute une sér",
+        "text": "Amiel",
+        "occurrence": 1
+      }
+    ],
+    "6": [
+      {
+        "gid": "118540238",
+        "category": "person",
+        "surface": "Goethe",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Goethe",
+        "form_source": "surname-index",
+        "context": "Hamann et Herder, Lessing, Schiller et Goethe, aussi bien que pour Schlegel et Nietzs",
+        "text": "Goethe",
+        "occurrence": 1
+      },
+      {
+        "gid": "1078795312",
+        "category": "work",
+        "surface": "Nietzsche",
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "1078795312",
+          "118587943"
+        ],
+        "matched_form": "Nietzsche",
+        "form_source": "headword",
+        "context": "Goethe, aussi bien que pour Schlegel et Nietzsche, Borchardt, Kassner et Hofmansthal, Jün",
+        "evidence": "none",
+        "text": "Nietzsche",
+        "occurrence": 1
+      },
+      {
+        "gid": "118601024",
+        "category": "person",
+        "surface": "Rilke",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Rilke",
+        "form_source": "surname-index",
+        "context": "la poésie et de la prose contemporaine, Rilke et Thomas Mann, Benn et Eliot, Jünger,",
+        "text": "Rilke",
+        "occurrence": 1
+      },
+      {
+        "gid": "118622110",
+        "category": "person",
+        "surface": "Thomas",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Thomas",
+        "form_source": "surname-index",
+        "context": "et de la prose contemporaine, Rilke et Thomas Mann, Benn et Eliot, Jünger, Kafka, Ezr",
+        "text": "Thomas",
+        "occurrence": 1
+      }
+    ]
+  }
+}

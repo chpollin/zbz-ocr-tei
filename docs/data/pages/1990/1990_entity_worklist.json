@@ -1,0 +1,32 @@
+{
+  "doc": "1990",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "6": [
+      {
+        "gid": "118630148",
+        "category": "person",
+        "surface": "Weil",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
+        "context": "die Seele in Gefahr ist, zu verstummen. Weil wir gerade ein Körper und eine Seele si",
+        "text": "Weil",
+        "occurrence": 1
+      },
+      {
+        "gid": "118615270",
+        "category": "person",
+        "surface": "Sokrates",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Sokrates, von Alopeke",
+        "form_source": "cache-variant",
+        "context": ": sie muss dabei sein. Und der Satz von Sokrates, ein Huhn für Äskulap zu opfern, weil e",
+        "text": "Sokrates",
+        "occurrence": 1
+      }
+    ]
+  }
+}

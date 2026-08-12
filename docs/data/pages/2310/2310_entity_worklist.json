@@ -1,0 +1,112 @@
+{
+  "doc": "2310",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "1": [
+      {
+        "gid": "4343581-6",
+        "category": "work",
+        "surface": "Philosophie",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
+        "context": "Les Etudes philosophiques Karl Jaspers, Philosophie, trad. de Jeanne Hersch avec la collabo",
+        "evidence": "typographic",
+        "text": "Philosophie",
+        "occurrence": 1
+      },
+      {
+        "gid": "4343581-6",
+        "category": "work",
+        "surface": "Philosophie",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
+        "context": "ent philosophiques, intitulé simplement Philosophie, ait été enfin publiée. L’édition franç",
+        "evidence": "typographic",
+        "text": "Philosophie",
+        "occurrence": 2
+      }
+    ],
+    "2": [
+      {
+        "gid": "118547739",
+        "category": "person",
+        "surface": "Hegel",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Hegel",
+        "form_source": "surname-index",
+        "context": "sa fin. Jeanne HERSCH. Howard P. Kainz, Hegel’s Phenomenology, Part II, Ohio Universi",
+        "text": "Hegel",
+        "occurrence": 1
+      },
+      {
+        "gid": "118578537",
+        "category": "person",
+        "surface": "Marx",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Marx",
+        "form_source": "surname-index",
+        "context": "ouvent consacrées à des parallèles avec Marx, Kierkegaard, Nietzsche, et même Sartre",
+        "text": "Marx",
+        "occurrence": 1
+      },
+      {
+        "gid": "118562002",
+        "category": "person",
+        "surface": "Kierkegaard",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kierkegaard",
+        "form_source": "surname-index",
+        "context": "consacrées à des parallèles avec Marx, Kierkegaard, Nietzsche, et même Sartre, et plus rar",
+        "text": "Kierkegaard",
+        "occurrence": 1
+      },
+      {
+        "gid": "1078795312",
+        "category": "work",
+        "surface": "Nietzsche",
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "1078795312",
+          "118587943"
+        ],
+        "matched_form": "Nietzsche",
+        "form_source": "headword",
+        "context": "des parallèles avec Marx, Kierkegaard, Nietzsche, et même Sartre, et plus rarement aux p",
+        "evidence": "none",
+        "text": "Nietzsche",
+        "occurrence": 1
+      },
+      {
+        "gid": "11860564X",
+        "category": "person",
+        "surface": "Sartre",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Sartre",
+        "form_source": "surname-index",
+        "context": "c Marx, Kierkegaard, Nietzsche, et même Sartre, et plus rarement aux problèmes d’inter",
+        "text": "Sartre",
+        "occurrence": 1
+      },
+      {
+        "gid": "118547739",
+        "category": "person",
+        "surface": "Hegel",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Hegel",
+        "form_source": "surname-index",
+        "context": "8). On pourrait au contraire penser que Hegel a construit son texte autour de cette d",
+        "text": "Hegel",
+        "occurrence": 2
+      }
+    ]
+  }
+}

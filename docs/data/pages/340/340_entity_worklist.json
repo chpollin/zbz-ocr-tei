@@ -1,0 +1,48 @@
+{
+  "doc": "340",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "11": [
+      {
+        "gid": "118503340",
+        "category": "person",
+        "surface": "Antigone",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Antigone",
+        "form_source": "surname-index",
+        "context": "se. Qu’importe ce petit peu de terre qu’Antigone veut répandre sur le cadavre de son frè",
+        "text": "Antigone",
+        "occurrence": 1
+      }
+    ],
+    "12": [
+      {
+        "gid": "118503340",
+        "category": "person",
+        "surface": "Antigone",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Antigone",
+        "form_source": "surname-index",
+        "context": "n’avons plus le même culte des morts qu’Antigone, nous sommes immédiatement pris cependa",
+        "text": "Antigone",
+        "occurrence": 1
+      }
+    ],
+    "20": [
+      {
+        "gid": "4099334-6",
+        "category": "work",
+        "surface": "la nausée",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "La nausée",
+        "form_source": "cache-variant",
+        "context": "stème détesté, dont les slogans donnent la nausée. Faux prestige d’une classe ouvrière do",
+        "text": "la nausée",
+        "occurrence": 1
+      }
+    ]
+  }
+}

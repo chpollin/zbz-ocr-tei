@@ -1,0 +1,46 @@
+{
+  "doc": "470",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "2": [
+      {
+        "gid": "118524844",
+        "category": "person",
+        "surface": "Descartes",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Descartes",
+        "form_source": "surname-index",
+        "context": "cience et de notre technique, il y a eu Descartes, l’animal-machine, le corps-machine, le",
+        "text": "Descartes",
+        "occurrence": 1
+      }
+    ],
+    "3": [
+      {
+        "gid": "118622110",
+        "category": "person",
+        "surface": "Thomas",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Thomas",
+        "form_source": "surname-index",
+        "context": "14 × 15 cm, 43 pages. Prix: 4 $. C. C. Thomas Ed., Springfield, 1957. C’est là le tex",
+        "text": "Thomas",
+        "occurrence": 1
+      },
+      {
+        "gid": "118622110",
+        "category": "person",
+        "surface": "Thomas",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Thomas",
+        "form_source": "surname-index",
+        "context": "de 14 × 46 cm., 10 p., cartonné. C. C. Thomas Ed., Springfield, 1957. Magnifique atla",
+        "text": "Thomas",
+        "occurrence": 2
+      }
+    ]
+  }
+}

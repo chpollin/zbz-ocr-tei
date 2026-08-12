@@ -1,0 +1,52 @@
+{
+  "doc": "1500",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "2": [
+      {
+        "gid": "118594893",
+        "category": "person",
+        "surface": "Platon",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Platon, dÁthènes",
+        "form_source": "cache-variant",
+        "context": "là d’elle. Rappelons par exemple ce que Platon nous dit de l’égalité: nous ne constato",
+        "text": "Platon",
+        "occurrence": 1
+      }
+    ],
+    "5": [
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "la liberté. Les secrets divins. – Comme Jaspers l’a bien montré, la pensée qui s’attaqu",
+        "text": "Jaspers",
+        "occurrence": 1
+      }
+    ],
+    "6": [
+      {
+        "gid": "4343581-6",
+        "category": "work",
+        "surface": "Philosophie",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
+        "context": "as que je puisse le penser. K. Jaspers, Philosophie, 3. Metaphysik, p. 202. J. Hersch, De l",
+        "evidence": "none",
+        "text": "Philosophie",
+        "occurrence": 1
+      }
+    ]
+  }
+}

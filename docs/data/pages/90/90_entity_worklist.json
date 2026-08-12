@@ -1,0 +1,135 @@
+{
+  "doc": "90",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "2": [
+      {
+        "gid": "118555359",
+        "category": "person",
+        "surface": "Ignazio",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Ignazio, di Loyola",
+        "form_source": "cache-variant",
+        "context": "dichtung | 595 | | Gritta Baerlocher: | Ignazio Silone und Elio Vittorini | 599 | | Pau",
+        "text": "Ignazio",
+        "occurrence": 1
+      },
+      {
+        "gid": "172447941",
+        "category": "person",
+        "surface": "Werner",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Werner",
+        "form_source": "surname-index",
+        "context": "| | Elisabeth Brock: | Die Novellistik Werner Bergengruens | 630 | | Otto Basler: | H",
+        "text": "Werner",
+        "occurrence": 1
+      },
+      {
+        "gid": "118577484",
+        "category": "person",
+        "surface": "Marcel",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Marcel",
+        "form_source": "surname-index",
+        "context": "ersch: | Monique Saint-Hélier | 657 | | Marcel Pobé: | Der Walliser Dichter Maurice Ze",
+        "text": "Marcel",
+        "occurrence": 1
+      },
+      {
+        "gid": "118577484",
+        "category": "person",
+        "surface": "Marcel",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Marcel",
+        "form_source": "surname-index",
+        "context": "s Geopferten an sein Volk / Emil Lerch: Marcel Pobé / J. P. Samson: R. J. Humm — «Caro",
+        "text": "Marcel",
+        "occurrence": 2
+      }
+    ],
+    "3": [
+      {
+        "gid": "118601024",
+        "category": "person",
+        "surface": "Rilkes",
+        "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "Rilkes",
+        "form_source": "legacy",
+        "context": "rkem Fieber. — Monique Saint-Hélier ist Rilkes Freundin gewesen, und noch ist mancher",
+        "text": "Rilkes",
+        "occurrence": 1
+      },
+      {
+        "gid": "118601024",
+        "category": "person",
+        "surface": "Rilke",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Rilke",
+        "form_source": "surname-index",
+        "context": "sen, und noch ist mancher Widerhall von Rilke in ihrem Werk spürbar, vor allem in dem",
+        "text": "Rilke",
+        "occurrence": 2
+      }
+    ],
+    "5": [
+      {
+        "gid": "118615688",
+        "category": "person",
+        "surface": "Sophokles",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Sophokles, Tragiker",
+        "form_source": "cache-variant",
+        "context": "t die Liebe. (Siehe die Überschrift von Sophokles: „Amour, invincible amour“.) Diese Lieb",
+        "text": "Sophokles",
+        "occurrence": 1
+      },
+      {
+        "gid": "4099328-0",
+        "category": "work",
+        "surface": "Phèdre",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Phèdre",
+        "form_source": "cache-variant",
+        "context": "aus derselben Quelle wie die, von der „Phèdre“ bei Racine besessen wird. Mit Verdiens",
+        "evidence": "typographic",
+        "text": "Phèdre",
+        "occurrence": 1
+      },
+      {
+        "gid": "118597523",
+        "category": "person",
+        "surface": "Racine",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Racine",
+        "form_source": "surname-index",
+        "context": "en Quelle wie die, von der „Phèdre“ bei Racine besessen wird. Mit Verdiensten des oder",
+        "text": "Racine",
+        "occurrence": 1
+      }
+    ],
+    "6": [
+      {
+        "gid": "119194589",
+        "category": "person",
+        "surface": "Wahl",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Wahl",
+        "form_source": "surname-index",
+        "context": "er: man wählt notwendig. Unsere tiefste Wahl ist unveränderliches Schicksal. — Es gi",
+        "text": "Wahl",
+        "occurrence": 1
+      }
+    ]
+  }
+}

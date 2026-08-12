@@ -1,0 +1,102 @@
+{
+  "doc": "2690",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "1": [
+      {
+        "gid": "4343581-6",
+        "category": "work",
+        "surface": "Philosophie",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
+        "context": "vrage central de Karl Jaspers, intitulé Philosophie, paru en 1932 et publié récemment en tr",
+        "evidence": "typographic",
+        "text": "Philosophie",
+        "occurrence": 1
+      }
+    ],
+    "2": [
+      {
+        "gid": "118559796",
+        "category": "person",
+        "surface": "Kantiennes",
+        "rule": "adjective-form",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
+        "context": "spensables et inaccessibles - des Idées Kantiennes. Nous sommes loin de l’approche \"holist",
+        "text": "Kantiennes",
+        "occurrence": 1
+      }
+    ],
+    "4": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Hersch",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "118815679",
+          "172155800"
+        ],
+        "matched_form": "Hersch",
+        "form_source": "surname-index",
+        "context": "nt s’il vise à transcender le temps. 14 Hersch Il ne peut donc y avoir, pour Karl Jasp",
+        "text": "Hersch",
+        "occurrence": 1
+      },
+      {
+        "gid": "118517406",
+        "category": "person",
+        "surface": "Bultmann",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Bultmann",
+        "form_source": "surname-index",
+        "context": "losophique, mais aussi le dialogue avec Bultmann, publié sous le titre La démythisation",
+        "text": "Bultmann",
+        "occurrence": 1
+      }
+    ],
+    "5": [
+      {
+        "gid": "118601024",
+        "category": "person",
+        "surface": "Rilke",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Rilke",
+        "form_source": "surname-index",
+        "context": "coute. Je pense au \"Torse d’Apollon\" de Rilke: le poète décrit en quelques vers un to",
+        "text": "Rilke",
+        "occurrence": 1
+      },
+      {
+        "gid": "118537105",
+        "category": "person",
+        "surface": "Gagarine",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Gagarine, Y.",
+        "form_source": "cache-variant",
+        "context": "hanger ta vie.)\" Un tout autre exemple: Gagarine, emporté par sa fusée dans l’espace int",
+        "text": "Gagarine",
+        "occurrence": 1
+      },
+      {
+        "gid": "1088013937",
+        "category": "work",
+        "surface": "la foi philosophique",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "La Foi Philosophique",
+        "form_source": "legacy",
+        "context": "eut-être trouver son efficacité grâce à la foi philosophique. Jaspers s’est toujours rattaché à ce q",
+        "text": "la foi philosophique",
+        "occurrence": 1
+      }
+    ]
+  }
+}

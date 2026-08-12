@@ -1,0 +1,32 @@
+{
+  "doc": "2805",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "2": [
+      {
+        "gid": "172447941",
+        "category": "person",
+        "surface": "Werner",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Werner",
+        "form_source": "surname-index",
+        "context": "re. Nous publions ensuite une lettre de Werner Kägi. Il aurait voulu apporter à notre",
+        "text": "Werner",
+        "occurrence": 1
+      },
+      {
+        "gid": "1145431410",
+        "category": "person",
+        "surface": "Kägi",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Kägi, Ulrich",
+        "form_source": "cache-variant",
+        "context": "s publions ensuite une lettre de Werner Kägi. Il aurait voulu apporter à notre livre",
+        "text": "Kägi",
+        "occurrence": 1
+      }
+    ]
+  }
+}

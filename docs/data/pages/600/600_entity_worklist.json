@@ -1,0 +1,58 @@
+{
+  "doc": "600",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "4": [
+      {
+        "gid": "4453024-9",
+        "category": "work",
+        "surface": "le mur",
+        "rule": "work-title:suspect",
+        "alternatives": [],
+        "matched_form": "Le mur",
+        "form_source": "headword",
+        "context": "-même. Retourne sur tes pas. Entre dans le mur des flammes. Avale du feu à longs trait",
+        "text": "le mur",
+        "occurrence": 1
+      },
+      {
+        "gid": "4453024-9",
+        "category": "work",
+        "surface": "le mur",
+        "rule": "work-title:suspect",
+        "alternatives": [],
+        "matched_form": "Le mur",
+        "form_source": "headword",
+        "context": "allait, rampant à longues foulées vers le mur de feu, armer sa poitrine. Déjà les fla",
+        "text": "le mur",
+        "occurrence": 2
+      }
+    ],
+    "5": [
+      {
+        "gid": "119194589",
+        "category": "person",
+        "surface": "Wahl",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Wahl",
+        "form_source": "surname-index",
+        "context": "cheinend zur Zeit der Fall ist. Für die Wahl des Bundestages der Bundesrepublik Deut",
+        "text": "Wahl",
+        "occurrence": 2
+      },
+      {
+        "gid": "119194589",
+        "category": "person",
+        "surface": "Wahl",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Wahl",
+        "form_source": "surname-index",
+        "context": "treten frühestens bei der übernächsten Wahl in Kraft, es sei denn, daß sie auf eine",
+        "text": "Wahl",
+        "occurrence": 6
+      }
+    ]
+  }
+}

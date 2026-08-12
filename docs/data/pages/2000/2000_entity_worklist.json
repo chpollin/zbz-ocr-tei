@@ -1,0 +1,63 @@
+{
+  "doc": "2000",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "2": [
+      {
+        "gid": "118559796",
+        "category": "person",
+        "surface": "Kant",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
+        "context": "isissantes, à cet égard, a été celle de Kant, qui partant en guerre contre toute mét",
+        "text": "Kant",
+        "occurrence": 1
+      }
+    ],
+    "4": [
+      {
+        "gid": "118505114",
+        "category": "person",
+        "surface": "Augustin",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Augustin, Sfîntul",
+        "form_source": "cache-variant",
+        "context": "lèbre onzième livre de ses Confessions, Augustin avoue devant Dieu ne rien comprendre au",
+        "text": "Augustin",
+        "occurrence": 1
+      },
+      {
+        "gid": "117085391",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "bare-surname:ambiguous",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "rs moi, vers lui. Quer zur Zeit, disait Jaspers ; c’est-à-dire : traversant le temps, c",
+        "text": "Jaspers",
+        "occurrence": 1
+      }
+    ],
+    "5": [
+      {
+        "gid": "118591770",
+        "category": "person",
+        "surface": "Parménide",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Parménide",
+        "form_source": "cache-variant",
+        "context": "pporter son nom (comme le montrait déjà Parménide) se pulvérise en arbitraire illimité. L",
+        "text": "Parménide",
+        "occurrence": 1
+      }
+    ]
+  }
+}

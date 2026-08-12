@@ -1,0 +1,46 @@
+{
+  "doc": "2950",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "2": [
+      {
+        "gid": "172447941",
+        "category": "person",
+        "surface": "Werner",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Werner",
+        "form_source": "surname-index",
+        "context": "ftige Aufwertung des höheren Alters? 61 Werner Haug Ursachen, Perspektiven und Problem",
+        "text": "Werner",
+        "occurrence": 1
+      }
+    ],
+    "7": [
+      {
+        "gid": "118630148",
+        "category": "person",
+        "surface": "Weil",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
+        "context": "st es nicht leicht als Mensch zu leben? Weil man gleichzeitig Mensch ist und Tier, u",
+        "text": "Weil",
+        "occurrence": 1
+      },
+      {
+        "gid": "118559796",
+        "category": "person",
+        "surface": "KANT",
+        "rule": "caps-surname",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
+        "context": "ift\" vom September 1793 veröffentlichte KANT einen Aufsatz über den Gemeinspruch \"Da",
+        "text": "KANT",
+        "occurrence": 2
+      }
+    ]
+  }
+}

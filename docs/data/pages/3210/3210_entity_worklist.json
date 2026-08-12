@@ -1,0 +1,113 @@
+{
+  "doc": "3210",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "2": [
+      {
+        "gid": "132229900",
+        "category": "person",
+        "surface": "Müller",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Müller, Kurt",
+        "form_source": "cache-variant",
+        "context": "heint vierteljährlich Redaktion: Markus Müller, c/o Musikakademie Zürich, Telefon 383",
+        "text": "Müller",
+        "occurrence": 1
+      },
+      {
+        "gid": "118505114",
+        "category": "person",
+        "surface": "Augustin",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Augustin, Sfîntul",
+        "form_source": "cache-variant",
+        "context": "dann ist dies sehr schwer. Der heilige Augustin hat sich einmal gefragt — er war der er",
+        "text": "Augustin",
+        "occurrence": 1
+      }
+    ],
+    "7": [
+      {
+        "gid": "4006406-2",
+        "category": "work",
+        "surface": "Bibel",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Bibel",
+        "form_source": "headword",
+        "context": "ulassen. So etwa in der Genesis: In der Bibel wird uns erzählt, was Gott am ersten, d",
+        "evidence": "none",
+        "text": "Bibel",
+        "occurrence": 1
+      },
+      {
+        "gid": "118562002",
+        "category": "person",
+        "surface": "Kierkegaard",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kierkegaard",
+        "form_source": "surname-index",
+        "context": "ihre Transzendenz. Etwas Ähnliches will Kierkegaard sagen, wenn er zum Beispiel behauptet —",
+        "text": "Kierkegaard",
+        "occurrence": 1
+      },
+      {
+        "gid": "118557513",
+        "category": "person",
+        "surface": "Christus",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Christus",
+        "form_source": "surname-index",
+        "context": "nächst unverständlich zu sein scheint — Christus sei in seinem Leben und Tod für jeden g",
+        "text": "Christus",
+        "occurrence": 1
+      }
+    ],
+    "8": [
+      {
+        "gid": "118527053",
+        "category": "person",
+        "surface": "Dostojewski",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Dostojewski, Fjodor Michailowitch",
+        "form_source": "cache-variant",
+        "context": ", das unmöglichste alles Geschenke, wie Dostojewski einmal sagte. Viele Leute glauben, die",
+        "text": "Dostojewski",
+        "occurrence": 1
+      }
+    ],
+    "9": [
+      {
+        "gid": "118630148",
+        "category": "person",
+        "surface": "Weil",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
+        "context": "nicht gelöst, sondern vergegenwärtigt. Weil diese Widersprüche nicht zu versöhnen s",
+        "text": "Weil",
+        "occurrence": 1
+      }
+    ],
+    "10": [
+      {
+        "gid": "118630148",
+        "category": "person",
+        "surface": "Weil",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
+        "context": "wenig begabt, zufrieden zu sein. Warum? Weil sie sich Widersprüchliches wünschen. Wa",
+        "text": "Weil",
+        "occurrence": 1
+      }
+    ]
+  }
+}

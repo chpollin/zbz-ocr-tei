@@ -1,0 +1,63 @@
+{
+  "doc": "1900",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "4": [
+      {
+        "gid": "117085391",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "bare-surname:ambiguous",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "définitive. « Sich bescheiden », disait Jaspers. Des philosophes très anciens avaient o",
+        "text": "Jaspers",
+        "occurrence": 1
+      }
+    ],
+    "6": [
+      {
+        "gid": "118594893",
+        "category": "person",
+        "surface": "Platon",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Platon, dÁthènes",
+        "form_source": "cache-variant",
+        "context": "rps sans âme, ni d’âme sans corps. Même Platon, lorsqu’il fait du corps la prison de l",
+        "text": "Platon",
+        "occurrence": 1
+      }
+    ],
+    "7": [
+      {
+        "gid": "118615270",
+        "category": "person",
+        "surface": "Socrate",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Socrate",
+        "form_source": "cache-variant",
+        "context": "ne s’est pas remise de cette déchirure. Socrate, aujourd’hui, ne choisirait pas de mour",
+        "text": "Socrate",
+        "occurrence": 1
+      },
+      {
+        "gid": "118615270",
+        "category": "person",
+        "surface": "Socrate",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Socrate",
+        "form_source": "cache-variant",
+        "context": "Ou plutôt : il ne peut plus y avoir de Socrate. 2° L’expérience du « mal absolu » enge",
+        "text": "Socrate",
+        "occurrence": 2
+      }
+    ]
+  }
+}

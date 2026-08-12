@@ -1,0 +1,130 @@
+{
+  "doc": "2880",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "1": [
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "srede anläßlich der Verleihung des Karl-Jaspers-Preises durch die Universität Heidelber",
+        "text": "Jaspers",
+        "occurrence": 3
+      }
+    ],
+    "2": [
+      {
+        "gid": "1078795312",
+        "category": "work",
+        "surface": "Nietzsche",
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "1078795312",
+          "118587943"
+        ],
+        "matched_form": "Nietzsche",
+        "form_source": "headword",
+        "context": "en sind, hat Jaspers den ersten Vortrag Nietzsche und Kierkegaard gewidmet, weil diese be",
+        "evidence": "none",
+        "text": "Nietzsche",
+        "occurrence": 1
+      },
+      {
+        "gid": "118562002",
+        "category": "person",
+        "surface": "Kierkegaard",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kierkegaard",
+        "form_source": "surname-index",
+        "context": "aspers den ersten Vortrag Nietzsche und Kierkegaard gewidmet, weil diese beiden, seiner Mei",
+        "text": "Kierkegaard",
+        "occurrence": 1
+      },
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "en seiner unreduzierbaren Freiheit (die Jaspers Existenz nennt) zu stoßen. Hier finden",
+        "text": "Jaspers",
+        "occurrence": 2
+      }
+    ],
+    "3": [
+      {
+        "gid": "118559796",
+        "category": "person",
+        "surface": "Kants",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Kants, Immanuēls",
+        "form_source": "cache-variant",
+        "context": "ist ein Kantianer. Das kritische Denken Kants ist zwar nicht vor allem begrenzend. Wa",
+        "text": "Kants",
+        "occurrence": 1
+      },
+      {
+        "gid": "118559796",
+        "category": "person",
+        "surface": "Kant",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
+        "context": "st zwar nicht vor allem begrenzend. Was Kant sucht, sind weniger die Bedingungen log",
+        "text": "Kant",
+        "occurrence": 3
+      },
+      {
+        "gid": "118559796",
+        "category": "person",
+        "surface": "Kant",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
+        "context": "h sind. Deswegen ist es unerläßlich, um Kant zu verstehen, seine drei Kritiken zusam",
+        "text": "Kant",
+        "occurrence": 4
+      },
+      {
+        "gid": "118559796",
+        "category": "person",
+        "surface": "Kant",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
+        "context": "eispiel: ein Widerspruch ist nicht, bei Kant, das Zeichen eines Nicht-Gedankens, ein",
+        "text": "Kant",
+        "occurrence": 5
+      },
+      {
+        "gid": "118559796",
+        "category": "person",
+        "surface": "Kant",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
+        "context": "Phänomenalen. Ein anderes Beispiel: bei Kant wird das Sein „Ding an sich“ genannt; e",
+        "text": "Kant",
+        "occurrence": 6
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "doc": "690",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "8": [
+      {
+        "gid": "118503340",
+        "category": "person",
+        "surface": "Antigone",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Antigone",
+        "form_source": "surname-index",
+        "context": "ires que l’on appelle « moralisation »? Antigone ne le pensait pas. Ismène le pensait. E",
+        "text": "Antigone",
+        "occurrence": 1
+      }
+    ],
+    "9": [
+      {
+        "gid": "118615270",
+        "category": "person",
+        "surface": "Socrate",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Socrate",
+        "form_source": "cache-variant",
+        "context": "e la loi, mis en lumière par la mort de Socrate telle que Platon nous la raconte, avec",
+        "text": "Socrate",
+        "occurrence": 1
+      },
+      {
+        "gid": "118594893",
+        "category": "person",
+        "surface": "Platon",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Platon, dÁthènes",
+        "form_source": "cache-variant",
+        "context": "umière par la mort de Socrate telle que Platon nous la raconte, avec la naissance de l",
+        "text": "Platon",
+        "occurrence": 1
+      }
+    ]
+  }
+}

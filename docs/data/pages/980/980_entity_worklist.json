@@ -1,0 +1,32 @@
+{
+  "doc": "980",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "4": [
+      {
+        "gid": "36146-X",
+        "category": "organisation",
+        "surface": "l’université de Bâle",
+        "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "l’université de Bâle",
+        "form_source": "legacy",
+        "context": "honoraire de la faculté de théologie de l’université de Bâle. Elle est membre du parti social-démocr",
+        "text": "l’université de Bâle",
+        "occurrence": 1
+      },
+      {
+        "gid": "118625985",
+        "category": "person",
+        "surface": "Valéry",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Valéry, Paul",
+        "form_source": "cache-variant",
+        "context": "dont les idées nous sont rapportées par Valéry Tarsis*, la non-coopération des intelle",
+        "text": "Valéry",
+        "occurrence": 1
+      }
+    ]
+  }
+}

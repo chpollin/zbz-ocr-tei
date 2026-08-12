@@ -1,0 +1,44 @@
+{
+  "doc": "3070",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "3": [
+      {
+        "gid": "118616242",
+        "category": "person",
+        "surface": "Spinoza",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Spinoza",
+        "form_source": "surname-index",
+        "context": "ophie: tous les philosophes juifs comme Spinoza, Bergson et les autres ont un rapport p",
+        "text": "Spinoza",
+        "occurrence": 1
+      },
+      {
+        "gid": "118509578",
+        "category": "person",
+        "surface": "Bergson",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Bergson",
+        "form_source": "surname-index",
+        "context": "us les philosophes juifs comme Spinoza, Bergson et les autres ont un rapport privilégié",
+        "text": "Bergson",
+        "occurrence": 1
+      },
+      {
+        "gid": "118625985",
+        "category": "person",
+        "surface": "Valery",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Valery, P.",
+        "form_source": "cache-variant",
+        "context": "L’histoire d’Albert Picot fait penser à Valery Giscard d’Estaing, dont le philosophe f",
+        "text": "Valery",
+        "occurrence": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "doc": "1280",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "1": [
+      {
+        "gid": "118608649",
+        "category": "person",
+        "surface": "Ammann",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Ammann, P. Schmid-",
+        "form_source": "cache-variant",
+        "context": "Scientific Advisory Board Prof. Dr. H. Ammann, Fribourg Dr. M. Brönnimann, Burgdorf P",
+        "text": "Ammann",
+        "occurrence": 1
+      },
+      {
+        "gid": "132229900",
+        "category": "person",
+        "surface": "Müller",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Müller, Kurt",
+        "form_source": "cache-variant",
+        "context": "aft, Berichte, Informationen: Christian Müller c/o BAG Brunner Verlag AG Postfach 1040",
+        "text": "Müller",
+        "occurrence": 1
+      },
+      {
+        "gid": "119243997",
+        "category": "person",
+        "surface": "Brunner",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Brunner",
+        "form_source": "surname-index",
+        "context": "Informationen: Christian Müller c/o BAG Brunner Verlag AG Postfach 1040 CH-8036 Zürich,",
+        "text": "Brunner",
+        "occurrence": 1
+      },
+      {
+        "gid": "119243997",
+        "category": "person",
+        "surface": "Brunner",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Brunner",
+        "form_source": "surname-index",
+        "context": "shers, Subscription, Advertisements BAG Brunner Verlag AG Stauffacherstrasse 5, Postfac",
+        "text": "Brunner",
+        "occurrence": 2
+      }
+    ]
+  }
+}

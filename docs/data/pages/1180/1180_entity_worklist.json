@@ -1,0 +1,51 @@
+{
+  "doc": "1180",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "4": [
+      {
+        "gid": "122117727",
+        "category": "person",
+        "surface": "M. Fleiner",
+        "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "M. Fleiner",
+        "form_source": "legacy",
+        "context": "nce, que vous entendrez tout à l’heure, M. Fleiner insiste sur l’intuition comme méthode c",
+        "text": "M. Fleiner",
+        "occurrence": 1
+      }
+    ],
+    "5": [
+      {
+        "gid": "122117727",
+        "category": "person",
+        "surface": "M. Fleiner",
+        "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "M. Fleiner",
+        "form_source": "legacy",
+        "context": "nt, aux mêmes conclusions que celles de M. Fleiner. Je crois que dans tous les domaines de",
+        "text": "M. Fleiner",
+        "occurrence": 1
+      }
+    ],
+    "8": [
+      {
+        "gid": "117085391",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "bare-surname:ambiguous",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "humaines d’accomplir ce que mon maître Jaspers appelait: sich bescheiden, l’acte de se",
+        "text": "Jaspers",
+        "occurrence": 1
+      }
+    ]
+  }
+}

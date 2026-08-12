@@ -1,0 +1,48 @@
+{
+  "doc": "2790",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "1": [
+      {
+        "gid": "119194589",
+        "category": "person",
+        "surface": "Wahl",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Wahl",
+        "form_source": "surname-index",
+        "context": "mit allem möglich und erreichbar. Eine Wahl, die etwas ausschließt, wird als unanne",
+        "text": "Wahl",
+        "occurrence": 1
+      }
+    ],
+    "2": [
+      {
+        "gid": "118630148",
+        "category": "person",
+        "surface": "Weil",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
+        "context": "Einfach weil der Mensch kein Engel ist? Weil der Mensch auch ein Tier ist und sich d",
+        "text": "Weil",
+        "occurrence": 1
+      }
+    ],
+    "3": [
+      {
+        "gid": "118615270",
+        "category": "person",
+        "surface": "Sokrates",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Sokrates, von Alopeke",
+        "form_source": "cache-variant",
+        "context": "können wir vielleicht verstehen, warum Sokrates, der sich ungerechterweise zum Tode ver",
+        "text": "Sokrates",
+        "occurrence": 1
+      }
+    ]
+  }
+}

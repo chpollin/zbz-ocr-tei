@@ -1,0 +1,82 @@
+{
+  "doc": "3130",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "2": [
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "P-Einheitsaufnahme Österreichische Karl-Jaspers-Gesellschaft: Jahrbuch der Österreichis",
+        "text": "Jaspers",
+        "occurrence": 1
+      },
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "aft: Jahrbuch der Österreichischen Karl-Jaspers-Gesellschaft = Yearbook of the Austrian",
+        "text": "Jaspers",
+        "occurrence": 2
+      },
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "lschaft = Yearbook of the Austrian Karl-Jaspers-Society. - Innsbruck ; Wien : Österr. S",
+        "text": "Jaspers",
+        "occurrence": 3
+      }
+    ],
+    "3": [
+      {
+        "gid": "4343581-6",
+        "category": "work",
+        "surface": "Philosophie",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
+        "context": "la philosophie de Karl Jaspers\", mais \"Philosophie de l’éducation et de la culture chez Ka",
+        "evidence": "none",
+        "text": "Philosophie",
+        "occurrence": 1
+      }
+    ],
+    "6": [
+      {
+        "gid": "1088013937",
+        "category": "work",
+        "surface": "la foi philosophique",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "La Foi Philosophique",
+        "form_source": "legacy",
+        "context": "n’a pas d’objet. - Quant à la religion, la foi philosophique s’engage face à l’absolu (l’existence f",
+        "text": "la foi philosophique",
+        "occurrence": 1
+      }
+    ]
+  }
+}

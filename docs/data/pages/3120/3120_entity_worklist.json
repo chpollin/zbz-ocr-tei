@@ -1,0 +1,99 @@
+{
+  "doc": "3120",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "1": [
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "Jahrbuch der Österreichischen Karl-Jaspers-Gesellschaft Herausgegeben von Elisabet",
+        "text": "Jaspers",
+        "occurrence": 1
+      }
+    ],
+    "2": [
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "utschen Bibliothek Österreichische Karl-Jaspers-Gesellschaft: Jahrbuch der Österreichis",
+        "text": "Jaspers",
+        "occurrence": 1
+      },
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "aft: Jahrbuch der Österreichischen Karl-Jaspers-Gesellschaft/ VWGÖ, Wien. -Wien: VWGÖ E",
+        "text": "Jaspers",
+        "occurrence": 2
+      },
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "hs auf Antrag der Österreichischen Karl-Jaspers-Gesellschaft Umschlagbild: Karl Jaspers",
+        "text": "Jaspers",
+        "occurrence": 3
+      }
+    ],
+    "3": [
+      {
+        "gid": "4343581-6",
+        "category": "work",
+        "surface": "Philosophie",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
+        "context": "er Wissenschaft und den Stellenwert der Philosophie Jeanne Hersch (Genève) Aux Sources exis",
+        "evidence": "none",
+        "text": "Philosophie",
+        "occurrence": 1
+      }
+    ],
+    "9": [
+      {
+        "gid": "118559796",
+        "category": "person",
+        "surface": "Kant",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
+        "context": "nce d’une relation empirique constante, Kant a suffisamment mis en évidence ce qui m",
+        "text": "Kant",
+        "occurrence": 1
+      }
+    ]
+  }
+}

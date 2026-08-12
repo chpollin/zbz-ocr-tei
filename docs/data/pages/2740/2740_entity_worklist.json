@@ -1,0 +1,77 @@
+{
+  "doc": "2740",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "3": [
+      {
+        "gid": "118601024",
+        "category": "person",
+        "surface": "Rilke",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Rilke",
+        "form_source": "surname-index",
+        "context": "uelque chose de nous-mêmes. Un poème de Rilke intitulé Le Torse d’Apollon est à ce pr",
+        "text": "Rilke",
+        "occurrence": 1
+      }
+    ],
+    "7": [
+      {
+        "gid": "117085391",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "bare-surname:ambiguous",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "ur reprendre l’expression de mon maître Jaspers, c’est-à-dire un temps qui coupe le tem",
+        "text": "Jaspers",
+        "occurrence": 1
+      },
+      {
+        "gid": "118625985",
+        "category": "person",
+        "surface": "Valéry",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Valéry, Paul",
+        "form_source": "cache-variant",
+        "context": "passe pas, comme la flèche d’Elée chez Valéry. Mais, répétons-le, il ne s’agit pas ic",
+        "text": "Valéry",
+        "occurrence": 1
+      }
+    ],
+    "8": [
+      {
+        "gid": "118562002",
+        "category": "person",
+        "surface": "Kierkegaard",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kierkegaard",
+        "form_source": "surname-index",
+        "context": "ique, de la décision absolue dont parle Kierkegaard, mais à un présent qui a une épaisseur,",
+        "text": "Kierkegaard",
+        "occurrence": 1
+      }
+    ],
+    "10": [
+      {
+        "gid": "118597523",
+        "category": "person",
+        "surface": "Racine",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Racine",
+        "form_source": "surname-index",
+        "context": "e claire est insaisissable. Les vers de Racine, par exemple, ou encore les fables de L",
+        "text": "Racine",
+        "occurrence": 1
+      }
+    ]
+  }
+}

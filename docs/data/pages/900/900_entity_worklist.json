@@ -1,0 +1,169 @@
+{
+  "doc": "900",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "1": [
+      {
+        "gid": "117085391",
+        "category": "person",
+        "surface": "JASPERS",
+        "rule": "caps-surname:ambiguous",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "JARRY (Alfred) JASPERS (Karl) JARRY (Alfred) 1873-1907 Ubu est",
+        "text": "JASPERS",
+        "occurrence": 1
+      },
+      {
+        "gid": "36146-X",
+        "category": "organisation",
+        "surface": "l’université de Bâle",
+        "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "l’université de Bâle",
+        "form_source": "legacy",
+        "context": ", en 1873, en 1860. Il fit ses études à l’université de Bâle où il enseigna le « cours d’enseigne »",
+        "text": "l’université de Bâle",
+        "occurrence": 1
+      },
+      {
+        "gid": "118562002",
+        "category": "person",
+        "surface": "Kierkegaard",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kierkegaard",
+        "form_source": "surname-index",
+        "context": "ction d’une double référence. » C’est à Kierkegaard que je dois y concept d'« existence ».",
+        "text": "Kierkegaard",
+        "occurrence": 1
+      }
+    ],
+    "2": [
+      {
+        "gid": "117085391",
+        "category": "person",
+        "surface": "JASPERS",
+        "rule": "caps-surname:ambiguous",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "à la libération. J.H. Bibliographie K. JASPERS, intrasomn. Allgemeine Psychopathologie",
+        "text": "JASPERS",
+        "occurrence": 1
+      },
+      {
+        "gid": "4343581-6",
+        "category": "work",
+        "surface": "Philosophie",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
+        "context": "uation der Zeit, 1931), Louvain, 1931 ; Philosophie, Berlin, 1932 ; Vernunft und Existenz,",
+        "evidence": "none",
+        "text": "Philosophie",
+        "occurrence": 1
+      },
+      {
+        "gid": "1078795312",
+        "category": "work",
+        "surface": "Nietzsche",
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "1078795312",
+          "118587943"
+        ],
+        "matched_form": "Nietzsche",
+        "form_source": "headword",
+        "context": "ernunft und Existenz, Groningen, 1935 ; Nietzsche (Nietzsche, 1936), trad. J. Wahl, Paris",
+        "evidence": "none",
+        "text": "Nietzsche",
+        "occurrence": 1
+      },
+      {
+        "gid": "1078795312",
+        "category": "work",
+        "surface": "Nietzsche",
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "1078795312",
+          "118587943"
+        ],
+        "matched_form": "Nietzsche",
+        "form_source": "headword",
+        "context": "Existenz, Groningen, 1935 ; Nietzsche (Nietzsche, 1936), trad. J. Wahl, Paris, 1930 ; La",
+        "evidence": "none",
+        "text": "Nietzsche",
+        "occurrence": 2
+      },
+      {
+        "gid": "118607057",
+        "category": "person",
+        "surface": "Schelling",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Schelling",
+        "form_source": "surname-index",
+        "context": "te, 1949), trad. J. Nael, Paris, 1953 ; Schelling, Paris, 1954 ; Introduction à la philos",
+        "text": "Schelling",
+        "occurrence": 1
+      },
+      {
+        "gid": "118607057",
+        "category": "person",
+        "surface": "Schelling",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Schelling",
+        "form_source": "surname-index",
+        "context": "ad. H. Nael et J. Hersch, Paris, 1957 ; Schelling, Grösse und Verkündung, Munich, 1955 ;",
+        "text": "Schelling",
+        "occurrence": 2
+      },
+      {
+        "gid": "119395800",
+        "category": "person",
+        "surface": "SCHILPP",
+        "rule": "caps-surname",
+        "alternatives": [],
+        "matched_form": "Schilpp",
+        "form_source": "surname-index",
+        "context": "hie de l’existence, Paris, 1947 / P. A. SCHILPP, The Philosophy of Karl Jaspers, New Yo",
+        "text": "SCHILPP",
+        "occurrence": 1
+      },
+      {
+        "gid": "118559796",
+        "category": "person",
+        "surface": "KANT",
+        "rule": "caps-surname",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
+        "context": "), INNASIENCE ET TRANSCENDANCE, INSTIT. KANT (F.), KIERKEGAARD (K.), LIBERTÉ, NATION",
+        "text": "KANT",
+        "occurrence": 1
+      },
+      {
+        "gid": "118562002",
+        "category": "person",
+        "surface": "KIERKEGAARD",
+        "rule": "caps-surname",
+        "alternatives": [],
+        "matched_form": "Kierkegaard",
+        "form_source": "surname-index",
+        "context": "CE ET TRANSCENDANCE, INSTIT. KANT (F.), KIERKEGAARD (K.), LIBERTÉ, NATIONAL SOCIALISME, ONT",
+        "text": "KIERKEGAARD",
+        "occurrence": 1
+      }
+    ]
+  }
+}

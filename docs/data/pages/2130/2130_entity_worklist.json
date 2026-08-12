@@ -1,0 +1,58 @@
+{
+  "doc": "2130",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "1": [
+      {
+        "gid": "118592912",
+        "category": "person",
+        "surface": "Pestalozzi",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Pestalozzi",
+        "form_source": "surname-index",
+        "context": "er Geschäftsleitung Sekretariat Frau B. Pestalozzi-Schäfer Kirchbergstrasse 22 5000 Aarau",
+        "text": "Pestalozzi",
+        "occurrence": 1
+      },
+      {
+        "gid": "4343581-6",
+        "category": "work",
+        "surface": "Philosophie",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
+        "context": "ie 1956 die Professur für Systematische Philosophie an der Universität Genf. Zweieinhalb Ja",
+        "evidence": "none",
+        "text": "Philosophie",
+        "occurrence": 1
+      },
+      {
+        "gid": "4343581-6",
+        "category": "work",
+        "surface": "Philosophie",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
+        "context": "ahre lang leitete sie die Abteilung für Philosophie der UNESCO in Paris und vertrat die Sch",
+        "evidence": "none",
+        "text": "Philosophie",
+        "occurrence": 2
+      },
+      {
+        "gid": "121587177",
+        "category": "person",
+        "surface": "Schmidheiny",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Schmidheiny",
+        "form_source": "surname-index",
+        "context": "79 den Montaigne-Preis und 1980 den Max-Schmidheiny-Freiheitspreis. LE DEVELOPPEMENT TECHNI",
+        "text": "Schmidheiny",
+        "occurrence": 1
+      }
+    ]
+  }
+}

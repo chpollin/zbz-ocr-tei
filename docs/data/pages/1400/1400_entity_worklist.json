@@ -1,0 +1,88 @@
+{
+  "doc": "1400",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "3": [
+      {
+        "gid": "118577484",
+        "category": "person",
+        "surface": "Marcel",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Marcel",
+        "form_source": "surname-index",
+        "context": "llen); Hans Kühner-Wolfskehl (Berg TG); Marcel-G. Prêtre (Môtier); Alfred Rasser (Base",
+        "text": "Marcel",
+        "occurrence": 1
+      },
+      {
+        "gid": "119243997",
+        "category": "person",
+        "surface": "Brunner",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Brunner",
+        "form_source": "surname-index",
+        "context": "kung Beiträge von: Hans Bänziger, Fritz Brunner, Theo Candinas, Rosemarie Egger, Otto F",
+        "text": "Brunner",
+        "occurrence": 1
+      },
+      {
+        "gid": "118627813",
+        "category": "person",
+        "surface": "Alexis",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Alexis, Novgorode, Archevêque",
+        "form_source": "cache-variant",
+        "context": "de: Daniel Anet, André Aug E. Ballmer, Alexis Chevalley, Jean Graven, Jean-Michel Jun",
+        "text": "Alexis",
+        "occurrence": 1
+      }
+    ],
+    "4": [
+      {
+        "gid": "118503340",
+        "category": "person",
+        "surface": "Antigone",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Antigone",
+        "form_source": "surname-index",
+        "context": "ence d’un choix arbitraire avec celle d’Antigone — ou de Soljenitsyne. — Je n’oublie pas",
+        "text": "Antigone",
+        "occurrence": 1
+      },
+      {
+        "gid": "118642464",
+        "category": "person",
+        "surface": "Soljenitsyne",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Soljenitsyne, Aleksandr Issaïevitch",
+        "form_source": "cache-variant",
+        "context": "rbitraire avec celle d’Antigone — ou de Soljenitsyne. — Je n’oublie pas que nous voulons ici",
+        "text": "Soljenitsyne",
+        "occurrence": 1
+      }
+    ],
+    "6": [
+      {
+        "gid": "1078795312",
+        "category": "work",
+        "surface": "Nietzsche",
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "1078795312",
+          "118587943"
+        ],
+        "matched_form": "Nietzsche",
+        "form_source": "headword",
+        "context": "pelez certainement le «triple adage» de Nietzsche : l’être humain commence comme un chame",
+        "evidence": "none",
+        "text": "Nietzsche",
+        "occurrence": 1
+      }
+    ]
+  }
+}

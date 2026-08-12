@@ -1,0 +1,79 @@
+{
+  "doc": "1860",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "1": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Hersch",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "118815679",
+          "172155800"
+        ],
+        "matched_form": "Hersch",
+        "form_source": "surname-index",
+        "context": ". 1-9 Bemerkung: dienstlicher Gebrauch (Hersch-Projekt) bitte nicht verrechnen Mit der",
+        "text": "Hersch",
+        "occurrence": 2
+      }
+    ],
+    "3": [
+      {
+        "gid": "118516221",
+        "category": "person",
+        "surface": "Bruno",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Bruno",
+        "form_source": "surname-index",
+        "context": "y Goal for the '90s by speaker Dr. Ing. Bruno MUSSO, Secretary General, Ansaldo Group",
+        "text": "Bruno",
+        "occurrence": 1
+      }
+    ],
+    "5": [
+      {
+        "gid": "118505114",
+        "category": "person",
+        "surface": "Agustin",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Agustin",
+        "form_source": "cache-variant",
+        "context": "European Non-weapon Country by speaker Agustin ALONSO, Prof., Nuclear Technology Polit",
+        "text": "Agustin",
+        "occurrence": 1
+      }
+    ],
+    "7": [
+      {
+        "gid": "4099309-7",
+        "category": "work",
+        "surface": "Capital",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Capital",
+        "form_source": "cache-variant",
+        "context": "t rejoindre tout naturellement le Grand Capital et les Marchands de Canon d’autrefois.",
+        "evidence": "none",
+        "text": "Capital",
+        "occurrence": 1
+      },
+      {
+        "gid": "4099309-7",
+        "category": "work",
+        "surface": "Capital",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Capital",
+        "form_source": "cache-variant",
+        "context": "de Canon d’autrefois. Comme si le Grand Capital était encore, en matière nucléaire, tot",
+        "evidence": "none",
+        "text": "Capital",
+        "occurrence": 2
+      }
+    ]
+  }
+}

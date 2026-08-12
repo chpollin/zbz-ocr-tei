@@ -1,0 +1,78 @@
+{
+  "doc": "1290",
+  "generator": "scripts/edition/generate_entity_preview_data.py",
+  "pages": {
+    "1": [
+      {
+        "gid": "4343581-6",
+        "category": "work",
+        "surface": "Philosophie",
+        "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
+        "context": "V heute Peter Jäggi † Bernhard Schnyder Philosophie Alfred Eggenspieler Paul Good Adolphe S",
+        "evidence": "none",
+        "text": "Philosophie",
+        "occurrence": 1
+      }
+    ],
+    "3": [
+      {
+        "gid": "118594893",
+        "category": "person",
+        "surface": "Platon",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Platon, dÁthènes",
+        "form_source": "cache-variant",
+        "context": "rholt en allemand) est très à la mode : Platon est « dépassé », Beethoven est « dépass",
+        "text": "Platon",
+        "occurrence": 1
+      }
+    ],
+    "7": [
+      {
+        "gid": "118527908",
+        "category": "person",
+        "surface": "Dürrenmatt",
+        "rule": "bare-surname:ambiguous",
+        "alternatives": [
+          "118527908",
+          "118845721"
+        ],
+        "matched_form": "Dürrenmatt, Friedrich",
+        "form_source": "cache-variant",
+        "context": "on universelle, c’est celle décrite par Dürrenmatt dans «La visite de la vieille dame»: en",
+        "text": "Dürrenmatt",
+        "occurrence": 1
+      }
+    ],
+    "8": [
+      {
+        "gid": "128071796",
+        "category": "person",
+        "surface": "M. Jenks",
+        "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "M. Jenks",
+        "form_source": "legacy",
+        "context": "sus social sur l’usage de ces pouvoirs. M. Jenks, le directeur du Bureau international d",
+        "text": "M. Jenks",
+        "occurrence": 1
+      },
+      {
+        "gid": "4367-9",
+        "category": "organisation",
+        "surface": "Bureau international du <lb facs=\"#facs_8_r_2\" n=\"N004\" />travail",
+        "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "Bureau International du Travail",
+        "form_source": "legacy",
+        "context": "ces pouvoirs. M. Jenks, le directeur du Bureau international du travail récemment décédé, a fait une conférence",
+        "text": "Bureau international du travail",
+        "occurrence": 1
+      }
+    ]
+  }
+}
