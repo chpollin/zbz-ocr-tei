@@ -996,7 +996,12 @@ def test_one_word_title_keeps_the_exact_rules(lex):
 
 
 def test_one_word_org_token_keeps_the_exact_rules(lex):
-    assert em.find_candidates(_tei("<p>Die Abteilung an der Unesco.</p>"), lex) == []
+    # the case-tolerant channel stays out of one-token forms; the capitalized spelling
+    # of an acronym is the separate worklist channel below, never a tier-1 hit
+    assert em.find_candidates(_tei("<p>Die Abteilung an der unesco.</p>"), lex) == []
+    cands = em.find_candidates(_tei("<p>Die Abteilung an der Unesco.</p>"), lex)
+    assert [c["rule"] for c in cands] == ["org-token:acronym-case"]
+    assert cands[0]["tier"] == 2
 
 
 def test_case_tolerance_does_not_reach_diacritics(tmp_path):
@@ -1178,3 +1183,311 @@ def test_review_suspect_covers_the_caps_projection(tmp_path):
     cands = em.find_candidates(_tei("<p>von DOCTEUR AKAKIA unterzeichnet.</p>"), lexicon)
     assert cands[0]["rule"] == "caps-full-name:suspect"
     assert cands[0]["tier"] == 2
+
+
+# --- derived form channels (recall gaps of the facsimile-adjudicated evaluation) ----
+#
+# Each channel registers additional lexicon forms for a listed entity and is
+# worklist-only: its rule carries a suffix, and a suffixed lexicon rule is tier 2 by
+# construction. Ids and name forms come from data/entities/all_entities.json and its
+# GND cache.
+
+UNESCO = _org("2023755-8", "UNESCO")
+POPULAIRE = _work("4676707-1", "Le populaire de Paris (Zeitung)")
+POPULAIRE_CACHE = {
+    "4676707-1": _cache_entry(
+        "Le populaire de Paris (Zeitung)",
+        ("Le populaire (Zeitung, Paris, 1916-1940)",),
+    )
+}
+BUND_LABEL = "Allgemeiner Jüdischer Arbeiterbund in Litauen, Polen und Rußland"
+BUND = _org("5005966-X", BUND_LABEL)
+BUND_CACHE = {"5005966-X": _cache_entry(BUND_LABEL, (f"Bund ({BUND_LABEL})",))}
+GENEVE = _org("1010450-1", "Université de Genève")
+GENEVE_CACHE = {
+    "1010450-1": _cache_entry("Université de Genève", ("Universität Genf",))
+}
+NIETZSCHE = _person("118587943", "Nietzsche, Friedrich")
+JASPERS = _person("118557106", "Jaspers, Karl")
+
+
+# --- acronym case tolerance -------------------------------------------------------
+
+
+def test_acronym_case_form_is_a_worklist_candidate(tmp_path):
+    lexicon = _build(tmp_path, orgs=[UNESCO])
+    cands = em.find_candidates(_tei("<p>Ein Bericht der l'Unesco aus Paris.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["Unesco"]
+    assert cands[0]["rule"] == "org-token:acronym-case"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["gid"] == "2023755-8"
+    assert cands[0]["matched_form"] == "Unesco"
+
+
+def test_acronym_all_caps_writing_keeps_its_tier(tmp_path):
+    lexicon = _build(tmp_path, orgs=[UNESCO])
+    cands = em.find_candidates(_tei("<p>Ein Bericht der UNESCO aus Paris.</p>"), lexicon)
+    assert cands[0]["rule"] == "org-token"
+    assert cands[0]["tier"] == 1
+
+
+def test_acronym_case_does_not_reach_the_lowercase_writing(tmp_path):
+    lexicon = _build(tmp_path, orgs=[UNESCO])
+    assert em.find_candidates(_tei("<p>Ein Bericht der unesco.</p>"), lexicon) == []
+
+
+def test_short_acronym_gets_no_case_form(lex):
+    # "UNO" already misses the length guard of the org token; no channel resurrects it
+    assert "Uno" not in lex["forms"]
+
+
+def test_dotted_acronym_gets_no_case_form(tmp_path):
+    # "C.E.E." capitalizes to "C.e.e.", a spelling no text carries
+    legacy = {"organizations": {"35433": {"names": ["C.E.E."]}}}
+    lexicon = _build(
+        tmp_path, orgs=[_org("35433-8", "Europäische Wirtschaftsgemeinschaft")],
+        legacy=legacy,
+    )
+    assert "C.E.E." in lexicon["forms"]
+    assert "C.e.e." not in lexicon["forms"]
+
+
+# --- qualifier strip --------------------------------------------------------------
+
+
+def test_qualifier_strip_registers_the_bare_title(tmp_path):
+    lexicon = _build(tmp_path, works=[POPULAIRE], cache=POPULAIRE_CACHE)
+    xml = _tei("<p>Er schrieb im Le populaire ueber Europa.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["surface"] for c in cands] == ["Le populaire"]
+    assert cands[0]["rule"] == "work-variant:qualifier-strip"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["gid"] == "4676707-1"
+
+
+def test_qualifier_strip_reaches_the_case_tolerant_channel(tmp_path):
+    # the corpus sets "Le Populaire", the GND variant carries the lower-case spelling
+    lexicon = _build(tmp_path, works=[POPULAIRE], cache=POPULAIRE_CACHE)
+    cands = em.find_candidates(_tei("<p>Er schrieb im Le Populaire ueber Europa.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["Le Populaire"]
+    assert cands[0]["matched_form"] == "Le populaire"
+    assert cands[0]["tier"] == 2
+
+
+def test_qualifier_strip_of_a_generic_word_stays_on_the_worklist(tmp_path):
+    # "Bund" is an ordinary German word; the channel carries it because it is
+    # worklist-only and never auto-marks
+    lexicon = _build(tmp_path, orgs=[BUND], cache=BUND_CACHE)
+    cands = em.find_candidates(_tei("<p>Der Bund berichtete darueber.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["Bund"]
+    assert cands[0]["rule"] == "org-variant:qualifier-strip"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["gid"] == "5005966-X"
+
+
+def test_qualifier_strip_needs_length_and_a_capital(tmp_path):
+    # the head must carry the distinctiveness the org token rule asks for; the two
+    # variant shapes are synthetic, the id is the listed one
+    cache = {
+        "4676707-1": _cache_entry(
+            "Le populaire de Paris (Zeitung)", ("Pop (Zeitung)", "populaire (Zeitung)")
+        )
+    }
+    lexicon = _build(tmp_path, works=[POPULAIRE], cache=cache)
+    assert "Pop" not in lexicon["forms"]
+    assert "populaire" not in lexicon["forms"]
+
+
+def test_a_rejected_cache_form_has_no_derived_form(tmp_path):
+    # the variant review governs the cache channel; a rejected form must not resurrect
+    review = _review(works=_verdicts(
+        "4676707-1", "Le populaire de Paris (Zeitung)",
+        {"Le populaire de Paris (Zeitung)": "approve",
+         "Le populaire (Zeitung, Paris, 1916-1940)": "reject"},
+    ))
+    lexicon = _build(tmp_path, works=[POPULAIRE], cache=POPULAIRE_CACHE, review=review)
+    assert "Le populaire" not in lexicon["forms"]
+    assert "Le populaire de Paris" in lexicon["forms"]
+
+
+# --- adjectival place inversion ---------------------------------------------------
+
+
+def test_place_adjective_inversion_is_a_worklist_candidate(tmp_path):
+    lexicon = _build(tmp_path, orgs=[GENEVE], cache=GENEVE_CACHE)
+    xml = _tei("<p>Sie lehrte an der Genfer Universität weiter.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["surface"] for c in cands] == ["Genfer Universität"]
+    assert cands[0]["rule"] == "org-variant:place-adjective"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["gid"] == "1010450-1"
+    assert cands[0]["matched_form"] == "Genfer Universität"
+
+
+def test_place_adjective_leaves_the_listed_form_at_its_tier(tmp_path):
+    lexicon = _build(tmp_path, orgs=[GENEVE], cache=GENEVE_CACHE)
+    cands = em.find_candidates(_tei("<p>Die Universität Genf lud ein.</p>"), lexicon)
+    assert cands[0]["rule"] == "org-variant"
+    assert cands[0]["tier"] == 1
+
+
+def test_place_adjective_table_stays_static(tmp_path):
+    # no generative morphology: a place outside the table derives nothing, and
+    # Lausanne has no German adjective at all
+    assert "Lausanne" not in em.PLACE_ADJECTIVES
+    lexicon = _build(tmp_path, orgs=[_org("2024349-2", "Universität Heidelberg")])
+    assert not any(form.startswith("Heidelberger") for form in lexicon["forms"])
+
+
+# --- word boundary before superscript footnote digits ------------------------------
+
+
+@pytest.mark.parametrize("mark", ["²", "³", "¹"])
+def test_superscript_footnote_digit_ends_the_word(tmp_path, mark):
+    lexicon = _build(tmp_path, persons=[NIETZSCHE])
+    xml = _tei(f"<p>So steht es bei Nietzsche{mark} nachzulesen.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["surface"] for c in cands] == ["Nietzsche"]
+    assert cands[0]["rule"] == "bare-surname"
+    assert cands[0]["tier"] == 2
+    assert xml[cands[0]["start"]:cands[0]["end"]] == cands[0]["surface"]
+
+
+def test_superscript_marker_matches_like_a_comma(tmp_path):
+    lexicon = _build(tmp_path, persons=[NIETZSCHE])
+    with_comma = em.find_candidates(
+        _tei("<p>So steht es bei Nietzsche, wie bekannt.</p>"), lexicon
+    )
+    with_mark = em.find_candidates(
+        _tei("<p>So steht es bei Nietzsche² wie bekannt.</p>"), lexicon
+    )
+    assert [(c["surface"], c["rule"], c["tier"]) for c in with_comma] == [
+        (c["surface"], c["rule"], c["tier"]) for c in with_mark
+    ]
+
+
+def test_an_ordinary_digit_still_binds_the_word(tmp_path):
+    # the fix is a boundary fix for superscript markers, not a general digit rule
+    lexicon = _build(tmp_path, persons=[NIETZSCHE])
+    assert em.find_candidates(_tei("<p>Die Datei Nietzsche2 liegt bereit.</p>"), lexicon) == []
+
+
+# --- person initials --------------------------------------------------------------
+
+
+def test_person_initials_enter_the_lexicon_as_derived_forms(tmp_path):
+    lexicon = _build(tmp_path, persons=[JASPERS])
+    assert lexicon["forms"]["K.J."] == (
+        ("118557106", "person", "full-name:initials", "headword"),
+    )
+    assert lexicon["forms"]["K. J."][0][2] == "full-name:initials"
+    assert "K.J." not in lexicon["surnames"]
+
+
+@pytest.mark.parametrize("surface", ["K.J.", "K. J."])
+def test_interview_initials_are_worklist_candidates(tmp_path, surface):
+    lexicon = _build(tmp_path, persons=[JASPERS])
+    xml = _tei(f"<sp><speaker>{surface}</speaker><p>Ja, gewiss.</p></sp>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["surface"] for c in cands] == [surface]
+    assert cands[0]["rule"] == "full-name:initials"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["gid"] == "118557106"
+
+
+def test_initials_need_both_letters(tmp_path):
+    # a mononym has no forename, so the channel produces nothing
+    lexicon = _build(tmp_path, persons=[_person("118594893", "Plato")])
+    assert all(":initials" not in owner[2]
+               for owners in lexicon["forms"].values() for owner in owners)
+
+
+def test_shared_initials_produce_a_multi_owner_candidate(tmp_path):
+    lexicon = _build(tmp_path, persons=[
+        _person("118507184", "Baudelaire, Charles"),
+        _person("123159296", "Baudouin, Charles"),
+    ])
+    cands = em.find_candidates(_tei("<p>C.B. antwortete darauf.</p>"), lexicon)
+    assert cands[0]["rule"] == "full-name:initials:ambiguous"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["alternatives"] == ["118507184", "123159296"]
+
+
+def test_initials_hit_never_anchors_a_bare_surname(tmp_path):
+    lexicon = _build(tmp_path, persons=[JASPERS])
+    xml = _tei("<p>K.J. sagte es.</p><p>Spaeter meinte Jaspers dazu nichts.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["rule"] for c in cands] == ["full-name:initials", "bare-surname"]
+    assert all(c["tier"] == 2 for c in cands)
+
+
+# --- tier guarantee of the derived channels ---------------------------------------
+
+
+def test_speaker_slot_never_promotes_a_derived_form(tmp_path):
+    # the speaker rule is tier 1; a derived form must not reach it. "Eckhardus" comes
+    # from the cache variant "Eckhardus (Magister)" and is no listed surname.
+    lexicon = _build(
+        tmp_path,
+        persons=[_person("118528823", "Eckhart, Meister")],
+        cache={"118528823": _cache_entry("Eckhart, Meister", ("Eckhardus (Magister)",))},
+    )
+    cands = em.find_candidates(_tei("<sp><speaker>Eckhardus:</speaker><p>Ja.</p></sp>"), lexicon)
+    assert [c["surface"] for c in cands] == ["Eckhardus"]
+    assert cands[0]["rule"] == "variant-full-name:qualifier-strip"
+    assert cands[0]["tier"] == 2
+
+
+def test_a_derived_form_never_displaces_a_surname(tmp_path):
+    # "Eckhart (Meister)" strips to the listed surname, which an anchor reads at
+    # tier 1; the channel adds recall and must not cost that reading
+    lexicon = _build(
+        tmp_path,
+        persons=[_person("118528823", "Eckhart, Meister")],
+        cache={"118528823": _cache_entry("Eckhart, Meister", ("Eckhart (Meister)",))},
+    )
+    assert lexicon["surnames"]["Eckhart"] == ("118528823",)
+    assert "Eckhart" not in lexicon["forms"]
+    xml = _tei("<p>Meister Eckhart schrieb.</p><p>Dazu meinte Eckhart nichts.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["rule"] for c in cands] == ["full-name", "anchored-surname"]
+    assert all(c["tier"] == 1 for c in cands)
+
+
+def _derived_lexicon(tmp_path):
+    return _build(
+        tmp_path,
+        persons=[JASPERS, NIETZSCHE],
+        orgs=[UNESCO, GENEVE, BUND],
+        works=[POPULAIRE],
+        cache={**GENEVE_CACHE, **BUND_CACHE, **POPULAIRE_CACHE},
+    )
+
+
+def test_no_derived_form_reaches_a_tier1_index(tmp_path):
+    lexicon = _derived_lexicon(tmp_path)
+    derived = {form for form, owners in lexicon["forms"].items()
+               if any(":" in owner[2] for owner in owners)}
+    assert derived
+    assert not derived & set(lexicon["surnames"])
+    assert all(":" not in rule
+               for owners in lexicon["caps_forms"].values() for _, _, rule, _ in owners)
+
+
+DERIVED_COMPOSITE = _tei(
+    "<p>Ein Bericht der l'Unesco, dazu der Bund.</p>"
+    "<p>Sie lehrte an der Genfer Universität.</p>"
+    "<p>Im Le populaire stand es, so K.J. weiter.</p>"
+)
+
+
+def test_every_derived_candidate_is_tier2_and_span_exact(tmp_path):
+    cands = em.find_candidates(DERIVED_COMPOSITE, _derived_lexicon(tmp_path))
+    assert [c["surface"] for c in cands] == [
+        "Unesco", "Bund", "Genfer Universität", "Le populaire", "K.J.",
+    ]
+    for cand in cands:
+        assert ":" in cand["rule"]
+        assert cand["tier"] == 2
+        assert DERIVED_COMPOSITE[cand["start"]:cand["end"]] == cand["surface"]
+        assert cand["form_source"] in em.FORM_SOURCES

@@ -46,7 +46,9 @@ decoded. Every normalized character keeps the raw offsets it came from, so a mat
 maps back to an exact byte span whose slice is the surface. Excluded zones emit a
 sentinel character instead of their text, which blocks any match from running across
 them. The apparatus zone (E-Periodica cover sheet, photo credit lines) is excluded
-as well, so library apparatus never carries entity markup.
+as well, so library apparatus never carries entity markup. A superscript digit counts
+as a separator rather than a word character, so a name that carries a footnote marker
+("Nietzsche" with a superscript two) keeps the boundary it has in front of a comma.
 
 Deliberate simplifications (upgrade path in the milestones M3 to M5):
 
@@ -60,9 +62,30 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   reported id without the suffix and list the bearers all the same: "anchored-surname"
   (exactly one bearer mentioned in full in the document) and "ambiguous-surname"
   (several of them, which the rule name already says).
-- Suffix order is fixed and stackable: base rule, then ":ambiguous" (a property of the
-  lexicon), then ":suspect" (a property of the context), then ":in-plain-bibl" (a
-  property of the position).
+- Suffix order is fixed and stackable: base rule, then the derived-channel suffix (a
+  property of the lexicon form), then ":ambiguous" (a property of the lexicon), then
+  ":suspect" (a property of the context), then ":in-plain-bibl" (a property of the
+  position).
+- Four derived-form channels close the recall gaps of the facsimile-adjudicated
+  evaluation. Each registers a further spelling of a form the entity already carries,
+  and each is worklist-only: the suffix sits on the lexicon rule, which fixes the tier
+  at 2 (`_form_tier`); the speaker rule ignores such forms; and a spelling the lexicon
+  already reads at tier 1, a surname or a tier-1 base form, is left untouched.
+    * ":acronym-case", an all-caps one-token organisation of at least MIN_ACRONYM_LEN
+      letters also matches its capitalized spelling ("l'Unesco" beside "UNESCO");
+    * ":qualifier-strip", a form with a trailing parenthetical qualifier also matches
+      without it ("Le populaire (Zeitung, Paris)" as "Le populaire"). The head passes
+      the distinctiveness test of the org-token rule, because the channel also produces
+      ordinary German words ("Bund" out of a disambiguated organisation name);
+    * ":place-adjective", a two-token organisation whose second token stands in
+      PLACE_ADJECTIVES also matches the inverted German form ("Universitaet Genf"
+      reached through "Genfer Universitaet"); the table is static and small, no
+      morphology is generated;
+    * ":initials", a person headword also matches its dotted initials ("K.J." and
+      "K. J." for "Jaspers, Karl"), which is how interview transcripts label the
+      speaker. Initials several persons share become a multi-owner candidate.
+  The channels read the forms that were actually registered, so every earlier gate
+  binds them as well; a cache form the variant review rejected has no derived form.
 - Person labels without a forename (mononyms such as "Platon") reach no tier-1 rule;
   they enter the surname index and can only surface as tier 2.
 - The speaker rule compares the slot text verbatim (after stripping surrounding
@@ -83,7 +106,8 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   ("Pierre") pass it and stay as tier-2 noise for the judge stage.
 - Variants made only of dotted initials ("J. H." for Pestalozzi) never enter the
   full-name channel; as tier-1 forms they would claim unrelated initials
-  document-wide (the doc-1220 pilot finding). Such mentions stay tier 3.
+  document-wide (the doc-1220 pilot finding). The initials of a headword reach the
+  worklist through the ":initials" channel and nothing beyond it.
 - A legacy surface form that its bearer's own record does not corroborate stays a
   candidate source but reaches only tier 2, with the rule "legacy-form", and never
   enters the surname index. The legacy index was harvested from the gold references,
@@ -169,6 +193,28 @@ PLAIN_BIBL_SUFFIX = ":in-plain-bibl"
 AMBIGUOUS_SUFFIX = ":ambiguous"
 SUSPECT_SUFFIX = ":suspect"
 
+# Derived-form channels. Each one registers a further spelling of a form the entity
+# already carries; the suffix sits on the lexicon rule itself, which makes every such
+# form tier 2 by construction (_form_tier), so no channel here can auto-mark.
+ACRONYM_CASE_SUFFIX = ":acronym-case"
+QUALIFIER_SUFFIX = ":qualifier-strip"
+PLACE_ADJECTIVE_SUFFIX = ":place-adjective"
+INITIALS_SUFFIX = ":initials"
+
+MIN_ACRONYM_LEN = 4
+
+# Place adjectives of the adjectival inversion ("Universitaet Genf" reached through
+# "Genfer Universitaet"). A static table rather than generative morphology; Lausanne
+# has no German adjective and therefore no entry. Keys are compared in NFC, because
+# the curated list carries its umlauts decomposed.
+PLACE_ADJECTIVES = {
+    "Genf": "Genfer",
+    "Zürich": "Zürcher",
+    "Basel": "Basler",
+    "Bern": "Berner",
+    "Luzern": "Luzerner",
+}
+
 # Where the matched form comes from. "surname-index" is the curated headword's bare
 # surname, which is an index entry rather than a form of its own; a surname taken from
 # a variant reports that variant instead ("Mayer, Gertrud" behind a hit on "Mayer").
@@ -234,6 +280,7 @@ _TAG_RE = re.compile(r"<[^>]*>")
 _NAME_RE = re.compile(r"^</?([A-Za-z][\w.:-]*)")
 _ATTR_RE = re.compile(r"([\w.:-]+)\s*=\s*(\"([^\"]*)\"|'([^']*)')")
 _ENTITY_RE = re.compile(r"&(?:#[0-9]+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);")
+_QUALIFIER_RE = re.compile(r"^(.*?)\s*\([^()]*\)$")
 _LB_RE = re.compile(r"<lb\b[^>]*/?>", re.DOTALL)
 _TRAILING_MARKUP_RE = re.compile(r"(?:\s|<lb\b[^>]*/?>)+$", re.DOTALL)
 
@@ -311,6 +358,9 @@ def build_lexicon(
     `review_suspect` (the (gid, form) pairs the variant review holds back at tier 2),
     `skipped` (counters) and `sources` (the input paths).
 
+    The derived-form channels run as a second pass over the finished base lexicon, so
+    they see every entity and displace none; their catalogue is in the module docstring.
+
     `review_path` names the operator-gated variant_review.json: a cache form with the
     verdict `reject` never enters the lexicon (neither as full form nor via the surname
     index), a `suspect` form enters but yields tier-2 candidates only, and a cache form
@@ -380,6 +430,9 @@ def build_lexicon(
             for form in demoted:
                 legacy_demoted.append((gid, form))
                 _add_legacy_form(forms, gid, category, form)
+
+    for gid, entry in entries.items():
+        _add_derived(forms, surnames, gid, entry["category"], entry["label"])
 
     caps_forms = _caps_index(forms)
     return {
@@ -791,6 +844,121 @@ def _add_work(
             _add_form(forms, tokens[0], gid, "work", "short-title", source)
 
 
+# --- derived forms (worklist-only recall channels) ---------------------------------
+
+
+def _add_derived(
+    forms: dict[str, list[tuple[str, str, str, str]]],
+    surnames: dict[str, set[str]],
+    gid: str,
+    category: str,
+    label: str,
+) -> None:
+    """Register the derived spellings of one entity; every one of them is tier 2.
+
+    The channels read the forms the entity already registered instead of its raw
+    inputs, which keeps them behind every earlier gate: a cache form the variant review
+    rejected never entered `forms`, so it cannot return through a derived form either.
+    The pass runs after the base forms of the whole list, so a derived form neither
+    shadows a listed spelling (the owner dedup in `_add_form` keeps the first
+    registration) nor displaces a reading that can reach tier 1 (`_reaches_tier1`).
+    """
+    for form, rule, source in _own_forms(forms, gid):
+        for derived, suffix in _derived_forms(form, category):
+            if not _reaches_tier1(forms, surnames, derived):
+                _add_form(forms, derived, gid, category, rule + suffix, source)
+    for derived in _initials_forms(label, category):
+        if not _reaches_tier1(forms, surnames, derived):
+            _add_form(forms, derived, gid, category, "full-name" + INITIALS_SUFFIX,
+                      "headword")
+
+
+def _reaches_tier1(
+    forms: dict[str, list[tuple[str, str, str, str]]],
+    surnames: dict[str, set[str]],
+    form: str,
+) -> bool:
+    """True when the lexicon already reads `form` at tier 1, so no channel may take it.
+
+    A surname counts, because an anchor lifts it to tier 1 inside a document. The
+    derived channels add recall on the worklist and must never cost an auto-mark, and
+    the scan prefers the form index over the surname index.
+    """
+    if form in surnames:
+        return True
+    return any(_form_tier(rule) == 1 for _, _, rule, _ in forms.get(form, ()))
+
+
+def _own_forms(
+    forms: dict[str, list[tuple[str, str, str, str]]],
+    gid: str,
+) -> list[tuple[str, str, str]]:
+    """(form, rule, source) of the base forms one entity owns; derived ones excluded."""
+    out: list[tuple[str, str, str]] = []
+    for form, owners in forms.items():
+        for owner_gid, _, rule, source in owners:
+            if owner_gid == gid and ":" not in rule:
+                out.append((form, rule, source))
+                break
+    return out
+
+
+def _derived_forms(form: str, category: str) -> Iterator[tuple[str, str]]:
+    """(derived form, rule suffix) of the shape-driven channels of one form.
+
+    Acronym case: an all-caps single-token organisation also matches its capitalized
+    spelling, the corpus writing "l'Unesco" beside "UNESCO". Qualifier strip: a form
+    with a trailing parenthetical also matches without it ("Le Populaire (Paris)" as
+    "Le Populaire"). Place adjective: a two-token organisation whose second token is a
+    listed place also matches the inverted German form ("Genfer Universitaet").
+    """
+    tokens = form.split()
+    if (category == "organisation" and len(tokens) == 1 and form.isalpha()
+            and form.isupper() and len(form) >= MIN_ACRONYM_LEN):
+        yield form.capitalize(), ACRONYM_CASE_SUFFIX
+    head = _strip_qualifier(form)
+    if head:
+        yield head, QUALIFIER_SUFFIX
+    if category == "organisation" and len(tokens) == 2:
+        adjective = PLACE_ADJECTIVES.get(unicodedata.normalize("NFC", tokens[1]))
+        if adjective:
+            yield f"{adjective} {tokens[0]}", PLACE_ADJECTIVE_SUFFIX
+
+
+def _strip_qualifier(form: str) -> str:
+    """Head of a form with a trailing parenthetical qualifier, else the empty string.
+
+    The head has to pass the distinctiveness test of the org-token rule, because the
+    channel also produces ordinary German words ("Bund" out of the disambiguated
+    organisation name); that those reach the worklist and nothing else is what makes
+    the channel acceptable.
+    """
+    match = _QUALIFIER_RE.match(form)
+    if match is None:
+        return ""
+    head = match.group(1).strip()
+    if len(head) < MIN_TOKEN_LEN or not any(char.isupper() for char in head):
+        return ""
+    return head
+
+
+def _initials_forms(label: str, category: str) -> tuple[str, ...]:
+    """Dotted initials of a person headword ("Jaspers, Karl" -> "K.J." and "K. J.").
+
+    Interview transcripts label the speaker with initials, which is the mention class
+    this channel reaches. Both spellings stay tier 2: initials claim unrelated
+    positions document-wide far too easily (the doc-1220 finding), and a pair several
+    persons share simply becomes a multi-owner worklist candidate.
+    """
+    if category != "person":
+        return ()
+    surname, forenames = _split_person_label(label)
+    if not (surname and forenames and surname[0].isalpha() and forenames[0].isalpha()):
+        return ()
+    initials = f"{forenames[0].upper()}.{surname[0].upper()}."
+    return (initials, initials.replace(".", ". ", 1))
+
+
 # --- zones ------------------------------------------------------------------------
 
 
@@ -1098,8 +1266,14 @@ def _scan(
 
 
 def _base_rule(rule: str) -> str:
-    """The rule without its suffixes (:ambiguous, :suspect, :in-plain-bibl)."""
+    """The rule without its suffixes (derived channel, :ambiguous, :suspect, position)."""
     return rule.split(":", 1)[0]
+
+
+def _form_tier(rule: str) -> int:
+    """Tier of a lexicon rule; a derived channel carries a suffix and stays worklist."""
+    base, suffix, _ = rule.partition(":")
+    return 2 if suffix else TIER_BY_RULE[base]
 
 
 # --- homograph suspicion ----------------------------------------------------------
@@ -1217,7 +1391,7 @@ def _form_hit(
         if kind == "adjective":
             rule, tier = "adjective-form", 2
         else:
-            tier = TIER_BY_RULE[rule]
+            tier = _form_tier(rule)
         hit = _hit(pos, end, gid, category, rule, tier, bearers, form, source)
         segment = text[pos:pos + len(form)]
         return hit if segment == form else _case_tolerant(hit, segment, form)
@@ -1394,7 +1568,12 @@ def _speaker_hits(norm: _Norm, zones: _Zones, lexicon: dict) -> dict[int, _Hit]:
         label = norm.text[start:end]
         if SENTINEL in label:
             continue
-        persons = [owner for owner in lexicon["forms"].get(label, ()) if owner[1] == "person"]
+        # The speaker rule is tier 1, so only base forms may reach it; a derived
+        # spelling falls through to the surname index and stays on the worklist.
+        persons = [
+            owner for owner in lexicon["forms"].get(label, ())
+            if owner[1] == "person" and ":" not in owner[2]
+        ]
         if persons:
             hits[start] = _hit(start, end, persons[0][0], "person", "speaker", 1,
                                _bearers(tuple(persons)), label, persons[0][3])
@@ -1517,7 +1696,13 @@ def _word_end(text: str, pos: int) -> int:
 
 
 def _is_word(char: str) -> bool:
-    return char.isalnum()
+    """Word character of the scan; a superscript footnote digit separates instead.
+
+    The corpus glues footnote markers to the word they annotate, and a name in front of
+    one must end where the marker starts, exactly as it does in front of a comma. The
+    numeric-other category holds the superscripts and is therefore no word character.
+    """
+    return char.isalnum() and (char.isalpha() or unicodedata.category(char) != "No")
 
 
 def _is_word_at(text: str, pos: int) -> bool:
