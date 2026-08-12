@@ -57,6 +57,58 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-12 Session 93 (continuation 4): cover strip executed, five-agent wave, variant review wired
+
+**Occasion** The operator ran the cover-strip write run himself (interrupted during the
+per-file RelaxNG check, which looks like a hang), then released the remaining work as a
+parallel agent wave and asked for full verification URLs.
+
+**Goal** Finish the cover strip corpus-wide, classify all gold-benchmark false
+positives at the facsimile, make multi-word lexicon forms case-tolerant, remove the
+viewer's 404 probing, and put the GND variant verdicts under an operator-gated file.
+
+**Course** The interrupted operator run had already stripped 21 of 22 covers (write
+happens only after a passed schema check, so nothing was half-written); the resumed run
+finished document 890, all 285 documents validate, the 11 partial-field documents stayed
+untouched. Five Opus agents ran in parallel and returned confirmed results: (1) FP
+classification outside 3040: of 9 cases 1 real matcher error, 2 reference gaps, 6 zone
+artifacts in page furniture and plate paratext, none OCR-caused; (2) FP classification
+3040: 39 of 42 cases are one structure defect, the pipeline TEI renders the bibliography
+as plain paragraphs instead of `div type="bibliography"` with `listBibl`/`bibl`, so the
+matcher's existing zone rules never fire (1520 shows the working counterexample); fixing
+the generator removes about nine tenths of all corpus false positives; (3) case-tolerant
+matching for multi-word lexicon forms (letters-only case difference, diacritics and
+punctuation exact) with fully lowercased phrases demoted to `:suspect`; roughly 500 new
+matches corpus-wide, mostly work titles; (4) probe-free viewer loading, the catalog now
+carries a per-document asset index and the viewer fetches only existing files (verified
+over HTTP: zero non-200 responses; baseline replay of the old code produced hundreds);
+(5) the variant review: every cache-derived name form carries a verdict
+(approve/suspect/reject) in the versioned file `data/entities/variant_review.json`, with
+the operator worklist in `output/audits/variant_review_report.md`. The orchestrator then
+wired consumption test-first into `build_lexicon`: reject drops the form entirely
+(including its surname-index entry), suspect and unreviewed forms yield tier-2
+candidates only, headwords and legacy forms stay unfiltered. Corpus effect: rejected
+junk bearers disambiguate real mentions, so tier 1 rose while the total fell; the known
+damage cases (initials variant, Freund/Freud, cross-bearer collisions) are now held
+back structurally.
+
+**Decisions** Cover strip is executed corpus-wide (22 documents, backups kept). The
+variant review file is the single deterministic gate for cache name forms; an
+unreviewed form counts as suspect until the next review run. The 3040 bibliography
+repair belongs to the TEI generator (structure lane), not to the matcher. Page-furniture
+work-title hits (running column titles, document 330) need a byline-style exception and
+stay an open operator decision.
+
+**Status** All five agent packages verified against disk, gates green (entity suites,
+scripts health, variant review tests), previews and mirror regenerated, pushed through
+the variant-review commit. Viewer serves on the local port with the new asset index.
+
+**Next steps** Classify the four new 3040-zone false positives after the generator
+repair; M5 judge pilot on the gold-resolved worklist cases; operator review of the
+suspect/reject worklist; patron-data finding (documents 200/490) to ZBZ; decisions on
+works in tier 1, author scope, hyphen compounds, document 180.
+
+
 
 ### 2026-08-12 Session 93 (continuation 3): gold benchmark, frontend evaluation round, visibility iteration
 

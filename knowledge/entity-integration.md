@@ -163,6 +163,17 @@ Built, each with its pytest suite:
   showed such a variant claiming every "J. H." of an interview for the wrong person
   (doc 1220). More listed entities carry initials variants of this kind; the planned
   lexicon audit reports the current set.
+- `data/entities/variant_review.json` is the operator-gated verdict file over every
+  cache-derived name form (approve / suspect / reject, with reason). A model audit
+  produced the first full pass; the operator worklist of all suspect and reject
+  forms lands in `output/audits/variant_review_report.md`. `build_lexicon` consumes
+  the file deterministically: reject never enters the lexicon (neither as full form
+  nor via the surname index), suspect yields tier-2 candidates only, and a cache
+  form the review does not know counts as suspect until the next review run.
+  Headwords of the curated list and legacy forms stay outside the review's reach.
+  Removing junk bearers also disambiguates real mentions, so a review pass can raise
+  tier 1 while shrinking the total. Tests: `tests/test_variant_review.py` plus the
+  review section of `tests/test_entity_matcher.py`.
 - `scripts/tei/tei_entity_preview.py` wraps tier 1 into `output/entity_preview/` and
   proves per document: RelaxNG-valid against `zbz_hersch.rng`, text of the `text`
   subtree character-identical, byte-identical outside the insertions (bytes in, bytes
