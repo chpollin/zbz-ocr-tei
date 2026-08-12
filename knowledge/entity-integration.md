@@ -67,7 +67,10 @@ Detail rules, settled against the reference corpus and by operator decision:
 
 - `bibl` wraps an existing `<hi rendition="#i">`; the italics stay inside.
 - For works, only the title is marked, also in footnotes; imprint stays outside the
-  element. Wider citation spans occurring in the references stay manual curation.
+  element. Title-only binds even where a reference wraps the wider citation span
+  including imprint (operator decision 2026-08-12, prompted by reference 290); the
+  gold benchmark scores such reference spans as neutral, and wider spans stay manual
+  curation.
 - Footnote citations do get GND refs. Only `bibl` inside `div type="bibliography"`
   stays without a ref (conformity rule Z1).
 - Nesting is permitted (operator decision 2026-08-12): a `persName` with its own ref
@@ -82,6 +85,18 @@ Detail rules, settled against the reference corpus and by operator decision:
   runs on lb-normalized text.
 - Interview speakers follow the reference pattern `speaker > persName@ref`, colon
   outside the element.
+- All-caps mentions are in scope (operator direction 2026-08-12). A full name in
+  capitals matches through its own rule; bylines, running headers and signatures
+  naming the document's own author stay unmarked, and that exception is decided by a
+  metadata comparison against the Masterfile author. The reference practice supports
+  the split, reference 100 marks the caps title mention of its subject while
+  reference 1060 leaves the author byline unmarked.
+- Library apparatus is out of scope. E-Periodica cover sheets and photo-credit lines
+  are never matched (apparatus zone). Cover-sheet text leaves the delivered TEI
+  altogether (operator decision 2026-08-12), through an operator-gated marker run in
+  the E94 pattern that keeps the page break with a type marker, so pagination,
+  facsimile links, completeness gate and Transkribus round trip survive; the corpus
+  scan names the affected documents.
 - The stock run documents itself in the header: one dated `<change>` entry per run in
   `revisionDesc` (E42 convention, idempotent, pattern of `tei_status_marker`). Preview
   files carry no header entry; their provenance is the pilot report.
@@ -94,8 +109,9 @@ Open modelling points, owned outside this plan:
 - Adjective forms of names: the guideline excludes them, the references mark at least
   one. The automatic tiers exclude them; candidates go to the worklist; the
   contradiction goes to ZBZ.
-- Whether bylines and running headers naming the author are marked (all-caps title-page
-  mentions are currently not found, matching is case-sensitive).
+- Hyphen compounds ("Karl-Jaspers-Symposium", "Hersch-Vortrag"): the references leave
+  them unmarked, the tool currently decides them inconsistently. The suspicion signal
+  parks them on the worklist until ZBZ decides.
 
 ## Matching method: three tiers
 
@@ -163,10 +179,28 @@ Planned:
   corpus dry-run (M6) is an adversarial agent review of the built lexicon, searching
   for forms that would strike in ordinary prose; agent findings are proposals, and
   class decisions stay with the deterministic shape rules.
+- `scripts/eval/entity_corpus_scan.py` (with the fix package): read-only dump of
+  every candidate corpus-wide with rule, tier and context, plus distribution views
+  (per document, per rule, per entity) and invariant checks (no tier-1 form on the
+  function-word list, none adjacent to a hyphen). The snapshot is diffable, so every
+  rule change shows its exact corpus effect before it binds; this generalizes the
+  ten-document pilot to controlled whole-corpus verification.
+- `scripts/tei/tei_cover_strip.py` (operator-gated, E94 pattern): removes E-Periodica
+  cover-sheet text from the delivered TEI, keeps the page break with a type marker.
+- Viewer entity stream: the entity previews are split per page into the generated
+  mirror and the viewer shows them as a read-only layer (markup mode with category
+  colors, a popover per mention with preferred name, GND id and lobid link, a
+  per-page worklist panel), so the operator verifies wrappings next to the
+  facsimile. This is also the candidate for the open curation-channel decision.
 - `scripts/eval/entity_gold_benchmark.py` (M4): precision and recall against the
   reference TEIs, dev on the 18 previously indexed documents, one frozen-rules
   measurement on the 7 held-out ones, scope-restricted to shared text; per-mention
-  error lists; evidence JSON versioned under `docs/data/`.
+  error lists; evidence JSON versioned under `docs/data/`. The held-out set is drawn
+  along the distribution of gold mentions rather than by document count; the densest
+  reference (1520) is measured separately, it carries a large share of the gold, a
+  known file defect, and the anchor-collision case the panel never saw. Legacy
+  demotion removes the leakage of gold-harvested forms into tier 1 before this
+  measurement.
 - `scripts/eval/entity_audit.py` (M6/M7): before-and-after measurement of the stock.
 - `scripts/tei/tei_entity_marker.py` (M7): the operator-gated stock tool on
   `marker_common` (dry-run, backup, byte-splice inside `text`, idempotent,
@@ -194,6 +228,43 @@ unit tests cannot, since tests and code share their author's blind spots. The
 reference-less transfer half stays in every evaluation round on purpose: the wave's
 one systematic tier-1 finding (the initials variant, doc 1220) sat in an interview no
 gold document resembles, and the gold half alone would have missed it.
+
+The completed wave (2026-08-12) confirmed the precision of person full names and
+surfaced a second systematic defect class, work-title spans that include imprint or
+trailing punctuation or wrap inside an existing `hi`. The critic ran the matcher
+read-only over the whole corpus and found what ten per-document evaluators could
+not: homograph surnames in German prose (the conjunction "Weil", forename collisions
+such as "Thomas Höpker"), a poisoned legacy pairing ("Jérémie" filed as a Jaspers
+form while the reference marks the prophet), the anchor collision in the densest
+gold document (both Jaspers spouses anchored, every bare surname undecided), and the
+volume concentration of the future stock run on the author and her main subject.
+Method lessons from the wave: evaluation panels are drawn by impact and class
+coverage (top-wrap documents, excluded-zone classes, German prose), never by
+document count alone; every wave starts by checking that the artifacts under review
+match the code state; evaluator schemas separate genuinely lost mentions from
+mentions sitting on the worklist; and every agent claim is verified against the
+material before it is acted on.
+
+## Fix package (pilot outcome, build order)
+
+Each step test-first, the real corpus findings frozen as regression fixtures; after
+the package, the preview rerun and the corpus scan diff close M3.
+
+1. Legacy demotion: legacy forms feed tier 2 only, and `entity_lint` gains a pairing
+   check that every variant is corroborated by its bearer's GND record (the Jérémie
+   pairing is the pinned must-find case). The legacy index moves under
+   `data/entities/` so a fresh clone builds the same lexicon.
+2. Work spans: candidate surfaces never end in punctuation; a `bibl` around the full
+   content of an existing `hi` wraps the `hi` from outside.
+3. Homograph suspicion: a bare or anchored surname drops to the worklist on any
+   deterministic signal (lowercase twin in the same document, function-word list,
+   adjacent hyphen, adjacent unknown capitalized word).
+4. Caps rule: all-caps full names match; mentions of the document's own author in
+   bylines and running headers are skipped via the Masterfile author.
+5. Apparatus zone: cover sheets and photo-credit lines are never matched; the
+   operator-gated cover strip run removes cover text from the delivered TEI.
+6. Adjective forms become worklist candidates; a single-word work title that shadows
+   a listed surname ("Nietzsche") presents both candidates.
 
 ## Verification
 
@@ -237,6 +308,16 @@ Nothing before M7 touches `tei_final`.
 ## Open operator decisions
 
 1. Works in tier one, or worklist-only in the first stock wave (proposal: persons and
-   organisations first; the pilot wraps multi-word titles, which informs the decision).
-2. Curation channel for tiers two and three (viewer, teiCrafter, or verdict files).
+   organisations first; every confirmed span error of the pilot evaluation sits in
+   the work class, which strengthens the proposal).
+2. Curation channel for tiers two and three (proposal: the viewer entity stream,
+   read-only first, confirm/reject actions writing verdict files later).
 3. Role of `editor_reviewed` (proposal: report field, no gate function).
+4. Scope of the author herself: mentions of Jeanne Hersch dominate the future stock
+   run by volume while the references mark her almost never; whether and where her
+   mentions are annotated is the volumetrically largest open convention (with ZBZ).
+5. Hyphen compounds (with ZBZ, see the open modelling points).
+
+Decided 2026-08-12 (operator): title-only for works binds even against wider
+reference spans; all-caps mentions are in scope with the author-byline exception;
+cover sheets leave the delivered TEI; apparatus zones are out of matching scope.
