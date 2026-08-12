@@ -306,7 +306,8 @@ def test_common_noun_homonym_stays_tier2(lex):
     cands = em.find_candidates(xml, lex)
     assert len(cands) == 1
     assert cands[0]["surface"] == "Wahl"
-    assert cands[0]["rule"] == "bare-surname"
+    # fix package 3: the function-word list marks the homograph suspicion
+    assert cands[0]["rule"] == "bare-surname:suspect"
     assert cands[0]["tier"] == 2
 
 
@@ -315,10 +316,14 @@ def test_lowercase_word_is_never_a_candidate(lex):
     assert em.find_candidates(xml, lex) == []
 
 
-def test_adjective_form_is_rejected(lex):
+def test_adjective_form_is_a_tier2_candidate(lex):
+    # fix package 6: the derived form is reported on the worklist instead of dropped
     xml = _tei("<p>Die Freudschen Schriften, aber Freuds Schriften.</p>")
     cands = em.find_candidates(xml, lex)
-    assert [c["surface"] for c in cands] == ["Freuds"]
+    assert [c["surface"] for c in cands] == ["Freudschen", "Freuds"]
+    assert cands[0]["rule"] == "adjective-form"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["gid"] == "118535749"
 
 
 # --- excluded zones --------------------------------------------------------------
@@ -540,3 +545,198 @@ def test_transliteration_word_variants_are_not_initials(tmp_path):
     cache = {"118584553": _cache_entry("Mo, Di", ("Mo Ti",))}
     lexicon = _build(tmp_path, persons=persons, cache=cache)
     assert "Mo Ti" in lexicon["forms"]
+
+
+# --- legacy demotion (fix package 1) ----------------------------------------------
+
+LEGACY_JEREMIE = {"persons": {"118557106": {"names": ["Jérémie", "Karl Jaspers"]}}}
+
+
+def test_legacy_only_form_is_demoted(tmp_path):
+    lexicon = _build(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
+    assert lexicon["forms"]["Jérémie"] == (("118557106", "person", "legacy-form"),)
+    assert "Jérémie" not in lexicon["surnames"]
+    assert ("118557106", "Jérémie") in lexicon["legacy_demoted"]
+
+
+def test_legacy_form_corroborated_by_the_record_stays_a_full_name(tmp_path):
+    lexicon = _build(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
+    assert lexicon["forms"]["Karl Jaspers"][0][2] == "full-name"
+    assert all(form != "Karl Jaspers" for _, form in lexicon["legacy_demoted"])
+
+
+def test_legacy_only_form_never_reaches_tier1(tmp_path):
+    lexicon = _build(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
+    xml = _tei("<p>Karl Jaspers citait souvent Jérémie.</p>")
+    found = _by_surface(em.find_candidates(xml, lexicon))
+    assert found["Karl Jaspers"]["tier"] == 1
+    assert found["Jérémie"]["rule"] == "legacy-form"
+    assert found["Jérémie"]["tier"] == 2
+
+
+# --- homograph suspicion (fix package 3) ------------------------------------------
+
+
+def test_function_word_homograph_drops_the_anchor(lex):
+    xml = _tei("<p>Jean Wahl schrieb.</p><p>Die Wahl war frei.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["rule"] for c in cands] == ["full-name", "anchored-surname:suspect"]
+    assert cands[1]["tier"] == 2
+
+
+def test_lowercase_twin_in_the_document_drops_the_anchor(lex):
+    xml = _tei("<p>Gabriel Marcel schrieb.</p><p>Marcel bleibt.</p><p>ein marcel dazu.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["rule"] for c in cands] == ["full-name", "anchored-surname:suspect"]
+    assert cands[1]["tier"] == 2
+
+
+def test_adjacent_hyphen_drops_the_anchor(lex):
+    xml = _tei("<p>Karl Jaspers schrieb.</p><p>Der Jaspers-Kreis tagte.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert cands[1]["surface"] == "Jaspers"
+    assert cands[1]["rule"] == "anchored-surname:suspect"
+    assert cands[1]["tier"] == 2
+
+
+def test_unknown_capitalized_neighbour_drops_the_anchor(lex):
+    xml = _tei("<p>Gabriel Marcel schrieb.</p><p>Der Fotograf Marcel Duchamp kam.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert cands[1]["surface"] == "Marcel"
+    assert cands[1]["rule"] == "anchored-surname:suspect"
+    assert cands[1]["tier"] == 2
+
+
+def test_capitalized_neighbour_at_a_sentence_start_is_no_signal(lex):
+    xml = _tei("<p>Gabriel Marcel schrieb.</p><p>Pour Marcel, la question reste.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["rule"] for c in cands] == ["full-name", "anchored-surname"]
+    assert all(c["tier"] == 1 for c in cands)
+
+
+def test_genitive_before_a_capitalized_noun_keeps_the_anchor(lex):
+    # German capitalizes nouns; a genitive name is followed by its head noun
+    xml = _tei("<p>Jeanne Hersch schrieb.</p><p>Herschs Werk bleibt.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert cands[1]["surface"] == "Herschs"
+    assert cands[1]["rule"] == "anchored-surname"
+    assert cands[1]["tier"] == 1
+
+
+def test_honorific_before_the_surname_is_no_signal(lex):
+    # "Frau Hersch", "Mlle Hersch": the honorific corroborates the name reading
+    xml = _tei("<p>Jeanne Hersch schrieb.</p><p>Dazu sagte Mlle Hersch nichts.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["rule"] for c in cands] == ["full-name", "anchored-surname"]
+    assert all(c["tier"] == 1 for c in cands)
+
+
+def test_full_name_rules_ignore_the_suspicion_signals(lex):
+    xml = _tei("<p>Karl Jaspers Duchamp und K. Jaspers Duchamp.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["rule"] for c in cands] == ["full-name", "initial-surname"]
+    assert all(c["tier"] == 1 for c in cands)
+
+
+# --- adjective forms (fix package 6) ----------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "word", ["Freudien", "Freudienne", "Freudiens", "Freudiano", "Freudian"]
+)
+def test_romance_adjective_forms_are_candidates(lex, word):
+    xml = _tei(f"<p>Un concept {word} bleibt.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["surface"] for c in cands] == [word]
+    assert cands[0]["rule"] == "adjective-form"
+    assert cands[0]["tier"] == 2
+
+
+# --- single-word title shadowing a surname (fix package 6) -------------------------
+
+
+def test_single_word_title_that_shadows_a_surname_is_ambiguous(tmp_path):
+    lexicon = _build(
+        tmp_path,
+        persons=[_person("118587943", "Nietzsche, Friedrich")],
+        works=[_work("1078795312", "Nietzsche")],
+    )
+    xml = _tei("<p>In Nietzsche steht es.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert len(cands) == 1
+    assert cands[0]["rule"] == "short-title:ambiguous"
+    assert cands[0]["tier"] == 2
+    # both candidates stay reconstructible for the judge stage
+    assert lexicon["forms"]["Nietzsche"] == (("1078795312", "work", "short-title"),)
+    assert lexicon["surnames"]["Nietzsche"] == ("118587943",)
+
+
+# --- all-caps mentions (fix package 4) --------------------------------------------
+
+
+def test_caps_full_name_is_tier1(lex):
+    xml = _tei("<head>UNE PHILOSOPHIE DE L'EXISTENCE: KARL JASPERS</head>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["surface"] for c in cands] == ["KARL JASPERS"]
+    assert cands[0]["rule"] == "caps-full-name"
+    assert cands[0]["tier"] == 1
+    assert cands[0]["gid"] == "118557106"
+
+
+def test_caps_surname_alone_is_tier2(lex):
+    xml = _tei("<p>HERSCH antwortete.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["surface"] for c in cands] == ["HERSCH"]
+    assert cands[0]["rule"] == "caps-surname"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["gid"] == "118708422"
+
+
+def test_caps_hits_of_the_document_author_are_skipped(lex):
+    xml = _tei("<p>JEANNE HERSCH</p>\n<p>HERSCH und KARL JASPERS.</p>")
+    assert [c["surface"] for c in em.find_candidates(xml, lex)] == [
+        "JEANNE HERSCH",
+        "HERSCH",
+        "KARL JASPERS",
+    ]
+    skipped = em.find_candidates(xml, lex, author_labels=("Hersch, Jeanne",))
+    assert [c["surface"] for c in skipped] == ["KARL JASPERS"]
+
+
+def test_author_exception_applies_only_to_caps_hits(lex):
+    xml = _tei("<p>Jeanne Hersch schrieb.</p>")
+    cands = em.find_candidates(xml, lex, author_labels=("Hersch, Jeanne",))
+    assert [c["rule"] for c in cands] == ["full-name"]
+    assert cands[0]["tier"] == 1
+
+
+# --- apparatus zone (fix package 5) -----------------------------------------------
+
+COVER_SHEET = (
+    '<pb n="1"/>'
+    "<p>Zeitschrift: Schweizerische Lehrerzeitung</p>"
+    "<p>Herausgeber: UNESCO</p>"
+    "<p>Band: 105</p>"
+    "<p>Heft: 3</p>"
+    '<pb n="2"/>'
+    "<p>Karl Jaspers schrieb.</p>"
+)
+
+
+def test_e_periodica_cover_sheet_is_excluded(lex):
+    xml = _tei(COVER_SHEET)
+    assert [c["surface"] for c in em.find_candidates(xml, lex)] == ["Karl Jaspers"]
+
+
+def test_two_cover_fields_are_not_enough(lex):
+    xml = _tei(
+        '<pb n="1"/>\n<p>Band: 105</p>\n<p>Herausgeber: UNESCO</p>\n'
+        '<pb n="2"/>\n<p>Weiter im Text.</p>'
+    )
+    assert [c["surface"] for c in em.find_candidates(xml, lex)] == ["UNESCO"]
+
+
+@pytest.mark.parametrize("prefix", ["Porträts:", "Fotos:"])
+def test_photo_credit_paragraph_is_excluded(lex, prefix):
+    xml = _tei(f"<p>{prefix} Karl Jaspers, Basel.</p><p>Jeanne Hersch schrieb.</p>")
+    assert [c["surface"] for c in em.find_candidates(xml, lex)] == ["Jeanne Hersch"]

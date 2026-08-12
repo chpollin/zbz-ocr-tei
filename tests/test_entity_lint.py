@@ -7,6 +7,7 @@ import pytest
 from scripts.eval.entity_lint import (
     CACHE_PATH,
     ENTITIES_PATH,
+    LEGACY_PATH,
     build_report,
     is_valid_gnd_id,
     lint,
@@ -318,6 +319,85 @@ def test_real_stock_has_no_unexpected_error_ids():
     report = lint(_real_entities())
     known = {"11862974", "2026220-6", "1076202632", "1088014070", "1393920942", "4197012-3"}
     assert {e["gnd_id"] for e in report["errors"]} <= known
+
+
+# --- legacy pairing (fix package 1) --------------------------------------
+
+
+def _legacy(persons=None, organizations=None, works=None):
+    return {
+        "persons": persons or {},
+        "organizations": organizations or {},
+        "works": works or {},
+    }
+
+
+def _person_cache(gnd, preferred, variants=()):
+    return _cache(
+        {
+            gnd: {
+                "http_status": 200,
+                "preferred_name": preferred,
+                "variant_names": list(variants),
+                "types": ["Person"],
+                "date_of_birth": None,
+                "date_of_death": None,
+                "wikidata": None,
+            }
+        }
+    )
+
+
+def _pairings(report):
+    return [
+        (w["gnd_id"], w["form"])
+        for w in report["warnings"]
+        if w["type"] == "legacy_pairing"
+    ]
+
+
+def test_legacy_form_without_corroboration_is_a_warning():
+    report = lint(
+        _entities(persons=[_person("118557106", name="Jaspers, Karl")]),
+        _person_cache("118557106", "Jaspers, Karl", ["Jaspers, Carl"]),
+        _legacy(persons={"118557106": {"names": ["Jérémie", "Karl Jaspers", "Jaspers"]}}),
+    )
+    assert _pairings(report) == [("118557106", "Jérémie")]
+
+
+def test_legacy_form_covered_by_a_variant_is_no_warning():
+    report = lint(
+        _entities(persons=[_person("118557394", name="Jeremia, Prophet")]),
+        _person_cache("118557394", "Jeremia, Prophet", ["Jérémie", "Jeremiah, Prophet"]),
+        _legacy(persons={"118557394": {"names": ["Jérémie"]}}),
+    )
+    assert _pairings(report) == []
+
+
+def test_legacy_ids_join_over_the_normalized_form():
+    report = lint(
+        _entities(organisations=[_org("2021817-5", org_name="Schweizerischer Lehrerverein")]),
+        None,
+        _legacy(organizations={"2021817": {"names": ["Lehrerverein", "Sektion Zuerich"]}}),
+    )
+    assert _pairings(report) == [("2021817-5", "Sektion Zuerich")]
+
+
+def test_without_legacy_index_no_pairing_check_runs():
+    report = lint(_entities(persons=[_person("104535342")]), None, None)
+    assert _pairings(report) == []
+    assert report["counts"]["legacy"] is None
+
+
+def test_real_legacy_index_pins_the_poisoned_pairing():
+    if not LEGACY_PATH.exists() or not CACHE_PATH.exists():
+        pytest.skip("legacy mention index or GND cache not available")
+    legacy = json.loads(LEGACY_PATH.read_text(encoding="utf-8"))
+    cache = json.loads(CACHE_PATH.read_text(encoding="utf-8"))
+    pairings = _pairings(lint(_real_entities(), cache, legacy))
+    # the reference marks the prophet, the legacy index filed the form under Jaspers
+    assert ("118557106", "Jérémie") in pairings
+    assert ("118557394", "Jérémie") not in pairings
 
 
 def test_real_cache_marks_the_defective_ids_as_not_found():

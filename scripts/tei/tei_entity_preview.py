@@ -14,6 +14,10 @@ earlier offsets stay valid. No character of the original is changed, which is ex
 the two per-document checks prove: the preview validates against ``data/schema/zbz_hersch.rng``,
 and the concatenated text of the ``<text>`` subtree is identical before and after.
 
+One placement rule beyond the plain span: a candidate that covers the complete content of an
+existing ``<hi>`` is wrapped around that ``hi`` instead of inside it, which is the ZBZ
+convention for work titles set in italics (knowledge/entity-integration.md, target model).
+
 Deterministic, offline, no model call.
 
 Usage:
@@ -25,6 +29,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from collections import Counter
 from functools import lru_cache
 from html import escape
@@ -37,7 +42,7 @@ from scripts.config import DATA_DIR, OUTPUT_DIR, TEI_FINAL_DIR, TEI_NS, TEI_SCHE
 ENTITY_PREVIEW_DIR = OUTPUT_DIR / "entity_preview"
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
-LEGACY_MENTIONS_PATH = OUTPUT_DIR / "gnd_analysis" / "gnd_entities.json"
+LEGACY_MENTIONS_PATH = DATA_DIR / "entities" / "legacy_mentions.json"
 
 REPORT_STEM = "entity_pilot_report"
 
@@ -47,10 +52,29 @@ PANEL_DOCS = ["1060", "100", "290", "1440", "890", "1350", "1360", "2030", "1220
 # ZBZ inline GND model (E88): one element per category, ref carries the GND id.
 CATEGORY_ELEMENT = {"person": "persName", "organisation": "orgName", "work": "bibl"}
 
+_HI_OPEN_RE = re.compile(r"<hi(?:\s[^<>]*)?>")
+_HI_CLOSE_RE = re.compile(r"</hi\s*>")
+
 
 # ---------------------------------------------------------------------------
 # Wrapping (pure string work)
 # ---------------------------------------------------------------------------
+
+def hi_envelope(xml_string: str, start: int, end: int) -> tuple[int, int] | None:
+    """Span of the ``hi`` element whose complete content is ``[start:end)``, else None.
+
+    Exact rule: the opening tag ends at ``start`` and the closing tag begins at ``end``.
+    Anything in between the tags that the candidate does not cover (a trailing space,
+    another element) keeps the wrapper inside the ``hi``.
+    """
+    open_at = xml_string.rfind("<", 0, start)
+    if open_at < 0 or xml_string[start - 2:start] == "/>":
+        return None
+    if not _HI_OPEN_RE.fullmatch(xml_string, open_at, start):
+        return None
+    close = _HI_CLOSE_RE.match(xml_string, end)
+    return (open_at, close.end()) if close else None
+
 
 def apply_candidates(xml_string: str, candidates: list[dict]) -> str:
     """Wrap every tier-1 candidate in its TEI element; tier 2 stays untouched.
@@ -58,7 +82,8 @@ def apply_candidates(xml_string: str, candidates: list[dict]) -> str:
     Splices back to front so the offsets of the not yet applied candidates stay valid.
     The candidate contract (``xml_string[start:end] == surface``, non-overlapping) is
     verified here, because a violated offset would silently corrupt the file rather
-    than fail; the matcher is a separate module.
+    than fail; the matcher is a separate module. A candidate covering the whole content
+    of an ``hi`` widens the splice to that element, so the wrapper lands outside it.
     """
     tier1 = sorted((c for c in candidates if c.get("tier") == 1),
                    key=lambda c: c["start"], reverse=True)
@@ -70,12 +95,14 @@ def apply_candidates(xml_string: str, candidates: list[dict]) -> str:
                 f"offset mismatch for {cand['gid']}: [{start}:{end}] is "
                 f"{xml_string[start:end]!r}, candidate claims {cand['surface']!r}"
             )
-        if previous_start is not None and end > previous_start:
+        wrap_start, wrap_end = hi_envelope(xml_string, start, end) or (start, end)
+        if previous_start is not None and wrap_end > previous_start:
             raise ValueError(f"overlapping candidates at offset {start} (gid {cand['gid']})")
         element = CATEGORY_ELEMENT[cand["category"]]
-        wrapped = f'<{element} ref="GND:{cand["gid"]}">{cand["surface"]}</{element}>'
-        xml_string = xml_string[:start] + wrapped + xml_string[end:]
-        previous_start = start
+        content = xml_string[wrap_start:wrap_end]
+        wrapped = f'<{element} ref="GND:{cand["gid"]}">{content}</{element}>'
+        xml_string = xml_string[:wrap_start] + wrapped + xml_string[wrap_end:]
+        previous_start = wrap_start
     return xml_string
 
 
@@ -336,14 +363,17 @@ def main():
     ap.add_argument("--out-dir", type=Path, default=ENTITY_PREVIEW_DIR, help="Preview directory")
     args = ap.parse_args()
 
-    from scripts.tei.entity_matcher import build_lexicon, find_candidates
+    from scripts.tei.entity_matcher import CORPUS_AUTHOR_LABELS, build_lexicon, find_candidates
 
     doc_ids = PANEL_DOCS if args.panel else _parse_doc_ids(args.docs)
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
     lexicon = build_lexicon(args.entities, args.cache, legacy_path=legacy)
 
+    def find_with_author(xml_string, lex):
+        return find_candidates(xml_string, lex, author_labels=CORPUS_AUTHOR_LABELS)
+
     print(f"Entity preview over {len(doc_ids)} document(s); tei_final is not written.")
-    report = run_preview(doc_ids, find_candidates, lexicon,
+    report = run_preview(doc_ids, find_with_author, lexicon,
                          src_dir=args.src_dir, out_dir=args.out_dir)
 
     totals = report["totals"]

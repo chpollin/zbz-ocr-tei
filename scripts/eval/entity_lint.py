@@ -1,9 +1,10 @@
 """Intake audit for the curated entity list (entity integration, M1).
 
 Checks data/entities/all_entities.json on its own terms and, when the GND cache
-built by scripts.tei.fetch_gnd_variants exists, against that cache. Reports the
-defects so the matcher can exclude the affected entries; repairing the list is the
-job of the tool that produced it.
+built by scripts.tei.fetch_gnd_variants exists, against that cache. When the legacy
+mention index exists as well, every surface form it pairs with an id is checked
+against that id's own GND record. Reports the defects so the matcher can exclude the
+affected entries; repairing the list is the job of the tool that produced it.
 
 DIAGNOSIS ONLY -- reads the entity list and the cache, writes a JSON report to
 output/audits/, changes no data and is no pass/fail gate (exit code always 0).
@@ -21,11 +22,14 @@ Warnings (reported, never blocking):
   not_in_cache             id missing from the cache, so the remote checks did not run
   preferred_name_mismatch  lobid preferredName differs from the local label
   type_mismatch            the cache types do not carry the category type
+  legacy_pairing           a legacy surface form the id's own GND record does not
+                           corroborate (gid plus form); the matcher demotes exactly
+                           these forms to tier 2
   editor_reviewed = false is counted only, never listed per entry
 
 Usage:
     python -m scripts.eval.entity_lint
-    python -m scripts.eval.entity_lint --entities PATH --cache PATH --out PATH
+    python -m scripts.eval.entity_lint --entities PATH --cache PATH --legacy PATH --out PATH
 """
 import argparse
 import json
@@ -34,11 +38,13 @@ import unicodedata
 from collections import Counter
 from pathlib import Path
 
-from scripts.config import DATA_DIR
+from scripts.config import DATA_DIR, OUTPUT_DIR
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
+from scripts.tei.entity_matcher import legacy_form_is_covered, legacy_names, normalize_gid
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
+LEGACY_PATH = DATA_DIR / "entities" / "legacy_mentions.json"
 REPORT_PATH = AUDIT_OUTPUT_DIR / "entity_lint.json"
 
 CATEGORIES = ("persons", "organisations", "works")
@@ -151,14 +157,40 @@ def _cache_counts(cache: dict, listed_ids: set) -> dict:
     }
 
 
-def lint(entities: dict, cache: dict | None = None) -> dict:
-    """Audit the entity list, optionally against the GND cache.
+def _legacy_findings(forms, category: str, index: int, gnd_id, label, record) -> tuple:
+    """Pairing check for one entry: (checked pairs, warnings).
+
+    Corroboration is `legacy_form_is_covered`, the same predicate the matcher uses to
+    decide which legacy forms stay tier-2 only, so lint and lexicon cannot drift.
+    """
+    pairs, findings = 0, []
+    for raw_form in forms:
+        form = _WHITESPACE_RE.sub(" ", str(raw_form)).strip()
+        if not form:
+            continue
+        pairs += 1
+        if not legacy_form_is_covered(form, label or "", record):
+            findings.append(
+                _finding(
+                    "legacy_pairing", category, index, gnd_id,
+                    "Legacy-Form ist durch den GND-Eintrag des Traegers nicht gedeckt",
+                    form=form,
+                )
+            )
+    return pairs, findings
+
+
+def lint(entities: dict, cache: dict | None = None, legacy: dict | None = None) -> dict:
+    """Audit the entity list, optionally against the GND cache and the legacy index.
 
     Pure: takes and returns plain data, touches no files. Without a cache only the
-    offline checks run and counts["cache"] stays None.
+    offline checks run and counts["cache"] stays None; without the legacy index the
+    pairing check does not run and counts["legacy"] stays None.
     """
     errors, warnings = [], []
     cache_entries = None if cache is None else (cache.get("entries") or {})
+    legacy_index = legacy_names(legacy) if legacy is not None else {}
+    legacy_pairs = 0
     person_ids = {
         entry.get("GND_id")
         for entry in entities.get("persons") or []
@@ -207,12 +239,22 @@ def lint(entities: dict, cache: dict | None = None) -> dict:
                                  author_gnd_id=author)
                     )
 
+            record = None
             if cache_entries is not None and isinstance(gnd_id, str) and gnd_id:
+                record = cache_entries.get(gnd_id)
                 cache_errors, cache_warnings = _cache_findings(
-                    cache_entries.get(gnd_id), category, index, gnd_id, label
+                    record, category, index, gnd_id, label
                 )
                 errors.extend(cache_errors)
                 warnings.extend(cache_warnings)
+
+            if legacy is not None and isinstance(gnd_id, str) and gnd_id:
+                pairs, findings = _legacy_findings(
+                    legacy_index.get(normalize_gid(gnd_id), ()),
+                    category, index, gnd_id, label, record,
+                )
+                legacy_pairs += pairs
+                warnings.extend(findings)
 
     sizes = {category: len(entities.get(category) or []) for category in CATEGORIES}
     counts = {
@@ -223,17 +265,24 @@ def lint(entities: dict, cache: dict | None = None) -> dict:
         "warnings_by_type": dict(Counter(item["type"] for item in warnings)),
         "editor_reviewed_false": reviewed_false,
         "cache": _cache_counts(cache, listed_ids) if cache is not None else None,
+        "legacy": None if legacy is None else {
+            "index_ids": len(legacy_index),
+            "checked_pairs": legacy_pairs,
+            "uncorroborated": sum(1 for w in warnings if w["type"] == "legacy_pairing"),
+        },
     }
     return {"errors": errors, "warnings": warnings, "counts": counts}
 
 
-def build_report(entities: dict, cache, entities_path, cache_path) -> dict:
+def build_report(entities: dict, cache, entities_path, cache_path,
+                 legacy=None, legacy_path=None) -> dict:
     """Full JSON payload: the lint result plus its provenance."""
-    result = lint(entities, cache)
+    result = lint(entities, cache, legacy)
     return {
         "audit": "entity_lint",
         "entities_file": str(entities_path),
         "cache_file": str(cache_path) if cache_path else None,
+        "legacy_file": str(legacy_path) if legacy_path else None,
         "cache_retrieved": cache.get("retrieved") if cache else None,
         "errors": result["errors"],
         "warnings": result["warnings"],
@@ -261,6 +310,13 @@ def _print_summary(report: dict) -> None:
         print(f"  Cache vom {cache['retrieved']}: {cache['entries']} Eintraege "
               f"(200: {cache['status_200']}, 404: {cache['status_404']}, "
               f"sonstige: {cache['status_other']})")
+    if counts["legacy"] is None:
+        print("  Legacy-Index: nicht vorhanden (keine Paarungspruefung)")
+    else:
+        legacy = counts["legacy"]
+        print(f"  Legacy-Index: {legacy['index_ids']} IDs, "
+              f"{legacy['checked_pairs']} Paarungen geprueft, "
+              f"{legacy['uncorroborated']} ungedeckt")
 
     print(f"\n  Fehler: {counts['errors']}")
     for kind, number in sorted(counts["errors_by_type"].items()):
@@ -282,17 +338,22 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Entitaeten-Lint: prueft Liste und GND-Cache")
     parser.add_argument("--entities", default=str(ENTITIES_PATH), help="Entitaetendatei (JSON)")
     parser.add_argument("--cache", default=str(CACHE_PATH), help="GND-Cache (JSON, optional)")
+    parser.add_argument("--legacy", default=str(LEGACY_PATH),
+                        help="Legacy-Erwaehnungsindex (JSON, optional)")
     parser.add_argument("--out", default=str(REPORT_PATH), help="Zieldatei fuer den Report")
     args = parser.parse_args()
 
     entities_path, cache_path, out_path = Path(args.entities), Path(args.cache), Path(args.out)
+    legacy_path = Path(args.legacy)
     if not entities_path.exists():
         print(f"FEHLER: Entitaetendatei nicht gefunden: {entities_path}")
         return
 
     entities = _load(entities_path)
     cache = _load(cache_path) if cache_path.exists() else None
-    report = build_report(entities, cache, entities_path, cache_path if cache else None)
+    legacy = _load(legacy_path) if legacy_path.exists() else None
+    report = build_report(entities, cache, entities_path, cache_path if cache else None,
+                          legacy, legacy_path if legacy else None)
     _print_summary(report)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)

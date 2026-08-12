@@ -49,6 +49,32 @@ _MINI_MIXED = (
     "</div></body></text></TEI>"
 )
 
+# Work title as the complete content of an <hi>: the wrapper belongs outside the hi.
+_MINI_HI = (
+    '<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body><div type="text">'
+    '<p>In <hi rendition="#i">Das philosophische Staunen</hi> heisst es.</p>'
+    "</div></body></text></TEI>"
+)
+
+# Same hi, but the title covers only part of its content: the wrapper stays inside.
+_MINI_HI_WIDE = (
+    '<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body><div type="text">'
+    '<p>In <hi rendition="#i">Das philosophische Staunen, Muenchen 1964</hi>.</p>'
+    "</div></body></text></TEI>"
+)
+
+_MINI_HI_MIXED = (
+    '<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body><div type="text">'
+    '<p>Karl Jaspers schrieb <hi rendition="#i">Von der Wahrheit</hi> und mehr.</p>'
+    "</div></body></text></TEI>"
+)
+
+_MINI_LB_LEAD = (
+    '<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body><div type="text">'
+    "<p><lb/>Karl Jaspers und mehr.</p>"
+    "</div></body></text></TEI>"
+)
+
 # Minimal delivery-shaped TEI (same header contract as tests/test_tei_schema.py),
 # with the mentions still unmarked. Wrapping must leave it schema-valid.
 _VALID_DOC = """<?xml version="1.0" encoding="UTF-8"?>
@@ -77,6 +103,12 @@ _VALID_DOC = """<?xml version="1.0" encoding="UTF-8"?>
   </text>
 </TEI>
 """
+
+
+_VALID_DOC_HI = _VALID_DOC.replace(
+    "<p>Karl Jaspers lehrte an der Universitaet Basel.</p>",
+    '<p>In <hi rendition="#i">Von der Wahrheit</hi> schreibt Karl Jaspers.</p>',
+)
 
 
 def _cand(xml, surface, gid, category="person", tier=1, rule="full_name", context=None):
@@ -146,6 +178,54 @@ def test_surface_with_embedded_lb_is_wrapped_as_a_whole():
     assert check_text_invariance(_MINI_LB, out)
 
 
+# --- bibl outside an existing hi --------------------------------------------
+
+
+def _work_cand(xml, surface="Das philosophische Staunen", gid="1088036961"):
+    return _cand(xml, surface, gid, category="work", rule="work-title")
+
+
+def test_bibl_wraps_a_fully_covered_hi_from_outside():
+    out = apply_candidates(_MINI_HI, [_work_cand(_MINI_HI)])
+    assert ('<bibl ref="GND:1088036961">'
+            '<hi rendition="#i">Das philosophische Staunen</hi>'
+            "</bibl>") in out
+    assert '<hi rendition="#i"><bibl' not in out
+    assert check_text_invariance(_MINI_HI, out)
+
+
+def test_partial_hit_inside_an_hi_stays_inside():
+    out = apply_candidates(_MINI_HI_WIDE, [_work_cand(_MINI_HI_WIDE)])
+    assert ('<hi rendition="#i">'
+            '<bibl ref="GND:1088036961">Das philosophische Staunen</bibl>'
+            ", Muenchen 1964</hi>") in out
+    assert check_text_invariance(_MINI_HI_WIDE, out)
+
+
+def test_hi_envelope_requires_the_closing_tag_immediately_after_the_span():
+    # a trailing space inside the hi means the candidate is not its whole content
+    xml = _MINI_HI.replace("Staunen</hi>", "Staunen </hi>")
+    out = apply_candidates(xml, [_work_cand(xml)])
+    assert '<hi rendition="#i"><bibl ref="GND:1088036961">' in out
+    assert check_text_invariance(xml, out)
+
+
+def test_a_non_hi_neighbour_tag_does_not_trigger_the_outside_wrap():
+    out = apply_candidates(_MINI_LB_LEAD, [_cand(_MINI_LB_LEAD, "Karl Jaspers", "118557505")])
+    assert '<lb/><persName ref="GND:118557505">Karl Jaspers</persName>' in out
+
+
+def test_offsets_stay_valid_when_an_hi_wrap_widens_the_span():
+    cands = [
+        _cand(_MINI_HI_MIXED, "Karl Jaspers", "118557505"),
+        _work_cand(_MINI_HI_MIXED, surface="Von der Wahrheit", gid="TEST-0001"),
+    ]
+    out = apply_candidates(_MINI_HI_MIXED, cands)
+    assert '<persName ref="GND:118557505">Karl Jaspers</persName>' in out
+    assert ('<bibl ref="GND:TEST-0001"><hi rendition="#i">Von der Wahrheit</hi></bibl>') in out
+    assert check_text_invariance(_MINI_HI_MIXED, out)
+
+
 def test_offset_surface_mismatch_is_rejected():
     bad = _cand(_MINI, "Karl Jaspers", "118557505")
     bad["end"] -= 2  # slice no longer equals the declared surface
@@ -191,6 +271,18 @@ def test_wrapped_persname_stays_schema_valid():
     errors = validate_rng(out)
     assert errors == [], "wrapped preview not valid against zbz_hersch.rng:\n  " + "\n  ".join(errors)
     assert check_text_invariance(_VALID_DOC, out)
+
+
+def test_bibl_outside_an_hi_stays_schema_valid():
+    cands = [
+        _cand(_VALID_DOC_HI, "Von der Wahrheit", "TEST-0001", category="work", rule="work-title"),
+        _cand(_VALID_DOC_HI, "Karl Jaspers", "118557505"),
+    ]
+    out = apply_candidates(_VALID_DOC_HI, cands)
+    assert '<bibl ref="GND:TEST-0001"><hi rendition="#i">Von der Wahrheit</hi></bibl>' in out
+    errors = validate_rng(out)
+    assert errors == [], "bibl around hi not valid against zbz_hersch.rng:\n  " + "\n  ".join(errors)
+    assert check_text_invariance(_VALID_DOC_HI, out)
 
 
 def test_validate_rng_reports_an_invalid_document():
@@ -315,6 +407,17 @@ def test_stripping_the_wrappers_restores_the_original_byte_for_byte():
     ]
     out = apply_candidates(_MINI, cands)
     assert _WRAPPER_RE.sub("", out) == _MINI
+
+
+def test_stripping_the_wrappers_restores_the_original_across_an_hi_wrap():
+    cands = [
+        _cand(_MINI_HI_MIXED, "Karl Jaspers", "118557505"),
+        _cand(_MINI_HI_MIXED, "Von der Wahrheit", "TEST-0001",
+              category="work", rule="work-title"),
+    ]
+    out = apply_candidates(_MINI_HI_MIXED, cands)
+    assert out != _MINI_HI_MIXED
+    assert _WRAPPER_RE.sub("", out) == _MINI_HI_MIXED
 
 
 def test_crlf_line_endings_survive_the_write_path(tmp_path):
