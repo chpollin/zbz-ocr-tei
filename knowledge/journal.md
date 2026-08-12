@@ -58,6 +58,50 @@ session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
 
+### 2026-08-12 Session 93 (continuation 3): gold benchmark, frontend evaluation round, visibility iteration
+
+**Occasion** After M3 the operator evaluated the entity layer live in the viewer and
+released the scaling work; the plan required the deterministic gold measurement next.
+
+**Goal** M4 measurement instrument, the operator's frontend findings fixed end to end,
+and the proposal channel for entities outside the curated list.
+
+**Course** Four parallel build agents delivered: the gold benchmark
+(`entity_gold_benchmark`, scope-restricted against the 25 references with the
+2026-08-12 scoring rules), the unlisted-entities scan (`entity_unlisted_scan`, id-free
+proposal channel; top proposals include a heavily mentioned unlisted philosopher and
+the library itself as organisation), the corpus digest (`entity_corpus_digest`, the
+whole tier-1 harvest in one context window), and the visibility iteration in the
+matcher (candidates now carry all alternative bearers, the matched form with its
+source, and a typographic-evidence flag on one-word titles; the neighbour suspicion
+check is bigram-aware). First benchmark numbers: held-out tier-1 precision 82 percent,
+overall 62 percent driven by one structural case (doc 3040 declares its bibliography
+as `div type="entry"`, so the exclusion zone cannot fire; without it 90 percent);
+candidate coverage 83 percent; the work class carries the errors in both directions,
+which supports keeping works out of the first stock wave. The operator's live findings
+(the arbitrary first-bearer display on "Jaspers", the birth-name variant behind
+"Hans Mayer", the discipline reading of "Philosophie") are fixed or made visible and
+frozen as regression cases. The catalog shows the entities stage corpus-wide with a
+pending state; documents 1540, 1520, 3040 and 380 joined the evaluation set. Most
+missing translated work titles turned out to be case-sensitivity, their forms already
+sit in the GND cache.
+
+**Decisions** Enrichment variants are audited by a model against each bearer's record
+into a versioned verdict file before M6, operator-approved, consumed deterministically
+(operator direction 2026-08-12); the unlisted report is the proposal channel for list
+extensions, ids stay with ZBZ.
+
+**Status** All instruments delivered, verified and pushed (36a1ebd8, 31df4503,
+a8472fd8, 251c63d8, ae374797); full suite green. Open: the released cover-strip run is
+blocked by the permission layer and waits for the operator (command:
+`python -m scripts.tei.tei_cover_strip --write`), afterwards doc 890 needs its entity
+layer refreshed; the patron-data finding (docs 200, 490) goes to ZBZ.
+
+**Next steps** 1. Cover-strip run plus post-run gates and mirror. 2. Case-tolerant
+matching for multi-word work-title variants. 3. M5 judge pilot on the gold-resolved
+worklist cases. 4. FP classification against the facsimiles (reference
+underannotation). 5. Variant review file before M6.
+
 ### 2026-08-12 Session 93 (continuation 2): entity pilot M1-M3, evaluation wave, fix package
 
 **Occasion** The M0 plan called for the pilot instruments, the ten-document pilot, and

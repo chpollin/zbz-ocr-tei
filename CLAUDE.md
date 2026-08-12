@@ -214,6 +214,9 @@ python -m scripts.tei.tei_entity_preview --panel                 # preview over 
 python -m scripts.eval.entity_corpus_scan                        # read-only corpus scan: candidates, distributions, invariants
 python -m scripts.edition.generate_entity_preview_data           # viewer entity mirror (docs/data) from the previews
 python -m scripts.tei.tei_cover_strip --dry-run                  # E-Periodica cover sheets: strip preview (real run operator-gated)
+python -m scripts.eval.entity_gold_benchmark                     # M4: precision/recall against the 25 reference TEIs
+python -m scripts.eval.entity_corpus_digest                      # tier-1 harvest as one context-window digest
+python -m scripts.eval.entity_unlisted_scan                      # id-free proposal channel: name-shaped surfaces outside the list
 python -m pytest tests/test_entity_matcher.py tests/test_entity_lint.py tests/test_entity_regressions.py tests/test_entity_preview.py tests/test_entity_corpus_scan.py tests/test_generate_entity_preview_data.py tests/test_cover_strip.py tests/test_fetch_gnd_variants.py -q  # entity gates
 ```
 
