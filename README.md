@@ -16,9 +16,10 @@ project schema `zbz_hersch.rng` (test-gated, E68).
 
 ### Verification status of the delivered data
 
-The per-stream workflow status (OCR / Layout / TEI, E66/E67) is `unverified` across the corpus,
-the honest default ("pipeline output exists, not yet human-checked"). Content verification by a
-domain expert is ZBZ's task, tracked via this status.
+The per-stream workflow status (OCR / Layout / TEI / Entities, E66/E67/E77) is `unverified` as
+the handover default ("pipeline output exists, not yet human-checked"); isolated documents are
+already advanced (see the live catalog). Content verification by a domain expert is ZBZ's task,
+tracked via this status.
 
 In short, this repository delivers a high-quality, schema-valid data starting point plus curation
 tooling for the ZBZ edition; the edition itself is ZBZ's downstream product. See
@@ -75,9 +76,15 @@ locally).
 Delivered (in scope): OCR (Mistral), layout analysis (Docling plus Gemini QA), PAGE-XML/METS
 export, TEI-XML generation, schema-valid across the corpus.
 
-Removed from scope: NER / entity linking (GND/Wikidata). Implemented earlier, removed (E71):
-in the delivered TEI only a small fraction of tagged mentions carried a real GND id, so the
-linking, the actual editorial value, was not deliverable. Honest removal over placeholder noise.
+Entity annotation (GND): rebuilt in 2026-08 as a controlled two-tier layer after the earlier
+free NER was removed (E71). A deterministic matcher binds mentions to the curated ZBZ entity
+list (persons, organisations, works; ids are never assigned by an LLM, E62); sure matches are
+auto-marked in read-only previews, everything uncertain lands on a review worklist. The layer
+is measured by facsimile-adjudicated sampling
+([reports/2026-08-12_entity-eval-ergebnis.md](reports/2026-08-12_entity-eval-ergebnis.md));
+the delivered TEI under `output/tei_final/` carries no entity markup yet, the stock run is
+operator-gated. Design and method: [knowledge/entity-integration.md](knowledge/entity-integration.md),
+[knowledge/entity-evaluation.md](knowledge/entity-evaluation.md).
 
 ZBZ domain (not produced here): TEI header metadata from Alma (project id / MMSID / PubForm, as
 required by the editorial guidelines). An earlier MMSID projection was removed (E76); header
@@ -86,21 +93,21 @@ headers still carry an empty container/journal title.
 
 Known limitation, reading order: on two-column and double-page layouts the delivered TEI can
 interleave the columns in reading order; validator warning W19 (E90) scopes the affected pages.
-The generator fix is built, and a reversible corpus-wide preview confirms it corrects the large
-majority of affected pages (`reports/m3-reassemble-preview.md`); a small residue needs facsimile
-review because OCR and layout segmentation disagree there. Rolling the fix out rewrites the
-delivered TEI and awaits operator approval (M3, see [knowledge/decisions.md](knowledge/decisions.md)
-E90).
+Machine reordering was tested against the 25 reference documents and refuted (E99: zero pages
+improved, nine degraded), so no automated corpus reorder runs on either path. W19 pages are
+treated as suspect zone assignment over correct text and resolve through facsimile-verified,
+page-wise curation (`tei_reading_order_fix`, operator-gated; see
+[knowledge/decisions.md](knowledge/decisions.md) E99).
 
 Pending / not done:
-- Reading-order rollout (M3): generator fix and reversible preview exist (see known limitation
-  above); the corpus regeneration that rewrites the delivered TEI is operator-gated.
+- Reading-order curation: facsimile-verified page-wise fixes via the W19 worklist (machine
+  rollout refuted, E99; see known limitation above).
 - Containerization (Podman) and GitLab-UZH CI, decided (E9/E10), not built. A GitHub Actions test
   gate (full pytest suite on every push/PR) exists.
 - Human verification of the corpus: ZBZ's downstream task, tracked via the per-stream workflow
   status (milestone M5; see [Status](#status-acceptance--handover)).
-- Live facsimile images: only four demo documents are committed (`1000`, `1330`, `1540`, `2310`);
-  the rest are local-only, so the GitHub Pages viewer shows scans only for those four.
+- Live facsimile images: only five demo documents are committed (`1000`, `1330`, `1540`, `1620`,
+  `2310`); the rest are local-only, so the GitHub Pages viewer shows scans only for those five.
 
 Measurement caveat: ground truth exists only for the 25 reference documents, so corpus-wide quality
 (dictionary hit rate) is an estimate, not a measurement. See
@@ -110,7 +117,8 @@ Measurement caveat: ground truth exists only for the 25 reference documents, so 
 
 Static site under `docs/`, deployed via GitHub Pages, no backend; all data is loaded from static
 JSON/XML/MD files under `docs/data/`. The viewer (`docs/viewer.html`) is a single-page inspector
-(OpenSeadragon facsimile, layout overlay, OCR/TEI panel, per-panel edit toggle) with a single
+(OpenSeadragon facsimile, layout overlay, OCR/TEI panel with a read-only entity preview layer,
+per-panel edit toggle) with a single
 "Save" button that persists all unsaved streams at once, written directly into the working
 tree via the File System Access API (Chromium) or exported as downloads. Architecture, save
 mechanism, CDN dependencies, and design system: [knowledge/workflow.md](knowledge/workflow.md).
@@ -130,9 +138,11 @@ python -m venv .venv
 .venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 
-# Configure API keys
-cp .env.example .env
-# Enter Mistral, Anthropic, Gemini keys in .env
+# Configure API keys: create .env in the repo root (never committed) with
+#   MISTRAL_DOC_AI_ENDPOINT / MISTRAL_DOC_AI_KEY   (OCR, Azure)
+#   GEMINI_API_KEY                                 (layout QA, TEI refinement)
+#   ANTHROPIC_API_KEY                              (optional, correction variant C)
+#   TRANSKRIBUS_USER / TRANSKRIBUS_PASSWORD        (only for the Transkribus upload)
 
 # Representative commands
 python -m scripts.ocr.ocr_pipeline -i data/source/pdf/2310.pdf -e mistral   # OCR (Mistral)
@@ -155,6 +165,12 @@ Complete CLI reference: [CLAUDE.md §Commands](CLAUDE.md).
 | Ecosystem synthesis (zbz / szd-htr / teiCrafter) | [knowledge/ecosystem-synthesis.md](knowledge/ecosystem-synthesis.md) |
 | Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastructure.md](knowledge/infrastructure.md) |
 | Methodology + Promptotyping | [knowledge/methodology.md](knowledge/methodology.md) |
+| CER measurement method | [knowledge/cer-methodology.md](knowledge/cer-methodology.md) |
+| Print-OCR state of research | [knowledge/literature-comparison.md](knowledge/literature-comparison.md) |
+| Reference TEIs, phenomenon map | [knowledge/ground-truth-map.md](knowledge/ground-truth-map.md) |
+| Entity integration (design + built state) | [knowledge/entity-integration.md](knowledge/entity-integration.md) |
+| Entity evaluation (method + execution record) | [knowledge/entity-evaluation.md](knowledge/entity-evaluation.md) |
+| Multi-agent wave pattern | [knowledge/agent-orchestration.md](knowledge/agent-orchestration.md) |
 | Final work report (delivery synthesis, German) | [knowledge/arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md) |
 | Decisions + open items | [knowledge/decisions.md](knowledge/decisions.md) |
 | Session journal | [knowledge/journal.md](knowledge/journal.md) |

@@ -252,11 +252,15 @@ Only semantically relevant highlighting is encoded.
 
 ### Entities
 
-Named entity markup was removed with E71 (2026-05-27) (see [decisions.md](decisions.md)):
-the linking was not functional in the delivered TEI (~2.6% of mentions with a real
-GND ID, the rest `GND:unknown` or internal IDs). `<persName>`, `<orgName>`, `<placeName>` are no
-longer tagged. `<bibl>` remains exclusively as a bibliographic structure (literature lists
-in `<listBibl>`, review citation in the `<head>`), without `ref`/`corresp`.
+The free NER of the early pipeline was removed with E71 (2026-05-27) because its linking was
+not functional in the delivered TEI. Since 2026-08 a controlled two-tier entity layer exists
+instead: a deterministic matcher binds mentions to the curated ZBZ entity list (ids never
+assigned by an LLM, E62), sure matches are marked in read-only previews, uncertain candidates
+feed a review worklist, and the layer is measured by facsimile-adjudicated sampling (E105/E106).
+The delivered TEI under `output/tei_final/` carries no entity markup yet; the stock run is
+operator-gated. Design and built state: [entity-integration.md](entity-integration.md), method
+and execution record: [entity-evaluation.md](entity-evaluation.md). In the delivered TEI
+`<bibl>` remains a bibliographic structure without `ref`/`corresp`.
 
 ### Curation instead of Automation: front/back/anchor/unclear (as of 2026-06-08)
 

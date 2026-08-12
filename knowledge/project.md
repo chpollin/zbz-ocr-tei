@@ -143,15 +143,14 @@ the report `arbeitsbericht-v3.md`, and the canonical values in `docs/data/cer_st
 | M0 | Image extraction + QA viewer | images + viewer available | Done |
 | M1 | OCR validated | >=93% accuracy for all types | Done |
 | M2 | Layout + PAGE-XML | regions + bbox + PAGE-XML for all docs | Done |
-| M3 | NER + Wikidata | recall >70%, linking >50% | Removed (E71, 2026-05-27; linking in the output not deliverable) |
+| M3 | NER + Wikidata | recall >70%, linking >50% | Removed (E71, 2026-05-27); superseded by the controlled GND entity layer ([entity-integration.md](entity-integration.md), preview-only, E105/E106) |
 | M4 | TEI-XML | schema-valid against `zbz_hersch.rng` (E102) | Done (whole corpus valid, gate `tests/test_tei_schema.py`) |
 | M5 | Data handover to ZBZ | full corpus processed + delivered schema-valid; scholarly verification is a ZBZ task (tracked via workflow status) | Data delivered; all streams `unverifiziert` as handover default (E66/E67); scholarly curation lies with ZBZ |
 
-> The identifier "M3" carries a second meaning. In the current substantive roadmap
-> (journal session 74 ff., [decisions.md](decisions.md) E90) it designates the
-> operator-gated delivery of the reading-order structure fix to the delivered corpus,
-> not the removed NER milestone in this table. There the dry run is available
-> (`reports/m3-reassemble-preview.md`); approval is pending.
+> The identifier "M3" carries a second meaning. In the reading-order lane (journal session
+> 74 ff., [decisions.md](decisions.md) E90) it designated the machine delivery of the structure
+> fix. E99 (2026-07-07) refuted that rollout empirically (zero pages improved, nine degraded);
+> W19 pages resolve through facsimile-verified, page-wise curation instead.
 
 ### Component Status
 
@@ -234,7 +233,7 @@ Since E21, zbz-ocr-tei replaces or complements the following steps:
 
 | Problem | Affected PDFs | Approach |
 |---|---|---|
-| Two-column reading order | large majority of the delivered corpus (audit), focal points incl. 810/1520/2360/760 | Docling + Gemini detect; column- and band-aware assembly order (E90), W19 checks the corpus; `scripts/eval/reading_order_audit` triages robust/fragile for the M3 view; delivery of M3 gated |
+| Two-column reading order | large majority of the delivered corpus (audit), focal points incl. 810/1520/2360/760 | Docling + Gemini detect; W19 checks the corpus; `scripts/eval/reading_order_audit` triages robust/fragile; machine reorder refuted (E99), facsimile-verified page-wise curation via `tei_reading_order_fix` |
 | Cross-page footnotes | 3040 | `@next/@prev` |
 | Interview speaker changes | 1440 | pattern recognition |
 | Historical print | 90 | test both OCR engines |

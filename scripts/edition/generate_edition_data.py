@@ -38,7 +38,7 @@ THUMB_SIZE = (140, 200)
 THUMB_QUALITY = 70
 
 
-FEATURED_DOCS = ["2310", "1000", "1330", "1540"]
+FEATURED_DOCS = ["2310", "1000", "1330", "1540", "1620"]
 
 # Three-level workflow status (E67/E77); legacy values are mapped on mirror read
 # so catalog and histogram stay consistent.

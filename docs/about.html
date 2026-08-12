@@ -49,7 +49,8 @@
       <ul class="feature-list">
         <li><strong>Inspection</strong>: facsimile, layout regions, and transcription side by side, for every page of every document.</li>
         <li><strong>Manual correction</strong>: layout editor (move regions, set types, reorder), text editor (OCR or TEI); one save writes directly into the local repo clone, with file download as fallback.</li>
-        <li><strong>Workflow status</strong>: traffic light per stream (OCR / Layout / TEI), kept in the per-document manifest with a processing history (E66/E67).</li>
+        <li><strong>Entity preview</strong>: GND-linked persons, organisations and works as a read-only layer with a review worklist; the delivered TEI does not carry the annotations yet.</li>
+        <li><strong>Workflow status</strong>: traffic light per stream (OCR / Layout / TEI / Entities), kept in the per-document manifest with a processing history (E66/E67).</li>
         <li><strong>Demonstration</strong>: a clear view of the current pipeline state for ZBZ and academic stakeholders.</li>
       </ul>
     </section>
@@ -62,7 +63,7 @@
         <dt>Subject</dt><dd>Automated OCR + TEI annotation for the Hersch papers</dd>
         <dt>Corpus</dt><dd>286 PDF texts delivered, 285 with final TEI; ~4,100 processed pages; focus on the 1970s/1980s</dd>
         <dt>Languages</dt><dd>predominantly French (~70&nbsp;%), German (~25&nbsp;%), occasionally English and Italian</dd>
-        <dt>Status</dt><dd>285/285 documents schema-valid; the workflow status per stream (OCR / Layout / TEI) currently reads &ldquo;unverified&rdquo; throughout: pipeline output exists, scholarly verification is open</dd>
+        <dt>Status</dt><dd>285/285 documents schema-valid; the workflow status per stream (OCR / Layout / TEI / Entities) reads &ldquo;unverified&rdquo; as the handover default: pipeline output exists, scholarly verification is open</dd>
       </dl>
     </section>
 
@@ -73,7 +74,8 @@
         <li><strong>OCR</strong>: Mistral Document AI 2512 (Azure).</li>
         <li><strong>Layout</strong>: Docling 2.75 for region recognition, Gemini 3.1 Flash Lite as QA/detect validator.</li>
         <li><strong>TEI</strong>: unified pipeline of scaffold, Gemini refinement, and assembly; valid against <code>zbz_hersch.rng</code>.</li>
-        <li><strong>Workflow status</strong>: status per stream (OCR / Layout / TEI) in the manifest, projected into <code>&lt;revisionDesc&gt;</code> (E66/E67, replaces the earlier agent screening).</li>
+        <li><strong>Entities</strong>: deterministic GND matching against the curated ZBZ list into read-only previews plus a review worklist (delivered TEI untouched).</li>
+        <li><strong>Workflow status</strong>: status per stream (OCR / Layout / TEI / Entities) in the manifest, projected into <code>&lt;revisionDesc&gt;</code> (E66/E67, replaces the earlier agent screening).</li>
       </ol>
     </section>
 
@@ -81,8 +83,8 @@
       <h2>Quality</h2>
       <p>
         Character Error Rate (CER) in the end-to-end comparison against the ZBZ reference TEIs.
-        <strong>Fidelity CER</strong> (real OCR and transcription errors): <strong>mean 2.71&nbsp;%</strong>,
-        <strong>median 1.40&nbsp;%</strong> (n&nbsp;=&nbsp;25, BCa bootstrap, B&nbsp;=&nbsp;10,000, seed&nbsp;42). The
+        <strong>Fidelity CER</strong> (real OCR and transcription errors): <strong>mean 2.08&nbsp;%</strong>,
+        <strong>median 1.28&nbsp;%</strong> (n&nbsp;=&nbsp;25, BCa bootstrap, B&nbsp;=&nbsp;10,000, seed&nbsp;42). The
         full-text CER including pipeline surplus text sits clearly higher; why, plus all
         stratified values, limitations, and the literature comparison: see <a href="methode.html">Method</a>.
       </p>
@@ -99,7 +101,9 @@
       </p>
       <p>
         Data: catalog.json plus a per-page mirror under
-        <code>data/pages/</code> (all 285 docs) and thumbnails under <code>data/thumbs/</code>.
+        <code>data/pages/</code> (all 285 docs), thumbnails under <code>data/thumbs/</code>,
+        per-document manifests under <code>data/manifests/</code>, the entity lookup
+        <code>data/entities.json</code>, and the CER statistics <code>data/cer_statistics.json</code>.
       </p>
     </section>
 

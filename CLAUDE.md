@@ -6,7 +6,7 @@ Project constitution. Operative rules and conventions that apply at every pipeli
 
 1. Keep the journal: document each session as an entry following journal template v0.2 in [knowledge/journal.md](knowledge/journal.md); newest entry at the very top of the entries section, with the fields Occasion / Goal / Course / Decisions / Status / Next steps (the format contract and a copyable entry template live in the journal itself). Sessions 1-68 remain unchanged in the compact archive.
 2. Knowledge lives in `knowledge/`: do not duplicate it in CLAUDE.md. Single source of truth per fact.
-3. Do not version output: generated files belong in `output/` (gitignored). The exception is `data/curated_tei/` (reserved for hand-verified TEI, currently empty).
+3. Do not version output: generated files belong in `output/` (gitignored). Exceptions: `data/curated_tei/` (reserved for hand-verified TEI, currently empty) and the generated mirror `docs/data/`, versioned because it carries the GitHub Pages delivery.
 4. Test before changing: run the evaluation, compare metrics.
 5. Single source of truth: every fact lives in exactly one document. Other documents point to it via cross-reference.
 
@@ -49,7 +49,7 @@ Thematically separated documents:
 - Windows encoding: no Unicode special characters in print statements
 - Paths: absolute paths or `pathlib`
 - Output: JSON for data, HTML for reports
-- Frontend: ES6+ JavaScript (`const`/`let`, arrow functions, template literals, IIFE wrappers), `ZBZ.*` / `TeiViewer.*` namespaces
+- Frontend: ES6+ JavaScript (`const`/`let`, arrow functions, template literals, IIFE wrappers), `ZBZ.*` namespaces (viewer code under `ZBZ.Viewer`)
 - Frontend dependencies: loaded at runtime via CDN, no npm/build pipeline:
   - OpenSeadragon 5.0.1 (jsDelivr): facsimile renderer in view mode (E58)
   - JSZip 3.10.1 (cdnjs): planned for the ZIP export module (E61), not yet included in the code
@@ -69,7 +69,7 @@ The token catalog lives in `docs/assets/css/tokens.css`, base components in `doc
 
 ### Directories (orientation)
 
-- `data/`: input and reference data. `source/` = ZB delivery (immutable input, mostly gitignored) with `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, and `guidelines/` (editorial guidelines, Editionsrichtlinien). Project authority (git-tracked): `schema/zbz_hersch.rng` and `curated_tei/` (reserved for hand-verified TEI, currently empty). Generated: `doc_metadata.json` (Gemini cache)
+- `data/`: input and reference data. `source/` = ZB delivery (immutable input, mostly gitignored) with `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, and `guidelines/` (editorial guidelines, Editionsrichtlinien). Project authority (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (reserved for hand-verified TEI, currently empty) and `entities/` (curated entity list, GND variant cache, variant review, mention verdict store). Generated: `doc_metadata.json` (Gemini cache)
 - `scripts/`: pipeline + tools, grouped by domain into `ocr/`, `layout/`, `tei/`, `eval/`, `edition/`, `core/` (only `config.py` + `utils.py` top-level). Inventory: [scripts/README.md](scripts/README.md)
 - `output/`: all generated data streams (gitignored, NOT versioned)
 - `docs/`: static inspection/demo site (GitHub-Pages-ready) with HTML, `assets/` (`css/` + `js/`), `data/` (generated mirror), `images/`
@@ -138,7 +138,7 @@ python -m scripts.eval.relation_integrity_audit                 # next/prev pair
 python -m scripts.eval.body_note_audit                          # body-as-note candidates (footnote overdetection, E92)
 python -m scripts.eval.blank_text_audit                         # hallucinated text on blank pages: manifest + Docling zero-region channel (diagnosis, no gate)
 python -m scripts.eval.running_head_audit                       # running-head (Kolumnentitel) zones, validated against adjudicated marks (E105 follow-up, diagnosis)
-python -m scripts.tei.tei_reassemble_preview --all              # M3 dry run: reassembly preview -> output/tei_preview + report, tei_final untouched
+python -m scripts.tei.tei_reassemble_preview --all              # reassembly preview (obsolete since E99, artifact kept as evidence; never promote)
 python -m pytest tests/test_cer_statistics.py -q                # statistics library (BCa/paired/HCPR)
 python -m pytest tests/test_corpus_audit.py -q                  # corpus invariants + delivered distribution + completeness gate
 python -m pytest tests/test_scripts_health.py -q                # script health: syntax + internal imports (all scripts/)
@@ -209,7 +209,7 @@ python -m scripts.tei.tei_body_note_demote --promote-footnotes   # run (backup: 
 The demotion run consumes the facsimile-verified verdicts in
 `output/audits/body_note_verdicts.json` (E94) and never touches notes judged genuine.
 
-## Entity integration (pilot M0-M3, plan: knowledge/entity-integration.md)
+## Entity integration (M0-M4 reached, M5-M7 open; plan: knowledge/entity-integration.md)
 
 ```bash
 python -m scripts.tei.fetch_gnd_variants                         # build/refresh the GND variant cache (lobid)
@@ -224,10 +224,10 @@ python -m scripts.eval.entity_unlisted_scan                      # id-free propo
 python -m scripts.eval.entity_eval_sample --seed 42             # evaluation draw: 300 tier-1 marks + 40 pages, stratified, frozen (knowledge/entity-evaluation.md)
 python -m scripts.eval.build_mention_verdicts                    # mention verdict store: adjudicated judgments -> data/entities/mention_verdicts.json (snapshot-bound, deterministic)
 python -m scripts.eval.entity_risk_ranking                       # rank tier-1 marks by FP risk -> output/audits/fp_hunt/ (wave protocol: PROTOCOL.md)
-python -m pytest tests/test_entity_matcher.py tests/test_entity_lint.py tests/test_entity_regressions.py tests/test_entity_preview.py tests/test_entity_corpus_scan.py tests/test_generate_entity_preview_data.py tests/test_cover_strip.py tests/test_fetch_gnd_variants.py tests/test_mention_verdicts.py tests/test_entity_ref_invariant.py tests/test_entity_risk_ranking.py -q  # entity gates
+python -m pytest tests/test_entity_matcher.py tests/test_entity_lint.py tests/test_entity_regressions.py tests/test_entity_preview.py tests/test_entity_corpus_scan.py tests/test_generate_entity_preview_data.py tests/test_cover_strip.py tests/test_fetch_gnd_variants.py tests/test_mention_verdicts.py tests/test_entity_ref_invariant.py tests/test_entity_risk_ranking.py tests/test_entity_corpus_digest.py tests/test_entity_eval_sample.py tests/test_entity_gold_benchmark.py tests/test_entity_stream.py tests/test_entity_unlisted_scan.py tests/test_variant_review.py -q  # entity gates
 ```
 
-The viewer shows the previews read-only via `viewer.html?doc={DOC_ID}&entities=1`.
+The viewer shows the previews read-only via `viewer.html?doc={DOC_ID}&entities=1` or the viewer's view selection.
 
 ## Quality screening (deprecated, E66)
 
@@ -257,8 +257,8 @@ python -m scripts.tei.tei_status_marker                                  # write
 ```
 
 The per-object manifest `output/tei_final/{DOC_ID}_manifest.json` is the annotation slot per object:
-- `streams.{ocr,layout,tei}.status`: workflow status (unverifiziert | in_arbeit | verifiziert, three levels since E77). Traffic-light mapping in the UI: neutral/gray for `unverifiziert`, yellow for `in_arbeit`, green for `verifiziert`, red reserved for a future problem status.
-- `streams.{ocr,layout,tei}.history`: provenance of the human editing steps
+- `streams.{ocr,layout,tei,entities}.status`: workflow status (unverifiziert | in_arbeit | verifiziert, three levels since E77). Traffic-light mapping in the UI: neutral/gray for `unverifiziert`, yellow for `in_arbeit`, green for `verifiziert`, red reserved for a future problem status.
+- `streams.{ocr,layout,tei,entities}.history`: provenance of the human editing steps (the `entities` stream mirrors the preview layer, not the delivered TEI)
 - `pages.{N}`: exception pages (currently only safe blank pages; OCR rule + Docling=0)
 
 `page_manifest` automatically fills only engine descriptors and the safe `blank` class;
