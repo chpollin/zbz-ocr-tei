@@ -58,6 +58,79 @@ session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
 
+### 2026-08-12 Session 93 (continuation): entity-integration design plan versioned (M0)
+
+**Occasion** The operator released the entity-integration pilot after the design plan,
+the modelling decisions, and the agent-wave layout were settled in session.
+
+**Goal** Milestone M0: the design plan and the curated entity list versioned, the
+knowledge base wired.
+
+**Course** The design plan [entity-integration.md](entity-integration.md) was written,
+simplified on operator request, and wired into [index.md](index.md) and CLAUDE.md.
+`all_entities.json` moved from the repository root to `data/entities/` (git-tracked).
+Validation probes against `zbz_hersch.rng` confirmed that nested `persName` inside
+`bibl`, `hi` inside `bibl`, and `lb` inside `persName` are schema-valid. Reference-corpus
+probes settled the modelling detail rules recorded in the plan (bibl wraps hi, title-only
+span, footnotes carry refs, particles outside, mid-word line breaks inside names).
+
+**Decisions** Operator decisions of 2026-08-12, register entry to follow with the pilot
+milestone: nested entity markup permitted (the gold benchmark scores correct nesting as
+neutral); ref-less stock elements are enriched in place only when the tier rules verify
+the assignment; the pilot runs with three parallel build agents and an evaluation wave
+of fourteen agents, deterministic tiers only, no judge.
+
+**Status** M0 committed together with this entry. All detail rules live in the design
+plan; this entry only records the milestone.
+
+**Next steps**
+1. Wave 1: three build agents (GND cache and lint, matcher, preview runner).
+2. Pilot run over the ten-document panel into `output/entity_preview/`.
+3. Evaluation wave, then the M3 journal entry and commit.
+
+### 2026-08-12 Session 93: all_entities.json surveyed, inline-GND integration plan drafted
+
+**Occasion** A curated normdata export `all_entities.json` appeared in the repository root
+(copied from a local download, untracked); its content is meant to feed GND entity markup
+into the delivered TEI, which requires a plan and a verification strategy first.
+
+**Goal** Understand structure, quality, and origin of the file, map the repository's
+integration and verification surfaces, and draft a plan naming the open operator decisions.
+
+**Course** Two agents ran in parallel, one aggregating the file with an executed Python
+script, one surveying the repository read-only. The file holds three lists (persons 177,
+organisations 32, works 87; 296 entries), every entry with a formally valid GND id, no
+duplicates, and `works.author_gnd_id` fully resolving; defects are one test entry, one
+empty stub, four untitled works, one unnamed organisation, one deviant DNB link, and
+`editor_reviewed` true on only 10 entries. After checksum normalization the E71 remnant
+`output/gnd_analysis/gnd_entities.json` (mention index over 18 reference TEIs) is a strict
+subset, all 75 of its ids covered. The survey confirmed the binding E88 inline-GND target
+convention as realized in the 25 reference TEIs, the E94 marker pattern as the only
+sanctioned write path into `tei_final` (E99 forbids regeneration), and the verification
+stack: schema gate, conformity rules Z1-Z4/Z8 (idle since E71, lesson L14), pytest suite,
+CER reproduction as text-invariance proof, and the reference TEIs as gold standard for
+matcher precision. Central finding: the file carries normdata without mention sites, so
+deterministic surface-form matching is the actual work; naive surname matching yields 8314
+candidates with strong homonym ambiguity, and even the corpus subject's surname is
+ambiguous inside the file itself (three entries share it).
+
+**Decisions** None registered; the session produced a plan proposal with operator
+decisions open (file location and versioning, whether works join the automated tier,
+curation channel for the ambiguous-mention worklist, role of `editor_reviewed`).
+
+**Status** Analysis verified by an executed aggregation script (session scratchpad,
+exit 0); the repository survey cites schema and code lines. Nothing in the repository
+changed apart from this entry; the file remains untracked in the root. The plan, a
+five-phase sequence (intake and lint, dry-run matcher, gold-standard evaluation against
+the reference TEIs, E94-pattern stock run, post-run verification with mirror
+regeneration), was delivered in the session conversation.
+
+**Next steps**
+1. Operator decides file path, works tier, curation channel, and the `editor_reviewed` role.
+2. Intake the file at a tracked path and build the entity lint audit.
+3. Build the matcher dry-run only and measure precision/recall against the reference TEIs
+   before any write to `tei_final`.
+
 ### 2026-07-31 Session 92: knowledge base aligned post hoc with the Promptotyping convention (E104)
 
 **Occasion** The method paper "Promptotyping. Translating Research Data into Research Artefacts

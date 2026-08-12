@@ -27,6 +27,7 @@ Thematically separated documents:
 - [cer-methodology.md](knowledge/cer-methodology.md): CER measurement method (definition, reference choice, fidelity/scope, extraction and normalization rules, verification)
 - [literature-comparison.md](knowledge/literature-comparison.md): print-OCR state of research and comparability caveats
 - [ground-truth-map.md](knowledge/ground-truth-map.md): the 25 reference TEIs, phenomenon map and exception catalog
+- [entity-integration.md](knowledge/entity-integration.md): design plan for the GND entity integration (input data, target model, three-tier matching, milestones, verification)
 - [arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md): the project report (German, client-facing); measured values are in `docs/data/cer_statistics.json`
 - [journal.md](knowledge/journal.md): chronological session overview
 - [index.md](knowledge/index.md): navigation + key concepts
