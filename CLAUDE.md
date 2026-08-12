@@ -137,6 +137,7 @@ python -m scripts.eval.hi_preservation_audit                    # OCR emphasis s
 python -m scripts.eval.relation_integrity_audit                 # next/prev pairs, anchors, title-main, sp/speaker (E92)
 python -m scripts.eval.body_note_audit                          # body-as-note candidates (footnote overdetection, E92)
 python -m scripts.eval.blank_text_audit                         # hallucinated text on blank pages: manifest + Docling zero-region channel (diagnosis, no gate)
+python -m scripts.eval.running_head_audit                       # running-head (Kolumnentitel) zones, validated against adjudicated marks (E105 follow-up, diagnosis)
 python -m scripts.tei.tei_reassemble_preview --all              # M3 dry run: reassembly preview -> output/tei_preview + report, tei_final untouched
 python -m pytest tests/test_cer_statistics.py -q                # statistics library (BCa/paired/HCPR)
 python -m pytest tests/test_corpus_audit.py -q                  # corpus invariants + delivered distribution + completeness gate
