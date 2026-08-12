@@ -907,6 +907,110 @@ def test_full_name_hit_keeps_ignoring_the_neighbour_signals(lex):
     assert cands[0]["tier"] == 1
 
 
+# --- case-tolerant multiword forms (iteration 5) -----------------------------------
+#
+# Specification of the rule under test:
+#   1. A form of at least two tokens matches even when only letter case differs. The
+#      one-token forms keep the exact rules, because there the collision with ordinary
+#      vocabulary is the known failure mode.
+#   2. Tolerance covers letter case only. Diacritics, punctuation and whitespace stay
+#      exact.
+#   3. matched_form stays the lexicon form, surface is the text as it stands, and
+#      form_source stays the source of that form.
+#   4. Rule and tier are the ones the exact hit of the same form carries.
+#   5. All-caps person surfaces stay with the caps channel, which carries the byline
+#      exception of the document author, and a case-deviating writing of the author's
+#      own name is skipped like an all-caps one.
+#   6. A capitalized form written all in lower case is tier 2 with the ":suspect"
+#      suffix; the corpus sets "le capital" as ordinary prose far more often than as
+#      the listed title.
+
+
+def test_multiword_work_title_matches_across_case(lex):
+    xml = _tei("<p>Er las Allgemeine psychopathologie im Original.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["surface"] for c in cands] == ["Allgemeine psychopathologie"]
+    assert cands[0]["matched_form"] == "Allgemeine Psychopathologie"
+    assert cands[0]["form_source"] == "headword"
+    assert cands[0]["rule"] == "work-title"
+    assert cands[0]["tier"] == 1
+    assert xml[cands[0]["start"]:cands[0]["end"]] == cands[0]["surface"]
+
+
+def test_multiword_cache_variant_matches_across_case(tmp_path):
+    # doc 2330: the cache carries "La foi philosophique", the text sets "La Foi philosophique"
+    cache = {"1088013937": _cache_entry("Der philosophische Glaube", ("La foi philosophique",))}
+    lexicon = _build(
+        tmp_path, works=[_work("1088013937", "Der philosophische Glaube")], cache=cache
+    )
+    cands = em.find_candidates(_tei("<p>Sie uebersetzte La Foi philosophique.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["La Foi philosophique"]
+    assert cands[0]["matched_form"] == "La foi philosophique"
+    assert cands[0]["form_source"] == "cache-variant"
+    assert cands[0]["rule"] == "work-variant"
+    assert cands[0]["tier"] == 1
+
+
+def test_multiword_org_name_matches_across_case(lex):
+    cands = em.find_candidates(_tei("<p>Der deutscher Gewerkschaftsbund tagte.</p>"), lex)
+    assert [c["surface"] for c in cands] == ["deutscher Gewerkschaftsbund"]
+    assert cands[0]["matched_form"] == "Deutscher Gewerkschaftsbund"
+    assert cands[0]["rule"] == "org-name"
+
+
+def test_one_word_title_keeps_the_exact_rules(lex):
+    # the known failure mode of one-word titles is the collision with ordinary
+    # vocabulary; case tolerance would multiply it
+    assert em.find_candidates(_tei("<p>In der bibel steht es.</p>"), lex) == []
+    assert em.find_candidates(_tei("<p>In der BIBEL steht es.</p>"), lex) == []
+
+
+def test_one_word_org_token_keeps_the_exact_rules(lex):
+    assert em.find_candidates(_tei("<p>Die Abteilung an der Unesco.</p>"), lex) == []
+
+
+def test_case_tolerance_does_not_reach_diacritics(tmp_path):
+    lexicon = _build(tmp_path, works=[_work("1088026605", "Idéologies et réalité")])
+    assert em.find_candidates(_tei("<p>Er las Ideologies et realite.</p>"), lexicon) == []
+    cands = em.find_candidates(_tei("<p>Er las idéologies et Réalité.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["idéologies et Réalité"]
+
+
+def test_case_tolerance_does_not_reach_punctuation_or_whitespace(tmp_path):
+    lexicon = _build(tmp_path, persons=[_person("118557106", "Jaspers, Karl")])
+    assert em.find_candidates(_tei("<p>Zitiert nach jaspers karl.</p>"), lexicon) == []
+
+
+def test_case_tolerant_hit_stays_inside_the_word_boundary(lex):
+    xml = _tei("<p>Er las Allgemeine psychopathologien im Original.</p>")
+    assert em.find_candidates(xml, lex) == []
+
+
+def test_all_lowercase_writing_of_a_title_is_suspect(tmp_path):
+    # "le capital" is the ordinary noun phrase far more often than the listed work
+    lexicon = _build(tmp_path, works=[_work("4099309-7", "Le capital")])
+    cands = em.find_candidates(_tei("<p>Der Zins auf le capital steigt.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["le capital"]
+    assert cands[0]["rule"] == "work-title:suspect"
+    assert cands[0]["tier"] == 2
+    # one capital is enough to make it a title mention again
+    kept = em.find_candidates(_tei("<p>Er las Le Capital von Marx.</p>"), lexicon)
+    assert kept[0]["rule"] == "work-title"
+    assert kept[0]["tier"] == 1
+
+
+def test_case_deviating_hit_on_the_document_author_is_skipped(lex):
+    # the corpus sets the byline as "Jeanne HERSCH"; bylines stay unmarked
+    xml = _tei("<p>Jeanne HERSCH</p>\n<p>Dazu schrieb Jeanne Hersch spaeter mehr.</p>")
+    cands = em.find_candidates(xml, lex, author_labels=("Hersch, Jeanne",))
+    assert [c["surface"] for c in cands] == ["Jeanne Hersch"]
+    # without the author metadata the same byline is a normal full-name hit
+    assert [c["surface"] for c in em.find_candidates(xml, lex)] == [
+        "Jeanne HERSCH",
+        "Jeanne Hersch",
+    ]
+
+
 # --- typographic evidence of one-word titles (iteration 4, point 4) ----------------
 
 

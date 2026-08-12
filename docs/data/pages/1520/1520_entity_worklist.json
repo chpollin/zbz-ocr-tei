@@ -2,7 +2,33 @@
   "doc": "1520",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "12": [
+      {
+        "gid": "108801397X",
+        "category": "work",
+        "surface": "introduction à la philosophie",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "Introduction à la philosophie",
+        "form_source": "cache-variant",
+        "context": "SEMENT Ce petit livre voudrait servir d’introduction à la philosophie de Karl Jaspers pour les lecteurs de la",
+        "text": "introduction à la philosophie",
+        "occurrence": 1
+      }
+    ],
     "13": [
+      {
+        "gid": "36146-X",
+        "category": "organisation",
+        "surface": "l’Université de Bâle",
+        "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "l’université de Bâle",
+        "form_source": "legacy",
+        "context": "on. En 1948, il accepta l’invitation de l’Université de Bâle, et il y enseigna bien au-delà de l’âge",
+        "text": "l’Université de Bâle",
+        "occurrence": 1
+      },
       {
         "gid": "117085391",
         "category": "person",
@@ -113,6 +139,18 @@
         "occurrence": 1
       },
       {
+        "gid": "4498918-0",
+        "category": "work",
+        "surface": "la culpabilité allemande",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "La culpabilité allemande",
+        "form_source": "cache-variant",
+        "context": "1945, son premier cours eut pour thème la culpabilité allemande. La prise de conscience indispensable e",
+        "text": "la culpabilité allemande",
+        "occurrence": 1
+      },
+      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
@@ -197,6 +235,18 @@
         "context": "levé hors de toute foi confessionnelle, Jaspers devait trouver, par la philosophie, et",
         "text": "Jaspers",
         "occurrence": 5
+      },
+      {
+        "gid": "1088013937",
+        "category": "work",
+        "surface": "la foi philosophique",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "La Foi Philosophique",
+        "form_source": "legacy",
+        "context": "ligieux de sa femme, ce qu’il appelle « la foi philosophique ». Il ne faudrait pas s’y tromper : cet",
+        "text": "la foi philosophique",
+        "occurrence": 1
       }
     ],
     "16": [
@@ -213,6 +263,18 @@
         "form_source": "surname-index",
         "context": "et de Jacob». La foi philosophique, dit Jaspers, c’est « une exigence inouïe ». Aucune",
         "text": "Jaspers",
+        "occurrence": 1
+      },
+      {
+        "gid": "1088013961",
+        "category": "work",
+        "surface": "les grands philosophes",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "Les grands philosophes",
+        "form_source": "cache-variant",
+        "context": "on intime conviction, et l’échange avec les grands philosophes du passé. La vraie « patrie religieuse",
+        "text": "les grands philosophes",
         "occurrence": 1
       },
       {
@@ -2201,6 +2263,18 @@
         "context": "oir elle-même l’appel de celle-ci. Pour Jaspers, l’espace privilégié où la foi philosop",
         "text": "Jaspers",
         "occurrence": 4
+      },
+      {
+        "gid": "1088013937",
+        "category": "work",
+        "surface": "la foi philosophique",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "La Foi Philosophique",
+        "form_source": "legacy",
+        "context": "i. Pour Jaspers, l’espace privilégié où la foi philosophique se nourrit de la communication avec les",
+        "text": "la foi philosophique",
+        "occurrence": 1
       }
     ],
     "61": [
@@ -2404,6 +2478,18 @@
         "context": "un tel effort. Aucune définition, selon Jaspers, ne dit ce qu’est la démocratie, et pou",
         "text": "Jaspers",
         "occurrence": 2
+      },
+      {
+        "gid": "1088013937",
+        "category": "work",
+        "surface": "la foi philosophique",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "La Foi Philosophique",
+        "form_source": "legacy",
+        "context": "niveau d’un engagement absolu, celui de la foi philosophique ou de la foi religieuse. La démocratie",
+        "text": "la foi philosophique",
+        "occurrence": 1
       },
       {
         "gid": "117085391",
@@ -3273,31 +3359,15 @@
     ],
     "105": [
       {
-        "gid": "4006406-2",
+        "gid": "1088013937",
         "category": "work",
-        "surface": "Bible",
-        "rule": "short-title",
+        "surface": "la foi philosophique",
+        "rule": "work-variant:suspect",
         "alternatives": [],
-        "matched_form": "Bible",
-        "form_source": "cache-variant",
-        "context": "velée de la vérité irremplaçable que la Bible contient. Au contraire, dans la situati",
-        "evidence": "none",
-        "text": "Bible",
-        "occurrence": 1
-      }
-    ],
-    "106": [
-      {
-        "gid": "4006406-2",
-        "category": "work",
-        "surface": "Bible",
-        "rule": "short-title",
-        "alternatives": [],
-        "matched_form": "Bible",
-        "form_source": "cache-variant",
-        "context": "ion, celle qu’attestent la Parole de la Bible et la tradition. Dès lors, pour elle, i",
-        "evidence": "none",
-        "text": "Bible",
+        "matched_form": "La Foi Philosophique",
+        "form_source": "legacy",
+        "context": "l’inspire ce qui constitue l’origine de la foi philosophique, vivante depuis qu’il y a des hommes qu",
+        "text": "la foi philosophique",
         "occurrence": 1
       }
     ],
@@ -3317,19 +3387,6 @@
     ],
     "108": [
       {
-        "gid": "4006406-2",
-        "category": "work",
-        "surface": "Bible",
-        "rule": "short-title",
-        "alternatives": [],
-        "matched_form": "Bible",
-        "form_source": "cache-variant",
-        "context": "définie à la tradition plus vaste de la Bible, et de celle-ci à la vérité contenue da",
-        "evidence": "none",
-        "text": "Bible",
-        "occurrence": 1
-      },
-      {
         "gid": "118517406",
         "category": "person",
         "surface": "Bultmann",
@@ -3339,6 +3396,20 @@
         "form_source": "surname-index",
         "context": "« démythisation » Lorsqu’un théologien (Bultmann) admet que s’impose une image moderne d",
         "text": "Bultmann",
+        "occurrence": 1
+      }
+    ],
+    "109": [
+      {
+        "gid": "1088013937",
+        "category": "work",
+        "surface": "la foi philosophique",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "La Foi Philosophique",
+        "form_source": "legacy",
+        "context": "? Est-il possible à celui qui vit dans la foi philosophique de rencontrer celui qui croit à la Révé",
+        "text": "la foi philosophique",
         "occurrence": 1
       }
     ],
@@ -4132,6 +4203,56 @@
         "context": "ilosophie universelle 106 Politique 51. Philosophie et politique 108 52. La politique à l’U",
         "evidence": "none",
         "text": "Philosophie",
+        "occurrence": 1
+      }
+    ],
+    "138": [
+      {
+        "gid": "108801397X",
+        "category": "work",
+        "surface": "introduction à la philosophie",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "Introduction à la philosophie",
+        "form_source": "cache-variant",
+        "context": "raphique 119 Ce livre voudrait servir d’introduction à la philosophie de Karl Jaspers pour les lecteurs de la",
+        "text": "introduction à la philosophie",
+        "occurrence": 1
+      },
+      {
+        "gid": "4498918-0",
+        "category": "work",
+        "surface": "la culpabilité allemande",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "La culpabilité allemande",
+        "form_source": "cache-variant",
+        "context": "la guerre finie, pour parler d’abord de la culpabilité allemande. À partir de 1948 il fut professeur à l",
+        "text": "la culpabilité allemande",
+        "occurrence": 1
+      },
+      {
+        "gid": "36146-X",
+        "category": "organisation",
+        "surface": "l’Université de Bâle",
+        "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "l’université de Bâle",
+        "form_source": "legacy",
+        "context": "e. À partir de 1948 il fut professeur à l’Université de Bâle, où il enseigna presque jusqu’à sa mort",
+        "text": "l’Université de Bâle",
+        "occurrence": 1
+      },
+      {
+        "gid": "1088013937",
+        "category": "work",
+        "surface": "la foi philosophique",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "La Foi Philosophique",
+        "form_source": "legacy",
+        "context": "umière de la raison existentielle et de la foi philosophique. Das Dokument enthält nur Maschinenerze",
+        "text": "la foi philosophique",
         "occurrence": 1
       }
     ]

@@ -50,11 +50,11 @@ def _cache_entry(preferred: str, variants: tuple[str, ...] = ()) -> dict:
     }
 
 
-def _build(tmp_path, persons=(), orgs=(), cache=None, legacy=None):
+def _build(tmp_path, persons=(), orgs=(), works=(), cache=None, legacy=None):
     entities_path = tmp_path / "all_entities.json"
     entities_path.write_text(
         json.dumps(
-            {"persons": list(persons), "organisations": list(orgs), "works": []},
+            {"persons": list(persons), "organisations": list(orgs), "works": list(works)},
             ensure_ascii=False,
         ),
         encoding="utf-8",
@@ -215,6 +215,40 @@ def test_cover_sheet_mention_is_no_candidate(tmp_path):
     assert cands[0]["start"] > COVER_DOC.index('<pb n="2"/>')
     assert cands[0]["surface"] == "Schweizerischer Lehrerverein"
     assert cands[0]["tier"] == 1
+
+
+# --- case-divergent work title (doc 2330, corpus finding) --------------------------
+
+
+def test_case_divergent_work_title_is_a_candidate(tmp_path):
+    # the GND cache carries "La foi philosophique", doc 2330 sets "La Foi philosophique";
+    # the mention used to be lost on the capital F alone
+    lexicon = _build(
+        tmp_path,
+        works=[{"GND_id": "1088013937", "title": "Der philosophische Glaube",
+                "author_gnd_id": "118557106", "listBibl": []}],
+        cache={"1088013937": _cache_entry("Der philosophische Glaube",
+                                          ("La foi philosophique",))},
+    )
+    xml = _tei(
+        "<p>Vous avez traduit <hi rendition=\"#i\">La Foi philosophique</hi>, "
+        "ainsi que d'autres textes de Jaspers.</p>"
+    )
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["surface"] for c in cands] == ["La Foi philosophique"]
+    assert cands[0]["gid"] == "1088013937"
+    assert cands[0]["matched_form"] == "La foi philosophique"
+    assert cands[0]["form_source"] == "cache-variant"
+    assert cands[0]["tier"] == 1
+
+
+def test_case_tolerance_leaves_the_all_caps_person_regime_alone(tmp_path):
+    # the caps channel keeps its own rule and its byline exception; the case-tolerant
+    # channel must not take an all-caps person name away from it
+    lexicon = _build(tmp_path, persons=[_person("118815679", "Hersch, Jeanne")])
+    xml = _tei("<p>JEANNE HERSCH</p>")
+    assert [c["rule"] for c in em.find_candidates(xml, lexicon)] == ["caps-full-name"]
+    assert em.find_candidates(xml, lexicon, author_labels=("Hersch, Jeanne",)) == []
 
 
 # --- ambiguous bare surname: both Jaspers spouses (frontend evaluation, point 1) ---

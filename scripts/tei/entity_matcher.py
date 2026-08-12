@@ -20,8 +20,9 @@ Two public functions:
         evidence. Hard invariants: xml_string[start:end] == surface, candidates sorted
         by start and free of overlap, spans only inside <text>, and the surface carries
         no markup other than <lb/> tags. `author_labels` holds the labels of the
-        document's own author (Masterfile metadata); all-caps hits on that entity are
-        skipped, because bylines, running headers and signatures stay unmarked.
+        document's own author (Masterfile metadata); all-caps and case-deviating hits
+        on that entity are skipped, because bylines, running headers and signatures
+        stay unmarked.
 
         alternatives   every listed id the matched form or surname belongs to, sorted
                        and including the reported gid. Empty for an unambiguous
@@ -111,6 +112,20 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   all-caps surnames through "caps-surname" (tier 2). Forms whose uppercase changes
   length (the German sharp s) carry no caps form, because the offset mapping assumes
   equal length.
+- A form of at least two tokens also matches when only letter case differs; the corpus
+  sets "La Foi philosophique" where the GND cache carries "La foi philosophique". Such
+  a hit keeps the rule, the tier and the matched_form of the exact hit of that form, so
+  it needs no rule id of its own; a case difference between matched_form and surface is
+  what identifies it. Everything else stays exact, diacritics, punctuation and
+  whitespace alike. One-token forms are excluded, because there the collision with
+  ordinary vocabulary is the known failure mode ("Philosophie" as a title). Two limits
+  keep that failure mode from returning at phrase level:
+    * a capitalized form written all in lower case drops to tier 2 with the ":suspect"
+      suffix, because "le capital" and "les grands philosophes" are ordinary prose far
+      more often than they are the listed titles;
+    * all-caps person surfaces stay with the caps channel and its byline exception,
+      and a case-deviating writing of the document author's own name is skipped like an
+      all-caps one, the corpus setting bylines as "Jeanne HERSCH".
 """
 
 from __future__ import annotations
@@ -251,6 +266,7 @@ class _Hit:
     alternatives: tuple[str, ...] = ()
     matched_form: str = ""
     form_source: str = "headword"
+    case_tolerant: bool = False
 
 
 @dataclass(frozen=True)
@@ -285,8 +301,10 @@ def build_lexicon(
     and simply contribute fewer name forms when missing. The returned dict carries
     `entries` (gid -> record), `forms` (form string -> owners as
     (gid, category, rule, source)), `by_first_word` (first word -> forms, longest
-    first), `surnames` (surname -> gids), `surname_forms` (surname -> gid ->
-    (form, source), the provenance of every surname entry), the all-caps indexes
+    first), `lower_by_first_word` (the same index lowercased and reduced to the
+    multi-token forms, which is the case-tolerant channel), `surnames` (surname ->
+    gids), `surname_forms` (surname -> gid -> (form, source), the provenance of every
+    surname entry), the all-caps indexes
     `caps_forms` / `caps_by_first_word` / `caps_surnames` / `caps_surname_forms`,
     `legacy_demoted` (the (gid, form) pairs the bearer's record does not corroborate),
     `skipped` (counters) and `sources` (the input paths).
@@ -341,6 +359,7 @@ def build_lexicon(
         "entries": entries,
         "forms": {form: tuple(sorted(owners)) for form, owners in forms.items()},
         "by_first_word": _first_word_index(forms),
+        "lower_by_first_word": _first_word_index(forms, fold=True),
         "surnames": {name: tuple(sorted(gids)) for name, gids in surnames.items()},
         "surname_forms": surname_forms,
         "caps_forms": {form: tuple(sorted(owners)) for form, owners in caps_forms.items()},
@@ -358,11 +377,18 @@ def build_lexicon(
     }
 
 
-def _first_word_index(forms: dict[str, list]) -> dict[str, tuple[str, ...]]:
-    """First word -> the forms starting with it, longest first (the scan tries in order)."""
+def _first_word_index(forms: dict[str, list], fold: bool = False) -> dict[str, tuple[str, ...]]:
+    """First word -> the forms starting with it, longest first (the scan tries in order).
+
+    With `fold` the key is lowercased and only the forms of at least two tokens enter,
+    which is the index of the case-tolerant channel.
+    """
     buckets: dict[str, list[str]] = {}
     for form in forms:
-        buckets.setdefault(_first_word(form), []).append(form)
+        if fold and len(form.split()) < 2:
+            continue
+        word = _first_word(form)
+        buckets.setdefault(word.lower() if fold else word, []).append(form)
     return {
         word: tuple(sorted(bucket, key=lambda form: (-len(form), form)))
         for word, bucket in buckets.items()
@@ -897,7 +923,8 @@ def find_candidates(
     author_labels: tuple[str, ...] = (),
 ) -> list[dict]:
     """Report entity mention candidates as raw character spans of `xml_string`."""
-    if any(key not in lexicon for key in ("by_first_word", "surnames", "caps_by_first_word")):
+    required = ("by_first_word", "lower_by_first_word", "surnames", "caps_by_first_word")
+    if any(key not in lexicon for key in required):
         raise ValueError("lexicon must be the return value of build_lexicon()")
     zones = _scan_zones(xml_string)
     norm = _normalize(xml_string, zones)
@@ -957,7 +984,7 @@ def _scan(
         if hit is None:
             pos = _word_end(text, pos)
             continue
-        if hit.rule.startswith("caps-") and hit.gid in author_gids:
+        if hit.gid in author_gids and (hit.rule.startswith("caps-") or hit.case_tolerant):
             pos = max(hit.end, pos + 1)
             continue
         if _base_rule(hit.rule) in _SUSPECT_RULES and _is_suspect(
@@ -1051,15 +1078,42 @@ def _is_known_form(pair: str, lexicon: dict) -> bool:
 
 
 def _match_at(text: str, pos: int, lexicon: dict, anchored: set[str]) -> _Hit | None:
-    """Longest lexicon form at `pos`, then the caps forms, else the surname fallback."""
+    """Lexicon form at `pos`: exact, then caps, then case-tolerant, else the surname."""
     word = text[pos:_word_end(text, pos)]
-    for form in lexicon["by_first_word"].get(word, ()):
-        result = _try_form(text, pos, form)
+    hit = _form_hit(text, pos, lexicon, lexicon["by_first_word"].get(word, ()))
+    if hit is not None:
+        return hit
+    caps = _caps_at(text, pos, word, lexicon)
+    if caps is not None:
+        return caps
+    hit = _form_hit(
+        text, pos, lexicon,
+        lexicon["lower_by_first_word"].get(word.lower(), ()), ignore_case=True,
+    )
+    if hit is not None:
+        return hit
+    return _surname_at(text, pos, word, lexicon, anchored)
+
+
+def _form_hit(
+    text: str,
+    pos: int,
+    lexicon: dict,
+    forms: tuple[str, ...],
+    ignore_case: bool = False,
+) -> _Hit | None:
+    """Longest form of `forms` that matches at `pos`, with its own rule and tier."""
+    for form in forms:
+        result = _try_form(text, pos, form, ignore_case)
         if result is None:
             continue
         end, kind = result
         owners = lexicon["forms"][form]
         gid, category, rule, source = owners[0]
+        # The all-caps writing of a person name belongs to the caps channel, which
+        # carries the byline exception of the document author.
+        if ignore_case and category == "person" and text[pos:end].isupper():
+            continue
         # A one-word title such as "Nietzsche" can also be a listed surname; reporting
         # the title alone would hide the person reading, so both bearers are named.
         bearers = _bearers(owners, lexicon["surnames"].get(form, ()))
@@ -1067,11 +1121,30 @@ def _match_at(text: str, pos: int, lexicon: dict, anchored: set[str]) -> _Hit | 
             rule, tier = "adjective-form", 2
         else:
             tier = TIER_BY_RULE[rule]
-        return _hit(pos, end, gid, category, rule, tier, bearers, form, source)
-    caps = _caps_at(text, pos, word, lexicon)
-    if caps is not None:
-        return caps
-    return _surname_at(text, pos, word, lexicon, anchored)
+        hit = _hit(pos, end, gid, category, rule, tier, bearers, form, source)
+        segment = text[pos:pos + len(form)]
+        return hit if segment == form else _case_tolerant(hit, segment, form)
+    return None
+
+
+def _case_tolerant(hit: _Hit, segment: str, form: str) -> _Hit:
+    """Mark a hit that only letter case separates from its form, and weigh its case."""
+    hit = replace(hit, case_tolerant=True)
+    if _is_lowercase_writing(segment, form):
+        return replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
+    return hit
+
+
+def _is_lowercase_writing(segment: str, form: str) -> bool:
+    """True when a capitalized form appears as an all-lowercase run of words.
+
+    A title or name mention keeps at least one capital in this corpus, so the
+    all-lowercase writing of a listed title is ordinary vocabulary rather than a
+    mention ("le capital", "les grands philosophes").
+    """
+    return any(char.isupper() for char in form) and not any(
+        char.isupper() for char in segment
+    )
 
 
 def _bearers(owners: tuple, shadowed: tuple[str, ...] = ()) -> tuple[str, ...]:
@@ -1102,9 +1175,10 @@ def _hit(
                 matched_form, source)
 
 
-def _try_form(text: str, pos: int, form: str) -> tuple[int, str] | None:
+def _try_form(text: str, pos: int, form: str, ignore_case: bool = False) -> tuple[int, str] | None:
     end = pos + len(form)
-    if text[pos:end] != form:
+    segment = text[pos:end]
+    if segment != form and not (ignore_case and segment.lower() == form.lower()):
         return None
     if not _is_word(form[-1]):
         return end, "plain"
