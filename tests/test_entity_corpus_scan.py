@@ -19,6 +19,8 @@ from scripts.eval.entity_corpus_scan import (
     build_scan_report,
     check_invariants,
     main,
+    page_of,
+    pb_offsets,
     resolve_docs,
     run_scan,
     scan_document,
@@ -38,6 +40,14 @@ _MINI_HYPHEN = (
     "</div></body></text></TEI>"
 )
 
+# Two pages: the first candidate sits on page 1, the second behind the second <pb>.
+_MINI_PAGES = (
+    '<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body><div type="text">'
+    '<pb n="1" facs="#f1"/><p>Karl Jaspers.</p>'
+    '<pb n="56" facs="#f2"/><p>Jeanne Hersch.</p>'
+    "</div></body></text></TEI>"
+)
+
 _ENTITIES = {
     "persons": [
         {"GND_id": "TEST-0001", "name": "Jaspers, Karl"},
@@ -48,11 +58,12 @@ _ENTITIES = {
 }
 
 
-def _rec(doc="100", gid="TEST-0001", surface="Karl Jaspers", start=0, tier=1,
+def _rec(doc="100", page=1, gid="TEST-0001", surface="Karl Jaspers", start=0, tier=1,
          rule="full-name", category="person", context=None, alternatives=(),
          matched_form=None, form_source="headword", evidence=None):
     record = {
         "doc": doc,
+        "page": page,
         "gid": gid,
         "category": category,
         "surface": surface,
@@ -74,15 +85,15 @@ def _fake_matcher(xml_string, lexicon):
     """Two candidates per document, offsets taken from the string itself."""
     start = xml_string.index("Karl Jaspers")
     return [
-        _drop_doc(_rec(start=start)),
-        _drop_doc(_rec(gid="TEST-0002", surface="Hersch", tier=2, rule="bare-surname",
-                       start=xml_string.index("Hersch"))),
+        _matcher_cand(_rec(start=start)),
+        _matcher_cand(_rec(gid="TEST-0002", surface="Hersch", tier=2, rule="bare-surname",
+                           start=xml_string.index("Hersch"))),
     ]
 
 
-def _drop_doc(record):
-    """The matcher contract has no doc key; the scan adds it."""
-    return {k: v for k, v in record.items() if k != "doc"}
+def _matcher_cand(record):
+    """The matcher contract has neither doc nor page; the scan adds both."""
+    return {k: v for k, v in record.items() if k not in ("doc", "page")}
 
 
 def _write_entities(tmp_path):
@@ -96,7 +107,7 @@ def _write_entities(tmp_path):
 def test_record_carries_the_documented_keys_in_order():
     records, _ = scan_document("100", _MINI, {}, _fake_matcher)
     assert [list(r) for r in records] == [
-        ["doc", "gid", "category", "surface", "start", "end", "tier", "rule",
+        ["doc", "page", "gid", "category", "surface", "start", "end", "tier", "rule",
          "alternatives", "matched_form", "form_source", "context"]
     ] * 2
     assert {r["doc"] for r in records} == {"100"}
@@ -104,13 +115,49 @@ def test_record_carries_the_documented_keys_in_order():
 
 def test_record_carries_the_evidence_of_a_one_word_title():
     def matcher(xml_string, lexicon):
-        return [_drop_doc(_rec(gid="TEST-0003", surface="Hersch", tier=2, category="work",
-                               rule="short-title", evidence="none",
-                               start=xml_string.index("Hersch")))]
+        return [_matcher_cand(_rec(gid="TEST-0003", surface="Hersch", tier=2, category="work",
+                                   rule="short-title", evidence="none",
+                                   start=xml_string.index("Hersch")))]
 
     records, _ = scan_document("100", _MINI, {}, matcher)
     assert records[0]["evidence"] == "none"
     assert list(records[0])[-1] == "context"
+
+
+# --- page assignment ---------------------------------------------------------
+
+def test_page_of_counts_the_pb_elements_of_the_body():
+    starts = pb_offsets(_MINI_PAGES)
+    assert len(starts) == 2
+    assert page_of(starts, starts[0] - 1) == 1  # before the first pb
+    assert page_of(starts, _MINI_PAGES.index("Karl Jaspers")) == 1
+    assert page_of(starts, _MINI_PAGES.index("Jeanne Hersch")) == 2
+
+
+def test_page_is_the_sequential_pb_position_not_the_n_attribute():
+    """The second page carries n="56"; the page number stays the pb count."""
+    records, _ = scan_document("100", _MINI_PAGES, {}, _fake_matcher)
+    assert [(r["surface"], r["page"]) for r in records] == [
+        ("Karl Jaspers", 1), ("Hersch", 2)
+    ]
+
+
+def test_a_document_without_pb_counts_as_page_one():
+    assert pb_offsets(_MINI) == []
+    records, _ = scan_document("100", _MINI, {}, _fake_matcher)
+    assert {r["page"] for r in records} == {1}
+
+
+def test_pb_offsets_ignore_a_pb_outside_the_body():
+    header = (
+        '<TEI xmlns="http://www.tei-c.org/ns/1.0"><teiHeader><pb n="x"/></teiHeader>'
+        '<text><body><div type="text">'
+        '<pb n="1"/><p>Karl Jaspers.</p><p>Hersch.</p>'
+        "</div></body></text></TEI>"
+    )
+    assert len(pb_offsets(header)) == 1
+    records, _ = scan_document("100", header, {}, _fake_matcher)
+    assert {r["page"] for r in records} == {1}
 
 
 def test_summary_counts_the_typographic_evidence_and_the_ambiguities():
@@ -257,6 +304,16 @@ def test_run_scan_aggregates_over_documents(tmp_path):
     assert report["by_entity_top"][0] == ["TEST-0001", "Jaspers, Karl", 2]
 
 
+def test_run_scan_carries_the_page_of_every_candidate(tmp_path):
+    """The snapshot is the single source of the page number for downstream tools."""
+    (tmp_path / "100_final.xml").write_text(_MINI_PAGES, encoding="utf-8")
+    report = run_scan(resolve_docs(tmp_path), {}, _fake_matcher, _sources())
+    assert [(c["surface"], c["page"]) for c in report["candidates"]] == [
+        ("Karl Jaspers", 1), ("Hersch", 2)
+    ]
+    assert all(isinstance(c["page"], int) for c in report["candidates"])
+
+
 def test_run_scan_leaves_the_source_files_untouched(tmp_path):
     src = tmp_path / "100_final.xml"
     src.write_text(_MINI, encoding="utf-8")
@@ -308,6 +365,7 @@ def test_main_writes_the_report_and_prints_ascii(tmp_path, monkeypatch, capsys):
     payload = json.loads(out.read_text(encoding="utf-8"))
     assert payload["generated_from"]["code"] == "entity_matcher"
     assert payload["generated_from"]["legacy"] is None
+    assert all("page" in candidate for candidate in payload["candidates"])
     assert list(payload["by_doc"]) == ["100"]
     assert payload["by_entity_top"] == [["TEST-0001", "Müller, Karl", 1]]  # report keeps unicode
     captured = capsys.readouterr().out

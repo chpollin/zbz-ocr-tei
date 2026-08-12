@@ -1,10 +1,16 @@
 """Corpus-wide dump of the entity candidates (entity integration, M3 fix package).
 
 Runs ``scripts.tei.entity_matcher`` over the delivered TEI and writes every candidate
-with rule, tier, offsets and context into one deterministic JSON snapshot, plus the
+with rule, tier, offsets, page and context into one deterministic JSON snapshot, plus the
 distribution views per document, per rule and per entity. The snapshot is diffable, so
 a rule change shows its exact corpus effect before it binds; the design plan is in
 knowledge/entity-integration.md (section "Instruments").
+
+The page is resolved here, once per document, and is the snapshot's answer for every
+consumer: a downstream tool reads ``page`` instead of reopening the TEI and rebuilding the
+pb grid, which is where a second, diverging implementation would put marks on wrong pages.
+The rule is the project-wide one of ``scripts.tei.pb_split``, the 1-based sequential
+position of the ``<pb>`` element inside ``<body>`` rather than its ``n`` attribute.
 
 DIAGNOSIS ONLY -- reads output/tei_final and the entity data, writes one report to
 output/audits/, changes no TEI and is no pass/fail gate (exit code always 0).
@@ -26,11 +32,13 @@ from __future__ import annotations
 
 import argparse
 import json
+from bisect import bisect_right
 from collections import Counter
 from pathlib import Path
 
 from scripts.config import DATA_DIR, OUTPUT_DIR, TEI_FINAL_DIR
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, iter_final_tei
+from scripts.tei.pb_split import BODY_INNER_RE, PB_RE
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
@@ -59,17 +67,36 @@ HYPHENS = frozenset("-\u2010\u2011")
 
 
 # ---------------------------------------------------------------------------
+# Page assignment
+# ---------------------------------------------------------------------------
+
+def pb_offsets(xml_string: str) -> list[int]:
+    """Offsets of the `<pb>` tags inside `<body>`, in document order."""
+    match = BODY_INNER_RE.search(xml_string)
+    if not match:
+        return []
+    base = match.start(1)
+    return [base + pb.start() for pb in PB_RE.finditer(match.group(1))]
+
+
+def page_of(pb_starts: list[int], offset: int) -> int:
+    """1-based page of a TEI offset; anything before the first `<pb>` counts as page 1."""
+    return max(1, bisect_right(pb_starts, offset))
+
+
+# ---------------------------------------------------------------------------
 # Scan
 # ---------------------------------------------------------------------------
 
-def _record(doc_id: str, cand: dict) -> dict:
-    """Candidate plus its document, in the documented key order.
+def _record(doc_id: str, cand: dict, page: int) -> dict:
+    """Candidate plus its document and page, in the documented key order.
 
     `evidence` sits before the context and only where the matcher reports it (one-word
     work titles), so the snapshot carries the typographic pre-sorting it is measured on.
     """
     record = {
         "doc": doc_id,
+        "page": page,
         "gid": cand["gid"],
         "category": cand["category"],
         "surface": cand["surface"],
@@ -123,8 +150,13 @@ def _hyphen_side(before: bool, after: bool) -> str:
 
 def scan_document(doc_id: str, xml_string: str, lexicon: dict,
                   find_candidates) -> tuple[list[dict], dict[str, list[dict]]]:
-    """Candidates of one document as records, plus its invariant violations."""
-    records = [_record(doc_id, cand) for cand in find_candidates(xml_string, lexicon)]
+    """Candidates of one document as records, plus its invariant violations.
+
+    The pb grid is read once per document and every candidate offset is cut on it.
+    """
+    pb_starts = pb_offsets(xml_string)
+    records = [_record(doc_id, cand, page_of(pb_starts, cand["start"]))
+               for cand in find_candidates(xml_string, lexicon)]
     return records, check_invariants(records, xml_string)
 
 

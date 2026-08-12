@@ -47,9 +47,13 @@ _ENTITIES = {
 
 
 def _rec(doc="100", gid="TEST-0003", surface="Karl Jaspers", start=100, tier=1,
-         rule="full-name", category="person", form_source="headword"):
-    """One scan candidate record in the shape of entity_corpus_scan.json."""
-    return {
+         rule="full-name", category="person", form_source="headword", page=None):
+    """One scan candidate record in the shape of entity_corpus_scan.json.
+
+    ``page=None`` produces a record of the old schema, without the page field; the
+    ranking then falls back to its own pb reading.
+    """
+    record = {
         "doc": doc,
         "gid": gid,
         "category": category,
@@ -63,10 +67,17 @@ def _rec(doc="100", gid="TEST-0003", surface="Karl Jaspers", start=100, tier=1,
         "form_source": form_source,
         "context": f"... {surface} ...",
     }
+    if page is not None:
+        record["page"] = page
+    return record
 
 
 def _page_fn(doc, start):
     return 1 + start // 1000
+
+
+def _no_page_fn(doc, start):
+    raise AssertionError("the scan page must be used; no TEI may be read")
 
 
 # --- single features --------------------------------------------------------
@@ -290,6 +301,32 @@ def test_page_of_counts_the_pb_elements_of_the_body():
     assert page_of([], 500) == 1
 
 
+def test_the_scan_page_wins_and_no_tei_is_read():
+    """The snapshot is the single source of the page number once it carries one."""
+    ranked = rank_marks([_rec(doc="760", start=17_000, page=7)], frozenset(),
+                        frozenset({"TEST-0003"}), _no_page_fn)
+    assert ranked[0]["page"] == 7
+    assert ranked[0]["facsimile"] == "docs/images/760/760_p007.png"
+
+
+def test_a_scan_without_the_page_field_falls_back_to_the_pb_reading():
+    """Old snapshots stay usable: the field is absent, the ranking reads the TEI."""
+    record = _rec(doc="760", start=17_000)
+    assert "page" not in record
+    ranked = rank_marks([record], frozenset(), frozenset({"TEST-0003"}), _page_fn)
+    assert ranked[0]["page"] == 18
+
+
+def test_the_fallback_is_used_per_record():
+    """A mixed snapshot resolves each mark from its own source."""
+    records = [_rec(doc="100", start=3_000, page=2),
+               _rec(doc="100", surface="Anna Jaspers", start=3_000)]
+    ranked = rank_marks(records, frozenset(), frozenset({"TEST-0003"}), _page_fn)
+    assert {mark["surface"]: mark["page"] for mark in ranked} == {
+        "Karl Jaspers": 2, "Anna Jaspers": 4
+    }
+
+
 # --- report and CLI ---------------------------------------------------------
 
 def test_report_shape_is_deterministic_and_carries_no_timestamp():
@@ -343,3 +380,27 @@ def test_main_writes_the_ranking_and_prints_ascii(tmp_path, monkeypatch, capsys)
     captured = capsys.readouterr().out
     captured.encode("ascii")  # Windows console safety: no unicode in print output
     assert "high" in captured
+
+
+def test_main_takes_the_page_from_the_scan_without_reading_tei(tmp_path, monkeypatch):
+    """With the page in the snapshot the ranking needs no TEI directory at all."""
+    scan = tmp_path / "scan.json"
+    scan.write_text(json.dumps({"candidates": [
+        _rec(doc="100", start=4_000, page=3),
+        _rec(doc="100", surface="Jeanne Hersch", start=9_000, tier=2, page=8),
+    ]}, ensure_ascii=False), encoding="utf-8")
+    entities = tmp_path / "entities.json"
+    entities.write_text(json.dumps(_ENTITIES, ensure_ascii=False), encoding="utf-8")
+    out = tmp_path / "fp_hunt" / "risk_ranking.json"
+    monkeypatch.setattr("sys.argv", [
+        "entity_risk_ranking", "--scan", str(scan), "--entities", str(entities),
+        "--tei-dir", str(tmp_path / "no_such_tei"), "--out", str(out),
+    ])
+
+    main()
+
+    payload = json.loads(out.read_text(encoding="utf-8"))
+    assert [(mark["surface"], mark["page"]) for mark in payload["marks"]] == [
+        ("Karl Jaspers", 3)
+    ]
+    assert payload["marks"][0]["facsimile"] == "docs/images/100/100_p003.png"

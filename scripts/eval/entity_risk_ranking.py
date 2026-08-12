@@ -19,8 +19,12 @@ Score contributions, additive per mark:
 
 Strata: high >= 4, medium 2-3, low 0-1.
 
-DIAGNOSIS ONLY -- reads the scan snapshot, the entity list and output/tei_final (for
-the offset-to-page assignment), writes one report and is no pass/fail gate.
+DIAGNOSIS ONLY -- reads the scan snapshot, the entity list and, only for a snapshot
+without page numbers, output/tei_final; writes one report and is no pass/fail gate.
+
+The page comes from the scan snapshot, which resolves it once for every candidate. The
+pb reading below stays as the fallback for snapshots written before the scan carried the
+field, so an archived ranking can still be reproduced from its own inputs.
 
 Usage:
     python -m scripts.eval.entity_risk_ranking
@@ -214,6 +218,13 @@ def facsimile_path(doc: str, page: int) -> str:
     return f"docs/images/{doc}/{doc}_p{page:03d}.png"
 
 
+def page_from(record: dict, page_fn) -> int | None:
+    """Page of a scan record: its own field, or the pb fallback for an old snapshot."""
+    if "page" in record:
+        return record["page"]
+    return page_fn(record["doc"], record["start"])
+
+
 def page_resolver(tei_dir: Path):
     """(doc, offset) -> page, reading each final TEI once; None when the TEI is missing."""
     cache: dict[str, list[int] | None] = {}
@@ -248,7 +259,7 @@ def rank_marks(records: list[dict], shared_surnames: frozenset[str],
         if anomalies:
             features.append(ANOMALY_FEATURE)
         score = score_of(features)
-        page = page_fn(record["doc"], record["start"])
+        page = page_from(record, page_fn)
         mark = {
             "case_id": "",
             "doc": record["doc"],
@@ -365,7 +376,8 @@ def main() -> None:
     parser.add_argument("--entities", type=Path, default=ENTITIES_PATH,
                         help="Curated entity list")
     parser.add_argument("--tei-dir", type=Path, default=TEI_FINAL_DIR,
-                        help="TEI source for the offset-to-page assignment (read only)")
+                        help="TEI source for the page fallback of a scan snapshot "
+                             "without page field (read only)")
     parser.add_argument("--out", type=Path, default=REPORT_PATH, help="Report path")
     args = parser.parse_args()
 

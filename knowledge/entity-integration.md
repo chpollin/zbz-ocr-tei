@@ -215,7 +215,7 @@ Built, each with its pytest suite:
   out; stripping the wrappers restores the original). It refuses to write into
   `output/tei_final` and reports JSON plus HTML.
 - `scripts/eval/entity_corpus_scan.py` dumps every candidate corpus-wide read-only,
-  with rule, tier and context, plus distribution views (per document, per rule, per
+  with rule, tier, page and context, plus distribution views (per document, per rule, per
   entity) and invariant checks (no tier-1 form on the function-word list, none adjacent
   to a hyphen). The snapshot is diffable, so a rule change shows its exact corpus effect
   before it binds; a frozen copy of the snapshot is what an adjudication wave draws from.
