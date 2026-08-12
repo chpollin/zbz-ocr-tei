@@ -9,8 +9,8 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-05-25
-updated: 2026-07-07
-tags: [zbz-ocr-tei, workflow, dataflow, viewer, persistence, provenance, complete-tei, round-trip]
+updated: 2026-08-12
+tags: [zbz-ocr-tei, workflow, dataflow, viewer, persistence, provenance, complete-tei, round-trip, entities]
 template:
   name: Vorlage Architecture
   version: 0.3
@@ -269,7 +269,50 @@ entries into the `<revisionDesc>` (backup first, removes stale
 agent-screening entries). Data model and commands: CLAUDE.md, per-object
 manifest section; decisions E66/E77.
 
-### 3.7 Hersch Design System
+### 3.7 Entity Layer (read-only)
+
+The viewer shows the GND entity markup of a document as a read-only inspection
+layer, reachable from the viewer's view selection or directly via
+`viewer.html?doc={DOC_ID}&entities=1`. The layer sits outside every edit and
+save path; the preview path leaves `output/tei_final/` untouched, and in entity
+mode the text editors stay locked (layout editing remains available).
+
+The data come from the generated mirror.
+`scripts/edition/generate_entity_preview_data.py` reads the previews in
+`output/entity_preview/` read-only and writes per document
+`docs/data/pages/{doc}/{doc}_entity_p{N}.xml`, the preview split per page with
+the same splitter the TEI mirror uses, so an entity page sits next to the same
+facsimile as `{doc}_pN.xml`. Beside it lands
+`docs/data/pages/{doc}/{doc}_entity_worklist.json` with the tier-2 candidates
+grouped per page. Corpus-wide the generator writes the lookup
+`docs/data/entities.json` (label, category, life dates, lobid link per GND id),
+which the viewer resolves `ref="GND:..."` against; the ids come exclusively from
+the curated entity list. A page without an entity preview falls back to the
+pipeline TEI, so navigation stays intact.
+
+On an entity page the legend splits into the three GND categories (persons,
+organisations, works) plus a chip for the candidates. Marked mentions act as
+buttons, and the popover carries label, category, life dates, and the link to
+lobid.org. Tier-2 candidates are marked inline as well and open the same
+popover, which additionally names the reason the tool held back ("Zur
+Prüfung") and the origin of the matched name form; where several listed bearers
+carry the form, the popover lists all of them, so the position stays visibly
+undecided. Candidates the renderer cannot place inline stay visible as a list
+above the text, so the page shows the complete worklist either way.
+
+Two tiers meet in this view. What the deterministic rules resolve on their own
+appears as an inline mark; everything ambiguous stays a proposal on the
+worklist. A language model never assigns an id; it chooses at most among
+candidates the curated list supplies.
+
+Wherever an entity preview exists, `page_manifest` adds a fourth stream
+`entities` to the per-object manifest; its status pill sits next to OCR, Layout
+and TEI in the doc subbar and carries the same three status values as the
+pipeline streams (section 3.6). Matching method, modelling rules and milestones
+live in [entity-integration.md](entity-integration.md); the sampling measurement
+of the built layer lives in [entity-evaluation.md](entity-evaluation.md).
+
+### 3.8 Hersch Design System
 
 The authority for token values is `docs/assets/css/tokens.css`; the
 imperative design principles are in CLAUDE.md, Design section. Core
