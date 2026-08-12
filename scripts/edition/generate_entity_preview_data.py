@@ -50,6 +50,7 @@ PAGES_DIR = DOCS_DIR / "data" / "pages"
 ENTITIES_JSON_PATH = DOCS_DIR / "data" / "entities.json"
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
+VARIANT_REVIEW_PATH = DATA_DIR / "entities" / "variant_review.json"
 
 LOBID_URL = "https://lobid.org/gnd/{gid}"
 GENERATOR = "scripts/edition/generate_entity_preview_data.py"
@@ -229,7 +230,8 @@ def build_entities_index(entities_path: Path, cache_path: Path) -> dict:
     Built on the matcher lexicon, so the viewer resolves exactly the ids the matcher can
     produce: same label normalization, same drop of ids the GND answers with 404.
     """
-    lexicon = build_lexicon(entities_path, cache_path)
+    review = VARIANT_REVIEW_PATH if VARIANT_REVIEW_PATH.exists() else None
+    lexicon = build_lexicon(entities_path, cache_path, review_path=review)
     cache = json.loads(cache_path.read_text(encoding="utf-8")) if cache_path.exists() else {}
     cached = cache.get("entries", {}) if isinstance(cache, dict) else {}
     index = {}

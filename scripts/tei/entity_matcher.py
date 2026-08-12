@@ -6,7 +6,7 @@ language model; ids always come from the curated list.
 
 Two public functions:
 
-    build_lexicon(entities_path, cache_path, legacy_path=None) -> dict
+    build_lexicon(entities_path, cache_path, legacy_path=None, review_path=None) -> dict
         Merges the curated list `data/entities/all_entities.json`, the lobid cache
         `data/entities/gnd_cache.json` (name variants, optional) and the legacy
         mention index `output/gnd_analysis/gnd_entities.json` (optional) into one
@@ -294,6 +294,7 @@ def build_lexicon(
     entities_path: Path | str,
     cache_path: Path | str,
     legacy_path: Path | str | None = None,
+    review_path: Path | str | None = None,
 ) -> dict:
     """Build the matching lexicon from list, GND cache and legacy mention index.
 
@@ -307,19 +308,29 @@ def build_lexicon(
     surname entry), the all-caps indexes
     `caps_forms` / `caps_by_first_word` / `caps_surnames` / `caps_surname_forms`,
     `legacy_demoted` (the (gid, form) pairs the bearer's record does not corroborate),
+    `review_suspect` (the (gid, form) pairs the variant review holds back at tier 2),
     `skipped` (counters) and `sources` (the input paths).
+
+    `review_path` names the operator-gated variant_review.json: a cache form with the
+    verdict `reject` never enters the lexicon (neither as full form nor via the surname
+    index), a `suspect` form enters but yields tier-2 candidates only, and a cache form
+    the review does not know counts as suspect until the next review run. The review
+    binds only the cache channel; curated headwords and legacy forms pass unfiltered.
     """
     entities = _read_json(entities_path, required=True) or {}
     cache = _read_json(cache_path) or {}
     cache_entries = cache.get("entries", {}) if isinstance(cache, dict) else {}
     legacy_index = legacy_names(_read_json(legacy_path)) if legacy_path else {}
+    review = _read_json(review_path) if review_path else None
 
     forms: dict[str, list[tuple[str, str, str, str]]] = {}
     surnames: dict[str, set[str]] = {}
     surname_forms: dict[str, dict[str, tuple[str, str]]] = {}
     entries: dict[str, dict] = {}
     legacy_demoted: list[tuple[str, str]] = []
-    skipped = {"no_label": 0, "gnd_404": 0, "short_org_token": 0, "duplicate_gid": 0}
+    review_suspect: set[tuple[str, str]] = set()
+    skipped = {"no_label": 0, "gnd_404": 0, "short_org_token": 0, "duplicate_gid": 0,
+               "review_reject": 0}
 
     for list_key, category in _CATEGORY_BY_LIST.items():
         for raw in entities.get(list_key, []) or []:
@@ -344,12 +355,28 @@ def build_lexicon(
             legacy = legacy_index.get(normalize_gid(gid), ())
             corroborated, demoted = _split_legacy(legacy, label, cached)
             variants = _variants(cached, corroborated)
+            suspect_variants: tuple[tuple[str, str], ...] = ()
+            if review is not None:
+                variants, suspect_variants = _filter_reviewed(
+                    review, gid, category, variants, skipped
+                )
             if category == "person":
                 _add_person(forms, surnames, surname_forms, gid, label, variants)
             elif category == "organisation":
                 _add_org(forms, gid, label, variants, skipped)
             else:
                 _add_work(forms, gid, label, variants)
+            for form, source in suspect_variants:
+                added = _capture_added(forms, gid, lambda: _add_suspect_variant(
+                    forms, surnames, surname_forms, gid, category, label, form, source,
+                    skipped,
+                ))
+                for new_form in added:
+                    review_suspect.add((gid, new_form))
+                    upper = new_form.upper()
+                    if (category == "person" and len(new_form.split()) >= 2
+                            and len(upper) == len(new_form)):
+                        review_suspect.add((gid, upper))
             for form in demoted:
                 legacy_demoted.append((gid, form))
                 _add_legacy_form(forms, gid, category, form)
@@ -367,14 +394,81 @@ def build_lexicon(
         "caps_surnames": _caps_surnames(surnames),
         "caps_surname_forms": _caps_surname_forms(surname_forms),
         "legacy_demoted": tuple(legacy_demoted),
+        "review_suspect": frozenset(review_suspect),
         "skipped": skipped,
         "sources": {
             "entities": str(entities_path),
             "cache": str(cache_path),
             "legacy": str(legacy_path) if legacy_path else None,
+            "review": str(review_path) if review is not None else None,
             "cache_retrieved": cache.get("retrieved") if isinstance(cache, dict) else None,
         },
     }
+
+
+_REVIEW_LIST_KEY = {"person": "persons", "organisation": "organisations", "work": "works"}
+
+
+def _filter_reviewed(
+    review: dict,
+    gid: str,
+    category: str,
+    variants: tuple[tuple[str, str], ...],
+    skipped: dict[str, int],
+) -> tuple[tuple[tuple[str, str], ...], tuple[tuple[str, str], ...]]:
+    """Split the cache channel by verdict: reject drops, suspect (or unreviewed) demotes."""
+    verdicts = ((review.get(_REVIEW_LIST_KEY[category]) or {}).get(gid) or {}).get(
+        "verdicts"
+    ) or {}
+    kept: list[tuple[str, str]] = []
+    suspect: list[tuple[str, str]] = []
+    for form, source in variants:
+        if source != "cache-variant":
+            kept.append((form, source))
+            continue
+        verdict = (verdicts.get(form) or {}).get("verdict")
+        if verdict == "reject":
+            skipped["review_reject"] += 1
+        elif verdict == "approve":
+            kept.append((form, source))
+        else:
+            suspect.append((form, source))
+    return tuple(kept), tuple(suspect)
+
+
+def _add_suspect_variant(
+    forms: dict[str, list[tuple[str, str, str, str]]],
+    surnames: dict[str, set[str]],
+    surname_forms: dict[str, dict[str, tuple[str, str]]],
+    gid: str,
+    category: str,
+    label: str,
+    form: str,
+    source: str,
+    skipped: dict[str, int],
+) -> None:
+    """Register one suspect cache form through the regular per-category derivation."""
+    if category == "person":
+        _add_person_variant(forms, surnames, surname_forms, gid, form, source)
+    elif category == "organisation":
+        _add_org(forms, gid, label, ((form, source),), skipped)
+    else:
+        _add_work(forms, gid, label, ((form, source),))
+
+
+def _capture_added(
+    forms: dict[str, list[tuple[str, str, str, str]]],
+    gid: str,
+    adder,
+) -> list[str]:
+    """Forms `adder` newly registers for `gid`; owner dedup makes re-adds invisible."""
+    before = {form for form, owners in forms.items() if any(o[0] == gid for o in owners)}
+    adder()
+    return [
+        form
+        for form, owners in forms.items()
+        if form not in before and any(o[0] == gid for o in owners)
+    ]
 
 
 def _first_word_index(forms: dict[str, list], fold: bool = False) -> dict[str, tuple[str, ...]]:
@@ -975,6 +1069,7 @@ def _scan(
     text = norm.text
     out: list[dict] = []
     anchored: set[str] = set(seed_anchors or ())
+    review_suspect = lexicon.get("review_suspect") or frozenset()
     pos = 0
     while pos < len(text):
         if not _is_word(text[pos]) or (pos > 0 and _is_word(text[pos - 1])):
@@ -990,6 +1085,8 @@ def _scan(
         if _base_rule(hit.rule) in _SUSPECT_RULES and _is_suspect(
             xml, norm, hit, lexicon, lowercase_words
         ):
+            hit = replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
+        if hit.tier == 1 and (hit.gid, hit.matched_form) in review_suspect:
             hit = replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
         candidate, resume = _build_candidate(xml, norm, zones, hit)
         if candidate is not None:

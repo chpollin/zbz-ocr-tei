@@ -71,6 +71,7 @@ from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
+VARIANT_REVIEW_PATH = DATA_DIR / "entities" / "variant_review.json"
 LEGACY_MENTIONS_PATH = DATA_DIR / "entities" / "legacy_mentions.json"
 REPORT_PATH = AUDIT_OUTPUT_DIR / "entity_gold_benchmark.json"
 
@@ -901,6 +902,8 @@ def main() -> int:
                         help="GND variant cache (optional, used when present)")
     parser.add_argument("--legacy", type=Path, default=LEGACY_MENTIONS_PATH,
                         help="Old mention index (optional; also defines the dev split)")
+    parser.add_argument("--review", type=Path, default=VARIANT_REVIEW_PATH,
+                        help="Variant review verdicts (optional, used when present)")
     parser.add_argument("--ref-dir", type=Path, default=REFERENCE_TEI_DIR,
                         help="Reference TEI directory (read only)")
     parser.add_argument("--src-dir", type=Path, default=TEI_FINAL_DIR,
@@ -910,7 +913,9 @@ def main() -> int:
     from scripts.tei.entity_matcher import CORPUS_AUTHOR_LABELS, build_lexicon, find_candidates
 
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
-    lexicon = build_lexicon(args.entities, args.cache, legacy_path=legacy)
+    review = args.review if args.review.exists() else None
+    lexicon = build_lexicon(args.entities, args.cache, legacy_path=legacy,
+                            review_path=review)
     doc_ids = _parse_doc_ids(args.docs) if args.docs else reference_doc_ids(args.ref_dir)
 
     def find(xml_string):

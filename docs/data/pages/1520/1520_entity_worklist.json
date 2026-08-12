@@ -30,10 +30,10 @@
         "occurrence": 1
       },
       {
-        "gid": "117085391",
+        "gid": "118557106",
         "category": "person",
         "surface": "Jaspers",
-        "rule": "ambiguous-surname",
+        "rule": "anchored-surname:suspect",
         "alternatives": [
           "117085391",
           "118557106"
@@ -43,59 +43,14 @@
         "context": "GRANDS THÈMES Etudes de psychiatrie Si Jaspers, étudiant, abandonna le droit, c’est qu",
         "text": "Jaspers",
         "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": ". Se rendre utile dans le réel. Maladie Jaspers a été dès l’enfance et durant toute sa",
-        "text": "Jaspers",
-        "occurrence": 3
       }
     ],
     "14": [
       {
-        "gid": "117085391",
+        "gid": "118557106",
         "category": "person",
         "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "uppuration générale entraînant la mort. Jaspers apprit à tenir compte de sa maladie dan",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "travail par une extrême concentration. Jaspers cite un proverbe chinois : « Il faut êt",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
+        "rule": "anchored-surname:suspect",
         "alternatives": [
           "117085391",
           "118557106"
@@ -109,35 +64,17 @@
       {
         "gid": "117085391",
         "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "Dès avant la première guerre mondiale, Jaspers refusait de participer à aucune exaltat",
-        "text": "Jaspers",
-        "occurrence": 4
+        "surface": "Gertrud <lb facs=\"#facs_14_r_3\" n=\"N002\" />Mayer",
+        "rule": "variant-full-name:suspect",
+        "alternatives": [],
+        "matched_form": "Gertrud Mayer",
+        "form_source": "cache-variant",
+        "context": "it vingt-quatre ans lorsqu’il rencontra Gertrud Mayer, qui devait devenir sa femme et la comp",
+        "text": "Gertrud Mayer",
+        "occurrence": 1
       }
     ],
     "15": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "it-ce donc que « l’Allemagne »? Lorsque Jaspers reprit son enseignement, en 1945, son p",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
       {
         "gid": "4498918-0",
         "category": "work",
@@ -164,51 +101,6 @@
         "occurrence": 1
       },
       {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "de pratique de la psychiatrie clinique, Jaspers a fait porter sa réflexion philosophiqu",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "res, celles du national-socialisme, que Jaspers et sa femme « trouvèrent le calme en ap",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "e établir objectivement sa légitimité ? Jaspers parle ici du fond de sa double expérien",
-        "text": "Jaspers",
-        "occurrence": 4
-      },
-      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
@@ -220,21 +112,6 @@
         "evidence": "none",
         "text": "Philosophie",
         "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "levé hors de toute foi confessionnelle, Jaspers devait trouver, par la philosophie, et",
-        "text": "Jaspers",
-        "occurrence": 5
       },
       {
         "gid": "1088013937",
@@ -251,21 +128,6 @@
     ],
     "16": [
       {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "et de Jacob». La foi philosophique, dit Jaspers, c’est « une exigence inouïe ». Aucune",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
         "gid": "1088013961",
         "category": "work",
         "surface": "les grands philosophes",
@@ -276,66 +138,6 @@
         "context": "on intime conviction, et l’échange avec les grands philosophes du passé. La vraie « patrie religieuse",
         "text": "les grands philosophes",
         "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "assé. La vraie « patrie religieuse » de Jaspers, celle où il a toujours puisé de quoi n",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "x qui l’ont précédé. Mais ce lien, pour Jaspers, paraît plus essentiel, plus central, p",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "iversité La visée universelle qui, pour Jaspers, traverse sans les abolir les particula",
-        "text": "Jaspers",
-        "occurrence": 4
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "yeux privilégiée, qu’est l’Université. Jaspers se faisait de l’Université la conceptio",
-        "text": "Jaspers",
-        "occurrence": 5
       },
       {
         "gid": "118615270",
@@ -362,84 +164,7 @@
         "occurrence": 1
       }
     ],
-    "17": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "damné depuis le début par les médecins, Jaspers a vécu très longtemps, et il a mis long",
-        "text": "Jaspers",
-        "occurrence": 1
-      }
-    ],
     "19": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "II L’ŒUVRE PSYCHIATRIE De 1908 à 1915, Jaspers travailla dans la Clinique psychiatriqu",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "vait alors divisé jusqu’à la confusion. Jaspers avait le sentiment de vivre dans un uni",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "eur : « Il faut lui donner la fessée. » Jaspers découvrit bientôt que la confusion tena",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ve, psychologie compréhensive. En 1911, Jaspers est invité à écrire une « Psychopatholo",
-        "text": "Jaspers",
-        "occurrence": 4
-      },
       {
         "gid": "118555006",
         "category": "person",
@@ -454,21 +179,6 @@
       }
     ],
     "20": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "mme méthode scientifique. D’autre part, Jaspers s’inspira de Dilthey. Dilthey avait opp",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
       {
         "gid": "118525727",
         "category": "person",
@@ -492,84 +202,9 @@
         "context": "tre part, Jaspers s’inspira de Dilthey. Dilthey avait opposé à la «psychologie explicat",
         "text": "Dilthey",
         "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ychologie, «descriptive et analytique». Jaspers s’appropria cette seconde méthode et lu",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "reste capitale aujourd’hui. Aux yeux de Jaspers, cette distinction est essentielle, non",
-        "text": "Jaspers",
-        "occurrence": 3
       }
     ],
     "21": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "e. La psychanalyse présente aux yeux de Jaspers la faute originelle de ne pas les disti",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "les rendre indiscernables. « Théories » Jaspers voulut surtout dénoncer les tentatives",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "e offre à la vérité scientifique. Aussi Jaspers a-t-il tenté, dans sa « Psychopathologi",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
       {
         "gid": "4558181-2",
         "category": "work",
@@ -586,51 +221,6 @@
     ],
     "22": [
       {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "tuation de fait de la psychopathologie. Jaspers ne s’intéressait aux méthodes et aux th",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ser. Essentiel pour un médecin, pensait Jaspers : qu’il ne perde jamais de vue l’infini",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "avec quelle passion et quelle ténacité Jaspers s’est opposé aux explications réductive",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
         "gid": "118535315",
         "category": "person",
         "surface": "Freud",
@@ -641,243 +231,6 @@
         "context": "1950, « Zur Kritik der Psychoanalyse ». Freud, dit-il, participe au mouvement de la s",
         "text": "Freud",
         "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "s ou même grossières. Certes, reconnaît Jaspers, nombre de psychothérapeutes se servent",
-        "text": "Jaspers",
-        "occurrence": 4
-      }
-    ],
-    "23": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "lyse, une sorte de foi intervient, dont Jaspers explicite ainsi le contenu: 1) Tout ce",
-        "text": "Jaspers",
-        "occurrence": 1
-      }
-    ],
-    "24": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "s ces facteurs de « foi », il y a selon Jaspers une vérité, mais sous des formes perver",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "au de la philosophie et de la religion. Jaspers cite la parole d’un psychiatre : « On n",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "rait pas s’occuper d’hygiène mentale. » Jaspers se demande s’il n’y a pas dans la psych",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ne parle jamais, à vrai dire — remarque Jaspers — d’obéissance, mais telle est bien l’e",
-        "text": "Jaspers",
-        "occurrence": 4
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ce de la raison. La raison, donc, selon Jaspers, ne peut accepter comme digne d’elle un",
-        "text": "Jaspers",
-        "occurrence": 5
-      }
-    ],
-    "25": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "conduite par un « expert ». « Ici, dit Jaspers, il ne peut y avoir pour le jugement au",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ientifique authentique. En effet, selon Jaspers, parler d’une part de la personnalité d",
-        "text": "Jaspers",
-        "occurrence": 2
-      }
-    ],
-    "27": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "tes. On peut dire que la philosophie de Jaspers est une tentative pour expliciter ce qu",
-        "text": "Jaspers",
-        "occurrence": 1
-      }
-    ],
-    "28": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "omprendre ce que ce terme signifie chez Jaspers. D’abord, l’existence n’est pas de l’or",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "e l’ordre de la liberté. C’est pourquoi Jaspers parle plutôt d'« existence possible ».",
-        "text": "Jaspers",
-        "occurrence": 2
-      }
-    ],
-    "29": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "u bien il se dérobe dans un malentendu. Jaspers dit « éclairer » pour bien marquer qu’i",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "orte ici de comprendre le rapport, chez Jaspers, entre le temporel et le transtemporel",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ns le temps ce qui transcende le temps. Jaspers l’appelle transcendance. Plus tard, il",
-        "text": "Jaspers",
-        "occurrence": 3
       }
     ],
     "30": [
@@ -894,21 +247,6 @@
         "occurrence": 1
       },
       {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "est, la liberté humaine n’est pas. Pour Jaspers c’est le contraire : sans lien à la tra",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
         "gid": "118516221",
         "category": "person",
         "surface": "Bruno",
@@ -919,242 +257,9 @@
         "context": ". Ainsi, par exemple, lorsque Giordlano Bruno préféra le bûcher au reniement d’une év",
         "text": "Bruno",
         "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "tuation » et de « situations-limites ». Jaspers appelle « situation », au sens existent",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ies et qu’il lui faut pourtant assumer. Jaspers appelle ces conditions, que nul être hu",
-        "text": "Jaspers",
-        "occurrence": 3
-      }
-    ],
-    "31": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "t la liberté. Non, elles sont loin chez Jaspers d’avoir une fonction purement négative",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "’une façon générale, l’importance, pour Jaspers, de la notion de «limite». Elle est pou",
-        "text": "Jaspers",
-        "occurrence": 2
-      }
-    ],
-    "32": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "t le franchir, telle est la limite chez Jaspers. Elle est le lieu d’un échec. C’est l’e",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "au-delà de la transcendance. Mais selon Jaspers, l’être humain est essentiellement un ê",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "t elle ne peut d’ailleurs être séparée. Jaspers distingue d’abord deux sortes de commun",
-        "text": "Jaspers",
-        "occurrence": 3
-      }
-    ],
-    "33": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "té générale, et non une valeur absolue. Jaspers oppose la validité générale (Allgemeing",
-        "text": "Jaspers",
-        "occurrence": 1
-      }
-    ],
-    "34": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "a condition indispensable. Cet échange, Jaspers l’appelle « le combat fraternel », — li",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "la communication est très éloigné, chez Jaspers, de ce qu’on a coutume d’appeler « tolé",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "’absolu de l’autre. C’est pourquoi, dit Jaspers, la « communication » existentielle est",
-        "text": "Jaspers",
-        "occurrence": 3
       }
     ],
     "35": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ne sont des réalités objectives. Aussi Jaspers parle-t-il, nous l’avons vu, d'« éclair",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "nature, il est, comme le monde, ce que Jaspers appelle « un englobant » (ein Umgreifen",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "la transcendance. Cette tentative, chez Jaspers, s’appelle « métaphysique ». Le « pense",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "bjet, ne saurait être prise pour objet, Jaspers se trouve ici dans une situation analog",
-        "text": "Jaspers",
-        "occurrence": 4
-      },
       {
         "gid": "118559796",
         "category": "person",
@@ -1182,21 +287,6 @@
     ],
     "36": [
       {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "e, c’est justement cette impossibilité. Jaspers fait de même, il ne peut pas ne pas fai",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
         "gid": "118559796",
         "category": "person",
         "surface": "Kant",
@@ -1209,21 +299,6 @@
         "occurrence": 1
       },
       {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "d, c’est que la méthode d’exposition de Jaspers est moins statiquement logique que cell",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
         "gid": "118559796",
         "category": "person",
         "surface": "Kant",
@@ -1234,54 +309,9 @@
         "context": "moins statiquement logique que celle de Kant. Elle est itinérante, elle va. Elle emm",
         "text": "Kant",
         "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "’expérience d’une limite et d’un échec. Jaspers a constamment recours à la voie négativ",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ysique ». Dieu caché. La transcendance, Jaspers l’a parfois (plus souvent dans les œuvr",
-        "text": "Jaspers",
-        "occurrence": 4
       }
     ],
     "37": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "erait là le plus grave des malentendus. Jaspers aimait répéter dans ses cours, que ce f",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
       {
         "gid": "118594893",
         "category": "person",
@@ -1293,131 +323,9 @@
         "context": "cours, que ce fût à propos des Idées de Platon, des nouménes kantiens ou de sa propre",
         "text": "Platon",
         "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "es signes qui lui parlent d’elle et que Jaspers appelle chiffres ou écriture chiffrée d",
-        "text": "Jaspers",
-        "occurrence": 2
-      }
-    ],
-    "38": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "feste cependant qu’à travers lui. Selon Jaspers, lire une écriture chiffrée, c’est, mêm",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ethnologue, ce n’est pas du tout ce que Jaspers appelle « lire l’écriture chiffrée ». U",
-        "text": "Jaspers",
-        "occurrence": 2
       }
     ],
     "39": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "e, inconditionnelle. Cette lecture, dit Jaspers, est « action intérieure » (« inneres H",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "frée ne va pas sans combat. Ainsi, chez Jaspers, comme dans les plus profondes concepti",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "e l’efficacité d’une écriture chiffrée. Jaspers répond : il n’est rien qui ne puisse de",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "« signifier ». Il semble alors que pour Jaspers, la transcendance affleure partout, que",
-        "text": "Jaspers",
-        "occurrence": 4
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "la fois comme personnel et impersonnel. Jaspers écrit (Philosophie, III, page 167) : «",
-        "text": "Jaspers",
-        "occurrence": 5
-      },
       {
         "gid": "4343581-6",
         "category": "work",
@@ -1434,21 +342,6 @@
     ],
     "40": [
       {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "n’est réel que s’il illumine le monde.» Jaspers ne cesse de traquer la perversion qui c",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
@@ -1460,21 +353,6 @@
         "evidence": "typographic",
         "text": "Philosophie",
         "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "physique (3e volume de la Philosophie), Jaspers montre que cette évanescence elle-même",
-        "text": "Jaspers",
-        "occurrence": 2
       },
       {
         "gid": "118559796",
@@ -1489,101 +367,7 @@
         "occurrence": 1
       }
     ],
-    "41": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "chiffre nécessaire de la transcendance. Jaspers le montre ainsi (op. cit. p. 227) : « S",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "st celle de l’être humain réside, selon Jaspers, un chiffre redoutable : l’être humain",
-        "text": "Jaspers",
-        "occurrence": 2
-      }
-    ],
-    "43": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "re trouver un sens à cet ultime échec ? Jaspers refuse à l’existence la capacité d’abol",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "est passé. Aucune de ces formules, dit Jaspers, ne dit quelque chose. Chacune dit la m",
-        "text": "Jaspers",
-        "occurrence": 2
-      }
-    ],
     "44": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "rtant, ce bond impossible peut réussir. Jaspers insiste : s’en tenir à l’angoisse de l’",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "l’angoisse vivant les yeux fermés. Pour Jaspers, ici tout proche de Kierkegaard, nul ne",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
       {
         "gid": "118562002",
         "category": "person",
@@ -1599,21 +383,6 @@
     ],
     "45": [
       {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "nd elle est là, rien ne peut l’entamer. Jaspers citait souvent Jérémie : Dieu est, c’es",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
         "gid": "118557106",
         "category": "person",
         "surface": "Jérémie",
@@ -1627,135 +396,9 @@
         "context": "peut l’entamer. Jaspers citait souvent Jérémie : Dieu est, c’est assez. Prétendre tout",
         "text": "Jérémie",
         "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ndant les pires années de l’hitlérisme, Jaspers écrit son ouvrage « De la vérité » (Von",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "n ouvrage de logique au sens ordinaire. Jaspers met en question, afin d’en retrouver l’",
-        "text": "Jaspers",
-        "occurrence": 3
-      }
-    ],
-    "46": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ent-ils d’une même perte de profondeur. Jaspers s’interroge sur ce que « le vrai » sign",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "à la préhistoire. Le sens du vrai, dit Jaspers, vient d’une source plus profonde que l",
-        "text": "Jaspers",
-        "occurrence": 2
-      }
-    ],
-    "47": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "e de « l’englobant » (das Umgreifende). Jaspers l’examine en suivant trois perspectives",
-        "text": "Jaspers",
-        "occurrence": 1
-      }
-    ],
-    "48": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "fonctions de la « raison » (Vernunft). Jaspers pose donc le tableau suivant : | L’engl",
-        "text": "Jaspers",
-        "occurrence": 1
       }
     ],
     "49": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "e de leur interdépendance dans l’unité. Jaspers souligne ce qui fait la difficulté esse",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "qui figurent dans le tableau ci-dessus, Jaspers les illustre en résumant quelques démar",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
       {
         "gid": "118559796",
         "category": "person",
@@ -1767,39 +410,9 @@
         "context": "Le monde n’est jamais objet pour nous. Kant exprimait cela en disant que « le monde",
         "text": "Kant",
         "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "t vital » (Dasein), — c’est-à-dire chez Jaspers un sujet qui vit, qui est né, qui mourr",
-        "text": "Jaspers",
-        "occurrence": 3
       }
     ],
     "50": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ient vers l’existence. L’existence, dit Jaspers, reprenant certains termes de Kierkegaa",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
       {
         "gid": "118562002",
         "category": "person",
@@ -1811,272 +424,9 @@
         "context": "t Jaspers, reprenant certains termes de Kierkegaard, est le sujet libre qui se rapporte à l",
         "text": "Kierkegaard",
         "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "exclusives. Il est certes possible, dit Jaspers, de vivre dans le pluriel et la dispers",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "’unité soit saisie, ou instaurée. Selon Jaspers, un tel saut conduit à « la raison » (V",
-        "text": "Jaspers",
-        "occurrence": 3
-      }
-    ],
-    "51": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "énomènes, extérieurs ou psychologiques. Jaspers ici se donne les instruments lui permet",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ence objective, spatiale et temporelle. Jaspers lui reconnaît les caractéristiques fond",
-        "text": "Jaspers",
-        "occurrence": 2
-      }
-    ],
-    "52": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "temps que l’englobant. La science, dit Jaspers, n’impose rien de tel. Le savant peut p",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "de parler explicitement de l’englobant. Jaspers demande donc, pour qu’il y ait vraiment",
-        "text": "Jaspers",
-        "occurrence": 2
-      }
-    ],
-    "53": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "lui-même et de son univers, c’est, dit Jaspers, l’énigme des énigmes. Ce point de lumi",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "re création. « Conscience en général ». Jaspers analyse ensuite l’englobant de la « con",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "é question. Voyons ici seulement ce que Jaspers nous dit du rapport entre conscience en",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "on de la pensée claire et objectivante. Jaspers évoque le trouble que peut jeter chez c",
-        "text": "Jaspers",
-        "occurrence": 4
-      }
-    ],
-    "54": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "nglobant que nous sommes s’appelle chez Jaspers « esprit » (Geist). Il s’agit d’une not",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ns la sphère de la culture. Il est, dit Jaspers, réel comme le sujet vital et intérieur",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "otion d'« esprit » comme englobant chez Jaspers a subi l’influence hégélienne — peut-êt",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "s un sens parfois polémique. Existence. Jaspers oppose aux trois modes immanents de l’e",
-        "text": "Jaspers",
-        "occurrence": 4
       }
     ],
     "55": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "res de la vie dialectique instaurée par Jaspers entre les modes de l’englobant, entre m",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "on, indiquons seulement la manière dont Jaspers en tire parti pour éclairer les conditi",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "l’origine de l’homme. Nous l’avons vu, Jaspers, à la suite de Kant, affirme l’impossib",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
       {
         "gid": "118559796",
         "category": "person",
@@ -2090,180 +440,7 @@
         "occurrence": 1
       }
     ],
-    "56": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "pas d’origine par dérivation. — Or, dit Jaspers, ces deux hypothèses sont aventureuses",
-        "text": "Jaspers",
-        "occurrence": 1
-      }
-    ],
-    "57": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "elle l’homme serait issu du singe. Pour Jaspers, il ne s’agit pas, dans ces deux problè",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "voir et non-savoir. C’est comme si, dit Jaspers, toute connaissance particulière était,",
-        "text": "Jaspers",
-        "occurrence": 2
-      }
-    ],
-    "58": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "i : libres pour la science véritable. * Jaspers énumère les conséquences de la présence",
-        "text": "Jaspers",
-        "occurrence": 1
-      }
-    ],
-    "59": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "re la compréhension des antinomies — et Jaspers souligne que c’est le contraire de ce q",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "alternative absolue de la liberté. Mais Jaspers met le lecteur en garde. L’homme qui, p",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "qu’elle s’exprime dans toute l’œuvre de Jaspers, est en même temps ce qu’il peut y avoi",
-        "text": "Jaspers",
-        "occurrence": 3
-      }
-    ],
     "60": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "à de la peur. Par fidélité à cette foi, Jaspers n’a cessé, tout au long de sa vie, d’af",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "et c’est la plénitude de ce silence que Jaspers a défendue contre toute Révélation. Ens",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "fessions institutionnelles, le refus de Jaspers n’a jamais été une rupture, et jamais s",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "oir elle-même l’appel de celle-ci. Pour Jaspers, l’espace privilégié où la foi philosop",
-        "text": "Jaspers",
-        "occurrence": 4
-      },
       {
         "gid": "1088013937",
         "category": "work",
@@ -2277,208 +454,7 @@
         "occurrence": 1
       }
     ],
-    "61": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "qui nous vient des Grecs, et de ce que Jaspers appelle « la religion biblique ». Mais",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "essinèrent précisément dans l’esprit de Jaspers les lignes de force d’une nouvelle tâch",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "us les autres, le contemporain aussi de Jaspers. L’au-delà philosophique du temps leur",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "nication et en supprimant les ruptures. Jaspers perçoit ainsi, par delà le déclin de la",
-        "text": "Jaspers",
-        "occurrence": 4
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "45 à 50). * POLITIQUE La philosophie de Jaspers imprègne sa vie entière et lui donne, à",
-        "text": "Jaspers",
-        "occurrence": 5
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "e renforce encore au niveau du citoyen. Jaspers n’a jamais pu faire de « politique acti",
-        "text": "Jaspers",
-        "occurrence": 6
-      }
-    ],
-    "62": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "à être la liberté. La politique, pense Jaspers, ne doit pas être abandonnée aux seuls",
-        "text": "Jaspers",
-        "occurrence": 2
-      }
-    ],
-    "63": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "sophie comme lui (par respect et pudeur Jaspers s’est toujours dit « professeur de phil",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "au niveau de la liberté existentielle. Jaspers espérait stimuler la réflexion politico",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "sciter le libre courage de la décision. Jaspers veut montrer, d’un seul mouvement, ce q",
-        "text": "Jaspers",
-        "occurrence": 3
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "s, la faculté de juger, telle est selon Jaspers la tâche d’un « écrivain politique », —",
-        "text": "Jaspers",
-        "occurrence": 4
-      }
-    ],
     "64": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "actualité la plus brûlante. Démocratie. Jaspers croit à l’Idée de la démocratie, seule",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "un tel effort. Aucune définition, selon Jaspers, ne dit ce qu’est la démocratie, et pou",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
       {
         "gid": "1088013937",
         "category": "work",
@@ -2490,115 +466,6 @@
         "context": "niveau d’un engagement absolu, celui de la foi philosophique ou de la foi religieuse. La démocratie",
         "text": "la foi philosophique",
         "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "itique, de réussites dues à l’habileté. Jaspers refusait d’assimiler la démocratie à ce",
-        "text": "Jaspers",
-        "occurrence": 3
-      }
-    ],
-    "65": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "icacité. La paix par le règne du droit. Jaspers a affronté dans sa réflexion la situati",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "re petits États. Le point décisif, pour Jaspers, c’est l’instauration d’un contrôle réc",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "droit sur les nations. En effet, selon Jaspers, seul le règne du droit peut assurer, n",
-        "text": "Jaspers",
-        "occurrence": 3
-      }
-    ],
-    "66": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "entiments. Conversion éthico-politique. Jaspers va plus loin. Nous l’avons vu, si l’hum",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "et d’aventure. — Illusion encore, selon Jaspers. Rien de tel ne s’amorce, jusqu’ici, et",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "nne n’entend. Tous deux oublient, pense Jaspers, ce que signifie « donner sa vie », « m",
-        "text": "Jaspers",
-        "occurrence": 3
       }
     ],
     "67": [
@@ -2613,36 +480,6 @@
         "context": "sme hitlérien menaçait le monde entier, Einstein décida de contribuer par ses conseils à",
         "text": "Einstein",
         "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ue ou même morale. Que répondons-nous ? Jaspers évoque une situation politique possible",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ut être mise en échec. Que reste-t-il ? Jaspers revient à Jérémie, qui répondait à son",
-        "text": "Jaspers",
-        "occurrence": 2
       },
       {
         "gid": "118557106",
@@ -2670,117 +507,6 @@
         "context": "à Jérémie, qui répondait à son disciple Baruch, désespéré quand l’État, et le peuple,",
         "text": "Baruch",
         "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "chose de grand ? Ne réclame pas !... » Jaspers interprète : « Que Dieu est, c’est asse",
-        "text": "Jaspers",
-        "occurrence": 3
-      }
-    ],
-    "68": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ensions contradictoires, s’appelle chez Jaspers historicité. L’historicité, comme l’his",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "des temps. Mais nous l’avons vu, selon Jaspers, l’histoire aujourd’hui est devenue uni",
-        "text": "Jaspers",
-        "occurrence": 2
-      }
-    ],
-    "69": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "dante. Ce chiffre historique universel, Jaspers l’a trouvé dans ce qu’il a appelé la pé",
-        "text": "Jaspers",
-        "occurrence": 1
-      }
-    ],
-    "70": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "dante. Ce chiffre historique universel, Jaspers l’a trouvé dans ce qu’il a appelé la pé",
-        "text": "Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "ensions contradictoires, s’appelle chez Jaspers l’historicité. L’historicité, [...], im",
-        "text": "Jaspers",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "œud et fin des temps. Mais [...], selon Jaspers, l’histoire aujourd’hui est devenue uni",
-        "text": "Jaspers",
-        "occurrence": 3
       }
     ],
     "71": [
@@ -3667,6 +1393,20 @@
         "occurrence": 1
       }
     ],
+    "123": [
+      {
+        "gid": "117085391",
+        "category": "person",
+        "surface": "Gertrud Mayer",
+        "rule": "variant-full-name:suspect",
+        "alternatives": [],
+        "matched_form": "Gertrud Mayer",
+        "form_source": "cache-variant",
+        "context": "il n’aurait pu le faire sans sa femme, Gertrud Mayer. Dès le temps de ses études, elle l’a a",
+        "text": "Gertrud Mayer",
+        "occurrence": 1
+      }
+    ],
     "125": [
       {
         "gid": "4343581-6",
@@ -3813,18 +1553,6 @@
         "form_source": "surname-index",
         "context": "te Ézéchiel. 11. Solon. 12. Humanité de Goethe. Orig.: Rechenschaft und Ausblick, Münc",
         "text": "Goethe",
-        "occurrence": 1
-      },
-      {
-        "gid": "118522175",
-        "category": "person",
-        "surface": "Pierre",
-        "rule": "bare-surname:suspect",
-        "alternatives": [],
-        "matched_form": "Pierre, Cornelius Rothomagensis",
-        "form_source": "cache-variant",
-        "context": "Autobiographie philosophique. Trad. par Pierre Boudot. Paris, Aubier, 1963. 216 p. Ori",
-        "text": "Pierre",
         "occurrence": 1
       },
       {
@@ -3986,18 +1714,6 @@
         "occurrence": 1
       },
       {
-        "gid": "118641549",
-        "category": "person",
-        "surface": "Paul",
-        "rule": "bare-surname:suspect",
-        "alternatives": [],
-        "matched_form": "Paul, Apôtre, Saint",
-        "form_source": "cache-variant",
-        "context": "ophie de l’existence. Mikel Dufrenne et Paul Ricœur. Paris, Ed. du Seuil, 1947. Gabr",
-        "text": "Paul",
-        "occurrence": 1
-      },
-      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
@@ -4011,18 +1727,6 @@
         "occurrence": 1
       },
       {
-        "gid": "118641549",
-        "category": "person",
-        "surface": "Paul",
-        "rule": "bare-surname:suspect",
-        "alternatives": [],
-        "matched_form": "Paul, Apôtre, Saint",
-        "form_source": "cache-variant",
-        "context": "du mystère et philosophie du paradoxe. Paul Ricœur. Paris, Ed. du Temps présent, 19",
-        "text": "Paul",
-        "occurrence": 2
-      },
-      {
         "gid": "118562002",
         "category": "person",
         "surface": "Kierkegaard",
@@ -4033,38 +1737,6 @@
         "context": "es de l’histoire de l’idée d’existence: Kierkegaard - Jaspers. Jean Wahl. Paris, Centre de",
         "text": "Kierkegaard",
         "occurrence": 1
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "re de l’idée d’existence: Kierkegaard - Jaspers. Jean Wahl. Paris, Centre de documentat",
-        "text": "Jaspers",
-        "occurrence": 4
-      }
-    ],
-    "129": [
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "Xavier Tilliette. Paris, Aubier, 1960. Jaspers et la scission de l’être. Angèle Kremer",
-        "text": "Jaspers",
-        "occurrence": 3
       }
     ],
     "130": [
@@ -4081,18 +1753,6 @@
         "occurrence": 1
       },
       {
-        "gid": "118641549",
-        "category": "person",
-        "surface": "Paul",
-        "rule": "bare-surname:suspect",
-        "alternatives": [],
-        "matched_form": "Paul, Apôtre, Saint",
-        "form_source": "cache-variant",
-        "context": "hie de l’existence. Minot (opérette) et Paul Klemm, Paris, Ed. de Seuil, 1947. Gabri",
-        "text": "Paul",
-        "occurrence": 1
-      },
-      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
@@ -4106,22 +1766,10 @@
         "occurrence": 1
       },
       {
-        "gid": "118641549",
-        "category": "person",
-        "surface": "Paul",
-        "rule": "bare-surname:suspect",
-        "alternatives": [],
-        "matched_form": "Paul, Apôtre, Saint",
-        "form_source": "cache-variant",
-        "context": "e du nombre et philosophie du paradoxe. Paul Klemm, Paris, Ed. de Temps ressell, 194",
-        "text": "Paul",
-        "occurrence": 2
-      },
-      {
-        "gid": "117085391",
+        "gid": "118557106",
         "category": "person",
         "surface": "Jaspers",
-        "rule": "ambiguous-surname",
+        "rule": "anchored-surname:suspect",
         "alternatives": [
           "117085391",
           "118557106"
@@ -4131,21 +1779,6 @@
         "context": "l’histoire de l’idée d’existence : Karl-Jaspers - Jaspers. Jean Wahl, Paris, Centre de",
         "text": "Jaspers",
         "occurrence": 4
-      },
-      {
-        "gid": "117085391",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "ambiguous-surname",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "de l’idée d’existence : Karl-Jaspers - Jaspers. Jean Wahl, Paris, Centre de documentat",
-        "text": "Jaspers",
-        "occurrence": 5
       }
     ],
     "131": [

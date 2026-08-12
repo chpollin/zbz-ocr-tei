@@ -2,36 +2,7 @@
   "doc": "1220",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
-    "1": [
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Johannes",
-        "rule": "bare-surname:suspect",
-        "alternatives": [],
-        "matched_form": "Johannes, Climacus",
-        "form_source": "cache-variant",
-        "context": "; Neues Glaubensbuch (herausgegeben von Johannes Feiner und Lukas Vischer). JEANNE HERSC",
-        "text": "Johannes",
-        "occurrence": 1
-      }
-    ],
     "3": [
-      {
-        "gid": "118506803",
-        "category": "person",
-        "surface": "Bart",
-        "rule": "bare-surname:ambiguous",
-        "alternatives": [
-          "118506803",
-          "119498014"
-        ],
-        "matched_form": "Bart, Karl",
-        "form_source": "cache-variant",
-        "context": "sich unter Gott den alten Mann mit dem Bart vorstellen, der da oben auf einer Wolke",
-        "text": "Bart",
-        "occurrence": 1
-      },
       {
         "gid": "118537105",
         "category": "person",

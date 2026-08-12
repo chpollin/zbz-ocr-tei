@@ -43,6 +43,7 @@ ENTITY_PREVIEW_DIR = OUTPUT_DIR / "entity_preview"
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
 LEGACY_MENTIONS_PATH = DATA_DIR / "entities" / "legacy_mentions.json"
+VARIANT_REVIEW_PATH = DATA_DIR / "entities" / "variant_review.json"
 
 REPORT_STEM = "entity_pilot_report"
 
@@ -407,6 +408,8 @@ def main():
     ap.add_argument("--cache", type=Path, default=GND_CACHE_PATH, help="GND variant cache")
     ap.add_argument("--legacy", type=Path, default=LEGACY_MENTIONS_PATH,
                     help="Old mention index (optional, used when present)")
+    ap.add_argument("--review", type=Path, default=VARIANT_REVIEW_PATH,
+                    help="Variant review verdicts (optional, used when present)")
     ap.add_argument("--src-dir", type=Path, default=TEI_FINAL_DIR, help="Source TEI directory (read only)")
     ap.add_argument("--out-dir", type=Path, default=ENTITY_PREVIEW_DIR, help="Preview directory")
     args = ap.parse_args()
@@ -415,7 +418,9 @@ def main():
 
     doc_ids = PANEL_DOCS if args.panel else _parse_doc_ids(args.docs)
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
-    lexicon = build_lexicon(args.entities, args.cache, legacy_path=legacy)
+    review = args.review if args.review.exists() else None
+    lexicon = build_lexicon(args.entities, args.cache, legacy_path=legacy,
+                            review_path=review)
 
     def find_with_author(xml_string, lex):
         return find_candidates(xml_string, lex, author_labels=CORPUS_AUTHOR_LABELS)

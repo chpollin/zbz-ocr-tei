@@ -74,6 +74,7 @@ from scripts.tei.entity_matcher import (
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
+VARIANT_REVIEW_PATH = DATA_DIR / "entities" / "variant_review.json"
 LEGACY_MENTIONS_PATH = DATA_DIR / "entities" / "legacy_mentions.json"
 CATALOG_PATH = DOCS_DIR / "data" / "catalog.json"
 REPORT_PATH = AUDIT_OUTPUT_DIR / "entity_unlisted_report.json"
@@ -535,6 +536,8 @@ def main() -> None:
                         help="GND variant cache (optional, used when present)")
     parser.add_argument("--legacy", type=Path, default=LEGACY_MENTIONS_PATH,
                         help="Old mention index (optional, used when present)")
+    parser.add_argument("--review", type=Path, default=VARIANT_REVIEW_PATH,
+                        help="Variant review verdicts (optional, used when present)")
     parser.add_argument("--catalog", type=Path, default=CATALOG_PATH,
                         help="Viewer catalog, source of the document language")
     parser.add_argument("--src-dir", type=Path, default=TEI_FINAL_DIR,
@@ -546,7 +549,9 @@ def main() -> None:
     doc_ids = [d.strip() for value in (args.docs or []) for d in value.split(",") if d.strip()]
     doc_paths = resolve_docs(args.src_dir, doc_ids or None)
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
-    lexicon = build_lexicon(args.entities, args.cache, legacy_path=legacy)
+    review = args.review if args.review.exists() else None
+    lexicon = build_lexicon(args.entities, args.cache, legacy_path=legacy,
+                            review_path=review)
     languages = load_languages(args.catalog)
     if not languages:
         print(f"  WARNING: no catalog at {args.catalog}; single words stay suppressed")

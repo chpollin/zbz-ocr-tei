@@ -52,7 +52,7 @@ def _cache_entry(preferred: str | None = None, variants: tuple[str, ...] = ()) -
     }
 
 
-def _build(tmp_path, persons=(), orgs=(), works=(), cache=None, legacy=None):
+def _build(tmp_path, persons=(), orgs=(), works=(), cache=None, legacy=None, review=None):
     """Write the mini fixtures to tmp_path and build the lexicon from them."""
     entities_path = tmp_path / "all_entities.json"
     entities_path.write_text(
@@ -75,7 +75,37 @@ def _build(tmp_path, persons=(), orgs=(), works=(), cache=None, legacy=None):
     if legacy is not None:
         legacy_path = tmp_path / "gnd_entities.json"
         legacy_path.write_text(json.dumps(legacy, ensure_ascii=False), encoding="utf-8")
-    return em.build_lexicon(entities_path, cache_path, legacy_path)
+    review_path = None
+    if review is not None:
+        review_path = tmp_path / "variant_review.json"
+        review_path.write_text(json.dumps(review, ensure_ascii=False), encoding="utf-8")
+    return em.build_lexicon(entities_path, cache_path, legacy_path, review_path=review_path)
+
+
+def _review(persons=None, orgs=None, works=None):
+    """Minimal variant_review.json payload; verdicts keyed by gid and cache form."""
+    return {
+        "reviewed": "2026-08-12",
+        "source_cache_retrieved": "2026-08-12",
+        "scope": "test",
+        "verdict_values": ["approve", "suspect", "reject"],
+        "persons": persons or {},
+        "organisations": orgs or {},
+        "works": works or {},
+    }
+
+
+def _verdicts(gid, headword, forms):
+    """{gid: {headword, verdicts}} with a verdict string per cache form."""
+    return {
+        gid: {
+            "headword": headword,
+            "verdicts": {
+                form: {"verdict": verdict, "reason": "test"}
+                for form, verdict in forms.items()
+            },
+        }
+    }
 
 
 PERSONS = [
@@ -1059,3 +1089,92 @@ def test_evidence_survives_the_ambiguity_suffix(tmp_path):
     cands = em.find_candidates(xml, lexicon)
     assert cands[0]["rule"] == "short-title:ambiguous"
     assert cands[0]["evidence"] == "typographic"
+
+
+# --- variant review (operator-gated verdicts over the cache channel) ----------------
+
+
+def _freud_fixture(tmp_path, review):
+    return _build(
+        tmp_path,
+        persons=[_person("118535749", "Freud, Sigmund")],
+        cache={"118535749": _cache_entry("Freud, Sigmund", ("Freund, Sigmund",))},
+        review=review,
+    )
+
+
+def test_review_reject_drops_cache_form_and_its_surname(tmp_path):
+    review = _review(persons=_verdicts("118535749", "Freud, Sigmund",
+                                       {"Freud, Sigmund": "approve",
+                                        "Freund, Sigmund": "reject"}))
+    lexicon = _freud_fixture(tmp_path, review)
+    assert "Sigmund Freund" not in lexicon["forms"]
+    assert "Freund, Sigmund" not in lexicon["forms"]
+    assert "Freund" not in lexicon["surnames"]
+    assert "Sigmund Freud" in lexicon["forms"]
+    assert "Freud" in lexicon["surnames"]
+    assert lexicon["skipped"]["review_reject"] == 1
+
+
+def test_review_absent_keeps_the_cache_form(tmp_path):
+    lexicon = _freud_fixture(tmp_path, review=None)
+    assert "Sigmund Freund" in lexicon["forms"]
+    assert "Freund" in lexicon["surnames"]
+
+
+def test_review_suspect_demotes_variant_hit_to_tier2(tmp_path):
+    review = _review(persons=_verdicts("118519778", "Voltaire",
+                                       {"Voltaire": "approve",
+                                        "Akakia, Docteur": "suspect"}))
+    lexicon = _build(
+        tmp_path,
+        persons=[_person("118519778", "Voltaire")],
+        cache={"118519778": _cache_entry("Voltaire", ("Akakia, Docteur",))},
+        review=review,
+    )
+    cands = em.find_candidates(_tei("<p>Docteur Akakia schrieb den Brief.</p>"), lexicon)
+    assert cands[0]["rule"] == "variant-full-name:suspect"
+    assert cands[0]["tier"] == 2
+
+
+def test_review_unreviewed_cache_form_counts_as_suspect(tmp_path):
+    review = _review(persons=_verdicts("118557106", "Jaspers, Karl",
+                                       {"Jaspers, Karl": "approve"}))
+    lexicon = _build(
+        tmp_path,
+        persons=[_person("118557106", "Jaspers, Karl")],
+        cache={"118557106": _cache_entry("Jaspers, Karl", ("Jaspers, Karl Theodor",))},
+        review=review,
+    )
+    cands = em.find_candidates(_tei("<p>Karl Theodor Jaspers sprach.</p>"), lexicon)
+    assert cands[0]["rule"] == "variant-full-name:suspect"
+    assert cands[0]["tier"] == 2
+
+
+def test_review_reject_leaves_the_headword_channel_untouched(tmp_path):
+    review = _review(persons=_verdicts("118557106", "Jaspers, Karl",
+                                       {"Jaspers, Karl": "reject"}))
+    lexicon = _build(
+        tmp_path,
+        persons=[_person("118557106", "Jaspers, Karl")],
+        cache={"118557106": _cache_entry("Jaspers, Karl", ())},
+        review=review,
+    )
+    cands = em.find_candidates(_tei("<p>Karl Jaspers sprach.</p>"), lexicon)
+    assert cands[0]["rule"] == "full-name"
+    assert cands[0]["tier"] == 1
+
+
+def test_review_suspect_covers_the_caps_projection(tmp_path):
+    review = _review(persons=_verdicts("118519778", "Voltaire",
+                                       {"Voltaire": "approve",
+                                        "Akakia, Docteur": "suspect"}))
+    lexicon = _build(
+        tmp_path,
+        persons=[_person("118519778", "Voltaire")],
+        cache={"118519778": _cache_entry("Voltaire", ("Akakia, Docteur",))},
+        review=review,
+    )
+    cands = em.find_candidates(_tei("<p>von DOCTEUR AKAKIA unterzeichnet.</p>"), lexicon)
+    assert cands[0]["rule"] == "caps-full-name:suspect"
+    assert cands[0]["tier"] == 2
