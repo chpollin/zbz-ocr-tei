@@ -28,7 +28,9 @@
 }
 
 /* ============================================================
-   Doc-Subbar: Metadaten + Download-Aktionen
+   Doc-Subbar: one row of metadata + workflow pills + save/export.
+   Meta left, pills inline after it, actions right. The band draws exactly one
+   edge, the border-bottom below.
    ============================================================ */
 .doc-subbar {
   background: var(--h-surface);
@@ -40,58 +42,52 @@
   padding: var(--h-space-sm) var(--h-space-xl);
   display: flex;
   align-items: center;
-  gap: var(--h-space-md);
+  gap: var(--h-space-xs) var(--h-space-md);
   flex-wrap: wrap;
   min-height: var(--v-toolbar-height);
 }
 .doc-subbar__meta {
-  flex: 1;
+  /* no grow: meta and pills stay grouped on the left, the actions group takes the
+     free space via margin-left: auto */
+  flex: 0 1 auto;
   font-size: var(--h-sm);
   color: var(--h-text-secondary);
   min-width: 0;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  /* nowrap + overflow:hidden lets the title ellipsize instead of wrapping the row;
+     the remaining fields keep their width via flex-shrink: 0. */
+  flex-wrap: nowrap;
+  overflow: hidden;
   gap: 0;
 }
 .doc-subbar__meta strong { color: var(--h-text); font-weight: 500; }
 .doc-subbar__meta .sep   { color: var(--h-text-muted); margin: 0 0.55em; }
-.doc-subbar__meta .meta-item { white-space: nowrap; }
+.doc-subbar__meta .meta-item { white-space: nowrap; flex: 0 0 auto; }
 .doc-subbar__meta .meta-item--title {
   font-family: var(--h-font-body);
   font-style: italic;
   color: var(--h-text);
-  white-space: normal;
-  max-width: 48ch;
+  /* the only shrinking item in the row: it ellipsizes before anything wraps */
+  flex: 0 1 auto;
+  min-width: 6ch;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .doc-subbar__actions {
   display: flex;
   gap: var(--h-space-xs);
+  margin-left: auto;
 }
 
-/* ---- E66: Workflow-Status-Zeile in der Doc-Subbar ---- */
-.doc-subbar__inner--status {
-  border-top: 1px solid var(--h-border);
-  padding-top: 6px;
-  padding-bottom: 6px;
-  min-height: auto;
-}
+/* ---- E66: workflow status pills, inline in the same row ---- */
 .status-controls {
   display: flex;
   align-items: center;
   gap: var(--h-space-xs);
-  flex: 1;
+  flex: 0 1 auto;
   flex-wrap: wrap;
-}
-.status-controls__label {
-  font-family: var(--h-font-heading);
-  font-size: var(--h-xs);
-  letter-spacing: var(--h-tracking-caps);
-  text-transform: uppercase;
-  color: var(--h-text-muted);
-  margin-right: var(--h-space-sm);
 }
 .status-controls__hint {
   font-size: var(--h-xs);
@@ -103,7 +99,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 3px 10px 3px 8px;
+  padding: 3px 9px;
   border-radius: 999px;
   border: 1px solid var(--h-border);
   background: var(--h-surface);
@@ -136,21 +132,17 @@
   border-radius: 50%;
   flex: 0 0 8px;
 }
-.status-pill__label {
-  color: var(--h-text);
-  font-size: var(--h-xs);
-}
 /* Ampel-Semantik (E77, drei Stufen): neutral/grau = Pipeline-Output da, noch nicht angefasst
    (unverifiziert, Default fuer alle Stroeme); gelb = in Bearbeitung (in_arbeit);
    gruen = menschlich verifiziert (verifiziert). Rot bleibt fuer einen spaeteren expliziten
-   Problem/fehlt-Status reserviert. */
+   Problem/fehlt-Status reserviert. Das Statuswort steht im title-Tooltip. */
 .status-pill--unverifiziert .status-pill__dot { background: var(--h-text-muted); }
 .status-pill--in_arbeit     .status-pill__dot { background: var(--h-ocker); }
 .status-pill--verifiziert   .status-pill__dot { background: var(--h-olivgruen); }
 .status-pill--dirty {
   box-shadow: 0 0 0 1px var(--h-ziegelrot-light);
 }
-.status-pill--dirty .status-pill__label::after {
+.status-pill--dirty .status-pill__stream::after {
   content: ' *';
   color: var(--h-ziegelrot);
   font-weight: 600;
@@ -233,9 +225,8 @@
 
 /* ============================================================
    Editor-Toolbar (im Layout-Modus)
-   E78: sitzt jetzt INLINE in der Workflow-Status-Zeile (.doc-subbar__inner--status),
-   keine eigene Bande mehr -> kein border-bottom, eine horizontale Trennlinie weniger.
-   status-controls (flex:1) drueckt die Werkzeuge an den rechten Rand derselben Zeile.
+   E78: sits inline in the doc subbar, no band and no edge of its own. flex-basis:100%
+   puts it on its own wrapped line inside that band when it becomes visible.
    ============================================================ */
 .editor-toolbar {
   display: flex;
@@ -243,6 +234,7 @@
   gap: var(--h-space-sm);
   flex-wrap: wrap;
 }
+.doc-subbar__inner > .editor-toolbar { flex-basis: 100%; }
 .editor-toolbar__group {
   display: flex;
   gap: 4px;
@@ -972,13 +964,9 @@ a.tei__ref { color: var(--h-preussischblau); }
   }
   .panel__divider { display: none; }
   .panel__body { padding: var(--h-space-md); }
-  /* Subbar-Meta auf schmalen Viewports: eigene volle Zeile, Titel einzeilig mit
-     Ellipsis statt in abgeschnittene Wort-Fragmente zu zerfallen. */
+  /* Narrow viewports: meta takes a full line, pills and actions wrap below it;
+     the title stays on one line with an ellipsis. */
   .doc-subbar__meta { flex-basis: 100%; }
-  .doc-subbar__meta .meta-item--title {
-    white-space: nowrap;
-    max-width: 100%;
-  }
 }
 
 /* ============================================================ Speichern + Export + Identitaets-Chip (E78) ============================================================ */

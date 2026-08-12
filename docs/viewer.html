@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css?v=7">
   <link rel="stylesheet" href="assets/css/base.css?v=7">
-  <link rel="stylesheet" href="assets/css/viewer.css?v=19">
+  <link rel="stylesheet" href="assets/css/viewer.css?v=20">
   <script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/openseadragon.min.js"></script>
 </head>
 <body class="viewer-body">
@@ -22,7 +22,6 @@
         <span>Pipeline</span>
       </a>
       <div class="site-header__center">
-        <p class="site-header__sub">Pipeline viewer for a single document</p>
         <span class="site-header__exp-badge"
               title="Experimental inspection environment of the running OCR/TEI pipeline. Built with the Promptotyping method (dhcraft.org/promptotyping). Contents are generated pipeline results, not editorially reviewed.">Experimental</span>
       </div>
@@ -37,10 +36,17 @@
 
   <div class="app">
 
-    <!-- ============================================================ Doc subbar (page nav + meta + downloads) ============================================================ -->
+    <!-- ============================================================ Doc subbar: one row (meta + workflow status + save/export) ============================================================ -->
     <div class="doc-subbar" id="doc-subbar" hidden>
       <div class="doc-subbar__inner">
         <div class="doc-subbar__meta" id="doc-meta" aria-live="polite"></div>
+        <div class="status-controls" role="group" aria-label="Workflow status per stream">
+          <button class="status-pill" type="button" id="status-ocr"    data-stream="ocr"    aria-label="Set OCR status" disabled></button>
+          <button class="status-pill" type="button" id="status-layout" data-stream="layout" aria-label="Set layout status" disabled></button>
+          <button class="status-pill" type="button" id="status-tei"    data-stream="tei"    aria-label="Set TEI status" disabled></button>
+          <button class="status-pill" type="button" id="status-entities" data-stream="entities" aria-label="Set entities status" disabled hidden></button>
+          <span class="status-controls__hint" id="status-hint"></span>
+        </div>
         <div class="doc-subbar__actions">
           <button class="identity-chip identity-chip--empty" id="btn-identity" type="button" title="Editor initials (stored locally in the browser; recorded in every save entry). Click to change.">
             <span class="identity-chip__icon" aria-hidden="true">&#64;</span>
@@ -59,17 +65,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="doc-subbar__inner doc-subbar__inner--status">
-        <div class="status-controls" role="group" aria-label="Workflow status per stream">
-          <span class="status-controls__label">Workflow</span>
-          <button class="status-pill" type="button" id="status-ocr"    data-stream="ocr"    aria-label="Set OCR status" disabled></button>
-          <button class="status-pill" type="button" id="status-layout" data-stream="layout" aria-label="Set layout status" disabled></button>
-          <button class="status-pill" type="button" id="status-tei"    data-stream="tei"    aria-label="Set TEI status" disabled></button>
-          <button class="status-pill" type="button" id="status-entities" data-stream="entities" aria-label="Set entities status" disabled hidden></button>
-          <span class="status-controls__hint" id="status-hint"></span>
-        </div>
-        <!-- Layout editor tools: visible only in layout edit mode, in the status row (E78) -->
+        <!-- Layout editor tools: visible only in layout edit mode; wraps onto its own line inside the same bar (E78) -->
         <div class="editor-toolbar hidden" id="layout-toolbar" aria-label="Layout editor tools">
           <div class="editor-toolbar__group">
             <button class="btn btn--sm" id="btn-region-add"    title="Add region (click + drag on the facsimile)">+ Region</button>
@@ -198,6 +194,6 @@
   <script src="assets/js/fs-access.js?v=5"></script>
   <script src="assets/js/layout-editor.js?v=4"></script>
   <script src="assets/js/transcription-editor.js?v=4"></script>
-  <script src="assets/js/viewer.js?v=23"></script>
+  <script src="assets/js/viewer.js?v=24"></script>
 </body>
 </html>

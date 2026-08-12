@@ -747,9 +747,10 @@
             const sm = (state.manifest && state.manifest.streams && state.manifest.streams[stream]) || {};
             const history = sm.history || [];
             const last = history.length ? history[history.length - 1] : null;
-            const baseLine = (status === 'unverifiziert')
-                ? STREAM_LABEL[stream] + ': pipeline output exists, not yet human-verified'
-                : STREAM_LABEL[stream] + ': ' + STATUS_LABEL[status];
+            // The compact pill shows stream name + colored dot only; the status word and
+            // the handover meaning of `unverifiziert` live in the tooltip.
+            const baseLine = STREAM_LABEL[stream] + ': ' + STATUS_LABEL[status]
+                + (status === 'unverifiziert' ? ' (pipeline output exists, not yet human-verified)' : '');
             btn.title = baseLine
                 + (last ? '\nlast: ' + last.to + ' · ' + (last.by || '?') + ' · ' + (last.at || '').slice(0, 16) : '')
                 + '\nClick cycles: unverified -> in progress -> verified';
@@ -757,8 +758,7 @@
             btn.setAttribute('aria-label', STREAM_LABEL[stream] + ' status: ' + STATUS_LABEL[status] + ' (click to cycle)');
             btn.innerHTML =
                 '<span class="status-pill__stream">' + STREAM_LABEL[stream] + '</span>'
-                + '<span class="status-pill__dot"></span>'
-                + '<span class="status-pill__label">' + STATUS_LABEL[status] + '</span>';
+                + '<span class="status-pill__dot"></span>';
         });
         refs.btnDlManifest.disabled = !state.manifest;
         refs.statusHint.textContent = state.manifestDirty
@@ -1521,7 +1521,7 @@
             if (i > 0) meta.appendChild(ZBZ.el('span', { cls: 'sep', text: '·' }));
             meta.appendChild(node);
         });
-        // E66: screening badge replaced by workflow status pills (second subbar row).
+        // E66: screening badge replaced by the workflow status pills next to this meta row.
     }
 
     function ensureTextEditableState() {
