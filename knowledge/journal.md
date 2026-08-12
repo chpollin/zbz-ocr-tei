@@ -10,7 +10,7 @@ method:
 status: draft
 language: en
 created: 2026-01-29
-updated: 2026-07-31
+updated: 2026-08-12
 tags: [zbz-ocr-tei, journal]
 template:
   name: Vorlage Journal
@@ -53,272 +53,219 @@ itself, personal names (use roles and organisations instead).
 Translated to English and compacted on 2026-07-07 by operator decision; knowledge
 preserved, pre-compaction entries in git history.
 
+Session 80 to 93 entries compacted on 2026-08-12 by operator decision; the seven
+waves of session 93 were consolidated into one entry, knowledge preserved, originals
+in git history.
+
 Sessions 1 to 68 remain in the compact archive below (one line per session); from
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
-### 2026-08-12 Session 93 (continuation 6): consequence wave: verdict store, invariant gate, rule repairs, risk ranking
+### 2026-08-12 Session 93: GND entity integration built, evaluated, and consolidated (M0 to M4, E105/E106)
 
-**Occasion** Operator released every decision-free consequence of the entity evaluation as a wave of four parallel Opus agents with disjoint file scopes.
+**Occasion** A curated normdata export `all_entities.json` appeared untracked in the
+repository root, meant to feed GND entity markup into the delivered TEI; the operator
+released the work in seven successive waves across the day, from source survey to the
+decision-free consequences of the evaluation.
 
-**Goal** Persist the adjudicated judgments durably, turn the closed-world claim into a checked invariant, close the technical recall rule gaps, and instrument the false-positive hunt.
+**Goal** A deterministic entity layer over the delivered corpus, with the source data
+understood, matcher and preview instruments built, precision and recall measured against
+evidence, and every adjudicated judgment persisted.
 
-**Course** Four agents, each verified against disk before commit. (1) Mention verdict store `data/entities/mention_verdicts.json` via `scripts/eval/build_mention_verdicts.py`: all 300 precision verdicts (incl. 50 blind IAA second judgments, disagreements p145/p193) and 67 recall mentions, keyed by (doc, page, surface, gid, occurrence), each bound to a sha256 fingerprint of the source TEI so re-OCR surfaces as staleness; byte-deterministic rebuild. (2) Exhaustive invariant gate `tests/test_entity_ref_invariant.py`: every GND id in all preview files and worklists is a member of the curated list; zero violations; 61 curated ids occur nowhere in the corpus. (3) Five matcher repairs, all derived channels tier-2 only: acronym case tolerance, parenthetical qualifier strip, static place-adjective inversion, superscript digits as word boundaries, person initials. (4) FP risk ranking `scripts/eval/entity_risk_ranking.py` plus wave protocol `output/audits/fp_hunt/PROTOCOL.md` (versioned copy in reports/): 4043 tier-1 marks scored into high 1517 / medium 960 / low 1566; the high stratum is dominated by anchored-surname hits on 39 gids. Impact measured against the frozen scan (copy in `output/audits/eval_sample/`): worklist +1657 proposals; tier-1 changed only by +9 (all superscript footnote cases, e.g. work titles carrying a footnote digit) and -1 (a mid-compound match inside a hyphenated university name replaced by a clean tier-2 qualifier-strip candidate); the hyphen-adjacent invariant is unchanged (11 known cases). Corpus previews and viewer mirror regenerated; schema and text invariance pass 285/285.
+**Course** Wave 1, survey. Two agents ran in parallel, one aggregating the file with an
+executed Python script, one surveying the repository read-only. The file holds three
+lists (persons 177, organisations 32, works 87; 296 entries), every entry with a
+formally valid GND id, no duplicates, and `works.author_gnd_id` fully resolving; defects
+are one test entry, one empty stub, four untitled works, one unnamed organisation, one
+deviant DNB link, and `editor_reviewed` true on only 10 entries. After checksum
+normalization the E71 remnant `output/gnd_analysis/gnd_entities.json` (mention index
+over 18 reference TEIs) is a strict subset, all 75 of its ids covered. The survey
+confirmed the binding E88 inline-GND target convention as realized in the 25 reference
+TEIs, the E94 marker pattern as the only sanctioned write path into `tei_final` (E99
+forbids regeneration), and the verification stack of schema gate, conformity rules
+Z1-Z4/Z8 (idle since E71, lesson L14), pytest suite, CER reproduction as text-invariance
+proof, and the reference TEIs as gold standard for matcher precision. Central finding:
+the file carries normdata without mention sites, so deterministic surface-form matching
+is the actual work; naive surname matching yields 8314 candidates with strong homonym
+ambiguity, and even the corpus subject's surname is ambiguous inside the file itself
+(three entries share it). The delivered plan is a five-phase sequence of intake and
+lint, dry-run matcher, gold-standard evaluation against the reference TEIs, E94-pattern
+stock run, and post-run verification with mirror regeneration.
 
-**Decisions** Every derived form channel emits tier-2 worklist candidates only, never tier-1 auto-marks; safety over coverage (rejected: tier 1 for safe-looking derivations). Verdicts are snapshot-bound via text fingerprint (rejected: raw offsets without staleness detection). The occurrence index is computed against the full tier-1 candidate population of the frozen scan, because 106 of 300 sampled marks repeat their surface on the page.
+Wave 2, milestone M0. The design plan [entity-integration.md](entity-integration.md) was
+written, simplified on operator request, and wired into [index.md](index.md) and
+CLAUDE.md; `all_entities.json` moved from the repository root to `data/entities/`
+(git-tracked). Validation probes against `zbz_hersch.rng` confirmed that nested
+`persName` inside `bibl`, `hi` inside `bibl`, and `lb` inside `persName` are
+schema-valid, and reference-corpus probes settled the modelling detail rules recorded in
+the plan (bibl wraps hi, title-only span, footnotes carry refs, particles outside,
+mid-word line breaks inside names).
 
-**Status** Commits 8a0e34ae (invariant gate), 40afccf2 (verdict store), c81b5922 (risk ranking), 6487e0b6 (matcher repairs) pushed; mirror regeneration committed subsequently. Entity gates 388 passed, script health 154 passed, invariant and mirror gates green after regeneration. One worklist entry is not locatable inline (noted in the generator report).
+Wave 3, milestones M1 to M3. Three build agents delivered `fetch_gnd_variants`,
+`entity_lint`, `entity_matcher`, and `tei_entity_preview`; the pilot ran over the
+ten-document panel into `output/entity_preview/` with all schema and text-invariance
+gates green. A 14-agent evaluation wave (ten per-document evaluators, three adversarial
+verifiers, one completeness critic) confirmed 106 of 109 findings and exposed two
+systematic tier-1 defects, lobid initials variants ("J. H." claimed as Pestalozzi across
+an interview, doc 1220) and work-title spans carrying imprint or inverted `hi` nesting;
+the critic's read-only corpus scan added German homograph surnames ("Weil" the
+conjunction), a poisoned legacy pairing ("Jérémie" filed under Jaspers where the
+reference marks the prophet), the anchor collision in doc 1520, and the volume
+concentration on the author and her main subject. A second four-agent wave built the fix
+package (legacy demotion with lint pairing check, homograph suspicion signals, adjective
+forms to the worklist, caps-full-name rule with author-byline exception, apparatus zone,
+`bibl` outside `hi`), the corpus-scan instrument, the operator-gated cover-strip marker,
+and the read-only viewer entity layer (`?entities=1`, popovers with GND and lobid link,
+per-page worklist). After integration the panel rerun shows 195 wrapped and 120 worklist
+entries with gates 10/10, the first corpus scan reports 3496 tier-1 and 4074 tier-2
+candidates over 285 documents with zero function-word violations and Jérémie never tier
+1, and the legacy index is versioned under `data/entities/legacy_mentions.json`. Side
+finding of the cover-strip dry run: two library delivery sheets (docs 200, 490) carry
+patron personal data, one with private e-mail addresses, a finding for ZBZ independent
+of the entity work.
 
-**Next steps** 1. Operator conventions: page-apparatus reading, author byline exception. 2. Model the cert/resp delivery layer (respStmt taxonomy, confidence levels, revisionDesc projection). 3. FP-hunt wave over the high stratum, spread by gid and document. 4. Redraw and remeasure recall once the conventions are set.
+Wave 4, milestone M4 and the frontend evaluation round. Four parallel build agents
+delivered the gold benchmark (`entity_gold_benchmark`, scope-restricted against the 25
+references with the 2026-08-12 scoring rules, held-out set drawn along the gold-mention
+distribution with 1520 kept separate), the unlisted-entities scan
+(`entity_unlisted_scan`, id-free proposal channel whose top proposals include a heavily
+mentioned unlisted philosopher and the library itself as organisation), the corpus
+digest (`entity_corpus_digest`, the whole tier-1 harvest in one context window), and the
+visibility iteration in the matcher (candidates now carry all alternative bearers, the
+matched form with its source, and a typographic-evidence flag on one-word titles; the
+neighbour suspicion check is bigram-aware). First benchmark numbers: held-out tier-1
+precision 82 percent, overall 62 percent driven by one structural case (doc 3040
+declares its bibliography as `div type="entry"`, so the exclusion zone cannot fire;
+without it 90 percent), candidate coverage 83 percent, and the work class carries the
+errors in both directions, which supports keeping works out of the first stock wave. The
+operator's live findings (the arbitrary first-bearer display on "Jaspers", the
+birth-name variant behind "Hans Mayer", the discipline reading of "Philosophie") are
+fixed or made visible and frozen as regression cases. A viewer follow-up added inline
+worklist rendering with provenance popovers and the entities workflow stream, so the
+catalog shows the entities stage corpus-wide with a pending state; documents 1540, 1520,
+3040 and 380 joined the evaluation set, and most missing translated work titles turned
+out to be case-sensitivity with their forms already sitting in the GND cache.
 
-### 2026-08-12 Session 93 (continuation 5): evaluation wave executed, precision and recall measured
-
-**Occasion** Operator released the sampling experiment (implement, test, then evaluate).
-
-**Goal** Run the adjudication wave over the frozen sample and report measured quality.
-
-**Course** Nine Opus agents adjudicated per the versioned protocol: six precision ranges
-(300 cases), one blind second adjudicator (50 cases), two recall readers (40 pages);
-every verdict file verified against disk. Results in
-reports/2026-08-12_entity-eval-ergebnis.md and output/audits/entity_eval_report.json:
-precision 0.952 (CI 0.925-0.976) over decidable cases, raw agreement 0.96, recall
-coverage 0.552 with 28 of 30 misses being rule gaps (speaker initials, acronym casing,
-GND qualifier, byline exception). Agents also surfaced generator defects (sp/speaker
-duplication, hallucinated OCR pages) and further facsimile-offset documents (680, 2300,
-1220). The protocol itself was corrected mid-wave (wrong Hersch gid), found by an agent.
-
-**Decisions** Page-apparatus convention (column titles, bylines) left open; the report
-shows the protocol reading plus a described apparatus count, the second reading follows
-the operator's convention decision. Statistics only where the data carries them:
-bootstrap CI for precision, raw agreement for IAA, descriptive counts elsewhere.
-
-**Status** Wave complete, all files verified, results versioned; compact-ready.
-
-**Next steps** Apparatus convention decision; repair wave for the recall rule gaps;
-structure lane (sp/speaker, 3040 bibliography); page-mapping repairs (operator-gated);
-redraw and remeasure; process-evaluation synthesis; talk deck.
-
-### 2026-08-12 Session 93 (continuation 4): cover strip executed, five-agent wave, variant review wired
-
-**Occasion** The operator ran the cover-strip write run himself (interrupted during the
-per-file RelaxNG check, which looks like a hang), then released the remaining work as a
-parallel agent wave and asked for full verification URLs.
-
-**Goal** Finish the cover strip corpus-wide, classify all gold-benchmark false
-positives at the facsimile, make multi-word lexicon forms case-tolerant, remove the
-viewer's 404 probing, and put the GND variant verdicts under an operator-gated file.
-
-**Course** The interrupted operator run had already stripped 21 of 22 covers (write
-happens only after a passed schema check, so nothing was half-written); the resumed run
-finished document 890, all 285 documents validate, the 11 partial-field documents stayed
-untouched. Five Opus agents ran in parallel and returned confirmed results: (1) FP
-classification outside 3040: of 9 cases 1 real matcher error, 2 reference gaps, 6 zone
-artifacts in page furniture and plate paratext, none OCR-caused; (2) FP classification
-3040: 39 of 42 cases are one structure defect, the pipeline TEI renders the bibliography
-as plain paragraphs instead of `div type="bibliography"` with `listBibl`/`bibl`, so the
-matcher's existing zone rules never fire (1520 shows the working counterexample); fixing
-the generator removes about nine tenths of all corpus false positives; (3) case-tolerant
+Wave 5, cover strip and a five-agent wave. The operator's own run of
+`python -m scripts.tei.tei_cover_strip --write`, released in wave 4 but blocked there by
+the permission layer and interrupted here during the per-file RelaxNG check (which looks
+like a hang), had already stripped 21 of 22 covers, since the write happens only after a
+passed schema check and nothing was half-written; the resumed run finished document 890,
+all 285 documents validate, and the 11 partial-field documents stayed untouched. Five
+Opus agents returned confirmed results. False-positive classification outside 3040: of 9
+cases 1 real matcher error, 2 reference gaps, 6 zone artifacts in page furniture and
+plate paratext, none OCR-caused. False-positive classification for 3040: 39 of 42 cases
+are one structure defect, since the pipeline TEI renders the bibliography as plain
+paragraphs instead of `div type="bibliography"` with `listBibl`/`bibl`, so the matcher's
+existing zone rules never fire (1520 shows the working counterexample) and fixing the
+generator removes about nine tenths of all corpus false positives. Case-tolerant
 matching for multi-word lexicon forms (letters-only case difference, diacritics and
-punctuation exact) with fully lowercased phrases demoted to `:suspect`; roughly 500 new
-matches corpus-wide, mostly work titles; (4) probe-free viewer loading, the catalog now
-carries a per-document asset index and the viewer fetches only existing files (verified
-over HTTP: zero non-200 responses; baseline replay of the old code produced hundreds);
-(5) the variant review: every cache-derived name form carries a verdict
-(approve/suspect/reject) in the versioned file `data/entities/variant_review.json`, with
-the operator worklist in `output/audits/variant_review_report.md`. The orchestrator then
-wired consumption test-first into `build_lexicon`: reject drops the form entirely
-(including its surname-index entry), suspect and unreviewed forms yield tier-2
-candidates only, headwords and legacy forms stay unfiltered. Corpus effect: rejected
-junk bearers disambiguate real mentions, so tier 1 rose while the total fell; the known
-damage cases (initials variant, Freund/Freud, cross-bearer collisions) are now held
-back structurally.
+punctuation exact) demotes fully lowercased phrases to `:suspect` and adds roughly 500
+new matches corpus-wide, mostly work titles. Probe-free viewer loading ends the 404
+probing by giving the catalog a per-document asset index, so the viewer fetches only
+existing files, verified over HTTP with zero non-200 responses against the hundreds a
+baseline replay of the old code produced. The variant review gives every cache-derived
+name form an approve/suspect/reject verdict in the versioned file
+`data/entities/variant_review.json`, with the operator worklist in
+`output/audits/variant_review_report.md`. The orchestrator then wired consumption
+test-first into `build_lexicon`, where reject drops the form entirely (including its
+surname-index entry), suspect and unreviewed forms yield tier-2 candidates only, and
+headwords and legacy forms stay unfiltered; rejected junk bearers thereby disambiguate
+real mentions, so tier 1 rose while the total fell, and the known damage cases (initials
+variant, Freund/Freud, cross-bearer collisions) are now held back structurally.
 
-**Decisions** Cover strip is executed corpus-wide (22 documents, backups kept). The
-variant review file is the single deterministic gate for cache name forms; an
-unreviewed form counts as suspect until the next review run. The 3040 bibliography
-repair belongs to the TEI generator (structure lane), not to the matcher. Page-furniture
-work-title hits (running column titles, document 330) need a byline-style exception and
-stay an open operator decision.
+Wave 6, the evaluation. Nine Opus agents adjudicated per the versioned protocol, six
+precision ranges (300 cases), one blind second adjudicator (50 cases), and two recall
+readers (40 pages), with every verdict file verified against disk; the protocol itself
+was corrected mid-wave (wrong Hersch gid), found by an agent. Results in
+`reports/2026-08-12_entity-eval-ergebnis.md` and
+`output/audits/entity_eval_report.json`: precision 0.952 (CI 0.925-0.976) over decidable
+cases, raw agreement 0.96, and recall coverage 0.552 with 28 of 30 misses being rule
+gaps (speaker initials, acronym casing, GND qualifier, byline exception). The agents
+also surfaced generator defects (sp/speaker duplication, hallucinated OCR pages) and
+further facsimile-offset documents (680, 2300, 1220).
 
-**Status** All five agent packages verified against disk, gates green (entity suites,
-scripts health, variant review tests), previews and mirror regenerated, pushed through
-the variant-review commit. Viewer serves on the local port with the new asset index.
+Wave 7, the consequence wave. Four parallel agents with disjoint file scopes, each
+verified against disk before commit, built the mention verdict store
+`data/entities/mention_verdicts.json` via `scripts/eval/build_mention_verdicts.py` (all
+300 precision verdicts including the 50 blind IAA second judgments with disagreements
+p145/p193, plus 67 recall mentions, keyed by doc, page, surface, gid and occurrence,
+each bound to a sha256 fingerprint of the source TEI so re-OCR surfaces as staleness,
+with a byte-deterministic rebuild); the exhaustive invariant gate
+`tests/test_entity_ref_invariant.py`, under which every GND id in all preview files and
+worklists is a member of the curated list, zero violations, and 61 curated ids occur
+nowhere in the corpus; five matcher repairs as derived channels that stay tier 2
+(acronym case tolerance, parenthetical qualifier strip, static place-adjective
+inversion, superscript digits as word boundaries, person initials); and the
+false-positive risk ranking `scripts/eval/entity_risk_ranking.py` plus the wave protocol
+`output/audits/fp_hunt/PROTOCOL.md` (versioned copy in reports/), which scores 4043
+tier-1 marks into high 1517 / medium 960 / low 1566, the high stratum dominated by
+anchored-surname hits on 39 gids. Impact measured against the frozen scan (copy in
+`output/audits/eval_sample/`): the worklist grows by 1657 proposals while tier 1 changes
+only by +9 (all superscript footnote cases, e.g. work titles carrying a footnote digit)
+and -1 (a mid-compound match inside a hyphenated university name replaced by a clean
+tier-2 qualifier-strip candidate), and the hyphen-adjacent invariant is unchanged (11
+known cases). Corpus previews and viewer mirror were regenerated; schema and text
+invariance pass 285/285.
 
-**Next steps** Classify the four new 3040-zone false positives after the generator
-repair; M5 judge pilot on the gold-resolved worklist cases; operator review of the
-suspect/reject worklist; patron-data finding (documents 200/490) to ZBZ; decisions on
-works in tier 1, author scope, hyphen compounds, document 180.
+**Decisions** Modelling (operator, 2026-08-12): nested entity markup is permitted (the
+gold benchmark scores correct nesting as neutral); ref-less stock elements are enriched
+in place only when the tier rules verify the assignment; the pilot runs with three
+parallel build agents and an evaluation wave of fourteen agents, deterministic tiers
+only, no judge. Scope (operator, 2026-08-12): title-only binds for works even against
+wider reference citation spans (gold scores those neutral); all-caps mentions are in
+scope while bylines and running headers of the document author stay unmarked (Masterfile
+comparison); E-Periodica cover sheets leave the delivered TEI via the operator-gated
+marker and the strip is executed corpus-wide (22 documents, backups kept); library
+apparatus (cover sheets, photo credits) is out of matching scope; every data channel
+passes intake lint, shape-class review, and pilot before its forms may match; a form
+class whose candidate set misses the true bearer skips tier 2 entirely. Enrichment
+variants are audited by a model against each bearer's record into a versioned verdict
+file before M6, operator-approved and consumed deterministically, and the unlisted
+report is the proposal channel for list extensions with ids staying at ZBZ. The variant
+review file is the single deterministic gate for cache name forms; an unreviewed form
+counts as suspect until the next review run. The 3040 bibliography repair belongs to the
+TEI generator (structure lane), not to the matcher. Statistics are reported only where
+the data carries them, bootstrap CI for precision, raw agreement for the agreement
+check, descriptive counts elsewhere. E105 settles the page apparatus: running heads stay
+unmarked, title pages, byline organisations and picture captions are marked, which also
+disposes of the page-furniture work-title hits (running column titles, document 330);
+the evaluation report therefore carries the protocol reading plus a described apparatus
+count, and the convention reading is recomputable from the persisted verdicts without
+drawing again. E106 covers the consequence wave: every derived form channel emits tier-2
+worklist candidates only and never tier-1 auto-marks, safety over coverage (rejected,
+tier 1 for safe-looking derivations); verdicts are snapshot-bound via text fingerprint
+(rejected, raw offsets without staleness detection); the occurrence index is computed
+against the full tier-1 candidate population of the frozen scan, because 106 of 300
+sampled marks repeat their surface on the page.
 
+**Status** M0 was committed with its own entry; the pilot and fix package pushed as
+35281270, the cover-strip marker as 735864a2, the viewer layer as 5dcc2365, and the plan
+updates as 4ee671a5. The M4 instruments and the frontend round pushed as 36a1ebd8,
+31df4503, a8472fd8, 251c63d8 and ae374797, the five-agent wave through the
+variant-review commit, and the consequence wave as 8a0e34ae (invariant gate), 40afccf2
+(verdict store), c81b5922 (risk ranking) and 6487e0b6 (matcher repairs), with the mirror
+regeneration committed subsequently. Entity gates 388 passed, script health 154 passed,
+invariant and mirror gates green after regeneration, and all 285 documents validate
+after the cover strip; the viewer serves on the local port with the new asset index. One
+worklist entry is not locatable inline (noted in the generator report). The wave-1
+analysis was verified by an executed aggregation script (session scratchpad, exit 0) and
+the repository survey cites schema and code lines. Evaluation lesson recorded in the
+plan: panels are drawn by impact and class coverage, precision checks run as per-mention
+batches, and the gold benchmark (M4) replaces agent evaluation where references exist.
 
-
-### 2026-08-12 Session 93 (continuation 3): gold benchmark, frontend evaluation round, visibility iteration
-
-**Occasion** After M3 the operator evaluated the entity layer live in the viewer and
-released the scaling work; the plan required the deterministic gold measurement next.
-
-**Goal** M4 measurement instrument, the operator's frontend findings fixed end to end,
-and the proposal channel for entities outside the curated list.
-
-**Course** Four parallel build agents delivered: the gold benchmark
-(`entity_gold_benchmark`, scope-restricted against the 25 references with the
-2026-08-12 scoring rules), the unlisted-entities scan (`entity_unlisted_scan`, id-free
-proposal channel; top proposals include a heavily mentioned unlisted philosopher and
-the library itself as organisation), the corpus digest (`entity_corpus_digest`, the
-whole tier-1 harvest in one context window), and the visibility iteration in the
-matcher (candidates now carry all alternative bearers, the matched form with its
-source, and a typographic-evidence flag on one-word titles; the neighbour suspicion
-check is bigram-aware). First benchmark numbers: held-out tier-1 precision 82 percent,
-overall 62 percent driven by one structural case (doc 3040 declares its bibliography
-as `div type="entry"`, so the exclusion zone cannot fire; without it 90 percent);
-candidate coverage 83 percent; the work class carries the errors in both directions,
-which supports keeping works out of the first stock wave. The operator's live findings
-(the arbitrary first-bearer display on "Jaspers", the birth-name variant behind
-"Hans Mayer", the discipline reading of "Philosophie") are fixed or made visible and
-frozen as regression cases. The catalog shows the entities stage corpus-wide with a
-pending state; documents 1540, 1520, 3040 and 380 joined the evaluation set. Most
-missing translated work titles turned out to be case-sensitivity, their forms already
-sit in the GND cache.
-
-**Decisions** Enrichment variants are audited by a model against each bearer's record
-into a versioned verdict file before M6, operator-approved, consumed deterministically
-(operator direction 2026-08-12); the unlisted report is the proposal channel for list
-extensions, ids stay with ZBZ.
-
-**Status** All instruments delivered, verified and pushed (36a1ebd8, 31df4503,
-a8472fd8, 251c63d8, ae374797); full suite green. Open: the released cover-strip run is
-blocked by the permission layer and waits for the operator (command:
-`python -m scripts.tei.tei_cover_strip --write`), afterwards doc 890 needs its entity
-layer refreshed; the patron-data finding (docs 200, 490) goes to ZBZ.
-
-**Next steps** 1. Cover-strip run plus post-run gates and mirror. 2. Case-tolerant
-matching for multi-word work-title variants. 3. M5 judge pilot on the gold-resolved
-worklist cases. 4. FP classification against the facsimiles (reference
-underannotation). 5. Variant review file before M6.
-
-### 2026-08-12 Session 93 (continuation 2): entity pilot M1-M3, evaluation wave, fix package
-
-**Occasion** The M0 plan called for the pilot instruments, the ten-document pilot, and
-an independent evaluation before anything scales.
-
-**Goal** Milestones M1 to M3: cache and lint, matcher and preview, pilot with
-adversarially verified evaluation, and the fixes the evaluation demands.
-
-**Course** Three build agents delivered `fetch_gnd_variants`, `entity_lint`,
-`entity_matcher`, and `tei_entity_preview` (M1/M2); the pilot ran over the ten-document
-panel with all schema and text-invariance gates green. A 14-agent evaluation wave (ten
-per-document evaluators, three adversarial verifiers, one completeness critic) confirmed
-106 of 109 findings. Two systematic tier-1 defects surfaced: lobid initials variants
-("J. H." claimed as Pestalozzi across an interview, doc 1220) and work-title spans
-carrying imprint or inverted `hi` nesting. The critic's read-only corpus scan found what
-the panel could not: German homograph surnames ("Weil" the conjunction), a poisoned
-legacy pairing ("Jérémie" filed under Jaspers, reference marks the prophet), the anchor
-collision in doc 1520, and the volume concentration on the author and her main subject.
-A second four-agent wave built the fix package (legacy demotion with lint pairing check,
-homograph suspicion signals, adjective forms to the worklist, caps-full-name rule with
-author-byline exception, apparatus zone, `bibl` outside `hi`), the corpus-scan
-instrument, the operator-gated cover-strip marker, and the read-only viewer entity layer
-(`?entities=1`, popovers with GND and lobid link, per-page worklist). After integration
-the panel rerun shows 195 wrapped and 120 worklist entries with gates 10/10; the first
-corpus scan reports 3496 tier-1 and 4074 tier-2 candidates over 285 documents with zero
-function-word violations and Jérémie never tier 1. The legacy index is now versioned
-under `data/entities/legacy_mentions.json`. Side finding of the cover-strip dry run: two
-library delivery sheets (docs 200, 490) carry patron personal data, one with private
-e-mail addresses, a finding for ZBZ independent of the entity work.
-
-**Decisions** Operator decisions of 2026-08-12, register entries to follow with the M4
-milestone: title-only binds for works even against wider reference citation spans (gold
-scores those neutral); all-caps mentions are in scope, bylines and running headers of
-the document author stay unmarked (Masterfile comparison); E-Periodica cover sheets
-leave the delivered TEI via the operator-gated marker; library apparatus (cover sheets,
-photo credits) is out of matching scope; every data channel passes intake lint,
-shape-class review, and pilot before its forms may match; a form class whose candidate
-set misses the true bearer skips tier 2 entirely.
-
-**Status** M1 to M3 delivered and pushed (fix package 35281270, cover strip 735864a2,
-viewer layer 5dcc2365, plan updates 4ee671a5). The cover-strip real run and the Hersch
-scope question remain operator-gated. A viewer follow-up agent is building inline
-worklist rendering with provenance popovers and the entities workflow stream (catalog
-traffic lights). Evaluation lesson recorded in the plan: panels are drawn by impact and
-class coverage, precision checks run as per-mention batches, the gold benchmark (M4)
-replaces agent evaluation where references exist.
-
-**Next steps** 1. M4 gold benchmark (`entity_gold_benchmark`, held-out drawn along the
-gold-mention distribution, 1520 separate). 2. Operator decisions: Hersch scope, works in
-tier 1, cover-strip release, translated titles. 3. Judge stage design (M5) with
-per-document batching. 4. Corpus-wide previews plus the impact-drawn evaluation wave.
-
-### 2026-08-12 Session 93 (continuation): entity-integration design plan versioned (M0)
-
-**Occasion** The operator released the entity-integration pilot after the design plan,
-the modelling decisions, and the agent-wave layout were settled in session.
-
-**Goal** Milestone M0: the design plan and the curated entity list versioned, the
-knowledge base wired.
-
-**Course** The design plan [entity-integration.md](entity-integration.md) was written,
-simplified on operator request, and wired into [index.md](index.md) and CLAUDE.md.
-`all_entities.json` moved from the repository root to `data/entities/` (git-tracked).
-Validation probes against `zbz_hersch.rng` confirmed that nested `persName` inside
-`bibl`, `hi` inside `bibl`, and `lb` inside `persName` are schema-valid. Reference-corpus
-probes settled the modelling detail rules recorded in the plan (bibl wraps hi, title-only
-span, footnotes carry refs, particles outside, mid-word line breaks inside names).
-
-**Decisions** Operator decisions of 2026-08-12, register entry to follow with the pilot
-milestone: nested entity markup permitted (the gold benchmark scores correct nesting as
-neutral); ref-less stock elements are enriched in place only when the tier rules verify
-the assignment; the pilot runs with three parallel build agents and an evaluation wave
-of fourteen agents, deterministic tiers only, no judge.
-
-**Status** M0 committed together with this entry. All detail rules live in the design
-plan; this entry only records the milestone.
-
-**Next steps**
-1. Wave 1: three build agents (GND cache and lint, matcher, preview runner).
-2. Pilot run over the ten-document panel into `output/entity_preview/`.
-3. Evaluation wave, then the M3 journal entry and commit.
-
-### 2026-08-12 Session 93: all_entities.json surveyed, inline-GND integration plan drafted
-
-**Occasion** A curated normdata export `all_entities.json` appeared in the repository root
-(copied from a local download, untracked); its content is meant to feed GND entity markup
-into the delivered TEI, which requires a plan and a verification strategy first.
-
-**Goal** Understand structure, quality, and origin of the file, map the repository's
-integration and verification surfaces, and draft a plan naming the open operator decisions.
-
-**Course** Two agents ran in parallel, one aggregating the file with an executed Python
-script, one surveying the repository read-only. The file holds three lists (persons 177,
-organisations 32, works 87; 296 entries), every entry with a formally valid GND id, no
-duplicates, and `works.author_gnd_id` fully resolving; defects are one test entry, one
-empty stub, four untitled works, one unnamed organisation, one deviant DNB link, and
-`editor_reviewed` true on only 10 entries. After checksum normalization the E71 remnant
-`output/gnd_analysis/gnd_entities.json` (mention index over 18 reference TEIs) is a strict
-subset, all 75 of its ids covered. The survey confirmed the binding E88 inline-GND target
-convention as realized in the 25 reference TEIs, the E94 marker pattern as the only
-sanctioned write path into `tei_final` (E99 forbids regeneration), and the verification
-stack: schema gate, conformity rules Z1-Z4/Z8 (idle since E71, lesson L14), pytest suite,
-CER reproduction as text-invariance proof, and the reference TEIs as gold standard for
-matcher precision. Central finding: the file carries normdata without mention sites, so
-deterministic surface-form matching is the actual work; naive surname matching yields 8314
-candidates with strong homonym ambiguity, and even the corpus subject's surname is
-ambiguous inside the file itself (three entries share it).
-
-**Decisions** None registered; the session produced a plan proposal with operator
-decisions open (file location and versioning, whether works join the automated tier,
-curation channel for the ambiguous-mention worklist, role of `editor_reviewed`).
-
-**Status** Analysis verified by an executed aggregation script (session scratchpad,
-exit 0); the repository survey cites schema and code lines. Nothing in the repository
-changed apart from this entry; the file remains untracked in the root. The plan, a
-five-phase sequence (intake and lint, dry-run matcher, gold-standard evaluation against
-the reference TEIs, E94-pattern stock run, post-run verification with mirror
-regeneration), was delivered in the session conversation.
-
-**Next steps**
-1. Operator decides file path, works tier, curation channel, and the `editor_reviewed` role.
-2. Intake the file at a tracked path and build the entity lint audit.
-3. Build the matcher dry-run only and measure precision/recall against the reference TEIs
-   before any write to `tei_final`.
+**Next steps** 1. Model the cert/resp delivery layer (respStmt taxonomy, confidence
+levels, revisionDesc projection). 2. False-positive hunt over the high stratum, spread
+by gid and document. 3. Recompute the convention reading of the precision figure from
+the persisted verdicts under E105, and build the deterministic running-head suppression
+instrument. 4. Redraw the sample and remeasure recall once the repairs are in. 5.
+Structure lane in the TEI generator: sp/speaker duplication and the 3040 bibliography
+defect; afterwards classify the four new 3040-zone false positives. 6. M5 judge pilot
+with per-document batching on the gold-resolved worklist cases, plus the operator review
+of the suspect/reject worklist. 7. Page-mapping repairs for the facsimile-offset
+documents (operator-gated); patron-data finding (documents 200/490) to ZBZ. 8. Open
+operator decisions: works in tier 1, author scope, hyphen compounds, document 180. 9.
+Process-evaluation synthesis and talk deck.
 
 ### 2026-07-31 Session 92: knowledge base aligned post hoc with the Promptotyping convention (E104)
 
@@ -657,25 +604,24 @@ be checked in a fully automated process.
 generation path, map the editorial guidelines against validator and ground truth,
 correct the knowledge base, and start every immediately implementable package.
 
-**Course** Four multi-agent exploration rounds. First, corpus state: every delivered
-document is machine-valid with zero schema and project errors; warnings are dominated
-by the speaker curation slots (W17) and legacy reading order (W19); human verification
-has not begun (curated_tei empty, only document 30 ever touched, its manifest ahead of
-its revisionDesc). Second, generation trace: two phases, the tei_unified three-step
-pipeline (deterministic scaffold, Gemini refinement, deterministic assembly plus
-conformity passes) and the downstream markers writing into tei_final; the delivered
-tei_final is a frozen, post-processed state decoupled from the current tei_unified
-output. Third, coverage matrix and facsimile deep check (570, 760): the faithfulness
-core of the guidelines is machine-unchecked (transcription norms, classification
-correctness, relation integrity), and the deep check found systematic violations
-invisible to the validator, printed page numbers in the body instead of pb@n,
-unsegmented double-page scans, transcribed covers and title pages, italics loss, and
-incomplete character normalization, while text accuracy stays near reference level and
-the reading order held even on the three-column double page. Fourth, all 25 reference
-TEIs inventoried against the guidelines: body coding is guideline-true in the load-
-bearing conventions, the teiHeader is a Transkribus stub corpus-wide, and the ground
-truth carries its own catalogued errors (GND prefix drift, corresp/ref migration rest,
-break="yes", entities in captions, the ill-formed 1520).
+**Course** Four multi-agent exploration rounds. Corpus state: every delivered document
+is machine-valid with zero schema and project errors; warnings are dominated by the
+speaker curation slots (W17) and legacy reading order (W19); human verification has not
+begun (curated_tei empty, only document 30 ever touched, its manifest ahead of its
+revisionDesc). Generation trace: two phases, the tei_unified three-step pipeline
+(deterministic scaffold, Gemini refinement, deterministic assembly plus conformity
+passes) and the downstream markers writing into tei_final, so the delivered tei_final is
+a frozen, post-processed state decoupled from the current tei_unified output. Coverage
+matrix and facsimile deep check (570, 760): the faithfulness core of the guidelines is
+machine-unchecked (transcription norms, classification correctness, relation integrity),
+and the deep check found systematic violations invisible to the validator, printed page
+numbers in the body instead of pb@n, unsegmented double-page scans, transcribed covers
+and title pages, italics loss, and incomplete character normalization, while text
+accuracy stays near reference level and the reading order held even on the three-column
+double page. All 25 reference TEIs inventoried against the guidelines: body coding is
+guideline-true in the load-bearing conventions, the teiHeader is a Transkribus stub
+corpus-wide, and the ground truth carries its own catalogued errors (GND prefix drift,
+corresp/ref migration rest, break="yes", entities in captions, the ill-formed 1520).
 
 **Decisions** Quality architecture in three tiers: validation (deterministic,
 corpus-wide), AI-agent verification (evidence-bound findings on stratified facsimile
@@ -691,76 +637,72 @@ volatile quantities replaced by script pointers in pipeline/project/methodology/
 ecosystem-synthesis, and the effort-hours table in workflow.md replaced by an
 implementation-state note.
 
-**Status** Knowledge corrections done. Ground-truth map and the ground-truth exception
-catalog consolidated as Appendix B of [final-report.md](final-report.md) (operator
-decision: one final report instead of scattered report files; the 1520 repair proposal
-lives there too, corrected copy under `output/`).
-Four implementation agents launched: diagnostic audits (character lint, pb@n
-plausibility, hi survival, relation integrity), the deterministic pb@n projection plus
-filter-leak fix in step 1, the rendering-loss root cause (delivered: Mistral OCR is
-the main loss source, the Gemini image channel is practically unused because the
-prompt verifies instead of detects, and a promotion lag tei_unified to tei_final
-withholds existing markup, e.g. document 890), and the stock diagnoses (page-count
-mismatches, 1520 repair proposal, status-marker catch-up for document 30).
+**Status** Knowledge corrections done; the ground-truth map and the ground-truth
+exception catalog are consolidated as Appendix B of
+[final-report.md](final-report.md) (operator decision: one final report instead of
+scattered report files; the 1520 repair proposal lives there too, corrected copy under
+`output/`). Four implementation agents delivered the diagnostic audits (character lint,
+pb@n plausibility, hi survival, relation integrity), the deterministic pb@n projection
+plus filter-leak fix in step 1, the rendering-loss root cause (Mistral OCR is the main
+loss source, the Gemini image channel is practically unused because the prompt verifies
+instead of detects, and a promotion lag tei_unified to tei_final withholds existing
+markup, e.g. document 890), and the stock diagnoses (page-count mismatches, 1520 repair
+proposal, status-marker catch-up for document 30).
 
-Post-compact implementation round completed (five agents, full suite green at 1258):
-`tei_status_marker` is idempotent (marker-owned changes carry `n="{stream}"` /
-`n="{stream}-summary"` and are replaced, foreign entries survive; new
-test_status_marker.py); `completeness_check` reconciles split double pages (duplicate
-facs) and leading library covers (min facs above 1) with capped corrections, the 14
-phantom mismatches drop to 0 while synthetic genuine gaps still report (new
-test_completeness_check.py); step 1 interpolates missing printed page numbers from
-consistent neighbor anchors, supplied values bracketed per reference convention
-(570 p3 becomes `n="[249]"`, tei_final hash-verified untouched). Register entries
-E92 (audits plus step-1 fixes) and E93 (image-based italics re-detection rejected)
-written; TEMP note deleted.
+Implementation round, five agents, full suite green at 1258: `tei_status_marker` is
+idempotent (marker-owned changes carry `n="{stream}"` / `n="{stream}-summary"` and are
+replaced, foreign entries survive; new test_status_marker.py); `completeness_check`
+reconciles split double pages (duplicate facs) and leading library covers (min facs above
+1) with capped corrections, the 14 phantom mismatches drop to 0 while synthetic genuine
+gaps still report (new test_completeness_check.py); step 1 interpolates missing printed
+page numbers from consistent neighbor anchors, supplied values bracketed per reference
+convention (570 p3 becomes `n="[249]"`, tei_final hash-verified untouched). Register
+entries E92 (audits plus step-1 fixes) and E93 (image-based italics re-detection
+rejected) written.
 
-Calibration round of agent verification completed on 29 stratified facsimile pages,
-findings evidence-bound, adjudication with the operator: (a) footnote overdetection
-persists broadly outside reference coverage, 9 of 10 sampled long notes are body or
-block quotes as note (pattern: page-head block, block after a `*`-divider, right page
-of a double spread); (b) the W19-fragile triage is a weak predictor of wrong order
-(5 of 6 sampled orders correct) but surfaces real omissions of non-article blocks
-(ads, SOMMAIRE, editorial boards, license boilerplate), a defect class no rule covers;
-(c) pb@n semantics are inconsistent corpus-wide (facs position, printed folio, or
-mixed within one document), and the references bracket every page number; (d) the
-char-lint apostrophe class holds at the facsimile while the space-before-punctuation
-class is largely a false positive on French typography (thin space is correct print);
-(e) foreign markup coverage and speaker modeling are uneven across documents;
-(f) conflict to adjudicate: the sampled doc-30 double pages show no character loss
-(both print pages complete, outlier alignment-driven), which contradicts the E91
-classification of doc 30 as genuine text loss.
+Agent-verification calibration on 29 stratified facsimile pages, findings evidence-bound,
+adjudicated with the operator: (a) footnote overdetection persists broadly outside
+reference coverage, 9 of 10 sampled long notes are body or block quotes as note (pattern:
+page-head block, block after a `*`-divider, right page of a double spread); (b) the
+W19-fragile triage is a weak predictor of wrong order (5 of 6 sampled orders correct) but
+surfaces real omissions of non-article blocks (ads, SOMMAIRE, editorial boards, license
+boilerplate), a defect class no rule covers; (c) pb@n semantics are inconsistent
+corpus-wide (facs position, printed folio, or mixed within one document), and the
+references bracket every page number; (d) the char-lint apostrophe class holds at the
+facsimile while the space-before-punctuation class is largely a false positive on French
+typography (thin space is correct print); (e) foreign markup coverage and speaker
+modeling are uneven across documents; (f) conflict to adjudicate: the sampled doc-30
+double pages show no character loss (both print pages complete, outlier alignment-driven),
+which contradicts the E91 classification of doc 30 as genuine text loss.
 
-Follow-up instruments built the same day (three agents, full suite green at 1289):
-`body_note_audit.py` scores body-as-note candidates (missing start marker plus length
-as the load-bearing signals; 100 percent precision on the 9 calibration pages) and
-reports 63 candidate notes in 26 documents, 60 of them in 24 reference-less documents;
-the char-lint space class is split into a sharp class (genuine extra character, 1988
-occurrences, mostly TOC dot leaders) and a low-severity `space_type` class (regular
-instead of narrow no-break space in French context, 13931), while a dehyphenation-
-residue class was tested and rejected as non-deterministic (a 40-candidate sample was
-almost entirely false positive on the bilingual corpus); `pb_number_audit.py` now
-classifies pb@n semantics per document, corpus distribution 224 scan_sequence,
-18 printed_folio, 9 mixed, 34 undetermined, none bracketed (the references bracket
-everything), with doc 110 resolved as scan_sequence carrying a reconstructable
-printed-folio offset of 2.
+Follow-up instruments, three agents, full suite green at 1289: `body_note_audit.py`
+scores body-as-note candidates (missing start marker plus length as the load-bearing
+signals; 100 percent precision on the 9 calibration pages) and reports 63 candidate notes
+in 26 documents, 60 of them in 24 reference-less documents; the char-lint space class is
+split into a sharp class (genuine extra character, 1988 occurrences, mostly TOC dot
+leaders) and a low-severity `space_type` class (regular instead of narrow no-break space
+in French context, 13931), while a dehyphenation-residue class was tested and rejected as
+non-deterministic (a 40-candidate sample was almost entirely false positive on the
+bilingual corpus); `pb_number_audit.py` now classifies pb@n semantics per document,
+corpus distribution 224 scan_sequence, 18 printed_folio, 9 mixed, 34 undetermined, none
+bracketed (the references bracket everything), with doc 110 resolved as scan_sequence
+carrying a reconstructable printed-folio offset of 2.
 
-Afternoon wave, operator ratifications and first stock correction (E94): pb@n
-convention decided (printed folio, bracketed, fallback scan number), correction mode
-hybrid, verification depth targeted. The apostrophe normalization ran as the first
-stock correction (88,978 occurrences in 241 documents to zero, gates green, backup
-kept). All 63 body-as-note candidates were verified at the facsimile: 59 body text,
-2 epigraphs, 2 genuine footnotes, with the role-swap pattern (the genuine footnote
-sits as a trailing p with marker while body text got the note frame) confirmed on
-39 pages; verdicts persisted in `output/audits/body_note_verdicts.json`. The demote
-tool and the printed-folio tool are built and dry-run verified; their corpus writes
-are pending because the session permission mode blocked the write, so the operator
-executes or re-authorizes. Supplementary sample: foreign markup exists in 30 of 285
-documents, at least 27 foreign-less documents carry unmarked Latin/Greek phrases,
-the German code is split de/deu; one leaked LLM refusal found in the delivered
-corpus (doc 1520 page 70, root cause a Mistral repetition loop in the base OCR,
-single-page re-OCR gated); a naive volume-divergence audit was rejected (about
-90 percent of hits are the intentional e-periodica boilerplate filtering), a
+Operator ratifications and first stock correction (E94): pb@n convention decided (printed
+folio, bracketed, fallback scan number), correction mode hybrid, verification depth
+targeted. The apostrophe normalization ran as the first stock correction (88,978
+occurrences in 241 documents to zero, gates green, backup kept). All 63 body-as-note
+candidates were verified at the facsimile: 59 body text, 2 epigraphs, 2 genuine
+footnotes, with the role-swap pattern (the genuine footnote sits as a trailing p with
+marker while body text got the note frame) confirmed on 39 pages; verdicts persisted in
+`output/audits/body_note_verdicts.json`. The demote tool and the printed-folio tool are
+built and dry-run verified; their corpus writes are pending because the session permission
+mode blocked the write, so the operator executes or re-authorizes. Supplementary sample:
+foreign markup exists in 30 of 285 documents, at least 27 foreign-less documents carry
+unmarked Latin/Greek phrases, the German code is split de/deu; one leaked LLM refusal
+found in the delivered corpus (doc 1520 page 70, root cause a Mistral repetition loop in
+the base OCR, single-page re-OCR gated); a naive volume-divergence audit was rejected
+(about 90 percent of hits are the intentional e-periodica boilerplate filtering), a
 filtered triage variant plus refusal-string and duplicate-facs checks recommended.
 
 **Next steps** 1. Operator executes or re-authorizes the two pending stock runs
@@ -791,39 +733,36 @@ by a quick tab switch was attributed to the TEI stream and could never be saved;
 debounce is now cancellable and cancelled on detach, the stream is bound at attach
 time, and a source switch detaches explicitly (core.js, transcription-editor.js,
 viewer.js). Third, switching to the TEI tab while edit mode was active attached the
-editor to the rendered view, whose edits do not round-trip; setTextSource now applies
-the same redirect to XML mode that setTextEdit already had. Fourth, saving edited XML
+editor to the rendered view, whose edits do not round-trip; setTextSource received the
+same redirect to XML mode that setTextEdit already had. Fourth, saving edited XML
 overwrote the source-of-truth final TEI with only a substring check; a DOMParser
-well-formedness gate (ZBZ.parseXml) now precedes the write. Additionally, switching
-the text source with unsaved text edits now asks for confirmation and then drops them,
+well-formedness gate (ZBZ.parseXml) now precedes the write. Switching the text source
+with unsaved text edits additionally asks for confirmation and then drops them,
 mirroring the existing page-navigation guard.
 
-In a second pass on operator feedback the text-panel controls were clarified. The
-source tabs are now labeled OCR, Rendered, and TEI-XML (previously OCR, TEI, XML), and
-the single context-dependent "Edit text" toggle was replaced by two explicit buttons,
-"Edit OCR" and "Edit XML", each of which switches to its source and opens edit mode
-there. Switching the view tab exits edit mode; this replaces the TEI-to-XML redirect
-introduced earlier in the session, since the rendered view no longer has any edit
-entry point (viewer.html, viewer.js).
-
-A fourth pass hardened provenance after the operator's live save test wrote a
-history entry as "anonym": Save now asks once for initials when none are set (the
-save itself never blocks), history entries created before initials arrive are
+On operator feedback the text-panel controls were clarified: the source tabs are now
+labeled OCR, Rendered, and TEI-XML (previously OCR, TEI, XML), and the single
+context-dependent "Edit text" toggle was replaced by two explicit buttons, "Edit OCR"
+and "Edit XML", each of which switches to its source and opens edit mode there.
+Switching the view tab exits edit mode, which supersedes the TEI-to-XML redirect
+introduced earlier in the session, since the rendered view no longer has any edit entry
+point (viewer.html, viewer.js). Provenance was hardened after the operator's live save
+test wrote a history entry as "anonym": Save now asks once for initials when none are
+set (the save itself never blocks), history entries created before initials arrive are
 backfilled once they are committed, the automatic note text was corrected to "auto:
-first edit in viewer" (the transition fires on the first real change), and the
-rejection toast for malformed XML names line and column from the parser error.
+first edit in viewer" (the transition fires on the first real change), and the rejection
+toast for malformed XML names line and column from the parser error.
 
-A third pass extended the rendered view to the measured element inventory (script
-over all final and reference TEIs). Corrected or newly rendered: lb with break="no"
-no longer forces a line break (hyphenation; the previous rendering split words),
-figures appear as labeled placeholder with caption instead of being skipped,
-footnotes carry their number as a superscript badge, lists, tables, listBibl,
-epigraph, and gap render structurally, front and back parts render (the reference
-TEIs carry content there, the old renderer showed body only), and entities
-(persName, orgName, placeName), bibl, and ref get identifiable spans respectively
-links with tooltips. A Markup toggle in the rendered view highlights the annotation
-classes in accent colors and shows a per-page legend with counts; with the toggle
-off the reading view is unchanged. Asset changes require bumping the ?v= query in
+The rendered view was extended to the measured element inventory (script over all final
+and reference TEIs). Corrected or newly rendered: lb with break="no" no longer forces a
+line break (hyphenation; the previous rendering split words), figures appear as labeled
+placeholder with caption instead of being skipped, footnotes carry their number as a
+superscript badge, lists, tables, listBibl, epigraph, and gap render structurally, front
+and back parts render (the reference TEIs carry content there, the old renderer showed
+body only), and entities (persName, orgName, placeName), bibl, and ref get identifiable
+spans respectively links with tooltips. A Markup toggle in the rendered view highlights
+the annotation classes in accent colors and shows a per-page legend with counts; with the
+toggle off the reading view is unchanged. Asset changes require bumping the ?v= query in
 viewer.html, otherwise browsers serve the stale cached CSS/JS.
 
 **Decisions** All fixes stay inside the existing modules and callbacks; no editor
