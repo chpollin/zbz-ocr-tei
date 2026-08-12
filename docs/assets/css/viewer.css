@@ -666,6 +666,130 @@ a.tei__ref { color: var(--h-preussischblau); }
 .tei-legend__chip--unclear .tei-legend__dot { background: var(--h-ocker); }
 .tei-legend__empty { color: var(--h-text-muted); }
 
+/* ============================================================
+   Entity-Layer (nur lesend): Kategoriefarben, Worklist, Popover
+   ============================================================
+   Kategorien als Akzent, nie als Flaeche: Personen Preussischblau,
+   Organisationen Olivgruen, Werke Ziegelrot. Die Farben haengen an
+   .tei--entities und damit nicht am Markup-Schalter. */
+.tei--entities .tei__entity[data-ref],
+.tei--entities .tei__bibl[data-ref] { cursor: pointer; }
+.tei--entities .tei__entity--persname[data-ref] {
+  background: var(--h-preussischblau-subtle);
+  border-bottom: 1px solid var(--h-preussischblau);
+}
+.tei--entities .tei__entity--orgname[data-ref] {
+  background: var(--h-olivgruen-subtle);
+  border-bottom: 1px solid var(--h-olivgruen);
+}
+.tei--entities .tei__bibl[data-ref] {
+  background: var(--h-ziegelrot-subtle);
+  border-bottom: 1px solid var(--h-ziegelrot);
+}
+.tei--entities .tei__entity[data-ref]:hover,
+.tei--entities .tei__bibl[data-ref]:hover { border-bottom-width: 2px; }
+.tei--entities [data-ref]:focus-visible {
+  outline: 2px solid var(--h-preussischblau);
+  outline-offset: 1px;
+}
+.tei-legend__chip--person .tei-legend__dot { background: var(--h-preussischblau); }
+.tei-legend__chip--org .tei-legend__dot    { background: var(--h-olivgruen); }
+.tei-legend__chip--work .tei-legend__dot   { background: var(--h-ziegelrot); }
+
+/* Worklist der Seite (Tier-2-Kandidaten, reine Anzeige) */
+.entity-worklist {
+  margin: 0 0 var(--h-space-md);
+  padding: var(--h-space-sm) var(--h-space-md);
+  border: 1px solid var(--h-border);
+  border-left: 3px solid var(--h-ocker);
+  border-radius: var(--h-radius);
+  background: var(--h-surface);
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  max-height: 28vh;
+  overflow-y: auto;
+}
+.entity-worklist__title {
+  text-transform: uppercase;
+  letter-spacing: var(--h-tracking-caps);
+  color: var(--h-text-muted);
+  margin-bottom: var(--h-space-xs);
+}
+.entity-worklist__empty { color: var(--h-text-muted); }
+.entity-worklist__list { list-style: none; margin: 0; padding: 0; }
+.entity-worklist__item {
+  display: grid;
+  grid-template-columns: minmax(6em, 12em) auto 1fr;
+  gap: var(--h-space-sm);
+  align-items: baseline;
+  padding: 3px 0;
+  border-top: 1px solid var(--h-border);
+}
+.entity-worklist__item:first-child { border-top: 0; }
+.entity-worklist__surface {
+  font-family: var(--h-font-body);
+  font-size: var(--h-sm);
+  color: var(--h-text);
+}
+.entity-worklist__rule {
+  font-size: var(--h-xs);
+  color: var(--h-text-secondary);
+  border: 1px solid var(--h-border);
+  border-radius: var(--h-radius-sm);
+  padding: 0 4px;
+  white-space: nowrap;
+}
+.entity-worklist__context {
+  font-family: var(--h-font-body);
+  color: var(--h-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Popover einer markierten Nennung (ersetzt den nativen title-Tooltip) */
+.entity-pop {
+  position: fixed;
+  z-index: 150;
+  min-width: 200px;
+  max-width: 320px;
+  padding: var(--h-space-sm) var(--h-space-md);
+  background: var(--h-paper);
+  border: 1px solid var(--h-border-emphasis);
+  border-radius: var(--h-radius);
+  box-shadow: var(--h-shadow-md);
+  font-family: var(--h-font-heading);
+  font-size: var(--h-sm);
+  color: var(--h-text);
+}
+.entity-pop[hidden] { display: none; }
+.entity-pop__close {
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--h-text-muted);
+  font-size: var(--h-lg);
+  line-height: 1;
+  cursor: pointer;
+}
+.entity-pop__close:hover { color: var(--h-text); }
+.entity-pop__label { font-weight: 600; padding-right: var(--h-space-md); }
+.entity-pop__meta {
+  margin-top: 2px;
+  font-size: var(--h-xs);
+  color: var(--h-text-secondary);
+}
+.entity-pop__gid {
+  margin-top: var(--h-space-xs);
+  font-family: var(--h-font-mono);
+  font-size: var(--h-xs);
+  color: var(--h-text-muted);
+}
+.entity-pop__link { font-size: var(--h-xs); color: var(--h-preussischblau); }
+
 /* XML View */
 .xml-view {
   font-family: var(--h-font-mono);

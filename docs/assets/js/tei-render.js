@@ -85,10 +85,11 @@
             case 'placeName':
             case 'name': {
                 const ref = node.getAttribute('ref') || '';
-                el = ZBZ.el('span', {
-                    cls: 'tei__entity tei__entity--' + tag.toLowerCase(),
-                    attrs: { title: tag + (ref ? ' · ' + ref : '') }
-                });
+                // data-ref keeps the identifier in the DOM: the entity mode resolves it
+                // against data/entities.json instead of showing the native tooltip.
+                const attrs = { title: tag + (ref ? ' · ' + ref : '') };
+                if (ref) attrs['data-ref'] = ref;
+                el = ZBZ.el('span', { cls: 'tei__entity tei__entity--' + tag.toLowerCase(), attrs });
                 renderChildren(node, el);
                 target.appendChild(el);
                 break;
@@ -96,7 +97,10 @@
 
             case 'bibl': {
                 const ref = node.getAttribute('ref') || '';
-                el = ZBZ.el('span', { cls: 'tei__bibl', attrs: ref ? { title: 'bibl · ' + ref } : { title: 'bibl' } });
+                el = ZBZ.el('span', {
+                    cls: 'tei__bibl',
+                    attrs: ref ? { title: 'bibl · ' + ref, 'data-ref': ref } : { title: 'bibl' }
+                });
                 renderChildren(node, el);
                 target.appendChild(el);
                 break;

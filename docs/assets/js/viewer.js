@@ -40,7 +40,13 @@
         dirtyStreams: new Set(), // which streams have changed since the last save
         layoutDirty: false,   // unsaved layout change (current page)
         textDirty: false,     // unsaved text change (current page)
-        teiMarkup: false      // markup mode in the rendered view (annotation highlighting + legend)
+        teiMarkup: false,     // markup mode in the rendered view (annotation highlighting + legend)
+        // Entity layer: strictly read-only inspection of the GND entity preview
+        // (docs/data/pages/{doc}/{doc}_entity_p{N}.xml). No save path ever writes it.
+        entityMode: false,      // toggle / ?entities=1
+        entityAvailable: false, // an entity preview exists for the current document
+        entityWorklist: null,   // {doc, pages: {N: [{gid, category, surface, rule, context}]}}
+        entityPage: false       // the current page is rendered from the entity preview
     };
 
     // E77: workflow status per stream, three levels: unverifiziert -> in_arbeit -> verifiziert -> unverifiziert
@@ -59,6 +65,14 @@
 
     const OSD_PREFIX = 'https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/images/';
 
+    // Entity layer (generated mirror, written by scripts/edition/generate_entity_preview_data.py)
+    const ENTITY_INDEX_PATH = 'data/entities.json';
+    const entityPagePath     = (doc, page) => 'data/pages/' + doc + '/' + doc + '_entity_p' + page + '.xml';
+    const entityWorklistPath = (doc) => 'data/pages/' + doc + '/' + doc + '_entity_worklist.json';
+    const ENTITY_CATEGORY_LABEL = { person: 'Person', organisation: 'Organisation', work: 'Work' };
+    const ENTITY_READONLY_HINT = 'Entity mode is read-only. Leave it to edit.';
+    const ENTITY_MENTION_SEL = '.tei__entity[data-ref], .tei__bibl[data-ref]';
+
     const cache = new ZBZ.Cache(40);
 
     // ---- DOM refs ----
@@ -73,6 +87,7 @@
         btnEditOcr:     $('#btn-edit-ocr'),
         btnEditXml:     $('#btn-edit-xml'),
         btnMarkup:      $('#btn-markup'),
+        btnEntities:    $('#btn-entities'),
         textSourceBtns: $$('.mode-btn[data-text-source]'),
         imageBody:      $('#image-body'),
         textBody:       $('#text-body'),
@@ -98,6 +113,12 @@
         statusLayout:   $('#status-layout'),
         statusTei:      $('#status-tei'),
         statusHint:     $('#status-hint')
+    };
+
+    // Original edit-button tooltips; entity mode swaps them for the read-only hint.
+    const EDIT_TITLES = {
+        ocr: refs.btnEditOcr ? refs.btnEditOcr.title : '',
+        xml: refs.btnEditXml ? refs.btnEditXml.title : ''
     };
 
     // ============================================================ Init ============================================================
@@ -129,6 +150,7 @@
             return;
         }
 
+        state.entityMode = ZBZ.getParam('entities') === '1';
         const urlPage = parseInt(ZBZ.getParam('page'), 10);
         await selectDoc(doc, isNaN(urlPage) ? 1 : urlPage);
         ZBZ.log('Viewer', 'init done, doc ' + doc.id);
@@ -178,7 +200,228 @@
         // E66: load manifest for workflow status (parallel to page rendering)
         loadManifest(doc.id);
 
+        // Entity layer: must be known before the first text render decides its source
+        await loadEntityAssets(doc.id);
+
         await loadPage();
+    }
+
+    // ============================================================ Entity layer (read-only) ============================================================
+
+    // Worklist and lookup come from the generated mirror; a document without an entity
+    // preview simply keeps the button disabled. The lookup is document-independent and
+    // therefore fetched once per session.
+    let entityIndex = null;
+
+    async function loadEntityAssets(docId) {
+        state.entityWorklist = null;
+        state.entityAvailable = false;
+        state.entityPage = false;
+        const worklist = await ZBZ.fetchJSON(entityWorklistPath(docId));
+        if (worklist) {
+            state.entityWorklist = worklist;
+            state.entityAvailable = true;
+            if (!entityIndex) entityIndex = (await ZBZ.fetchJSON(ENTITY_INDEX_PATH)) || {};
+        }
+        if (state.entityMode && !state.entityAvailable) {
+            state.entityMode = false;
+            ZBZ.setParams({ entities: null });
+            ZBZ.toast('No entity preview for this document', 'warn');
+        }
+        if (state.entityMode) {
+            // The entity layer is a TEI reading view; markup highlighting belongs to it.
+            state.textSource = 'tei';
+            state.teiMarkup = true;
+            syncTextSourceButtons();
+        }
+        updateEntityUi();
+    }
+
+    async function loadEntityPage(doc, page) {
+        const ck = 'entity:' + doc + ':' + page;
+        if (cache.has(ck)) return cache.get(ck);
+        // fetchFirstOk turns a 404 into null (pages without an entity preview stay usable)
+        const res = await ZBZ.fetchFirstOk([entityPagePath(doc, page)]);
+        const xml = res ? res.text : null;
+        if (xml != null) cache.set(ck, xml);
+        return xml;
+    }
+
+    function updateEntityUi() {
+        if (refs.btnEntities) {
+            refs.btnEntities.disabled = !state.doc || !state.entityAvailable;
+            refs.btnEntities.setAttribute('aria-pressed', state.entityMode ? 'true' : 'false');
+            refs.btnEntities.title = state.entityAvailable
+                ? 'GND entity preview of this document (read-only inspection layer)'
+                : 'No entity preview generated for this document';
+        }
+        // Strictly read-only: no editor may attach while the entity file is on screen.
+        const locked = state.entityMode;
+        if (refs.btnEditOcr) {
+            refs.btnEditOcr.disabled = locked;
+            refs.btnEditOcr.title = locked ? ENTITY_READONLY_HINT : EDIT_TITLES.ocr;
+        }
+        if (refs.btnEditXml) {
+            refs.btnEditXml.disabled = locked;
+            refs.btnEditXml.title = locked ? ENTITY_READONLY_HINT : EDIT_TITLES.xml;
+        }
+    }
+
+    function setEntityMode(on) {
+        const next = !!on;
+        if (next === state.entityMode) return;
+        if (next && !state.entityAvailable) return;
+        state.entityMode = next;
+        closeEntityPopover(false);
+        if (next) state.teiMarkup = true;
+        if (next && state.textSource !== 'tei') {
+            // setTextSource confirms unsaved edits, leaves edit mode and re-renders
+            if (!setTextSource('tei')) { state.entityMode = false; updateEntityUi(); return; }
+            ZBZ.setParams({ entities: 1 });
+            updateEntityUi();
+            return;
+        }
+        ZBZ.setParams({ entities: next ? 1 : null });
+        updateEntityUi();
+        renderTextPanel();
+    }
+
+    // Surfaces can carry <lb/> tags (names broken across lines); the worklist shows text.
+    function plainSurface(surface) {
+        return String(surface || '').replace(/<lb\b[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+    }
+
+    function renderEntityWorklist(page) {
+        const old = refs.textBody.querySelector('.entity-worklist');
+        if (old) old.remove();
+        const pages = state.entityWorklist && state.entityWorklist.pages;
+        const entries = (pages && pages[String(page)]) || [];
+        const box = ZBZ.el('aside', {
+            cls: 'entity-worklist', attrs: { 'aria-label': 'Entity worklist of this page' }
+        });
+        box.appendChild(ZBZ.el('div', {
+            cls: 'entity-worklist__title', text: 'Worklist p. ' + page + ' · ' + entries.length
+        }));
+        if (!entries.length) {
+            box.appendChild(ZBZ.el('div', {
+                cls: 'entity-worklist__empty', text: 'No candidate awaiting a decision on this page'
+            }));
+        } else {
+            const list = ZBZ.el('ul', { cls: 'entity-worklist__list' });
+            entries.forEach(entry => {
+                const li = ZBZ.el('li', { cls: 'entity-worklist__item' });
+                li.appendChild(ZBZ.el('span', {
+                    cls: 'entity-worklist__surface', text: plainSurface(entry.surface)
+                }));
+                li.appendChild(ZBZ.el('span', { cls: 'entity-worklist__rule', text: entry.rule || '?' }));
+                li.appendChild(ZBZ.el('span', {
+                    cls: 'entity-worklist__context', text: entry.context || ''
+                }));
+                list.appendChild(li);
+            });
+            box.appendChild(list);
+        }
+        refs.textBody.insertBefore(box, refs.textBody.firstChild);
+    }
+
+    // Marked mentions become buttons: the popover carries id, category and lobid link,
+    // which the native title tooltip cannot.
+    function decorateEntityMentions() {
+        const wrap = refs.textBody.querySelector('.tei');
+        if (!wrap) return;
+        $$(ENTITY_MENTION_SEL, wrap).forEach(el => {
+            el.removeAttribute('title');
+            el.setAttribute('role', 'button');
+            el.setAttribute('tabindex', '0');
+            const gid = entityGid(el);
+            const rec = entityIndex && entityIndex[gid];
+            el.setAttribute('aria-label',
+                (rec ? rec.label : el.textContent.trim()) + ', GND ' + gid + ', show details');
+        });
+    }
+
+    function entityGid(el) {
+        return (el.getAttribute('data-ref') || '').replace(/^GND:/, '');
+    }
+
+    // ---- Popover ----
+    let entityPopover = null;
+    let entityPopoverTrigger = null;
+
+    function ensureEntityPopover() {
+        if (entityPopover) return entityPopover;
+        entityPopover = ZBZ.el('div', {
+            cls: 'entity-pop',
+            attrs: { role: 'dialog', 'aria-label': 'Entity detail', tabindex: '-1', hidden: 'hidden' }
+        });
+        document.body.appendChild(entityPopover);
+        return entityPopover;
+    }
+
+    function showEntityPopover(el) {
+        const gid = entityGid(el);
+        const rec = (entityIndex && entityIndex[gid]) || null;
+        const pop = ensureEntityPopover();
+        pop.innerHTML = '';
+        pop.appendChild(ZBZ.el('button', {
+            cls: 'entity-pop__close', html: '&times;',
+            attrs: { type: 'button', 'aria-label': 'Close' },
+            on: { click: () => closeEntityPopover(true) }
+        }));
+        pop.appendChild(ZBZ.el('div', {
+            cls: 'entity-pop__label', text: rec ? rec.label : el.textContent.trim()
+        }));
+        const meta = [];
+        if (rec && rec.category) meta.push(ENTITY_CATEGORY_LABEL[rec.category] || rec.category);
+        if (rec && rec.dates) meta.push(rec.dates);
+        if (!rec) meta.push('not in the curated entity list');
+        pop.appendChild(ZBZ.el('div', { cls: 'entity-pop__meta', text: meta.join(' · ') }));
+        pop.appendChild(ZBZ.el('div', { cls: 'entity-pop__gid', text: 'GND ' + (gid || '?') }));
+        if (gid) {
+            pop.appendChild(ZBZ.el('a', {
+                cls: 'entity-pop__link', text: 'lobid.org',
+                attrs: {
+                    href: (rec && rec.lobid) || 'https://lobid.org/gnd/' + encodeURIComponent(gid),
+                    target: '_blank', rel: 'noopener'
+                }
+            }));
+        }
+        pop.hidden = false;
+        positionEntityPopover(pop, el);
+        entityPopoverTrigger = el;
+        pop.focus();
+        setTimeout(() => document.addEventListener('click', onDocClickForPopover), 0);
+    }
+
+    function positionEntityPopover(pop, el) {
+        const r = el.getBoundingClientRect();
+        pop.style.visibility = 'hidden';
+        pop.style.left = '0px';
+        pop.style.top = '0px';
+        const w = pop.offsetWidth, h = pop.offsetHeight;
+        const left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8));
+        let top = r.bottom + 6;
+        if (top + h > window.innerHeight - 8) top = Math.max(8, r.top - h - 6);
+        pop.style.left = left + 'px';
+        pop.style.top = top + 'px';
+        pop.style.visibility = '';
+    }
+
+    function closeEntityPopover(restoreFocus) {
+        document.removeEventListener('click', onDocClickForPopover);
+        if (!entityPopover || entityPopover.hidden) { entityPopoverTrigger = null; return; }
+        entityPopover.hidden = true;
+        entityPopover.innerHTML = '';
+        if (restoreFocus && entityPopoverTrigger && entityPopoverTrigger.isConnected) {
+            entityPopoverTrigger.focus();
+        }
+        entityPopoverTrigger = null;
+    }
+
+    function onDocClickForPopover(e) {
+        if (entityPopover && entityPopover.contains(e.target)) return;
+        if (e.target.closest && e.target.closest(ENTITY_MENTION_SEL)) return;
+        closeEntityPopover(false);
     }
 
     // ============================================================ Workflow status (E66) ============================================================
@@ -822,7 +1065,7 @@
     // ============================================================ Text panel ============================================================
 
     function textPanelTitle() {
-        if (state.textSource === 'tei') return 'TEI · rendered';
+        if (state.textSource === 'tei') return state.entityPage ? 'TEI · entities (read-only)' : 'TEI · rendered';
         if (state.textSource === 'xml') return 'TEI · XML (full document)';
         return 'OCR · ' + state.ocrSource;
     }
@@ -830,6 +1073,8 @@
     async function renderTextPanel() {
         const doc = state.doc, page = state.page;
         const src = state.textSource;
+        state.entityPage = false;
+        closeEntityPopover(false);
         // True once doc/page/source changed mid-fetch -- a stale response must not render.
         const stale = () => (state.doc !== doc || state.page !== page || state.textSource !== src);
 
@@ -861,16 +1106,31 @@
             renderOcrText(res.text);
         }
         else if (state.textSource === 'tei') {
-            refs.textTitle.textContent = 'TEI · rendered';
-            const xml = await loadTeiPage(doc.id, page);
-            if (stale()) return;
+            // Entity mode takes the entity preview as the TEI source of this view; a page
+            // without one (404) falls back to the pipeline TEI.
+            let xml = null;
+            if (state.entityMode && state.entityAvailable) {
+                xml = await loadEntityPage(doc.id, page);
+                if (stale()) return;
+                state.entityPage = xml != null;
+            }
+            if (!xml) {
+                xml = await loadTeiPage(doc.id, page);
+                if (stale()) return;
+            }
+            refs.textTitle.textContent = textPanelTitle();
             if (!xml) {
                 renderLoadError('No TEI for page ' + page);
                 return;
             }
-            state.teiXml = xml;
+            // The entity preview is never a save source; keep the pipeline TEI in state.
+            if (!state.entityPage) state.teiXml = xml;
             ZBZ.TeiRender.render(xml, refs.textBody);
             applyTeiMarkup();
+            if (state.entityMode) {
+                if (state.entityPage) decorateEntityMentions();
+                renderEntityWorklist(page);
+            }
         }
         else if (state.textSource === 'xml') {
             // Must load the FULL final TEI: saving overwrites {doc}_final.xml as a
@@ -939,6 +1199,8 @@
     }
 
     function ensureTextEditableState() {
+        // Entity mode is strictly read-only: the editor never attaches to the entity file.
+        if (state.entityMode) return;
         if (state.textEdit && ZBZ.TranscriptionEditor) {
             // Bind the stream at attach time: a debounced commit may fire after
             // state.textSource already changed (tab switch mid-debounce).
@@ -993,6 +1255,13 @@
 
     // ---- Markup mode (rendered view): annotation highlighting + legend ----
     // Label / selector / legend-dot modifier; counts come from the rendered DOM.
+    // Entity mode splits the generic entity row into the three GND categories.
+    const ENTITY_LEGEND = [
+        ['Persons',       '.tei__entity--persname[data-ref]', 'person'],
+        ['Organisations', '.tei__entity--orgname[data-ref]',  'org'],
+        ['Works',         '.tei__bibl[data-ref]',             'work']
+    ];
+
     const MARKUP_LEGEND = [
         ['Entities',   '.tei__entity',  'entity'],
         ['Foreign',    '.tei__foreign', 'foreign'],
@@ -1014,10 +1283,15 @@
         const wrap = refs.textBody.querySelector('.tei');
         if (!wrap || state.textSource !== 'tei') return;
         wrap.classList.toggle('tei--markup', state.teiMarkup);
-        if (!state.teiMarkup) return;
+        // Category colors of the entity layer hold independently of the markup toggle.
+        wrap.classList.toggle('tei--entities', state.entityPage);
+        if (!state.teiMarkup && !state.entityPage) return;
+        const rows = state.entityPage
+            ? ENTITY_LEGEND.concat(MARKUP_LEGEND.filter(row => row[2] !== 'entity'))
+            : MARKUP_LEGEND;
         const legend = ZBZ.el('div', { cls: 'tei-legend' });
         let any = false;
-        MARKUP_LEGEND.forEach(([label, sel, mod]) => {
+        rows.forEach(([label, sel, mod]) => {
             const n = wrap.querySelectorAll(sel).length;
             if (!n) return;
             any = true;
@@ -1040,6 +1314,7 @@
     }
 
     function toggleEdit(src) {
+        if (state.entityMode) { ZBZ.toast(ENTITY_READONLY_HINT, 'warn'); return; }
         if (state.textEdit && state.textSource === src) { setTextEdit(false); return; }
         if (state.textSource !== src && !setTextSource(src)) return; // user kept unsaved edits
         setTextEdit(true);
@@ -1084,10 +1359,15 @@
         // Detach before re-render: cancels pending debounced commits of the old source
         if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
         state.textSource = src;
-        refs.textSourceBtns.forEach(b => b.setAttribute('aria-pressed', b.getAttribute('data-text-source') === src ? 'true' : 'false'));
+        syncTextSourceButtons();
         applyTeiMarkup();   // button enable state; the render callback re-applies highlighting
         renderTextPanel();
         return true;
+    }
+
+    function syncTextSourceButtons() {
+        refs.textSourceBtns.forEach(b => b.setAttribute(
+            'aria-pressed', b.getAttribute('data-text-source') === state.textSource ? 'true' : 'false'));
     }
 
     // ============================================================ Save (direct write or download) ============================================================
@@ -1135,6 +1415,11 @@
                 if (refs.btnSave && !refs.btnSave.disabled) saveAll();
                 return;
             }
+            if (e.key === 'Escape' && entityPopover && !entityPopover.hidden) {
+                e.preventDefault();
+                closeEntityPopover(true);
+                return;
+            }
             if (e.target.matches('input, textarea, select, [contenteditable="true"]')) return;
             if (e.key === 'ArrowLeft')       refs.btnPrev.click();
             else if (e.key === 'ArrowRight') refs.btnNext.click();
@@ -1149,6 +1434,27 @@
             state.teiMarkup = !state.teiMarkup;
             applyTeiMarkup();
         });
+        if (refs.btnEntities) refs.btnEntities.addEventListener('click', () => setEntityMode(!state.entityMode));
+
+        // Entity mentions open the popover (click and keyboard); delegated, the text panel
+        // is re-rendered on every page change.
+        refs.textBody.addEventListener('click', (e) => {
+            if (!state.entityMode || !state.entityPage || !e.target.closest) return;
+            const el = e.target.closest(ENTITY_MENTION_SEL);
+            if (!el) return;
+            e.preventDefault();
+            showEntityPopover(el);
+        });
+        refs.textBody.addEventListener('keydown', (e) => {
+            if (!state.entityMode || !state.entityPage) return;
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            const el = e.target.closest && e.target.closest(ENTITY_MENTION_SEL);
+            if (!el) return;
+            e.preventDefault();
+            showEntityPopover(el);
+        });
+        refs.textBody.addEventListener('scroll', () => closeEntityPopover(false), { passive: true });
+        window.addEventListener('resize', () => closeEntityPopover(false));
         refs.textSourceBtns.forEach(b => b.addEventListener('click', () => setTextSource(b.getAttribute('data-text-source'))));
 
         // Save (all streams directly to repo) + Export dropdown (single-file download)
