@@ -355,6 +355,7 @@
    gruen = menschlich verifiziert (verifiziert).
    rot bleibt reserviert fuer einen spaeteren expliziten "Problem"/"fehlt"-Status. */
 .col-workflow__dot--unverifiziert { background: var(--h-text-muted); }
+.col-workflow__dot--ausstehend    { background: transparent; box-shadow: inset 0 0 0 1px var(--h-text-muted); }
 .col-workflow__dot--in_arbeit     { background: var(--h-ocker); }
 .col-workflow__dot--verifiziert   { background: var(--h-olivgruen); }
 

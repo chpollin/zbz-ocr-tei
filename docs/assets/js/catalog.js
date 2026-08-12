@@ -24,7 +24,8 @@
     const STATUS_LABEL    = {
         unverifiziert: 'unverified',
         in_arbeit:     'in progress',
-        verifiziert:   'verified'
+        verifiziert:   'verified',
+        ausstehend:    'pending'
     };
     // Map legacy status values (offen, bearbeitet, fertig) to current ones.
     const STATUS_LEGACY = { offen: 'unverifiziert', bearbeitet: 'in_arbeit', fertig: 'verifiziert' };
@@ -117,6 +118,9 @@
 
     function streamStatus(d, stream) {
         const s = (d.streams || {})[stream];
+        // The entity stage exists corpus-wide as a pipeline step; a document
+        // without the stream simply has not reached it yet.
+        if (!s && stream === ENTITY_STREAM) return 'ausstehend';
         let v = s && s.status;
         if (STATUS_LEGACY[v]) v = STATUS_LEGACY[v];
         return STATUS_LABEL[v] ? v : 'unverifiziert';
@@ -127,7 +131,7 @@
     }
 
     function streamsOf(d) {
-        return hasStream(d, ENTITY_STREAM) ? STREAMS.concat(ENTITY_STREAM) : STREAMS;
+        return STREAMS.concat(ENTITY_STREAM);
     }
 
     function workflowAriaLabel(d) {
@@ -334,7 +338,9 @@
             const st = streamStatus(d, s);
             const sm = (d.streams || {})[s] || {};
             let tip;
-            if (st === 'unverifiziert') {
+            if (st === 'ausstehend') {
+                tip = STREAM_LABEL[s] + ': pipeline stage not yet run for this document';
+            } else if (st === 'unverifiziert') {
                 tip = STREAM_LABEL[s] + ': pipeline output exists, not yet verified by a human';
             } else {
                 tip = STREAM_LABEL[s] + ': ' + STATUS_LABEL[st]
