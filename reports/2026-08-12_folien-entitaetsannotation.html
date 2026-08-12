@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontrollierte Entitätsannotation</title>
+<style>
+  :root {
+    --bg: #F5F0E8;
+    --bg-alt: #EDE6D8;
+    --surface: #FAFAF7;
+    --text: #2C2825;
+    --text-2: #5C554E;
+    --muted: #8A8279;
+    --border: rgba(44, 40, 37, 0.14);
+    --red: #8B3A3A;
+    --blue: #3D5A73;
+    --olive: #6B6B47;
+    --serif: Georgia, "Palatino Linotype", Palatino, "Times New Roman", serif;
+    --sans: "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: Consolas, "Cascadia Mono", Menlo, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    overflow: hidden;
+  }
+  .deck { position: relative; height: 100vh; }
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4.5rem clamp(1.5rem, 7vw, 7rem) 5.5rem;
+    background: var(--bg);
+  }
+  .slide.active { display: flex; }
+  @media (prefers-reduced-motion: no-preference) {
+    .slide.active { animation: rise 320ms ease-out; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: none; }
+    }
+  }
+  .inner { width: 100%; max-width: 62rem; margin: 0 auto; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--red);
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.4rem;
+  }
+  .eyebrow .chap {
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+  }
+  h1, h2 { font-weight: 500; text-wrap: balance; line-height: 1.12; }
+  h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); letter-spacing: -0.01em; }
+  h2 { font-size: clamp(1.8rem, 4vw, 2.9rem); margin-bottom: 2.2rem; }
+  .rule {
+    width: 4.5rem; height: 2px; background: var(--red);
+    border: 0; margin: 1.8rem 0;
+  }
+  .subtitle {
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    color: var(--text-2);
+    max-width: 42rem;
+    line-height: 1.5;
+  }
+  .titlemeta {
+    margin-top: 2.6rem;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--muted);
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .titlemeta .src { font-family: var(--mono); font-size: 0.75rem; }
+
+  .rows { display: flex; flex-direction: column; }
+  .row {
+    display: grid;
+    grid-template-columns: 13rem 1fr;
+    gap: 1.6rem;
+    padding: 1.05rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .row:last-child { border-bottom: 1px solid var(--border); }
+  .row dt {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-2);
+    padding-top: 0.28rem;
+    line-height: 1.5;
+  }
+  .row dd {
+    font-size: clamp(0.98rem, 1.6vw, 1.14rem);
+    line-height: 1.55;
+    max-width: 46rem;
+  }
+  .row dd .file { font-family: var(--mono); font-size: 0.88em; color: var(--olive); }
+
+  .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 1.9rem; }
+  .tier {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--red);
+    padding: 1.3rem 1.5rem 1.4rem;
+  }
+  .tier.t2 { border-top-color: var(--blue); }
+  .tier .tname {
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.55rem;
+  }
+  .tier.t2 .tname { color: var(--blue); }
+  .tier p { font-size: 1.02rem; line-height: 1.5; }
+
+  .grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 1.9rem; }
+  .prop {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.4rem 1.3rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+  }
+  .prop .n {
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    color: var(--red);
+    line-height: 1;
+    padding-top: 0.15rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .prop h3 {
+    font-family: var(--sans);
+    font-size: 0.76rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--text-2);
+    margin-bottom: 0.4rem;
+  }
+  .prop p { font-size: 0.96rem; line-height: 1.5; }
+  .lead {
+    font-size: clamp(1rem, 1.7vw, 1.16rem);
+    color: var(--text-2);
+    line-height: 1.55;
+    max-width: 46rem;
+    margin-bottom: 1.9rem;
+  }
+  .consequence {
+    border-top: 1px solid var(--border);
+    padding-top: 1.05rem;
+    font-size: 1.02rem;
+    line-height: 1.55;
+    max-width: 52rem;
+  }
+  .consequence .clabel {
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .chrome {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem clamp(1.5rem, 7vw, 7rem);
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: linear-gradient(to top, var(--bg) 55%, rgba(245, 240, 232, 0));
+    user-select: none;
+  }
+  .dots { display: flex; gap: 0.55rem; }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: none;
+    border: 1px solid var(--muted);
+    cursor: pointer;
+    padding: 0;
+  }
+  .dot.on { background: var(--red); border-color: var(--red); }
+  .dot:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+  .counter { font-variant-numeric: tabular-nums; letter-spacing: 0.14em; }
+  .navhint { display: none; }
+  @media (min-width: 720px) { .navhint { display: inline; } }
+
+  .navzone {
+    position: fixed; top: 0; bottom: 4rem; width: 18%;
+    cursor: pointer; background: none; border: 0;
+  }
+  .navzone:focus-visible { outline: 2px solid var(--blue); outline-offset: -4px; }
+  .navzone.prev { left: 0; }
+  .navzone.next { right: 0; }
+
+  @media (max-width: 760px) {
+    .row { grid-template-columns: 1fr; gap: 0.35rem; }
+    .tiers, .grid4 { grid-template-columns: 1fr; }
+    .slide { padding: 3rem 1.4rem 5.5rem; overflow-y: auto; justify-content: flex-start; }
+  }
+</style>
+
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- 1 · Titel -->
+  <section class="slide active" aria-label="Titel">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">zbz-ocr-tei</span><span>Arbeitspapier · Stand 2026-08-12</span></p>
+      <h1>Kontrollierte Entitätsannotation</h1>
+      <hr class="rule">
+      <p class="subtitle">Workflow und Evaluation der GND-Auszeichnung im Zeitungsausschnitt-Korpus
+      zu Jeanne Hersch, Zentralbibliothek Zürich.</p>
+      <div class="titlemeta">
+        <span>Digital Humanities Craft</span>
+        <span class="src">reports/2026-08-12_workflow-entitaetsannotation.md</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · Gegenstand und Grundsatz -->
+  <section class="slide" aria-label="Gegenstand und Grundsatz">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">1 / 5</span><span>Gegenstand und Grundsatz</span></p>
+      <h2>Geschlossene Liste, deterministische Zuordnung</h2>
+      <dl class="rows">
+        <div class="row">
+          <dt>Geschlossene Welt</dt>
+          <dd>Ausgezeichnet wird ausschließlich, was auf der kuratierten Liste der Bibliothek
+          steht; jeder Eintrag trägt eine GND-Kennung.</dd>
+        </div>
+        <div class="row">
+          <dt>Zuordnung</dt>
+          <dd>Die Verbindung von Kennung und Textstelle trifft immer ein deterministisches,
+          wiederholbares Verfahren. Sprachmodelle sind von dieser Entscheidung ausgeschlossen.</dd>
+        </div>
+        <div class="row">
+          <dt>Begrenzte Modellrollen</dt>
+          <dd>Prüfinstanz über vorhandene Namensformen und geplante Vorsortierung der
+          Prüfliste. Beide Ergebnisse liegen versioniert vor und werden deterministisch
+          konsumiert; jeder Lauf bleibt ohne Modellbeteiligung reproduzierbar.</dd>
+        </div>
+        <div class="row">
+          <dt>Vorschlagskanal</dt>
+          <dd>Häufige Namen außerhalb der Liste werden ohne Kennungsvergabe gesammelt.
+          Über die Erweiterung der Liste entscheidet die Bibliothek.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 3 · Namensformen -->
+  <section class="slide" aria-label="Namensformen und ihre Kontrolle">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">2 / 5</span><span>Namensformen und ihre Kontrolle</span></p>
+      <h2>Jede Namensform trägt ein Verdikt</h2>
+      <dl class="rows">
+        <div class="row">
+          <dt>Quelle</dt>
+          <dd>Namensvarianten je Kennung aus der Normdatenbank (lobid) in einem lokalen
+          Cache, ergänzt um Formen aus dem Altbestand des Projekts.</dd>
+        </div>
+        <div class="row">
+          <dt>Bekanntes Risiko</dt>
+          <dd>Rohe Normdaten-Varianten enthalten Initialenkürzel, Transliterationsfragmente
+          und Verwechslungsformen; als Suchgrundlage sind sie unzuverlässig.</dd>
+        </div>
+        <div class="row">
+          <dt>Verdikt je Form</dt>
+          <dd>Jede übernommene Form trägt ein Urteil in einer versionierten Datei.
+          Zugelassene Formen speisen die Suche, verworfene erreichen sie nie.</dd>
+        </div>
+        <div class="row">
+          <dt>Vorsicht als Default</dt>
+          <dd>Verdachtsformen und alles seit der letzten Prüfung Neue erzeugen ausschließlich
+          Prüflisten-Einträge. Änderungen der Projektleitung wirken beim nächsten Lauf.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 4 · Zweistufige Annotation -->
+  <section class="slide" aria-label="Zweistufige Annotation">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">3 / 5</span><span>Zweistufige Annotation</span></p>
+      <h2>Sicheres wird markiert, Unsicheres wird sichtbar</h2>
+      <div class="tiers">
+        <div class="tier">
+          <p class="tname">Stufe 1 · wird ausgezeichnet</p>
+          <p>Als sicher geltende Treffer, etwa vollständige Namen mit eindeutigem Träger.</p>
+        </div>
+        <div class="tier t2">
+          <p class="tname">Stufe 2 · Prüfliste</p>
+          <p>Nackte Nachnamen, mehrere mögliche Träger, Homographenverdacht, ungeprüfte
+          Formen. Sichtbar im Viewer, niemals automatisch ausgezeichnet.</p>
+        </div>
+      </div>
+      <dl class="rows">
+        <div class="row">
+          <dt>Ausschlusszonen</dt>
+          <dd>Bildnachweise, gekennzeichnete Literaturverzeichnisse und die Verfasserzeilen
+          der Autorin bleiben außerhalb der Suche.</dd>
+        </div>
+        <div class="row">
+          <dt>Zwei Invarianten</dt>
+          <dd>Jede Vorschau bleibt schema-valide und textzeichenidentisch; die Lieferdaten
+          bleiben unberührt.</dd>
+        </div>
+        <div class="row">
+          <dt>Menschlicher Status</dt>
+          <dd>Der Viewer zeigt Markierungen, Kandidaten samt Herkunft der Namensform und die
+          Prüfliste; den Workflow-Status je Dokument setzt ein Mensch, er überlebt alle
+          Neuläufe.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 5 · Evaluation -->
+  <section class="slide" aria-label="Stichprobenbasierte Evaluation">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">4 / 5</span><span>Stichprobenbasierte Evaluation</span></p>
+      <h2>Messen am Faksimile, mit vier Eigenschaften</h2>
+      <p class="lead">Der Vergleich mit den fünfundzwanzig handannotierten Referenz-TEIs dient
+      als Trendindikator; die belastbare Messung folgt dem Stichprobenprotokoll.</p>
+      <div class="grid4">
+        <div class="prop"><span class="n">1</span><div>
+          <h3>Reproduzierbare Ziehung</h3>
+          <p>Dreihundert Markierungen nach Kategorie und Regelfamilie, vierzig Seiten nach
+          Layouttyp und Sprache; fester Seed, dokumentierte Schichtung.</p>
+        </div></div>
+        <div class="prop"><span class="n">2</span><div>
+          <h3>Faksimile-Adjudikation</h3>
+          <p>Genau ein begründetes Urteil je Markierung; jede Seite erschöpfend gegen die
+          Liste gelesen, Übersehenes mit Ursachenlabel.</p>
+        </div></div>
+        <div class="prop"><span class="n">3</span><div>
+          <h3>Doppelurteil</h3>
+          <p>Fünfzig Fälle unabhängig doppelt beurteilt; die Übereinstimmungsquote weist die
+          Verlässlichkeit des Urteilens selbst aus.</p>
+        </div></div>
+        <div class="prop"><span class="n">4</span><div>
+          <h3>Konfidenzintervalle</h3>
+          <p>Kennzahlen mit Bootstrap-Intervallen, nach dem Verfahren der
+          Zeichenfehlerraten-Messung des Projekts.</p>
+        </div></div>
+      </div>
+      <p class="consequence"><span class="clabel">Konsequenzen</span>
+      Jeder bestätigte Fehler wird ein Regressionstest, systematische Ursachen werden Regeln,
+      Verdikte oder Listenvorschläge. Die Übernahme in den Lieferbestand fällt pro Kategorie
+      auf Grundlage der gemessenen Präzision, als reversibler Lauf mit Sicherungskopie.</p>
+    </div>
+  </section>
+
+  <!-- 6 · Rollen und Grenzen -->
+  <section class="slide" aria-label="Rollen und Grenzen">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">5 / 5</span><span>Rollen und Grenzen</span></p>
+      <h2>Wer entscheidet was, und was die Methode misst</h2>
+      <dl class="rows">
+        <div class="row">
+          <dt>Agenten</dt>
+          <dd>Voradjudikation der gezogenen Fälle, erschöpfende Seitenlektüre,
+          Statistikläufe.</dd>
+        </div>
+        <div class="row">
+          <dt>Projektleitung</dt>
+          <dd>Stichprobenkontrolle der Urteile, Entscheidung strittiger Fälle, Freigabe
+          aller Bestandseingriffe.</dd>
+        </div>
+        <div class="row">
+          <dt>Bibliothek</dt>
+          <dd>Spezifikationsfragen der Annotationspraxis und die Erweiterung der
+          Entitätsliste.</dd>
+        </div>
+        <div class="row">
+          <dt>Grenzen</dt>
+          <dd>Korrektheit gilt relativ zur kuratierten Liste und zur dokumentierten
+          Spezifikation. Zonenregeln setzen korrekte Strukturauszeichnung der Pipeline-TEI
+          voraus; Einzeldokumente mit defekter Seitenzuordnung warten auf eine eigene,
+          freigabepflichtige Reparatur.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <button class="navzone prev" aria-label="Vorherige Folie"></button>
+  <button class="navzone next" aria-label="Nächste Folie"></button>
+
+  <div class="chrome">
+    <span>Kontrollierte Entitätsannotation</span>
+    <div class="dots" id="dots"></div>
+    <span class="counter"><span class="navhint">Pfeiltasten · </span><span id="counter">1 / 6</span></span>
+  </div>
+</div>
+
+<script>
+(() => {
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const dotsBox = document.getElementById('dots');
+  const counter = document.getElementById('counter');
+  let idx = 0;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'dot';
+    d.setAttribute('aria-label', 'Folie ' + (i + 1));
+    d.addEventListener('click', () => show(i));
+    dotsBox.appendChild(d);
+  });
+  const dots = Array.from(dotsBox.children);
+
+  function show(i) {
+    idx = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach((s, k) => s.classList.toggle('active', k === idx));
+    dots.forEach((d, k) => d.classList.toggle('on', k === idx));
+    counter.textContent = (idx + 1) + ' / ' + slides.length;
+  }
+
+  document.querySelector('.navzone.next').addEventListener('click', () => show(idx + 1));
+  document.querySelector('.navzone.prev').addEventListener('click', () => show(idx - 1));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') show(idx + 1);
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') show(idx - 1);
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  show(0);
+})();
+</script>
+</body>
+</html>
