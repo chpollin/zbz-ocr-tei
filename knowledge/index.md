@@ -58,7 +58,7 @@ Constitution + commands: [CLAUDE.md](../CLAUDE.md) (top level, project-wide rule
 
 ## Convention Functions
 
-Each document carries one function of the [Convention Knowledge Documents](https://dhcraft.org/Promptotyping/_content/konvention.md) of the Promptotyping method. Where a catalogue template carries the function, the document names it in its `template` frontmatter field and the table gives it here; where the catalogue holds no template, the document is freehand and the reason stands in the last column. A reasoned gap is a design decision, not an omission. The mapping was recorded post hoc (E104); no document was renamed, moved, or rewritten for it.
+Each document carries one function of the [Convention Knowledge Documents](https://dhcraft.org/Promptotyping/_content/konvention.md) of the Promptotyping method. Where a catalogue template carries the function, the document names it in its `template` frontmatter field and the table gives it here; where the catalogue holds no template, the document is freehand and the reason stands in the last column. A reasoned gap is a design decision, not an omission.
 
 | Document | Function | Template or reason for freehand |
 |---|---|---|

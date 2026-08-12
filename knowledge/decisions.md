@@ -491,8 +491,6 @@ Decision (a), tier policy for derived name forms: the five closed rule gaps (acr
 
 Decision (b), persistence of the adjudicated judgments: `data/entities/mention_verdicts.json`, built deterministically by `scripts/eval/build_mention_verdicts.py`, holds all 300 precision verdicts including the 50 blind second judgments of the agreement check and the 67 recall mentions, keyed by (doc, page, surface, gid, occurrence) and bound per document to a sha256 fingerprint of the source TEI. The key carries no character offsets, so a changed text surfaces as a stale fingerprint instead of a silently misplaced judgment; re-OCR or a stock correction therefore invalidates a verdict visibly. Rejected alternative: recording the provenance inside the TEI files only, rejected because regeneration erases it and because the judgments must stay readable outside the delivered documents, as the input of a re-measurement.
 
-The two remaining wave products carry no decision of their own and are recorded for completeness. `tests/test_entity_ref_invariant.py` gates the closed-world claim exhaustively (every GND id in every preview file and worklist is a member of the curated list, zero violations), and `scripts/eval/entity_risk_ranking.py` with the versioned wave protocol scores the tier-1 marks into risk strata for the false-positive hunt.
-
 Documents: [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md), [agent-orchestration.md](agent-orchestration.md), [journal.md](journal.md) session 93
 
 ---
