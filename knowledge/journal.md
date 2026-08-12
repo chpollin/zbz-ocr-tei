@@ -57,6 +57,33 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-12 Session 93 (continuation 5): evaluation wave executed, precision and recall measured
+
+**Occasion** Operator released the sampling experiment (implement, test, then evaluate).
+
+**Goal** Run the adjudication wave over the frozen sample and report measured quality.
+
+**Course** Nine Opus agents adjudicated per the versioned protocol: six precision ranges
+(300 cases), one blind second adjudicator (50 cases), two recall readers (40 pages);
+every verdict file verified against disk. Results in
+reports/2026-08-12_entity-eval-ergebnis.md and output/audits/entity_eval_report.json:
+precision 0.952 (CI 0.925-0.976) over decidable cases, raw agreement 0.96, recall
+coverage 0.552 with 28 of 30 misses being rule gaps (speaker initials, acronym casing,
+GND qualifier, byline exception). Agents also surfaced generator defects (sp/speaker
+duplication, hallucinated OCR pages) and further facsimile-offset documents (680, 2300,
+1220). The protocol itself was corrected mid-wave (wrong Hersch gid), found by an agent.
+
+**Decisions** Page-apparatus convention (column titles, bylines) left open; the report
+shows the protocol reading plus a described apparatus count, the second reading follows
+the operator's convention decision. Statistics only where the data carries them:
+bootstrap CI for precision, raw agreement for IAA, descriptive counts elsewhere.
+
+**Status** Wave complete, all files verified, results versioned; compact-ready.
+
+**Next steps** Apparatus convention decision; repair wave for the recall rule gaps;
+structure lane (sp/speaker, 3040 bibliography); page-mapping repairs (operator-gated);
+redraw and remeasure; process-evaluation synthesis; talk deck.
+
 ### 2026-08-12 Session 93 (continuation 4): cover strip executed, five-agent wave, variant review wired
 
 **Occasion** The operator ran the cover-strip write run himself (interrupted during the
