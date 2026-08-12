@@ -305,15 +305,25 @@
         container.appendChild(wrap);
     }
 
+    // Highlighting emits one <span> per tag and two per attribute. On a full-corpus TEI
+    // that is tens of thousands of inline elements plus a multi-megabyte innerHTML parse,
+    // which freezes layout (and innerText reads in XML edit mode). Above this size the
+    // source goes in as a single text node.
+    const HIGHLIGHT_MAX_CHARS = 200000;
+
     /**
-     * Write XML source with syntax highlighting into the container.
+     * Write XML source into the container. Syntax highlighting is capped by source size;
+     * larger sources render as plain text, editable and searchable as before.
      */
     function renderXml(xml, container) {
         container.innerHTML = '';
-        const pre = ZBZ.el('pre', { cls: 'xml-view', html: ZBZ.highlightXml(xml || '') });
+        const src = xml || '';
+        const pre = (src.length > HIGHLIGHT_MAX_CHARS)
+            ? ZBZ.el('pre', { cls: 'xml-view xml-view--plain', text: src })
+            : ZBZ.el('pre', { cls: 'xml-view', html: ZBZ.highlightXml(src) });
         container.appendChild(pre);
     }
 
-    ZBZ.TeiRender = { render, renderXml };
+    ZBZ.TeiRender = { render, renderXml, HIGHLIGHT_MAX_CHARS };
     ZBZ.log('TeiRender', 'ready');
 })();

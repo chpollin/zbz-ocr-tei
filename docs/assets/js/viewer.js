@@ -26,6 +26,10 @@
         doc: null,
         page: 1,
         textSource: 'ocr',    // ocr | tei | xml
+        // XML view scope: 'page' shows the current page slice (read-only, cheap),
+        // 'full' the whole final TEI. Only 'full' may be edited, because writeTei
+        // replaces {doc}_final.xml as a whole (E72).
+        xmlScope: 'page',     // page | full
         ocrSource: 'mistral',
         layout: null,
         teiXml: null,
@@ -309,6 +313,7 @@
         state.page = startPage || 1;
         state.layout = null;
         state.teiXml = null;
+        state.xmlScope = 'page';
         state.manifest = null;
         state.manifestDirty = false;
         ZBZ.setParams({ doc: doc.id, page: state.page });
@@ -1018,7 +1023,10 @@
     async function exportTei() {
         if (!state.doc) return;
         let xml = state._currentEditedText;
-        if (!xml || state.textSource !== 'xml') xml = await loadTeiFinal(state.doc.id);
+        // Only a full-scope XML edit is a complete document; anything else exports the file.
+        if (!xml || state.textSource !== 'xml' || state.xmlScope !== 'full') {
+            xml = await loadTeiFinal(state.doc.id);
+        }
         if (!xml) { ZBZ.toast('No TEI available', 'warn'); return; }
         ZBZ.Download.tei(state.doc.id, xml, 'curated');
         closeExportMenu();
@@ -1325,7 +1333,11 @@
 
     function textPanelTitle() {
         if (state.textSource === 'tei') return state.entityPage ? 'TEI · entities (read-only)' : 'TEI · rendered';
-        if (state.textSource === 'xml') return 'TEI · XML (full document)';
+        if (state.textSource === 'xml') {
+            return state.xmlScope === 'full'
+                ? 'TEI · XML (full document)'
+                : 'TEI · XML (page ' + state.page + ')';
+        }
         return 'OCR · ' + state.ocrSource;
     }
 
@@ -1339,7 +1351,7 @@
 
         // Blank page: show a quiet notice instead of OCR garbage ('.', '^{}[]', empty table).
         // In text edit mode render normally so the raw text can be cleaned if needed.
-        // XML mode is exempt (shows the whole document).
+        // XML mode is exempt (it shows the TEI source, blank or not).
         if (state._isBlank && !state.textEdit && state.textSource !== 'xml') {
             refs.textTitle.textContent = textPanelTitle();
             refs.textBody.innerHTML = '';
@@ -1398,19 +1410,68 @@
             if (state.entityMode) renderUnplacedWorklist(unplaced);
         }
         else if (state.textSource === 'xml') {
-            // Must load the FULL final TEI: saving overwrites {doc}_final.xml as a
-            // whole (E72). Loading a single page here would destroy the rest on save.
-            refs.textTitle.textContent = 'TEI · XML (full document)';
-            const xml = await loadTeiFinal(doc.id);
+            // Default scope is the current page slice. The final TEI of a large document
+            // approaches a megabyte and rendering it on every open froze the panel, so the
+            // full document is loaded on request only. It stays the ONLY editable scope:
+            // saving overwrites {doc}_final.xml as a whole (E72), so an edited page slice
+            // would destroy the rest of the document.
+            const full = state.xmlScope === 'full';
+            const xml = full ? await loadTeiFinal(doc.id) : await loadTeiPage(doc.id, page);
             if (stale()) return;
+            refs.textTitle.textContent = textPanelTitle();
             if (!xml) {
-                renderLoadError('No final TEI for document ' + doc.id);
+                renderLoadError(full ? 'No final TEI for document ' + doc.id : 'No TEI for page ' + page);
+                renderXmlScopeBar(0);
                 return;
             }
-            state.teiXml = xml;
+            if (full) state.teiXml = xml;
             ZBZ.TeiRender.renderXml(xml, refs.textBody);
-            ensureTextEditableState();
+            renderXmlScopeBar(xml.length);
+            if (full) ensureTextEditableState();
         }
+    }
+
+    // Names the active XML scope and switches it. The page slice is read-only; the full
+    // document carries the editor and the save path.
+    function renderXmlScopeBar(chars) {
+        const full = state.xmlScope === 'full';
+        const bar = ZBZ.el('div', { cls: 'xml-scope' });
+        const size = chars ? ' · ' + Math.max(1, Math.round(chars / 1024)) + ' KB' : '';
+        bar.appendChild(ZBZ.el('span', {
+            cls: 'xml-scope__label',
+            text: (full ? 'Full document' : 'Page ' + state.page + ' only') + size
+        }));
+        bar.appendChild(ZBZ.el('button', {
+            cls: 'btn btn--sm',
+            text: full ? 'Show current page' : 'Load full document',
+            attrs: {
+                title: full
+                    ? 'Back to the page slice: loads fast and stays read-only.'
+                    : 'Load the complete final TEI. Required for XML editing; very large documents render without syntax highlighting.'
+            },
+            on: { click: () => setXmlScope(full ? 'page' : 'full') }
+        }));
+        if (!full) bar.appendChild(ZBZ.el('span', { cls: 'xml-scope__hint', text: 'read-only' }));
+        refs.textBody.insertBefore(bar, refs.textBody.firstChild);
+    }
+
+    // Leaving the full scope also leaves edit mode: the editor must never hold a page slice,
+    // whose save would replace the whole final TEI.
+    function setXmlScope(scope) {
+        if (state.xmlScope === scope) return;
+        if (scope !== 'full' && state.textDirty) {
+            if (!window.confirm('Unsaved TEI changes will be lost when leaving the full document view. Continue?')) return;
+            state.textDirty = false;
+            state._currentEditedText = null;
+            renderSaveState();
+        }
+        if (scope !== 'full' && state.textEdit) {
+            state.textEdit = false;
+            updateEditButtons();
+        }
+        if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
+        state.xmlScope = scope;
+        renderTextPanel();
     }
 
     // Failed loads: name the cause (missing file vs network) and offer a retry.
@@ -1466,6 +1527,9 @@
     function ensureTextEditableState() {
         // Entity mode is strictly read-only: the editor never attaches to the entity file.
         if (state.entityMode) return;
+        // The XML editor attaches to the full document only: its save writes the whole
+        // {doc}_final.xml, so a page slice under the cursor would drop the rest.
+        if (state.textSource === 'xml' && state.xmlScope !== 'full') return;
         if (state.textEdit && ZBZ.TranscriptionEditor) {
             // Bind the stream at attach time: a debounced commit may fire after
             // state.textSource already changed (tab switch mid-debounce).
@@ -1583,6 +1647,16 @@
         if (state.entityMode) { ZBZ.toast(ENTITY_READONLY_HINT, 'warn'); return; }
         if (state.textEdit && state.textSource === src) { setTextEdit(false); return; }
         if (state.textSource !== src && !setTextSource(src)) return; // user kept unsaved edits
+        // XML edits are persisted as the whole final TEI (E72), so editing needs the full
+        // scope. Load it first; the render callback attaches the editor.
+        if (src === 'xml' && state.xmlScope !== 'full') {
+            state.xmlScope = 'full';
+            state.textEdit = true;
+            updateEditButtons();
+            ZBZ.toast('XML editing loads the full document.', 'info');
+            renderTextPanel();
+            return;
+        }
         setTextEdit(true);
     }
 

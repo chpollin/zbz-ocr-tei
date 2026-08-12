@@ -824,11 +824,30 @@ a.tei__ref { color: var(--h-preussischblau); }
   background: transparent;
   color: var(--h-text-secondary);
 }
+/* Unhighlighted large sources: break at whitespace only. `overflow-wrap: anywhere`
+   searches break opportunities per character and dominates layout at ~1M characters. */
+.xml-view--plain { overflow-wrap: normal; word-break: normal; }
 .xml-tag        { color: var(--h-preussischblau); }
 .xml-attr-name  { color: var(--h-ziegelrot); }
 .xml-attr-value { color: var(--h-olivgruen); }
 .xml-decl       { color: var(--h-text-muted); }
 .xml-comment    { color: var(--h-text-muted); font-style: italic; }
+
+/* Scope bar of the XML view (page slice vs full document) */
+.xml-scope {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--h-space-sm) var(--h-space-md);
+  margin: 0 0 var(--h-space-md);
+  padding-bottom: var(--h-space-sm);
+  border-bottom: 1px solid var(--h-border);
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: 0.03em;
+  color: var(--h-text-secondary);
+}
+.xml-scope__hint { color: var(--h-text-muted); }
 
 /* ============================================================
    Region-Liste (Reading-Order, im Edit-Mode unter dem Faksimile)

@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css?v=7">
   <link rel="stylesheet" href="assets/css/base.css?v=7">
-  <link rel="stylesheet" href="assets/css/viewer.css?v=18">
+  <link rel="stylesheet" href="assets/css/viewer.css?v=19">
   <script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/openseadragon.min.js"></script>
 </head>
 <body class="viewer-body">
@@ -135,7 +135,7 @@
               <div role="group" aria-label="Text source" class="toolbar__mode toolbar__mode--inline">
                 <button class="mode-btn" data-text-source="ocr" aria-pressed="true"  title="Raw OCR text (Mistral)">OCR</button>
                 <button class="mode-btn" data-text-source="tei" aria-pressed="false" title="TEI rendered as reading view (read-only)">Rendered</button>
-                <button class="mode-btn" data-text-source="xml" aria-pressed="false" title="TEI-XML source (full document)">TEI-XML</button>
+                <button class="mode-btn" data-text-source="xml" aria-pressed="false" title="TEI-XML source of the current page; the full document loads on request">TEI-XML</button>
               </div>
               <button class="panel__edit-toggle" id="btn-markup" aria-pressed="false" disabled
                       title="Highlight annotations in the rendered view (entities, foreign text, footnotes, editorial interventions)">Markup</button>
@@ -193,11 +193,11 @@
 
   <!-- JavaScript -->
   <script src="assets/js/core.js?v=7"></script>
-  <script src="assets/js/tei-render.js?v=5"></script>
+  <script src="assets/js/tei-render.js?v=6"></script>
   <script src="assets/js/download.js?v=2"></script>
   <script src="assets/js/fs-access.js?v=5"></script>
   <script src="assets/js/layout-editor.js?v=4"></script>
   <script src="assets/js/transcription-editor.js?v=4"></script>
-  <script src="assets/js/viewer.js?v=22"></script>
+  <script src="assets/js/viewer.js?v=23"></script>
 </body>
 </html>
