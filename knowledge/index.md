@@ -48,6 +48,7 @@ principle is a single source of truth per domain, one file per topic.
 | [ground-truth-map.md](ground-truth-map.md) | What do the 25 reference TEIs contain and where do they deviate? Phenomenon map and exception catalog (former Appendix B) |
 | [entity-integration.md](entity-integration.md) | How do GND entities get into the delivered TEI? Design plan: input data, target-model rules, three-tier matching, milestones M0-M7, verification |
 | [entity-evaluation.md](entity-evaluation.md) | How do we know the entity layer is right? Sampling workflow: facsimile-adjudicated precision and recall, agreement check, consequences |
+| [agent-orchestration.md](agent-orchestration.md) | How multi-agent waves are run verifiably: wave contract, verbatim guardrails, verification of self-reports, roles, transferable core |
 | [arbeitsbericht-v3.md](arbeitsbericht-v3.md) | The project report (German, client-facing): headline CER, per-document breakdown, corpus proxy, stock corrections, limits, outlook; canonical values in `docs/data/cer_statistics.json` |
 | [journal.md](journal.md) | What was done when? Compact session overview (since Jan 2026), recurring patterns |
 
