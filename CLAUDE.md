@@ -218,6 +218,7 @@ python -m scripts.tei.tei_cover_strip --dry-run                  # E-Periodica c
 python -m scripts.eval.entity_gold_benchmark                     # M4: precision/recall against the 25 reference TEIs
 python -m scripts.eval.entity_corpus_digest                      # tier-1 harvest as one context-window digest
 python -m scripts.eval.entity_unlisted_scan                      # id-free proposal channel: name-shaped surfaces outside the list
+python -m scripts.eval.entity_eval_sample --seed 42             # evaluation draw: 300 tier-1 marks + 40 pages, stratified, frozen (knowledge/entity-evaluation.md)
 python -m pytest tests/test_entity_matcher.py tests/test_entity_lint.py tests/test_entity_regressions.py tests/test_entity_preview.py tests/test_entity_corpus_scan.py tests/test_generate_entity_preview_data.py tests/test_cover_strip.py tests/test_fetch_gnd_variants.py -q  # entity gates
 ```
 
