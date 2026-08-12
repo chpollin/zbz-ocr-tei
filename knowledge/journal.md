@@ -61,6 +61,20 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-12 Session 93 (evening): documentation trued up, viewer reduced, paratext detector validated
+
+**Occasion** Operator direction to finish the day rolled out, refactored and documented: execute every decision-free consequence, reduce the viewer UI step by step, and audit the documentation for freshness and self-reference.
+
+**Goal** A compact-stable repository: findings fixed at the root, UI decisions implemented and registered, knowledge base consistent, no running agents.
+
+**Course** Working paper revised to a methods-and-findings paper (0eab92d5); journal compacted with a mechanical no-fact-lost check, seven session-93 entries consolidated (7cf84b23); TEI-XML view freeze fixed via page-slice default with full-document on demand (49c5ee7a); UI analysis report (80187507) grounded three operator-decided UI steps: one document bar without subtitle (e7f9dd6d), View/Edit dropdowns replacing seven scattered controls (baecc433), condensation to three views with the annotated reading view as corpus-wide default and markup as a menu toggle (d65854a3, register E107). Document 1620 became the fifth committed demo document with live facsimiles on GitHub Pages (e4f641cd); the slide deck gained the paratext-case slide and a closing synthesis slide (14b0d1bc, f564ff48). A six-agent wave delivered: the viewer entity layer documented in workflow.md 3.7 (ab2aa803); a blank-page hallucination audit with a Docling zero-region channel, confirming doc 1520 p130 and finding 16 substantial candidates in 17 documents while clearing all 79 manifest blank pages (1ea04387); the corpus scan now emits a page field consumed by the risk ranking, cross-checked 300/300 against the verdict store (57ece48e); a documentation freshness audit with 20 ranked findings (b2957277) whose decision-free fixes were applied across README, constitution, pipeline.md, project.md, about.html and methode.html, including the E99 correction of the reading-order narrative and the entity-layer state (f7a06252); and the running-head detector validated against the adjudicated ground truth, 24/24 true running heads detected, 2 front-matter false alarms of 254 body marks, 391 of 4051 tier-1 marks in zones as the future suppression scope (c3b85822).
+
+**Decisions** E107 (viewer UI reduction, operator). Paratext terminology replaces the apparatus label in the deck. The `.env.example` template stays unwritable by policy (dotenv deny rule); the README names the environment variables directly.
+
+**Status** All packages verified against disk, committed and pushed through d65854a3; entity gates, corpus invariants and script health green; no agents running; working tree clean except `knowledge/arbeitsbericht-v3.md` (held by another instance). Compact-stable.
+
+**Next steps** 1. Operator answers: four convention questions (author caps bylines, speaker labels, cert levels in delivery, verdict lifecycle), two IAA disputes (p145, p193), five gos (tei_reassemble_preview deletion, FP-hunt wave including the 16 hallucination candidates, essay filing for vault and Editopia, paper-evidence registration, journal archive 69-79). 2. Running-head suppression in the matcher per the validated detector, then preview regeneration and the convention reading. 3. UI step 3: metadata tooltips and tooltip sweep. 4. Redraw and remeasure recall after the convention answers.
+
 ### 2026-08-12 Session 93: GND entity integration built, evaluated, and consolidated (M0 to M4, E105/E106)
 
 **Occasion** A curated normdata export `all_entities.json` appeared untracked in the

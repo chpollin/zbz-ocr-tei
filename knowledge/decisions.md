@@ -85,7 +85,7 @@ Consolidated register of all decisions and open questions. Cross-cutting, collec
 
 ---
 
-## Decided (E64-E106, detail)
+## Decided (E64-E107, detail)
 
 More recent decisions with full rationale as dedicated sections.
 
@@ -494,6 +494,14 @@ Decision (b), persistence of the adjudicated judgments: `data/entities/mention_v
 Documents: [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md), [agent-orchestration.md](agent-orchestration.md), [journal.md](journal.md) session 93
 
 ---
+
+### E107 Viewer UI reduction: one document bar, two dropdowns, annotated reading view as default (2026-08-12)
+
+Occasion: the operator judged the viewer over-structured (stacked border edges, redundant state labels, seven scattered panel controls) and decided the reduction step by step at screenshots; the chrome inventory in `reports/2026-08-12_viewer-ui-analyse.md` grounded the findings.
+
+Decision (operator, 2026-08-12): the subtitle and the panel state labels are removed; document metadata, workflow pills and actions share one bar with one bottom edge, status words move into pill tooltips (the dot color carries the traffic light); the seven panel controls become two dropdowns, View and Edit, with Edit gathering layout, OCR and XML editing in one place; the page number between the pager arrows is the jump input; the view set is condensed to three (Text, OCR, XML) with the annotated reading view (rendered TEI plus GND entities and review candidates) as the default for every document (`entities=0` opts out) and markup highlighting as a toggle inside the view menu. Rejected alternatives: a visible segmented source control (rejected because three equally pressed buttons from two semantic groups misread as one active group), and a dedicated Entities view (rejected because the annotated text is the primary reading need and specialized views should be the exception, per operator).
+
+Documents: [workflow.md](workflow.md) section 3.7, `reports/2026-08-12_viewer-ui-analyse.md`; commits e7f9dd6d, baecc433, d65854a3.
 
 ## Open items
 
