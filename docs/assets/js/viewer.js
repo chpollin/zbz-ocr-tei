@@ -45,7 +45,9 @@
         // (docs/data/pages/{doc}/{doc}_entity_p{N}.xml). No save path ever writes it.
         entityMode: false,      // toggle / ?entities=1
         entityAvailable: false, // an entity preview exists for the current document
-        entityWorklist: null,   // {doc, pages: {N: [{gid, category, surface, text, occurrence, rule, context}]}}
+        entityWorklist: null,   // {doc, pages: {N: [{gid, category, surface, text, occurrence,
+                                //                rule, alternatives, matched_form, form_source,
+                                //                evidence?, context}]}}
         entityPage: false,      // the current page is rendered from the entity preview
         entityCandidates: []    // worklist entries of the current page (popover lookup)
     };
@@ -97,12 +99,25 @@
         'adjective-form':   'Adjektivform',
         'caps-surname':     'Versalien-Nachname',
         'ambiguous-surname': 'Nachname, mehrere Träger',
-        'crosses-markup':   'Nennung läuft über Markup hinweg'
+        'crosses-markup':   'Nennung läuft über Markup hinweg',
+        'speaker':          'Sprecherzeile'
     };
     const WORKLIST_RULE_SUFFIX = {
         'ambiguous':    'mehrere Kandidaten',
         'suspect':      'Homographen-Verdacht',
         'in-plain-bibl': 'in unreferenziertem bibl'
+    };
+    // Where the matched name form came from (matcher field form_source).
+    const ENTITY_FORM_SOURCE_LABEL = {
+        'headword':      'Lexikonform',
+        'cache-variant': 'GND-Variante',
+        'legacy':        'Altindex-Form',
+        'surname-index': 'Nachnamen-Index'
+    };
+    // Typographic pre-sorting of one-word work titles (matcher field evidence).
+    const ENTITY_EVIDENCE_LABEL = {
+        'typographic': 'Einwort-Titel mit typographischem Beleg',
+        'none':        'Einwort-Titel ohne typographischen Beleg (vermutlich Fachwort)'
     };
 
     function worklistRuleLabel(rule) {
@@ -110,6 +125,23 @@
         const base = WORKLIST_RULE_LABEL[parts[0]] || parts[0] || 'unbekannte Regel';
         const extra = parts.slice(1).map(s => WORKLIST_RULE_SUFFIX[s] || s).filter(Boolean);
         return extra.length ? base + ' (' + extra.join(', ') + ')' : base;
+    }
+
+    // The check line of a candidate: a one-word title is judged by its typography,
+    // everything else by the rule that found it.
+    function candidateCheckLabel(entry) {
+        return ENTITY_EVIDENCE_LABEL[entry.evidence] || worklistRuleLabel(entry.rule);
+    }
+
+    // Provenance of the hit: which listed form matched, and from which data channel.
+    function candidateOriginLabel(entry) {
+        if (!entry.matched_form) return '';
+        const source = ENTITY_FORM_SOURCE_LABEL[entry.form_source] || entry.form_source;
+        return source ? 'gefunden über ' + source + ': ' + entry.matched_form : '';
+    }
+
+    function candidateAlternatives(entry) {
+        return (entry && Array.isArray(entry.alternatives)) ? entry.alternatives : [];
     }
 
     const cache = new ZBZ.Cache(40);
@@ -468,12 +500,34 @@
         return entityPopover;
     }
 
+    // One row per bearer of an undecided candidate: label from the entity lookup,
+    // id as the lobid link. No bearer is singled out.
+    function entityAlternativeRow(gid) {
+        const rec = (entityIndex && entityIndex[gid]) || null;
+        const row = ZBZ.el('div', { cls: 'entity-pop__gid' });
+        row.appendChild(ZBZ.el('span', {
+            text: (rec ? rec.label : 'nicht in der kuratierten Liste') + ' · '
+        }));
+        row.appendChild(ZBZ.el('a', {
+            cls: 'entity-pop__link', text: 'GND ' + gid,
+            attrs: {
+                href: (rec && rec.lobid) || 'https://lobid.org/gnd/' + encodeURIComponent(gid),
+                target: '_blank', rel: 'noopener'
+            }
+        }));
+        return row;
+    }
+
     function showEntityPopover(el) {
         const candidate = el.classList.contains('entity-cand')
             ? (state.entityCandidates[Number(el.getAttribute('data-cand-index'))] || null)
             : null;
         const gid = candidate ? String(candidate.gid || '') : entityGid(el);
         const rec = (entityIndex && entityIndex[gid]) || null;
+        // Several bearers mean the position is undecided; showing one of them as the
+        // found entity is exactly the misreading this popover has to avoid.
+        const alternatives = candidateAlternatives(candidate);
+        const undecided = alternatives.length > 1;
         const pop = ensureEntityPopover();
         pop.className = 'entity-pop' + (candidate ? ' entity-pop--cand' : '');
         pop.innerHTML = '';
@@ -483,29 +537,41 @@
             on: { click: () => closeEntityPopover(true) }
         }));
         pop.appendChild(ZBZ.el('div', {
-            cls: 'entity-pop__label', text: rec ? rec.label : el.textContent.trim()
+            cls: 'entity-pop__label',
+            text: (!undecided && rec) ? rec.label : el.textContent.trim()
         }));
         const meta = [];
-        if (rec && rec.category) meta.push(ENTITY_CATEGORY_LABEL[rec.category] || rec.category);
-        if (rec && rec.dates) meta.push(rec.dates);
-        if (!rec) meta.push('not in the curated entity list');
+        if (undecided) {
+            meta.push(alternatives.length + ' Kandidaten');
+        } else {
+            if (rec && rec.category) meta.push(ENTITY_CATEGORY_LABEL[rec.category] || rec.category);
+            if (rec && rec.dates) meta.push(rec.dates);
+            if (!rec) meta.push('not in the curated entity list');
+        }
         pop.appendChild(ZBZ.el('div', { cls: 'entity-pop__meta', text: meta.join(' · ') }));
         if (candidate) {
-            // Provenance in plain words: why the tool did not set this annotation.
+            // Provenance in plain words: why the tool did not set this annotation,
+            // and which listed name form produced the hit.
             pop.appendChild(ZBZ.el('div', {
                 cls: 'entity-pop__note',
-                text: 'Zur Prüfung: ' + worklistRuleLabel(candidate.rule)
+                text: 'Zur Prüfung: ' + candidateCheckLabel(candidate)
             }));
+            const origin = candidateOriginLabel(candidate);
+            if (origin) pop.appendChild(ZBZ.el('div', { cls: 'entity-pop__meta', text: origin }));
         }
-        pop.appendChild(ZBZ.el('div', { cls: 'entity-pop__gid', text: 'GND ' + (gid || '?') }));
-        if (gid) {
-            pop.appendChild(ZBZ.el('a', {
-                cls: 'entity-pop__link', text: 'lobid.org',
-                attrs: {
-                    href: (rec && rec.lobid) || 'https://lobid.org/gnd/' + encodeURIComponent(gid),
-                    target: '_blank', rel: 'noopener'
-                }
-            }));
+        if (undecided) {
+            alternatives.forEach(alt => pop.appendChild(entityAlternativeRow(alt)));
+        } else {
+            pop.appendChild(ZBZ.el('div', { cls: 'entity-pop__gid', text: 'GND ' + (gid || '?') }));
+            if (gid) {
+                pop.appendChild(ZBZ.el('a', {
+                    cls: 'entity-pop__link', text: 'lobid.org',
+                    attrs: {
+                        href: (rec && rec.lobid) || 'https://lobid.org/gnd/' + encodeURIComponent(gid),
+                        target: '_blank', rel: 'noopener'
+                    }
+                }));
+            }
         }
         pop.hidden = false;
         positionEntityPopover(pop, el);

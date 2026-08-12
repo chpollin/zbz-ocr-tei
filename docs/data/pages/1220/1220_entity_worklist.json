@@ -8,6 +8,9 @@
         "category": "person",
         "surface": "Johannes",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Johannes, Climacus",
+        "form_source": "cache-variant",
         "context": "; Neues Glaubensbuch (herausgegeben von Johannes Feiner und Lukas Vischer). JEANNE HERSC",
         "text": "Johannes",
         "occurrence": 1
@@ -18,7 +21,13 @@
         "gid": "118506803",
         "category": "person",
         "surface": "Bart",
-        "rule": "bare-surname",
+        "rule": "bare-surname:ambiguous",
+        "alternatives": [
+          "118506803",
+          "119498014"
+        ],
+        "matched_form": "Bart, Karl",
+        "form_source": "cache-variant",
         "context": "sich unter Gott den alten Mann mit dem Bart vorstellen, der da oben auf einer Wolke",
         "text": "Bart",
         "occurrence": 1
@@ -28,6 +37,9 @@
         "category": "person",
         "surface": "Gagarin",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Gagarin",
+        "form_source": "surname-index",
         "context": "oben auf einer Wolke thront und von dem Gagarin sagte, er sei ihm nicht begegnet. Wenn",
         "text": "Gagarin",
         "occurrence": 1
@@ -37,6 +49,9 @@
         "category": "person",
         "surface": "Weil",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
         "context": "eit haben, unser Dasein mitzubestimmen. Weil wir diese Möglichkeit haben, ist es ein",
         "text": "Weil",
         "occurrence": 1
@@ -48,6 +63,9 @@
         "category": "person",
         "surface": "Dostojewski",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Dostojewski, Fjodor Michailowitch",
+        "form_source": "cache-variant",
         "context": "ihre Angst vor der Freiheit bezeichnet. Dostojewski hat schon vor langer Zeit gesagt, daß d",
         "text": "Dostojewski",
         "occurrence": 1
@@ -57,7 +75,11 @@
         "category": "work",
         "surface": "Bibel",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Bibel",
+        "form_source": "headword",
         "context": "aben den Versuch unternommen, Gott, die Bibel, die Geschichten und Wunder der Bibel z",
+        "evidence": "none",
         "text": "Bibel",
         "occurrence": 1
       },
@@ -66,8 +88,27 @@
         "category": "work",
         "surface": "Bibel",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Bibel",
+        "form_source": "headword",
         "context": "e Bibel, die Geschichten und Wunder der Bibel zu entmythologisieren. J. H. J. H.: Übe",
+        "evidence": "none",
         "text": "Bibel",
+        "occurrence": 2
+      },
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "g gesprochen hat, während der Philosoph Jaspers, der entschieden gegen den Offenbarungs",
+        "text": "Jaspers",
         "occurrence": 2
       }
     ],
@@ -77,6 +118,9 @@
         "category": "person",
         "surface": "Jesus",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Jesus, von Nazareth",
+        "form_source": "cache-variant",
         "context": "überholen? Oder kündet sich da eine von Jesus her inspirierte neue soziale Reformatio",
         "text": "Jesus",
         "occurrence": 1
@@ -86,6 +130,9 @@
         "category": "person",
         "surface": "Christus",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Christus",
+        "form_source": "surname-index",
         "context": "stozentrisch, das heißt die Gestalt von Christus kommt mehr und mehr in den Mittelpunkt",
         "text": "Christus",
         "occurrence": 1
@@ -95,6 +142,9 @@
         "category": "person",
         "surface": "Jesus",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Jesus, von Nazareth",
+        "form_source": "cache-variant",
         "context": "nde beinahe ignoriert. Im Zentrum steht Jesus, der arme Mensch. Der arme Mensch, das",
         "text": "Jesus",
         "occurrence": 2
@@ -104,6 +154,9 @@
         "category": "person",
         "surface": "Marx",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Marx",
+        "form_source": "surname-index",
         "context": "me Mensch, das ist der Proletarier, wie Marx ihn gesehen hat und den es in unserer e",
         "text": "Marx",
         "occurrence": 1
@@ -113,6 +166,9 @@
         "category": "person",
         "surface": "Christus",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Christus",
+        "form_source": "surname-index",
         "context": "n Proletarier retten. Für sie ist er in Christus verkörpert. Diese «nouveaux riches» des",
         "text": "Christus",
         "occurrence": 2
@@ -122,6 +178,9 @@
         "category": "person",
         "surface": "Christus",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Christus",
+        "form_source": "surname-index",
         "context": "sschuß der Partei in der UdSSR. So wird Christus in enge Verbindung mit der Sowjetunion",
         "text": "Christus",
         "occurrence": 3
@@ -133,6 +192,9 @@
         "category": "person",
         "surface": "Blumhardt",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Blumhardt",
+        "form_source": "surname-index",
         "context": "ewegung des religiösen Sozialismus auf. Blumhardt, Kutter, Ragaz waren ihre großen Männer",
         "text": "Blumhardt",
         "occurrence": 1
@@ -142,6 +204,9 @@
         "category": "person",
         "surface": "Kutter",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kutter",
+        "form_source": "surname-index",
         "context": "religiösen Sozialismus auf. Blumhardt, Kutter, Ragaz waren ihre großen Männer. Ihr re",
         "text": "Kutter",
         "occurrence": 1
@@ -151,6 +216,9 @@
         "category": "person",
         "surface": "Ragaz",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Ragaz",
+        "form_source": "surname-index",
         "context": "sen Sozialismus auf. Blumhardt, Kutter, Ragaz waren ihre großen Männer. Ihr religiöse",
         "text": "Ragaz",
         "occurrence": 1
@@ -160,6 +228,9 @@
         "category": "person",
         "surface": "Kierkegaard",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kierkegaard",
+        "form_source": "surname-index",
         "context": "in einem bestimmten Sinne sehr nahe bei Kierkegaard. Er glaubte, daß jemand, der sich selbs",
         "text": "Kierkegaard",
         "occurrence": 1
@@ -169,6 +240,9 @@
         "category": "person",
         "surface": "Casaroli",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Casaroli",
+        "form_source": "surname-index",
         "context": "ml und anderen sozialistischen Staaten. Casaroli fährt nach Warschau, Budapest, Prag, Mo",
         "text": "Casaroli",
         "occurrence": 1
@@ -178,6 +252,9 @@
         "category": "person",
         "surface": "Bloch",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Bloch",
+        "form_source": "surname-index",
         "context": "präche zwischen dissidenten Marxisten – Bloch, Garaudy usw. –, die von ihren Parteien",
         "text": "Bloch",
         "occurrence": 1
@@ -187,6 +264,9 @@
         "category": "person",
         "surface": "Garaudy",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Garaudy",
+        "form_source": "surname-index",
         "context": "zwischen dissidenten Marxisten – Bloch, Garaudy usw. –, die von ihren Parteien ausgesch",
         "text": "Garaudy",
         "occurrence": 1
@@ -198,6 +278,9 @@
         "category": "person",
         "surface": "Bendit",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Bendit, Daniel C.-",
+        "form_source": "cache-variant",
         "context": "munistischen Partei, wohl aber von Cohn-Bendit hätte geschrieben sein können.) Der Ver",
         "text": "Bendit",
         "occurrence": 1
@@ -207,6 +290,9 @@
         "category": "person",
         "surface": "Marx",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Marx",
+        "form_source": "surname-index",
         "context": "hen verbindet, ist das Eschatologische. Marx und die Marxisten versprechen auch, daß",
         "text": "Marx",
         "occurrence": 3
@@ -216,6 +302,9 @@
         "category": "person",
         "surface": "Marx",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Marx",
+        "form_source": "surname-index",
         "context": "ch, daß am Ende unserer Geschichte, die Marx manchmal die Vorgeschichte nennt, etwas",
         "text": "Marx",
         "occurrence": 5
@@ -225,6 +314,9 @@
         "category": "person",
         "surface": "Marx",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Marx",
+        "form_source": "surname-index",
         "context": "hichte nennt, etwas ganz Neues anfängt. Marx sagt sehr wenig darüber, wie das sein w",
         "text": "Marx",
         "occurrence": 6
@@ -236,7 +328,11 @@
         "category": "work",
         "surface": "Philosophie",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
         "context": "Jeanne Hersch Studium der Literatur und Philosophie in Genf, Paris, Heidel-berg und Freibur",
+        "evidence": "none",
         "text": "Philosophie",
         "occurrence": 1
       },
@@ -245,7 +341,11 @@
         "category": "work",
         "surface": "Philosophie",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
         "context": ". Seit 1956 ordentliche Professorin für Philosophie an der Universität Genf. 1966–1968 Dire",
+        "evidence": "none",
         "text": "Philosophie",
         "occurrence": 2
       },
@@ -254,7 +354,11 @@
         "category": "work",
         "surface": "Philosophie",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
         "context": "36 (deutsch: «Die Illusion, der Weg der Philosophie»); «L’être et la forme», 1946; «Idéolog",
+        "evidence": "none",
         "text": "Philosophie",
         "occurrence": 3
       }

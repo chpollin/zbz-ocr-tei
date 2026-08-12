@@ -8,6 +8,9 @@
         "category": "person",
         "surface": "Goethe",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Goethe",
+        "form_source": "surname-index",
         "context": "Failure Against Gonorrhoea / The Young Goethe – A Documentary Volume / Waters of Affl",
         "text": "Goethe",
         "occurrence": 1
@@ -19,6 +22,9 @@
         "category": "person",
         "surface": "Brunner",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Brunner",
+        "form_source": "surname-index",
         "context": "y of Zurich; Prof. Hellmut and Dr. Emma Brunner, University of Tübingen; Prof. Julius B",
         "text": "Brunner",
         "occurrence": 1
@@ -28,6 +34,9 @@
         "category": "person",
         "surface": "Otto",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Otto, Prince von Bismarck",
+        "form_source": "cache-variant",
         "context": "Gurlitt, University of Freiburg; Prof. Otto Hahn, Nobel prize winner, University of",
         "text": "Otto",
         "occurrence": 1
@@ -37,6 +46,9 @@
         "category": "person",
         "surface": "Werner",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Werner",
+        "form_source": "surname-index",
         "context": "ian Academy of Fine Arts, Munich; Prof. Werner Rauh, University of Heidelberg; Prof. C",
         "text": "Werner",
         "occurrence": 1
@@ -48,6 +60,9 @@
         "category": "person",
         "surface": "Virgil",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Virgil",
+        "form_source": "cache-variant",
         "context": "seminar in Heidelberg. We were reading Virgil’s Georgics and I can still remember our",
         "text": "Virgil",
         "occurrence": 1
@@ -57,7 +72,11 @@
         "category": "work",
         "surface": "Georgics",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Georgics",
+        "form_source": "cache-variant",
         "context": "in Heidelberg. We were reading Virgil’s Georgics and I can still remember our endless di",
+        "evidence": "none",
         "text": "Georgics",
         "occurrence": 1
       }
@@ -68,6 +87,9 @@
         "category": "person",
         "surface": "Hegel",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Hegel",
+        "form_source": "surname-index",
         "context": "ar as well. At that time he was reading Hegel’s Aesthetics with his students. They al",
         "text": "Hegel",
         "occurrence": 1
@@ -77,6 +99,9 @@
         "category": "person",
         "surface": "Hegel",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Hegel",
+        "form_source": "surname-index",
         "context": "task to persuade someone to lend me the Hegel volume just for one night, so that I co",
         "text": "Hegel",
         "occurrence": 2
@@ -88,6 +113,9 @@
         "category": "person",
         "surface": "Socrates",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Socrates",
+        "form_source": "surname-index",
         "context": "fferent. His philosophy, like that of a Socrates, a Spinoza, or a Kant, is derived, not",
         "text": "Socrates",
         "occurrence": 1
@@ -97,6 +125,9 @@
         "category": "person",
         "surface": "Spinoza",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Spinoza",
+        "form_source": "surname-index",
         "context": "philosophy, like that of a Socrates, a Spinoza, or a Kant, is derived, not from a sing",
         "text": "Spinoza",
         "occurrence": 1
@@ -106,6 +137,9 @@
         "category": "person",
         "surface": "Kant",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
         "context": "ike that of a Socrates, a Spinoza, or a Kant, is derived, not from a single momentar",
         "text": "Kant",
         "occurrence": 1
@@ -117,6 +151,9 @@
         "category": "person",
         "surface": "Kantian",
         "rule": "adjective-form",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
         "context": "ality\" regain their true function — the Kantian function of ideas: regulatory and not c",
         "text": "Kantian",
         "occurrence": 1
@@ -128,6 +165,12 @@
         "category": "person",
         "surface": "Jaspers",
         "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
         "context": "anxiety for the preservation of Liberty Jaspers, shortly before Hitler seized power, pu",
         "text": "Jaspers",
         "occurrence": 4
@@ -137,6 +180,9 @@
         "category": "person",
         "surface": "Hitler",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Hitler",
+        "form_source": "surname-index",
         "context": "tion of Liberty Jaspers, shortly before Hitler seized power, published a serious warni",
         "text": "Hitler",
         "occurrence": 1
@@ -146,6 +192,9 @@
         "category": "person",
         "surface": "Hitler",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Hitler",
+        "form_source": "surname-index",
         "context": "r the years of silence and ganger under Hitler’s rule, immediately after Germany’s def",
         "text": "Hitler",
         "occurrence": 2
@@ -157,6 +206,12 @@
         "category": "person",
         "surface": "Jaspers",
         "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
         "context": "From the same point of view of Liberty Jaspers has in recent years — with great courag",
         "text": "Jaspers",
         "occurrence": 1

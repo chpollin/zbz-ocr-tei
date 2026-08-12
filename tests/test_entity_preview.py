@@ -111,10 +111,11 @@ _VALID_DOC_HI = _VALID_DOC.replace(
 )
 
 
-def _cand(xml, surface, gid, category="person", tier=1, rule="full_name", context=None):
+def _cand(xml, surface, gid, category="person", tier=1, rule="full_name", context=None,
+          alternatives=(), matched_form=None, form_source="headword", evidence=None):
     """Candidate dict per the entity_matcher contract, offsets taken from the string."""
     start = xml.index(surface)
-    return {
+    cand = {
         "gid": gid,
         "category": category,
         "surface": surface,
@@ -122,8 +123,14 @@ def _cand(xml, surface, gid, category="person", tier=1, rule="full_name", contex
         "end": start + len(surface),
         "tier": tier,
         "rule": rule,
+        "alternatives": list(alternatives),
+        "matched_form": surface if matched_form is None else matched_form,
+        "form_source": form_source,
         "context": surface if context is None else context,
     }
+    if evidence is not None:
+        cand["evidence"] = evidence
+    return cand
 
 
 # --- apply_candidates -------------------------------------------------------
@@ -459,3 +466,64 @@ def test_end_to_end_with_the_real_matcher_and_idempotence(tmp_path):
 
     second_pass = find_candidates(wrapped, lexicon)
     assert [c for c in second_pass if c["tier"] == 1] == []
+
+
+# --- ambiguity, provenance and title evidence in the report (iteration 4) ---------
+
+
+def _iteration4_candidates():
+    """One ambiguous surname, one variant-derived hit, one title without evidence."""
+    return [
+        _cand(_MINI, "Karl Jaspers", "118557106", matched_form="Karl Jaspers"),
+        _cand(_MINI, "Jeanne Hersch", "117085391", tier=2, rule="bare-surname:ambiguous",
+              alternatives=("117085391", "118557106"),
+              matched_form="Mayer, Gertrud", form_source="cache-variant"),
+        _cand(_MINI, "Jaspers", "4006406-2", category="work", tier=2, rule="short-title",
+              matched_form="Jaspers", evidence="none"),
+    ]
+
+
+def test_preview_counts_ambiguity_and_title_evidence(tmp_path):
+    res = preview_document("9999", _MINI, _iteration4_candidates(), tmp_path)
+    assert res["counts"]["ambiguous"] == 1
+    assert res["counts"]["by_evidence"] == {"none": 1}
+
+
+def test_report_totals_carry_ambiguity_and_evidence(tmp_path):
+    res = preview_document("9999", _MINI, _iteration4_candidates(), tmp_path)
+    totals = build_report([res])["totals"]
+    assert totals["ambiguous"] == 1
+    assert totals["by_evidence"] == {"none": 1}
+
+
+def test_report_totals_tolerate_documents_without_the_new_counts():
+    totals = build_report(_results())["totals"]
+    assert totals["ambiguous"] == 0
+    assert totals["by_evidence"] == {}
+
+
+def test_html_report_names_every_bearer_of_an_ambiguous_candidate(tmp_path):
+    res = preview_document("9999", _MINI, _iteration4_candidates(), tmp_path)
+    html = build_html_report(build_report([res]))
+    assert "117085391, 118557106" in html
+
+
+def test_html_report_keeps_a_decided_tier1_id_in_the_lead(tmp_path):
+    # the anchor decided this one, and the file carries exactly that id
+    cands = [_cand(_MINI, "Karl Jaspers", "118557106", rule="anchored-surname",
+                   alternatives=("117085391", "118557106"))]
+    html = build_html_report(build_report([preview_document("9999", _MINI, cands, tmp_path)]))
+    assert "118557106 (alt: 117085391)" in html
+
+
+def test_html_report_names_the_form_the_hit_came_from(tmp_path):
+    res = preview_document("9999", _MINI, _iteration4_candidates(), tmp_path)
+    html = build_html_report(build_report([res]))
+    assert "cache-variant: Mayer, Gertrud" in html
+    assert "headword: Karl Jaspers" in html
+
+
+def test_html_report_marks_a_title_without_typographic_evidence(tmp_path):
+    res = preview_document("9999", _MINI, _iteration4_candidates(), tmp_path)
+    html = build_html_report(build_report([res]))
+    assert "short-title (evidence: none)" in html

@@ -8,6 +8,9 @@
         "category": "person",
         "surface": "Hitler",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Hitler",
+        "form_source": "surname-index",
         "context": "un cours, après la prise du pouvoir par Hitler et peu avant d’être mis à la retraite,",
         "text": "Hitler",
         "occurrence": 1
@@ -19,6 +22,9 @@
         "category": "person",
         "surface": "Jésus",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Jésus, de Nazareth",
+        "form_source": "cache-variant",
         "context": "ècles qui s’étendent de 800 à 200 avant Jésus-Christ. A peu près simultanément, dans",
         "text": "Jésus",
         "occurrence": 1
@@ -28,6 +34,9 @@
         "category": "work",
         "surface": "Von Ursprung und Ziel der Geschichte",
         "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "Von Ursprung und Ziel der Geschichte",
+        "form_source": "legacy",
         "context": "el, Desclée de Brouwer, Paris, 1951. 2. Von Ursprung und Ziel der Geschichte, Verlag Piper, Munich, 1949. Traduction",
         "text": "Von Ursprung und Ziel der Geschichte",
         "occurrence": 1
@@ -39,6 +48,9 @@
         "category": "person",
         "surface": "Goethe",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Goethe",
+        "form_source": "surname-index",
         "context": "es qui y sont traités : Notre avenir et Goethe (1947), Le mal radical chez Kant (1935)",
         "text": "Goethe",
         "occurrence": 1
@@ -48,6 +60,9 @@
         "category": "person",
         "surface": "Kant",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
         "context": "r et Goethe (1947), Le mal radical chez Kant (1935), Kierkegaard (1951), De l’esprit",
         "text": "Kant",
         "occurrence": 1
@@ -57,6 +72,9 @@
         "category": "person",
         "surface": "Kierkegaard",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kierkegaard",
+        "form_source": "surname-index",
         "context": "1947), Le mal radical chez Kant (1935), Kierkegaard (1951), De l’esprit vivant de l’Univers",
         "text": "Kierkegaard",
         "occurrence": 1
@@ -66,6 +84,9 @@
         "category": "person",
         "surface": "Marx",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Marx",
+        "form_source": "surname-index",
         "context": "en, 1919), il a reconnu l’importance de Marx, il l’étudie et le combat. Et il lui op",
         "text": "Marx",
         "occurrence": 1
@@ -77,6 +98,9 @@
         "category": "person",
         "surface": "Kierkegaard",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kierkegaard",
+        "form_source": "surname-index",
         "context": "rte la marque indélébile, Nietzsche¹ et Kierkegaard. Mais si irremplaçable que soit aujourd",
         "text": "Kierkegaard",
         "occurrence": 1
@@ -86,7 +110,14 @@
         "category": "work",
         "surface": "Nietzsche",
         "rule": "short-title:ambiguous",
+        "alternatives": [
+          "1078795312",
+          "118587943"
+        ],
+        "matched_form": "Nietzsche",
+        "form_source": "headword",
         "context": "s l’expérience d’une confrontation avec Nietzsche et Kierkegaard, plus profonde, plus ess",
+        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 2
       },
@@ -95,6 +126,9 @@
         "category": "person",
         "surface": "Kierkegaard",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kierkegaard",
+        "form_source": "surname-index",
         "context": "e d’une confrontation avec Nietzsche et Kierkegaard, plus profonde, plus essentielle reste",
         "text": "Kierkegaard",
         "occurrence": 2
@@ -104,6 +138,9 @@
         "category": "person",
         "surface": "Platon",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Platon, dÁthènes",
+        "form_source": "cache-variant",
         "context": "n philosophique de l’Occident, celle de Platon et de Kant. Jaspers ne prétend jamais a",
         "text": "Platon",
         "occurrence": 1
@@ -113,6 +150,9 @@
         "category": "person",
         "surface": "Kant",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kant",
+        "form_source": "surname-index",
         "context": "ue de l’Occident, celle de Platon et de Kant. Jaspers ne prétend jamais avoir fondé",
         "text": "Kant",
         "occurrence": 1
@@ -122,6 +162,9 @@
         "category": "work",
         "surface": "Nietzsche, Verlag W. de Gruyter, Berlin, 1936. Traduction française chez Gallimard, Paris, 1950.",
         "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "Nietzsche, Verlag W. de Gruyter, Berlin, 1936. Traduction française chez Gallimard, Paris, 1950.",
+        "form_source": "legacy",
         "context": "itionne toute vérité. JEANNE HERSCH. 1. Nietzsche, Verlag W. de Gruyter, Berlin, 1936. Traduction française chez Gallimard, Paris, 1950. Nietzsche und das Christentum, Verlag d",
         "text": "Nietzsche, Verlag W. de Gruyter, Berlin, 1936. Traduction française chez Gallimard, Paris, 1950.",
         "occurrence": 1
@@ -131,6 +174,9 @@
         "category": "work",
         "surface": "Nietzsche und das Christentum, Verlag der Bücherstube Fritz Seifert, Hameln, 1946.",
         "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "Nietzsche und das Christentum, Verlag der Bücherstube Fritz Seifert, Hameln, 1946.",
+        "form_source": "legacy",
         "context": "française chez Gallimard, Paris, 1950. Nietzsche und das Christentum, Verlag der Bücherstube Fritz Seifert, Hameln, 1946. — Nietzsche et le christianisme, traduc",
         "text": "Nietzsche und das Christentum, Verlag der Bücherstube Fritz Seifert, Hameln, 1946.",
         "occurrence": 1
@@ -140,6 +186,9 @@
         "category": "work",
         "surface": "Nietzsche et le christianisme, traduction française par Jeanne Hersch, Editions de Minuit, Paris, 1949.",
         "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "Nietzsche et le christianisme, traduction française par Jeanne Hersch, Editions de Minuit, Paris, 1949.",
+        "form_source": "legacy",
         "context": "herstube Fritz Seifert, Hameln, 1946. — Nietzsche et le christianisme, traduction française par Jeanne Hersch, Editions de Minuit, Paris, 1949. 2. Von der Wahrheit, Piper Verlag, Muni",
         "text": "Nietzsche et le christianisme, traduction française par Jeanne Hersch, Editions de Minuit, Paris, 1949.",
         "occurrence": 1

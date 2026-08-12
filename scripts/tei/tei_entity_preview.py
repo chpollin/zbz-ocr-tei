@@ -173,8 +173,14 @@ def preview_document(doc_id: str, xml_string: str, candidates: list[dict],
         "counts": {
             "wrapped": len(tier1),
             "worklist": len(tier2),
+            # candidates whose form has more than one bearer; the report must never
+            # show one of them as the decided id
+            "ambiguous": sum(1 for c in candidates if c.get("alternatives")),
             "by_rule": _sorted_counts(Counter(c.get("rule", "?") for c in candidates)),
             "by_category": _sorted_counts(Counter(c.get("category", "?") for c in candidates)),
+            "by_evidence": _sorted_counts(
+                Counter(c["evidence"] for c in candidates if c.get("evidence"))
+            ),
         },
         "rng_valid": not rng_errors,
         "rng_errors": rng_errors[:5],
@@ -219,18 +225,21 @@ def _sorted_counts(counter) -> dict:
 
 def build_report(results: list[dict]) -> dict:
     """Per-document results plus corpus totals."""
-    by_rule, by_category = Counter(), Counter()
+    by_rule, by_category, by_evidence = Counter(), Counter(), Counter()
     for res in results:
         by_rule.update(res["counts"]["by_rule"])
         by_category.update(res["counts"]["by_category"])
+        by_evidence.update(res["counts"].get("by_evidence", {}))
     return {
         "documents": results,
         "totals": {
             "documents": len(results),
             "wrapped": sum(r["counts"]["wrapped"] for r in results),
             "worklist": sum(r["counts"]["worklist"] for r in results),
+            "ambiguous": sum(r["counts"].get("ambiguous", 0) for r in results),
             "by_rule": _sorted_counts(by_rule),
             "by_category": _sorted_counts(by_category),
+            "by_evidence": _sorted_counts(by_evidence),
             "rng_valid": sum(1 for r in results if r["rng_valid"]),
             "text_invariant": sum(1 for r in results if r["text_invariant"]),
         },
@@ -258,20 +267,52 @@ def _status(ok: bool) -> str:
     return '<span class="pass">PASS</span>' if ok else '<span class="fail">FAIL</span>'
 
 
+def _mention_ids(mention: dict) -> str:
+    """Ids of a mention: an undecided candidate names every bearer without a lead.
+
+    A tier-1 hit carries the id that goes into the file, so it leads and the remaining
+    bearers follow as alternatives. A tier-2 hit is undecided, and listing its reported
+    id first would read as a decision the matcher did not take.
+    """
+    gid = str(mention.get("gid", ""))
+    alternatives = mention.get("alternatives") or []
+    if not alternatives:
+        return gid
+    if mention.get("tier") != 1:
+        return ", ".join(alternatives)
+    others = [other for other in alternatives if other != gid]
+    return f"{gid} (alt: {', '.join(others)})" if others else gid
+
+
+def _mention_rule(mention: dict) -> str:
+    """Rule plus the typographic verdict of a one-word title, where there is one."""
+    rule = str(mention.get("rule", ""))
+    evidence = mention.get("evidence")
+    return f"{rule} (evidence: {evidence})" if evidence else rule
+
+
+def _mention_origin(mention: dict) -> str:
+    """Which lexicon form produced the hit, and from which data channel."""
+    form = mention.get("matched_form")
+    return f"{mention.get('form_source', '')}: {form}" if form else ""
+
+
 def _mention_table(mentions: list[dict]) -> str:
     if not mentions:
         return '<p class="empty">none</p>'
     rows = "".join(
-        "<tr><td>{surface}</td><td>{gid}</td><td>{rule}</td><td class=\"ctx\">{context}</td></tr>".format(
+        "<tr><td>{surface}</td><td>{gid}</td><td>{rule}</td><td>{origin}</td>"
+        "<td class=\"ctx\">{context}</td></tr>".format(
             surface=escape(m.get("surface", "")),
-            gid=escape(str(m.get("gid", ""))),
-            rule=escape(str(m.get("rule", ""))),
+            gid=escape(_mention_ids(m)),
+            rule=escape(_mention_rule(m)),
+            origin=escape(_mention_origin(m)),
             context=escape(m.get("context", "")),
         )
         for m in mentions
     )
-    return ("<table><thead><tr><th>Surface</th><th>GND</th><th>Rule</th><th>Context</th>"
-            f"</tr></thead><tbody>{rows}</tbody></table>")
+    return ("<table><thead><tr><th>Surface</th><th>GND</th><th>Rule</th><th>Found via</th>"
+            f"<th>Context</th></tr></thead><tbody>{rows}</tbody></table>")
 
 
 def build_html_report(report: dict) -> str:
@@ -293,6 +334,10 @@ def build_html_report(report: dict) -> str:
         f'<tr><td>{escape(k)}</td><td class="num">{v}</td></tr>'
         for k, v in totals["by_category"].items()
     )
+    evidence = "".join(
+        f'<tr><td>{escape(k)}</td><td class="num">{v}</td></tr>'
+        for k, v in totals.get("by_evidence", {}).items()
+    ) or '<tr><td class="empty">none</td><td class="num">0</td></tr>'
     sections = []
     for res in report["documents"]:
         errors = ""
@@ -317,7 +362,8 @@ def build_html_report(report: dict) -> str:
 concatenated text of the &lt;text&gt; subtree before and after wrapping.</p>
 <h2>Overview</h2>
 <p>Documents: {totals["documents"]} &middot; wrapped: {totals["wrapped"]} &middot;
-worklist: {totals["worklist"]} &middot; schema PASS: {totals["rng_valid"]}/{totals["documents"]}
+worklist: {totals["worklist"]} &middot; ambiguous (several bearers):
+{totals.get("ambiguous", 0)} &middot; schema PASS: {totals["rng_valid"]}/{totals["documents"]}
 &middot; text PASS: {totals["text_invariant"]}/{totals["documents"]}</p>
 <table><thead><tr><th>Document</th><th>Wrapped</th><th>Worklist</th><th>Schema</th>
 <th>Text invariance</th></tr></thead><tbody>{overview}</tbody></table>
@@ -325,6 +371,8 @@ worklist: {totals["worklist"]} &middot; schema PASS: {totals["rng_valid"]}/{tota
 <table><thead><tr><th>Rule</th><th>Count</th></tr></thead><tbody>{rules}</tbody></table>
 <h3>Candidates by category</h3>
 <table><thead><tr><th>Category</th><th>Count</th></tr></thead><tbody>{categories}</tbody></table>
+<h3>One-word titles by typographic evidence</h3>
+<table><thead><tr><th>Evidence</th><th>Count</th></tr></thead><tbody>{evidence}</tbody></table>
 {"".join(sections)}
 </body>
 </html>"""
@@ -378,7 +426,10 @@ def main():
 
     totals = report["totals"]
     print(f"\n  Documents: {totals['documents']}  wrapped: {totals['wrapped']}  "
-          f"worklist: {totals['worklist']}")
+          f"worklist: {totals['worklist']}  ambiguous: {totals['ambiguous']}")
+    if totals["by_evidence"]:
+        evidence = "  ".join(f"{k}: {v}" for k, v in totals["by_evidence"].items())
+        print(f"  One-word titles by evidence: {evidence}")
     print(f"  Schema PASS: {totals['rng_valid']}/{totals['documents']}  "
           f"text invariance PASS: {totals['text_invariant']}/{totals['documents']}")
     json_path, html_path = write_reports(report, args.out_dir)

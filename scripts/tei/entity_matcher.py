@@ -15,12 +15,28 @@ Two public functions:
 
     find_candidates(xml_string, lexicon, author_labels=()) -> list[dict]
         Reports mentions as raw character spans of the input string. Every candidate
-        carries gid, category, surface, start, end, tier, rule, context.
-        Hard invariants: xml_string[start:end] == surface, candidates sorted by
-        start and free of overlap, spans only inside <text>, and the surface carries
+        carries gid, category, surface, start, end, tier, rule, alternatives,
+        matched_form, form_source, context; one-word work titles additionally carry
+        evidence. Hard invariants: xml_string[start:end] == surface, candidates sorted
+        by start and free of overlap, spans only inside <text>, and the surface carries
         no markup other than <lb/> tags. `author_labels` holds the labels of the
         document's own author (Masterfile metadata); all-caps hits on that entity are
         skipped, because bylines, running headers and signatures stay unmarked.
+
+        alternatives   every listed id the matched form or surname belongs to, sorted
+                       and including the reported gid. Empty for an unambiguous
+                       candidate, so a filled list always means "undecided" and never
+                       lets a single bearer read as the found entity. Length is never
+                       one.
+        matched_form   the lexicon form that produced the hit. For a surname hit that
+                       is the form which registered the surname ("Mayer, Gertrud"
+                       behind a hit on "Mayer"), not the surname itself.
+        form_source    which channel the form came from: "headword" (curated label and
+                       everything derived from it), "cache-variant" (GND cache),
+                       "legacy" (legacy mention index), "surname-index" (the bare
+                       surname of a curated headword).
+        evidence       one-word work titles only: "typographic" when the setting
+                       corroborates the title reading, "none" otherwise (see below).
 
 Search model. The scan runs on a normalized projection of the raw string: markup
 contributes nothing, `<lb break="no"/>` joins a broken word, a plain `<lb/>` counts
@@ -37,8 +53,15 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   with rule "crosses-markup" and tier 2, instead of being dropped; the worklist keeps
   the position that way. Truncation to an empty part drops the candidate.
 - A form that several entities share becomes tier 2 with the rule suffix
-  ":ambiguous"; the reported gid is the lexicographically first one, the judge stage
-  resolves the alternatives from the lexicon.
+  ":ambiguous"; the reported gid is the lexicographically first one and every bearer
+  stands in `alternatives`, so the judge stage sees the whole set and no report can
+  present one bearer as the decision. The two rules that an anchor decides keep their
+  reported id without the suffix and list the bearers all the same: "anchored-surname"
+  (exactly one bearer mentioned in full in the document) and "ambiguous-surname"
+  (several of them, which the rule name already says).
+- Suffix order is fixed and stackable: base rule, then ":ambiguous" (a property of the
+  lexicon), then ":suspect" (a property of the context), then ":in-plain-bibl" (a
+  property of the position).
 - Person labels without a forename (mononyms such as "Platon") reach no tier-1 rule;
   they enter the surname index and can only surface as tier 2.
 - The speaker rule compares the slot text verbatim (after stripping surrounding
@@ -46,7 +69,11 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   general surname rules; whether ZBZ wants the honorific inside the element is an
   open modelling point.
 - Single-token work titles need at least three characters to enter the lexicon at
-  all, otherwise the worklist fills with noise.
+  all, otherwise the worklist fills with noise. Every such candidate carries the
+  typographic pre-sorting `evidence`: "typographic" when the span sits completely
+  inside an `hi`, when quotation marks or guillemets enclose it directly, or when a
+  possessive stands right in front of it (POSSESSIVES), else "none". Both stay tier 2
+  and no class is dropped; the field is the measurement basis for that decision.
 - A surname taken from a cache or legacy variant enters the surname index only when
   it passes the same distinctiveness test the org-token rule states (at least four
   characters, capitalized). Curated headwords are registered unguarded, so the test
@@ -67,7 +94,11 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   FUNCTION_WORDS, an adjacent hyphen, or an adjacent unknown capitalized word. The
   last signal is noisy in German, where every noun is capitalized; it is suppressed
   behind a genitive surface ("Herschs Werk"), before a sentence-initial word and
-  behind an honorific ("Mlle Hersch", HONORIFICS).
+  behind an honorific ("Mlle Hersch", HONORIFICS). Beyond that it is suppressed only
+  when the word pair itself is a listed form. A neighbour that merely starts some
+  listed form corroborates nothing, because every listed forename would then clear the
+  homograph next to it ("Hans Mayer", where the surname comes from the GND variant
+  "Mayer, Gertrud" of another person, kept its tier while "Hans" stood in the lexicon).
   Full-name rules (full-name, variant-full-name, initial-surname) ignore the signals.
 - Adjective derivations ("Freudschen", "freudien") are reported over their stem with
   the rule "adjective-form" and tier 2, span covering the whole inflected word. The
@@ -90,7 +121,7 @@ import re
 import unicodedata
 from bisect import bisect_left, bisect_right
 from collections.abc import Iterator
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 SENTINEL = "\x00"
@@ -122,6 +153,21 @@ TIER_BY_RULE = {
 PLAIN_BIBL_SUFFIX = ":in-plain-bibl"
 AMBIGUOUS_SUFFIX = ":ambiguous"
 SUSPECT_SUFFIX = ":suspect"
+
+# Where the matched form comes from. "surname-index" is the curated headword's bare
+# surname, which is an index entry rather than a form of its own; a surname taken from
+# a variant reports that variant instead ("Mayer, Gertrud" behind a hit on "Mayer").
+FORM_SOURCES = ("headword", "cache-variant", "legacy", "surname-index")
+
+EVIDENCE_TYPOGRAPHIC = "typographic"
+EVIDENCE_NONE = "none"
+
+# Typographic evidence of a one-word work title: quotation marks of every shape the
+# corpus carries, and the possessives that mark a following noun as a titled work.
+QUOTE_CHARS = frozenset("\"'«»‹›‚“”„‘’")
+POSSESSIVES = frozenset({
+    "sa", "son", "ses", "seine", "seiner", "his", "her", "sua", "suo",
+})
 
 # Surnames that are also ordinary German words. Only collisions attested in the
 # corpus belong here ("weil" the conjunction, "Wahl" the election); the list grows
@@ -189,6 +235,22 @@ class _Zones:
     excluded: tuple[Span, ...]
     plain_bibl: tuple[Span, ...]
     speakers: tuple[Span, ...]
+    emphasis: tuple[Span, ...]
+
+
+@dataclass(frozen=True)
+class _Hit:
+    """One match on the normalized text, before it is mapped back to raw offsets."""
+
+    start: int
+    end: int
+    gid: str
+    category: str
+    rule: str
+    tier: int
+    alternatives: tuple[str, ...] = ()
+    matched_form: str = ""
+    form_source: str = "headword"
 
 
 @dataclass(frozen=True)
@@ -221,19 +283,22 @@ def build_lexicon(
 
     The list is a trust boundary and must exist; cache and legacy index are optional
     and simply contribute fewer name forms when missing. The returned dict carries
-    `entries` (gid -> record), `forms` (form string -> owners), `by_first_word`
-    (first word -> forms, longest first), `surnames` (surname -> gids), the three
-    all-caps indexes `caps_forms` / `caps_by_first_word` / `caps_surnames`,
+    `entries` (gid -> record), `forms` (form string -> owners as
+    (gid, category, rule, source)), `by_first_word` (first word -> forms, longest
+    first), `surnames` (surname -> gids), `surname_forms` (surname -> gid ->
+    (form, source), the provenance of every surname entry), the all-caps indexes
+    `caps_forms` / `caps_by_first_word` / `caps_surnames` / `caps_surname_forms`,
     `legacy_demoted` (the (gid, form) pairs the bearer's record does not corroborate),
-    `skipped` (counters) and `sources` (provenance).
+    `skipped` (counters) and `sources` (the input paths).
     """
     entities = _read_json(entities_path, required=True) or {}
     cache = _read_json(cache_path) or {}
     cache_entries = cache.get("entries", {}) if isinstance(cache, dict) else {}
     legacy_index = legacy_names(_read_json(legacy_path)) if legacy_path else {}
 
-    forms: dict[str, list[tuple[str, str, str]]] = {}
+    forms: dict[str, list[tuple[str, str, str, str]]] = {}
     surnames: dict[str, set[str]] = {}
+    surname_forms: dict[str, dict[str, tuple[str, str]]] = {}
     entries: dict[str, dict] = {}
     legacy_demoted: list[tuple[str, str]] = []
     skipped = {"no_label": 0, "gnd_404": 0, "short_org_token": 0, "duplicate_gid": 0}
@@ -262,7 +327,7 @@ def build_lexicon(
             corroborated, demoted = _split_legacy(legacy, label, cached)
             variants = _variants(cached, corroborated)
             if category == "person":
-                _add_person(forms, surnames, gid, label, variants)
+                _add_person(forms, surnames, surname_forms, gid, label, variants)
             elif category == "organisation":
                 _add_org(forms, gid, label, variants, skipped)
             else:
@@ -277,9 +342,11 @@ def build_lexicon(
         "forms": {form: tuple(sorted(owners)) for form, owners in forms.items()},
         "by_first_word": _first_word_index(forms),
         "surnames": {name: tuple(sorted(gids)) for name, gids in surnames.items()},
+        "surname_forms": surname_forms,
         "caps_forms": {form: tuple(sorted(owners)) for form, owners in caps_forms.items()},
         "caps_by_first_word": _first_word_index(caps_forms),
         "caps_surnames": _caps_surnames(surnames),
+        "caps_surname_forms": _caps_surname_forms(surname_forms),
         "legacy_demoted": tuple(legacy_demoted),
         "skipped": skipped,
         "sources": {
@@ -302,16 +369,16 @@ def _first_word_index(forms: dict[str, list]) -> dict[str, tuple[str, ...]]:
     }
 
 
-def _caps_index(forms: dict[str, list[tuple[str, str, str]]]) -> dict[str, list]:
+def _caps_index(forms: dict[str, list[tuple[str, str, str, str]]]) -> dict[str, list]:
     """All-caps projection of the person full names (at least two tokens)."""
-    caps: dict[str, list[tuple[str, str, str]]] = {}
+    caps: dict[str, list[tuple[str, str, str, str]]] = {}
     for form, owners in forms.items():
         upper = form.upper()
         if len(upper) != len(form) or len(form.split()) < 2:
             continue
-        for gid, category, rule in owners:
+        for gid, category, rule, source in owners:
             if category == "person" and rule in ("full-name", "variant-full-name"):
-                _add_form(caps, upper, gid, category, "caps-full-name")
+                _add_form(caps, upper, gid, category, "caps-full-name", source)
     return caps
 
 
@@ -322,6 +389,19 @@ def _caps_surnames(surnames: dict[str, set[str]]) -> dict[str, tuple[str, ...]]:
         if len(upper) == len(surname) and len(upper) > 1:
             caps.setdefault(upper, set()).update(gids)
     return {name: tuple(sorted(gids)) for name, gids in caps.items()}
+
+
+def _caps_surname_forms(
+    surname_forms: dict[str, dict[str, tuple[str, str]]],
+) -> dict[str, dict[str, tuple[str, str]]]:
+    """Provenance of the all-caps surnames, taken from the mixed-case entries."""
+    caps: dict[str, dict[str, tuple[str, str]]] = {}
+    for surname, origins in surname_forms.items():
+        upper = surname.upper()
+        if len(upper) == len(surname) and len(upper) > 1:
+            for gid, origin in origins.items():
+                caps.setdefault(upper, {}).setdefault(gid, origin)
+    return caps
 
 
 def _read_json(path: Path | str | None, required: bool = False) -> dict | None:
@@ -359,9 +439,18 @@ def _dedup(values) -> tuple[str, ...]:
     return tuple(seen)
 
 
-def _variants(cached: dict, extra: tuple[str, ...] = ()) -> tuple[str, ...]:
-    """Name forms beyond the headword, deduplicated and whitespace-normalized."""
-    return _dedup([cached.get("preferred_name"), *(cached.get("variant_names") or []), *extra])
+def _variants(cached: dict, extra: tuple[str, ...] = ()) -> tuple[tuple[str, str], ...]:
+    """(form, source) pairs beyond the headword; the first source of a form wins."""
+    seen: dict[str, str] = {}
+    for value in [cached.get("preferred_name"), *(cached.get("variant_names") or [])]:
+        form = _collapse(str(value or ""))
+        if form:
+            seen.setdefault(form, "cache-variant")
+    for value in extra:
+        form = _collapse(str(value or ""))
+        if form:
+            seen.setdefault(form, "legacy")
+    return tuple(seen.items())
 
 
 def normalize_gid(gid: str) -> str:
@@ -419,7 +508,7 @@ def _split_legacy(
 
 
 def _add_legacy_form(
-    forms: dict[str, list[tuple[str, str, str]]],
+    forms: dict[str, list[tuple[str, str, str, str]]],
     gid: str,
     category: str,
     form: str,
@@ -428,15 +517,16 @@ def _add_legacy_form(
     tokens = form.split()
     if len(tokens) == 1 and not _is_distinctive_token(tokens[0]):
         return
-    _add_form(forms, form, gid, category, "legacy-form")
+    _add_form(forms, form, gid, category, "legacy-form", "legacy")
 
 
 def _add_form(
-    forms: dict[str, list[tuple[str, str, str]]],
+    forms: dict[str, list[tuple[str, str, str, str]]],
     form: str,
     gid: str,
     category: str,
     rule: str,
+    source: str,
 ) -> None:
     form = _collapse(form)
     if not form or not _first_word(form):
@@ -444,7 +534,20 @@ def _add_form(
     owners = forms.setdefault(form, [])
     if any(owner[0] == gid for owner in owners):
         return
-    owners.append((gid, category, rule))
+    owners.append((gid, category, rule, source))
+
+
+def _register_surname(
+    surnames: dict[str, set[str]],
+    surname_forms: dict[str, dict[str, tuple[str, str]]],
+    surname: str,
+    gid: str,
+    form: str,
+    source: str,
+) -> None:
+    """Add a surname to the index and remember the form that put it there."""
+    surnames.setdefault(surname, set()).add(gid)
+    surname_forms.setdefault(surname, {}).setdefault(gid, (form, source))
 
 
 def _split_person_label(label: str) -> tuple[str, str]:
@@ -459,64 +562,80 @@ def _split_person_label(label: str) -> tuple[str, str]:
 
 
 def _add_person(
-    forms: dict[str, list[tuple[str, str, str]]],
+    forms: dict[str, list[tuple[str, str, str, str]]],
     surnames: dict[str, set[str]],
+    surname_forms: dict[str, dict[str, tuple[str, str]]],
     gid: str,
     label: str,
-    variants: tuple[str, ...],
+    variants: tuple[tuple[str, str], ...],
 ) -> None:
     surname, forenames = _split_person_label(label)
     if surname:
-        surnames.setdefault(surname, set()).add(gid)
+        _register_surname(surnames, surname_forms, surname, gid, surname, "surname-index")
     if surname and forenames:
-        _add_form(forms, f"{forenames} {surname}", gid, "person", "full-name")
-        _add_form(forms, label, gid, "person", "full-name")
+        _add_form(forms, f"{forenames} {surname}", gid, "person", "full-name", "headword")
+        _add_form(forms, label, gid, "person", "full-name", "headword")
         initial = forenames[0]
         if initial.isalpha():
-            _add_form(forms, f"{initial}. {surname}", gid, "person", "initial-surname")
-    for variant in variants:
-        _add_person_variant(forms, surnames, gid, variant)
+            _add_form(forms, f"{initial}. {surname}", gid, "person", "initial-surname",
+                      "headword")
+    for variant, source in variants:
+        _add_person_variant(forms, surnames, surname_forms, gid, variant, source)
 
 
 def _add_person_variant(
-    forms: dict[str, list[tuple[str, str, str]]],
+    forms: dict[str, list[tuple[str, str, str, str]]],
     surnames: dict[str, set[str]],
+    surname_forms: dict[str, dict[str, tuple[str, str]]],
     gid: str,
     variant: str,
+    source: str,
 ) -> None:
     if "," in variant:
         surname, forenames = _split_person_label(variant)
         if _is_distinctive_token(surname) and not _is_initials_only(surname):
-            surnames.setdefault(surname, set()).add(gid)
+            _register_surname(surnames, surname_forms, surname, gid, variant, source)
         if surname and forenames and not _is_initials_only(f"{forenames} {surname}"):
-            _add_form(forms, f"{forenames} {surname}", gid, "person", "variant-full-name")
-            _add_form(forms, variant, gid, "person", "variant-full-name")
+            _add_form(forms, f"{forenames} {surname}", gid, "person", "variant-full-name",
+                      source)
+            _add_form(forms, variant, gid, "person", "variant-full-name", source)
         return
     tokens = variant.split()
     if _is_initials_only(variant):
         return
     if len(tokens) >= 2:
-        _add_form(forms, variant, gid, "person", "variant-full-name")
+        _add_form(forms, variant, gid, "person", "variant-full-name", source)
     elif tokens and _is_distinctive_token(tokens[0]):
-        surnames.setdefault(tokens[0], set()).add(gid)
+        _register_surname(surnames, surname_forms, tokens[0], gid, variant, source)
 
 
 def _add_org(
-    forms: dict[str, list[tuple[str, str, str]]],
+    forms: dict[str, list[tuple[str, str, str, str]]],
     gid: str,
     label: str,
-    variants: tuple[str, ...],
+    variants: tuple[tuple[str, str], ...],
     skipped: dict[str, int],
 ) -> None:
-    for index, form in enumerate((label, *variants)):
-        rule = "org-name" if index == 0 else "org-variant"
+    for rule, form, source in _labelled_forms(label, variants, "org-name", "org-variant"):
         tokens = form.split()
         if len(tokens) >= 2:
-            _add_form(forms, form, gid, "organisation", rule)
+            _add_form(forms, form, gid, "organisation", rule, source)
         elif tokens and _is_distinctive_token(tokens[0]):
-            _add_form(forms, tokens[0], gid, "organisation", "org-token")
+            _add_form(forms, tokens[0], gid, "organisation", "org-token", source)
         else:
             skipped["short_org_token"] += 1
+
+
+def _labelled_forms(
+    label: str,
+    variants: tuple[tuple[str, str], ...],
+    head_rule: str,
+    variant_rule: str,
+) -> Iterator[tuple[str, str, str]]:
+    """(rule, form, source) for the headword and every variant of an org or work."""
+    yield head_rule, label, "headword"
+    for form, source in variants:
+        yield variant_rule, form, source
 
 
 def _is_distinctive_token(token: str) -> bool:
@@ -539,18 +658,17 @@ def _is_initials_only(form: str) -> bool:
 
 
 def _add_work(
-    forms: dict[str, list[tuple[str, str, str]]],
+    forms: dict[str, list[tuple[str, str, str, str]]],
     gid: str,
     label: str,
-    variants: tuple[str, ...],
+    variants: tuple[tuple[str, str], ...],
 ) -> None:
-    for index, form in enumerate((label, *variants)):
-        rule = "work-title" if index == 0 else "work-variant"
+    for rule, form, source in _labelled_forms(label, variants, "work-title", "work-variant"):
         tokens = form.split()
         if len(tokens) >= 2:
-            _add_form(forms, form, gid, "work", rule)
+            _add_form(forms, form, gid, "work", rule, source)
         elif tokens and len(tokens[0]) >= MIN_SHORT_TITLE_LEN:
-            _add_form(forms, tokens[0], gid, "work", "short-title")
+            _add_form(forms, tokens[0], gid, "work", "short-title", source)
 
 
 # --- zones ------------------------------------------------------------------------
@@ -563,6 +681,7 @@ def _scan_zones(xml: str) -> _Zones:
     plain_bibl: list[Span] = []
     speakers: list[Span] = []
     paragraphs: list[Span] = []
+    emphasis: list[Span] = []
     stack: list[tuple[str, dict[str, str], int]] = []
 
     for match in _TOKEN_RE.finditer(xml):
@@ -581,7 +700,7 @@ def _scan_zones(xml: str) -> _Zones:
             del stack[index:]
             _record_zone(
                 open_name, attrs, content_start, match.start(),
-                text, excluded, plain_bibl, speakers, paragraphs,
+                text, excluded, plain_bibl, speakers, paragraphs, emphasis,
             )
             continue
         if token.endswith("/>"):
@@ -596,6 +715,7 @@ def _scan_zones(xml: str) -> _Zones:
         excluded=_merge(excluded),
         plain_bibl=_merge(plain_bibl),
         speakers=tuple(sorted(speakers)),
+        emphasis=tuple(sorted(emphasis)),
     )
 
 
@@ -609,6 +729,7 @@ def _record_zone(
     plain_bibl: list[Span],
     speakers: list[Span],
     paragraphs: list[Span],
+    emphasis: list[Span],
 ) -> None:
     if start > end:
         return
@@ -624,6 +745,8 @@ def _record_zone(
         speakers.append((start, end))
     elif name == "p":
         paragraphs.append((start, end))
+    elif name == "hi":
+        emphasis.append((start, end))
 
 
 def _apparatus_zones(
@@ -816,7 +939,7 @@ def _scan(
     norm: _Norm,
     zones: _Zones,
     lexicon: dict,
-    speaker_hits: dict[int, tuple],
+    speaker_hits: dict[int, _Hit],
     seed_anchors: set[str] | None = None,
     lowercase_words: frozenset[str] = frozenset(),
     author_gids: frozenset[str] = frozenset(),
@@ -834,11 +957,13 @@ def _scan(
         if hit is None:
             pos = _word_end(text, pos)
             continue
-        if hit[4].startswith("caps-") and hit[2] in author_gids:
-            pos = max(hit[1], pos + 1)
+        if hit.rule.startswith("caps-") and hit.gid in author_gids:
+            pos = max(hit.end, pos + 1)
             continue
-        if hit[4] in _SUSPECT_RULES and _is_suspect(xml, norm, hit, lexicon, lowercase_words):
-            hit = (*hit[:4], hit[4] + SUSPECT_SUFFIX, 2)
+        if _base_rule(hit.rule) in _SUSPECT_RULES and _is_suspect(
+            xml, norm, hit, lexicon, lowercase_words
+        ):
+            hit = replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
         candidate, resume = _build_candidate(xml, norm, zones, hit)
         if candidate is not None:
             out.append(candidate)
@@ -848,18 +973,23 @@ def _scan(
     return out
 
 
+def _base_rule(rule: str) -> str:
+    """The rule without its suffixes (:ambiguous, :suspect, :in-plain-bibl)."""
+    return rule.split(":", 1)[0]
+
+
 # --- homograph suspicion ----------------------------------------------------------
 
 
 def _is_suspect(
     xml: str,
     norm: _Norm,
-    hit: tuple,
+    hit: _Hit,
     lexicon: dict,
     lowercase_words: frozenset[str],
 ) -> bool:
     """Deterministic signals that a surname hit is a homograph, not a mention."""
-    n_start, n_end = hit[0], hit[1]
+    n_start, n_end = hit.start, hit.end
     text = norm.text
     word = text[n_start:n_end]
     folded = word.casefold()
@@ -868,33 +998,37 @@ def _is_suspect(
     raw_start, raw_end = norm.starts[n_start], norm.ends[n_end - 1]
     if xml[max(raw_start - 1, 0):raw_start] == "-" or xml[raw_end:raw_end + 1] == "-":
         return True
-    if _unknown_capital_before(text, n_start, lexicon):
+    if _unknown_capital_before(text, n_start, n_end, lexicon):
         return True
     # A genitive name is followed by its head noun, and German capitalizes every
     # noun, so the trailing signal would fire on every correct genitive mention.
     genitive = word.endswith("s") and word[:-1] in lexicon["surnames"]
-    return not genitive and _unknown_capital_after(text, n_end, lexicon)
+    return not genitive and _unknown_capital_after(text, n_start, n_end, lexicon)
 
 
-def _unknown_capital_before(text: str, pos: int, lexicon: dict) -> bool:
-    if pos == 0 or text[pos - 1] != " ":
+def _unknown_capital_before(text: str, n_start: int, n_end: int, lexicon: dict) -> bool:
+    if n_start == 0 or text[n_start - 1] != " ":
         return False
-    end = pos - 1
+    end = n_start - 1
     start = end
     while start > 0 and _is_word(text[start - 1]):
         start -= 1
     if start == end or _starts_sentence(text, start):
         return False
     word = text[start:end]
-    return word.casefold() not in HONORIFICS and _is_unknown_capital(word, lexicon)
-
-
-def _unknown_capital_after(text: str, pos: int, lexicon: dict) -> bool:
-    if text[pos:pos + 1] != " ":
+    if word.casefold() in HONORIFICS or not word[:1].isupper():
         return False
-    start = pos + 1
+    return not _is_known_form(text[start:n_end], lexicon)
+
+
+def _unknown_capital_after(text: str, n_start: int, n_end: int, lexicon: dict) -> bool:
+    if text[n_end:n_end + 1] != " ":
+        return False
+    start = n_end + 1
     end = _word_end(text, start)
-    return start < end and _is_unknown_capital(text[start:end], lexicon)
+    if start >= end or not text[start:start + 1].isupper():
+        return False
+    return not _is_known_form(text[n_start:end], lexicon)
 
 
 def _starts_sentence(text: str, pos: int) -> bool:
@@ -905,16 +1039,18 @@ def _starts_sentence(text: str, pos: int) -> bool:
     return index < 0 or text[index] in _SENTENCE_END
 
 
-def _is_unknown_capital(word: str, lexicon: dict) -> bool:
-    if not word[:1].isupper():
-        return False
-    return not any(
-        word in lexicon[index]
-        for index in ("by_first_word", "surnames", "caps_by_first_word", "caps_surnames")
-    )
+def _is_known_form(pair: str, lexicon: dict) -> bool:
+    """True when the two-word span is itself a lexicon form.
+
+    Only the pair suppresses the neighbour signal. A neighbour that merely starts some
+    listed form is no corroboration: every listed forename ("Hans") would otherwise
+    clear the homograph next to it (the "Hans Mayer" finding of the frontend
+    evaluation, where the surname came from the GND variant "Mayer, Gertrud").
+    """
+    return pair in lexicon["forms"] or pair in lexicon["caps_forms"]
 
 
-def _match_at(text: str, pos: int, lexicon: dict, anchored: set[str]) -> tuple | None:
+def _match_at(text: str, pos: int, lexicon: dict, anchored: set[str]) -> _Hit | None:
     """Longest lexicon form at `pos`, then the caps forms, else the surname fallback."""
     word = text[pos:_word_end(text, pos)]
     for form in lexicon["by_first_word"].get(word, ()):
@@ -923,28 +1059,47 @@ def _match_at(text: str, pos: int, lexicon: dict, anchored: set[str]) -> tuple |
             continue
         end, kind = result
         owners = lexicon["forms"][form]
-        gid, category, rule = owners[0]
+        gid, category, rule, source = owners[0]
+        # A one-word title such as "Nietzsche" can also be a listed surname; reporting
+        # the title alone would hide the person reading, so both bearers are named.
+        bearers = _bearers(owners, lexicon["surnames"].get(form, ()))
         if kind == "adjective":
-            return (pos, end, gid, category, "adjective-form", 2)
-        if len(owners) > 1 or _shadows_a_surname(form, owners, lexicon):
-            return (pos, end, gid, category, rule + AMBIGUOUS_SUFFIX, 2)
-        return (pos, end, gid, category, rule, TIER_BY_RULE[rule])
+            rule, tier = "adjective-form", 2
+        else:
+            tier = TIER_BY_RULE[rule]
+        return _hit(pos, end, gid, category, rule, tier, bearers, form, source)
     caps = _caps_at(text, pos, word, lexicon)
     if caps is not None:
         return caps
     return _surname_at(text, pos, word, lexicon, anchored)
 
 
-def _shadows_a_surname(form: str, owners: tuple, lexicon: dict) -> bool:
-    """True when a form (a one-word title such as "Nietzsche") is also a listed surname.
+def _bearers(owners: tuple, shadowed: tuple[str, ...] = ()) -> tuple[str, ...]:
+    """Every listed id a form belongs to, deduplicated and in stable (sorted) order."""
+    return tuple(sorted({owner[0] for owner in owners} | set(shadowed)))
 
-    Reporting only the form hit would hide the person reading, so the candidate goes
-    to the judge stage with the AMBIGUOUS suffix; both readings stay reconstructible
-    from `forms` and `surnames`.
+
+def _hit(
+    start: int,
+    end: int,
+    gid: str,
+    category: str,
+    rule: str,
+    tier: int,
+    bearers: tuple[str, ...],
+    matched_form: str,
+    source: str,
+) -> _Hit:
+    """Build a hit; several bearers make it ambiguous, which is always tier 2.
+
+    Suffix order is fixed: base rule, then ":ambiguous" (a property of the lexicon),
+    then ":suspect" (a property of the context), then ":in-plain-bibl" (a property of
+    the position). Rules that already name the ambiguity in their base keep it.
     """
-    shadowed = lexicon["surnames"].get(form, ())
-    known = {owner[0] for owner in owners}
-    return any(gid not in known for gid in shadowed)
+    if len(bearers) <= 1:
+        return _Hit(start, end, gid, category, rule, tier, (), matched_form, source)
+    return _Hit(start, end, gid, category, rule + AMBIGUOUS_SUFFIX, 2, bearers,
+                matched_form, source)
 
 
 def _try_form(text: str, pos: int, form: str) -> tuple[int, str] | None:
@@ -967,7 +1122,7 @@ def _extend_or_reject(text: str, end: int) -> tuple[int, str] | None:
     return None if _is_word_at(text, end) else (end, "plain")
 
 
-def _caps_at(text: str, pos: int, word: str, lexicon: dict) -> tuple | None:
+def _caps_at(text: str, pos: int, word: str, lexicon: dict) -> _Hit | None:
     """All-caps full name of a person; the caps index holds the uppercased forms."""
     if len(word) < 2 or not word.isupper():
         return None
@@ -976,10 +1131,9 @@ def _caps_at(text: str, pos: int, word: str, lexicon: dict) -> tuple | None:
         if text[pos:end] != form or _is_word_at(text, end):
             continue
         owners = lexicon["caps_forms"][form]
-        gid, category, rule = owners[0]
-        if len(owners) > 1:
-            return (pos, end, gid, category, rule + AMBIGUOUS_SUFFIX, 2)
-        return (pos, end, gid, category, rule, TIER_BY_RULE[rule])
+        gid, category, rule, source = owners[0]
+        return _hit(pos, end, gid, category, rule, TIER_BY_RULE[rule],
+                    _bearers(owners), form, source)
     return None
 
 
@@ -989,7 +1143,7 @@ def _surname_at(
     word: str,
     lexicon: dict,
     anchored: set[str],
-) -> tuple | None:
+) -> _Hit | None:
     surnames = lexicon["surnames"]
     end = pos + len(word)
     if word in surnames:
@@ -1000,23 +1154,50 @@ def _surname_at(
         return _derived_surname_at(text, pos, word, lexicon)
     gids = surnames[key]
     in_document = [gid for gid in gids if gid in anchored]
+    # An anchor decides among the bearers, so those two rules keep their reported id
+    # without the ambiguity suffix; the alternatives stay visible either way.
     if len(in_document) == 1:
-        return (pos, end, in_document[0], "person", "anchored-surname", 1)
+        return _surname_hit(pos, end, in_document[0], "anchored-surname", 1, key, gids, lexicon)
     if len(in_document) > 1:
-        return (pos, end, in_document[0], "person", "ambiguous-surname", 2)
-    return (pos, end, gids[0], "person", "bare-surname", 2)
+        return _surname_hit(pos, end, in_document[0], "ambiguous-surname", 2, key, gids, lexicon)
+    return _hit(pos, end, gids[0], "person", "bare-surname", 2, gids,
+                *_surname_origin(lexicon, "surname_forms", key, gids[0]))
 
 
-def _derived_surname_at(text: str, pos: int, word: str, lexicon: dict) -> tuple | None:
+def _surname_hit(
+    pos: int,
+    end: int,
+    gid: str,
+    rule: str,
+    tier: int,
+    key: str,
+    gids: tuple[str, ...],
+    lexicon: dict,
+) -> _Hit:
+    """Surname hit whose id the anchor rule already decided (no ambiguity suffix)."""
+    matched_form, source = _surname_origin(lexicon, "surname_forms", key, gid)
+    return _Hit(pos, end, gid, "person", rule, tier,
+                gids if len(gids) > 1 else (), matched_form, source)
+
+
+def _surname_origin(lexicon: dict, index: str, key: str, gid: str) -> tuple[str, str]:
+    """(form, source) that put a surname into the index; the key itself is the fallback."""
+    return lexicon.get(index, {}).get(key, {}).get(gid, (key, "surname-index"))
+
+
+def _derived_surname_at(text: str, pos: int, word: str, lexicon: dict) -> _Hit | None:
     """Adjective derivation or all-caps writing of a listed surname; both tier 2."""
     end = pos + len(word)
     stem = _adjective_stem(word, lexicon["surnames"])
     if stem is not None:
-        return (pos, end, lexicon["surnames"][stem][0], "person", "adjective-form", 2)
+        gids = lexicon["surnames"][stem]
+        return _hit(pos, end, gids[0], "person", "adjective-form", 2, gids,
+                    *_surname_origin(lexicon, "surname_forms", stem, gids[0]))
     if len(word) > 1 and word.isupper():
         gids = lexicon["caps_surnames"].get(word)
         if gids:
-            return (pos, end, gids[0], "person", "caps-surname", 2)
+            return _hit(pos, end, gids[0], "person", "caps-surname", 2, gids,
+                        *_surname_origin(lexicon, "caps_surname_forms", word, gids[0]))
     return None
 
 
@@ -1027,9 +1208,9 @@ def _adjective_stem(word: str, surnames: dict[str, tuple[str, ...]]) -> str | No
     return None
 
 
-def _speaker_hits(norm: _Norm, zones: _Zones, lexicon: dict) -> dict[int, tuple]:
+def _speaker_hits(norm: _Norm, zones: _Zones, lexicon: dict) -> dict[int, _Hit]:
     """Speaker slots whose verbatim text is a full name or a known surname."""
-    hits: dict[int, tuple] = {}
+    hits: dict[int, _Hit] = {}
     for raw_start, raw_end in zones.speakers:
         start = bisect_left(norm.starts, raw_start)
         end = bisect_left(norm.starts, raw_end)
@@ -1044,29 +1225,28 @@ def _speaker_hits(norm: _Norm, zones: _Zones, lexicon: dict) -> dict[int, tuple]
             continue
         persons = [owner for owner in lexicon["forms"].get(label, ()) if owner[1] == "person"]
         if persons:
-            hits[start] = (start, end, persons[0][0], "person", "speaker", _tier(len(persons)))
+            hits[start] = _hit(start, end, persons[0][0], "person", "speaker", 1,
+                               _bearers(tuple(persons)), label, persons[0][3])
             continue
         gids = lexicon["surnames"].get(label)
         if gids:
-            hits[start] = (start, end, gids[0], "person", "speaker", _tier(len(gids)))
+            hits[start] = _hit(start, end, gids[0], "person", "speaker", 1, gids,
+                               *_surname_origin(lexicon, "surname_forms", label, gids[0]))
     return hits
-
-
-def _tier(owner_count: int) -> int:
-    return 1 if owner_count == 1 else 2
 
 
 def _build_candidate(
     xml: str,
     norm: _Norm,
     zones: _Zones,
-    hit: tuple,
+    hit: _Hit,
 ) -> tuple[dict | None, int]:
     """Map a normalized hit back to raw offsets and apply the zone downgrades."""
-    n_start, n_end, gid, category, rule, tier = hit
+    n_start, n_end = hit.start, hit.end
     raw_start = norm.starts[n_start]
     raw_end = norm.ends[n_end - 1]
     surface = xml[raw_start:raw_end]
+    rule, tier = hit.rule, hit.tier
     first_part = _first_text_part(surface)
     if first_part is not None:
         if not first_part:
@@ -1078,16 +1258,58 @@ def _build_candidate(
         rule += PLAIN_BIBL_SUFFIX
         tier = 2
     candidate = {
-        "gid": gid,
-        "category": category,
+        "gid": hit.gid,
+        "category": hit.category,
         "surface": surface,
         "start": raw_start,
         "end": raw_end,
         "tier": tier,
         "rule": rule,
-        "context": _context(norm.text, n_start, n_end),
+        "alternatives": list(hit.alternatives),
+        "matched_form": hit.matched_form,
+        "form_source": hit.form_source,
     }
+    if _base_rule(rule) == "short-title":
+        candidate["evidence"] = _title_evidence(norm, zones, hit, raw_start, raw_end)
+    candidate["context"] = _context(norm.text, n_start, n_end)
     return candidate, max(bisect_right(norm.ends, raw_end), n_start + 1)
+
+
+def _title_evidence(
+    norm: _Norm,
+    zones: _Zones,
+    hit: _Hit,
+    raw_start: int,
+    raw_end: int,
+) -> str:
+    """Typographic pre-sorting of a one-word work title.
+
+    A single word is a title only by its setting, so three signals count as evidence:
+    the span sits completely inside an `hi` element, quotation marks or guillemets
+    enclose it directly, or a possessive stands right in front of it. Everything else
+    is reported without evidence and stays a candidate for the judge stage; the class
+    is not dropped, the measurement decides that.
+    """
+    text = norm.text
+    start, end = hit.start, hit.end
+    if any(zone[0] <= raw_start and raw_end <= zone[1] for zone in zones.emphasis):
+        return EVIDENCE_TYPOGRAPHIC
+    before = text[start - 1:start] if start else ""
+    after = text[end:end + 1]
+    if before in QUOTE_CHARS and after in QUOTE_CHARS:
+        return EVIDENCE_TYPOGRAPHIC
+    return EVIDENCE_TYPOGRAPHIC if _follows_possessive(text, start) else EVIDENCE_NONE
+
+
+def _follows_possessive(text: str, pos: int) -> bool:
+    """True when the word directly in front of `pos` is a possessive pronoun."""
+    if pos == 0 or text[pos - 1] != " ":
+        return False
+    end = pos - 1
+    start = end
+    while start > 0 and _is_word(text[start - 1]):
+        start -= 1
+    return start < end and text[start:end].casefold() in POSSESSIVES
 
 
 def _first_text_part(surface: str) -> str | None:

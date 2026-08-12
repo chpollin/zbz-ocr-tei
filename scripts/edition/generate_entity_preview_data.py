@@ -55,7 +55,10 @@ LOBID_URL = "https://lobid.org/gnd/{gid}"
 GENERATOR = "scripts/edition/generate_entity_preview_data.py"
 # Fields copied from the pilot report; offsets and tier stay there. Each entry additionally
 # carries "text" (the surface as the renderer shows it) and "occurrence".
-WORKLIST_FIELDS = ("gid", "category", "surface", "rule", "context")
+WORKLIST_FIELDS = ("gid", "category", "surface", "rule", "alternatives", "matched_form",
+                   "form_source", "context")
+# Carried only where the matcher reports it (one-word work titles).
+OPTIONAL_WORKLIST_FIELDS = ("evidence",)
 
 _TAG_RE = re.compile(r"<[^>]*>")
 
@@ -172,6 +175,7 @@ def worklist_pages(doc_result: dict, preview_xml: str) -> tuple[dict[str, list[d
         page = page_of(pb_starts, start)
         page_start = pb_starts[page - 1] if pb_starts else 0
         entry = {field: cand.get(field) for field in WORKLIST_FIELDS}
+        entry.update({f: cand[f] for f in OPTIONAL_WORKLIST_FIELDS if f in cand})
         entry["text"] = plain_text(cand.get("surface") or "")
         entry["occurrence"] = occurrence_in_page(preview_xml, page_start, start, entry["text"])
         pages.setdefault(page, []).append(entry)

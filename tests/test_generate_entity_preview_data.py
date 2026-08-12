@@ -61,11 +61,12 @@ _WRAPPER_RE = re.compile(r"</?(?:persName|orgName|bibl)(?: ref=\"GND:[^\"]*\")?>
 
 
 def _candidate(source: str, surface: str, gid: str, category: str, rule: str, tier: int,
-               nth: int = 1) -> dict:
+               nth: int = 1, alternatives=(), matched_form=None,
+               form_source: str = "headword", evidence=None) -> dict:
     start = -1
     for _ in range(nth):
         start = source.index(surface, start + 1)
-    return {
+    candidate = {
         "gid": gid,
         "category": category,
         "surface": surface,
@@ -73,12 +74,22 @@ def _candidate(source: str, surface: str, gid: str, category: str, rule: str, ti
         "end": start + len(surface),
         "tier": tier,
         "rule": rule,
+        "alternatives": list(alternatives),
+        "matched_form": surface if matched_form is None else matched_form,
+        "form_source": form_source,
         "context": f"... {surface} ...",
     }
+    if evidence is not None:
+        candidate["evidence"] = evidence
+    return candidate
 
 
 def _doc_result(source: str = SOURCE) -> dict:
     candidates = [_candidate(source, *m) for m in MENTIONS]
+    for candidate in candidates:
+        # a bare surname comes from the surname index, not from a form of its own
+        if candidate["rule"] == "bare-surname":
+            candidate["form_source"] = "surname-index"
     return {
         "doc": DOC_ID,
         "wrapped": [c for c in candidates if c["tier"] == 1],
@@ -170,6 +181,36 @@ def test_worklist_entries_carry_exactly_the_viewer_fields():
     assert tuple(entry) == WORKLIST_FIELDS + ("text", "occurrence")
     assert entry["gid"] == "118522175"
     assert entry["rule"] == "bare-surname"
+    assert entry["alternatives"] == []
+    assert entry["matched_form"] == "Corneille"
+    assert entry["form_source"] == "surname-index"
+
+
+def test_worklist_entry_carries_the_alternatives_and_the_variant_it_came_from():
+    """Ambiguity and provenance must reach the popover, not stop at the report."""
+    source = SOURCE.replace("Corneille", "Jaspers")
+    cand = _candidate(source, "Jaspers", "117085391", "person", "bare-surname:ambiguous", 2,
+                      alternatives=("117085391", "118557106"),
+                      matched_form="Mayer, Gertrud", form_source="cache-variant")
+    pages, stale = worklist_pages({"doc": DOC_ID, "wrapped": [], "worklist": [cand]}, source)
+    entry = pages["1"][0]
+    assert stale == 0
+    assert entry["alternatives"] == ["117085391", "118557106"]
+    assert entry["matched_form"] == "Mayer, Gertrud"
+    assert entry["form_source"] == "cache-variant"
+
+
+def test_worklist_entry_of_a_one_word_title_carries_its_evidence():
+    source = SOURCE.replace("Corneille", "Bibel")
+    cand = _candidate(source, "Bibel", "4006406-2", "work", "short-title", 2,
+                      evidence="none")
+    pages, _ = worklist_pages({"doc": DOC_ID, "wrapped": [], "worklist": [cand]}, source)
+    assert pages["1"][0]["evidence"] == "none"
+
+
+def test_worklist_entry_without_evidence_omits_the_field():
+    pages, _ = worklist_pages(_doc_result(), _preview_xml())
+    assert "evidence" not in pages["1"][0]
 
 
 # --- Inline-Verortung (occurrence) ----------------------------------------------------

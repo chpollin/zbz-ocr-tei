@@ -62,8 +62,12 @@ HYPHENS = frozenset("-\u2010\u2011")
 # ---------------------------------------------------------------------------
 
 def _record(doc_id: str, cand: dict) -> dict:
-    """Candidate plus its document, in the documented key order."""
-    return {
+    """Candidate plus its document, in the documented key order.
+
+    `evidence` sits before the context and only where the matcher reports it (one-word
+    work titles), so the snapshot carries the typographic pre-sorting it is measured on.
+    """
+    record = {
         "doc": doc_id,
         "gid": cand["gid"],
         "category": cand["category"],
@@ -72,8 +76,14 @@ def _record(doc_id: str, cand: dict) -> dict:
         "end": cand["end"],
         "tier": cand["tier"],
         "rule": cand["rule"],
-        "context": cand["context"],
+        "alternatives": cand.get("alternatives", []),
+        "matched_form": cand.get("matched_form", ""),
+        "form_source": cand.get("form_source", ""),
     }
+    if "evidence" in cand:
+        record["evidence"] = cand["evidence"]
+    record["context"] = cand["context"]
+    return record
 
 
 def _violation(record: dict, **extra) -> dict:
@@ -174,8 +184,12 @@ def build_scan_report(records: list[dict], by_doc: dict, violations: dict,
             "tier1": len(tier1),
             "tier2": sum(1 for r in ordered if r["tier"] == 2),
             "candidates": len(ordered),
+            "ambiguous": sum(1 for r in ordered if r.get("alternatives")),
         },
         "by_rule": _sorted_counts(Counter(r["rule"] for r in ordered)),
+        "by_evidence": _sorted_counts(
+            Counter(r["evidence"] for r in ordered if r.get("evidence"))
+        ),
         "by_doc": {doc: by_doc[doc] for doc in sorted(by_doc)},
         "by_entity_top": [[gid, labels.get(gid, ""), count] for gid, count in top],
         "candidates": ordered,
@@ -191,11 +205,16 @@ def _ascii(text) -> str:
 def _print_summary(report: dict) -> None:
     totals = report["totals"]
     print(f"\n  Documents: {len(report['by_doc'])}  candidates: {totals['candidates']}  "
-          f"(tier 1: {totals['tier1']}, tier 2: {totals['tier2']})")
+          f"(tier 1: {totals['tier1']}, tier 2: {totals['tier2']}, "
+          f"several bearers: {totals['ambiguous']})")
 
     print("\n  By rule:")
     for rule, count in report["by_rule"].items():
         print(f"    {_ascii(rule):30} {count}")
+
+    print("\n  One-word titles by typographic evidence:")
+    for evidence, count in (report["by_evidence"] or {"(none reported)": 0}).items():
+        print(f"    {_ascii(evidence):30} {count}")
 
     print("\n  Top entities (tier 1):")
     for gid, label, count in report["by_entity_top"]:

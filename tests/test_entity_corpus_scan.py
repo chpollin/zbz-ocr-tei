@@ -49,8 +49,9 @@ _ENTITIES = {
 
 
 def _rec(doc="100", gid="TEST-0001", surface="Karl Jaspers", start=0, tier=1,
-         rule="full-name", category="person", context=None):
-    return {
+         rule="full-name", category="person", context=None, alternatives=(),
+         matched_form=None, form_source="headword", evidence=None):
+    record = {
         "doc": doc,
         "gid": gid,
         "category": category,
@@ -59,8 +60,14 @@ def _rec(doc="100", gid="TEST-0001", surface="Karl Jaspers", start=0, tier=1,
         "end": start + len(surface),
         "tier": tier,
         "rule": rule,
+        "alternatives": list(alternatives),
+        "matched_form": surface if matched_form is None else matched_form,
+        "form_source": form_source,
         "context": surface if context is None else context,
     }
+    if evidence is not None:
+        record["evidence"] = evidence
+    return record
 
 
 def _fake_matcher(xml_string, lexicon):
@@ -89,9 +96,33 @@ def _write_entities(tmp_path):
 def test_record_carries_the_documented_keys_in_order():
     records, _ = scan_document("100", _MINI, {}, _fake_matcher)
     assert [list(r) for r in records] == [
-        ["doc", "gid", "category", "surface", "start", "end", "tier", "rule", "context"]
+        ["doc", "gid", "category", "surface", "start", "end", "tier", "rule",
+         "alternatives", "matched_form", "form_source", "context"]
     ] * 2
     assert {r["doc"] for r in records} == {"100"}
+
+
+def test_record_carries_the_evidence_of_a_one_word_title():
+    def matcher(xml_string, lexicon):
+        return [_drop_doc(_rec(gid="TEST-0003", surface="Hersch", tier=2, category="work",
+                               rule="short-title", evidence="none",
+                               start=xml_string.index("Hersch")))]
+
+    records, _ = scan_document("100", _MINI, {}, matcher)
+    assert records[0]["evidence"] == "none"
+    assert list(records[0])[-1] == "context"
+
+
+def test_summary_counts_the_typographic_evidence_and_the_ambiguities():
+    records = [
+        _rec(surface="Bibel", category="work", tier=2, rule="short-title", evidence="none"),
+        _rec(surface="Nietzsche", category="work", tier=2, rule="short-title:ambiguous",
+             alternatives=("TEST-0001", "TEST-0002"), evidence="typographic", start=30),
+        _rec(start=60),
+    ]
+    report = build_scan_report(records, {}, _no_violations(), {}, _sources())
+    assert report["by_evidence"] == {"none": 1, "typographic": 1}
+    assert report["totals"]["ambiguous"] == 1
 
 
 def test_candidates_are_sorted_by_doc_and_start():
@@ -173,7 +204,7 @@ def test_report_totals_by_rule_and_by_doc():
     by_doc = {"290": {"tier1": 1, "tier2": 0}, "100": {"tier1": 1, "tier2": 1}}
     report = build_scan_report(records, by_doc, _no_violations(),
                                {"TEST-0001": "Jaspers, Karl"}, _sources())
-    assert report["totals"] == {"tier1": 2, "tier2": 1, "candidates": 3}
+    assert report["totals"] == {"tier1": 2, "tier2": 1, "candidates": 3, "ambiguous": 0}
     assert report["by_rule"] == {"full-name": 2, "bare-surname": 1}
     assert list(report["by_doc"]) == ["100", "290"]
     assert report["by_doc"]["100"] == {"tier1": 1, "tier2": 1}
@@ -221,7 +252,7 @@ def test_run_scan_aggregates_over_documents(tmp_path):
         (tmp_path / f"{doc}_final.xml").write_text(_MINI, encoding="utf-8")
     lexicon = {"entries": {"TEST-0001": {"label": "Jaspers, Karl"}}}
     report = run_scan(resolve_docs(tmp_path), lexicon, _fake_matcher, _sources())
-    assert report["totals"] == {"tier1": 2, "tier2": 2, "candidates": 4}
+    assert report["totals"] == {"tier1": 2, "tier2": 2, "candidates": 4, "ambiguous": 0}
     assert list(report["by_doc"]) == ["100", "290"]
     assert report["by_entity_top"][0] == ["TEST-0001", "Jaspers, Karl", 2]
 

@@ -159,6 +159,21 @@ def test_build_lexicon_joins_legacy_index_over_normalized_ids(tmp_path):
     assert lexicon["forms"]["Psychopathologie"][0][2] == "short-title"
 
 
+def test_forms_carry_their_provenance(tmp_path):
+    lexicon = _build(tmp_path, persons=PERSONS, orgs=ORGS, works=WORKS, cache=CACHE)
+    assert lexicon["forms"]["Karl Jaspers"][0] == ("118557106", "person", "full-name", "headword")
+    assert lexicon["forms"]["Karl Theodor Jaspers"][0][3] == "cache-variant"
+    assert lexicon["forms"]["UNESCO"][0][3] == "headword"
+
+
+def test_surname_index_carries_the_form_that_registered_it(tmp_path):
+    # ids and variants from data/entities/all_entities.json plus its GND cache
+    cache = {"117085391": _cache_entry("Jaspers, Gertrud", ("Mayer, Gertrud",))}
+    lexicon = _build(tmp_path, persons=[_person("117085391", "Jaspers, Gertrud")], cache=cache)
+    assert lexicon["surname_forms"]["Jaspers"]["117085391"] == ("Jaspers", "surname-index")
+    assert lexicon["surname_forms"]["Mayer"]["117085391"] == ("Mayer, Gertrud", "cache-variant")
+
+
 def test_build_lexicon_guards_variant_surnames(tmp_path):
     # lobid carries transliteration fragments; neither "Ma" nor "Ma, Kesi" may become
     # a surname, while the multiword variant form itself stays usable
@@ -407,8 +422,9 @@ def test_speaker_slot_with_unique_surname(lex):
 def test_speaker_slot_with_ambiguous_surname_is_tier2(lex):
     xml = _tei("<sp><speaker>Jaspers:</speaker><p>Ja.</p></sp>")
     cands = em.find_candidates(xml, lex)
-    assert cands[0]["rule"] == "speaker"
+    assert cands[0]["rule"] == "speaker:ambiguous"
     assert cands[0]["tier"] == 2
+    assert cands[0]["alternatives"] == ["118557106", "118557107"]
 
 
 def test_empty_speaker_stays_empty(lex):
@@ -465,6 +481,7 @@ COMPOSITE = _tei(
     '<div n="1" type="speech">'
     '<p>Karl<lb n="N001"/>Jaspers und Jas<lb break="no" n="N002"/>pers, dazu Herschs Werk.</p>'
     "<p>Jeanne Hersch, K. Jaspers, d'Alembert, Die Wahl, Platon.</p>"
+    "<p>In der Bibel steht es.</p>"
     '<p>An der UNESCO, in <hi rendition="#i">Allgemeine Psychopathologie</hi>.</p>'
     "<note place=\"foot\" n=\"1\">Vgl. Jaspers&#8217; Werk.</note>"
     "<sp><speaker>Hersch:</speaker><p>Die Freudschen Thesen.</p></sp>"
@@ -502,13 +519,33 @@ def test_surface_carries_only_lb_markup(lex):
             assert tag.startswith("<lb")
 
 
+CANDIDATE_KEYS = {
+    "gid", "category", "surface", "start", "end", "tier", "rule",
+    "alternatives", "matched_form", "form_source", "context",
+}
+
+
 def test_candidate_keys_are_exactly_the_contract(lex):
-    expected = {"gid", "category", "surface", "start", "end", "tier", "rule", "context"}
-    for cand in em.find_candidates(COMPOSITE, lex):
-        assert set(cand) == expected
+    cands = em.find_candidates(COMPOSITE, lex)
+    assert any(c["rule"].split(":")[0] == "short-title" for c in cands)
+    for cand in cands:
+        # evidence is carried by the one-word work titles only (typography pre-sorting)
+        extra = {"evidence"} if cand["rule"].split(":")[0] == "short-title" else set()
+        assert set(cand) == CANDIDATE_KEYS | extra
         assert cand["tier"] in (1, 2)
         assert cand["category"] in ("person", "organisation", "work")
         assert cand["context"]
+        assert isinstance(cand["alternatives"], list)
+        assert cand["matched_form"]
+        assert cand["form_source"] in em.FORM_SOURCES
+
+
+def test_alternatives_are_empty_or_name_at_least_two_bearers(lex):
+    for cand in em.find_candidates(COMPOSITE, lex):
+        assert len(cand["alternatives"]) != 1
+        if cand["alternatives"]:
+            assert cand["gid"] in cand["alternatives"]
+            assert cand["alternatives"] == sorted(cand["alternatives"])
 
 
 def test_run_is_deterministic(lex):
@@ -554,7 +591,7 @@ LEGACY_JEREMIE = {"persons": {"118557106": {"names": ["Jérémie", "Karl Jaspers
 
 def test_legacy_only_form_is_demoted(tmp_path):
     lexicon = _build(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
-    assert lexicon["forms"]["Jérémie"] == (("118557106", "person", "legacy-form"),)
+    assert lexicon["forms"]["Jérémie"] == (("118557106", "person", "legacy-form", "legacy"),)
     assert "Jérémie" not in lexicon["surnames"]
     assert ("118557106", "Jérémie") in lexicon["legacy_demoted"]
 
@@ -667,8 +704,9 @@ def test_single_word_title_that_shadows_a_surname_is_ambiguous(tmp_path):
     assert cands[0]["rule"] == "short-title:ambiguous"
     assert cands[0]["tier"] == 2
     # both candidates stay reconstructible for the judge stage
-    assert lexicon["forms"]["Nietzsche"] == (("1078795312", "work", "short-title"),)
+    assert lexicon["forms"]["Nietzsche"] == (("1078795312", "work", "short-title", "headword"),)
     assert lexicon["surnames"]["Nietzsche"] == ("118587943",)
+    assert cands[0]["alternatives"] == ["1078795312", "118587943"]
 
 
 # --- all-caps mentions (fix package 4) --------------------------------------------
@@ -740,3 +778,180 @@ def test_two_cover_fields_are_not_enough(lex):
 def test_photo_credit_paragraph_is_excluded(lex, prefix):
     xml = _tei(f"<p>{prefix} Karl Jaspers, Basel.</p><p>Jeanne Hersch schrieb.</p>")
     assert [c["surface"] for c in em.find_candidates(xml, lex)] == ["Jeanne Hersch"]
+
+
+# --- alternatives: every bearer of an ambiguous form (iteration 4, point 1) ---------
+
+
+def test_bare_surname_with_several_bearers_names_them_all(lex):
+    xml = _tei("<p>Dazu meinte Jaspers nichts.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert len(cands) == 1
+    assert cands[0]["rule"] == "bare-surname:ambiguous"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["alternatives"] == ["118557106", "118557107"]
+    assert cands[0]["gid"] in cands[0]["alternatives"]
+
+
+def test_unique_candidate_carries_an_empty_alternatives_list(lex):
+    cands = em.find_candidates(_tei("<p>Jeanne Hersch schrieb.</p>"), lex)
+    assert cands[0]["alternatives"] == []
+
+
+def test_anchored_surname_stays_decided_but_lists_the_bearers(lex):
+    xml = _tei("<p>Karl Jaspers schrieb.</p><p>Spaeter meinte Jaspers dazu nichts.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert cands[1]["rule"] == "anchored-surname"
+    assert cands[1]["tier"] == 1
+    assert cands[1]["gid"] == "118557106"
+    # the anchor decided among the two bearers; the alternatives stay visible
+    assert cands[1]["alternatives"] == ["118557106", "118557107"]
+
+
+def test_collided_anchor_lists_the_bearers(lex):
+    xml = _tei("<p>Karl Jaspers und Gertrud Jaspers.</p><p>Jaspers antwortete.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert cands[-1]["rule"] == "ambiguous-surname"
+    assert cands[-1]["alternatives"] == ["118557106", "118557107"]
+
+
+def test_caps_surname_with_several_bearers_is_ambiguous(lex):
+    cands = em.find_candidates(_tei("<p>Dazu meinte JASPERS nichts.</p>"), lex)
+    assert cands[0]["rule"] == "caps-surname:ambiguous"
+    assert cands[0]["alternatives"] == ["118557106", "118557107"]
+
+
+# --- provenance of the matched form (iteration 4, point 2) -------------------------
+
+
+def test_headword_hit_reports_the_curated_form(lex):
+    cands = em.find_candidates(_tei("<p>Hier spricht Karl Jaspers.</p>"), lex)
+    assert cands[0]["matched_form"] == "Karl Jaspers"
+    assert cands[0]["form_source"] == "headword"
+
+
+def test_cache_variant_hit_reports_the_variant(lex):
+    cands = em.find_candidates(_tei("<p>Von Karl Theodor Jaspers stammt es.</p>"), lex)
+    assert cands[0]["matched_form"] == "Karl Theodor Jaspers"
+    assert cands[0]["form_source"] == "cache-variant"
+
+
+def test_curated_surname_hit_reports_the_surname_index(lex):
+    cands = em.find_candidates(_tei("<p>Pour Marcel, la question reste.</p>"), lex)
+    assert cands[0]["matched_form"] == "Marcel"
+    assert cands[0]["form_source"] == "surname-index"
+
+
+def test_surname_from_a_cache_variant_names_the_variant(tmp_path):
+    # ids and variant forms from data/entities/all_entities.json and its GND cache
+    cache = {"117085391": _cache_entry("Jaspers, Gertrud", ("Mayer, Gertrud",))}
+    lexicon = _build(tmp_path, persons=[_person("117085391", "Jaspers, Gertrud")], cache=cache)
+    cands = em.find_candidates(_tei("<p>Der Kritiker Hans Mayer schrieb.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["Mayer"]
+    assert cands[0]["matched_form"] == "Mayer, Gertrud"
+    assert cands[0]["form_source"] == "cache-variant"
+
+
+def test_legacy_form_hit_reports_the_legacy_index(tmp_path):
+    lexicon = _build(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
+    found = _by_surface(em.find_candidates(_tei("<p>Er zitierte Jérémie.</p>"), lexicon))
+    assert found["Jérémie"]["form_source"] == "legacy"
+    assert found["Jérémie"]["matched_form"] == "Jérémie"
+
+
+def test_org_and_work_hits_report_their_headword(lex):
+    xml = _tei("<p>An der UNESCO las er Allgemeine Psychopathologie.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [(c["matched_form"], c["form_source"]) for c in cands] == [
+        ("UNESCO", "headword"),
+        ("Allgemeine Psychopathologie", "headword"),
+    ]
+
+
+# --- bigram refinement of the suspicion signal (iteration 4, point 3) --------------
+
+
+def test_known_forename_neighbour_no_longer_suppresses_the_signal(lex):
+    # "Jean" starts listed forms (Jean Wahl, Jean Alembert), but "Jean Marcel" is none
+    xml = _tei("<p>Der Fotograf Jean Marcel kam.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["surface"] for c in cands] == ["Marcel"]
+    assert cands[0]["rule"] == "bare-surname:suspect"
+    assert cands[0]["tier"] == 2
+
+
+def test_a_known_word_pair_still_suppresses_the_signal(tmp_path):
+    # the scan consumes "Jean Paul" as a full name, so "Sartre" reaches the surname
+    # rule with a capitalized neighbour whose pair IS a listed form
+    lexicon = _build(
+        tmp_path,
+        persons=[_person("118591053", "Paul, Jean"), _person("118605690", "Sartre, Paul")],
+    )
+    cands = em.find_candidates(_tei("<p>Zitiert nach Jean Paul Sartre und mehr.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["Jean Paul", "Sartre"]
+    assert cands[1]["rule"] == "bare-surname"
+
+
+def test_ambiguity_suffix_precedes_the_suspicion_suffix(lex):
+    xml = _tei("<p>Der Jaspers-Kreis tagte.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert cands[0]["rule"] == "bare-surname:ambiguous:suspect"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["alternatives"] == ["118557106", "118557107"]
+
+
+def test_full_name_hit_keeps_ignoring_the_neighbour_signals(lex):
+    # counter-check to the bigram change: a full name stays tier 1
+    cands = em.find_candidates(_tei("<p>Der Philosoph Karl Jaspers Duchamp.</p>"), lex)
+    assert [c["rule"] for c in cands] == ["full-name"]
+    assert cands[0]["tier"] == 1
+
+
+# --- typographic evidence of one-word titles (iteration 4, point 4) ----------------
+
+
+def test_short_title_inside_hi_is_typographic(lex):
+    xml = _tei('<p>In der <hi rendition="#i">Bibel</hi> steht es.</p>')
+    cands = em.find_candidates(xml, lex)
+    assert cands[0]["rule"] == "short-title"
+    assert cands[0]["evidence"] == "typographic"
+
+
+@pytest.mark.parametrize(("open_q", "close_q"), [('"', '"'), ("\u00ab", "\u00bb"),
+                                                 ("\u201e", "\u201c")])
+def test_short_title_in_quotes_is_typographic(lex, open_q, close_q):
+    xml = _tei(f"<p>In der {open_q}Bibel{close_q} steht es.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert cands[0]["surface"] == "Bibel"
+    assert cands[0]["evidence"] == "typographic"
+
+
+@pytest.mark.parametrize("possessive", ["sa", "son", "ses", "seine", "seiner", "his", "her"])
+def test_short_title_behind_a_possessive_is_typographic(lex, possessive):
+    cands = em.find_candidates(_tei(f"<p>Er las {possessive} Bibel laut.</p>"), lex)
+    assert cands[0]["evidence"] == "typographic"
+
+
+def test_short_title_without_a_signal_has_no_evidence(lex):
+    cands = em.find_candidates(_tei("<p>In der Bibel steht es.</p>"), lex)
+    assert cands[0]["rule"] == "short-title"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["evidence"] == "none"
+
+
+def test_evidence_stays_on_the_one_word_titles(lex):
+    xml = _tei('<p>Er las <hi rendition="#i">Allgemeine Psychopathologie</hi> und Jaspers.</p>')
+    for cand in em.find_candidates(xml, lex):
+        assert "evidence" not in cand
+
+
+def test_evidence_survives_the_ambiguity_suffix(tmp_path):
+    lexicon = _build(
+        tmp_path,
+        persons=[_person("118587943", "Nietzsche, Friedrich")],
+        works=[_work("1078795312", "Nietzsche")],
+    )
+    xml = _tei('<p>In <hi rendition="#i">Nietzsche</hi> steht es.</p>')
+    cands = em.find_candidates(xml, lexicon)
+    assert cands[0]["rule"] == "short-title:ambiguous"
+    assert cands[0]["evidence"] == "typographic"

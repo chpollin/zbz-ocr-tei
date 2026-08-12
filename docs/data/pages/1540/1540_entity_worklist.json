@@ -7,7 +7,10 @@
         "gid": "117085391",
         "category": "person",
         "surface": "Mayer",
-        "rule": "bare-surname",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Mayer, Gertrud",
+        "form_source": "cache-variant",
         "context": "r-Wittenberg 234 György Ligeti 248 Hans Mayer 262 Wolfgang Hildesheimer 276 Robert Ju",
         "text": "Mayer",
         "occurrence": 1
@@ -19,6 +22,9 @@
         "category": "person",
         "surface": "Thomas",
         "rule": "anchored-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Thomas",
+        "form_source": "surname-index",
         "context": "chwerin; Susanne Kern; Gilbert Blondel; Thomas Höpker; J. H. Darchinger; F. Peyer; Leo",
         "text": "Thomas",
         "occurrence": 1
@@ -28,6 +34,9 @@
         "category": "person",
         "surface": "Weil",
         "rule": "anchored-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
         "context": "n Lebensweg unerläßlich geworden waren: Weil ich Jude war, fand ich mich frei von vi",
         "text": "Weil",
         "occurrence": 1
@@ -39,7 +48,11 @@
         "category": "work",
         "surface": "Philosophie",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
         "context": "»kein Jeanne Hersch Professorin, lehrt Philosophie an der Universität Genf. Geboren 1912 i",
+        "evidence": "none",
         "text": "Philosophie",
         "occurrence": 1
       },
@@ -48,7 +61,11 @@
         "category": "work",
         "surface": "Philosophie",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
         "context": "ete zweieinhalb Jahre die Abteilung für Philosophie der UNESCO in Paris. Veröffentlichte u.",
+        "evidence": "none",
         "text": "Philosophie",
         "occurrence": 2
       }
@@ -59,6 +76,9 @@
         "category": "person",
         "surface": "Weil",
         "rule": "anchored-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
         "context": "ich sie miteinander polnisch sprachen). Weil sie Demokraten waren, bekämpften sie de",
         "text": "Weil",
         "occurrence": 1
@@ -68,6 +88,9 @@
         "category": "person",
         "surface": "Weil",
         "rule": "anchored-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
         "context": "n sie den Kommunismus leidenschaftlich. Weil sie Internationalisten waren, lehnten s",
         "text": "Weil",
         "occurrence": 2
@@ -77,6 +100,9 @@
         "category": "person",
         "surface": "Weil",
         "rule": "anchored-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
         "context": "en waren, lehnten sie den Zionismus ab. Weil sie die jüdische Muttersprache der arme",
         "text": "Weil",
         "occurrence": 3
@@ -88,6 +114,9 @@
         "category": "person",
         "surface": "Kierkegaard",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kierkegaard",
+        "form_source": "surname-index",
         "context": "woher ich das wußte, hätte ich wohl wie Kierkegaard geantwortet: »Mein Vater hat es mir ges",
         "text": "Kierkegaard",
         "occurrence": 1
@@ -97,6 +126,9 @@
         "category": "person",
         "surface": "Kierkegaard",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Kierkegaard",
+        "form_source": "surname-index",
         "context": "emlich früh las ich christliche Denker, Kierkegaard, Karl Barth, Meister Eckhart, die Exerz",
         "text": "Kierkegaard",
         "occurrence": 2
@@ -106,6 +138,9 @@
         "category": "person",
         "surface": "Spinozas",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Spinoza",
+        "form_source": "surname-index",
         "context": "s von Aquin und Simone Weil. Das Denken Spinozas war mir nah, hauptsächlich wegen der Üb",
         "text": "Spinozas",
         "occurrence": 1
@@ -114,7 +149,13 @@
         "gid": "117085391",
         "category": "person",
         "surface": "Jaspers",
-        "rule": "bare-surname",
+        "rule": "bare-surname:ambiguous",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
         "context": "nte man auf einfachere Weise Jude sein. Jaspers’ Denken – mit seinem »philosophischen G",
         "text": "Jaspers",
         "occurrence": 1
@@ -124,6 +165,9 @@
         "category": "person",
         "surface": "Fackenheims",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Fackenheim",
+        "form_source": "surname-index",
         "context": "mein Vaterland. Sicher spricht mich in Fackenheims Büchlein »Gottes Gegenwart in der Gesch",
         "text": "Fackenheims",
         "occurrence": 1
@@ -135,6 +179,9 @@
         "category": "person",
         "surface": "Sartre",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Sartre",
+        "form_source": "surname-index",
         "context": ". (Diese letzte Antwort ist die, welche Sartre gegeben hat.) Natürlich können mehrere",
         "text": "Sartre",
         "occurrence": 1
@@ -143,7 +190,13 @@
         "gid": "117085391",
         "category": "person",
         "surface": "Jaspers",
-        "rule": "bare-surname",
+        "rule": "bare-surname:ambiguous",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
         "context": "cher Genauigkeit »in der Schwebe« (nach Jaspers’ Worten) ist und bleibt. Dieses »Schweb",
         "text": "Jaspers",
         "occurrence": 1
@@ -153,6 +206,12 @@
         "category": "person",
         "surface": "Bart",
         "rule": "anchored-surname:suspect",
+        "alternatives": [
+          "118506803",
+          "119498014"
+        ],
+        "matched_form": "Bart, Karl",
+        "form_source": "cache-variant",
         "context": "t man zum Beispiel im Roman von Schwarz-Bart wieder (»Der letzte der Gerechten«), in",
         "text": "Bart",
         "occurrence": 1
@@ -164,6 +223,9 @@
         "category": "person",
         "surface": "Wahl",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Wahl",
+        "form_source": "surname-index",
         "context": "gkeit ist eine Tatsache, ein Zwang ohne Wahl. Wenn man also die Rasse als entscheide",
         "text": "Wahl",
         "occurrence": 1
@@ -173,6 +235,9 @@
         "category": "person",
         "surface": "Wahl",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Wahl",
+        "form_source": "surname-index",
         "context": "Faktum; da ist keine Zustimmung, keine Wahl, keine Entscheidung, keine Treue und ke",
         "text": "Wahl",
         "occurrence": 2
@@ -182,7 +247,11 @@
         "category": "work",
         "surface": "Philosophie",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
         "context": "gungen, die jüdischen Werke: Literatur, Philosophie, Ethik, Politik usw. Die Juden Osteurop",
+        "evidence": "none",
         "text": "Philosophie",
         "occurrence": 1
       },
@@ -191,7 +260,11 @@
         "category": "work",
         "surface": "Ethik",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Ethik",
+        "form_source": "cache-variant",
         "context": "üdischen Werke: Literatur, Philosophie, Ethik, Politik usw. Die Juden Osteuropas lebt",
+        "evidence": "none",
         "text": "Ethik",
         "occurrence": 1
       },
@@ -200,6 +273,9 @@
         "category": "person",
         "surface": "Sartre",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Sartre",
+        "form_source": "surname-index",
         "context": "gebenheit: Man ist Jude. »Die Anderen«. Sartre hat die Theorie entwickelt, daß die Jud",
         "text": "Sartre",
         "occurrence": 1

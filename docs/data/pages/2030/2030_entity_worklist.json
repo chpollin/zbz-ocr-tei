@@ -8,7 +8,11 @@
         "category": "work",
         "surface": "Filosofia",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Filosofia",
+        "form_source": "cache-variant",
         "context": "colarmente le sue due opere principali, Filosofia e Sulla verità, si presentano in forma",
+        "evidence": "typographic",
         "text": "Filosofia",
         "occurrence": 1
       }
@@ -19,6 +23,9 @@
         "category": "person",
         "surface": "Heidegger",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Heidegger",
+        "form_source": "surname-index",
         "context": "zato in senso totalmente diverso che in Heidegger). Nel senso corrente, questo termine de",
         "text": "Heidegger",
         "occurrence": 1
@@ -28,6 +35,9 @@
         "category": "person",
         "surface": "Hegel",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Hegel",
+        "form_source": "surname-index",
         "context": "ma più o meno l’ha presa a prestito da Hegel, con un misto di ammirazione e di oppos",
         "text": "Hegel",
         "occurrence": 1
@@ -38,7 +48,13 @@
         "gid": "117085391",
         "category": "person",
         "surface": "JASPERS",
-        "rule": "caps-surname",
+        "rule": "caps-surname:ambiguous",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
         "context": "emi superflui o addirittura falsi. ¹ K. JASPERS, Allgemeine Psychopathologie, Springer,",
         "text": "JASPERS",
         "occurrence": 1

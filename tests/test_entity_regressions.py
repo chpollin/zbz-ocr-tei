@@ -215,3 +215,76 @@ def test_cover_sheet_mention_is_no_candidate(tmp_path):
     assert cands[0]["start"] > COVER_DOC.index('<pb n="2"/>')
     assert cands[0]["surface"] == "Schweizerischer Lehrerverein"
     assert cands[0]["tier"] == 1
+
+
+# --- ambiguous bare surname: both Jaspers spouses (frontend evaluation, point 1) ---
+
+# ids from data/entities/all_entities.json; the GND variants from its cache
+JASPERS_SPOUSES = [
+    _person("118557106", "Jaspers, Karl"),
+    _person("117085391", "Jaspers, Gertrud"),
+]
+SPOUSE_CACHE = {
+    "118557106": _cache_entry("Jaspers, Karl", ("Jaspers, Carl",)),
+    "117085391": _cache_entry("Jaspers, Gertrud",
+                              ("Jaspers-Mayer, Gertrud", "Mayer, Gertrud")),
+}
+
+
+@pytest.fixture
+def spouse_lexicon(tmp_path):
+    return _build(tmp_path, persons=JASPERS_SPOUSES, cache=SPOUSE_CACHE)
+
+
+def test_bare_surname_names_both_spouses(spouse_lexicon):
+    # the report used to show the numerically first bearer alone, which read as decided
+    xml = _tei("<p>Dazu meinte Jaspers spaeter nichts mehr.</p>")
+    cands = em.find_candidates(xml, spouse_lexicon)
+    assert [c["surface"] for c in cands] == ["Jaspers"]
+    assert cands[0]["rule"] == "bare-surname:ambiguous"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["alternatives"] == ["117085391", "118557106"]
+
+
+def test_full_name_of_one_spouse_stays_unambiguous(spouse_lexicon):
+    cands = em.find_candidates(_tei("<p>Hier spricht Karl Jaspers.</p>"), spouse_lexicon)
+    assert cands[0]["rule"] == "full-name"
+    assert cands[0]["tier"] == 1
+    assert cands[0]["gid"] == "118557106"
+    assert cands[0]["alternatives"] == []
+
+
+# --- "Hans Mayer": surname from a GND variant, no bigram corroboration (point 2/3) --
+
+
+@pytest.fixture
+def mayer_lexicon(tmp_path):
+    # "Bauer, Hans" puts a listed form under the first word "Hans", which used to
+    # silence the neighbour signal all by itself
+    persons = [*JASPERS_SPOUSES, _person("13143568X", "Bauer, Hans")]
+    return _build(tmp_path, persons=persons, cache=SPOUSE_CACHE)
+
+
+MAYER_DOC = _tei("<p>Der Literaturwissenschaftler Hans Mayer schrieb dazu.</p>")
+
+
+def test_hans_mayer_carries_the_homograph_suspicion(mayer_lexicon):
+    cands = em.find_candidates(MAYER_DOC, mayer_lexicon)
+    assert [c["surface"] for c in cands] == ["Mayer"]
+    assert cands[0]["rule"] == "bare-surname:suspect"
+    assert cands[0]["tier"] == 2
+
+
+def test_hans_mayer_names_the_variant_it_came_from(mayer_lexicon):
+    cand = em.find_candidates(MAYER_DOC, mayer_lexicon)[0]
+    assert cand["gid"] == "117085391"
+    assert cand["matched_form"] == "Mayer, Gertrud"
+    assert cand["form_source"] == "cache-variant"
+
+
+def test_karl_jaspers_stays_untouched_by_the_bigram_change(mayer_lexicon):
+    xml = _tei("<p>Der Philosoph Karl Jaspers schrieb dazu.</p>")
+    cands = em.find_candidates(xml, mayer_lexicon)
+    assert [c["surface"] for c in cands] == ["Karl Jaspers"]
+    assert cands[0]["rule"] == "full-name"
+    assert cands[0]["tier"] == 1

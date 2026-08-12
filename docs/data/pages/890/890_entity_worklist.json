@@ -8,6 +8,9 @@
         "category": "person",
         "surface": "Werner",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Werner",
+        "form_source": "surname-index",
         "context": "nach Tonbandaufnahme durch Dr. G. Hofer-Werner. Redaktionelle Überarbeitung von der Vo",
         "text": "Werner",
         "occurrence": 1
@@ -17,6 +20,9 @@
         "category": "person",
         "surface": "Winter",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Winter",
+        "form_source": "surname-index",
         "context": "ks kamen. Einmal hatte ich einen ganzen Winter solche Übungen, und vor dem Kursschluss",
         "text": "Winter",
         "occurrence": 1
@@ -26,6 +32,9 @@
         "category": "person",
         "surface": "Baudelaires",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Baudelaire",
+        "form_source": "surname-index",
         "context": "cht daran glauben. Schließlich habe ich Baudelaires «Correspondances» gewählt, mich also eh",
         "text": "Baudelaires",
         "occurrence": 1
@@ -35,7 +44,11 @@
         "category": "work",
         "surface": "Correspondances",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Correspondances",
+        "form_source": "headword",
         "context": "uben. Schließlich habe ich Baudelaires «Correspondances» gewählt, mich also eher für das Schwie",
+        "evidence": "typographic",
         "text": "Correspondances",
         "occurrence": 1
       }
@@ -46,6 +59,9 @@
         "category": "person",
         "surface": "Haut",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Haut, Jean du",
+        "form_source": "cache-variant",
         "context": "t zu pflegen, durch die man sich in die Haut des anderen für eine bestimmte Zeit hin",
         "text": "Haut",
         "occurrence": 1
@@ -55,7 +71,11 @@
         "category": "work",
         "surface": "Correspondances",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Correspondances",
+        "form_source": "headword",
         "context": "hen vielleicht nicht, wie das durch das Correspondances-Gedicht von Baudelaire geschehen kann,",
+        "evidence": "none",
         "text": "Correspondances",
         "occurrence": 1
       },
@@ -64,6 +84,9 @@
         "category": "person",
         "surface": "Baudelaire",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Baudelaire",
+        "form_source": "surname-index",
         "context": "s durch das Correspondances-Gedicht von Baudelaire geschehen kann, aber es kann dadurch ge",
         "text": "Baudelaire",
         "occurrence": 1
@@ -75,7 +98,11 @@
         "category": "work",
         "surface": "Philosophie",
         "rule": "short-title",
+        "alternatives": [],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
         "context": "lche Gedichte, Philosophen die oder die Philosophie, Künstler die oder die Malerei pflegen,",
+        "evidence": "none",
         "text": "Philosophie",
         "occurrence": 1
       },
@@ -84,6 +111,9 @@
         "category": "organisation",
         "surface": "Vereinigten Nationen",
         "rule": "legacy-form",
+        "alternatives": [],
+        "matched_form": "Vereinigten Nationen",
+        "form_source": "legacy",
         "context": ", dass zum Beispiel Spanien, das in die Vereinigten Nationen wegen des Francorégimes nicht aufgenomm",
         "text": "Vereinigten Nationen",
         "occurrence": 1
@@ -93,6 +123,9 @@
         "category": "person",
         "surface": "Weil",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
         "context": "in die UNESCO zugelassen wurde. Warum? Weil die UNESCO für Kultur da ist, und so ga",
         "text": "Weil",
         "occurrence": 1
@@ -102,6 +135,9 @@
         "category": "person",
         "surface": "Paul",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Paul, Apôtre, Saint",
+        "form_source": "cache-variant",
         "context": "chend das Redaktorenkollegium Hans Adam Paul Binkert Francis Bourquin Paul Müller Le",
         "text": "Paul",
         "occurrence": 1
@@ -111,6 +147,9 @@
         "category": "person",
         "surface": "Paul",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Paul, Apôtre, Saint",
+        "form_source": "cache-variant",
         "context": "Hans Adam Paul Binkert Francis Bourquin Paul Müller Leonhard Jost SLZ 51/52, 17. Dez",
         "text": "Paul",
         "occurrence": 2
@@ -119,7 +158,10 @@
         "gid": "132229900",
         "category": "person",
         "surface": "Müller",
-        "rule": "bare-surname",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Müller, Kurt",
+        "form_source": "cache-variant",
         "context": "Adam Paul Binkert Francis Bourquin Paul Müller Leonhard Jost SLZ 51/52, 17. Dezember 1",
         "text": "Müller",
         "occurrence": 1
@@ -131,6 +173,9 @@
         "category": "person",
         "surface": "Weil",
         "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
         "context": "h wäre, bin ich absolut dagegen. Warum? Weil jeder Mensch einen Sinn gewinnen soll f",
         "text": "Weil",
         "occurrence": 1
@@ -140,6 +185,9 @@
         "category": "person",
         "surface": "Descartes",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Descartes",
+        "form_source": "surname-index",
         "context": "war im 17. Jahrhundert zum Beispiel bei Descartes und Spinoza ein religiöser Genuss. Die",
         "text": "Descartes",
         "occurrence": 1
@@ -149,6 +197,9 @@
         "category": "person",
         "surface": "Spinoza",
         "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Spinoza",
+        "form_source": "surname-index",
         "context": "rhundert zum Beispiel bei Descartes und Spinoza ein religiöser Genuss. Die Evidenz hatt",
         "text": "Spinoza",
         "occurrence": 1
