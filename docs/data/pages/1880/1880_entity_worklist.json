@@ -2,6 +2,47 @@
   "doc": "1880",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "2": [
+      {
+        "gid": "122446887",
+        "category": "person",
+        "surface": "P.B.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "P.B.",
+        "form_source": "headword",
+        "context": "NAZ, Lausanne Dr A. SAUTER, Berne Prof. P.B. SCHNEIDER, Lausanne COMITE DE REDACTION",
+        "text": "P.B.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118547798",
+        "category": "person",
+        "surface": "M. H.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "M. H.",
+        "form_source": "headword",
+        "context": "s aux Universités de Lausanne et Genève M. H.-M. HAGMANN Directeur du Centre médico-s",
+        "text": "M. H.",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "rentruy * Prof. H. SOLMS Professeur à l’Université de Fribourg Médecin-consultant au Centr",
+        "text": "Université",
+        "occurrence": 5
+      }
+    ],
     "4": [
       {
         "gid": "118503340",

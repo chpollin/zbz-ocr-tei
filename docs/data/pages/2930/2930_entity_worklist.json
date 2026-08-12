@@ -4,11 +4,26 @@
   "pages": {
     "1": [
       {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "behandelt werden wird. Eine definitive Antwort darauf ist sicher nicht einfach; nur zu",
+        "text": "Antwort",
+        "occurrence": 1
+      },
+      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "n, in der neugeschaffenen Abteilung für Philosophie, da rüstete man gerade für den 20. Jahr",
@@ -22,13 +37,28 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": ". Egal ob Rechts texte, Dichtungen oder Philosophie - die Texte sollten aus ihrer eigenen T",
         "evidence": "none",
         "text": "Philosophie",
+        "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "arbeiten, können sie mir meistens keine Antwort geben. Sie machen sich darüber kaum Ged",
+        "text": "Antwort",
         "occurrence": 1
       }
     ],
@@ -101,8 +131,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "en letzten Jahren seines Lebens mit der Philosophie und den Menschenrechten befaßte. Zweck",
@@ -114,14 +147,31 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "e Synthese von östlicher und westlicher Philosophie. In dieser Hinsicht hat die Straniak-St",
         "evidence": "none",
         "text": "Philosophie",
         "occurrence": 2
+      }
+    ],
+    "7": [
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "t ein ganz anderer, und obwohl ich Ihre Antwort zu kennen glaube, möchte ich ihn doch f",
+        "text": "Antwort",
+        "occurrence": 1
       }
     ],
     "8": [

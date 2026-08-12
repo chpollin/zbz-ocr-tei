@@ -1,5 +1,55 @@
 {
   "doc": "2440",
   "generator": "scripts/edition/generate_entity_preview_data.py",
-  "pages": {}
+  "pages": {
+    "1": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "ONEELIOU2 sur l’Europe J 6019 9-10 et l’Université Une recherche de la vérité avec Jeanne",
+        "text": "Université",
+        "occurrence": 1
+      }
+    ],
+    "3": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "ique ne sait guère en parler. En fait l’Université a-t-elle suivi l’histoire? L’Université",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "Université a-t-elle suivi l’histoire? L’Université a non seulement suivi l’histoire, elle",
+        "text": "Université",
+        "occurrence": 2
+      }
+    ]
+  }
 }

@@ -1,5 +1,76 @@
 {
   "doc": "1250",
   "generator": "scripts/edition/generate_entity_preview_data.py",
-  "pages": {}
+  "pages": {
+    "2": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "n d’ouverture par E. Heer, Recteur de l’Université VII I. Les règles juridiques et leur mi",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "119141-X",
+        "category": "organisation",
+        "surface": "Faculté de théologie",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Faculté de Théologie",
+        "form_source": "cache-variant",
+        "context": "Louis Rumpf, Professeur d’éthique à la Faculté de théologie, Lausanne 71 Quelques pistes de réflexi",
+        "text": "Faculté de théologie",
+        "occurrence": 1
+      },
+      {
+        "gid": "119141-X",
+        "category": "organisation",
+        "surface": "Faculté de théologie",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Faculté de Théologie",
+        "form_source": "cache-variant",
+        "context": "tif” par Bernard Morel, Professeur à la Faculté de théologie, Genève 85 III IV. Conclusions En guise",
+        "text": "Faculté de théologie",
+        "occurrence": 2
+      }
+    ],
+    "3": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "t de l’Association des professeurs de l’Université, Professeur à la Faculté de théologie,",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "119141-X",
+        "category": "organisation",
+        "surface": "Faculté de théologie",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Faculté de Théologie",
+        "form_source": "cache-variant",
+        "context": "sseurs de l’Université, Professeur à la Faculté de théologie, Genève 89 * Les textes qui forment le",
+        "text": "Faculté de théologie",
+        "occurrence": 1
+      }
+    ]
+  }
 }

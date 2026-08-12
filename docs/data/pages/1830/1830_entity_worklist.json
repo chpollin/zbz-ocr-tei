@@ -2,13 +2,75 @@
   "doc": "1830",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "1": [
+      {
+        "gid": "118503251",
+        "category": "person",
+        "surface": "J. A.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118503251",
+          "121278018"
+        ],
+        "matched_form": "J. A.",
+        "form_source": "headword",
+        "context": "ha, Rio de Janeiro R. C. Pandeya, Delhi J. A. Passmore, Canberra J. Pelc, Varsovie Ch",
+        "text": "J. A.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118547739",
+        "category": "person",
+        "surface": "G. H.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "G. H.",
+        "form_source": "headword",
+        "context": "enin, Louvain B. O. Williams, Cambridge G. H. von Wright, Helsinki Textes aux soins d",
+        "text": "G. H.",
+        "occurrence": 1
+      }
+    ],
     "3": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "nd) studied at - University of Geneva - University of Paris - University of Heidelberg deg",
+        "text": "University",
+        "occurrence": 2
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "rsity of Geneva - University of Paris - University of Heidelberg degrees received - Licenc",
+        "text": "University",
+        "occurrence": 3
+      },
       {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "- Suisse member of - Société Suisse de Philosophie - Pen-Club - Société Suisse des Ecrivai",
@@ -18,6 +80,21 @@
       }
     ],
     "5": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "par hasard dans cette vieille aula de l’Université de Heidelberg. J’avais dix-huit ans; je",
+        "text": "Université",
+        "occurrence": 1
+      },
       {
         "gid": "117085391",
         "category": "person",
@@ -32,6 +109,18 @@
         "context": "roportions gardées - entre la pensée de JASPERS et la mienne m’a empêchée toute ma vie",
         "text": "JASPERS",
         "occurrence": 2
+      },
+      {
+        "gid": "4597459-7",
+        "category": "work",
+        "surface": "ma vie",
+        "rule": "work-variant:qualifier-strip:suspect",
+        "alternatives": [],
+        "matched_form": "Ma vie",
+        "form_source": "cache-variant",
+        "context": "JASPERS et la mienne m’a empêchée toute ma vie de distinguer entre ce qui me venait de",
+        "text": "ma vie",
+        "occurrence": 1
       },
       {
         "gid": "117085391",
@@ -116,8 +205,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "t; Deutsch konnte ich nur schlecht; von Philosophie hatte ich kaum eine Ahnung. Nur eines b",
@@ -139,6 +231,18 @@
         "context": "ass vorausgesetzt - zwischen dem Denken JASPERS' und meinem eigenen hat mich mein Leben",
         "text": "JASPERS",
         "occurrence": 2
+      },
+      {
+        "gid": "4597459-7",
+        "category": "work",
+        "surface": "mein Leben",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Mein Leben",
+        "form_source": "headword",
+        "context": "en JASPERS' und meinem eigenen hat mich mein Leben lang gehindert, zwischen dem, was ich v",
+        "text": "mein Leben",
+        "occurrence": 1
       },
       {
         "gid": "117085391",
@@ -183,8 +287,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "erstes Buch, Die Illusion - der Weg der Philosophie, wo ich versuchte, das eigentliche Wese",
@@ -196,8 +303,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "uchte auf diese Weise zu begreifen, was Philosophie überhaupt ist. Schon zu dieser Zeit, ob",
@@ -211,8 +321,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "Was meine jetzige Arbeit im Bereich der Philosophie im engeren Sinne anbetrifft, so gilt si",
@@ -236,8 +349,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "die grossen Probleme der \"eigentlichen Philosophie\" neu zu stellen. Aber was ist \"eigentli",
@@ -249,8 +365,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "u zu stellen. Aber was ist \"eigentliche Philosophie\"? Die grossen Lehren der Vergangenheit,",
@@ -259,11 +378,26 @@
         "occurrence": 3
       },
       {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "en Einheit, lassen kaum eine eindeutige Antwort zu. Im Grunde habe ich mich immer bemüh",
+        "text": "Antwort",
+        "occurrence": 1
+      },
+      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "irklichkeiten zu kämpfen. Dann wird die Philosophie, dank den intellektuellen Vollzügen, di",
@@ -277,8 +411,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": ", 276 p.) 5. Die Illusion - der Weg der Philosophie (trad. allemande de ¹. Francke Verlag,",
@@ -290,8 +427,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "x (Actes du IVe Congrès des Sociétés de Philosophie de Langue Française, La Baconnière, Neu",
@@ -303,8 +443,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "u (Actes du VIe Congrès des Sociétés de Philosophie de Langue Française, P.U.F., Paris 1952",
@@ -318,13 +461,28 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "de philosophe (Revue de Théologie et de Philosophie, Lausanne 1957, 4, pp. 3-6) 20 Gibt die",
         "evidence": "none",
         "text": "Philosophie",
+        "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "20 Gibt die Tradition bei Jaspers eine Antwort auf das, was unserer Zeit not tut? (in",
+        "text": "Antwort",
         "occurrence": 1
       },
       {
@@ -343,8 +501,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "tretiens de l’Institut International de Philosophie, Oberhofen 1960. N° 1/2 du tome 15 de D",
@@ -356,8 +517,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "berté (Bull. de la Société française de Philosophie, Paris 1961, n° 3, pp. 119-159) 25 Rech",
@@ -381,8 +545,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "re et liberté (Revue de Théologie et de Philosophie, Lausanne 1975, II, pp. 125-128) 39 Rel",
@@ -405,6 +572,33 @@
     ],
     "14": [
       {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "Romans 1 Temps alternés (Librairie de l’Université, Fribourg 1942, 153 p.; B. Galland, Vev",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "118557513",
+        "category": "person",
+        "surface": "J.C.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J.C.",
+        "form_source": "headword",
+        "context": "dragons (in Festgabe für CARLO SCHMID, J.C.B. Mohr, Tübingen 1962, pp. 111-118) 2 C",
+        "text": "J.C.",
+        "occurrence": 1
+      },
+      {
         "gid": "118519972",
         "category": "person",
         "surface": "Chagall",
@@ -418,6 +612,21 @@
         "context": ".B. Mohr, Tübingen 1962, pp. 111-118) 2 Chagall à travers quelques toiles (in Le Temps",
         "text": "Chagall",
         "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "9-24) 3 Les allégeances multiples de l’Université (Université de Genève, Séance d’ouvertu",
+        "text": "Université",
+        "occurrence": 2
       },
       {
         "gid": "118590146",

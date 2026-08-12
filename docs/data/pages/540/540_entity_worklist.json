@@ -108,6 +108,21 @@
         "context": "n : λόγον διδόναι, disaient Hérodote et Platon. L’homme doit saisir la réalité dans so",
         "text": "Platon",
         "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": ": the Introduction to Philosophy, Yale University Press, New Haven ; Hollis & Carter, Lon",
+        "text": "University",
+        "occurrence": 1
       }
     ],
     "24": [
@@ -121,6 +136,18 @@
         "form_source": "surname-index",
         "context": "HISTORIQUE 253 à l’histoire dont rêvait Dilthey, mais de la raison qu’est l’histoire, d",
         "text": "Dilthey",
+        "occurrence": 1
+      },
+      {
+        "gid": "118537555",
+        "category": "person",
+        "surface": "R. G.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "R. G.",
+        "form_source": "headword",
+        "context": "ium of knowledge, like « Verstehen » or R. G. Collingwood’s « re-enactment ». But I w",
+        "text": "R. G.",
         "occurrence": 1
       }
     ],

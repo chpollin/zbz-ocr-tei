@@ -1,5 +1,23 @@
 {
   "doc": "1700",
   "generator": "scripts/edition/generate_entity_preview_data.py",
-  "pages": {}
+  "pages": {
+    "4": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "rentissage, des filières parallèles à l’Université, pour leur permettre de se situer et de",
+        "text": "Université",
+        "occurrence": 1
+      }
+    ]
+  }
 }

@@ -7,8 +7,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "Denkanstöße '89 Ein Lesebuch aus Philosophie, Natur- und Humanwissenschaften Herausg",
@@ -114,8 +117,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ir einen der tiefgründigsten Punkte der Philosophie überhaupt. Das ist, meiner Ansicht nach",
@@ -222,6 +228,18 @@
         "context": "eidung treffen. Und es ist so wahr, was Kant selbst gesagt hat: daß wohl kein Mensch",
         "text": "Kant",
         "occurrence": 3
+      },
+      {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "d. h.",
+        "rule": "full-name:initials:suspect",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "chkeit ist eine ethische Notwendigkeit, d. h. eine Pflicht. Ob dieser Pflicht empiris",
+        "text": "d. h.",
+        "occurrence": 1
       },
       {
         "gid": "117085391",
@@ -373,8 +391,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "pers in erster Linie aus der Hegelschen Philosophie genommen und teilweise polemisch gegen",

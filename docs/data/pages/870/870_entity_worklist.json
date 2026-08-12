@@ -2,6 +2,20 @@
   "doc": "870",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "4": [
+      {
+        "gid": "118519972",
+        "category": "person",
+        "surface": "B.C.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "B.C.",
+        "form_source": "headword",
+        "context": "hat as far back in time as two thousand B.C., people thought they had a duty to deno",
+        "text": "B.C.",
+        "occurrence": 1
+      }
+    ],
     "5": [
       {
         "gid": "118559796",
@@ -17,6 +31,36 @@
       }
     ],
     "6": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "ANKEL Professor of Philosophy, Columbia University, former Assistant Secretary of State fo",
+        "text": "University",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "MANN Professor of Philosophy, Princeton University. Publications include: Nietzsche (1950)",
+        "text": "University",
+        "occurrence": 2
+      },
       {
         "gid": "1078795312",
         "category": "work",
@@ -58,6 +102,18 @@
         "occurrence": 1
       },
       {
+        "gid": "4510402-5",
+        "category": "work",
+        "surface": "Commentary",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Commentary",
+        "form_source": "headword",
+        "context": "9); Hegel: Reinterpretation, Texts, and Commentary (1963); Tragedy and Philosophy (1968);",
+        "text": "Commentary",
+        "occurrence": 1
+      },
+      {
         "gid": "1078795312",
         "category": "work",
         "surface": "Nietzsche",
@@ -74,6 +130,18 @@
         "occurrence": 2
       },
       {
+        "gid": "118530380",
+        "category": "person",
+        "surface": "F. E.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "F. E.",
+        "form_source": "headword",
+        "context": "of Nietzsche (5 complete books) (1968). F. E. SPARSHOTT Chairman, Department of Ethic",
+        "text": "F. E.",
+        "occurrence": 1
+      },
+      {
         "gid": "4242730-7",
         "category": "work",
         "surface": "Ethics",
@@ -85,6 +153,36 @@
         "evidence": "none",
         "text": "Ethics",
         "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "hairman, Department of Ethics, Victoria University of the University of Toronto. Publicati",
+        "text": "University",
+        "occurrence": 3
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "t of Ethics, Victoria University of the University of Toronto. Publications include: An En",
+        "text": "University",
+        "occurrence": 4
       },
       {
         "gid": "118615270",
@@ -109,6 +207,21 @@
         "context": "s and Thrasymachus\", The Monist (1966). JAMES GUTMANN Professor Emeritus of Philosoph",
         "text": "JAMES",
         "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "fessor Emeritus of Philosophy, Columbia University. Publications include: Spinoza’s Ethics",
+        "text": "University",
+        "occurrence": 5
       },
       {
         "gid": "118616242",
@@ -158,6 +271,21 @@
         "context": "Horizons of a Philosopher (1962); \"Post-Kantian Romanticism\", Dictionary of History of",
         "text": "Kantian",
         "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "HOOK Professor of Philosophy, New York University; Guggenheim Fellow (1928-1929); Fellow,",
+        "text": "University",
+        "occurrence": 6
       },
       {
         "gid": "118547739",

@@ -7,8 +7,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "n und leitete 1966-68 die Abteilung für Philosophie an der UNESCO in Paris. Sie vertrat die",
@@ -20,14 +23,31 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ienen. Jeanne Hersch ist Ordinarius für Philosophie an der Universität Genf und Mitglied de",
         "evidence": "none",
         "text": "Philosophie",
         "occurrence": 2
+      }
+    ],
+    "3": [
+      {
+        "gid": "4597459-7",
+        "category": "work",
+        "surface": "mein <lb facs=\"#facs_3_r_4\" n=\"N006\" />Leben",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Mein Leben",
+        "form_source": "headword",
+        "context": "h habe sie verpasst. Geschützt habe ich mein Leben in der Schweiz verbracht, und unter die",
+        "text": "mein Leben",
+        "occurrence": 1
       }
     ],
     "5": [

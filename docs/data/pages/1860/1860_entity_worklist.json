@@ -21,6 +21,21 @@
     ],
     "3": [
       {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "istre du Gouvernement Français, Prof. d’Université, Paris (France) The Environmental Aspec",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
         "gid": "118516221",
         "category": "person",
         "surface": "Bruno",
@@ -30,6 +45,32 @@
         "form_source": "surname-index",
         "context": "y Goal for the '90s by speaker Dr. Ing. Bruno MUSSO, Secretary General, Ansaldo Group",
         "text": "Bruno",
+        "occurrence": 1
+      }
+    ],
+    "4": [
+      {
+        "gid": "118556029",
+        "category": "person",
+        "surface": "F.I.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "F.I.",
+        "form_source": "headword",
+        "context": "r Coningsby ALLDAY, CBE, B.Sc., C.Eng., F.I. Chem.E., Managing Director, BNFL, Risle",
+        "text": "F.I.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118730002",
+        "category": "person",
+        "surface": "S.M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "S.M.",
+        "form_source": "headword",
+        "context": "bay (Dr. Sethna’s paper was read by Mr. S.M. Sundaram, BARC, Trombay (India) 5th SES",
+        "text": "S.M.",
         "occurrence": 1
       }
     ],
@@ -44,6 +85,33 @@
         "form_source": "cache-variant",
         "context": "European Non-weapon Country by speaker Agustin ALONSO, Prof., Nuclear Technology Polit",
         "text": "Agustin",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "Prof., Nuclear Technology Politechnical University Madrid, Director Adj. to Director Gener",
+        "text": "University",
+        "occurrence": 1
+      },
+      {
+        "gid": "121587177",
+        "category": "person",
+        "surface": "S.S.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "S.S.",
+        "form_source": "headword",
+        "context": "a Cooperation between Finland and the U.S.S.R. in the Field of Nuclear Engineering b",
+        "text": "S.S.",
         "occurrence": 1
       }
     ],

@@ -1,5 +1,46 @@
 {
   "doc": "660",
   "generator": "scripts/edition/generate_entity_preview_data.py",
-  "pages": {}
+  "pages": {
+    "2": [
+      {
+        "gid": "2077960-4",
+        "category": "organisation",
+        "surface": "Musée",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Musée",
+        "form_source": "cache-variant",
+        "context": "f. V.) Avec l’exposition « Tomiste » au Musée d’ethnographie et d’homographie « Maill",
+        "text": "Musée",
+        "occurrence": 1
+      },
+      {
+        "gid": "2077960-4",
+        "category": "organisation",
+        "surface": "Musée",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Musée",
+        "form_source": "cache-variant",
+        "context": "homographie « Maillais et Maniguri » au Musée des bouquards, Neuchâtel offre déjà des",
+        "text": "Musée",
+        "occurrence": 2
+      }
+    ],
+    "3": [
+      {
+        "gid": "2011312-2",
+        "category": "organisation",
+        "surface": "Helvetia",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Helvetia",
+        "form_source": "cache-variant",
+        "context": "ne « défense spirituelle » du pays, Pro Helvetia, cette année, un quart de siècle d’exis",
+        "text": "Helvetia",
+        "occurrence": 1
+      }
+    ]
+  }
 }

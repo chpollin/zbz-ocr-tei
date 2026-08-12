@@ -2,13 +2,70 @@
   "doc": "2400",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "1": [
+      {
+        "gid": "2011312-2",
+        "category": "organisation",
+        "surface": "Helvetia",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Helvetia",
+        "form_source": "cache-variant",
+        "context": "HERSCH STEPHAN SCHMIDHEINY FRANZ MUHEIM Helvetia-Forum 1986 DA 25589 Sicherheit und Risi",
+        "text": "Helvetia",
+        "occurrence": 1
+      }
+    ],
+    "2": [
+      {
+        "gid": "2011312-2",
+        "category": "organisation",
+        "surface": "Helvetia",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Helvetia",
+        "form_source": "cache-variant",
+        "context": "Staat zwischen Risiko und Sicherheit» > Helvetia-Forum > vom 22. Oktober 1986 in der Aul",
+        "text": "Helvetia",
+        "occurrence": 1
+      },
+      {
+        "gid": "2011312-2",
+        "category": "organisation",
+        "surface": "Helvetia",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Helvetia",
+        "form_source": "cache-variant",
+        "context": "der Hochschule St.Gallen Im Auftrag der Helvetia-Feuer redigiert und herausgegeben von J",
+        "text": "Helvetia",
+        "occurrence": 2
+      }
+    ],
+    "3": [
+      {
+        "gid": "2011312-2",
+        "category": "organisation",
+        "surface": "Helvetia",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Helvetia",
+        "form_source": "cache-variant",
+        "context": "es Anderegg G 88-22645-3 HRS. © 1987 by Helvetia Schweizerische Feuerversicherungs-Gesel",
+        "text": "Helvetia",
+        "occurrence": 1
+      }
+    ],
     "4": [
       {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "CH Geboren 1910, studierte Sprachen und Philosophie an den Universitäten Genf, Paris, Heide",
@@ -20,8 +77,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "e 1956 eine Professur für systematische Philosophie an der Universität Genf. Während zweiei",
@@ -33,14 +93,107 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "lb Jahren leitete sie die Abteilung für Philosophie der Unesco in Paris. Sie veröffentlicht",
         "evidence": "none",
         "text": "Philosophie",
         "occurrence": 3
+      },
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "e sie die Abteilung für Philosophie der Unesco in Paris. Sie veröffentlichte zahlreich",
+        "text": "Unesco",
+        "occurrence": 1
+      }
+    ],
+    "6": [
+      {
+        "gid": "2011312-2",
+        "category": "organisation",
+        "surface": "Helvetia",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Helvetia",
+        "form_source": "cache-variant",
+        "context": "er gesellschaftlichen Zukunft sein. Die Helvetia Schweizerische Feuerversicherungs-Gesel",
+        "text": "Helvetia",
+        "occurrence": 1
+      },
+      {
+        "gid": "2011312-2",
+        "category": "organisation",
+        "surface": "Helvetia",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Helvetia",
+        "form_source": "cache-variant",
+        "context": "d aus unterschiedlichen Perspektiven am Helvetia-Forum vom 22. Oktober 1986 beleuchten.",
+        "text": "Helvetia",
+        "occurrence": 2
+      }
+    ],
+    "7": [
+      {
+        "gid": "2011312-2",
+        "category": "organisation",
+        "surface": "Helvetia",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Helvetia",
+        "form_source": "cache-variant",
+        "context": "geben. Auf Wunsch vieler Teilnehmer des Helvetia-Forums haben wir Rektor Dr. Johannes An",
+        "text": "Helvetia",
+        "occurrence": 1
+      },
+      {
+        "gid": "2011312-2",
+        "category": "organisation",
+        "surface": "Helvetia",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Helvetia",
+        "form_source": "cache-variant",
+        "context": "deregg, St.Gallen, gebeten, über das am Helvetia-Forum gehaltene Gespräch eine Nachschri",
+        "text": "Helvetia",
+        "occurrence": 2
+      },
+      {
+        "gid": "2011312-2",
+        "category": "organisation",
+        "surface": "Helvetia",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Helvetia",
+        "form_source": "cache-variant",
+        "context": "ÜRGI Präsident des Verwaltungsrates der Helvetia Schweizerische Feuerversicherungs-Gesel",
+        "text": "Helvetia",
+        "occurrence": 3
+      }
+    ],
+    "8": [
+      {
+        "gid": "2011312-2",
+        "category": "organisation",
+        "surface": "Helvetia",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Helvetia",
+        "form_source": "cache-variant",
+        "context": "Text liegt die Tonbandaufzeichnung des Helvetia-Forums zugrunde, welches am 22. Oktober",
+        "text": "Helvetia",
+        "occurrence": 1
       }
     ],
     "10": [
@@ -323,6 +476,30 @@
     ],
     "23": [
       {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "rlust in der Sicherheit Innovation als Antwort auf die Sinnfrage Im Innofrieg der Zuku",
+        "text": "Antwort",
+        "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "ennens und des Akzeptierens von Risiken Antwort auch auf die Sinnfrage sein kann. Die U",
+        "text": "Antwort",
+        "occurrence": 2
+      },
+      {
         "gid": "121278018",
         "category": "person",
         "surface": "ANDEREGG",
@@ -345,6 +522,18 @@
         "context": "in der Sinnfrage weiterkommen. ANDEREGG ANDEREGG: Mir scheint, wir hätten die beiden Asp",
         "text": "ANDEREGG",
         "occurrence": 2
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "icht gehört zur Risikobereitschaft eine Antwort auf das <wozu?> Aber wir machen es uns",
+        "text": "Antwort",
+        "occurrence": 3
       },
       {
         "gid": "120652293",
@@ -669,6 +858,32 @@
         "context": "das gesellschaftliche Phänomen. MUHEIM MUHEIM: Wenn ich auf Ihre Frage eine Antwort w",
         "text": "MUHEIM",
         "occurrence": 4
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "IM MUHEIM: Wenn ich auf Ihre Frage eine Antwort wüßte, so wäre ich wahrscheinlich in de",
+        "text": "Antwort",
+        "occurrence": 1
+      }
+    ],
+    "32": [
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "nschlich nahestehen. und eine mögliche Antwort: mehr Autorität Sicherheit durch Autori",
+        "text": "Antwort",
+        "occurrence": 1
       }
     ],
     "34": [
@@ -695,6 +910,18 @@
         "context": "ihr Risiko und ihre Sicherheit. MUHEIM MUHEIM: Unter dem Aspekt Sicherheit und Risiko",
         "text": "MUHEIM",
         "occurrence": 2
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "h wieder wählen oder auch nicht und die Antwort: verantwortliches Menschsein, die Leere",
+        "text": "Antwort",
+        "occurrence": 1
       }
     ],
     "35": [
@@ -721,6 +948,42 @@
         "context": "sere Wahlen voller Risiken. SCHMIDHEINY SCHMIDHEINY: Ich möchte noch einmal auf die Frage n",
         "text": "SCHMIDHEINY",
         "occurrence": 2
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": ". Mir scheint, hier liege eine mögliche Antwort auf das Problem komplexer Sachverhalte",
+        "text": "Antwort",
+        "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "ich ihn, ob er Angst gehabt habe. Seine Antwort war: <nein, am=\"\" auch=\"\" auf=\"\" aß=\"\"",
+        "text": "Antwort",
+        "occurrence": 2
+      },
+      {
+        "gid": "2013550-6",
+        "category": "organisation",
+        "surface": "Olivetti",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Olivetti",
+        "form_source": "cache-variant",
+        "context": "rysler, an einen Carlo de Benedetti bei Olivetti – zeigen, was jemand erreichen kann, de",
+        "text": "Olivetti",
+        "occurrence": 1
       }
     ],
     "36": [
@@ -798,6 +1061,18 @@
       }
     ],
     "37": [
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "herheit dessen, der die einzig richtige Antwort auf alle Fragen zu wissen meint. MUHEIM",
+        "text": "Antwort",
+        "occurrence": 1
+      },
       {
         "gid": "120652293",
         "category": "person",
@@ -927,6 +1202,18 @@
         "context": "modernen Welt umzugehen... SCHMIDHEINY SCHMIDHEINY: Ihre Antwort, daß wir nouveaux riches",
         "text": "SCHMIDHEINY",
         "occurrence": 2
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "ugehen... SCHMIDHEINY SCHMIDHEINY: Ihre Antwort, daß wir nouveaux riches sind, daß wir",
+        "text": "Antwort",
+        "occurrence": 1
       }
     ],
     "48": [

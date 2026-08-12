@@ -4,6 +4,33 @@
   "pages": {
     "1": [
       {
+        "gid": "118555359",
+        "category": "person",
+        "surface": "d. I.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "D. I.",
+        "form_source": "headword",
+        "context": "n plus stricte des responsabilités. (N. d. I. R.) Il me souvient d’un séminaire, à l’",
+        "text": "d. I.",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "R.) Il me souvient d’un séminaire, à l’Université de Heidelberg, peu de temps après la pr",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
         "gid": "118551655",
         "category": "person",
         "surface": "Hitler",
@@ -25,6 +52,58 @@
         "form_source": "surname-index",
         "context": "ravail d’étudiant sur la philosophie de Hegel. Il dit : « Comme on parle tant, hélas,",
         "text": "Hegel",
+        "occurrence": 1
+      }
+    ],
+    "4": [
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "le préambule de l’Acte constitutif de l’Unesco en 1946, que la Seconde Guerre mondiale",
+        "text": "Unesco",
+        "occurrence": 1
+      },
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "ciales » rédigée sous les auspices de l’Unesco par un groupe d’anthropologues et de gé",
+        "text": "Unesco",
+        "occurrence": 2
+      },
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "cours d’une mission d’information de l’Unesco. Copyright © Presses Universitaires de",
+        "text": "Unesco",
+        "occurrence": 3
+      }
+    ],
+    "15": [
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "e donc particulièrement important que l’Unesco entreprenne maintenant une étude à la f",
+        "text": "Unesco",
         "occurrence": 1
       }
     ]

@@ -4,11 +4,41 @@
   "pages": {
     "2": [
       {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "HEUTE A Fribourg, dans les locaux de l’Université, a eu lieu le 1er mars 1970 le traditio",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "119141-X",
+        "category": "organisation",
+        "surface": "Faculté de Théologie",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Faculté de Théologie",
+        "form_source": "cache-variant",
+        "context": "professeur de théologie dogmatique à la Faculté de Théologie de l’Université de Genève. On trouvera",
+        "text": "Faculté de Théologie",
+        "occurrence": 1
+      },
+      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "issance, au nom de la Société suisse de Philosophie, aux orateurs, au public, venu nombreux",
@@ -70,8 +100,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "Range, nämlich dem Loslösungsprozeß der Philosophie von der Theologie und dem Verschmelzung",
@@ -83,8 +116,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ologie und dem Verschmelzungsprozeß der Philosophie mit der Wissenschaft. Wir müssen uns au",
@@ -122,8 +158,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "he Trennung von Wissen und Glauben, von Philosophie und Theologie; es ging um eine historis",
@@ -208,8 +247,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "klung der vorhergegangenen bürgerlichen Philosophie. Wenn Marx (1843/44) die Kritik der Rel",
@@ -244,11 +286,26 @@
         "occurrence": 1
       },
       {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "zudenken, ob dein Verhalten je nach der Antwort auf diese Frage sich ändern würde. Würd",
+        "text": "Antwort",
+        "occurrence": 1
+      },
+      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "Gegenüberstellung von spätbürgerlicher Philosophie und dialektischem Materialismus hinsich",
@@ -260,8 +317,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "Erbschaft auch bei der spätbürgerlichen Philosophie auf Interesse gestoßen ist. Ich nenne z",
@@ -383,8 +443,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "s der Entwicklungszeit der bürgerlichen Philosophie; der dialektische und historische Mater",
@@ -396,8 +459,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "istorische Materialismus aber ist keine Philosophie der Bourgeoisie, sondern der Arbeiterkl",
@@ -423,8 +489,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "Marxismus nichts gemeinsam. Indem Marx Philosophie und Arbeiterbewegung miteinander verban",
@@ -479,6 +548,32 @@
         "context": "beitenden Menschen. «Ideen», so schrieb Marx, «können nie über einen alten Weltzusta",
         "text": "Marx",
         "occurrence": 5
+      },
+      {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "d. h.",
+        "rule": "full-name:initials:suspect",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "sondern auf dieser praktischen Gewalt, d. h. auf der Arbeit, beruht die Existenz der",
+        "text": "d. h.",
+        "occurrence": 1
+      }
+    ],
+    "8": [
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "er seinen ethischen Auftrag hatte? Die Antwort ist im bisher Gesagten enthalten. Ich k",
+        "text": "Antwort",
+        "occurrence": 1
       }
     ],
     "10": [
@@ -832,6 +927,32 @@
         "occurrence": 1
       }
     ],
+    "29": [
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "Frage, emphatisch gestellt, bereits die Antwort in einem positiven Sinne enthält, ander",
+        "text": "Antwort",
+        "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "ciété des esprits pensants. Mende : Die Antwort auf die Gottesfrage muß heute im Rahmen",
+        "text": "Antwort",
+        "occurrence": 3
+      }
+    ],
     "30": [
       {
         "gid": "4006406-2",
@@ -859,11 +980,26 @@
         "occurrence": 1
       },
       {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "d. h.",
+        "rule": "full-name:initials:suspect",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "rschied zwischen Christen und Sokrates, d. h. zwischen Religion und Philosophie. Widm",
+        "text": "d. h.",
+        "occurrence": 1
+      },
+      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "d Sokrates, d. h. zwischen Religion und Philosophie. Widmer : Ce qui donne un sens à la par",
@@ -913,8 +1049,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ervorgehoben werden. Nach Hegel ist die Philosophie «ihre Zeit in Gedanken erfaßt». Warum s",

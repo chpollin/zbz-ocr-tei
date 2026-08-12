@@ -4,6 +4,42 @@
   "pages": {
     "3": [
       {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "à 1968, la Division de philosophie de l’Unesco. Elle réussit à mettre sur pied un prog",
+        "text": "Unesco",
+        "occurrence": 1
+      },
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "tait la Suisse au Conseil exécutif de l’Unesco. Disciple du philosophe allemand Karl J",
+        "text": "Unesco",
+        "occurrence": 2
+      },
+      {
+        "gid": "119141-X",
+        "category": "organisation",
+        "surface": "Faculté de théologie",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Faculté de Théologie",
+        "form_source": "cache-variant",
+        "context": "et Réalité. Docteur honoris causa de la Faculté de théologie de l’Université de Bâle en 1972, lauréa",
+        "text": "Faculté de théologie",
+        "occurrence": 1
+      },
+      {
         "gid": "36146-X",
         "category": "organisation",
         "surface": "l’Université de Bâle",
@@ -138,6 +174,35 @@
         "context": "n nationale italienne pour l’UNESCO MM. Alain Besançon, directeur d’études à l’Ecole",
         "text": "Alain",
         "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "culture Kostas Papaioannou, professeur, Université de Paris Michel Sales, professeur au Ce",
+        "text": "Université",
+        "occurrence": 2
+      }
+    ],
+    "29": [
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "érale de la Commission italienne pour l’Unesco. Mme MARIA LUISA PARONETTO VALIER Mme M",
+        "text": "Unesco",
+        "occurrence": 1
       }
     ],
     "31": [
@@ -164,6 +229,18 @@
         "context": "qu’en passant par Papageno, Sciascia et Thomas More, on en vient à réfléchir, comme Je",
         "text": "Thomas",
         "occurrence": 2
+      },
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "clichés » qu’on entend, même, jusqu’à l’Unesco! A propos du courage et de la peur, vou",
+        "text": "Unesco",
+        "occurrence": 1
       }
     ],
     "32": [

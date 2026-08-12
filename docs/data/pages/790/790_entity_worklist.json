@@ -7,8 +7,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": ". Jeanne Hersch studierte Literatur und Philosophie in Genf, Paris (Sorbonne), Heidelberg u",
@@ -17,11 +20,44 @@
         "occurrence": 1
       },
       {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "e führten sie an die Pennsylvania State University und ans Hunter College der New York Cit",
+        "text": "University",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "nd ans Hunter College der New York City University. Sie war zuerst Privatdozentin, dann a.",
+        "text": "University",
+        "occurrence": 2
+      },
+      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "st seit 1952 ordentlicher Professor für Philosophie an der Universität Genf. Werke: «L’Illu",
@@ -33,8 +69,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "36 (deutsch: «Die Illusion, der Weg der Philosophie»); «L’être et la forme», 1946; «Idéolog",
@@ -48,8 +87,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "tionale für Abiturienten Geschichte der Philosophie gelehrt, zweimal vierzig Minuten pro Wo",
@@ -61,8 +103,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "nuten pro Woche. Das ist nichts, um die Philosophie vom 7. Jahrhundert vor Christus bis heu",
@@ -84,6 +129,18 @@
       }
     ],
     "6": [
+      {
+        "gid": "2021817-5",
+        "category": "organisation",
+        "surface": "Lehrerverein",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Lehrerverein",
+        "form_source": "cache-variant",
+        "context": "n im Laufe der Zeit. Der Schweizerische Lehrerverein unternimmt solche Versuche, und mit gut",
+        "text": "Lehrerverein",
+        "occurrence": 1
+      },
       {
         "gid": "118592912",
         "category": "person",
@@ -178,8 +235,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "erricht befürworten Sie? Ich finde, daß Philosophie Kindern im Alter von siebzehn Jahren au",
@@ -191,8 +251,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "mmt darauf an, wie man es macht. In der Philosophie wird alles in Frage gestellt. Und das b",
@@ -204,8 +267,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "holiken sind die einzigen, die wirklich Philosophie treiben in der Schule, denn sie haben e",

@@ -2,6 +2,32 @@
   "doc": "2000",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "1": [
+      {
+        "gid": "118583530",
+        "category": "person",
+        "surface": "J.M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J.M.",
+        "form_source": "headword",
+        "context": "uelques études aider à cette réflexion. J.M.M. M.M. LA PENSÉE PHILOSOPHIQUE EN CRISE",
+        "text": "J.M.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118818619",
+        "category": "person",
+        "surface": "M.<lb facs=\"#facs_1_l_6_1\" n=\"N001\" />M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "M. M.",
+        "form_source": "headword",
+        "context": "ues études aider à cette réflexion. J.M.M. M.M. LA PENSÉE PHILOSOPHIQUE EN CRISE par",
+        "text": "M.M.",
+        "occurrence": null
+      }
+    ],
     "2": [
       {
         "gid": "118559796",

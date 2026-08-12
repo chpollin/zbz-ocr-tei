@@ -1,5 +1,34 @@
 {
   "doc": "1730",
   "generator": "scripts/edition/generate_entity_preview_data.py",
-  "pages": {}
+  "pages": {
+    "1": [
+      {
+        "gid": "5005966-X",
+        "category": "organisation",
+        "surface": "Bund",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Bund",
+        "form_source": "cache-variant",
+        "context": "s suisses 1980 © 1981 Herausgegeben vom Bund Schweizerischer Frauenorganisationen Wi",
+        "text": "Bund",
+        "occurrence": 1
+      }
+    ],
+    "4": [
+      {
+        "gid": "118557513",
+        "category": "person",
+        "surface": "J.C.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J.C.",
+        "form_source": "headword",
+        "context": "époques, du troisième millénaire avant J.C. jusqu’au 1948, date de la Déclaration u",
+        "text": "J.C.",
+        "occurrence": 1
+      }
+    ]
+  }
 }

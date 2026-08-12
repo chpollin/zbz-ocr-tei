@@ -4,6 +4,18 @@
   "pages": {
     "1": [
       {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "rto Giacometti, kurz vor seinem Tod zur Antwort gab, als man ihn fragte, wie er sich zu",
+        "text": "Antwort",
+        "occurrence": 1
+      },
+      {
         "gid": "118594893",
         "category": "person",
         "surface": "Platon",
@@ -25,6 +37,23 @@
         "form_source": "surname-index",
         "context": "t? Est-il vrai aussi, comme l’affirment Sartre et d’autres donneurs de mauvaise consci",
         "text": "Sartre",
+        "occurrence": 1
+      }
+    ],
+    "3": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "qu’ils composent, que des professeurs d’Université n’aient pas de secrétaire pour répondre",
+        "text": "Université",
         "occurrence": 1
       }
     ]

@@ -40,6 +40,21 @@
         "context": "ation de lecteurs s’intéressent à elle. Pascal Antonietti, un des trois experts-safrin",
         "text": "Pascal",
         "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "de recherches sur les lettres romandes (Université de Lausanne), où est conservée le Fonds",
+        "text": "Université",
+        "occurrence": 2
       }
     ]
   }

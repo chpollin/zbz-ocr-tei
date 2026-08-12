@@ -4,6 +4,18 @@
   "pages": {
     "7": [
       {
+        "gid": "118583530",
+        "category": "person",
+        "surface": "J. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J. M.",
+        "form_source": "headword",
+        "context": "e in der Chemie 1983 Band II Jean Gabus J. M. Ellenberger La part du peintre: Hans Er",
+        "text": "J. M.",
+        "occurrence": 1
+      },
+      {
         "gid": "172447941",
         "category": "person",
         "surface": "Werner",
@@ -45,8 +57,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "raturwissenschaft, wandte sich dann der Philosophie zu, besuchte von 1929 an in Heidelberg",
@@ -58,8 +73,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "erstes Buch «Die Illusion – der Weg der Philosophie». Von 1933 bis 1956 unterrichtete sie i",
@@ -71,8 +89,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "rdentlichen Professor für Systematische Philosophie an die Universität Genf berufen, 1962 z",
@@ -84,8 +105,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "e Jeanne Hersch zudem die Abteilung der Philosophie der UNESCO in Paris, war viele Jahre Mi",
@@ -157,6 +181,18 @@
         "form_source": "surname-index",
         "context": "Grad die Werte und Kriterien, die diese Wahl leiten, im Laufe der Geschichte selbst",
         "text": "Wahl",
+        "occurrence": 1
+      },
+      {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "d. h.",
+        "rule": "full-name:initials:suspect",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "Geschichtlichkeit» des Menschen nennen, d. h. seine unwiderrufliche Zugehörigkeit zum",
+        "text": "d. h.",
         "occurrence": 1
       }
     ]

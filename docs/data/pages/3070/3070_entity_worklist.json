@@ -2,6 +2,53 @@
   "doc": "3070",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "2": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "devenu professeur de mathématiques à l’Université de Zurich. Elle-même a commencé par ens",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "uisse se ferme l’avenir. Professeur à l’Université, Jeanne Hersch s’opposa à la nomination",
+        "text": "Université",
+        "occurrence": 3
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "qu’elle donnait dans le grand aula de l’Université. Dans le salon tapissé de bouquins, une",
+        "text": "Université",
+        "occurrence": 4
+      }
+    ],
     "3": [
       {
         "gid": "118616242",
@@ -38,6 +85,44 @@
         "context": "L’histoire d’Albert Picot fait penser à Valery Giscard d’Estaing, dont le philosophe f",
         "text": "Valery",
         "occurrence": 1
+      }
+    ],
+    "4": [
+      {
+        "gid": "5005966-X",
+        "category": "organisation",
+        "surface": "Bund",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Bund",
+        "form_source": "cache-variant",
+        "context": "s parents étaient bundistes, adeptes du Bund, un immense mouvement socialiste et ant",
+        "text": "Bund",
+        "occurrence": 1
+      },
+      {
+        "gid": "5005966-X",
+        "category": "organisation",
+        "surface": "Bund",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Bund",
+        "form_source": "cache-variant",
+        "context": "s peu à offrir à leurs enfants, mais le Bund avait réussi à mettre sur pied des mais",
+        "text": "Bund",
+        "occurrence": 2
+      },
+      {
+        "gid": "5005966-X",
+        "category": "organisation",
+        "surface": "Bund",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Bund",
+        "form_source": "cache-variant",
+        "context": "vre le plus Jeanne Hersch, c’est que le Bund a été effacé de l’histoire par les pers",
+        "text": "Bund",
+        "occurrence": 3
       }
     ]
   }

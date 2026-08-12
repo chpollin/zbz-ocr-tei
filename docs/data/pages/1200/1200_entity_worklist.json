@@ -1,5 +1,23 @@
 {
   "doc": "1200",
   "generator": "scripts/edition/generate_entity_preview_data.py",
-  "pages": {}
+  "pages": {
+    "1": [
+      {
+        "gid": "118503251",
+        "category": "person",
+        "surface": "J.A.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118503251",
+          "121278018"
+        ],
+        "matched_form": "J.A.",
+        "form_source": "headword",
+        "context": "J.A. No 270 MERCREDI 19 NOVEMBRE 1975 SUISSE",
+        "text": "J.A.",
+        "occurrence": 1
+      }
+    ]
+  }
 }

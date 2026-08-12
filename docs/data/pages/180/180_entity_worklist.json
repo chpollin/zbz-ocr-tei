@@ -27,6 +27,38 @@
         "text": "Aquin",
         "occurrence": 1
       }
+    ],
+    "4": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "hilosophie au début de leur travail à l’Université ! Pour leurs camarades d’autres faculté",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "cours de leurs études spécialisées à l’Université, ce n’est malgré tout que le manque le",
+        "text": "Université",
+        "occurrence": 2
+      }
     ]
   }
 }

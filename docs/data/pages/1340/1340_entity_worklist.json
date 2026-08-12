@@ -2,6 +2,23 @@
   "doc": "1340",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "3": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "* Professeur à la Faculté des lettres, Université, 1, rue de Candolle, 1205 Genève. faire",
+        "text": "Université",
+        "occurrence": 1
+      }
+    ],
     "10": [
       {
         "gid": "118591843",

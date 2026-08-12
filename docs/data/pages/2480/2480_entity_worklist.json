@@ -31,8 +31,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ue Einleitung, die sozusagen die neuere Philosophie zum Ausdruck bringen sollte. Dort war a",
@@ -43,11 +46,26 @@
     ],
     "3": [
       {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "d. h.",
+        "rule": "full-name:initials:suspect",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "ch besonders auf Länder, die ich kenne, d. h. auf Frankreich, die Schweiz und zum Tei",
+        "text": "d. h.",
+        "occurrence": 1
+      },
+      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "r etwas avantgardistische Literatur und Philosophie gelesen hatte, wer diese Philosophen un",

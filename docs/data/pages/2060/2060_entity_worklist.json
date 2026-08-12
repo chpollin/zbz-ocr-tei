@@ -2,6 +2,23 @@
   "doc": "2060",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "2": [
+      {
+        "gid": "118592912",
+        "category": "person",
+        "surface": "J. P.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118592912",
+          "119012235"
+        ],
+        "matched_form": "J. P.",
+        "form_source": "headword",
+        "context": "er-Stiftung Gesamtherstellung Druckerei J. P. Bachem, Köln Printed in Germany 1983 IS",
+        "text": "J. P.",
+        "occurrence": 1
+      }
+    ],
     "3": [
       {
         "gid": "118547739",

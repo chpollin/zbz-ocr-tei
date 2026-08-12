@@ -1,5 +1,53 @@
 {
   "doc": "1720",
   "generator": "scripts/edition/generate_entity_preview_data.py",
-  "pages": {}
+  "pages": {
+    "1": [
+      {
+        "gid": "104535342",
+        "category": "person",
+        "surface": "H.A.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "104535342",
+          "118648802",
+          "118830848"
+        ],
+        "matched_form": "H.A.",
+        "form_source": "headword",
+        "context": "tscheidung im Unternehmensgeschehen Dr. H.A. Rosenstock. 1963 128 Seiten. Geb. Fr. 2",
+        "text": "H.A.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118592912",
+        "category": "person",
+        "surface": "J.P.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118592912",
+          "119012235"
+        ],
+        "matched_form": "J.P.",
+        "form_source": "headword",
+        "context": "/DM 36.50 6 Der überlastete Manager Dr. J.P. Hausmann. 1969 206 Seiten. Geb. Fr. 48.",
+        "text": "J.P.",
+        "occurrence": 1
+      }
+    ],
+    "4": [
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "outes les origines, qui a été faite à l’Unesco. Telles sont les valeurs les plus fonda",
+        "text": "Unesco",
+        "occurrence": 1
+      }
+    ]
+  }
 }

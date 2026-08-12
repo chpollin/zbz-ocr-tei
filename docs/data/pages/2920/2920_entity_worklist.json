@@ -2,6 +2,34 @@
   "doc": "2920",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "1": [
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "en Europe publié avec le concours de l’Unesco Gallimard © Éditions Gallimard/Unesco,",
+        "text": "Unesco",
+        "occurrence": 1
+      }
+    ],
+    "2": [
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "l’Unesco Gallimard © Éditions Gallimard/Unesco, 1993. LES DROITS DE L’HOMME D’UN POINT",
+        "text": "Unesco",
+        "occurrence": 1
+      }
+    ],
     "7": [
       {
         "gid": "118503340",
@@ -64,6 +92,32 @@
         "context": "plein kantisme. Kant est tout proche d’Antigone. Or s’agissant des droits, l’absolu ne",
         "text": "Antigone",
         "occurrence": 1
+      }
+    ],
+    "11": [
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "de philosophie venait d’être créée à l’Unesco lorsque j’en ai assumé la direction. El",
+        "text": "Unesco",
+        "occurrence": 1
+      },
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": ". Usant du filet mondial dont dispose l’Unesco, j’ai demandé à tous les pays membres d",
+        "text": "Unesco",
+        "occurrence": 2
       }
     ],
     "23": [
@@ -167,6 +221,20 @@
         "form_source": "cache-variant",
         "context": "il se sente heureux lorsqu’il l’assume. Dostoïevski disait déjà que la liberté est pour l’h",
         "text": "Dostoïevski",
+        "occurrence": 1
+      }
+    ],
+    "37": [
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "rtout détruites et que les efforts de l’Unesco, par exemple, pour sauver les cultures",
+        "text": "Unesco",
         "occurrence": 1
       }
     ],

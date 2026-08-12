@@ -57,6 +57,20 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-12 Session 93 (continuation 6): consequence wave: verdict store, invariant gate, rule repairs, risk ranking
+
+**Occasion** Operator released every decision-free consequence of the entity evaluation as a wave of four parallel Opus agents with disjoint file scopes.
+
+**Goal** Persist the adjudicated judgments durably, turn the closed-world claim into a checked invariant, close the technical recall rule gaps, and instrument the false-positive hunt.
+
+**Course** Four agents, each verified against disk before commit. (1) Mention verdict store `data/entities/mention_verdicts.json` via `scripts/eval/build_mention_verdicts.py`: all 300 precision verdicts (incl. 50 blind IAA second judgments, disagreements p145/p193) and 67 recall mentions, keyed by (doc, page, surface, gid, occurrence), each bound to a sha256 fingerprint of the source TEI so re-OCR surfaces as staleness; byte-deterministic rebuild. (2) Exhaustive invariant gate `tests/test_entity_ref_invariant.py`: every GND id in all preview files and worklists is a member of the curated list; zero violations; 61 curated ids occur nowhere in the corpus. (3) Five matcher repairs, all derived channels tier-2 only: acronym case tolerance, parenthetical qualifier strip, static place-adjective inversion, superscript digits as word boundaries, person initials. (4) FP risk ranking `scripts/eval/entity_risk_ranking.py` plus wave protocol `output/audits/fp_hunt/PROTOCOL.md` (versioned copy in reports/): 4043 tier-1 marks scored into high 1517 / medium 960 / low 1566; the high stratum is dominated by anchored-surname hits on 39 gids. Impact measured against the frozen scan (copy in `output/audits/eval_sample/`): worklist +1657 proposals; tier-1 changed only by +9 (all superscript footnote cases, e.g. work titles carrying a footnote digit) and -1 (a mid-compound match inside a hyphenated university name replaced by a clean tier-2 qualifier-strip candidate); the hyphen-adjacent invariant is unchanged (11 known cases). Corpus previews and viewer mirror regenerated; schema and text invariance pass 285/285.
+
+**Decisions** Every derived form channel emits tier-2 worklist candidates only, never tier-1 auto-marks; safety over coverage (rejected: tier 1 for safe-looking derivations). Verdicts are snapshot-bound via text fingerprint (rejected: raw offsets without staleness detection). The occurrence index is computed against the full tier-1 candidate population of the frozen scan, because 106 of 300 sampled marks repeat their surface on the page.
+
+**Status** Commits 8a0e34ae (invariant gate), 40afccf2 (verdict store), c81b5922 (risk ranking), 6487e0b6 (matcher repairs) pushed; mirror regeneration committed subsequently. Entity gates 388 passed, script health 154 passed, invariant and mirror gates green after regeneration. One worklist entry is not locatable inline (noted in the generator report).
+
+**Next steps** 1. Operator conventions: page-apparatus reading, author byline exception. 2. Model the cert/resp delivery layer (respStmt taxonomy, confidence levels, revisionDesc projection). 3. FP-hunt wave over the high stratum, spread by gid and document. 4. Redraw and remeasure recall once the conventions are set.
+
 ### 2026-08-12 Session 93 (continuation 5): evaluation wave executed, precision and recall measured
 
 **Occasion** Operator released the sampling experiment (implement, test, then evaluate).

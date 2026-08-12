@@ -1,5 +1,38 @@
 {
   "doc": "2010",
   "generator": "scripts/edition/generate_entity_preview_data.py",
-  "pages": {}
+  "pages": {
+    "2": [
+      {
+        "gid": "118537105",
+        "category": "person",
+        "surface": "J. G.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118537105",
+          "118540238"
+        ],
+        "matched_form": "J. G.",
+        "form_source": "headword",
+        "context": "mie et de physiologie neurologiques par J. G. Chusid, cartonné, 544 pages. 17,5 × 25,",
+        "text": "J. G.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118537105",
+        "category": "person",
+        "surface": "J. G.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118537105",
+          "118540238"
+        ],
+        "matched_form": "J. G.",
+        "form_source": "headword",
+        "context": "d Functional Neurology » de l’Américain J. G. Chusid, réédité pour la 17e fois aux US",
+        "text": "J. G.",
+        "occurrence": 2
+      }
+    ]
+  }
 }

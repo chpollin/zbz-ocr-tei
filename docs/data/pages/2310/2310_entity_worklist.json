@@ -7,8 +7,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "Les Etudes philosophiques Karl Jaspers, Philosophie, trad. de Jeanne Hersch avec la collabo",
@@ -20,8 +23,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ent philosophiques, intitulé simplement Philosophie, ait été enfin publiée. L’édition franç",
@@ -41,6 +47,21 @@
         "form_source": "surname-index",
         "context": "sa fin. Jeanne HERSCH. Howard P. Kainz, Hegel’s Phenomenology, Part II, Ohio Universi",
         "text": "Hegel",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "z, Hegel’s Phenomenology, Part II, Ohio University Press, 1983, 211 p., Bibliographie, Ind",
+        "text": "University",
         "occurrence": 1
       },
       {

@@ -41,9 +41,33 @@
         "context": "ction d’une double référence. » C’est à Kierkegaard que je dois y concept d'« existence ».",
         "text": "Kierkegaard",
         "occurrence": 1
+      },
+      {
+        "gid": "4597459-7",
+        "category": "work",
+        "surface": "ma vie",
+        "rule": "work-variant:qualifier-strip:suspect",
+        "alternatives": [],
+        "matched_form": "Ma vie",
+        "form_source": "cache-variant",
+        "context": "dois y concept d'« existence ». Bont de ma vie, 1900, 1916, 1917, 1917, 1917, 1917, 19",
+        "text": "ma vie",
+        "occurrence": 1
       }
     ],
     "2": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "J.H.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J.H.",
+        "form_source": "headword",
+        "context": "se trouve subordonnée à la libération. J.H. Bibliographie K. JASPERS, intrasomn. Al",
+        "text": "J.H.",
+        "occurrence": 1
+      },
       {
         "gid": "117085391",
         "category": "person",
@@ -63,8 +87,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "uation der Zeit, 1931), Louvain, 1931 ; Philosophie, Berlin, 1932 ; Vernunft und Existenz,",

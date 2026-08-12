@@ -2,6 +2,67 @@
   "doc": "2650",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "2": [
+      {
+        "gid": "1020306386",
+        "category": "person",
+        "surface": "H. R.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "1020306386",
+          "1077991495",
+          "132037696"
+        ],
+        "matched_form": "H. R.",
+        "form_source": "headword",
+        "context": "74 Informationskommission der FMH: Dr. H. R. Sahli, Thun Dr. B. Schreiber, Genève Dr",
+        "text": "H. R.",
+        "occurrence": 1
+      },
+      {
+        "gid": "1020306386",
+        "category": "person",
+        "surface": "H. R.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "1020306386",
+          "1077991495",
+          "132037696"
+        ],
+        "matched_form": "H. R.",
+        "form_source": "headword",
+        "context": "4 Commission d’information de la FMH D' H. R. Sahli, Thoune D' B. Schreiber, Genève D",
+        "text": "H. R.",
+        "occurrence": 2
+      },
+      {
+        "gid": "118845721",
+        "category": "person",
+        "surface": "P. D.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "P. D.",
+        "form_source": "headword",
+        "context": "Dr. iur. J. Gross 812 Hinter der Mauer P. D. Juelke Diplomrede eines Diplomanden anl",
+        "text": "P. D.",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "d’études à la Faculté de médecine de l’Université de Zurich 815 Problematik der medizinis",
+        "text": "Université",
+        "occurrence": 1
+      }
+    ],
     "6": [
       {
         "gid": "118630148",

@@ -169,8 +169,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "trois conférences à Francfort sur « la Philosophie de l’existence » (Existenzphilosophie),",
@@ -307,6 +310,33 @@
         "occurrence": 1
       },
       {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": ", il est exclu de l’administration de l’Université ; en 1937, de l’enseignement ; en 1938,",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "4498918-0",
+        "category": "work",
+        "surface": "la culpabilité (allemande)",
+        "rule": "legacy-form:qualifier-strip:suspect",
+        "alternatives": [],
+        "matched_form": "La Culpabilité (allemande)",
+        "form_source": "legacy",
+        "context": "on premier cours, en 1945, a pour thème la culpabilité (allemande). La réflexion politique devient à ses y",
+        "text": "la culpabilité (allemande)",
+        "occurrence": 1
+      },
+      {
         "gid": "117085391",
         "category": "person",
         "surface": "Jaspers",
@@ -411,8 +441,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "personnalité perd fermeté et présence. Philosophie L’ouvrage fondamental où Jaspers expose",
@@ -439,8 +472,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ne de l’existence s’intitule simplement Philosophie. L’œuvre de Karl Jaspers est une médita",
@@ -765,8 +801,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ersonnel et impersonnel. Jaspers écrit (Philosophie, III, p. 167) : « Il est dur de réduire",
@@ -1234,8 +1273,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ue, Paris, Desclée de Brouwer, 1951). — Philosophie, 3 vol., Berlin, 1932, Berlin / Heidelb",
@@ -1247,8 +1289,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "éd., 1973 (trad. fr. J. Hersch et al., Philosophie. Orientation dans le monde. Éclairement",
@@ -1304,8 +1349,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": ", Gallimard, 1950). — Descartes und die Philosophie, Berlin, 1937 ; 4ᵉ éd. 1966 (trad. fr.",
@@ -1341,8 +1389,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "e Reden und Aufsätze zur Geschichte der Philosophie, Munich, 1968. — Philosophische Autobio",
@@ -1363,6 +1414,33 @@
         "form_source": "surname-index",
         "context": "(thèse théol.). — Caracciolo A., Studi Jaspersiani, Milan, 1958. — Durbienne M. & Ricœur P",
         "text": "Jaspersiani",
+        "occurrence": 1
+      },
+      {
+        "gid": "1414667280",
+        "category": "person",
+        "surface": "L. H.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "1414667280",
+          "172155800"
+        ],
+        "matched_form": "L. H.",
+        "form_source": "headword",
+        "context": "de l’existence, Paris, 1947. — Ehrlich L. H., Karl Jaspers : Philosophy as Faith, Am",
+        "text": "L. H.",
+        "occurrence": 1
+      },
+      {
+        "gid": "106657356",
+        "category": "person",
+        "surface": "H. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "H. M.",
+        "form_source": "headword",
+        "context": "rne / New York / Nancy, 1984. — Gerlach H. M., Existenzphilosophie und Politik. Kriti",
+        "text": "H. M.",
         "occurrence": 1
       },
       {
@@ -1399,8 +1477,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": ", Chiffer und Dogma. Vom Verhältnis der Philosophie zur Religion bei Karl Jaspers, Zurich,",
@@ -1427,8 +1508,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": ", 1978. — Raber T., Das Dasein in der « Philosophie » von Karl Jaspers, Berne, 1955. — Rich",
@@ -1467,8 +1551,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "œur P., Gabriel Marcel et Karl Jaspers. Philosophie du mystère et philosophie du paradoxe,",

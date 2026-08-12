@@ -1,5 +1,53 @@
 {
   "doc": "130",
   "generator": "scripts/edition/generate_entity_preview_data.py",
-  "pages": {}
+  "pages": {
+    "16": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "es cours du soir, etc. En effet, aucune Université ouvrière, aucun cours ne donnera aux ou",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "ns l’apprentissage. Enfin il faut que l’Université ouvrière devienne une véritable institu",
+        "text": "Université",
+        "occurrence": 2
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "aut, comment, à ce qu’il me semble, une Université ouvrière vraiment efficace devrait être",
+        "text": "Université",
+        "occurrence": 3
+      }
+    ]
+  }
 }

@@ -7,8 +7,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "Geschichtsphilosophie, der politischen Philosophie und der Nationalökonomie; Mitglied der",
@@ -141,6 +144,18 @@
         "occurrence": 1
       },
       {
+        "gid": "4597459-7",
+        "category": "work",
+        "surface": "ma vie",
+        "rule": "work-variant:qualifier-strip:suspect",
+        "alternatives": [],
+        "matched_form": "Ma vie",
+        "form_source": "cache-variant",
+        "context": "Une fois de plus, comme d’habitude dans ma vie, j’étais dans un petit groupe solitaire",
+        "text": "ma vie",
+        "occurrence": 1
+      },
+      {
         "gid": "118551655",
         "category": "person",
         "surface": "Hitler",
@@ -166,6 +181,18 @@
       }
     ],
     "6": [
+      {
+        "gid": "121587177",
+        "category": "person",
+        "surface": "S.S.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "S.S.",
+        "form_source": "headword",
+        "context": "’hui, ses excès, en Allemagne ou en U.R.S.S., restent difficiles à comprendre. On au",
+        "text": "S.S.",
+        "occurrence": 1
+      },
       {
         "gid": "118551655",
         "category": "person",
@@ -217,6 +244,21 @@
     ],
     "7": [
       {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "u’en avril 47. Il refuse de revenir à l’Université, à Toulouse ou à Bordeaux, parce que, d",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
         "gid": "11860564X",
         "category": "person",
         "surface": "Sartre",
@@ -242,6 +284,21 @@
       }
     ],
     "9": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "agit, en particulier après mai 68, de l’Université ; ou encore, des Droits de l’homme, dan",
+        "text": "Université",
+        "occurrence": 1
+      },
       {
         "gid": "11852111X",
         "category": "person",

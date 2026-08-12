@@ -76,8 +76,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "57 Die Ausstrahlung der hermeneutischen Philosophie Reiner Wiehl Erfahrung und philosophisc",
@@ -89,8 +92,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "erra Hans-Georg Gadamers hermeneutische Philosophie in Italien . 177 Emilio Lledò Gedächtni",
@@ -116,8 +122,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": ". h.c. Hans-Georg Gadamer, Emeritus für Philosophie, Am Büchsenackerhang 53, 6900 Heidelber",
@@ -129,8 +138,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "g Prof. Dr. Jeanne Hersch, Emeritus für Philosophie der Universität Basel, 14, Av. Pierre-O",
@@ -185,6 +197,18 @@
         "occurrence": 2
       },
       {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Ruprecht-Karls-Universität",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Ruprecht-Karls-Universität",
+        "form_source": "cache-variant",
+        "context": "rgabe des Karl-Jaspers-Preises, den die Ruprecht-Karls-Universität und die Stadt Heidelberg ihm heute zusp",
+        "text": "Ruprecht-Karls-Universität",
+        "occurrence": 1
+      },
+      {
         "gid": "118557106",
         "category": "person",
         "surface": "Jaspers",
@@ -203,8 +227,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "öffentlicht hatte: es hieß ganz einfach Philosophie. * Rede anläßlich der Karl-Jaspers-Prei",
@@ -226,9 +253,33 @@
         "context": "Philosophie. * Rede anläßlich der Karl-Jaspers-Preisverleihung am 28.1.1990 in der Alt",
         "text": "Jaspers",
         "occurrence": 5
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Ruprecht-Karls-Universität",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Ruprecht-Karls-Universität",
+        "form_source": "cache-variant",
+        "context": "ehen durch die Stadt Heidelberg und die Ruprecht-Karls-Universität Heidelberg. Jeanne Hersch Aber Ricoeur",
+        "text": "Ruprecht-Karls-Universität",
+        "occurrence": 2
       }
     ],
     "10": [
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "as Wesen seiner Ablehnung bestätigt die Antwort, die ich immer wieder auf die Frage geg",
+        "text": "Antwort",
+        "occurrence": 1
+      },
       {
         "gid": "118557106",
         "category": "person",
@@ -300,8 +351,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ene Denken. Es ist als wäre für ihn die Philosophie der Tradition zu leicht geworden, mit i",
@@ -337,13 +391,28 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "auch Jaspers, der gewiß in der modernen Philosophie als Kantianer dasteht. Die Frage nach d",
         "evidence": "none",
         "text": "Philosophie",
+        "occurrence": 2
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "m Ausklang unseres Jahrhunderts ist die Antwort zunächst negativ. Denn was ausgesagt wi",
+        "text": "Antwort",
         "occurrence": 2
       }
     ],
@@ -397,6 +466,18 @@
         "occurrence": 1
       },
       {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "d. h.",
+        "rule": "full-name:initials:suspect",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "zusagen, sondern einen Text auszulegen, d. h. also, den Sinn eines Textes zu verdoppe",
+        "text": "d. h.",
+        "occurrence": 1
+      },
+      {
         "gid": "118535315",
         "category": "person",
         "surface": "Freud",
@@ -412,8 +493,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "r die Rolle zu spielen, die in Jaspers’ Philosophie der Chiffre des erlebten Scheiterns ent",
@@ -427,8 +511,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "bindet. Und er schreibt: „Die reflexive Philosophie soll wieder in Angriff genommen, der Um",
@@ -527,8 +614,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "lsches Bewußtsein“ ist). Eine reflexive Philosophie – etwas ganz anderes, sagt Ricoeur, als",
@@ -540,8 +630,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "as ganz anderes, sagt Ricoeur, als eine Philosophie des Bewußtseins – gründet in einer Logi",
@@ -577,8 +670,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ar dasjenige von Husserl, wie auch die „Philosophie des Bewußtseins“ von Kant. Diese letzte",
@@ -602,8 +698,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "Weise gleichzeitig auch eine reflexive Philosophie zu sein, vor allem, wenn man es vermeid",
@@ -617,8 +716,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "rgangene und fast vergessene Zeiten der Philosophie wieder aufleben lassen. Ricoeur ist soz",
@@ -630,8 +732,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "selber vielleicht zum Trotz, zur ewigen Philosophie. Dafür sagen wir ihm heute großen Dank.",

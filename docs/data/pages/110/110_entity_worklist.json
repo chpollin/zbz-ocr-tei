@@ -14,6 +14,18 @@
         "context": "ri Reverdin, ainsi que M. le professeur Marcel Raymond, trouvent ici l’expression de m",
         "text": "Marcel",
         "occurrence": 1
+      },
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "J. H.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J. H.",
+        "form_source": "headword",
+        "context": "seils sans diminuer en rien ma liberté. J. H. DECLASSIFIED Authority RF 74365 A MON M",
+        "text": "J. H.",
+        "occurrence": 1
       }
     ],
     "14": [
@@ -189,8 +201,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "qu’il avait fait... » Cf. Karl JASPERS, Philosophie, vol. II, Existenzerhellung, p. 92. « K",
@@ -242,8 +257,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "tervertis lorsqu’on 1 Cf. Karl Jaspers, Philosophie, vol. III, p. 15-17, notamment: « Bei k",
@@ -662,6 +680,20 @@
         "occurrence": 1
       }
     ],
+    "147": [
+      {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "d. h.",
+        "rule": "full-name:initials:suspect",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "unktionelle Raum die « reale Gestalt », d. h. die Aktualisation des existenziellen da",
+        "text": "d. h.",
+        "occurrence": 1
+      }
+    ],
     "155": [
       {
         "gid": "118559796",
@@ -783,6 +815,23 @@
         "form_source": "surname-index",
         "context": "venu de l’extérieur, comme l’entendait Bergson. Elle nous est intérieure et plus essen",
         "text": "Bergson",
+        "occurrence": 1
+      }
+    ],
+    "171": [
+      {
+        "gid": "11851282X",
+        "category": "person",
+        "surface": "A.B.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "11851282X",
+          "137283709"
+        ],
+        "matched_form": "A.B.",
+        "form_source": "headword",
+        "context": "’œil déshonorant. Cela fait partie de l’A.B.C. Pourtant il est curieux de constater",
+        "text": "A.B.",
         "occurrence": 1
       }
     ],

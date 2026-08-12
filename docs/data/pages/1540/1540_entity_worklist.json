@@ -30,6 +30,18 @@
         "occurrence": 1
       },
       {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "J. H.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J. H.",
+        "form_source": "headword",
+        "context": "e Kern; Gilbert Blondel; Thomas Höpker; J. H. Darchinger; F. Peyer; Leonoare Man; Dr.",
+        "text": "J. H.",
+        "occurrence": 1
+      },
+      {
         "gid": "118630148",
         "category": "person",
         "surface": "Weil",
@@ -47,8 +59,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "»kein Jeanne Hersch Professorin, lehrt Philosophie an der Universität Genf. Geboren 1912 i",
@@ -60,8 +75,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ete zweieinhalb Jahre die Abteilung für Philosophie der UNESCO in Paris. Veröffentlichte u.",
@@ -71,6 +89,18 @@
       }
     ],
     "4": [
+      {
+        "gid": "5005966-X",
+        "category": "organisation",
+        "surface": "Bund",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Bund",
+        "form_source": "cache-variant",
+        "context": "e. Meine Eltern waren »Bundisten«. Der »Bund« war damals die Arbeiterpartei der Jude",
+        "text": "Bund",
+        "occurrence": 2
+      },
       {
         "gid": "118630148",
         "category": "person",
@@ -106,6 +136,30 @@
         "context": "en waren, lehnten sie den Zionismus ab. Weil sie die jüdische Muttersprache der arme",
         "text": "Weil",
         "occurrence": 3
+      },
+      {
+        "gid": "5005966-X",
+        "category": "organisation",
+        "surface": "Bund",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Bund",
+        "form_source": "cache-variant",
+        "context": "in Paris, vielleicht sonstwo. Aber der Bund Osteuropas ist wie ein Ameisenhaufen au",
+        "text": "Bund",
+        "occurrence": 5
+      },
+      {
+        "gid": "1010450-1",
+        "category": "organisation",
+        "surface": "Genfer Universität",
+        "rule": "org-variant:place-adjective",
+        "alternatives": [],
+        "matched_form": "Genfer Universität",
+        "form_source": "cache-variant",
+        "context": "en. Meine Eltern waren Studenten an der Genfer Universität, als der Erste Weltkrieg ausbrach. Sie",
+        "text": "Genfer Universität",
+        "occurrence": 1
       }
     ],
     "5": [
@@ -171,9 +225,33 @@
         "context": "mein Vaterland. Sicher spricht mich in Fackenheims Büchlein »Gottes Gegenwart in der Gesch",
         "text": "Fackenheims",
         "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "n, was nicht bedeutet, daß man zu einer Antwort kommt. Was diese Frage noch schwieriger",
+        "text": "Antwort",
+        "occurrence": 1
       }
     ],
     "6": [
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "esondere Weise behandeln. (Diese letzte Antwort ist die, welche Sartre gegeben hat.) Na",
+        "text": "Antwort",
+        "occurrence": 2
+      },
       {
         "gid": "11860564X",
         "category": "person",
@@ -185,6 +263,18 @@
         "context": ". (Diese letzte Antwort ist die, welche Sartre gegeben hat.) Natürlich können mehrere",
         "text": "Sartre",
         "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "der« kann man dann »und« sagen, und die Antwort ist dann weniger einfach – sie wird mas",
+        "text": "Antwort",
+        "occurrence": 3
       },
       {
         "gid": "117085391",
@@ -199,6 +289,18 @@
         "form_source": "surname-index",
         "context": "cher Genauigkeit »in der Schwebe« (nach Jaspers’ Worten) ist und bleibt. Dieses »Schweb",
         "text": "Jaspers",
+        "occurrence": 1
+      },
+      {
+        "gid": "5005966-X",
+        "category": "organisation",
+        "surface": "Bund",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Bund",
+        "form_source": "cache-variant",
+        "context": "er diesen Ermordeten gehörten zu jenem »Bund«, von dem ich eben erzählte. Sie waren",
+        "text": "Bund",
         "occurrence": 1
       }
     ],
@@ -228,11 +330,26 @@
         "occurrence": 2
       },
       {
+        "gid": "5005966-X",
+        "category": "organisation",
+        "surface": "Bund",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Bund",
+        "form_source": "cache-variant",
+        "context": "Gegebenheit. Kulturgeschichte. Für den »Bund« war dies die entscheidende Zugehörigke",
+        "text": "Bund",
+        "occurrence": 1
+      },
+      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "gungen, die jüdischen Werke: Literatur, Philosophie, Ethik, Politik usw. Die Juden Osteurop",
@@ -250,6 +367,18 @@
         "form_source": "surname-index",
         "context": "gebenheit: Man ist Jude. »Die Anderen«. Sartre hat die Theorie entwickelt, daß die Jud",
         "text": "Sartre",
+        "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "twas, was das Judesein trifft, in jeder Antwort – unter der Bedingung aber, daß dieses",
+        "text": "Antwort",
         "occurrence": 1
       }
     ]

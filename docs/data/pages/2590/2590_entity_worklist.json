@@ -4,6 +4,18 @@
   "pages": {
     "1": [
       {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "J. H.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J. H.",
+        "form_source": "headword",
+        "context": "\"philosopher\" de Jaspers. Il écrivait : J. H. \"nous fait saisir, de façon bien précis",
+        "text": "J. H.",
+        "occurrence": 1
+      },
+      {
         "gid": "117085391",
         "category": "person",
         "surface": "JASPERS",
@@ -17,6 +29,36 @@
         "context": "ard H. Ehrlich, Richard Wisser, editors JASPERS TODAY: PHILOSOPHY AT THE THRESHOLD OF T",
         "text": "JASPERS",
         "occurrence": 2
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "or Advanced Research in Phenomenology & University Press of America, Washington, D.C. 1987",
+        "text": "University",
+        "occurrence": 1
+      },
+      {
+        "gid": "118521446",
+        "category": "person",
+        "surface": "D.C.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118521446",
+          "11920973X"
+        ],
+        "matched_form": "D.C.",
+        "form_source": "headword",
+        "context": "niversity Press of America, Washington, D.C. 1987 40 Jeanne Hersch 41 En quête de l’",
+        "text": "D.C.",
+        "occurrence": 1
       }
     ],
     "2": [
@@ -24,8 +66,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "er Weltanschauungen (1919) et la grande Philosophie (1932), était-ce déjà la \"Logique philo",
@@ -37,8 +82,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "sophie\", ou du moins \"son philosopher\": Philosophie d’abord, puis Von der Wahrheit. La Phil",
@@ -50,8 +98,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "phie d’abord, puis Von der Wahrheit. La Philosophie comporte trois grandes parties, qui cor",
@@ -187,8 +238,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "re en même temps la nécessité\"? Dans la Philosophie, surtout dans la troisième partie (\"Mét",
@@ -224,8 +278,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ive. Nous retrouvons ici un thème de la Philosophie. Dans sa Logique philosophique, Jaspers",
@@ -275,8 +332,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "IE DER FREIHEIT Richard Wisser Wer der \"Philosophie\" im 20. Jahrhundert seine Aufmerksamkei",
@@ -288,8 +348,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "elche Namen, wie sie die Geschichte der Philosophie im 20. Jahrhundert zu hunderten kennt u",
@@ -310,6 +373,36 @@
         "form_source": "surname-index",
         "context": "ard H. Ehrlich, Richard Wisser, editors JASPERS TODAY: PHILOSOPHY AT THE THRESHOLD OF T",
         "text": "JASPERS",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "University",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "University",
+        "form_source": "cache-variant",
+        "context": "or Advanced Research in Phenomenology & University Press of America, Washington, D.C. 1987",
+        "text": "University",
+        "occurrence": 1
+      },
+      {
+        "gid": "118521446",
+        "category": "person",
+        "surface": "D.C.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118521446",
+          "11920973X"
+        ],
+        "matched_form": "D.C.",
+        "form_source": "headword",
+        "context": "niversity Press of America, Washington, D.C. 1987 49",
+        "text": "D.C.",
         "occurrence": 1
       }
     ]

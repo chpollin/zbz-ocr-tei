@@ -2,13 +2,54 @@
   "doc": "520",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "1": [
+      {
+        "gid": "2008287-3",
+        "category": "organisation",
+        "surface": "Gewerkschaftsbund",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Gewerkschaftsbund",
+        "form_source": "cache-variant",
+        "context": "Herren! Ich möchte zuerst dem Deutschen Gewerkschaftsbund und den Leitern des Europäischen Gesprä",
+        "text": "Gewerkschaftsbund",
+        "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "xistieren nun. Sie sind eine praktische Antwort auf alle Schwierigkeiten, die ich nun e",
+        "text": "Antwort",
+        "occurrence": 1
+      }
+    ],
     "3": [
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "n vergißt das und gibt dann eine flache Antwort, die an dem Problem vorbeigeht, die das",
+        "text": "Antwort",
+        "occurrence": 1
+      },
       {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "em gar nicht anrührt. Das stimmt in der Philosophie, das stimmt in der Politik, das stimmt",
@@ -43,6 +84,18 @@
         "occurrence": 1
       },
       {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "d. h.",
+        "rule": "full-name:initials:suspect",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "off der Zukunft die „matière grise“¹⁰), d. h. die Gehirnrinde sein wird. Dieser wicht",
+        "text": "d. h.",
+        "occurrence": 1
+      },
+      {
         "gid": "118590146",
         "category": "person",
         "surface": "Oppenheimer",
@@ -52,6 +105,20 @@
         "form_source": "surname-index",
         "context": "wir an der Kultur teilhaben. Professor Oppenheimer, von dem eben gesprochen wurde, ist in",
         "text": "Oppenheimer",
+        "occurrence": 1
+      }
+    ],
+    "7": [
+      {
+        "gid": "118616145",
+        "category": "person",
+        "surface": "Sperber",
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
+        "matched_form": "Sperber",
+        "form_source": "surname-index",
+        "context": "h eben sprach. Der Schriftsteller Manes Sperber¹⁴) sagte neulich in Berlin auf dem Kong",
+        "text": "Sperber",
         "occurrence": 1
       }
     ],
@@ -72,8 +139,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "fen, diese nicht unbedingt am Ende eine Philosophie hervorbringt, die sie bestätigt, sonder",
@@ -85,14 +155,29 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "einen Kursus zu veranstalten, der eine Philosophie für das Klassenbewußtsein entwickeln so",
         "evidence": "none",
         "text": "Philosophie",
         "occurrence": 2
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "ssenbewußtsein entwickeln sollte. Meine Antwort war: Passen Sie auf, man kann sehr gut",
+        "text": "Antwort",
+        "occurrence": 1
       }
     ],
     "11": [
@@ -106,6 +191,18 @@
         "form_source": "surname-index",
         "context": "ltur etwas, was unbedingt Zeit braucht. Plato sagte schon: „Sind wir Sklaven oder hab",
         "text": "Plato",
+        "occurrence": 1
+      },
+      {
+        "gid": "2008287-3",
+        "category": "organisation",
+        "surface": "Gewerkschaftsbund",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Gewerkschaftsbund",
+        "form_source": "cache-variant",
+        "context": "Linie in diesem Kreis, der doch mit dem Gewerkschaftsbund zu tun hat, zu sagen, daß das antikultu",
+        "text": "Gewerkschaftsbund",
         "occurrence": 1
       },
       {

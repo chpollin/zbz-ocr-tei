@@ -78,6 +78,20 @@
         "occurrence": 1
       }
     ],
+    "4": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "J.H.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J.H.",
+        "form_source": "headword",
+        "context": "ch gerade in diese Richtung zu bemühen. J.H. (Aus: Persönlichkeiten Europas) Prof. D",
+        "text": "J.H.",
+        "occurrence": 1
+      }
+    ],
     "5": [
       {
         "gid": "118648802",
@@ -95,8 +109,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "rer Geburtsstadt zum a.o. Professor für Philosophie berufen, und seit 1962 ist sie Ordinari",
@@ -108,8 +125,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "chte. Als Vorsteherin der Abteilung für Philosophie der UNESCO bot sich ihr in den Jahren 1",
@@ -121,8 +141,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "t Jeanne Hersch die heutige Aufgabe der Philosophie nicht im Aufbau eines festen Systems, s",
@@ -134,8 +157,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "urg 1941), „Défense de la Technicité en Philosophie“ (in „L’Homme“), Neuenburg 1943), „La L",

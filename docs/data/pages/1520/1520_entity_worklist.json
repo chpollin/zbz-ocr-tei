@@ -72,6 +72,21 @@
         "context": "it vingt-quatre ans lorsqu’il rencontra Gertrud Mayer, qui devait devenir sa femme et la comp",
         "text": "Gertrud Mayer",
         "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "t de collaborer à l’administration de l’Université ; en 1937, celui d’enseigner ; en 1938,",
+        "text": "Université",
+        "occurrence": 1
       }
     ],
     "15": [
@@ -91,8 +106,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "politique. » (Autobiographie, p. 152). Philosophie face aux sciences Dès ses années d’étud",
@@ -104,8 +122,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "s’accomplit par des moyens rationnels. Philosophie face à la religion Elevé hors de toute",
@@ -140,6 +161,51 @@
         "occurrence": 1
       },
       {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "ux, il était chez lui, « à la maison ». Université La visée universelle qui, pour Jaspers,",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "ution, à ses yeux privilégiée, qu’est l’Université. Jaspers se faisait de l’Université la",
+        "text": "Université",
+        "occurrence": 2
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "t l’Université. Jaspers se faisait de l’Université la conception la plus haute. Il la véné",
+        "text": "Université",
+        "occurrence": 3
+      },
+      {
         "gid": "118615270",
         "category": "person",
         "surface": "Socrate",
@@ -162,6 +228,21 @@
         "context": "nthousiaste, un peu comme Socrate, chez Platon, parle des Lois. Par amour, il en criti",
         "text": "Platon",
         "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "irs, d’un professeur de philosophie à l’Université : sa totale indépendance, dans son ense",
+        "text": "Université",
+        "occurrence": 4
       }
     ],
     "19": [
@@ -330,8 +411,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ersonnel et impersonnel. Jaspers écrit (Philosophie, III, page 167) : « Il est dur de rédui",
@@ -345,8 +429,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "tie de sa Métaphysique (3e volume de la Philosophie), Jaspers montre que cette évanescence",
@@ -451,6 +538,32 @@
         "form_source": "legacy",
         "context": "i. Pour Jaspers, l’espace privilégié où la foi philosophique se nourrit de la communication avec les",
         "text": "la foi philosophique",
+        "occurrence": 1
+      }
+    ],
+    "62": [
+      {
+        "gid": "4569257-9",
+        "category": "work",
+        "surface": "La situation spirituelle de notre temps",
+        "rule": "legacy-form:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "La Situation spirituelle de notre temps",
+        "form_source": "legacy",
+        "context": "l’avertissement de son petit ouvrage, « La situation spirituelle de notre temps » (Die geistige Situation der Zeit). Ap",
+        "text": "La situation spirituelle de notre temps",
+        "occurrence": 1
+      },
+      {
+        "gid": "4498918-0",
+        "category": "work",
+        "surface": "La culpabilité (allemande)",
+        "rule": "legacy-form:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "La Culpabilité (allemande)",
+        "form_source": "legacy",
+        "context": "der Zeit). Après la guerre, il publie « La culpabilité (allemande) » (Die Schuldfrage) et s’efforce d’aide",
+        "text": "La culpabilité (allemande)",
         "occurrence": 1
       }
     ],
@@ -619,8 +732,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "onjure l’être et devient métaphysique. (Philosophie, I, p. 27-28) 4. Quête philosophique en",
@@ -632,8 +748,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "oge sur le commencement et sur la fin. (Philosophie, I, p. 1-2) À partir d’une réalité hist",
@@ -645,8 +764,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "hique, inachevée en tant que totalité. (Philosophie, I, p. 4) ORIENTATION DANS LE MONDE 5.",
@@ -660,8 +782,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "fait toute orientation dans le monde. (Philosophie, I, p. 29-30) 6. Le monde déchiré En ta",
@@ -675,8 +800,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "et l’être en soi de la transcendance. (Philosophie, I, p. 64-65) ÉCLAIREMENT DE L’EXISTENC",
@@ -690,8 +818,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ertitude de lui-même la plus profonde. (Philosophie, I, p. 32-33) 8. Existence possible App",
@@ -705,8 +836,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "monde est le champ où elle s’apparaît. (Philosophie, II, p. 1-2) 9. Situation et situations",
@@ -720,8 +854,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "nscience qui s’en tient à l’immanence. (Philosophie, II, p. 203) 10. Systématique des situa",
@@ -735,8 +872,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "tel qu’il se manifeste historiquement. (Philosophie, II, p. 209) 11. La détermination dans",
@@ -748,8 +888,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "tte unique situation et en elle seule. (Philosophie, II, p. 213-214) 12. Communication au n",
@@ -763,8 +906,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "lairer, c’est une tâche philosophique. (Philosophie, II, p. 51) 13. Communication existenti",
@@ -776,8 +922,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "mps que l’autre je me trahis moi-même. (Philosophie, II, p. 58) 14. Combattre par amour Cet",
@@ -791,8 +940,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "au niveau des motivations empiriques). (Philosophie, II, p. 65) 15. Impossibilité de la com",
@@ -804,8 +956,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ut les conquérir et se les approprier. (Philosophie, II, p. 91) 16. Liberté Il reste, au co",
@@ -819,8 +974,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "originelle, ne connaît aucune limite. (Philosophie, II, p. 185-186) 17. Origine de la cons",
@@ -832,8 +990,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "re en tant que moi-sujet (ich selbst). (Philosophie, II, p. 191) 80 MÉTAPHYSIQUE 18. L’être",
@@ -847,8 +1008,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "xistence, qui en est la transcendance. (Philosophie, III, p. 1-2) 19. Pensée métaphysique P",
@@ -862,8 +1026,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "lequel l’existence s’assure de l’être. (Philosophie, I, p. 33-34) 20. La divinité comme tra",
@@ -889,8 +1056,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ondance, n’est plus aucun être défini. (Philosophie, III, p. 66-67) 21. Liberté et transcen",
@@ -916,8 +1086,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "e s’adresse qu’à l’existence possible. (Philosophie, III, p. 129) Quand nous parlons de sig",
@@ -931,8 +1104,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "leur authenticité est un contre-sens. (Philosophie, III, p. 150) Le chiffre, c’est l’être",
@@ -946,8 +1122,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "à produire l’expérience métaphysique. (Philosophie, III, p. 137) 24. Rupture logique Dans",
@@ -959,8 +1138,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "mpirique, de ce qui est véritablement. (Philosophie, III, p. 17) 25. L’échec, chiffre ultim",
@@ -974,8 +1156,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "vide absolu que la plénitude à jamais. (Philosophie, III, p. 234) 26. Silence L’interprétat",
@@ -1095,6 +1280,18 @@
         "context": "l’inspire ce qui constitue l’origine de la foi philosophique, vivante depuis qu’il y a des hommes qu",
         "text": "la foi philosophique",
         "occurrence": 1
+      },
+      {
+        "gid": "4597459-7",
+        "category": "work",
+        "surface": "ma vie",
+        "rule": "work-variant:qualifier-strip:suspect",
+        "alternatives": [],
+        "matched_form": "Ma vie",
+        "form_source": "cache-variant",
+        "context": "s la certitude qui me guide. Par la foi ma vie s’enracine dans l’origine, qui me parle",
+        "text": "ma vie",
+        "occurrence": 1
       }
     ],
     "107": [
@@ -1144,14 +1341,94 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "mière. (Écrits posthumes) POLITIQUE 51. Philosophie et politique On reproche à la philosoph",
         "evidence": "none",
         "text": "Philosophie",
         "occurrence": 1
+      }
+    ],
+    "113": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "Sorge, p. 193-194) 52. La politique à l’Université S’il est vrai que parmi les tâches actu",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "rai que parmi les tâches actuelles de l’Université, l’étude des réalités politiques, le dé",
+        "text": "Université",
+        "occurrence": 2
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "d’une confusion. La raison d’être de l’Université exclut la politique active de l’Univers",
+        "text": "Université",
+        "occurrence": 3
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "versité exclut la politique active de l’Université elle-même. Chaque étudiant peut, s’il l",
+        "text": "Université",
+        "occurrence": 4
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "es groupes partisans à l’intérieur de l’Université. Ici il étudie les partis, dans les loc",
+        "text": "Université",
+        "occurrence": 5
       }
     ],
     "114": [
@@ -1165,6 +1442,20 @@
         "form_source": "surname-index",
         "context": "é par le plus grand de nos philosophes, Kant, principe qui était selon lui la condit",
         "text": "Kant",
+        "occurrence": 1
+      }
+    ],
+    "116": [
+      {
+        "gid": "4597459-7",
+        "category": "work",
+        "surface": "ma vie",
+        "rule": "work-variant:qualifier-strip:suspect",
+        "alternatives": [],
+        "matched_form": "Ma vie",
+        "form_source": "cache-variant",
+        "context": "je suis complice. Si je n’ai pas risqué ma vie pour empêcher l’assassinat d’autres hom",
+        "text": "ma vie",
         "occurrence": 1
       }
     ],
@@ -1209,6 +1500,18 @@
       }
     ],
     "121": [
+      {
+        "gid": "118557513",
+        "category": "person",
+        "surface": "J.C.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J.C.",
+        "form_source": "headword",
+        "context": "re semble se situer autour de 500 avant J.C., dans le processus spirituel qui s’est",
+        "text": "J.C.",
+        "occurrence": 1
+      },
       {
         "gid": "118565036",
         "category": "person",
@@ -1395,6 +1698,36 @@
     ],
     "123": [
       {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "au lycée une formation humaniste ; à l’Université l’accès à l’universalité de la recherch",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "t appui avec confiance sur le sens de l’Université en Occident. La merveilleuse ville de H",
+        "text": "Université",
+        "occurrence": 2
+      },
+      {
         "gid": "117085391",
         "category": "person",
         "surface": "Gertrud Mayer",
@@ -1412,8 +1745,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "s capitaux, d’environ 1000 pages chacun Philosophie. 3 volumes, Berlin 1932. 4e édition 197",
@@ -1464,8 +1800,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": ", 1938, 112 p. Orig.: Descartes und die Philosophie, Berlin, 1937. La culpabilité allemande",
@@ -1553,6 +1892,21 @@
         "form_source": "surname-index",
         "context": "te Ézéchiel. 11. Solon. 12. Humanité de Goethe. Orig.: Rechenschaft und Ausblick, Münc",
         "text": "Goethe",
+        "occurrence": 1
+      },
+      {
+        "gid": "118592912",
+        "category": "person",
+        "surface": "J.P.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118592912",
+          "119012235"
+        ],
+        "matched_form": "J.P.",
+        "form_source": "headword",
+        "context": "G. Floquet, H. de Gandillac, J. Hersch, J.P. Leyvraz, H. Naef, X. Tilliette. Paris,",
+        "text": "J.P.",
         "occurrence": 1
       },
       {
@@ -1702,6 +2056,21 @@
     ],
     "128": [
       {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "Recueil de textes: 1. Le renouveau de l’Université. 2. Pour le premier numéro de la revue",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
         "gid": "118577484",
         "category": "person",
         "surface": "Marcel",
@@ -1717,8 +2086,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": ", 1947. Gabriel Marcel et Karl Jaspers. Philosophie du mystère et philosophie du paradoxe.",
@@ -1741,6 +2113,33 @@
     ],
     "130": [
       {
+        "gid": "1398705772",
+        "category": "person",
+        "surface": "E. L.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "E. L.",
+        "form_source": "headword",
+        "context": "titude et en shoodt. (1961). Trad. : E. E. L. de Lando, L’Histoire de l’art, 157 p. B",
+        "text": "E. L.",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "Nicolas de Lemos, 4. Le tonopoeau de l’Université. 3. Pour le premier numéro de la revue",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
         "gid": "118577484",
         "category": "person",
         "surface": "Marcel",
@@ -1756,8 +2155,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": ", 1947. Gabriel Marcel et Karl Jaspers. Philosophie du nombre et philosophie du paradoxe. P",
@@ -1786,8 +2188,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "tre avec la politique et l’histoire, 8. Philosophie face aux sciences, 9. Philosophie face",
@@ -1799,14 +2204,32 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "e, 8. Philosophie face aux sciences, 9. Philosophie face à la religion, 9. Université, 10.",
         "evidence": "none",
         "text": "Philosophie",
         "occurrence": 2
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": ", 9. Philosophie face à la religion, 9. Université, 10. Mort et écrits posthumes, 11. II.",
+        "text": "Université",
+        "occurrence": 1
       }
     ],
     "134": [
@@ -1814,13 +2237,31 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ilosophie universelle 106 Politique 51. Philosophie et politique 106 52. La politique à l’U",
         "evidence": "none",
         "text": "Philosophie",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "e et politique 106 52. La politique à l’Université 107 53. Notre culpabilité 108 54. Quatr",
+        "text": "Université",
         "occurrence": 1
       }
     ],
@@ -1829,14 +2270,47 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ilosophie universelle 106 Politique 51. Philosophie et politique 108 52. La politique à l’U",
         "evidence": "none",
         "text": "Philosophie",
         "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "e et politique 108 52. La politique à l’Université 108 53. Notre culpabilité 109 54. Quatr",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "Histoire 57. Pourquoi la politique à l’Université 112 58. La période axiale 114 59. L’uni",
+        "text": "Université",
+        "occurrence": 2
       }
     ],
     "138": [
@@ -1850,6 +2324,21 @@
         "form_source": "cache-variant",
         "context": "raphique 119 Ce livre voudrait servir d’introduction à la philosophie de Karl Jaspers pour les lecteurs de la",
         "text": "introduction à la philosophie",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "chiatre, il enseigna la philosophie à l’Université de Heidelberg. Réduit au silence par le",
+        "text": "Université",
         "occurrence": 1
       },
       {

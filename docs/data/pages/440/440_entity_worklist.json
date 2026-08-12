@@ -4,6 +4,18 @@
   "pages": {
     "1": [
       {
+        "gid": "122117727",
+        "category": "person",
+        "surface": "T.F.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "T.F.",
+        "form_source": "headword",
+        "context": "C. CHAVANON, Directeur-général de la R.T.F.. 9 Textes de : | STEFAN ANDRÈS | 11 | |",
+        "text": "T.F.",
+        "occurrence": 1
+      },
+      {
         "gid": "118627813",
         "category": "person",
         "surface": "BAZIN",
@@ -43,6 +55,21 @@
       }
     ],
     "3": [
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "econdaires classiques à Genève puis à l’Université de cette ville où elle obtint son docto",
+        "text": "Université",
+        "occurrence": 1
+      },
       {
         "gid": "118509578",
         "category": "person",

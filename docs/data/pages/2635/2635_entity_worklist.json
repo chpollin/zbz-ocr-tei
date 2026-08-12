@@ -2,7 +2,57 @@
   "doc": "2635",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "2": [
+      {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "d. h.",
+        "rule": "full-name:initials:suspect",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "en hat, war eben das Nicht-Menschliche, d. h. daß der Käfer seinem Leid keinen Sinn u",
+        "text": "d. h.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "d. h.",
+        "rule": "full-name:initials:suspect",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "uf französisch sagt, »sur le qui vive«, d. h. ständig unmittelbar erschrocken, ständi",
+        "text": "d. h.",
+        "occurrence": 2
+      }
+    ],
     "4": [
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "usforderung. Er glaubte, ich gebe keine Antwort darauf. Und es war furchtbar schwer, ei",
+        "text": "Antwort",
+        "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "rauf. Und es war furchtbar schwer, eine Antwort zu geben. Da gab es das Leid der Schwes",
+        "text": "Antwort",
+        "occurrence": 2
+      },
       {
         "gid": "118642464",
         "category": "person",

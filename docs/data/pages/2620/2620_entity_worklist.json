@@ -40,6 +40,81 @@
         "occurrence": 1
       },
       {
+        "gid": "118502387",
+        "category": "person",
+        "surface": "A. a.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118502387",
+          "118505114"
+        ],
+        "matched_form": "A. A.",
+        "form_source": "headword",
+        "context": "cht mehr aufgeklärt werden kann. --- 25 A. a. O., § 29–23, S. 55–72. 26 A. a. O., S.",
+        "text": "A. a.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118502387",
+        "category": "person",
+        "surface": "A. a.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118502387",
+          "118505114"
+        ],
+        "matched_form": "A. A.",
+        "form_source": "headword",
+        "context": "--- 25 A. a. O., § 29–23, S. 55–72. 26 A. a. O., S. 57. 27 Ein besonders sprechender",
+        "text": "A. a.",
+        "occurrence": 2
+      },
+      {
+        "gid": "118502387",
+        "category": "person",
+        "surface": "a. a.",
+        "rule": "full-name:initials:ambiguous:suspect",
+        "alternatives": [
+          "118502387",
+          "118505114"
+        ],
+        "matched_form": "A. A.",
+        "form_source": "headword",
+        "context": "pretation des plotinischen Šipka návra, a. a. O., S. 66. 28 A. a. O., S. 57. 29 A. a.",
+        "text": "a. a.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118502387",
+        "category": "person",
+        "surface": "A. a.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118502387",
+          "118505114"
+        ],
+        "matched_form": "A. A.",
+        "form_source": "headword",
+        "context": "ischen Šipka návra, a. a. O., S. 66. 28 A. a. O., S. 57. 29 A. a. O., S. 66. --- Jean",
+        "text": "A. a.",
+        "occurrence": 3
+      },
+      {
+        "gid": "118502387",
+        "category": "person",
+        "surface": "A. a.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118502387",
+          "118505114"
+        ],
+        "matched_form": "A. A.",
+        "form_source": "headword",
+        "context": "a. a. O., S. 66. 28 A. a. O., S. 57. 29 A. a. O., S. 66. --- Jeanne Hersch (Genève) T",
+        "text": "A. a.",
+        "occurrence": 4
+      },
+      {
         "gid": "118547739",
         "category": "person",
         "surface": "Hegel",
@@ -115,8 +190,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "hließlich: Hegel war der Denker, dessen Philosophie eine so entschiedene, alles beherrschen",
@@ -179,8 +257,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "das Verständnis zu wecken für das, was Philosophie sei, wie sie sich ausdrücken könne, und",
@@ -230,8 +311,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "nnt werden kann. Trotzdem hat fast alle Philosophie den Standpunkt im Sein selbst und nicht",
@@ -243,8 +327,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "diesem Schatten gesucht. Aber wenn sie Philosophie war, sind ihre Gedanken stets auch umzu",
@@ -356,8 +443,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "für den heutigen Studenten, der in die Philosophie eingeführt werden soll, die Frage 326 3",
@@ -367,6 +457,18 @@
       }
     ],
     "3": [
+      {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "d. h.",
+        "rule": "full-name:initials:suspect",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "sogar zur Aufgabe — einer Metaphysik, — d. h. zur Aufgabe, das absolute Sein durch Se",
+        "text": "d. h.",
+        "occurrence": 1
+      },
       {
         "gid": "1078795312",
         "category": "work",
@@ -423,8 +525,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "bjekt kann es niemals erfahren. Da jede Philosophie, die ein Wissen von Sein vermitteln wil",
@@ -486,8 +591,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "einem Wissen. Und dieser Besitz wäre im Philosophie- renden ein versöhnender, dem versöhnen",
@@ -511,8 +619,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "he existentielle Wirkung der hegelschen Philosophie als Chiffre zerstören, und die Möglichk",

@@ -4,6 +4,21 @@
   "pages": {
     "2": [
       {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "it à Heidelberg, privé de sa chaire à l’Université, réduit au silence, et sans cesse menac",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
         "gid": "118551655",
         "category": "person",
         "surface": "Hitler",
@@ -13,6 +28,18 @@
         "form_source": "surname-index",
         "context": "plus. Dès avant la prise du pouvoir par Hitler, Jaspers avait publié, tout au début de",
         "text": "Hitler",
+        "occurrence": 1
+      },
+      {
+        "gid": "4569257-9",
+        "category": "work",
+        "surface": "La situation spirituelle de notre temps",
+        "rule": "legacy-form:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "La Situation spirituelle de notre temps",
+        "form_source": "legacy",
+        "context": "années trente, un petit livre intitulé «La situation spirituelle de notre temps», où il dénonçait le vide de l’époque,",
+        "text": "La situation spirituelle de notre temps",
         "occurrence": 1
       },
       {
@@ -156,6 +183,20 @@
         "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 3
+      }
+    ],
+    "4": [
+      {
+        "gid": "4597459-7",
+        "category": "work",
+        "surface": "ma vie",
+        "rule": "work-variant:qualifier-strip:suspect",
+        "alternatives": [],
+        "matched_form": "Ma vie",
+        "form_source": "cache-variant",
+        "context": "j’appartiens à la nature, je lutte pour ma vie et mes intérêts, au sein d’une réalité",
+        "text": "ma vie",
+        "occurrence": 1
       }
     ],
     "6": [

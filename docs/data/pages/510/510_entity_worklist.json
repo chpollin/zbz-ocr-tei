@@ -7,8 +7,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title:in-plain-bibl",
-        "alternatives": [],
+        "rule": "short-title:ambiguous:in-plain-bibl",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "Bulletin de la Société française de Philosophie 54-55. 1960/61 Reprint SCHMIDT PERIODIC",
@@ -22,8 +25,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "987 Bulletin de la Société française de Philosophie Séance du 28 janvier 1961 Les membres d",
@@ -51,13 +57,43 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "abord remercier la Société Française de Philosophie de m’avoir invitée à venir ici, cette a",
         "evidence": "none",
         "text": "Philosophie",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "nciale que j’étais, à peine sortie de l’Université, parce qu’il avait vu mon tout premier",
+        "text": "Université",
+        "occurrence": 1
+      },
+      {
+        "gid": "4597459-7",
+        "category": "work",
+        "surface": "ma vie",
+        "rule": "work-variant:qualifier-strip:suspect",
+        "alternatives": [],
+        "matched_form": "Ma vie",
+        "form_source": "cache-variant",
+        "context": "Paris des philosophes, parce que toute ma vie j’ai rencontré un appui, un encourageme",
+        "text": "ma vie",
         "occurrence": 1
       }
     ],
@@ -531,9 +567,71 @@
         "context": "is convaincue qu’Ibsen s’est souvenu de Sophocle). J’ajouterai qu’un autre drame d’Ibsen",
         "text": "Sophocle",
         "occurrence": 1
+      },
+      {
+        "gid": "118818619",
+        "category": "person",
+        "surface": "M. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "M. M.",
+        "form_source": "headword",
+        "context": "rte. La parole est à M. Michel Souriau. M. M. Souriau. — Je ne répéterai pas les témo",
+        "text": "M. M.",
+        "occurrence": 1
+      }
+    ],
+    "28": [
+      {
+        "gid": "118818619",
+        "category": "person",
+        "surface": "M. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "M. M.",
+        "form_source": "headword",
+        "context": "rouvé une vérification par l’inverse... M. M. Souriau. — Pourtant, au commencement, i",
+        "text": "M. M.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118818619",
+        "category": "person",
+        "surface": "M. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "M. M.",
+        "form_source": "headword",
+        "context": "dire, si j’en juge d’après le résultat. M. M. Souriau. — Ce qui m’a semblé tout à fai",
+        "text": "M. M.",
+        "occurrence": 2
       }
     ],
     "29": [
+      {
+        "gid": "118818619",
+        "category": "person",
+        "surface": "M. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "M. M.",
+        "form_source": "headword",
+        "context": "vie dont on a fait des tragédies. 146 [M. M. Souriau.] BULLETIN DE LA SOCIÉTÉ FRANÇA",
+        "text": "M. M.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118818619",
+        "category": "person",
+        "surface": "M. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "M. M.",
+        "form_source": "headword",
+        "context": "érées comme des documents sur le temps. M. M. Souriau. — Je m’en réjouis. M. J. Wahl.",
+        "text": "M. M.",
+        "occurrence": 2
+      },
       {
         "gid": "118594893",
         "category": "person",
@@ -660,8 +758,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "le 28 janvier à la Société Française de Philosophie. 1° On pourrait peut-être s’entendre su",
@@ -673,8 +774,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ositions qui lui semblent évidentes. La Philosophie est plus exigeante. Il faut nous demand",
@@ -738,13 +842,30 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "le Bulletin de la Société Française de Philosophie d’avril 1955, consacré à ma conférence.",
         "evidence": "typographic",
         "text": "Philosophie",
+        "occurrence": 1
+      }
+    ],
+    "42": [
+      {
+        "gid": "118818619",
+        "category": "person",
+        "surface": "M. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "M. M.",
+        "form_source": "headword",
+        "context": "ne pas échouer. Mais, comme l’a indiqué M. M. de Gandillac (ou M. G. Marcel), il faut",
+        "text": "M. M.",
         "occurrence": 1
       }
     ]

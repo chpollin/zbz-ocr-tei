@@ -7,8 +7,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "Philosophie und Reformen des Bildungswesen La philo",
@@ -71,6 +74,20 @@
         "occurrence": 1
       }
     ],
+    "8": [
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "t international sur l’éducation, Fayard-Unesco, 1972. 8 La prétention généralisée à la",
+        "text": "Unesco",
+        "occurrence": 1
+      }
+    ],
     "10": [
       {
         "gid": "118594893",
@@ -88,8 +105,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "SENS von Hermann Lübbe I. Der Bedarf an Philosophie wächst mit dem Tempo des sozialen Wande",

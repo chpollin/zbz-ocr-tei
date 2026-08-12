@@ -50,6 +50,18 @@
         "context": ". Forschung, München | | Prof. Dr. Hans Mayer | Technische Hochschule, Hannover | | P",
         "text": "Mayer",
         "occurrence": 1
+      },
+      {
+        "gid": "115750231",
+        "category": "person",
+        "surface": "E. F.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "E. F.",
+        "form_source": "headword",
+        "context": "herlich | Universität Frankfurt | | Dr. E. F. Schumacher | National Coal Board, Londo",
+        "text": "E. F.",
+        "occurrence": 1
       }
     ],
     "7": [
@@ -67,6 +79,30 @@
       }
     ],
     "8": [
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "erte Rationalität benötigen, suchen wir Antwort auf die uns heute hier gestellte Frage.",
+        "text": "Antwort",
+        "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "iebe Frau Hersch, sehr gespannt, welche Antwort Sie uns darauf geben werden. Darf ich S",
+        "text": "Antwort",
+        "occurrence": 2
+      },
       {
         "gid": "118815679",
         "category": "person",
@@ -97,11 +133,26 @@
         "occurrence": 1
       },
       {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "geschieht, dann erhält man darauf keine Antwort. Dazu kommt die Problematik der moderne",
+        "text": "Antwort",
+        "occurrence": 1
+      },
+      {
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "Kultur, fast byzantinisch – auch in der Philosophie. Daraus entwickelt sich eine Leere, ein",
@@ -661,6 +712,20 @@
         "occurrence": 1
       }
     ],
+    "24": [
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "falls sinnvoll religiöses Verhalten als Antwort auf eine an mich appellierende Wirklich",
+        "text": "Antwort",
+        "occurrence": 1
+      }
+    ],
     "25": [
       {
         "gid": "118547739",
@@ -721,8 +786,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ie in den Bereich einer therapeutischen Philosophie fallenden Probleme drohenden Sinnverlus",
@@ -736,8 +804,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "technik\". Jetzt wäre es die Aufgabe der Philosophie, mit diesen sich neu ergebenden Kontrol",
@@ -749,8 +820,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "u setzen, ohne in ihrem Hochmut auf die Philosophie zu hören und mit ihr gemeinsam darüber",
@@ -879,6 +953,18 @@
     ],
     "34": [
       {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "ehr weit entfernt. Vielleicht liegt die Antwort auf die Frage, wie man damit fertig wir",
+        "text": "Antwort",
+        "occurrence": 1
+      },
+      {
         "gid": "118630717",
         "category": "person",
         "surface": "Weizsäcker",
@@ -918,8 +1004,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "beispielsweise auch die therapeutische Philosophie eines Wittgenstein. Als Arzt verwahre i",
@@ -1129,8 +1218,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "e sich immer wieder gezeigt hat –, eine Philosophie oder zumindest eine Terminologie zu erf",
@@ -1182,7 +1274,36 @@
         "occurrence": 1
       }
     ],
+    "51": [
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "iner der kommenden Bergedorfer Tagungen Antwort auf die Frage nach der Zukunft der indu",
+        "text": "Antwort",
+        "occurrence": 1
+      }
+    ],
     "52": [
+      {
+        "gid": "118616145",
+        "category": "person",
+        "surface": "M. S.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118616145",
+          "118794132"
+        ],
+        "matched_form": "M. S.",
+        "form_source": "headword",
+        "context": "50 Es sprachen: Prof. Dr. Gerd Albers, M. S. geb. 1919 o. Professor für Städtebau, O",
+        "text": "M. S.",
+        "occurrence": 1
+      },
       {
         "gid": "118613723",
         "category": "person",
@@ -1225,13 +1346,28 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "eanne Hersch geb. 1910 o. Professor für Philosophie an der Universität Genf, Mitglied der S",
         "evidence": "none",
         "text": "Philosophie",
+        "occurrence": 1
+      },
+      {
+        "gid": "2011312-2",
+        "category": "organisation",
+        "surface": "Helvetia",
+        "rule": "org-variant:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "Helvetia",
+        "form_source": "cache-variant",
+        "context": "Genève, des Conseil de la Fondation Pro Helvetia, der Commission Suisse pour L’UNESCO Sc",
+        "text": "Helvetia",
         "occurrence": 1
       }
     ],
@@ -1287,6 +1423,18 @@
         "occurrence": 1
       },
       {
+        "gid": "115750231",
+        "category": "person",
+        "surface": "E. F.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "E. F.",
+        "form_source": "headword",
+        "context": "; Die Unfähigkeit zu trauern (1967) Dr. E. F. Schumacher geb. 1911 Leiter der volkswi",
+        "text": "E. F.",
+        "occurrence": 1
+      },
+      {
         "gid": "118630717",
         "category": "person",
         "surface": "Weizsäcker",
@@ -1302,8 +1450,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "r von Weizsäcker geb. 1912 o. Prof. für Philosophie an der Universität Hamburg Schriften: Z",
@@ -1313,6 +1464,18 @@
       }
     ],
     "56": [
+      {
+        "gid": "106657356",
+        "category": "person",
+        "surface": "H. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "H. M.",
+        "form_source": "headword",
+        "context": "e | Innsbruck/Österreich | | Dipl.-Ing. H. M. Antz | Reinbek | | Prof. Dr. O. Anweile",
+        "text": "H. M.",
+        "occurrence": 1
+      },
       {
         "gid": "13143568X",
         "category": "person",
@@ -1338,6 +1501,126 @@
         "occurrence": 2
       },
       {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "rankreich | | Dr. A. Besser | Frankfurt a. M. | | Oskar Bezold | Hamburg | | Dr. H. B",
+        "text": "a. M.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118557394",
+        "category": "person",
+        "surface": "P. J.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "P. J.",
+        "form_source": "headword",
+        "context": "burg | | Dr. H. Bütow | Hamburg | | Dr. P. J. van der Burg | Eindhoven/Holland | | Ax",
+        "text": "P. J.",
+        "occurrence": 1
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "s./USA | | Dr. H. Ehrenberg | Frankfurt a. M. | | Reinhart v. Eichborn | Düsseldorf |",
+        "text": "a. M.",
+        "occurrence": 2
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "| Tübingen | | Otto Esser | Kelsterbach a. M. | | Prof. Dr. W. Fabian | Köln | | Prof",
+        "text": "a. M.",
+        "occurrence": 3
+      },
+      {
+        "gid": "118515136",
+        "category": "person",
+        "surface": "L. B.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "L. B.",
+        "form_source": "headword",
+        "context": "Dr. W. Felgentraeger | Hamburg | | Dr. L. B. Ferri | Mailand/Italien | | Prof. Dr. I",
+        "text": "L. B.",
+        "occurrence": 1
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "n | | Prof. Dr. I. Fetscher | Frankfurt a. M. | | Prof. Dr. W. Finkelnburg † | Erlang",
+        "text": "a. M.",
+        "occurrence": 4
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "kel | | Brigitte B. Fischer | Frankfurt a. M. | | Prof. Dr. H. Fischer | München | |",
+        "text": "a. M.",
+        "occurrence": 5
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "Prof. Dr. L. v. Friedeburg | Frankfurt a. M. | | Dr. G. Friedrichs | Frankfurt a. M.",
+        "text": "a. M.",
+        "occurrence": 6
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "a. M. | | Dr. G. Friedrichs | Frankfurt a. M. | | Dipl.-Volkswirt K. H. Friedrichs |",
+        "text": "a. M.",
+        "occurrence": 7
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "-Volkswirt K. H. Friedrichs | Frankfurt a. M. | | Alfred Frisch | Paris/Frankreich |",
+        "text": "a. M.",
+        "occurrence": 8
+      },
+      {
         "gid": "118536109",
         "category": "person",
         "surface": "Frisch",
@@ -1348,9 +1631,164 @@
         "context": "Friedrichs | Frankfurt a. M. | | Alfred Frisch | Paris/Frankreich | | Prof. Dr. B. Fri",
         "text": "Frisch",
         "occurrence": 1
+      },
+      {
+        "gid": "116504153",
+        "category": "person",
+        "surface": "T. R.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "T. R.",
+        "form_source": "headword",
+        "context": "of. Dr. B. Fritsch | Zürich/Schweiz | | T. R. Fyvel | London/England | Prof. Dr. D. G",
+        "text": "T. R.",
+        "occurrence": 1
+      }
+    ],
+    "57": [
+      {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "D. H.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "H. Goerges Prof. R. W. Goldsmith Prof. D. H. Gollwitzer Prof. Dr. G. Goriely Hans Gr",
+        "text": "D. H.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118554735",
+        "category": "person",
+        "surface": "D. H.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "D. H.",
+        "form_source": "headword",
+        "context": "lfgang Hilligen Dr. W. Hochkeppel Prof. D. H. J. Hoefnagels Prof. Dr. P. R. Hofstätte",
+        "text": "D. H.",
+        "occurrence": 2
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "mburg London/England Hannover Frankfurt a. M. Aachen Bloomington/USA Karlsruhe Hambur",
+        "text": "a. M.",
+        "occurrence": 1
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "ügge/Belgien Paris/Frankreich Frankfurt a. M. Frankfurt a. M. München Nijmegen/Hollan",
+        "text": "a. M.",
+        "occurrence": 2
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "is/Frankreich Frankfurt a. M. Frankfurt a. M. München Nijmegen/Holland Hamburg Dipl.-",
+        "text": "a. M.",
+        "occurrence": 3
+      },
+      {
+        "gid": "1414667280",
+        "category": "person",
+        "surface": "L. H.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "1414667280",
+          "172155800"
+        ],
+        "matched_form": "L. H.",
+        "form_source": "headword",
+        "context": ". G. Kienbaum U. W. Kitzinger Prof. Dr. L. H. Klaassen Prof. H. Klages Prof. Dr. W. K",
+        "text": "L. H.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118592912",
+        "category": "person",
+        "surface": "J. P.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118592912",
+          "119012235"
+        ],
+        "matched_form": "J. P.",
+        "form_source": "headword",
+        "context": "Knoeringen Dr. R. v. Knüpffer Prof. Dr. J. P. Kob Claus Koch Dr. H. Koch Thilo Koch H",
+        "text": "J. P.",
+        "occurrence": 1
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "berg Dortmund Hamburg Hamburg Frankfurt a. M. Hamburg London/England Darmstadt Münche",
+        "text": "a. M.",
+        "occurrence": 4
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "erlin Hamburg Brüssel/Belgien Frankfurt a. M. St. Gallen/Schweiz Hamburg | Prof. Dr.",
+        "text": "a. M.",
+        "occurrence": 5
       }
     ],
     "58": [
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "| München | | Wolfgang Lehr | Frankfurt a. M. | | Dr. E. Leist | Hamburg | | Maximili",
+        "text": "a. M.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118503251",
+        "category": "person",
+        "surface": "J. A.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118503251",
+          "121278018"
+        ],
+        "matched_form": "J. A.",
+        "form_source": "headword",
+        "context": "g | | Maximilian Lenk | Hamburg | | Dr. J. A. Leonard | Cambridge/England | | Heinz A",
+        "text": "J. A.",
+        "occurrence": 1
+      },
       {
         "gid": "172447941",
         "category": "person",
@@ -1364,6 +1802,30 @@
         "occurrence": 1
       },
       {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "weden | | Dr. A. von Loesch | Frankfurt a. M. | | Gerhard Löwenthal | Brüssel/Belgien",
+        "text": "a. M.",
+        "occurrence": 2
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "| Bonn | | Dr. A. Lorenzer | Frankfurt a. M. | | Prof. Dr. G. Ludwig | Marburg | | S",
+        "text": "a. M.",
+        "occurrence": 3
+      },
+      {
         "gid": "118578537",
         "category": "person",
         "surface": "Marx",
@@ -1374,6 +1836,18 @@
         "context": "| | Winfried Martini | München | | Eli Marx | Hamburg | | Karlgeorg Matthes | Frank",
         "text": "Marx",
         "occurrence": 1
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "mburg | | Karlgeorg Matthes | Frankfurt a. M. | | Dr. W. Matuschke | Hamburg | | Prof",
+        "text": "a. M.",
+        "occurrence": 4
       },
       {
         "gid": "117085391",
@@ -1400,6 +1874,30 @@
         "occurrence": 2
       },
       {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "n | | Prof. Dr. H. Meinhold | Frankfurt a. M. | | Hans-Ulrich Meissner | Hamburg | |",
+        "text": "a. M.",
+        "occurrence": 5
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "| München | | Jakob Moneta | Frankfurt a. M. | | Prof. Dr. O. Morgenstern | Princeto",
+        "text": "a. M.",
+        "occurrence": 6
+      },
+      {
         "gid": "132229900",
         "category": "person",
         "surface": "Müller",
@@ -1422,6 +1920,18 @@
         "context": "| Bastian Müller | Köln | | Hans Dieter Müller | Ulm | | Prof. Dr. J. H. Müller | Frei",
         "text": "Müller",
         "occurrence": 2
+      },
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "J. H.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J. H.",
+        "form_source": "headword",
+        "context": "Hans Dieter Müller | Ulm | | Prof. Dr. J. H. Müller | Freiburg | | Prof. Dr. K. V. M",
+        "text": "J. H.",
+        "occurrence": 1
       },
       {
         "gid": "132229900",
@@ -1460,6 +1970,22 @@
         "occurrence": 5
       },
       {
+        "gid": "1020306386",
+        "category": "person",
+        "surface": "H. R.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "1020306386",
+          "1077991495",
+          "132037696"
+        ],
+        "matched_form": "H. R.",
+        "form_source": "headword",
+        "context": "f Müller-Marein | Hamburg | | Prof. Dr. H. R. Müller-Schwefe | Hamburg | | Janko v. M",
+        "text": "H. R.",
+        "occurrence": 1
+      },
+      {
         "gid": "132229900",
         "category": "person",
         "surface": "Müller",
@@ -1472,6 +1998,66 @@
         "occurrence": 6
       },
       {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "amburg | | Janko v. Musulin | Frankfurt a. M. | | Prof. Dr. S. M. Naudé | Pretoria/Re",
+        "text": "a. M.",
+        "occurrence": 7
+      },
+      {
+        "gid": "118730002",
+        "category": "person",
+        "surface": "S. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "S. M.",
+        "form_source": "headword",
+        "context": "Musulin | Frankfurt a. M. | | Prof. Dr. S. M. Naudé | Pretoria/Rep. Südafrika | | Ber",
+        "text": "S. M.",
+        "occurrence": 1
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "weiz | | Prof. Dr. W. Niens | Frankfurt a. M. | | Prof. Dr. P. Noll | Mainz | | Prof.",
+        "text": "a. M.",
+        "occurrence": 8
+      },
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "J. H.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J. H.",
+        "form_source": "headword",
+        "context": "Dr. D. Oberndörfer | Freiburg | | Prof. J. H. P. Paelinck | Brüssel/Belgien | | Prof.",
+        "text": "J. H.",
+        "occurrence": 2
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "er i. W. | | Heinz Partikel | Frankfurt a. M. | | Wilhelm Paues | Stockholm/Schweden",
+        "text": "a. M.",
+        "occurrence": 9
+      },
+      {
         "gid": "118516221",
         "category": "person",
         "surface": "Bruno",
@@ -1482,9 +2068,61 @@
         "context": "Wilhelm Paues | Stockholm/Schweden | | Bruno Paulsen | Hamburg | | Dr. H. C. Paulsse",
         "text": "Bruno",
         "occurrence": 1
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "ad Godesberg | | Olaf Radke | Frankfurt a. M. | | Dr. Th. v. Randow | Hamburg | | Dr.",
+        "text": "a. M.",
+        "occurrence": 10
       }
     ],
     "59": [
+      {
+        "gid": "118579975",
+        "category": "person",
+        "surface": "F. M.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118579975",
+          "118582887",
+          "120652293"
+        ],
+        "matched_form": "F. M.",
+        "form_source": "headword",
+        "context": "MdB, MdB Helmut Schmidt, MdB Prof. Dr. F. M. Schmölz Dr. F. Schneider Eberhard Schne",
+        "text": "F. M.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118640011",
+        "category": "person",
+        "surface": "B. J.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "B. J.",
+        "form_source": "headword",
+        "context": "Heinrich Wilhelm Schötter Prof. Dr. D. B. J. Schouten Prof. Dr. J. F. Schouten Caspa",
+        "text": "B. J.",
+        "occurrence": 1
+      },
+      {
+        "gid": "115750231",
+        "category": "person",
+        "surface": "E. F.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "E. F.",
+        "form_source": "headword",
+        "context": "Schulz Dr. M. Schulze-Vorberg, MdB Dr. E. F. Schumacher Dr. Dr. H. Schumacher Prof.",
+        "text": "E. F.",
+        "occurrence": 1
+      },
       {
         "gid": "118616145",
         "category": "person",
@@ -1507,6 +2145,45 @@
         "form_source": "surname-index",
         "context": ". Theobald Dr. W. Thonnessen Pater Jean Thomas Dr. H. B. Tolkmitt Dr. E. Topf Günter T",
         "text": "Thomas",
+        "occurrence": 1
+      },
+      {
+        "gid": "118509578",
+        "category": "person",
+        "surface": "H. B.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118509578",
+          "13143568X"
+        ],
+        "matched_form": "H. B.",
+        "form_source": "headword",
+        "context": "Dr. W. Thonnessen Pater Jean Thomas Dr. H. B. Tolkmitt Dr. E. Topf Günter Triesch Dr.",
+        "text": "H. B.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118530062",
+        "category": "person",
+        "surface": "P. E.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "P. E.",
+        "form_source": "headword",
+        "context": "ron v. Uexkull Prof. V. Ulriksson Prof. P. E. Uri Dr. L. Vaubel Prof. Dr. P. J. Verdo",
+        "text": "P. E.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118557394",
+        "category": "person",
+        "surface": "P. J.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "P. J.",
+        "form_source": "headword",
+        "context": "Prof. P. E. Uri Dr. L. Vaubel Prof. Dr. P. J. Verdoorn Prof. Dr. F. Vito Dr. H. Vogel",
+        "text": "P. J.",
         "occurrence": 1
       },
       {
@@ -1534,6 +2211,18 @@
         "occurrence": 1
       },
       {
+        "gid": "115750231",
+        "category": "person",
+        "surface": "E. F.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "E. F.",
+        "form_source": "headword",
+        "context": "Philip Windsor Dr. A. Winkler Prof. Dr. E. F. Winter Dr. M. Wörner, MdB Prof. Dr. E.",
+        "text": "E. F.",
+        "occurrence": 2
+      },
+      {
         "gid": "1051972493",
         "category": "person",
         "surface": "Winter",
@@ -1544,9 +2233,60 @@
         "context": "Windsor Dr. A. Winkler Prof. Dr. E. F. Winter Dr. M. Wörner, MdB Prof. Dr. E. Wolf Pr",
         "text": "Winter",
         "occurrence": 1
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "Brüssel/Belgien Hamburg Köln Frankfurt a. M. Paris/Frankreich Hamburg Hamburg Köln D",
+        "text": "a. M.",
+        "occurrence": 1
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "Ascona-Ticino/Schweiz München Frankfurt a. M. St. Gallen/Schweiz Darmstadt Frankfurt",
+        "text": "a. M.",
+        "occurrence": 2
+      },
+      {
+        "gid": "122375874",
+        "category": "person",
+        "surface": "a. M.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "A. M.",
+        "form_source": "headword",
+        "context": "St. Gallen/Schweiz Darmstadt Frankfurt a. M. Ulm Hamburg Hamburg Hamburg Wien/Osterr",
+        "text": "a. M.",
+        "occurrence": 3
       }
     ],
     "60": [
+      {
+        "gid": "118509578",
+        "category": "person",
+        "surface": "H. B.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118509578",
+          "13143568X"
+        ],
+        "matched_form": "H. B.",
+        "form_source": "headword",
+        "context": "A. Universität Erlangen/Nürnberg | Dr. H. B. Tolkmitt Unilever Hamburg | | Nr. 2 | K",
+        "text": "H. B.",
+        "occurrence": 1
+      },
       {
         "gid": "132229900",
         "category": "person",
@@ -1557,6 +2297,20 @@
         "form_source": "cache-variant",
         "context": "Industrie- und Handelstag, Bonn | Josef Müller-Marein „Die Zeit“, Hamburg | | Nr. 6* |",
         "text": "Müller",
+        "occurrence": 1
+      }
+    ],
+    "61": [
+      {
+        "gid": "115750231",
+        "category": "person",
+        "surface": "E. F.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "E. F.",
+        "form_source": "headword",
+        "context": "m für wirtsch. Zusammenarbeit, Bonn Dr. E. F. Schumacher National Coal Board, London",
+        "text": "E. F.",
         "occurrence": 1
       }
     ],

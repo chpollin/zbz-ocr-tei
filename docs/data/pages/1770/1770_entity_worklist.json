@@ -1,5 +1,44 @@
 {
   "doc": "1770",
   "generator": "scripts/edition/generate_entity_preview_data.py",
-  "pages": {}
+  "pages": {
+    "3": [
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": "e créer une Division de philosophie à l’Unesco venait d’être prise lorsque j’en ai ass",
+        "text": "Unesco",
+        "occurrence": 1
+      },
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "Unesco",
+        "rule": "org-token:acronym-case",
+        "alternatives": [],
+        "matched_form": "Unesco",
+        "form_source": "headword",
+        "context": ": usant du filet mondial dont dispose l’Unesco, j’ai demandé à tous les pays membres d",
+        "text": "Unesco",
+        "occurrence": 2
+      },
+      {
+        "gid": "118557513",
+        "category": "person",
+        "surface": "J.C.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J.C.",
+        "form_source": "headword",
+        "context": "époques, entre le IIe millénaire avant J.C. et 1948, de tous les genres, allant des",
+        "text": "J.C.",
+        "occurrence": 1
+      }
+    ]
+  }
 }

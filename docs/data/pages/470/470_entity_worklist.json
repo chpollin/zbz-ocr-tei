@@ -2,6 +2,35 @@
   "doc": "470",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "1": [
+      {
+        "gid": "118503251",
+        "category": "person",
+        "surface": "J.A.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118503251",
+          "121278018"
+        ],
+        "matched_form": "J.A.",
+        "form_source": "headword",
+        "context": "N° 418 16 pages (15-30) 20 JANVIER 1959 J.A. JOURNAL D’INFORMATIONS MÉDICALES Rédact",
+        "text": "J.A.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118674145",
+        "category": "person",
+        "surface": "W. B.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "W. B.",
+        "form_source": "headword",
+        "context": "restier (Aix-les-Bains) • Biologie : Dr W. B. de Jauvin (Ville) • Professeur J.-H. Ma",
+        "text": "W. B.",
+        "occurrence": 1
+      }
+    ],
     "2": [
       {
         "gid": "118524844",
@@ -18,6 +47,34 @@
     ],
     "3": [
       {
+        "gid": "118622935",
+        "category": "person",
+        "surface": "J.T.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J.T.",
+        "form_source": "headword",
+        "context": "Psychiatrie Education and Progress, par J.T. WHITEHORN, 1 vol. 14 × 15 cm, 43 pages.",
+        "text": "J.T.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118520113",
+        "category": "person",
+        "surface": "C. C.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118520113",
+          "11852111X",
+          "118564994"
+        ],
+        "matched_form": "C. C.",
+        "form_source": "headword",
+        "context": "1 vol. 14 × 15 cm, 43 pages. Prix: 4 $. C. C. Thomas Ed., Springfield, 1957. C’est là",
+        "text": "C. C.",
+        "occurrence": 1
+      },
+      {
         "gid": "118622110",
         "category": "person",
         "surface": "Thomas",
@@ -30,6 +87,46 @@
         "occurrence": 1
       },
       {
+        "gid": "11860564X",
+        "category": "person",
+        "surface": "J. S.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J. S.",
+        "form_source": "headword",
+        "context": "sont consacrés à l’étude de la nature. J. S. [340.6] Die künstliche Benennung beim M",
+        "text": "J. S.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118658131",
+        "category": "person",
+        "surface": "J. B.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J. B.",
+        "form_source": "headword",
+        "context": "ptes à exercer la puissance paternelle. J. B. [611.7] The growth of the skeleton par",
+        "text": "J. B.",
+        "occurrence": 1
+      },
+      {
+        "gid": "118520113",
+        "category": "person",
+        "surface": "C. C.",
+        "rule": "full-name:initials:ambiguous",
+        "alternatives": [
+          "118520113",
+          "11852111X",
+          "118564994"
+        ],
+        "matched_form": "C. C.",
+        "form_source": "headword",
+        "context": "1 vol. de 14 × 46 cm., 10 p., cartonné. C. C. Thomas Ed., Springfield, 1957. Magnifiq",
+        "text": "C. C.",
+        "occurrence": 2
+      },
+      {
         "gid": "118622110",
         "category": "person",
         "surface": "Thomas",
@@ -40,6 +137,30 @@
         "context": "de 14 × 46 cm., 10 p., cartonné. C. C. Thomas Ed., Springfield, 1957. Magnifique atla",
         "text": "Thomas",
         "occurrence": 2
+      },
+      {
+        "gid": "11860564X",
+        "category": "person",
+        "surface": "J. S.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J. S.",
+        "form_source": "headword",
+        "context": "-il encore de Verhage ou de son ombre ? J. S. CHRONIQUE DES TRIBUNAUX Le diabétique p",
+        "text": "J. S.",
+        "occurrence": 2
+      },
+      {
+        "gid": "11860564X",
+        "category": "person",
+        "surface": "J. S.",
+        "rule": "full-name:initials",
+        "alternatives": [],
+        "matched_form": "J. S.",
+        "form_source": "headword",
+        "context": "s de la vision par le port de lunettes. J. S.E.",
+        "text": "J. S.",
+        "occurrence": 3
       }
     ]
   }

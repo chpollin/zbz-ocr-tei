@@ -66,6 +66,18 @@
         "context": "il peut y avoir d’universel, au sens de Descartes, chez tout être humain. Tout cela est v",
         "text": "Descartes",
         "occurrence": 1
+      },
+      {
+        "gid": "4569257-9",
+        "category": "work",
+        "surface": "La situation spirituelle de notre temps",
+        "rule": "legacy-form:qualifier-strip",
+        "alternatives": [],
+        "matched_form": "La Situation spirituelle de notre temps",
+        "form_source": "legacy",
+        "context": "ndchen publié par Jaspers sous le titre La situation spirituelle de notre temps. Lui aussi pousse un cri d’alarme, deva",
+        "text": "La situation spirituelle de notre temps",
+        "occurrence": 1
       }
     ],
     "4": [
@@ -91,6 +103,21 @@
         "form_source": "surname-index",
         "context": "en chercher le modèle le plus pur chez Kant. Heidegger ne paraît pas y avoir été se",
         "text": "Kant",
+        "occurrence": 1
+      },
+      {
+        "gid": "2024349-2",
+        "category": "organisation",
+        "surface": "Université",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "2024349-2",
+          "36146-X"
+        ],
+        "matched_form": "Université",
+        "form_source": "cache-variant",
+        "context": "e la poésie proprement dite. Déçu par l’Université allemande Pour en revenir à l’occasion",
+        "text": "Université",
         "occurrence": 1
       }
     ],
@@ -152,8 +179,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ès les années 20. Il a publié sa grande Philosophie (1) cinq ans après Sein und Zeit. Il a",
@@ -244,8 +274,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "spers sur Heidegger : (1) En français : Philosophie, trad. Jeanne Hersch, Springer, 1986. J",

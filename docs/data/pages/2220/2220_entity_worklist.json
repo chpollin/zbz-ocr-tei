@@ -2,6 +2,23 @@
   "doc": "2220",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "2": [
+      {
+        "gid": "10182087-2",
+        "category": "organisation",
+        "surface": "Psychiatrische Universitätsklinik",
+        "rule": "org-variant:qualifier-strip:ambiguous",
+        "alternatives": [
+          "10182087-2",
+          "5184970-7"
+        ],
+        "matched_form": "Psychiatrische Universitätsklinik",
+        "form_source": "cache-variant",
+        "context": "Milieutherapie und Zwangsmassnahmen Die Psychiatrische Universitätsklinik Waldau-Bern lud Anfang November 1984 zu",
+        "text": "Psychiatrische Universitätsklinik",
+        "occurrence": 1
+      }
+    ],
     "3": [
       {
         "gid": "122446887",
@@ -470,8 +487,11 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title",
-        "alternatives": [],
+        "rule": "short-title:ambiguous",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
         "matched_form": "Philosophie",
         "form_source": "headword",
         "context": "ehr sie im Grunde eigentlich auch etwas Philosophie studieren sollten. Ich mache keine Prop",
