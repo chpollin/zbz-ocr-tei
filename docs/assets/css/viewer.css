@@ -695,6 +695,24 @@ a.tei__ref { color: var(--h-preussischblau); }
 .tei-legend__chip--person .tei-legend__dot { background: var(--h-preussischblau); }
 .tei-legend__chip--org .tei-legend__dot    { background: var(--h-olivgruen); }
 .tei-legend__chip--work .tei-legend__dot   { background: var(--h-ziegelrot); }
+/* Kandidat: offener Ring statt gefuelltem Punkt, analog zur gestrichelten Linie im Text. */
+.tei-legend__chip--cand .tei-legend__dot {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px var(--h-ocker);
+}
+
+/* Worklist-Kandidaten inline: gestrichelte Unterstreichung in Ocker, keine Flaeche.
+   Damit sind sie auf den ersten Blick von den gesetzten Annotationen (durchgezogene
+   Linie plus dezente Flaeche) zu unterscheiden. */
+.tei--entities .entity-cand {
+  border-bottom: 1px dashed var(--h-ocker);
+  cursor: pointer;
+}
+.tei--entities .entity-cand:hover { border-bottom-width: 2px; }
+.tei--entities .entity-cand:focus-visible {
+  outline: 2px solid var(--h-ocker);
+  outline-offset: 1px;
+}
 
 /* Worklist der Seite (Tier-2-Kandidaten, reine Anzeige) */
 .entity-worklist {
@@ -776,7 +794,13 @@ a.tei__ref { color: var(--h-preussischblau); }
   cursor: pointer;
 }
 .entity-pop__close:hover { color: var(--h-text); }
+.entity-pop--cand { border-left: 3px solid var(--h-ocker); }
 .entity-pop__label { font-weight: 600; padding-right: var(--h-space-md); }
+.entity-pop__note {
+  margin-top: var(--h-space-xs);
+  font-size: var(--h-xs);
+  color: var(--h-text-secondary);
+}
 .entity-pop__meta {
   margin-top: 2px;
   font-size: var(--h-xs);

@@ -1,8 +1,8 @@
 {
   "doc_id": "1440",
   "page_count": 5,
-  "generated": "2026-05-26",
-  "generator": "page_manifest-v3",
+  "generated": "2026-08-12",
+  "generator": "page_manifest-v5",
   "streams": {
     "ocr": {
       "engine": "mistral",
@@ -19,6 +19,11 @@
     },
     "tei": {
       "source": "final",
+      "status": "unverifiziert",
+      "history": []
+    },
+    "entities": {
+      "source": "entity_preview",
       "status": "unverifiziert",
       "history": []
     }

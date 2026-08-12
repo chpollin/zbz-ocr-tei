@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-27T13:30:20",
+  "generated": "2026-08-12T15:42:29",
   "generator": "scripts/edition/generate_edition_data.py",
   "edition": {
     "title": "Nachlass Jeanne Hersch",
@@ -49,13 +49,18 @@
     },
     "stream_status": {
       "ocr": {
-        "unverifiziert": 285
+        "unverifiziert": 284,
+        "in_arbeit": 1
       },
       "layout": {
-        "unverifiziert": 285
+        "unverifiziert": 284,
+        "verifiziert": 1
       },
       "tei": {
         "unverifiziert": 285
+      },
+      "entities": {
+        "unverifiziert": 12
       }
     },
     "curation": {
@@ -133,14 +138,14 @@
       "has_tei": true,
       "streams": {
         "ocr": {
-          "status": "unverifiziert",
-          "last_at": null,
-          "last_by": null
+          "status": "in_arbeit",
+          "last_at": "2026-06-07T11:16:23.605Z",
+          "last_by": "CP"
         },
         "layout": {
-          "status": "unverifiziert",
-          "last_at": null,
-          "last_by": null
+          "status": "verifiziert",
+          "last_at": "2026-06-07T11:16:28.013Z",
+          "last_by": "CP"
         },
         "tei": {
           "status": "unverifiziert",
@@ -360,6 +365,11 @@
           "last_by": null
         },
         "tei": {
+          "status": "unverifiziert",
+          "last_at": null,
+          "last_by": null
+        },
+        "entities": {
           "status": "unverifiziert",
           "last_at": null,
           "last_by": null
@@ -887,6 +897,11 @@
           "last_by": null
         },
         "tei": {
+          "status": "unverifiziert",
+          "last_at": null,
+          "last_by": null
+        },
+        "entities": {
           "status": "unverifiziert",
           "last_at": null,
           "last_by": null
@@ -2533,6 +2548,11 @@
           "status": "unverifiziert",
           "last_at": null,
           "last_by": null
+        },
+        "entities": {
+          "status": "unverifiziert",
+          "last_at": null,
+          "last_by": null
         }
       },
       "curation": "uncurated",
@@ -2998,6 +3018,11 @@
           "status": "unverifiziert",
           "last_at": null,
           "last_by": null
+        },
+        "entities": {
+          "status": "unverifiziert",
+          "last_at": null,
+          "last_by": null
         }
       },
       "curation": "uncurated",
@@ -3336,6 +3361,11 @@
           "last_by": null
         },
         "tei": {
+          "status": "unverifiziert",
+          "last_at": null,
+          "last_by": null
+        },
+        "entities": {
           "status": "unverifiziert",
           "last_at": null,
           "last_by": null
@@ -3680,6 +3710,11 @@
           "status": "unverifiziert",
           "last_at": null,
           "last_by": null
+        },
+        "entities": {
+          "status": "unverifiziert",
+          "last_at": null,
+          "last_by": null
         }
       },
       "curation": "uncurated",
@@ -3708,6 +3743,11 @@
           "last_by": null
         },
         "tei": {
+          "status": "unverifiziert",
+          "last_at": null,
+          "last_by": null
+        },
+        "entities": {
           "status": "unverifiziert",
           "last_at": null,
           "last_by": null
@@ -3959,6 +3999,11 @@
           "status": "unverifiziert",
           "last_at": null,
           "last_by": null
+        },
+        "entities": {
+          "status": "unverifiziert",
+          "last_at": null,
+          "last_by": null
         }
       },
       "curation": "uncurated",
@@ -4176,6 +4221,11 @@
           "status": "unverifiziert",
           "last_at": null,
           "last_by": null
+        },
+        "entities": {
+          "status": "unverifiziert",
+          "last_at": null,
+          "last_by": null
         }
       },
       "curation": "uncurated",
@@ -4235,6 +4285,11 @@
           "last_by": null
         },
         "tei": {
+          "status": "unverifiziert",
+          "last_at": null,
+          "last_by": null
+        },
+        "entities": {
           "status": "unverifiziert",
           "last_at": null,
           "last_by": null
@@ -5537,6 +5592,11 @@
           "last_by": null
         },
         "tei": {
+          "status": "unverifiziert",
+          "last_at": null,
+          "last_by": null
+        },
+        "entities": {
           "status": "unverifiziert",
           "last_at": null,
           "last_by": null
@@ -8544,6 +8604,11 @@
           "last_by": null
         },
         "tei": {
+          "status": "unverifiziert",
+          "last_at": null,
+          "last_by": null
+        },
+        "entities": {
           "status": "unverifiziert",
           "last_at": null,
           "last_by": null

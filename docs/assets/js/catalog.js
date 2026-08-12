@@ -16,8 +16,11 @@
     const $$ = ZBZ.$$;
 
     // ---- Configuration ----
+    // Every document carries the three pipeline streams; `entities` exists only where an
+    // entity preview does, so its traffic light appears per document.
     const STREAMS         = ['ocr', 'layout', 'tei'];
-    const STREAM_LABEL    = { ocr: 'OCR', layout: 'Layout', tei: 'TEI-XML' };
+    const ENTITY_STREAM   = 'entities';
+    const STREAM_LABEL    = { ocr: 'OCR', layout: 'Layout', tei: 'TEI-XML', entities: 'Entities' };
     const STATUS_LABEL    = {
         unverifiziert: 'unverified',
         in_arbeit:     'in progress',
@@ -119,8 +122,16 @@
         return STATUS_LABEL[v] ? v : 'unverifiziert';
     }
 
+    function hasStream(d, stream) {
+        return !!(d.streams || {})[stream];
+    }
+
+    function streamsOf(d) {
+        return hasStream(d, ENTITY_STREAM) ? STREAMS.concat(ENTITY_STREAM) : STREAMS;
+    }
+
     function workflowAriaLabel(d) {
-        return 'Workflow ' + STREAMS.map(s =>
+        return 'Workflow ' + streamsOf(d).map(s =>
             STREAM_LABEL[s] + ' ' + STATUS_LABEL[streamStatus(d, s)]
         ).join(', ');
     }
@@ -175,9 +186,11 @@
             if (state.filters.form && d.pub_form !== state.filters.form) return false;
 
             if (fStream && fStatus) {
+                // A stream the document does not carry cannot match a status.
+                if (!hasStream(d, fStream)) return false;
                 if (streamStatus(d, fStream) !== fStatus) return false;
             } else if (fStatus) {
-                if (!STREAMS.some(s => streamStatus(d, s) === fStatus)) return false;
+                if (!streamsOf(d).some(s => streamStatus(d, s) === fStatus)) return false;
             }
 
             if (q) {
@@ -312,12 +325,12 @@
         const form   = ZBZ.el('div', { cls: 'col-form',   text: formLabel });
         const pages  = ZBZ.el('div', { cls: 'col-pages',  text: String(d.page_count || '—') });
 
-        // Workflow: three traffic-light rows (dot + label). Status shown in tooltip.
+        // Workflow: one traffic-light row per stream (dot + label). Status shown in tooltip.
         const workflow = ZBZ.el('div', {
             cls: 'col-workflow',
             attrs: { 'aria-label': workflowAriaLabel(d) }
         });
-        STREAMS.forEach(s => {
+        streamsOf(d).forEach(s => {
             const st = streamStatus(d, s);
             const sm = (d.streams || {})[s] || {};
             let tip;

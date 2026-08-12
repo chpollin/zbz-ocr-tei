@@ -29,6 +29,7 @@ from scripts.edition.generate_entity_preview_data import (
     life_dates,
     page_of,
     pb_offsets,
+    plain_text,
     run,
     worklist_pages,
     write_doc,
@@ -59,8 +60,11 @@ MENTIONS = [
 _WRAPPER_RE = re.compile(r"</?(?:persName|orgName|bibl)(?: ref=\"GND:[^\"]*\")?>")
 
 
-def _candidate(source: str, surface: str, gid: str, category: str, rule: str, tier: int) -> dict:
-    start = source.index(surface)
+def _candidate(source: str, surface: str, gid: str, category: str, rule: str, tier: int,
+               nth: int = 1) -> dict:
+    start = -1
+    for _ in range(nth):
+        start = source.index(surface, start + 1)
     return {
         "gid": gid,
         "category": category,
@@ -163,9 +167,76 @@ def test_worklist_grouped_by_page_over_shifted_offsets():
 def test_worklist_entries_carry_exactly_the_viewer_fields():
     pages, _ = worklist_pages(_doc_result(), _preview_xml())
     entry = pages["1"][0]
-    assert tuple(entry) == WORKLIST_FIELDS
+    assert tuple(entry) == WORKLIST_FIELDS + ("text", "occurrence")
     assert entry["gid"] == "118522175"
     assert entry["rule"] == "bare-surname"
+
+
+# --- Inline-Verortung (occurrence) ----------------------------------------------------
+
+
+def test_plain_text_strips_markup_and_decodes_entities():
+    assert plain_text('a <hi rendition="#i">b</hi>&amp;c<lb/>d') == "a b&cd"
+
+
+def test_plain_text_normalizes_line_ends_like_the_xml_parser():
+    """Die Dateien tragen CRLF, der geparste DOM nur LF; sonst zaehlt der Viewer anders."""
+    assert plain_text("eins\r\nzwei\rdrei") == "eins\nzwei\ndrei"
+
+
+def test_entries_carry_the_dom_text_and_the_first_occurrence():
+    pages, _ = worklist_pages(_doc_result(), _preview_xml())
+    entry = pages["1"][0]
+    assert entry["text"] == "Corneille"
+    assert entry["occurrence"] == 1
+
+
+def test_occurrence_counts_earlier_hits_on_the_same_page():
+    """Die Seite nennt den Namen dreimal; markiert wird das dritte Vorkommen."""
+    source = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<TEI xmlns="http://www.tei-c.org/ns/1.0">\n'
+        "  <text><body>\n"
+        '    <pb n="1" facs="#f1"/><p>Hitler und Hitler, dann <hi rendition="#i">Hitler</hi>.</p>\n'
+        '    <pb n="2" facs="#f2"/><p>Auf Seite zwei erneut Hitler.</p>\n'
+        "  </body></text>\n"
+        "</TEI>\n"
+    )
+    third = _candidate(source, "Hitler", "118551655", "person", "bare-surname", 2, nth=3)
+    page_two = _candidate(source, "Hitler", "118551655", "person", "bare-surname", 2, nth=4)
+    result = {"doc": DOC_ID, "wrapped": [], "worklist": [third, page_two]}
+
+    pages, stale = worklist_pages(result, source)
+    assert stale == 0
+    assert pages["1"][0]["occurrence"] == 3
+    # Die Zaehlung ist seitenlokal, nicht dokumentweit
+    assert pages["2"][0]["occurrence"] == 1
+
+
+def test_occurrence_survives_the_tier1_wrappers():
+    """Der Wrapper eines Tier-1-Treffers darf die Zaehlung nicht verschieben."""
+    result = _doc_result()
+    preview = _preview_xml()
+    pages, _ = worklist_pages(result, preview)
+    assert pages["2"][0]["text"] == "Hitler"
+    assert pages["2"][0]["occurrence"] == 1
+
+
+def test_entry_before_the_first_pb_has_no_occurrence():
+    """Inhalt vor dem ersten <pb> steht in keiner Seiten-Datei, also nicht verortbar."""
+    source = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<TEI xmlns="http://www.tei-c.org/ns/1.0">\n'
+        "  <text><body>\n"
+        "    <head>Vorspann mit Corneille</head>\n"
+        '    <pb n="1" facs="#f1"/><p>Seite eins.</p>\n'
+        "  </body></text>\n"
+        "</TEI>\n"
+    )
+    cand = _candidate(source, "Corneille", "118522175", "person", "bare-surname", 2)
+    pages, stale = worklist_pages({"doc": DOC_ID, "wrapped": [], "worklist": [cand]}, source)
+    assert stale == 0
+    assert pages["1"][0]["occurrence"] is None
 
 
 def test_worklist_drops_entries_whose_offsets_no_longer_match():
@@ -187,10 +258,12 @@ def test_worklist_maps_through_crlf_preview_files(tmp_path):
 
     stats = write_doc(DOC_ID, preview_path, _doc_result(source), tmp_path / "pages")
     assert stats["stale"] == 0
+    assert stats["unplaced"] == 0
     worklist = json.loads(
         (tmp_path / "pages" / DOC_ID / f"{DOC_ID}_entity_worklist.json").read_text(encoding="utf-8")
     )
     assert [e["surface"] for e in worklist["pages"]["2"]] == ["Hitler"]
+    assert worklist["pages"]["2"][0]["occurrence"] == 1
 
 
 # --- Seiten-Split ---------------------------------------------------------------------

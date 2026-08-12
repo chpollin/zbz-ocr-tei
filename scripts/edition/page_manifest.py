@@ -3,7 +3,8 @@
 Erzeugt fuer jedes Objekt eine Datei `output/tei_final/{doc}_manifest.json`. Das Manifest
 ist der **Pro-Objekt-Annotations-Slot** und tragt zwei Sektionen:
 
-1. `streams` -- Workflow-Status + Provenienz-History je Datenstrom (OCR, Layout, TEI).
+1. `streams` -- Workflow-Status + Provenienz-History je Datenstrom (OCR, Layout, TEI,
+   dazu `entities`, sobald eine Entity-Preview existiert).
    Statuswerte: unverifiziert | in_arbeit | verifiziert. Default: unverifiziert.
    `history` ist eine Liste von Eintraegen `{at, by, from, to, note}` und enthaelt die
    Provenienz der menschlichen Bearbeitungsschritte (Edit-Toggles, Status-Wechsel im
@@ -28,6 +29,10 @@ Idempotenz: existierende Manifeste werden gelesen, die `streams.*.status` und
 `streams.*.history` Felder bleiben erhalten. Nur die Detektor-Felder (Engine-
 Deskriptoren, `pages`-Map, `generated`, `generator`) werden neu geschrieben.
 
+Der Strom `entities` wird nur angelegt, wenn `output/entity_preview/{doc}_final.xml`
+existiert; ein bereits vorhandener Strom bleibt in jedem Fall erhalten, damit ein
+geloeschtes Preview keine Pruef-Provenienz vernichtet.
+
 Aufruf:
     python -m scripts.edition.page_manifest                  # ganzes Korpus
     python -m scripts.edition.page_manifest --doc 20         # ein Dokument
@@ -40,13 +45,17 @@ import re
 from datetime import date
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+# scripts/edition/page_manifest.py -> Projekt-Root sind drei Ebenen hoch (Reorg-Regression:
+# zwei Ebenen zeigten auf scripts/, wodurch Katalog, OCR und Layout-Mirror ins Leere liefen).
+ROOT = Path(__file__).resolve().parents[2]
 CATALOG = ROOT / "docs" / "data" / "catalog.json"
 OCR_DIR = ROOT / "output" / "mistral_results"
 MIRROR_PAGES = ROOT / "docs" / "data" / "pages"
 OUT_DIR = ROOT / "output" / "tei_final"
+ENTITY_PREVIEW_DIR = ROOT / "output" / "entity_preview"
 
-GENERATOR = "page_manifest-v4"
+GENERATOR = "page_manifest-v5"
+ENTITY_STREAM = "entities"
 # Three-level workflow status (E67/E77). The pipeline produces OCR/layout/TEI for
 # every doc deterministically, so the default state means "pipeline output exists,
 # no human has verified" rather than "nothing there". Traffic light: unverifiziert
@@ -154,7 +163,43 @@ def _initial_streams():
     }
 
 
-def _migrate_streams(existing):
+def _entity_stream():
+    """Default-Deskriptor des Annotations-Stroms (nur bei vorhandener Entity-Preview)."""
+    return {
+        "source": "entity_preview",
+        "status": DEFAULT_STATUS,
+        "history": [],
+    }
+
+
+def _carry_status(old, fresh_stream):
+    """Uebernimmt Status und History eines bestehenden Stroms in den frischen Deskriptor.
+
+    Alte v1-Form (Strom = String oder Liste) traegt weder Status noch History; der
+    frische Deskriptor behaelt dann seine Defaults.
+    """
+    if not isinstance(old, dict):
+        return
+    status = old.get("status", DEFAULT_STATUS)
+    # Alte Status-Werte (v2) auf neue mappen
+    status = STATUS_MIGRATION.get(status, status)
+    if status not in VALID_STATUS:
+        status = DEFAULT_STATUS
+    history = old.get("history") or []
+    if not isinstance(history, list):
+        history = []
+    # Auch History-Eintraege migrieren (from/to-Felder)
+    for entry in history:
+        if isinstance(entry, dict):
+            if entry.get("from") in STATUS_MIGRATION:
+                entry["from"] = STATUS_MIGRATION[entry["from"]]
+            if entry.get("to") in STATUS_MIGRATION:
+                entry["to"] = STATUS_MIGRATION[entry["to"]]
+    fresh_stream["status"] = status
+    fresh_stream["history"] = history
+
+
+def _migrate_streams(existing, with_entities=False):
     """Aktualisiert den `streams`-Block ohne Status/History zu zerstoeren.
 
     - v1-Manifeste tragen `streams` als flache Engine-Beschreibung
@@ -162,47 +207,33 @@ def _migrate_streams(existing):
       Strom zu einem Objekt mit status+history.
     - v2-Manifeste tragen schon Status/History; wir refreshen nur die Engine-
       Deskriptoren und lassen status/history unangetastet.
+    - `entities` entsteht nur mit vorhandener Preview, bleibt aber erhalten, sobald
+      er einmal existiert (sonst ginge die Pruef-Provenienz verloren).
     """
+    existing = existing if isinstance(existing, dict) else {}
     fresh = _initial_streams()
-    if not isinstance(existing, dict):
-        return fresh
+    if with_entities or isinstance(existing.get(ENTITY_STREAM), dict):
+        fresh[ENTITY_STREAM] = _entity_stream()
 
-    for stream_name in ("ocr", "layout", "tei"):
-        old = existing.get(stream_name)
-        fresh_stream = fresh[stream_name]
-        if isinstance(old, dict):
-            status = old.get("status", DEFAULT_STATUS)
-            # Alte Status-Werte (v2) auf neue mappen
-            status = STATUS_MIGRATION.get(status, status)
-            if status not in VALID_STATUS:
-                status = DEFAULT_STATUS
-            history = old.get("history") or []
-            if not isinstance(history, list):
-                history = []
-            # Auch History-Eintraege migrieren (from/to-Felder)
-            for entry in history:
-                if isinstance(entry, dict):
-                    if entry.get("from") in STATUS_MIGRATION:
-                        entry["from"] = STATUS_MIGRATION[entry["from"]]
-                    if entry.get("to") in STATUS_MIGRATION:
-                        entry["to"] = STATUS_MIGRATION[entry["to"]]
-            fresh_stream["status"] = status
-            fresh_stream["history"] = history
-        # alte v1-Form (Strom = String oder Liste): keine status/history -> Default
+    for stream_name, fresh_stream in fresh.items():
+        _carry_status(existing.get(stream_name), fresh_stream)
     return fresh
 
 
-def build_manifest(doc, existing=None):
+def build_manifest(doc, existing=None, has_entities=None):
     """Erzeugt das Manifest-Dict fuer ein Dokument. Wird IMMER geschrieben (auch ohne Ausnahme-Seiten).
 
     Wenn `existing` uebergeben wird, bleiben dessen `streams.*.status` und
     `streams.*.history` erhalten -- die Detektion ueberschreibt nur die eigenen Felder.
+    `has_entities` ueberschreibt die Preview-Detektion (Testeinstieg).
     """
     doc_id = str(doc["id"])
     page_count = int(doc.get("page_count") or 0)
 
     pages = detect_blanks(doc_id, page_count)
-    streams = _migrate_streams((existing or {}).get("streams"))
+    if has_entities is None:
+        has_entities = (ENTITY_PREVIEW_DIR / f"{doc_id}_final.xml").exists()
+    streams = _migrate_streams((existing or {}).get("streams"), with_entities=has_entities)
 
     return {
         "doc_id": doc_id,
@@ -241,6 +272,7 @@ def main():
 
     total_docs = 0
     docs_with_blanks = 0
+    docs_with_entities = 0
     total_blanks = 0
     total_conflicts = 0
     written = 0
@@ -254,10 +286,12 @@ def main():
         n_pages = len(manifest["pages"])
         n_conflict = sum(1 for p in manifest["pages"].values() if p["review"])
 
+        if ENTITY_STREAM in manifest["streams"]:
+            docs_with_entities += 1
+
         # Wieviele History-Eintraege wurden erhalten?
         if existing:
-            for s in ("ocr", "layout", "tei"):
-                old_s = (existing.get("streams") or {}).get(s)
+            for old_s in (existing.get("streams") or {}).values():
                 if isinstance(old_s, dict):
                     preserved_history += len(old_s.get("history") or [])
 
@@ -278,6 +312,7 @@ def main():
     print(f"Dokumente geprueft:        {total_docs}")
     print(f"Dokumente mit Leerseiten:  {docs_with_blanks}")
     print(f"Leerseiten gesamt:         {total_blanks}")
+    print(f"Dokumente mit Entities:    {docs_with_entities}")
     print(f"davon Konflikt (review):   {total_conflicts}")
     print(f"History-Eintraege bewahrt: {preserved_history}")
     if args.dry_run:

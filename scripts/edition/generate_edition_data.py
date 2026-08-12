@@ -43,6 +43,12 @@ FEATURED_DOCS = ["2310", "1000", "1330", "1540"]
 DEFAULT_STREAM_STATUS = "unverifiziert"
 _STREAM_STATUS_MIGRATION = {"offen": "unverifiziert", "bearbeitet": "in_arbeit", "fertig": "verifiziert"}
 
+# Die drei Pflichtstroeme hat jedes Dokument; `entities` nur dort, wo eine Entity-Preview
+# existiert (page_manifest legt ihn an). Ein fehlender Strom heisst "keine Annotationen",
+# nicht "unverifiziert" -- deshalb wird er nicht aufgefuellt.
+WORKFLOW_STREAMS = ("ocr", "layout", "tei")
+ENTITY_STREAM = "entities"
+
 LANG_LABELS = {
     "FR": "Franzoesisch",
     "DE": "Deutsch",
@@ -369,7 +375,10 @@ def build_catalog():
                 did = m.get("doc_id", mf.stem.replace("_manifest", ""))
                 streams_in = m.get("streams") or {}
                 streams_out = {}
-                for sname in ("ocr", "layout", "tei"):
+                names = list(WORKFLOW_STREAMS)
+                if isinstance(streams_in.get(ENTITY_STREAM), dict):
+                    names.append(ENTITY_STREAM)
+                for sname in names:
                     s = streams_in.get(sname)
                     if not isinstance(s, dict):
                         streams_out[sname] = {"status": "unverifiziert", "last_at": None, "last_by": None}
@@ -432,11 +441,15 @@ def build_catalog():
         form_counts[pf] = form_counts.get(pf, 0) + 1
 
     # Pro Strom: Verteilung der Workflow-Status (E66)
-    stream_status_counts = {"ocr": {}, "layout": {}, "tei": {}}
+    stream_status_counts = {name: {} for name in (*WORKFLOW_STREAMS, ENTITY_STREAM)}
     curation_counts = {}
     for e in entries:
-        for sname in ("ocr", "layout", "tei"):
-            st = (e.get("streams") or {}).get(sname, {}).get("status") or "unverifiziert"
+        streams = e.get("streams") or {}
+        names = list(WORKFLOW_STREAMS)
+        if ENTITY_STREAM in streams:
+            names.append(ENTITY_STREAM)
+        for sname in names:
+            st = streams.get(sname, {}).get("status") or "unverifiziert"
             stream_status_counts[sname][st] = stream_status_counts[sname].get(st, 0) + 1
         c = e.get("curation") or "uncurated"
         curation_counts[c] = curation_counts.get(c, 0) + 1

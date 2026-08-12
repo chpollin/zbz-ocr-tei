@@ -32,7 +32,9 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import html
 import json
+import re
 from bisect import bisect_left, bisect_right
 from pathlib import Path
 
@@ -51,8 +53,11 @@ GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
 
 LOBID_URL = "https://lobid.org/gnd/{gid}"
 GENERATOR = "scripts/edition/generate_entity_preview_data.py"
-# Fields the viewer worklist panel shows; offsets and tier stay in the pilot report.
+# Fields copied from the pilot report; offsets and tier stay there. Each entry additionally
+# carries "text" (the surface as the renderer shows it) and "occurrence".
 WORKLIST_FIELDS = ("gid", "category", "surface", "rule", "context")
+
+_TAG_RE = re.compile(r"<[^>]*>")
 
 
 # ---------------------------------------------------------------------------
@@ -105,6 +110,53 @@ def shifted(positions: list[int], cumulative: list[int], offset: int, *, inclusi
     return offset + (cumulative[index - 1] if index else 0)
 
 
+def plain_text(fragment: str) -> str:
+    """Text of an XML fragment as the viewer renders it: markup gone, entities decoded.
+
+    Mirrors ZBZ.TeiRender, which drops every tag (an ``lb`` becomes a ``br`` element and
+    contributes no character) and shows decoded text. The viewer walks exactly this string
+    to find the n-th occurrence, so both sides must strip identically. Line ends are
+    normalized because the XML parser does it too: the delivered files carry CRLF, the DOM
+    only ever shows LF.
+    """
+    stripped = _TAG_RE.sub("", fragment).replace("\r\n", "\n").replace("\r", "\n")
+    return html.unescape(stripped)
+
+
+def nth_occurrence(haystack: str, needle: str, n: int) -> int:
+    """Start index of the n-th non-overlapping occurrence, -1 when there are fewer.
+
+    Non-overlapping is the convention shared with the viewer walker; overlapping counting
+    would put the marker on a different instance of a repeated surface.
+    """
+    if not needle or n < 1:
+        return -1
+    index = -1
+    start = 0
+    for _ in range(n):
+        index = haystack.find(needle, start)
+        if index < 0:
+            return -1
+        start = index + len(needle)
+    return index
+
+
+def occurrence_in_page(preview_xml: str, page_start: int, start: int, text: str) -> int | None:
+    """Which occurrence of ``text`` in the page's plain text the entry sits on (1-based).
+
+    None when the entry cannot be located: content before the first ``<pb>`` is in no page
+    file, and a counting mismatch (repeated substrings) must not place the marker on the
+    wrong instance.
+    """
+    if not text or start < page_start:
+        return None
+    prefix = plain_text(preview_xml[page_start:start])
+    occurrence = prefix.count(text) + 1
+    if nth_occurrence(prefix + text, text, occurrence) != len(prefix):
+        return None
+    return occurrence
+
+
 def worklist_pages(doc_result: dict, preview_xml: str) -> tuple[dict[str, list[dict]], int]:
     """Group the tier-2 worklist per page; the second value counts dropped stale entries."""
     positions, cumulative = wrapper_shifts(doc_result.get("wrapped") or [])
@@ -117,8 +169,12 @@ def worklist_pages(doc_result: dict, preview_xml: str) -> tuple[dict[str, list[d
         if preview_xml[start:end] != cand.get("surface"):
             stale += 1
             continue
+        page = page_of(pb_starts, start)
+        page_start = pb_starts[page - 1] if pb_starts else 0
         entry = {field: cand.get(field) for field in WORKLIST_FIELDS}
-        pages.setdefault(page_of(pb_starts, start), []).append(entry)
+        entry["text"] = plain_text(cand.get("surface") or "")
+        entry["occurrence"] = occurrence_in_page(preview_xml, page_start, start, entry["text"])
+        pages.setdefault(page, []).append(entry)
     return {str(page): entries for page, entries in sorted(pages.items())}, stale
 
 
@@ -144,10 +200,13 @@ def write_doc(doc_id: str, preview_path: Path, doc_result: dict, pages_dir: Path
     (doc_dir / f"{doc_id}_entity_worklist.json").write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
+    entries = [entry for page_entries in worklist.values() for entry in page_entries]
     return {
         "pages": len(pages),
-        "worklist": sum(len(entries) for entries in worklist.values()),
+        "worklist": len(entries),
         "stale": stale,
+        # entries the viewer cannot mark inline; they stay visible as a list
+        "unplaced": sum(1 for entry in entries if entry["occurrence"] is None),
     }
 
 
@@ -201,7 +260,8 @@ def run(
     report = json.loads(report_path.read_text(encoding="utf-8"))
     wanted = set(doc_ids) if doc_ids else None
 
-    stats = {"docs": [], "pages": 0, "worklist": 0, "stale": 0, "skipped": [], "entities": 0}
+    stats = {"docs": [], "pages": 0, "worklist": 0, "stale": 0, "unplaced": 0,
+             "skipped": [], "entities": 0}
     for doc_result in report.get("documents") or []:
         doc_id = str(doc_result.get("doc") or "").strip()
         if not doc_id or (wanted and doc_id not in wanted):
@@ -216,7 +276,10 @@ def run(
         stats["pages"] += result["pages"]
         stats["worklist"] += result["worklist"]
         stats["stale"] += result["stale"]
+        stats["unplaced"] += result["unplaced"]
         note = f", {result['stale']} stale (offset mismatch)" if result["stale"] else ""
+        if result["unplaced"]:
+            note += f", {result['unplaced']} not locatable inline"
         print(f"  {doc_id}: {result['pages']} pages, {result['worklist']} worklist entries{note}")
 
     index = build_entities_index(entities_path, cache_path)
@@ -247,7 +310,7 @@ def main() -> None:
     stats = run(args.preview_dir, args.pages_dir, args.entities_json,
                 ENTITIES_PATH, GND_CACHE_PATH, doc_ids or None)
     print(f"\n  Documents: {len(stats['docs'])}  pages: {stats['pages']}  "
-          f"worklist entries: {stats['worklist']}")
+          f"worklist entries: {stats['worklist']}  (not locatable inline: {stats['unplaced']})")
     if stats["stale"]:
         print(f"  WARNUNG: {stats['stale']} worklist entries dropped (offsets do not match "
               "the preview; rerun scripts.tei.tei_entity_preview)")

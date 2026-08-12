@@ -45,8 +45,9 @@
         // (docs/data/pages/{doc}/{doc}_entity_p{N}.xml). No save path ever writes it.
         entityMode: false,      // toggle / ?entities=1
         entityAvailable: false, // an entity preview exists for the current document
-        entityWorklist: null,   // {doc, pages: {N: [{gid, category, surface, rule, context}]}}
-        entityPage: false       // the current page is rendered from the entity preview
+        entityWorklist: null,   // {doc, pages: {N: [{gid, category, surface, text, occurrence, rule, context}]}}
+        entityPage: false,      // the current page is rendered from the entity preview
+        entityCandidates: []    // worklist entries of the current page (popover lookup)
     };
 
     // E77: workflow status per stream, three levels: unverifiziert -> in_arbeit -> verifiziert -> unverifiziert
@@ -61,7 +62,16 @@
     };
     // Legacy mapping for older manifests/mirror (offen, bearbeitet, fertig)
     const STATUS_LEGACY = { offen: 'unverifiziert', bearbeitet: 'in_arbeit', fertig: 'verifiziert' };
-    const STREAM_LABEL = { ocr: 'OCR', layout: 'Layout', tei: 'TEI-XML' };
+    const STREAM_LABEL = { ocr: 'OCR', layout: 'Layout', tei: 'TEI-XML', entities: 'Entities' };
+    // Every document carries the three pipeline streams; `entities` exists only where an
+    // entity preview does (page_manifest creates it), so its pill stays hidden otherwise.
+    const STREAMS = ['ocr', 'layout', 'tei'];
+    const ENTITY_STREAM = 'entities';
+    // Streams of the loaded manifest, in pill order.
+    const manifestStreams = () => {
+        const present = state.manifest && state.manifest.streams;
+        return (present && present[ENTITY_STREAM]) ? STREAMS.concat(ENTITY_STREAM) : STREAMS.slice();
+    };
 
     const OSD_PREFIX = 'https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/images/';
 
@@ -72,6 +82,35 @@
     const ENTITY_CATEGORY_LABEL = { person: 'Person', organisation: 'Organisation', work: 'Work' };
     const ENTITY_READONLY_HINT = 'Entity mode is read-only. Leave it to edit.';
     const ENTITY_MENTION_SEL = '.tei__entity[data-ref], .tei__bibl[data-ref]';
+    // Candidates (worklist) are shown inline as well; both open the same popover.
+    const ENTITY_POP_SEL = ENTITY_MENTION_SEL + ', .entity-cand';
+    // Text the renderer injects (page number, note number, figure label, gap) is not TEI
+    // text and must not shift the occurrence count the generator computed.
+    const INJECTED_TEXT_SEL = '.tei__pb, .tei__note-n, .tei__figure-label, .tei__gap';
+
+    // Why the tool held back: the matcher rule in plain German. Unknown keys stay raw.
+    const WORKLIST_RULE_LABEL = {
+        'bare-surname':     'Nachname ohne Vollnennung',
+        'anchored-surname': 'Nachname mit Vollnennung im Dokument',
+        'short-title':      'Einwort-Titel, mehrdeutig',
+        'legacy-form':      'Form aus Altindex, ungesichert',
+        'adjective-form':   'Adjektivform',
+        'caps-surname':     'Versalien-Nachname',
+        'ambiguous-surname': 'Nachname, mehrere Träger',
+        'crosses-markup':   'Nennung läuft über Markup hinweg'
+    };
+    const WORKLIST_RULE_SUFFIX = {
+        'ambiguous':    'mehrere Kandidaten',
+        'suspect':      'Homographen-Verdacht',
+        'in-plain-bibl': 'in unreferenziertem bibl'
+    };
+
+    function worklistRuleLabel(rule) {
+        const parts = String(rule || '').split(':');
+        const base = WORKLIST_RULE_LABEL[parts[0]] || parts[0] || 'unbekannte Regel';
+        const extra = parts.slice(1).map(s => WORKLIST_RULE_SUFFIX[s] || s).filter(Boolean);
+        return extra.length ? base + ' (' + extra.join(', ') + ')' : base;
+    }
 
     const cache = new ZBZ.Cache(40);
 
@@ -112,6 +151,7 @@
         statusOcr:      $('#status-ocr'),
         statusLayout:   $('#status-layout'),
         statusTei:      $('#status-tei'),
+        statusEntities: $('#status-entities'),
         statusHint:     $('#status-hint')
     };
 
@@ -291,37 +331,107 @@
         return String(surface || '').replace(/<lb\b[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
     }
 
-    function renderEntityWorklist(page) {
+    function worklistEntries(page) {
+        const pages = state.entityWorklist && state.entityWorklist.pages;
+        return (pages && pages[String(page)]) || [];
+    }
+
+    function entryText(entry) {
+        return entry.text || plainSurface(entry.surface);
+    }
+
+    // Candidates are marked in the rendered text itself: the generator says which
+    // occurrence of the surface it means, the walker finds it. Whatever cannot be placed
+    // is returned and stays visible as a list, so nothing is lost silently.
+    function markWorklistCandidates(page) {
+        const entries = worklistEntries(page);
+        state.entityCandidates = entries;
+        const wrap = refs.textBody.querySelector('.tei');
+        if (!wrap) return entries.slice();
+        const unplaced = [];
+        entries.forEach((entry, index) => {
+            const span = entry.occurrence
+                ? markOccurrence(wrap, entryText(entry), entry.occurrence, index)
+                : null;
+            if (!span) unplaced.push(entry);
+        });
+        return unplaced;
+    }
+
+    function textNodesOf(root) {
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+            acceptNode: (node) => (node.parentElement && node.parentElement.closest(INJECTED_TEXT_SEL))
+                ? NodeFilter.FILTER_REJECT
+                : NodeFilter.FILTER_ACCEPT
+        });
+        const nodes = [];
+        let node;
+        while ((node = walker.nextNode())) nodes.push(node);
+        return nodes;
+    }
+
+    function markOccurrence(root, text, occurrence, index) {
+        if (!text) return null;
+        const nodes = textNodesOf(root);
+        const offsets = [];
+        let acc = '';
+        nodes.forEach(node => { offsets.push(acc.length); acc += node.nodeValue; });
+
+        // non-overlapping scan, the same convention the generator counted with
+        let at = -1, from = 0;
+        for (let i = 0; i < occurrence; i++) {
+            at = acc.indexOf(text, from);
+            if (at < 0) return null;
+            from = at + text.length;
+        }
+        const end = at + text.length;
+        const nodeIndex = offsets.findIndex((start, i) => at >= start && at < start + nodes[i].nodeValue.length);
+        if (nodeIndex < 0) return null;
+        // A hit crossing element boundaries (e.g. an lb inside the name) cannot be wrapped
+        // safely; the entry falls back to the list.
+        if (end > offsets[nodeIndex] + nodes[nodeIndex].nodeValue.length) return null;
+
+        const entry = state.entityCandidates[index] || {};
+        const span = ZBZ.el('span', {
+            cls: 'entity-cand',
+            attrs: {
+                'data-cand-index': String(index),
+                role: 'button',
+                tabindex: '0',
+                'aria-label': text + ', Kandidat: ' + worklistRuleLabel(entry.rule)
+            }
+        });
+        const range = document.createRange();
+        range.setStart(nodes[nodeIndex], at - offsets[nodeIndex]);
+        range.setEnd(nodes[nodeIndex], end - offsets[nodeIndex]);
+        try { range.surroundContents(span); } catch (e) { return null; }
+        return span;
+    }
+
+    // Only what could not be placed inline; the page count itself sits in the legend.
+    function renderUnplacedWorklist(unplaced) {
         const old = refs.textBody.querySelector('.entity-worklist');
         if (old) old.remove();
-        const pages = state.entityWorklist && state.entityWorklist.pages;
-        const entries = (pages && pages[String(page)]) || [];
+        if (!unplaced.length) return;
         const box = ZBZ.el('aside', {
-            cls: 'entity-worklist', attrs: { 'aria-label': 'Entity worklist of this page' }
+            cls: 'entity-worklist', attrs: { 'aria-label': 'Worklist entries without a position in the text' }
         });
         box.appendChild(ZBZ.el('div', {
-            cls: 'entity-worklist__title', text: 'Worklist p. ' + page + ' · ' + entries.length
+            cls: 'entity-worklist__title', text: 'Nicht im Text verortet · ' + unplaced.length
         }));
-        if (!entries.length) {
-            box.appendChild(ZBZ.el('div', {
-                cls: 'entity-worklist__empty', text: 'No candidate awaiting a decision on this page'
+        const list = ZBZ.el('ul', { cls: 'entity-worklist__list' });
+        unplaced.forEach(entry => {
+            const li = ZBZ.el('li', { cls: 'entity-worklist__item' });
+            li.appendChild(ZBZ.el('span', { cls: 'entity-worklist__surface', text: entryText(entry) }));
+            li.appendChild(ZBZ.el('span', {
+                cls: 'entity-worklist__rule', text: worklistRuleLabel(entry.rule)
             }));
-        } else {
-            const list = ZBZ.el('ul', { cls: 'entity-worklist__list' });
-            entries.forEach(entry => {
-                const li = ZBZ.el('li', { cls: 'entity-worklist__item' });
-                li.appendChild(ZBZ.el('span', {
-                    cls: 'entity-worklist__surface', text: plainSurface(entry.surface)
-                }));
-                li.appendChild(ZBZ.el('span', { cls: 'entity-worklist__rule', text: entry.rule || '?' }));
-                li.appendChild(ZBZ.el('span', {
-                    cls: 'entity-worklist__context', text: entry.context || ''
-                }));
-                list.appendChild(li);
-            });
-            box.appendChild(list);
-        }
-        refs.textBody.insertBefore(box, refs.textBody.firstChild);
+            li.appendChild(ZBZ.el('span', { cls: 'entity-worklist__context', text: entry.context || '' }));
+            list.appendChild(li);
+        });
+        box.appendChild(list);
+        const wrap = refs.textBody.querySelector('.tei');
+        refs.textBody.insertBefore(box, wrap || refs.textBody.firstChild);
     }
 
     // Marked mentions become buttons: the popover carries id, category and lobid link,
@@ -359,9 +469,13 @@
     }
 
     function showEntityPopover(el) {
-        const gid = entityGid(el);
+        const candidate = el.classList.contains('entity-cand')
+            ? (state.entityCandidates[Number(el.getAttribute('data-cand-index'))] || null)
+            : null;
+        const gid = candidate ? String(candidate.gid || '') : entityGid(el);
         const rec = (entityIndex && entityIndex[gid]) || null;
         const pop = ensureEntityPopover();
+        pop.className = 'entity-pop' + (candidate ? ' entity-pop--cand' : '');
         pop.innerHTML = '';
         pop.appendChild(ZBZ.el('button', {
             cls: 'entity-pop__close', html: '&times;',
@@ -376,6 +490,13 @@
         if (rec && rec.dates) meta.push(rec.dates);
         if (!rec) meta.push('not in the curated entity list');
         pop.appendChild(ZBZ.el('div', { cls: 'entity-pop__meta', text: meta.join(' · ') }));
+        if (candidate) {
+            // Provenance in plain words: why the tool did not set this annotation.
+            pop.appendChild(ZBZ.el('div', {
+                cls: 'entity-pop__note',
+                text: 'Zur Prüfung: ' + worklistRuleLabel(candidate.rule)
+            }));
+        }
         pop.appendChild(ZBZ.el('div', { cls: 'entity-pop__gid', text: 'GND ' + (gid || '?') }));
         if (gid) {
             pop.appendChild(ZBZ.el('a', {
@@ -420,7 +541,7 @@
 
     function onDocClickForPopover(e) {
         if (entityPopover && entityPopover.contains(e.target)) return;
-        if (e.target.closest && e.target.closest(ENTITY_MENTION_SEL)) return;
+        if (e.target.closest && e.target.closest(ENTITY_POP_SEL)) return;
         closeEntityPopover(false);
     }
 
@@ -430,7 +551,7 @@
         const m = await ZBZ.fetchJSON('data/manifests/' + encodeURIComponent(docId) + '_manifest.json');
         if (m && m.streams) {
             // Migrate legacy status values (v2 -> v3)
-            ['ocr', 'layout', 'tei'].forEach(s => {
+            Object.keys(m.streams).forEach(s => {
                 const stream = m.streams[s];
                 if (stream && STATUS_LEGACY[stream.status]) {
                     stream.status = STATUS_LEGACY[stream.status];
@@ -477,9 +598,12 @@
 
     function renderStatusPills() {
         const enable = !!state.manifest;
-        ['ocr', 'layout', 'tei'].forEach(stream => {
+        const present = manifestStreams();
+        STREAMS.concat(ENTITY_STREAM).forEach(stream => {
             const btn = refs['status' + stream.charAt(0).toUpperCase() + stream.slice(1)];
             if (!btn) return;
+            btn.hidden = present.indexOf(stream) < 0;
+            if (btn.hidden) return;
             btn.disabled = !enable;
             const status = streamStatus(stream);
             // Update classes (remove old status classes)
@@ -1126,11 +1250,17 @@
             // The entity preview is never a save source; keep the pipeline TEI in state.
             if (!state.entityPage) state.teiXml = xml;
             ZBZ.TeiRender.render(xml, refs.textBody);
-            applyTeiMarkup();
-            if (state.entityMode) {
-                if (state.entityPage) decorateEntityMentions();
-                renderEntityWorklist(page);
+            // Mark before the legend is built: its candidate count reads the DOM.
+            let unplaced = [];
+            if (state.entityPage) {
+                decorateEntityMentions();
+                unplaced = markWorklistCandidates(page);
+            } else if (state.entityMode) {
+                state.entityCandidates = worklistEntries(page);
+                unplaced = state.entityCandidates.slice();
             }
+            applyTeiMarkup();
+            if (state.entityMode) renderUnplacedWorklist(unplaced);
         }
         else if (state.textSource === 'xml') {
             // Must load the FULL final TEI: saving overwrites {doc}_final.xml as a
@@ -1259,7 +1389,8 @@
     const ENTITY_LEGEND = [
         ['Persons',       '.tei__entity--persname[data-ref]', 'person'],
         ['Organisations', '.tei__entity--orgname[data-ref]',  'org'],
-        ['Works',         '.tei__bibl[data-ref]',             'work']
+        ['Works',         '.tei__bibl[data-ref]',             'work'],
+        ['Zur Prüfung',   '.entity-cand',                     'cand']
     ];
 
     const MARKUP_LEGEND = [
@@ -1440,7 +1571,7 @@
         // is re-rendered on every page change.
         refs.textBody.addEventListener('click', (e) => {
             if (!state.entityMode || !state.entityPage || !e.target.closest) return;
-            const el = e.target.closest(ENTITY_MENTION_SEL);
+            const el = e.target.closest(ENTITY_POP_SEL);
             if (!el) return;
             e.preventDefault();
             showEntityPopover(el);
@@ -1448,7 +1579,7 @@
         refs.textBody.addEventListener('keydown', (e) => {
             if (!state.entityMode || !state.entityPage) return;
             if (e.key !== 'Enter' && e.key !== ' ') return;
-            const el = e.target.closest && e.target.closest(ENTITY_MENTION_SEL);
+            const el = e.target.closest && e.target.closest(ENTITY_POP_SEL);
             if (!el) return;
             e.preventDefault();
             showEntityPopover(el);
@@ -1479,6 +1610,7 @@
         refs.statusOcr.addEventListener('click', () => cycleStatus('ocr'));
         refs.statusLayout.addEventListener('click', () => cycleStatus('layout'));
         refs.statusTei.addEventListener('click', () => cycleStatus('tei'));
+        if (refs.statusEntities) refs.statusEntities.addEventListener('click', () => cycleStatus(ENTITY_STREAM));
 
         // Warn before leaving with unsaved status changes
         window.addEventListener('beforeunload', (e) => {

@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css?v=7">
   <link rel="stylesheet" href="assets/css/base.css?v=7">
-  <link rel="stylesheet" href="assets/css/viewer.css?v=17">
+  <link rel="stylesheet" href="assets/css/viewer.css?v=18">
   <script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/openseadragon.min.js"></script>
 </head>
 <body class="viewer-body">
@@ -66,6 +66,7 @@
           <button class="status-pill" type="button" id="status-ocr"    data-stream="ocr"    aria-label="Set OCR status" disabled></button>
           <button class="status-pill" type="button" id="status-layout" data-stream="layout" aria-label="Set layout status" disabled></button>
           <button class="status-pill" type="button" id="status-tei"    data-stream="tei"    aria-label="Set TEI status" disabled></button>
+          <button class="status-pill" type="button" id="status-entities" data-stream="entities" aria-label="Set entities status" disabled hidden></button>
           <span class="status-controls__hint" id="status-hint"></span>
         </div>
         <!-- Layout editor tools: visible only in layout edit mode, in the status row (E78) -->
@@ -197,6 +198,6 @@
   <script src="assets/js/fs-access.js?v=5"></script>
   <script src="assets/js/layout-editor.js?v=4"></script>
   <script src="assets/js/transcription-editor.js?v=4"></script>
-  <script src="assets/js/viewer.js?v=19"></script>
+  <script src="assets/js/viewer.js?v=20"></script>
 </body>
 </html>
