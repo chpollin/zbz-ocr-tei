@@ -12,7 +12,7 @@ language: en
 created: 2026-08-12
 updated: 2026-08-12
 tags: [zbz-ocr-tei, entities, gnd, design-plan]
-related: [specification, decisions, ground-truth-map, pipeline, journal]
+related: [specification, decisions, ground-truth-map, pipeline, entity-evaluation, journal]
 authors: [Christopher Pollin]
 ---
 
@@ -20,7 +20,9 @@ authors: [Christopher Pollin]
 
 How the curated GND entity list becomes inline entity markup in the delivered TEI
 corpus. This document holds the whole workflow: data, rules, instruments, milestones,
-verification. Decisions taken on the way receive E entries in
+verification. The sampling measurement of the built layer, its protocol and the record
+of its executed run live in [entity-evaluation.md](entity-evaluation.md). Decisions
+taken on the way receive E entries in
 [decisions.md](decisions.md); session history lives in [journal.md](journal.md).
 Convention function: freehand design plan, because the template catalogue holds no plan
 template.
@@ -44,9 +46,11 @@ a single character.
   that bridge transliteration gaps (the list says "Sacharov", the text says "Sacharow"),
   translated work titles, life dates, entity types, and Wikidata QIDs. Defective ids
   answer 404, so the same pass validates the list.
-- The legacy mention index `output/gnd_analysis/gnd_entities.json` (pre-E71 remnant)
+- The legacy mention index `data/entities/legacy_mentions.json` (pre-E71 remnant, moved
+  under `data/entities/` with the fix package so a fresh clone builds the same lexicon)
   contributes surface forms attested in 18 reference TEIs. Its ids lack the GND check
-  character and are normalized before joining.
+  character and are normalized before joining. A form its bearer's own GND record does
+  not corroborate reaches tier 2 only.
 
 Every data channel, present or future, is its own trust boundary and passes three
 steps before its forms may match, an intake lint, a shape-class review of the forms
@@ -91,6 +95,14 @@ Detail rules, settled against the reference corpus and by operator decision:
   metadata comparison against the Masterfile author. The reference practice supports
   the split, reference 100 marks the caps title mention of its subject while
   reference 1060 leaves the author byline unmarked.
+- Page apparatus follows the operator convention of 2026-08-12. Running heads stay
+  outside the marking scope, because such a line repeats the document or section title
+  as page furniture instead of naming an entity in the text. Title pages, organisation
+  names in bylines and picture captions carry marks, because they state provenance with
+  research value. The suppression side needs a deterministic instrument (see Planned);
+  until it runs, running-head matches stay in the preview output and the evaluation
+  evidence counts them apart, so the convention reading of precision stays computable
+  ([entity-evaluation.md](entity-evaluation.md)).
 - Library apparatus is out of scope. E-Periodica cover sheets and photo-credit lines
   are never matched (apparatus zone). Cover-sheet text leaves the delivered TEI
   altogether (operator decision 2026-08-12), through an operator-gated marker run in
@@ -103,8 +115,10 @@ Detail rules, settled against the reference corpus and by operator decision:
 
 Open modelling points, owned outside this plan:
 
-- Image captions: the ZBZ guideline contradicts itself (O27). The matcher skips figure
-  contexts and reports caption candidates separately; ZBZ decides.
+- Image captions: the ZBZ guideline contradicts itself (O27). The operator convention
+  of 2026-08-12 puts captions in scope; the matcher still skips figure contexts and
+  reports caption candidates separately, so the figure zone is widened once ZBZ
+  confirms the reading.
 - Empty `speaker` elements stay curation slots (W17); the matcher never invents text.
 - Adjective forms of names: the guideline excludes them, the references mark at least
   one. The automatic tiers exclude them; candidates go to the worklist; the
@@ -141,8 +155,29 @@ never enters tier 2 either; a judge that only sees wrong candidates is invited t
 one, so such mentions go straight to tier 3 (in the pilot's initials case, "J. H."
 meant the interviewee, whose record carries no initials variant, while the one
 presented candidate was the wrong person). Mentions of entities outside the list are out of
-scope (closed world, E71 lesson); an optional frequency report of unmatched
-capitalized candidates is diagnosis only.
+scope (closed world, E71 lesson); `entity_unlisted_scan` reports the name-shaped
+surfaces outside the list as proposals for ZBZ, diagnosis only.
+
+### Derived form channels
+
+Tier two grows through derived spellings of forms the list and the cache already carry.
+Four shape-driven channels register such spellings. An all-caps one-token organisation
+also matches its capitalized spelling ("l'Unesco" beside "UNESCO"); a form with a
+trailing parenthetical qualifier also matches its head ("Le populaire" out of "Le
+populaire (Zeitung, Paris)"); a two-token organisation whose second token stands in a
+static table of places also matches the inverted German adjective form ("Genfer
+Universität" for the listed "Universität Genf"); a person headword also matches its
+dotted initials, the form interview transcripts use in the speaker slot. Word
+boundaries treat a superscript digit as a separator, so a name carrying a footnote
+marker keeps the boundary it has on the page.
+
+Every derived spelling enters as a tier-2 worklist candidate, so the channels raise
+what an operator gets to see while the automatic marks stay as the base rules set them.
+The channels read the forms that were actually registered, so every earlier gate binds
+them too, and a cache form the variant review rejected has no derived form. The place
+table is static and small, and no morphology is generated. The channels answer the rule
+gaps that the recall reading of the executed evaluation named
+([entity-evaluation.md](entity-evaluation.md)).
 
 ## Instruments
 
@@ -179,9 +214,59 @@ Built, each with its pytest suite:
   subtree character-identical, byte-identical outside the insertions (bytes in, bytes
   out; stripping the wrappers restores the original). It refuses to write into
   `output/tei_final` and reports JSON plus HTML.
+- `scripts/eval/entity_corpus_scan.py` dumps every candidate corpus-wide read-only,
+  with rule, tier and context, plus distribution views (per document, per rule, per
+  entity) and invariant checks (no tier-1 form on the function-word list, none adjacent
+  to a hyphen). The snapshot is diffable, so a rule change shows its exact corpus effect
+  before it binds; a frozen copy of the snapshot is what an adjudication wave draws from.
+- `scripts/eval/entity_gold_benchmark.py` measures precision and recall against the ZBZ
+  reference TEIs, scope-restricted to shared text, with per-mention error lists; the
+  report lands in `output/audits/entity_gold_benchmark.json`. Facsimile classification
+  of its deviations established that the references serve as a trend indicator, which
+  is why the truth standard of the entity layer is the facsimile-adjudicated sample
+  ([entity-evaluation.md](entity-evaluation.md)).
+- `scripts/eval/build_mention_verdicts.py` builds `data/entities/mention_verdicts.json`,
+  the persistence layer of the human and adjudicated judgments. A record is keyed by
+  (doc, page, surface, gid, occurrence), where the occurrence index counts over the full
+  tier-1 candidate population of the scan rather than over a drawn sample, and it
+  carries the verdict, its reason, the offsets, the drawing wave and a sha256
+  fingerprint of the delivered TEI it was judged on. A later text change (re-OCR,
+  correction run, stock correction) moves the fingerprint and marks the affected records
+  stale for re-adjudication, so a verified mention stays verified exactly as long as its
+  text holds. The build reads its inputs read-only, produces byte-identical output on a
+  rerun, and reports a deviation from the adjudicated distribution instead of adjusting
+  it.
+- `scripts/eval/entity_risk_ranking.py` is the instrument of the false-positive hunt. It
+  scores every tier-1 mark of the scan snapshot with additive deterministic features
+  (form from a variant channel, case-tolerant rule, single-token surface, short surface,
+  work category, surname shared with another listed person, plus a state the tier rules
+  exclude) and sorts the corpus into three strata under
+  `output/audits/fp_hunt/risk_ranking.json`, so a wave buys its checked cases where a
+  false positive is most likely. The binding wave protocol sits beside the ranking as
+  `PROTOCOL.md`, versioned as `reports/2026-08-12_fp-hunt-protokoll.md`. Score and
+  features order the queue; the facsimile decides the verdict, and a confirmed false
+  positive is fixed at the variant review or as a matcher rule guard.
+- `tests/test_entity_ref_invariant.py` proves the closed world on the shipped artifacts.
+  Every GND id that reaches the viewer through the generated mirror, the `ref="GND:..."`
+  values of the preview pages together with `gid` and the ambiguity set `alternatives`
+  of the worklists, is compared as a raw string against the curated list. The comparison
+  is exact, so a formatting drift fails as loudly as an unknown id, and the gate has
+  teeth on a fresh clone because the mirror is git-tracked.
+- `scripts/tei/tei_cover_strip.py` (operator-gated, E94 pattern) removes E-Periodica
+  cover-sheet text from the delivered TEI and keeps the page break with a type marker;
+  the corpus-wide run is executed, report in `output/audits/cover_strip_report.json`.
+- The viewer entity stream: `scripts/edition/generate_entity_preview_data.py` splits the
+  previews per page into the generated mirror, and the viewer shows them read-only under
+  `viewer.html?doc={DOC_ID}&entities=1` as a markup layer with category colors, a
+  popover per mention and a per-page worklist panel, so wrappings are verified next to
+  the facsimile.
 
 Planned:
 
+- Deterministic running-head suppression, a rule that recognizes the repeated page-head
+  line of a document and holds its surfaces out of tier 1, so the marked stock follows
+  the page-apparatus convention of 2026-08-12 by itself. It also makes the convention
+  reading of the measured precision computable.
 - `scripts/eval/entity_lexicon_audit.py` (before M4): groups every form the built
   lexicon would match by shape class (dotted initials, single tokens at the length
   floor, all-caps forms, forms with digits, non-Latin scripts) with counts and
@@ -190,28 +275,12 @@ Planned:
   corpus dry-run (M6) is an adversarial agent review of the built lexicon, searching
   for forms that would strike in ordinary prose; agent findings are proposals, and
   class decisions stay with the deterministic shape rules.
-- `scripts/eval/entity_corpus_scan.py` (with the fix package): read-only dump of
-  every candidate corpus-wide with rule, tier and context, plus distribution views
-  (per document, per rule, per entity) and invariant checks (no tier-1 form on the
-  function-word list, none adjacent to a hyphen). The snapshot is diffable, so every
-  rule change shows its exact corpus effect before it binds; this generalizes the
-  ten-document pilot to controlled whole-corpus verification.
-- `scripts/tei/tei_cover_strip.py` (operator-gated, E94 pattern): removes E-Periodica
-  cover-sheet text from the delivered TEI, keeps the page break with a type marker.
-- Viewer entity stream: the entity previews are split per page into the generated
-  mirror and the viewer shows them as a read-only layer (markup mode with category
-  colors, a popover per mention with preferred name, GND id and lobid link, a
-  per-page worklist panel), so the operator verifies wrappings next to the
-  facsimile. This is also the candidate for the open curation-channel decision.
-- `scripts/eval/entity_gold_benchmark.py` (M4): precision and recall against the
-  reference TEIs, dev on the 18 previously indexed documents, one frozen-rules
-  measurement on the 7 held-out ones, scope-restricted to shared text; per-mention
-  error lists; evidence JSON versioned under `docs/data/`. The held-out set is drawn
-  along the distribution of gold mentions rather than by document count; the densest
-  reference (1520) is measured separately, it carries a large share of the gold, a
-  known file defect, and the anchor-collision case the panel never saw. Legacy
-  demotion removes the leakage of gold-harvested forms into tier 1 before this
-  measurement.
+- The frozen-rules gold measurement (M4): one run of `entity_gold_benchmark` on the
+  held-out references with the rules frozen, evidence JSON versioned under `docs/data/`.
+  The held-out set is drawn along the distribution of gold mentions rather than by
+  document count; the densest reference (1520) is measured separately, it carries a
+  large share of the gold, a known file defect, and the anchor-collision case the panel
+  never saw.
 - `scripts/eval/entity_audit.py` (M6/M7): before-and-after measurement of the stock.
 - `scripts/tei/tei_entity_marker.py` (M7): the operator-gated stock tool on
   `marker_common` (dry-run, backup, byte-splice inside `text`, idempotent,
@@ -277,6 +346,9 @@ the package, the preview rerun and the corpus scan diff close M3.
 6. Adjective forms become worklist candidates; a single-word work title that shadows
    a listed surname ("Nietzsche") presents both candidates.
 
+The package is built; the corpus scan snapshot and the regenerated previews carry it.
+The derived form channels stand on top of it as the growth path of tier two.
+
 ## Verification
 
 Four layers, ordered by what each proves:
@@ -286,11 +358,16 @@ Four layers, ordered by what each proves:
    repeat-run stability.
 3. Sampled verification beyond gold: seeded, stratified samples judged adversarially by
    independent agents with facsimile access; verdicts persisted, aggregated by script;
-   the rule of three sets sample sizes; disagreement escalates to the operator.
+   disagreement escalates to the operator. The method, the binding adjudication protocol
+   and the record of the executed run live in
+   [entity-evaluation.md](entity-evaluation.md); the judgments themselves land in the
+   mention verdict store, and the risk ranking supplies the second, risk-ordered draw
+   over the same mark population.
 4. Technical gates: byte-identical text extraction over the whole corpus before and
    after, deterministic CER reproduction, schema gate, conformity rules Z1 to Z4 and
-   Z8, idempotence proof, full pytest suite. Gold tests self-skip where the local-only
-   reference data is absent.
+   Z8, idempotence proof, the closed-world invariant over every id in the shipped
+   mirror, full pytest suite. Gold tests self-skip where the local-only reference data
+   is absent.
 
 ## Schema hardening (planned, before M4)
 
@@ -316,6 +393,15 @@ Nothing before M7 touches `tei_final`.
 | M6 | Corpus dry-run | full change preview and distribution report reviewed by the operator |
 | M7 | Stock run | operator-released marker run, gates green, mirror regenerated, register entry |
 
+State on 2026-08-12: M0 to M3 are reached, the pilot and the independent evaluation wave
+included. Beyond the pilot the sampling measurement of
+[entity-evaluation.md](entity-evaluation.md) has run once over the whole delivered
+corpus, its judgments are persisted in the verdict store, and the consequences that need
+no convention decision are implemented, the derived channels, the invariant gate and the
+risk ranking. M4 has its instrument and a report; the milestone closes with the
+frozen-rules run on the held-out references and its evidence under `docs/data/`. M5 to
+M7 stand open, and `tei_final` carries no entity markup.
+
 ## Open operator decisions
 
 1. Works in tier one, or worklist-only in the first stock wave (proposal: persons and
@@ -327,8 +413,13 @@ Nothing before M7 touches `tei_final`.
 4. Scope of the author herself: mentions of Jeanne Hersch dominate the future stock
    run by volume while the references mark her almost never; whether and where her
    mentions are annotated is the volumetrically largest open convention (with ZBZ).
+   The recall reading of the executed evaluation records what the byline exception
+   costs per drawn page, so the decision now rests on adjudicated evidence
+   ([entity-evaluation.md](entity-evaluation.md)).
 5. Hyphen compounds (with ZBZ, see the open modelling points).
 
 Decided 2026-08-12 (operator): title-only for works binds even against wider
 reference spans; all-caps mentions are in scope with the author-byline exception;
-cover sheets leave the delivered TEI; apparatus zones are out of matching scope.
+cover sheets leave the delivered TEI; apparatus zones are out of matching scope;
+running heads stay outside the marking scope, while title pages, organisation names in
+bylines and picture captions are marked.

@@ -93,6 +93,54 @@ The measurement feeds the system rather than only describing it:
 - The numbers gate the stock-marking decision: whether tier-1 marks are written into
   the delivered TEI corpus-wide is decided on measured precision, per category.
 
+## Execution record (snapshot 2026-08-12)
+
+The workflow above has run once, over the whole delivered corpus. The draw was seeded
+(seed 42) and stratified as the first phase describes, 300 tier-1 marks for precision
+and 40 pages for recall, frozen together with the corpus scan snapshot it was cut from
+under `output/audits/eval_sample/`. Nine independent agents adjudicated at the
+facsimile under the binding protocol `output/audits/eval_sample/ADJUDICATION.md`, six of
+them on precision ranges, two reading the drawn pages exhaustively, one delivering the
+blind second judgment on the agreement subsample of 50 precision cases. Every verdict
+file was verified against disk before the aggregation.
+
+Where the results live:
+
+- `reports/2026-08-12_entity-eval-ergebnis.md`, the readable result of the snapshot,
+  with the headline figures, their intervals, the error classes and the recall causes
+- `output/audits/entity_eval_report.json`, the aggregate the statistics phase produces
+- `output/audits/eval_sample/`, the raw evidence, sample manifest, case files, verdict
+  files and the frozen scan the offsets index into
+- `reports/2026-08-12_adjudication-protokoll.md`, the versioned copy of the protocol the
+  wave was bound to
+
+The verdict store `data/entities/mention_verdicts.json` is the durable sink of these
+judgments. `scripts/eval/build_mention_verdicts.py` folds the loose case and verdict
+files into one lookup keyed by (doc, page, surface, gid, occurrence), carrying the
+verdict, its reason, the second judgment where one exists, and a sha256 fingerprint of
+the delivered TEI the judgment was made on. A later text change moves the fingerprint
+and marks the affected records stale, so a rerun re-adjudicates what actually changed
+and keeps the rest. The store is described as the persistence layer of the architecture
+in [entity-integration.md](entity-integration.md).
+
+The even draw of the precision sample has a risk-ordered complement. The ranking
+`scripts/eval/entity_risk_ranking.py` scores every tier-1 mark of the scan by
+deterministic features and sorts the corpus into strata under
+`output/audits/fp_hunt/risk_ranking.json`, so a hunting wave spends its adjudication
+where a false positive is most likely; its protocol is versioned as
+`reports/2026-08-12_fp-hunt-protokoll.md`. The seeded sample carries the statistical
+statement about the whole mark population, and the ranking concentrates further
+adjudication on its suspicious end.
+
+The operator took a convention decision (2026-08-12) on the described part of the
+result. Running heads stay outside the marking scope, while title pages, organisation
+names in bylines and picture captions are marked. This settles the page-apparatus
+question the executed run left open and makes a second, convention reading of precision
+computable, precision over the marks the convention keeps in scope. The reading follows
+once the deterministic running-head suppression named in
+[entity-integration.md](entity-integration.md) is in place; a redraw and a remeasurement
+follow the repair wave, so a later run compares against the same design.
+
 ## Roles
 
 - Agents: pre-adjudication of drawn cases, exhaustive page reading, statistics runs.

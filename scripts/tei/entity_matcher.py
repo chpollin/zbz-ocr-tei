@@ -9,7 +9,7 @@ Two public functions:
     build_lexicon(entities_path, cache_path, legacy_path=None, review_path=None) -> dict
         Merges the curated list `data/entities/all_entities.json`, the lobid cache
         `data/entities/gnd_cache.json` (name variants, optional) and the legacy
-        mention index `output/gnd_analysis/gnd_entities.json` (optional) into one
+        mention index `data/entities/legacy_mentions.json` (optional) into one
         lexicon. Entries without a label are skipped, so are entries whose cache
         answer is 404 (defective GND id).
 
