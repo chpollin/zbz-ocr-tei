@@ -48,6 +48,14 @@ a single character.
   contributes surface forms attested in 18 reference TEIs. Its ids lack the GND check
   character and are normalized before joining.
 
+Every data channel, present or future, is its own trust boundary and passes three
+steps before its forms may match, an intake lint, a shape-class review of the forms
+it contributes, and a pilot round. Which tier a form may serve follows from the
+form's own distinctiveness; the authority of the source never lifts a form class
+into tier 1. The lobid variants set the precedent, since `variantName` mixes
+transliterations, translations, pseudonyms, inverted forms and abbreviations, and
+only the shape-based filters in the matcher make the usable subset explicit.
+
 ## Target model
 
 The binding convention is the ZBZ inline GND model (E88), as the 25 reference TEIs show
@@ -112,9 +120,13 @@ be able to answer "none of them" (E62; lesson from E66: no checker certifies its
    measurement.
 
 The tier borders are empirical: a rule that produces errors on the gold standard moves
-down one tier. Mentions of entities outside the list are out of scope (closed world,
-E71 lesson); an optional frequency report of unmatched capitalized candidates is
-diagnosis only.
+down one tier. A form class whose candidate set systematically misses the true bearer
+never enters tier 2 either; a judge that only sees wrong candidates is invited to pick
+one, so such mentions go straight to tier 3 (in the pilot's initials case, "J. H."
+meant the interviewee, whose record carries no initials variant, while the one
+presented candidate was the wrong person). Mentions of entities outside the list are out of
+scope (closed world, E71 lesson); an optional frequency report of unmatched
+capitalized candidates is diagnosis only.
 
 ## Instruments
 
@@ -133,7 +145,8 @@ Built, each with its pytest suite:
   lobid variants contribute noise tokens. Variants made only of dotted initials
   ("J. H." for Pestalozzi) never enter the full-name channel; the pilot evaluation
   showed such a variant claiming every "J. H." of an interview for the wrong person
-  (doc 1220), and eight listed entities carry initials variants of this kind.
+  (doc 1220). More listed entities carry initials variants of this kind; the planned
+  lexicon audit reports the current set.
 - `scripts/tei/tei_entity_preview.py` wraps tier 1 into `output/entity_preview/` and
   proves per document: RelaxNG-valid against `zbz_hersch.rng`, text of the `text`
   subtree character-identical, byte-identical outside the insertions (bytes in, bytes
@@ -142,6 +155,14 @@ Built, each with its pytest suite:
 
 Planned:
 
+- `scripts/eval/entity_lexicon_audit.py` (before M4): groups every form the built
+  lexicon would match by shape class (dotted initials, single tokens at the length
+  floor, all-caps forms, forms with digits, non-Latin scripts) with counts and
+  examples, so the operator approves or bans whole classes instead of chasing single
+  forms; rerun after every cache refresh. A second, independent layer before the
+  corpus dry-run (M6) is an adversarial agent review of the built lexicon, searching
+  for forms that would strike in ordinary prose; agent findings are proposals, and
+  class decisions stay with the deterministic shape rules.
 - `scripts/eval/entity_gold_benchmark.py` (M4): precision and recall against the
   reference TEIs, dev on the 18 previously indexed documents, one frozen-rules
   measurement on the 7 held-out ones, scope-restricted to shared text; per-mention
@@ -169,7 +190,10 @@ then decided.
 An independent evaluation wave (ten per-document evaluators, gold compared against
 reference markup, transfer checked against text and facsimile; three adversarial
 verifiers over all findings; one completeness critic) provides the semantic check the
-unit tests cannot, since tests and code share their author's blind spots.
+unit tests cannot, since tests and code share their author's blind spots. The
+reference-less transfer half stays in every evaluation round on purpose: the wave's
+one systematic tier-1 finding (the initials variant, doc 1220) sat in an interview no
+gold document resembles, and the gold half alone would have missed it.
 
 ## Verification
 
