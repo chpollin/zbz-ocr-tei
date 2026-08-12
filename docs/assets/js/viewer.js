@@ -146,6 +146,68 @@
 
     const cache = new ZBZ.Cache(40);
 
+    // ---- Asset existence ----
+    // The catalog entry carries `assets`: which mirror files generate_edition_data really
+    // wrote for this document, as page lists ("*" = pages 1..page_count, else "1-9,12") or
+    // a flag for document-wide files. Asking only for listed files keeps the browser console
+    // free of 404 probes. A catalog without the field degrades to the previous probing.
+    const ASSET_ALL = '*';
+    const assetPages = new Map(); // 'doc:kind' -> Set of page numbers
+    // '../output/...' resolves only when the repo root is the docroot (viewer under /docs/).
+    // With docroot=docs/ (server-less viewer, GitHub Pages) it leaves the served tree and
+    // can never be anything but 404.
+    const OUTPUT_REACHABLE = location.pathname.indexOf('/docs/') !== -1;
+
+    function assetPageSet(docId, kind, spec) {
+        const key = docId + ':' + kind;
+        let set = assetPages.get(key);
+        if (!set) {
+            set = new Set();
+            spec.split(',').forEach(part => {
+                const m = /^(\d+)(?:-(\d+))?$/.exec(part.trim());
+                if (!m) return;
+                const from = parseInt(m[1], 10);
+                const to = m[2] ? parseInt(m[2], 10) : from;
+                for (let p = from; p <= to; p++) set.add(p);
+            });
+            assetPages.set(key, set);
+        }
+        return set;
+    }
+
+    // true/false where the catalog knows the stream, null where it predates `assets`.
+    function assetKnown(kind, page) {
+        const doc = state.doc;
+        const assets = doc && doc.assets;
+        if (!assets) return null;
+        const spec = assets[kind];
+        if (spec === undefined) return false;
+        if (spec === true) return true;
+        if (spec === ASSET_ALL) return page >= 1 && page <= (doc.page_count || 0);
+        return assetPageSet(doc.id, kind, spec).has(page);
+    }
+
+    // Layout curations this browser saved after the catalog was generated: they are not in
+    // `assets` until the next generator run, so they are remembered here to keep the save
+    // round trip intact.
+    const CURATED_KEY = 'zbz.viewer.curated';
+    const curatedLocal = new Set((() => {
+        try { return JSON.parse(localStorage.getItem(CURATED_KEY)) || []; } catch (e) { return []; }
+    })());
+    const curatedLocally = (docId, page) => curatedLocal.has(docId + ':' + page);
+    function noteCuratedLocally(docId, page) {
+        curatedLocal.add(docId + ':' + page);
+        try { localStorage.setItem(CURATED_KEY, JSON.stringify([...curatedLocal])); } catch (e) { /* storage off */ }
+    }
+
+    // Keeps the URLs that can resolve: mirror files the catalog lists, and ../output paths
+    // only where they lie inside the served tree. An empty list means "do not fetch".
+    function candidates(kind, page, urls) {
+        const mirror = assetKnown(kind, page) !== false
+            || (kind === 'layout_curated' && state.doc && curatedLocally(state.doc.id, page));
+        return urls.filter(u => (u.indexOf('../') === 0) ? OUTPUT_REACHABLE : mirror);
+    }
+
     // ---- DOM refs ----
     const refs = {
         subbar:         $('#doc-subbar'),
@@ -289,7 +351,10 @@
         state.entityWorklist = null;
         state.entityAvailable = false;
         state.entityPage = false;
-        const worklist = await ZBZ.fetchJSON(entityWorklistPath(docId));
+        // Documents without an entity preview are not asked for one (catalog `assets`).
+        const worklist = assetKnown('entity_worklist', 0) !== false
+            ? await ZBZ.fetchJSON(entityWorklistPath(docId))
+            : null;
         if (worklist) {
             state.entityWorklist = worklist;
             state.entityAvailable = true;
@@ -312,8 +377,8 @@
     async function loadEntityPage(doc, page) {
         const ck = 'entity:' + doc + ':' + page;
         if (cache.has(ck)) return cache.get(ck);
-        // fetchFirstOk turns a 404 into null (pages without an entity preview stay usable)
-        const res = await ZBZ.fetchFirstOk([entityPagePath(doc, page)]);
+        // Pages without an entity preview stay usable: null falls back to the pipeline TEI
+        const res = await ZBZ.fetchFirstOk(candidates('entity', page, [entityPagePath(doc, page)]));
         const xml = res ? res.text : null;
         if (xml != null) cache.set(ck, xml);
         return xml;
@@ -866,10 +931,14 @@
         try {
             if (dl) {
                 const meta = layoutSourceMeta();
-                if (!(await persistSilent(
+                if (await persistSilent(
                     () => ZBZ.FsAccess.writeLayout(state.doc.id, state.page, state.layout.regions, meta),
                     () => ZBZ.Download.layout(state.doc.id, state.page, state.layout.regions, meta)
-                ))) downloaded = true;
+                )) {
+                    noteCuratedLocally(state.doc.id, state.page); // catalog learns it on the next generator run
+                } else {
+                    downloaded = true;
+                }
                 state.layoutDirty = false;
                 if (refs.regionCount) refs.regionCount.textContent = state.layout.regions.length + ' regions';
                 saved.push('Layout p.' + state.page);
@@ -1067,7 +1136,7 @@
         if (tei) {
             blank = /<pb\b[^>]*\btype\s*=\s*"blank"/i.test(tei);
         } else {
-            const res = await ZBZ.fetchFirstOk(ZBZ.path.ocr('mistral', doc, page));
+            const res = await ZBZ.fetchFirstOk(candidates('ocr', page, ZBZ.path.ocr('mistral', doc, page)));
             blank = res ? ZBZ.isBlankPageText(res.text) : false;
         }
         cache.set(ck, blank);
@@ -1216,9 +1285,9 @@
     async function fetchLayout(doc, page) {
         const ck = 'layout:' + doc + ':' + page;
         if (cache.has(ck)) return cache.get(ck);
-        const j = await ZBZ.fetchFirstJsonOk(ZBZ.path.layoutCurated(doc, page))
-              || await ZBZ.fetchFirstJsonOk(ZBZ.path.layoutGemini(doc, page))
-              || await ZBZ.fetchFirstJsonOk(ZBZ.path.layoutDocling(doc, page));
+        const j = await ZBZ.fetchFirstJsonOk(candidates('layout_curated', page, ZBZ.path.layoutCurated(doc, page)))
+              || await ZBZ.fetchFirstJsonOk(candidates('layout_gemini', page, ZBZ.path.layoutGemini(doc, page)))
+              || await ZBZ.fetchFirstJsonOk(candidates('layout', page, ZBZ.path.layoutDocling(doc, page)));
         cache.set(ck, j);
         return j;
     }
@@ -1285,7 +1354,7 @@
 
         if (state.textSource === 'ocr') {
             refs.textTitle.textContent = 'OCR · ' + state.ocrSource;
-            const res = await ZBZ.fetchFirstOk(ZBZ.path.ocr(state.ocrSource, doc.id, page));
+            const res = await ZBZ.fetchFirstOk(candidates('ocr', page, ZBZ.path.ocr(state.ocrSource, doc.id, page)));
             if (stale()) return;
             if (!res) {
                 renderLoadError('No OCR data for ' + state.ocrSource + ' / page ' + page);
@@ -1414,7 +1483,7 @@
     async function loadTeiPage(doc, page) {
         const ck = 'tei:' + doc + ':' + page;
         if (cache.has(ck)) return cache.get(ck);
-        const res = await ZBZ.fetchFirstOk(ZBZ.path.teiPage(doc, page));
+        const res = await ZBZ.fetchFirstOk(candidates('tei', page, ZBZ.path.teiPage(doc, page)));
         const xml = res ? res.text : null;
         if (xml != null) cache.set(ck, xml); // never cache failures, retry must refetch
         return xml;
@@ -1423,7 +1492,7 @@
     async function loadTeiFinal(doc) {
         const ck = 'tei-final:' + doc;
         if (cache.has(ck)) return cache.get(ck);
-        const res = await ZBZ.fetchFirstOk(ZBZ.path.teiFinal(doc));
+        const res = await ZBZ.fetchFirstOk(candidates('final', 0, ZBZ.path.teiFinal(doc)));
         const xml = res ? res.text : null;
         if (xml != null) cache.set(ck, xml);
         return xml;

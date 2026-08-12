@@ -1,7 +1,9 @@
 """
 Generiert Edition-Daten fuer den statischen Viewer (docs/):
 
-- catalog.json          : Korpus-Uebersicht mit Metadaten und Stream-Status (E66)
+- catalog.json          : Korpus-Uebersicht mit Metadaten, Stream-Status (E66) und
+                          `assets` (welche Mirror-Dateien es pro Dokument gibt; der Viewer
+                          fragt nur Gelistetes an statt auf Verdacht)
 - entity_index.json     : Entity-Index fuer NER-Highlighting im TEI-Render
 - manifests/{doc}.json  : Spiegel der Pro-Objekt-Manifeste (Status + History + Leerseiten)
 - pages/{doc}/...       : Per-Seiten-Mirror (Layout, Mistral-OCR, TEI extrahiert aus _final.xml)
@@ -297,6 +299,63 @@ def mirror_per_page_data(verbose: bool = False) -> dict:
     return stats
 
 
+# ---------------------------------------------------------------------------
+# Asset-Existenz: welche Mirror-Dateien es pro Dokument wirklich gibt
+# ---------------------------------------------------------------------------
+
+# Ohne diesen Index fragt der Viewer pro Seite auf Verdacht an (404-Rauschen in der
+# Browser-Konsole). Seitenlisten kompakt: "*" = genau 1..page_count, sonst "1-9,12".
+_ASSET_PAGE_PATTERNS = (
+    ("ocr", r"_p(\d+)\.md"),
+    ("tei", r"_p(\d+)\.xml"),
+    ("layout", r"_p(\d+)_layout\.json"),
+    ("layout_gemini", r"_p(\d+)_layout_gemini\.json"),
+    ("layout_curated", r"_p(\d+)_layout_curated\.json"),
+    ("entity", r"_entity_p(\d+)\.xml"),
+)
+_ASSET_FLAGS = (
+    ("entity_worklist", "_entity_worklist.json"),
+    ("final", "_final.xml"),
+)
+
+
+def _encode_pages(pages: set, page_count: int) -> str:
+    if not pages:
+        return ""
+    if page_count and pages == set(range(1, page_count + 1)):
+        return "*"
+    parts = []
+    start = prev = None
+    for p in sorted(pages):
+        if start is None:
+            start = prev = p
+        elif p == prev + 1:
+            prev = p
+        else:
+            parts.append(str(start) if start == prev else f"{start}-{prev}")
+            start = prev = p
+    parts.append(str(start) if start == prev else f"{start}-{prev}")
+    return ",".join(parts)
+
+
+def scan_mirror_assets(doc_dir: Path, doc_id: str, page_count: int) -> dict:
+    """Existenz-Index der gespiegelten Dateien eines Dokuments (Seitenlisten + Flags)."""
+    if not doc_dir.is_dir():
+        return {}
+    names = {p.name for p in doc_dir.iterdir()}
+    assets = {}
+    for kind, suffix in _ASSET_PAGE_PATTERNS:
+        rx = re.compile(re.escape(doc_id) + suffix)
+        pages = {int(m.group(1)) for n in names if (m := rx.fullmatch(n))}
+        spec = _encode_pages(pages, page_count)
+        if spec:
+            assets[kind] = spec
+    for flag, suffix in _ASSET_FLAGS:
+        if f"{doc_id}{suffix}" in names:
+            assets[flag] = True
+    return assets
+
+
 _TITLECASE_WORD_RE = re.compile(r"\b([\wÀ-ÿ]+)\b", re.UNICODE)
 
 def _normalize_author(name):
@@ -408,7 +467,9 @@ def build_catalog():
 
     # Dokument-Eintraege bauen
     entries = []
+    pages_dir = DOCS_DIR / "data" / "pages"
     for doc_id, doc in sorted(docs.items(), key=lambda x: int(x[0])):
+        page_count = doc.get("page_count", 0)
         entry = {
             "id": doc_id,
             "title": doc.get("title") or "Dokument " + doc_id,
@@ -418,8 +479,9 @@ def build_catalog():
             "type": doc.get("type", "-"),
             "pub_form": doc.get("pub_form"),
             "desc": doc.get("desc", ""),
-            "page_count": doc.get("page_count", 0),
+            "page_count": page_count,
             "has_tei": doc.get("pipeline_status", {}).get("tei", False),
+            "assets": scan_mirror_assets(pages_dir / doc_id, doc_id, page_count),
             "streams": manifest_streams.get(doc_id, {
                 "ocr":    {"status": "unverifiziert", "last_at": None, "last_by": None},
                 "layout": {"status": "unverifiziert", "last_at": None, "last_by": None},
@@ -511,24 +573,11 @@ def main():
         print(f"  Thumbs erzeugt: {n_thumbs}")
         return
 
-    # 1. Katalog bauen
-    catalog = build_catalog()
-    if not catalog:
-        return
-
-    # 2. Katalog schreiben
-    output_path = DOCS_DIR / "data" / "catalog.json"
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(
-        json.dumps(catalog, indent=2, ensure_ascii=False),
-        encoding="utf-8",
-    )
-
-    # 5. Manifeste spiegeln (klein, immer mitlaufen lassen)
+    # 1. Manifeste spiegeln (klein, immer mitlaufen lassen)
     n_mf = mirror_manifests(verbose=args.verbose)
     print(f"  Manifeste gespiegelt: {n_mf} -> docs/data/manifests/")
 
-    # 7. Per-Seiten-Mirror fuer alle 285 Docs (kann mit --no-mirror uebersprungen werden)
+    # 2. Per-Seiten-Mirror fuer alle 285 Docs (kann mit --no-mirror uebersprungen werden)
     if not args.no_mirror:
         print("\nPer-Seiten-Mirror nach docs/data/pages/...")
         stats = mirror_per_page_data(verbose=args.verbose)
@@ -537,6 +586,19 @@ def main():
         print("Thumbnails nach docs/data/thumbs/...")
         n_thumbs = generate_thumbnails(verbose=args.verbose)
         print(f"  Thumbs erzeugt/aktualisiert: {n_thumbs}")
+
+    # 3. Katalog bauen (nach dem Mirror: `assets` indiziert den tatsaechlichen Mirror-Stand)
+    catalog = build_catalog()
+    if not catalog:
+        return
+
+    # 4. Katalog schreiben
+    output_path = DOCS_DIR / "data" / "catalog.json"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        json.dumps(catalog, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
 
     print(f"\nEdition-Katalog geschrieben: {output_path}")
     print(f"  Dokumente: {catalog['edition']['total_docs']}")
