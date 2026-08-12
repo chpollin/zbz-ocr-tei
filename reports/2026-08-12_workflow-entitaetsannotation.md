@@ -12,16 +12,16 @@ nicht zitiert.
 ## Gegenstand und Grundsatz
 
 Ausgangspunkt ist eine von der Zentralbibliothek Zürich kuratierte Entitätsliste, in
-der jeder Eintrag eine GND-Kennung trägt. Der Workflow arbeitet mit **geschlossener
-Welt**. Ausgezeichnet wird ausschließlich, was auf dieser Liste steht, und die
+der jeder Eintrag eine GND-Kennung trägt. Der Workflow folgt dem **Closed-World-Prinzip**. Ausgezeichnet wird ausschließlich, was auf dieser Liste steht, und die
 Zuordnung einer Kennung zu einer Textstelle trifft immer ein **deterministisches,
 wiederholbares Verfahren**. Sprachmodelle sind von dieser Zuordnungsentscheidung
 ausgeschlossen. Sie kommen an zwei eng begrenzten Stellen vor, als Prüfinstanz über bereits vorhandene Namensformen und
-als geplante Vorsortierung einer Prüfliste; beide Ergebnisse werden in versionierten
+als geplante Vorsortierung einer Worklist; beide Ergebnisse werden in versionierten
 Dateien festgehalten und anschließend deterministisch konsumiert, sodass jeder Lauf
 ohne Modellbeteiligung reproduzierbar bleibt. Namen, die im Korpus häufig vorkommen,
-aber auf der Liste fehlen, erfasst ein eigener **Vorschlagskanal ohne
-Kennungsvergabe**; die Erweiterung der Liste bleibt eine Entscheidung der Bibliothek.
+aber auf der Liste fehlen, werden als **NIL-Mentions** ohne
+Kennungsvergabe erfasst und als Kandidaten für die Listenerweiterung vorgelegt; die
+Entscheidung über die Liste bleibt bei der Bibliothek.
 
 ## Namensformen und ihre Kontrolle
 
@@ -30,7 +30,7 @@ die lobid-Schnittstelle in einen lokalen Cache geholt und um Formen aus dem
 Altbestand des Projekts ergänzt. Rohe Normdaten-Varianten sind als Suchgrundlage
 unzuverlässig, sie enthalten Initialenkürzel, Transliterationsfragmente und
 Verwechslungsformen. Deshalb durchläuft jede übernommene Form eine Prüfung, deren
-Ergebnis als **Verdikt in einer versionierten Datei** liegt. Zugelassene Formen speisen
+Ergebnis als **Verdict in einer versionierten Datei** liegt. Zugelassene Formen speisen
 die Suche, verworfene Formen erreichen sie nie, und Formen mit Verdacht sowie alle
 seit der letzten Prüfung neu hinzugekommenen Formen erzeugen ausschließlich
 Prüflisten-Einträge. Die Datei ist durch die Projektleitung änderbar, und jede
@@ -39,10 +39,10 @@ Prüflisten-Einträge. Die Datei ist durch die Projektleitung änderbar, und jed
 ## Zweistufige Annotation
 
 Ein regelbasierter Matcher liest jede Lieferdatei und sortiert jeden Fund in eine von
-**zwei Stufen**. Stufe eins umfasst als sicher geltende Treffer, etwa vollständige Namen
-mit eindeutigem Träger; nur sie werden ausgezeichnet. Stufe zwei umfasst alles
+**zwei Stufen**. Tier 1 umfasst als sicher geltende Treffer, etwa vollständige Namen
+mit eindeutigem Träger; nur sie werden ausgezeichnet. Tier 2 umfasst alles
 Unsichere, nackte Nachnamen, Stellen mit mehreren möglichen Trägern,
-Homographenverdacht und ungeprüfte Namensformen; diese Stufe wird als **Prüfliste**
+Homographenverdacht und ungeprüfte Namensformen; diese Stufe wird als **Worklist**
 sichtbar gemacht und niemals automatisch ausgezeichnet. **Definierte Zonen** sind von der
 Suche ausgenommen, darunter Bildnachweise, gekennzeichnete Literaturverzeichnisse und
 die Verfasserzeilen der Autorin.
@@ -71,13 +71,13 @@ falsche Entität, falsche Spanne, nicht in der Vorlage, unentscheidbar); jede ge
 Seite wird erschöpfend gegen die Liste gelesen, und jede übersehene Nennung erhält
 ein Ursachenlabel. Drittens wird eine Teilmenge von fünfzig Fällen **doppelt und
 unabhängig beurteilt**, sodass die Verlässlichkeit des Urteilens selbst als
-Übereinstimmungsquote ausgewiesen ist. Viertens werden die Kennzahlen mit
+**Inter-Annotator-Agreement** ausgewiesen ist. Viertens werden die Kennzahlen mit
 **Bootstrap-Konfidenzintervallen** berichtet, nach dem Verfahren, das im Projekt bereits
 die Zeichenfehlerraten-Messung trägt.
 
 Die Messung hat Konsequenzen über die Zahl hinaus. Jeder bestätigte Fehler wird als
 **Regressionstest** fixiert, systematische Ursachen werden zu Matcher-Regeln,
-Namensform-Verdikten oder Listenvorschlägen, und die Entscheidung, die Markierungen
+Namensform-Verdicts oder Listenvorschlägen, und die Entscheidung, die Markierungen
 in den Lieferbestand zu übernehmen, fällt **pro Kategorie auf Grundlage der gemessenen
 Präzision**. Der Bestandslauf selbst folgt dem etablierten Muster der reversiblen
 Korrekturläufe, mit Vorschau, Sicherungskopie und erneuter Validierung.

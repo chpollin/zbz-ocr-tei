@@ -8,11 +8,9 @@
   :root {
     --bg: #F5F0E8;
     --bg-alt: #EDE6D8;
-    --surface: #FAFAF7;
     --text: #2C2825;
     --text-2: #5C554E;
     --muted: #8A8279;
-    --border: rgba(44, 40, 37, 0.14);
     --red: #8B3A3A;
     --blue: #3D5A73;
     --olive: #6B6B47;
@@ -22,393 +20,385 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { height: 100%; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--serif);
-    overflow: hidden;
-  }
+  body { background: var(--bg); color: var(--text); font-family: var(--serif); overflow: hidden; }
   .deck { position: relative; height: 100vh; }
   .slide {
-    position: absolute;
-    inset: 0;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    padding: 4.5rem clamp(1.5rem, 7vw, 7rem) 5.5rem;
+    position: absolute; inset: 0; display: none; flex-direction: column;
+    justify-content: center; padding: 3.5rem clamp(1.5rem, 8vw, 9rem) 5rem;
     background: var(--bg);
   }
   .slide.active { display: flex; }
   @media (prefers-reduced-motion: no-preference) {
-    .slide.active { animation: rise 320ms ease-out; }
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: none; }
-    }
+    .slide.active { animation: rise 300ms ease-out; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
   }
-  .inner { width: 100%; max-width: 62rem; margin: 0 auto; }
+  .inner { width: 100%; max-width: 58rem; margin: 0 auto; }
 
   .eyebrow {
-    font-family: var(--sans);
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--red);
-    display: flex;
-    align-items: baseline;
-    gap: 0.9rem;
-    margin-bottom: 1.4rem;
+    font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--red); margin-bottom: 1.5rem;
   }
-  .eyebrow .chap {
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    font-variant-numeric: tabular-nums;
-  }
-  h1, h2 { font-weight: 500; text-wrap: balance; line-height: 1.12; }
-  h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); letter-spacing: -0.01em; }
-  h2 { font-size: clamp(1.8rem, 4vw, 2.9rem); margin-bottom: 2.2rem; }
-  .rule {
-    width: 4.5rem; height: 2px; background: var(--red);
-    border: 0; margin: 1.8rem 0;
-  }
-  .subtitle {
-    font-size: clamp(1.05rem, 2vw, 1.35rem);
-    color: var(--text-2);
-    max-width: 42rem;
-    line-height: 1.5;
-  }
-  .titlemeta {
-    margin-top: 2.6rem;
-    font-family: var(--sans);
-    font-size: 0.8rem;
-    color: var(--muted);
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .titlemeta .src { font-family: var(--mono); font-size: 0.75rem; }
+  .eyebrow .chap { color: var(--muted); margin-right: 1rem; font-variant-numeric: tabular-nums; }
+  h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 500; line-height: 1.1; text-wrap: balance; letter-spacing: -0.01em; }
+  h2 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); font-weight: 500; line-height: 1.15; text-wrap: balance; margin-bottom: 1.8rem; }
+  .rule { width: 4.5rem; height: 2px; background: var(--red); border: 0; margin: 1.8rem 0; }
 
-  .rows { display: flex; flex-direction: column; }
-  .row {
-    display: grid;
-    grid-template-columns: 13rem 1fr;
-    gap: 1.6rem;
-    padding: 1.05rem 0;
-    border-top: 1px solid var(--border);
+  p.body {
+    font-size: clamp(1rem, 1.75vw, 1.19rem); line-height: 1.62;
+    max-width: 44rem; margin-bottom: 1.1rem;
   }
-  .row:last-child { border-bottom: 1px solid var(--border); }
-  .row dt {
-    font-family: var(--sans);
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-2);
-    padding-top: 0.28rem;
-    line-height: 1.5;
-  }
-  .row dd {
-    font-size: clamp(0.98rem, 1.6vw, 1.14rem);
-    line-height: 1.55;
-    max-width: 46rem;
-  }
-  .row dd .file { font-family: var(--mono); font-size: 0.88em; color: var(--olive); }
+  p.body strong { font-weight: 600; }
+  .subtitle { font-size: clamp(1.05rem, 2vw, 1.35rem); color: var(--text-2); max-width: 42rem; line-height: 1.5; }
+  .titlemeta { margin-top: 2.4rem; font-family: var(--sans); font-size: 0.8rem; color: var(--muted); display: flex; gap: 2rem; flex-wrap: wrap; }
+  .titlemeta .src { font-family: var(--mono); font-size: 0.74rem; }
+  .accent { color: var(--red); }
+  .quiet { color: var(--text-2); }
 
-  .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 1.9rem; }
-  .tier {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--red);
-    padding: 1.3rem 1.5rem 1.4rem;
+  pre.code {
+    font-family: var(--mono); font-size: clamp(0.72rem, 1.35vw, 0.88rem);
+    line-height: 1.55; background: var(--bg-alt); color: var(--text);
+    padding: 1.1rem 1.3rem; margin: 1.1rem 0 1.4rem;
+    overflow-x: auto; white-space: pre; max-width: 100%;
   }
-  .tier.t2 { border-top-color: var(--blue); }
-  .tier .tname {
-    font-family: var(--sans);
-    font-size: 0.74rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 0.55rem;
+  pre.code .k { color: var(--blue); }
+  pre.code .s { color: var(--olive); }
+  pre.code .hl { color: var(--red); font-weight: 600; }
+  pre.code .c { color: var(--muted); }
+  .caption {
+    font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted); margin-top: -0.9rem; margin-bottom: 1.2rem;
   }
-  .tier.t2 .tname { color: var(--blue); }
-  .tier p { font-size: 1.02rem; line-height: 1.5; }
 
-  .grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 1.9rem; }
-  .prop {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 1.2rem 1.4rem 1.3rem;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1rem;
+  .flow { display: flex; align-items: stretch; flex-wrap: wrap; gap: 0.6rem; margin: 1.6rem 0; }
+  .flow .step {
+    background: var(--bg-alt); padding: 0.85rem 1.1rem; max-width: 13.5rem;
+    display: flex; flex-direction: column; gap: 0.3rem; flex: 1 1 9rem;
   }
-  .prop .n {
-    font-family: var(--serif);
-    font-size: 1.7rem;
-    color: var(--red);
-    line-height: 1;
-    padding-top: 0.15rem;
-    font-variant-numeric: tabular-nums;
-  }
-  .prop h3 {
-    font-family: var(--sans);
-    font-size: 0.76rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--text-2);
-    margin-bottom: 0.4rem;
-  }
-  .prop p { font-size: 0.96rem; line-height: 1.5; }
-  .lead {
-    font-size: clamp(1rem, 1.7vw, 1.16rem);
-    color: var(--text-2);
-    line-height: 1.55;
-    max-width: 46rem;
-    margin-bottom: 1.9rem;
-  }
-  .consequence {
-    border-top: 1px solid var(--border);
-    padding-top: 1.05rem;
-    font-size: 1.02rem;
-    line-height: 1.55;
-    max-width: 52rem;
-  }
-  .consequence .clabel {
-    font-family: var(--sans);
-    font-size: 0.74rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--red);
-    display: block;
-    margin-bottom: 0.4rem;
-  }
+  .flow .step .sname { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-2); }
+  .flow .step .sdesc { font-size: 0.88rem; line-height: 1.45; }
+  .flow .arrow { align-self: center; color: var(--muted); font-family: var(--sans); font-size: 1.2rem; flex: 0 0 auto; }
+  .flow .step.mark { box-shadow: inset 3px 0 0 var(--red); }
+  .flow .step.work { box-shadow: inset 3px 0 0 var(--blue); }
+
+  .split { display: flex; gap: 2.8rem; flex-wrap: wrap; }
+  .split > div { flex: 1 1 20rem; min-width: 0; }
 
   .chrome {
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem clamp(1.5rem, 7vw, 7rem);
-    font-family: var(--sans);
-    font-size: 0.74rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    background: linear-gradient(to top, var(--bg) 55%, rgba(245, 240, 232, 0));
+    position: fixed; left: 0; right: 0; bottom: 0; display: flex; align-items: center;
+    justify-content: space-between; padding: 1rem clamp(1.5rem, 8vw, 9rem);
+    font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    background: linear-gradient(to top, var(--bg) 55%, rgba(245,240,232,0));
     user-select: none;
   }
-  .dots { display: flex; gap: 0.55rem; }
-  .dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: none;
-    border: 1px solid var(--muted);
-    cursor: pointer;
-    padding: 0;
-  }
+  .dots { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: none; border: 1px solid var(--muted); cursor: pointer; padding: 0; }
   .dot.on { background: var(--red); border-color: var(--red); }
   .dot:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
   .counter { font-variant-numeric: tabular-nums; letter-spacing: 0.14em; }
   .navhint { display: none; }
   @media (min-width: 720px) { .navhint { display: inline; } }
-
-  .navzone {
-    position: fixed; top: 0; bottom: 4rem; width: 18%;
-    cursor: pointer; background: none; border: 0;
-  }
+  .navzone { position: fixed; top: 0; bottom: 4rem; width: 14%; cursor: pointer; background: none; border: 0; }
   .navzone:focus-visible { outline: 2px solid var(--blue); outline-offset: -4px; }
-  .navzone.prev { left: 0; }
-  .navzone.next { right: 0; }
+  .navzone.prev { left: 0; } .navzone.next { right: 0; }
 
-  @media (max-width: 760px) {
-    .row { grid-template-columns: 1fr; gap: 0.35rem; }
-    .tiers, .grid4 { grid-template-columns: 1fr; }
-    .slide { padding: 3rem 1.4rem 5.5rem; overflow-y: auto; justify-content: flex-start; }
+  @media (max-width: 820px) {
+    .slide { padding: 2.5rem 1.4rem 5.5rem; overflow-y: auto; justify-content: flex-start; }
+    .flow { flex-direction: column; }
+    .flow .arrow { transform: rotate(90deg); align-self: flex-start; margin-left: 1rem; }
+    .flow .step { max-width: none; }
   }
 </style>
-
 </head>
 <body>
-<div class="deck" id="deck">
+<div class="deck">
 
   <!-- 1 · Titel -->
   <section class="slide active" aria-label="Titel">
     <div class="inner">
-      <p class="eyebrow"><span class="chap">zbz-ocr-tei</span><span>Arbeitspapier · Stand 2026-08-12</span></p>
+      <p class="eyebrow"><span class="chap">zbz-ocr-tei</span>Snapshot · 2026-08-12</p>
       <h1>Kontrollierte Entitätsannotation</h1>
       <hr class="rule">
-      <p class="subtitle">Workflow und Evaluation der GND-Auszeichnung im Zeitungsausschnitt-Korpus
-      zu Jeanne Hersch, Zentralbibliothek Zürich.</p>
+      <p class="subtitle">Normdatenverknüpfung, zweistufige Annotation und stichprobenbasierte
+      Evaluation im Zeitungsausschnitt-Korpus zu Jeanne Hersch, Zentralbibliothek Zürich.</p>
       <div class="titlemeta">
         <span>Digital Humanities Craft</span>
         <span class="src">reports/2026-08-12_workflow-entitaetsannotation.md</span>
+        <span>Alle Zahlen sind an dieses Datum gebunden</span>
       </div>
     </div>
   </section>
 
-  <!-- 2 · Gegenstand und Grundsatz -->
-  <section class="slide" aria-label="Gegenstand und Grundsatz">
+  <!-- 2 · Ausgangslage -->
+  <section class="slide" aria-label="Ausgangslage">
     <div class="inner">
-      <p class="eyebrow"><span class="chap">1 / 5</span><span>Gegenstand und Grundsatz</span></p>
-      <h2>Geschlossene Liste, deterministische Zuordnung</h2>
-      <dl class="rows">
-        <div class="row">
-          <dt>Geschlossene Welt</dt>
-          <dd>Ausgezeichnet wird ausschließlich, was auf der kuratierten Liste der Bibliothek
-          steht; jeder Eintrag trägt eine GND-Kennung.</dd>
-        </div>
-        <div class="row">
-          <dt>Zuordnung</dt>
-          <dd>Die Verbindung von Kennung und Textstelle trifft immer ein deterministisches,
-          wiederholbares Verfahren. Sprachmodelle sind von dieser Entscheidung ausgeschlossen.</dd>
-        </div>
-        <div class="row">
-          <dt>Begrenzte Modellrollen</dt>
-          <dd>Prüfinstanz über vorhandene Namensformen und geplante Vorsortierung der
-          Prüfliste. Beide Ergebnisse liegen versioniert vor und werden deterministisch
-          konsumiert; jeder Lauf bleibt ohne Modellbeteiligung reproduzierbar.</dd>
-        </div>
-        <div class="row">
-          <dt>Vorschlagskanal</dt>
-          <dd>Häufige Namen außerhalb der Liste werden ohne Kennungsvergabe gesammelt.
-          Über die Erweiterung der Liste entscheidet die Bibliothek.</dd>
-        </div>
-      </dl>
+      <p class="eyebrow"><span class="chap">01</span>Ausgangslage</p>
+      <h2>Eine kuratierte Entitätsliste als kontrolliertes Vokabular</h2>
+      <p class="body"><strong>Bestand.</strong> 285 ausgelieferte TEI-Dokumente (OCR-basiert,
+      mehrsprachig), davon 25 mit handannotierter Referenzfassung der Bibliothek.</p>
+      <p class="body"><strong>Vokabular.</strong> Die Bibliothek kuratiert die Entitätsliste
+      mit 288 Einträgen in drei Klassen (Personen, Organisationen, Werke). Jeder Eintrag
+      trägt eine GND-Kennung als persistenten Identifikator.</p>
+      <pre class="code">{ <span class="k">"GND_id"</span>: <span class="s">"118557106"</span>,
+  <span class="k">"name"</span>: <span class="s">"Jaspers, Karl"</span>,
+  <span class="k">"description"</span>: [<span class="s">"Philosoph"</span>, <span class="s">"Arzt"</span>, <span class="s">"Herausgeber"</span>, <span class="s">"Psychiater"</span>],
+  <span class="k">"listBibl"</span>: [{ <span class="k">"DNB_link"</span>: <span class="s">"https://d-nb.info/gnd/118557106"</span> }] }</pre>
+      <p class="caption">data/entities/all_entities.json · ein Listeneintrag</p>
     </div>
   </section>
 
-  <!-- 3 · Namensformen -->
-  <section class="slide" aria-label="Namensformen und ihre Kontrolle">
+  <!-- 3 · Zielmodell -->
+  <section class="slide" aria-label="Zielmodell">
     <div class="inner">
-      <p class="eyebrow"><span class="chap">2 / 5</span><span>Namensformen und ihre Kontrolle</span></p>
-      <h2>Jede Namensform trägt ein Verdikt</h2>
-      <dl class="rows">
-        <div class="row">
-          <dt>Quelle</dt>
-          <dd>Namensvarianten je Kennung aus der Normdatenbank (lobid) in einem lokalen
-          Cache, ergänzt um Formen aus dem Altbestand des Projekts.</dd>
-        </div>
-        <div class="row">
-          <dt>Bekanntes Risiko</dt>
-          <dd>Rohe Normdaten-Varianten enthalten Initialenkürzel, Transliterationsfragmente
-          und Verwechslungsformen; als Suchgrundlage sind sie unzuverlässig.</dd>
-        </div>
-        <div class="row">
-          <dt>Verdikt je Form</dt>
-          <dd>Jede übernommene Form trägt ein Urteil in einer versionierten Datei.
-          Zugelassene Formen speisen die Suche, verworfene erreichen sie nie.</dd>
-        </div>
-        <div class="row">
-          <dt>Vorsicht als Default</dt>
-          <dd>Verdachtsformen und alles seit der letzten Prüfung Neue erzeugen ausschließlich
-          Prüflisten-Einträge. Änderungen der Projektleitung wirken beim nächsten Lauf.</dd>
-        </div>
-      </dl>
+      <p class="eyebrow"><span class="chap">02</span>Zielmodell</p>
+      <h2>Inline-GND-Markup im TEI</h2>
+      <p class="body"><strong>Auszeichnung.</strong> Jede sichere Nennung wird mit dem
+      klassenspezifischen TEI-Element umschlossen; das <span class="accent">ref</span>-Attribut
+      trägt die GND-Kennung. Personen werden zu persName, Organisationen zu orgName,
+      Werke zu bibl.</p>
+      <pre class="code"><span class="c">vorher</span>   ... la transformation, selon Karl Jaspers, de la ...
+
+<span class="c">nachher</span>  ... la transformation, selon
+         <span class="hl">&lt;persName ref="GND:118557106"&gt;</span>Karl Jaspers<span class="hl">&lt;/persName&gt;</span>, de la ...</pre>
+      <p class="body"><strong>Anschlussfähigkeit.</strong> Über die GND-Kennung ist jede
+      Nennung mit Normdatei, Katalog und Linked-Data-Diensten (lobid, Wikidata-Mapping)
+      verknüpfbar; die Edition wird im Sinne der Entity Reconciliation anschlussfähig.</p>
     </div>
   </section>
 
-  <!-- 4 · Zweistufige Annotation -->
-  <section class="slide" aria-label="Zweistufige Annotation">
+  <!-- 4 · Grundsatz -->
+  <section class="slide" aria-label="Grundsatz">
     <div class="inner">
-      <p class="eyebrow"><span class="chap">3 / 5</span><span>Zweistufige Annotation</span></p>
-      <h2>Sicheres wird markiert, Unsicheres wird sichtbar</h2>
-      <div class="tiers">
-        <div class="tier">
-          <p class="tname">Stufe 1 · wird ausgezeichnet</p>
-          <p>Als sicher geltende Treffer, etwa vollständige Namen mit eindeutigem Träger.</p>
-        </div>
-        <div class="tier t2">
-          <p class="tname">Stufe 2 · Prüfliste</p>
-          <p>Nackte Nachnamen, mehrere mögliche Träger, Homographenverdacht, ungeprüfte
-          Formen. Sichtbar im Viewer, niemals automatisch ausgezeichnet.</p>
-        </div>
+      <p class="eyebrow"><span class="chap">03</span>Grundsatz</p>
+      <h2>Deterministische Reconciliation</h2>
+      <p class="body"><strong>Kontrolliertes Vokabular.</strong> Verknüpft wird ausschließlich gegen
+      die kuratierte Liste (Closed-World-Prinzip). Die Zuordnung von Kennung und Textstelle trifft immer
+      ein deterministisches, wiederholbares Verfahren; ein Sprachmodell vergibt niemals eine
+      Kennung. Das sichert Reproduzierbarkeit und Nachvollziehbarkeit jeder einzelnen
+      Verknüpfung.</p>
+      <p class="body"><strong>Rollenverteilung Verfahren und Modell.</strong> Sprachmodelle
+      arbeiten an zwei festgehaltenen Stellen zu, als Prüfinstanz über vorhandene
+      Namensformen und als geplante Vorsortierung der Worklist. Beide Ergebnisse liegen
+      versioniert im Repository und werden deterministisch konsumiert; jeder Lauf bleibt
+      ohne Modellbeteiligung reproduzierbar.</p>
+      <p class="body"><strong>NIL-Mentions.</strong> Häufige Namen ohne Listeneintrag
+      werden ohne Kennungsvergabe erfasst und der Bibliothek als Kandidaten für die Listenerweiterung
+      vorgelegt (Spitzenkandidat des Snapshots, Raymond Aron mit 115 Nennungen).</p>
+    </div>
+  </section>
+
+  <!-- 5 · Namensformen -->
+  <section class="slide" aria-label="Namensformen">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">04</span>Namensformen</p>
+      <h2>Normdaten-Varianz ist Reichtum und Risiko zugleich</h2>
+      <p class="body"><strong>Kandidatengenerierung.</strong> Zu jeder Kennung liefert die
+      lobid-Schnittstelle die in der GND verzeichneten Namensvarianten in einen lokalen
+      Cache; der Altbestand des Projekts ergänzt belegte Formen. So wird der Geburtsname
+      einer Person ebenso findbar wie eine französische Schreibvariante.</p>
+      <pre class="code">{ <span class="k">"preferred_name"</span>: <span class="s">"Pestalozzi, Johann Heinrich"</span>,
+  <span class="k">"variant_names"</span>: [<span class="s">"Pestalocci, I.G."</span>, <span class="hl">"J. H."</span>, <span class="s">"Pestalozzi, G. E."</span>,
+                     <span class="s">"Pestalozzi, Jan Henryk"</span>, ...] }</pre>
+      <p class="caption">data/entities/gnd_cache.json · rohe Varianz einer einzigen Person</p>
+      <p class="body"><strong>Risiko.</strong> Rohe Varianten enthalten Initialenkürzel,
+      Transliterationsfragmente und Verwechslungsformen. Die Form <span class="accent">J. H.</span>
+      beanspruchte im Pilotbetrieb jede gleichlautende Kürzelnennung eines Interviews für
+      die falsche Person; ungefiltert vergiftet solche Varianz die gesamte Annotation.</p>
+    </div>
+  </section>
+
+  <!-- 6 · Verdict-Governance -->
+  <section class="slide" aria-label="Verdict-Governance">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">05</span>Governance der Namensformen</p>
+      <h2>Jede Form trägt ein versioniertes Verdict</h2>
+      <p class="body"><strong>Prüfung.</strong> Alle 4916 aus dem Cache übernommenen Formen
+      wurden modellgestützt geprüft; das Ergebnis liegt als Verdict-Datei im Repository
+      (4252 approve, 149 suspect, 515 reject) und wird von der Projektleitung kuratiert.</p>
+      <pre class="code"><span class="k">"J. H."</span>: { <span class="k">"verdict"</span>: <span class="hl">"reject"</span>, <span class="k">"reason"</span>: <span class="s">"initials-only (already filtered)"</span> }</pre>
+      <p class="caption">data/entities/variant_review.json · Verdict unter dem Träger 118592912</p>
+      <p class="body"><strong>Wirkprinzip.</strong> Verworfene Formen erreichen das
+      Suchlexikon nie, weder als Vollform noch über den Nachnamen-Index. Verdachtsformen
+      erzeugen ausschließlich Worklist-Einträge. Eine Form, die der Prüfstand nicht
+      kennt (Cache jünger als Prüfung), gilt als Verdachtsform, Vorsicht ist der
+      Default.</p>
+    </div>
+  </section>
+
+  <!-- 7 · Prozess Annotation -->
+  <section class="slide" aria-label="Prozess Annotation">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">06</span>Prozessdarstellung</p>
+      <h2>Von der Liste zur zweistufigen Annotation</h2>
+      <div class="flow">
+        <div class="step"><span class="sname">Quellen</span><span class="sdesc">Entitätsliste, GND-Cache (lobid), Altbestand</span></div>
+        <span class="arrow">&#8594;</span>
+        <div class="step"><span class="sname">Verdict-Filter</span><span class="sdesc">reject fällt weg, suspect wird herabgestuft</span></div>
+        <span class="arrow">&#8594;</span>
+        <div class="step"><span class="sname">Lexikon</span><span class="sdesc">Vollformen, invertierte Formen, Nachnamen-Index, Provenienz je Form</span></div>
+        <span class="arrow">&#8594;</span>
+        <div class="step"><span class="sname">Matcher</span><span class="sdesc">regelbasierter Scan jedes Dokuments, offline, deterministisch</span></div>
       </div>
-      <dl class="rows">
-        <div class="row">
-          <dt>Ausschlusszonen</dt>
-          <dd>Bildnachweise, gekennzeichnete Literaturverzeichnisse und die Verfasserzeilen
-          der Autorin bleiben außerhalb der Suche.</dd>
-        </div>
-        <div class="row">
-          <dt>Zwei Invarianten</dt>
-          <dd>Jede Vorschau bleibt schema-valide und textzeichenidentisch; die Lieferdaten
-          bleiben unberührt.</dd>
-        </div>
-        <div class="row">
-          <dt>Menschlicher Status</dt>
-          <dd>Der Viewer zeigt Markierungen, Kandidaten samt Herkunft der Namensform und die
-          Prüfliste; den Workflow-Status je Dokument setzt ein Mensch, er überlebt alle
-          Neuläufe.</dd>
-        </div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- 5 · Evaluation -->
-  <section class="slide" aria-label="Stichprobenbasierte Evaluation">
-    <div class="inner">
-      <p class="eyebrow"><span class="chap">4 / 5</span><span>Stichprobenbasierte Evaluation</span></p>
-      <h2>Messen am Faksimile, mit vier Eigenschaften</h2>
-      <p class="lead">Der Vergleich mit den fünfundzwanzig handannotierten Referenz-TEIs dient
-      als Trendindikator; die belastbare Messung folgt dem Stichprobenprotokoll.</p>
-      <div class="grid4">
-        <div class="prop"><span class="n">1</span><div>
-          <h3>Reproduzierbare Ziehung</h3>
-          <p>Dreihundert Markierungen nach Kategorie und Regelfamilie, vierzig Seiten nach
-          Layouttyp und Sprache; fester Seed, dokumentierte Schichtung.</p>
-        </div></div>
-        <div class="prop"><span class="n">2</span><div>
-          <h3>Faksimile-Adjudikation</h3>
-          <p>Genau ein begründetes Urteil je Markierung; jede Seite erschöpfend gegen die
-          Liste gelesen, Übersehenes mit Ursachenlabel.</p>
-        </div></div>
-        <div class="prop"><span class="n">3</span><div>
-          <h3>Doppelurteil</h3>
-          <p>Fünfzig Fälle unabhängig doppelt beurteilt; die Übereinstimmungsquote weist die
-          Verlässlichkeit des Urteilens selbst aus.</p>
-        </div></div>
-        <div class="prop"><span class="n">4</span><div>
-          <h3>Konfidenzintervalle</h3>
-          <p>Kennzahlen mit Bootstrap-Intervallen, nach dem Verfahren der
-          Zeichenfehlerraten-Messung des Projekts.</p>
-        </div></div>
+      <div class="flow">
+        <div class="step mark"><span class="sname">Tier 1 · sicher</span><span class="sdesc">wird als Inline-GND-Markup ausgezeichnet</span></div>
+        <div class="step work"><span class="sname">Tier 2 · Worklist</span><span class="sdesc">bleibt sichtbar, wird niemals automatisch ausgezeichnet</span></div>
       </div>
-      <p class="consequence"><span class="clabel">Konsequenzen</span>
-      Jeder bestätigte Fehler wird ein Regressionstest, systematische Ursachen werden Regeln,
-      Verdikte oder Listenvorschläge. Die Übernahme in den Lieferbestand fällt pro Kategorie
-      auf Grundlage der gemessenen Präzision, als reversibler Lauf mit Sicherungskopie.</p>
+      <p class="body quiet">Ausschlusszonen bleiben außerhalb des Scans, darunter Bildnachweise,
+      gekennzeichnete Literaturverzeichnisse und die Verfasserzeilen der Autorin.</p>
     </div>
   </section>
 
-  <!-- 6 · Rollen und Grenzen -->
+  <!-- 8 · Kandidaten-Contract -->
+  <section class="slide" aria-label="Kandidaten-Contract">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">07</span>Kandidaten-Contract</p>
+      <h2>Jeder Fund dokumentiert seine eigene Provenienz</h2>
+      <p class="body"><strong>Nachvollziehbarkeit.</strong> Ein Kandidat benennt die Regel,
+      die ihn erzeugt hat, die getroffene Lexikonform und deren Herkunft. Die Annotation
+      bleibt dadurch bis in die Einzelentscheidung erklärbar.</p>
+      <pre class="code">{ <span class="k">"doc"</span>: <span class="s">"100"</span>, <span class="k">"surface"</span>: <span class="s">"Karl Jaspers"</span>, <span class="k">"gid"</span>: <span class="s">"118557106"</span>,
+  <span class="k">"tier"</span>: <span class="hl">1</span>, <span class="k">"rule"</span>: <span class="s">"full-name"</span>, <span class="k">"form_source"</span>: <span class="s">"headword"</span> }
+
+{ <span class="k">"doc"</span>: <span class="s">"1040"</span>, <span class="k">"surface"</span>: <span class="s">"Jaspers"</span>, <span class="k">"tier"</span>: <span class="hl">2</span>,
+  <span class="k">"rule"</span>: <span class="s">"bare-surname<span class="hl">:ambiguous</span>"</span>,
+  <span class="k">"alternatives"</span>: [<span class="s">"117085391"</span>, <span class="s">"118557106"</span>] }</pre>
+      <p class="caption">output/audits/entity_corpus_scan.json · zwei reale Kandidaten</p>
+      <p class="body"><strong>Disambiguierung.</strong> Der nackte Nachname Jaspers kann
+      Karl oder Gertrud Jaspers meinen; der Kandidat führt beide Träger als alternatives
+      und geht in die Worklist; die Entscheidung bleibt der Kuration vorbehalten.</p>
+    </div>
+  </section>
+
+  <!-- 9 · Zweistufigkeit in Zahlen -->
+  <section class="slide" aria-label="Zweistufigkeit">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">08</span>Two-Tier-Matching</p>
+      <h2>Sicheres auszeichnen, Unsicheres zurückhalten</h2>
+      <p class="body"><strong>Stand des Snapshots.</strong> Der Korpuslauf erzeugt
+      4043 Tier-1-Auszeichnungen und hält 3688 Stellen in der Worklist zurück, darunter
+      1650 mit mehreren möglichen Trägern.</p>
+      <p class="body"><strong>Homographenverdacht.</strong> Deterministische Signale stufen
+      verwechselbare Oberflächen herab. Ein kleingeschriebener Zwilling im selben Dokument
+      (weil neben Weil), ein angrenzendes unbekanntes großgeschriebenes Wort oder eine
+      komplett kleingeschriebene Phrasenform führen zur Herabstufung mit dem Suffix
+      <span class="accent">:suspect</span>.</p>
+      <p class="body"><strong>Systematische Härtung.</strong> Jeder im Betrieb bestätigte
+      Fehler wird als Regressionstest fixiert; die Testsuite hält den Fall dauerhaft fest
+      (Weil als Konjunktion, das Initialenkürzel, die Jaspers-Ambiguität).</p>
+    </div>
+  </section>
+
+  <!-- 10 · Invarianten -->
+  <section class="slide" aria-label="Invarianten">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">09</span>Invarianten</p>
+      <h2>Vorschau statt Eingriff, zwei maschinelle Beweise</h2>
+      <p class="body"><strong>Vorschauprinzip.</strong> Die Auszeichnung wird in
+      Vorschaudateien geschrieben; der Lieferbestand bleibt unberührt, bis ein
+      freigegebener, reversibler Bestandslauf sie übernimmt.</p>
+      <pre class="code">python -m scripts.tei.tei_entity_preview --docs 100 1520 ...
+
+  [12/14] 1520: wrapped 61, worklist 284, <span class="hl">schema PASS</span>, <span class="hl">text PASS</span>
+  Schema PASS: 285/285   text invariance PASS: 285/285</pre>
+      <p class="caption">Korpuslauf des Snapshots · beide Invarianten je Dokument</p>
+      <p class="body"><strong>Die zwei Beweise.</strong> Jede Vorschau validiert gegen das
+      Projektschema (RelaxNG), und der Textinhalt des TEI bleibt zeichenidentisch. Die
+      Auszeichnung fügt ausschließlich Markup hinzu; sie kann den Text nicht verändern,
+      und das wird pro Dokument maschinell nachgewiesen.</p>
+    </div>
+  </section>
+
+  <!-- 11 · Kuration -->
+  <section class="slide" aria-label="Kuration">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">10</span>Kuration</p>
+      <h2>Der Mensch setzt den Status, das System vergisst ihn nicht</h2>
+      <p class="body"><strong>Human Validation im Viewer.</strong> Der statische Viewer zeigt
+      Markierungen mit Kandidaten und Herkunft der Namensform, die Worklist im
+      Textzusammenhang und das Faksimile daneben
+      (<span class="accent">viewer.html?doc=100&amp;entities=1</span>).</p>
+      <p class="body"><strong>Workflow-Status.</strong> Die Entitätsannotation ist der
+      vierte Bearbeitungsstrom neben OCR, Layout und TEI. Jeder Strom durchläuft die
+      Statusfolge unverifiziert, in Arbeit, verifiziert; den Wechsel setzt ausschließlich
+      ein Mensch per Klick.</p>
+      <pre class="code"><span class="k">"streams"</span>: { <span class="k">"entities"</span>: { <span class="k">"status"</span>: <span class="s">"unverifiziert"</span>, <span class="k">"history"</span>: [...] } }</pre>
+      <p class="caption">{doc}_manifest.json · der Status überlebt jeden Neulauf der Pipeline</p>
+    </div>
+  </section>
+
+  <!-- 12 · Warum Stichprobe -->
+  <section class="slide" aria-label="Warum Stichprobe">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">11</span>Evaluation, Befund</p>
+      <h2>Warum der Referenzvergleich als Maßstab nicht genügt</h2>
+      <p class="body"><strong>Trendindikator mit Verzerrung.</strong> Der Gold-Benchmark, der automatische
+      Vergleich mit den 25 Referenz-TEIs, meldete im Snapshot 51 Abweichungen.
+      Die Einzelprüfung am Faksimile ergab, 2 echte Annotationsfehler, 4 Lücken der
+      Referenz, 45 Struktur- und Zonenartefakte, davon 39 in einem einzigen Dokument mit
+      nicht gekennzeichnetem Literaturverzeichnis.</p>
+      <p class="body"><strong>Konsequenz.</strong> Referenzen, die selbst
+      Teiltranskriptionen sind und intern uneinheitlich annotieren, können Präzision und
+      Vollständigkeit nicht beziffern. Der Wahrheitsmaßstab ist das Faksimile; die Messung
+      braucht ein eigenes Stichprobenprotokoll.</p>
+    </div>
+  </section>
+
+  <!-- 13 · Prozess Evaluation -->
+  <section class="slide" aria-label="Prozess Evaluation">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">12</span>Prozessdarstellung</p>
+      <h2>Das Stichprobenprotokoll</h2>
+      <div class="flow">
+        <div class="step"><span class="sname">Stratifizierte Stichprobe</span><span class="sdesc">300 Markierungen, 40 Seiten; Zufallsauswahl mit festem Seed, reproduzierbar</span></div>
+        <span class="arrow">&#8594;</span>
+        <div class="step"><span class="sname">Adjudikation</span><span class="sdesc">Urteil je Fall am Faksimile; Seiten erschöpfend gegen die Liste gelesen</span></div>
+        <span class="arrow">&#8594;</span>
+        <div class="step"><span class="sname">Inter-Annotator-Agreement</span><span class="sdesc">50 Fälle unabhängig doppelt annotiert, die Übereinstimmung wird ausgewiesen</span></div>
+        <span class="arrow">&#8594;</span>
+        <div class="step"><span class="sname">Statistik</span><span class="sdesc">Präzision und Recall mit Bootstrap-Konfidenzintervallen</span></div>
+        <span class="arrow">&#8594;</span>
+        <div class="step mark"><span class="sname">Konsequenzen</span><span class="sdesc">Regressionstests, Regelhärtung, Gate für den Bestandslauf</span></div>
+      </div>
+      <pre class="code">python -m scripts.eval.entity_eval_sample --seed 42
+  precision: 300/300 Faelle, 11 Zellen     recall: 40/40 Seiten, 24 Zellen</pre>
+      <p class="caption">Stichprobe des Snapshots · deterministisch, zweiter Lauf byte-identisch</p>
+    </div>
+  </section>
+
+  <!-- 14 · Adjudikation konkret -->
+  <section class="slide" aria-label="Adjudikation konkret">
+    <div class="inner">
+      <p class="eyebrow"><span class="chap">13</span>Adjudikation</p>
+      <h2>Ein Fall, ein Urteil, eine Begründung</h2>
+      <pre class="code">{ <span class="k">"case_id"</span>: <span class="s">"p001"</span>, <span class="k">"doc"</span>: <span class="s">"760"</span>, <span class="k">"page"</span>: 18,
+  <span class="k">"surface"</span>: <span class="s">"Stedelijk Van Abbe-Museum"</span>, <span class="k">"rule"</span>: <span class="s">"org-name"</span>,
+  <span class="k">"facsimile"</span>: <span class="s">"docs/images/760/760_p018.png"</span>,
+  <span class="k">"verdict"</span>: <span class="hl">null</span>, <span class="k">"reason"</span>: <span class="hl">null</span> }</pre>
+      <p class="caption">output/audits/eval_sample/precision_cases.json · vor der Adjudikation</p>
+      <p class="body"><strong>Verdict-Klassen (Präzision).</strong> correct, wrong_entity,
+      wrong_span, not_in_source, undecidable; genau ein Wert je Fall, mit
+      Begründungssatz.</p>
+      <p class="body"><strong>Fehlertaxonomie (Recall).</strong> Jede übersehene Nennung wird
+      klassifiziert als Lexikonlücke, Regellücke oder OCR-Korruption; die Taxonomie ist
+      unmittelbar die Reparaturliste der nächsten Iteration.</p>
+    </div>
+  </section>
+
+  <!-- 15 · Rollen und Grenzen -->
   <section class="slide" aria-label="Rollen und Grenzen">
     <div class="inner">
-      <p class="eyebrow"><span class="chap">5 / 5</span><span>Rollen und Grenzen</span></p>
-      <h2>Wer entscheidet was, und was die Methode misst</h2>
-      <dl class="rows">
-        <div class="row">
-          <dt>Agenten</dt>
-          <dd>Voradjudikation der gezogenen Fälle, erschöpfende Seitenlektüre,
-          Statistikläufe.</dd>
-        </div>
-        <div class="row">
-          <dt>Projektleitung</dt>
-          <dd>Stichprobenkontrolle der Urteile, Entscheidung strittiger Fälle, Freigabe
-          aller Bestandseingriffe.</dd>
-        </div>
-        <div class="row">
-          <dt>Bibliothek</dt>
-          <dd>Spezifikationsfragen der Annotationspraxis und die Erweiterung der
-          Entitätsliste.</dd>
-        </div>
-        <div class="row">
-          <dt>Grenzen</dt>
-          <dd>Korrektheit gilt relativ zur kuratierten Liste und zur dokumentierten
-          Spezifikation. Zonenregeln setzen korrekte Strukturauszeichnung der Pipeline-TEI
-          voraus; Einzeldokumente mit defekter Seitenzuordnung warten auf eine eigene,
-          freigabepflichtige Reparatur.</dd>
-        </div>
-      </dl>
+      <p class="eyebrow"><span class="chap">14</span>Rollenverteilung und Grenzen</p>
+      <h2>Verantwortung bleibt beim Menschen</h2>
+      <p class="body"><strong>Agenten</strong> übernehmen operative Arbeit, Voradjudikation
+      der gezogenen Fälle, erschöpfende Seitenlektüre, Statistikläufe.</p>
+      <p class="body"><strong>Projektleitung</strong> kontrolliert Stichproben der Urteile,
+      entscheidet strittige Fälle und gibt jeden Bestandseingriff frei.</p>
+      <p class="body"><strong>Bibliothek</strong> entscheidet Spezifikationsfragen der
+      Annotationspraxis und die Erweiterung der Entitätsliste.</p>
+      <p class="body"><strong>Geltungsgrenzen.</strong> Korrektheit gilt relativ zur
+      kuratierten Liste und zur dokumentierten Spezifikation. Zonenregeln setzen korrekte
+      Strukturauszeichnung der Pipeline-TEI voraus; Einzeldokumente mit defekter
+      Seitenzuordnung warten auf eine eigene, freigabepflichtige Reparatur.</p>
     </div>
   </section>
 
@@ -418,7 +408,7 @@
   <div class="chrome">
     <span>Kontrollierte Entitätsannotation</span>
     <div class="dots" id="dots"></div>
-    <span class="counter"><span class="navhint">Pfeiltasten · </span><span id="counter">1 / 6</span></span>
+    <span class="counter"><span class="navhint">Pfeiltasten · </span><span id="counter">1 / 15</span></span>
   </div>
 </div>
 
@@ -428,7 +418,6 @@
   const dotsBox = document.getElementById('dots');
   const counter = document.getElementById('counter');
   let idx = 0;
-
   slides.forEach((_, i) => {
     const d = document.createElement('button');
     d.className = 'dot';
@@ -437,14 +426,12 @@
     dotsBox.appendChild(d);
   });
   const dots = Array.from(dotsBox.children);
-
   function show(i) {
     idx = Math.max(0, Math.min(slides.length - 1, i));
     slides.forEach((s, k) => s.classList.toggle('active', k === idx));
     dots.forEach((d, k) => d.classList.toggle('on', k === idx));
     counter.textContent = (idx + 1) + ' / ' + slides.length;
   }
-
   document.querySelector('.navzone.next').addEventListener('click', () => show(idx + 1));
   document.querySelector('.navzone.prev').addEventListener('click', () => show(idx - 1));
   document.addEventListener('keydown', (e) => {
