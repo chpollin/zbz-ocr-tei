@@ -130,7 +130,10 @@ Built, each with its pytest suite:
   zones: everything outside `text`, figures, bibliography divs, already marked
   elements. Contract: candidates are offset-verified, non-overlapping, and may embed at
   most `lb` tags. Variant-derived surnames pass a distinctiveness filter, because raw
-  lobid variants contribute noise tokens.
+  lobid variants contribute noise tokens. Variants made only of dotted initials
+  ("J. H." for Pestalozzi) never enter the full-name channel; the pilot evaluation
+  showed such a variant claiming every "J. H." of an interview for the wrong person
+  (doc 1220), and eight listed entities carry initials variants of this kind.
 - `scripts/tei/tei_entity_preview.py` wraps tier 1 into `output/entity_preview/` and
   proves per document: RelaxNG-valid against `zbz_hersch.rng`, text of the `text`
   subtree character-identical, byte-identical outside the insertions (bytes in, bytes

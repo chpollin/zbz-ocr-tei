@@ -50,6 +50,9 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   only filters variant artifacts, the transliteration fragments lobid carries
   ("Ma, Kesi" for Marx, "Big, abbe" for Voltaire). Forename-shaped variants
   ("Pierre") pass it and stay as tier-2 noise for the judge stage.
+- Variants made only of dotted initials ("J. H." for Pestalozzi) never enter the
+  full-name channel; as tier-1 forms they would claim unrelated initials
+  document-wide (the doc-1220 pilot finding). Such mentions stay tier 3.
 """
 
 from __future__ import annotations
@@ -306,13 +309,15 @@ def _add_person_variant(
 ) -> None:
     if "," in variant:
         surname, forenames = _split_person_label(variant)
-        if _is_distinctive_token(surname):
+        if _is_distinctive_token(surname) and not _is_initials_only(surname):
             surnames.setdefault(surname, set()).add(gid)
-        if surname and forenames:
+        if surname and forenames and not _is_initials_only(f"{forenames} {surname}"):
             _add_form(forms, f"{forenames} {surname}", gid, "person", "variant-full-name")
             _add_form(forms, variant, gid, "person", "variant-full-name")
         return
     tokens = variant.split()
+    if _is_initials_only(variant):
+        return
     if len(tokens) >= 2:
         _add_form(forms, variant, gid, "person", "variant-full-name")
     elif tokens and _is_distinctive_token(tokens[0]):
@@ -340,6 +345,20 @@ def _add_org(
 def _is_distinctive_token(token: str) -> bool:
     """One-token names carry a mention only when long enough and capitalized."""
     return len(token) >= MIN_TOKEN_LEN and (token[0].isupper() or token.isupper())
+
+
+_INITIAL_TOKEN_RE = re.compile(r"[^\W\d_]{1,2}\.|[^\W\d_]")
+
+
+def _is_initials_only(form: str) -> bool:
+    """True for forms made only of dotted initials or bare single letters.
+
+    lobid carries such variants ("J. H." for Pestalozzi, "B. P." for Pascal); as
+    full-name forms they would mislabel unrelated initials document-wide. Dotless
+    two-letter words ("Mo Ti") are real transliterated name forms and stay.
+    """
+    tokens = form.replace(".", ". ").split()
+    return bool(tokens) and all(_INITIAL_TOKEN_RE.fullmatch(t) for t in tokens)
 
 
 def _add_work(

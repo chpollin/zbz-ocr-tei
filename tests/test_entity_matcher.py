@@ -510,3 +510,33 @@ def test_run_is_deterministic(lex):
     first = em.find_candidates(COMPOSITE, lex)
     second = em.find_candidates(COMPOSITE, lex)
     assert first == second
+
+
+# --- initials-only cache variants (doc-1220 defect) --------------------------------
+
+
+def test_initials_only_cache_variant_never_reaches_the_lexicon(tmp_path):
+    # lobid lists bare initials as variants (Pestalozzi: "J. H."); as a tier-1
+    # full-name form they mislabel every "J. H." in the corpus (doc-1220 defect).
+    persons = [_person("118592912", "Pestalozzi, Johann Heinrich")]
+    cache = {
+        "118592912": _cache_entry(
+            "Pestalozzi, Johann Heinrich",
+            ("J. H.", "J.H.", "H., J.", "Pestalozzi, J. H."),
+        )
+    }
+    lexicon = _build(tmp_path, persons=persons, cache=cache)
+    assert "J. H." not in lexicon["forms"]
+    assert "J.H." not in lexicon["forms"]
+    # initials next to a real name word keep working
+    assert "J. H. Pestalozzi" in lexicon["forms"]
+    xml = _tei("<p>J. H. antwortet dem Interviewer.</p>")
+    assert em.find_candidates(xml, lexicon) == []
+
+
+def test_transliteration_word_variants_are_not_initials(tmp_path):
+    # two-letter words without dots ("Mo Ti" for Mozi) are real name forms
+    persons = [_person("118584553", "Mo, Di")]
+    cache = {"118584553": _cache_entry("Mo, Di", ("Mo Ti",))}
+    lexicon = _build(tmp_path, persons=persons, cache=cache)
+    assert "Mo Ti" in lexicon["forms"]
