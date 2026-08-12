@@ -205,6 +205,20 @@ python -m scripts.tei.tei_body_note_demote --promote-footnotes   # run (backup: 
 The demotion run consumes the facsimile-verified verdicts in
 `output/audits/body_note_verdicts.json` (E94) and never touches notes judged genuine.
 
+## Entity integration (pilot M0-M3, plan: knowledge/entity-integration.md)
+
+```bash
+python -m scripts.tei.fetch_gnd_variants                         # build/refresh the GND variant cache (lobid)
+python -m scripts.eval.entity_lint                               # entity list + cache + legacy pairing audit
+python -m scripts.tei.tei_entity_preview --panel                 # preview over the 10 pilot documents (tei_final untouched)
+python -m scripts.eval.entity_corpus_scan                        # read-only corpus scan: candidates, distributions, invariants
+python -m scripts.edition.generate_entity_preview_data           # viewer entity mirror (docs/data) from the previews
+python -m scripts.tei.tei_cover_strip --dry-run                  # E-Periodica cover sheets: strip preview (real run operator-gated)
+python -m pytest tests/test_entity_matcher.py tests/test_entity_lint.py tests/test_entity_regressions.py tests/test_entity_preview.py tests/test_entity_corpus_scan.py tests/test_generate_entity_preview_data.py tests/test_cover_strip.py tests/test_fetch_gnd_variants.py -q  # entity gates
+```
+
+The viewer shows the previews read-only via `viewer.html?doc={DOC_ID}&entities=1`.
+
 ## Quality screening (deprecated, E66)
 
 The agent-based 7-layer screening has been abolished since E66 (2026-05-26). None of the

@@ -58,6 +58,58 @@ session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
 
+### 2026-08-12 Session 93 (continuation 2): entity pilot M1-M3, evaluation wave, fix package
+
+**Occasion** The M0 plan called for the pilot instruments, the ten-document pilot, and
+an independent evaluation before anything scales.
+
+**Goal** Milestones M1 to M3: cache and lint, matcher and preview, pilot with
+adversarially verified evaluation, and the fixes the evaluation demands.
+
+**Course** Three build agents delivered `fetch_gnd_variants`, `entity_lint`,
+`entity_matcher`, and `tei_entity_preview` (M1/M2); the pilot ran over the ten-document
+panel with all schema and text-invariance gates green. A 14-agent evaluation wave (ten
+per-document evaluators, three adversarial verifiers, one completeness critic) confirmed
+106 of 109 findings. Two systematic tier-1 defects surfaced: lobid initials variants
+("J. H." claimed as Pestalozzi across an interview, doc 1220) and work-title spans
+carrying imprint or inverted `hi` nesting. The critic's read-only corpus scan found what
+the panel could not: German homograph surnames ("Weil" the conjunction), a poisoned
+legacy pairing ("Jérémie" filed under Jaspers, reference marks the prophet), the anchor
+collision in doc 1520, and the volume concentration on the author and her main subject.
+A second four-agent wave built the fix package (legacy demotion with lint pairing check,
+homograph suspicion signals, adjective forms to the worklist, caps-full-name rule with
+author-byline exception, apparatus zone, `bibl` outside `hi`), the corpus-scan
+instrument, the operator-gated cover-strip marker, and the read-only viewer entity layer
+(`?entities=1`, popovers with GND and lobid link, per-page worklist). After integration
+the panel rerun shows 195 wrapped and 120 worklist entries with gates 10/10; the first
+corpus scan reports 3496 tier-1 and 4074 tier-2 candidates over 285 documents with zero
+function-word violations and Jérémie never tier 1. The legacy index is now versioned
+under `data/entities/legacy_mentions.json`. Side finding of the cover-strip dry run: two
+library delivery sheets (docs 200, 490) carry patron personal data, one with private
+e-mail addresses, a finding for ZBZ independent of the entity work.
+
+**Decisions** Operator decisions of 2026-08-12, register entries to follow with the M4
+milestone: title-only binds for works even against wider reference citation spans (gold
+scores those neutral); all-caps mentions are in scope, bylines and running headers of
+the document author stay unmarked (Masterfile comparison); E-Periodica cover sheets
+leave the delivered TEI via the operator-gated marker; library apparatus (cover sheets,
+photo credits) is out of matching scope; every data channel passes intake lint,
+shape-class review, and pilot before its forms may match; a form class whose candidate
+set misses the true bearer skips tier 2 entirely.
+
+**Status** M1 to M3 delivered and pushed (fix package 35281270, cover strip 735864a2,
+viewer layer 5dcc2365, plan updates 4ee671a5). The cover-strip real run and the Hersch
+scope question remain operator-gated. A viewer follow-up agent is building inline
+worklist rendering with provenance popovers and the entities workflow stream (catalog
+traffic lights). Evaluation lesson recorded in the plan: panels are drawn by impact and
+class coverage, precision checks run as per-mention batches, the gold benchmark (M4)
+replaces agent evaluation where references exist.
+
+**Next steps** 1. M4 gold benchmark (`entity_gold_benchmark`, held-out drawn along the
+gold-mention distribution, 1520 separate). 2. Operator decisions: Hersch scope, works in
+tier 1, cover-strip release, translated titles. 3. Judge stage design (M5) with
+per-document batching. 4. Corpus-wide previews plus the impact-drawn evaluation wave.
+
 ### 2026-08-12 Session 93 (continuation): entity-integration design plan versioned (M0)
 
 **Occasion** The operator released the entity-integration pilot after the design plan,
