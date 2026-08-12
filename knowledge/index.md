@@ -9,7 +9,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-01-29
-updated: 2026-07-31
+updated: 2026-08-12
 tags: [zbz-ocr-tei, index, navigation]
 template:
   name: Vorlage Index
@@ -42,7 +42,7 @@ principle is a single source of truth per domain, one file per topic.
 | [ecosystem-synthesis.md](ecosystem-synthesis.md) | Overall picture of the three projects (zbz / szd-htr / teiCrafter): setup + gates + critical path, per-project pipeline/status, ALL user stories, integration + image gap, methodology, frontend gap survey, open points, SSoT assignment |
 | [infrastructure.md](infrastructure.md) | How is it deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD, viewer deployment (GitHub Pages) |
 | [methodology.md](methodology.md) | How do we work? Epistemic infrastructure, verification cascade, Critical Expert in the Loop, three-layer model, operational CLI |
-| [decisions.md](decisions.md) | What has been decided? Decision register (E entries up to E104), open points (O8/O13/O27 with ZBZ, O18 DHCraft; O25/O26 closed), risks |
+| [decisions.md](decisions.md) | What has been decided? Decision register (E entries up to E106), open points (O8/O13/O27 with ZBZ, O18 DHCraft; O25/O26 closed), risks |
 | [cer-methodology.md](cer-methodology.md) | How is the CER measured? Definition, choice of reference, fidelity/scope decomposition, extraction rules E1-E12, normalization N1-N21, verification of the measurement |
 | [literature-comparison.md](literature-comparison.md) | How good is it against the state of research? Print-OCR comparison table and comparability caveats |
 | [ground-truth-map.md](ground-truth-map.md) | What do the 25 reference TEIs contain and where do they deviate? Phenomenon map and exception catalog (former Appendix B) |
@@ -77,6 +77,7 @@ Each document carries one function of the [Convention Knowledge Documents](https
 | [entity-integration.md](entity-integration.md) | Specification (design plan for the entity-integration epic) | freehand: a forward-looking design plan, the catalogue holds no plan template |
 | [entity-evaluation.md](entity-evaluation.md) | Method (sampling evaluation of the entity layer) | freehand: a measurement workflow, follows the CER methodology discipline |
 | [methodology.md](methodology.md) | Working method of the project | freehand: describes the way of working, not the scholarly domain, so Domänenwissen does not carry |
+| [agent-orchestration.md](agent-orchestration.md) | Working method for multi-agent waves, layered above methodology.md | freehand: an orchestration layer the catalogue holds no function for |
 | [ecosystem-synthesis.md](ecosystem-synthesis.md) | Cross-project overall picture | freehand: a survey without the bilateral delivery contract that triggers the Integration function |
 
 The action layer lies in the repository root as [CLAUDE.md](../CLAUDE.md), per convention outside `knowledge/`.
@@ -93,6 +94,7 @@ project (vision, corpus, ZBZ context)
    |      +-- literature-comparison (print-OCR state of research)
    |      +-- ground-truth-map (the 25 references + exception catalog)
    |      `-- entity-integration (GND entity integration design plan)
+   |             `-- entity-evaluation (sampling evaluation of the entity layer)
    |
    +-- pipeline (stages: PDF -> TEI)
    |      `-- infrastructure (Azure, Podman, CI/CD, viewer deployment)
@@ -100,6 +102,7 @@ project (vision, corpus, ZBZ context)
    +-- workflow (end-to-end data flow + viewer + save + round trip + provenance)
    |
    `-- methodology (Promptotyping + verification cascade)
+          `-- agent-orchestration (multi-agent wave pattern, verification of agent results)
 
 ecosystem-synthesis: cross-project view (zbz / szd-htr / teiCrafter)
 decisions: cross-cutting, decision register

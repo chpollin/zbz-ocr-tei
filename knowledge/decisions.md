@@ -9,7 +9,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-02-18
-updated: 2026-07-31
+updated: 2026-08-12
 tags: [zbz-ocr-tei, decisions, open, decided]
 authors: [Christopher Pollin]
 ---
@@ -85,7 +85,7 @@ Consolidated register of all decisions and open questions. Cross-cutting, collec
 
 ---
 
-## Decided (E64-E94, detail)
+## Decided (E64-E106, detail)
 
 More recent decisions with full rationale as dedicated sections.
 
@@ -468,6 +468,32 @@ Deliberately left freehand, because no catalogue template carries the function: 
 Kept unchanged, with reason: all file names, the document order and the whole prose layer, so that the paper's evidence citations against 5b78b69d stay readable. The `status` vocabulary of the repository (complete, reviewed, draft) extends the convention enum draft/active/archived and carries a review state the enum cannot express; the Promptotyping repository's own knowledge base carries the same extension, so the values stay. The `type` field from the vault vocabulary stays. `created` and `updated` stay as semantic project dates, older in part than the git history of the files, which starts after the consolidation of 2026-04-27. `generated-with` was set nowhere: the co-author trailers of each document span several model versions across its history, so a per-document value would state less than the git history does. The `authors` field names the human with curatorial responsibility, which the convention reserves for persons; the repository rule on personal names governs running prose, and the project report already carried the field. `arbeitsbericht-v3.md` was excluded from the pass because it carried an uncommitted working state.
 
 Documents: [index.md](index.md), [journal.md](journal.md) session 92
+
+---
+
+### E105 Page-apparatus convention for entity marks: running heads unmarked, title pages, bylines and captions marked (2026-08-12)
+
+Occasion: the entity evaluation of 2026-08-12 measured tier-1 precision at 0.952 over 293 decidable cases but had to leave the page apparatus open. By keyword heuristic, 56 of the 279 correct marks sit in running heads, title pages and bylines, document 330 alone carrying sixteen repetitions of the same running head, so a second reading of the precision figure was not computable before the convention was set (reports/2026-08-12_entity-eval-ergebnis.md, section "Beschrieben").
+
+Finding from the facsimile-adjudicated cases: a running head repeats the identical line at the head of every page of a volume, so each occurrence carries exactly the information the previous one already carried; the model case is a monograph whose own title stands as the running head throughout. Title pages, byline organisations (the university affiliation in a thesis byline) and picture captions behave differently, each naming a fact a reader would query; the model case is a museum catalogue whose captions name artists and holding institutions.
+
+Decision (operator, 2026-08-12): running heads are not marked, because repeated page furniture is redundant as annotation. Title pages, byline organisations and picture captions are marked, because they carry research value. Rejected alternatives: marking running heads and flagging them as apparatus, rejected because the flag would preserve redundant information and inflate the mark population without adding a queryable fact; and a blanket apparatus exclusion, rejected because title pages and captions carry genuine research value. Consequences: a deterministic running-head suppression instrument becomes the follow-up work item, keyed on the repetition of the identical normalized line at page start across several pages of one document; and because the adjudicated verdicts are persisted per mention (E106), the convention reading of the precision measurement can be computed from the existing sample without drawing again.
+
+Documents: [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 93
+
+---
+
+### E106 Entity consequence wave: derived matcher channels stay tier 2, adjudicated verdicts persisted snapshot-bound (2026-08-12)
+
+Occasion: the entity evaluation named several consequences that needed no further operator decision (precision 0.952 over 293 decidable cases, recall coverage 0.552 with 28 of 30 misses classified as rule gaps). They were released as one wave of four parallel agents with disjoint file scopes; commits 8a0e34ae (exhaustive ref-in-list invariant gate), 40afccf2 (mention verdict store), c81b5922 (false-positive risk ranking plus adjudication protocol), 6487e0b6 (matcher rule repairs) and f130800c (preview and viewer-mirror regeneration).
+
+Decision (a), tier policy for derived name forms: the five closed rule gaps (acronym case tolerance, parenthetical GND qualifier strip, static place-adjective inversion, superscript digits as word boundaries, person initials) run as a second pass over the finished base lexicon and emit tier-2 worklist candidates only, never tier-1 auto-marks. A shadowing guard keeps a derived form from overriding a base match, and the reject verdicts of the variant review bind derived forms as well. Rationale: safety over coverage. A derived form is an inference about a name, and an inference belongs in the channel a human reads before it enters the delivered text. Rejected alternative: tier 1 for derivations that look safe, rejected because the auto-marked layer carries the precision figure the delivery is judged on, while a candidate that only reaches the worklist costs a proposal. Measured against the frozen scan, the worklist grew by 1657 proposals while tier 1 changed by plus 9 (superscript footnote cases) and minus 1.
+
+Decision (b), persistence of the adjudicated judgments: `data/entities/mention_verdicts.json`, built deterministically by `scripts/eval/build_mention_verdicts.py`, holds all 300 precision verdicts including the 50 blind second judgments of the agreement check and the 67 recall mentions, keyed by (doc, page, surface, gid, occurrence) and bound per document to a sha256 fingerprint of the source TEI. The key carries no character offsets, so a changed text surfaces as a stale fingerprint instead of a silently misplaced judgment; re-OCR or a stock correction therefore invalidates a verdict visibly. Rejected alternative: recording the provenance inside the TEI files only, rejected because regeneration erases it and because the judgments must stay readable outside the delivered documents, as the input of a re-measurement.
+
+The two remaining wave products carry no decision of their own and are recorded for completeness. `tests/test_entity_ref_invariant.py` gates the closed-world claim exhaustively (every GND id in every preview file and worklist is a member of the curated list, zero violations), and `scripts/eval/entity_risk_ranking.py` with the versioned wave protocol scores the tier-1 marks into risk strata for the false-positive hunt.
+
+Documents: [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md), [agent-orchestration.md](agent-orchestration.md), [journal.md](journal.md) session 93
 
 ---
 
