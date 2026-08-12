@@ -968,6 +968,7 @@ a.tei__ref { color: var(--h-preussischblau); }
    die Aktiv-Sprache der frueheren Panel-Toggles. */
 .menu__item--on { background: var(--h-anthrazit); color: var(--h-text-inverse); }
 .menu__item--on:hover:not(:disabled) { background: var(--h-anthrazit-light); }
+.menu__item--toggle { border-top: 1px solid var(--h-border); margin-top: 4px; padding-top: 8px; }
 .menu-btn--on {
   background: var(--h-anthrazit);
   border-color: var(--h-anthrazit);

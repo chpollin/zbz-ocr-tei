@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css?v=7">
   <link rel="stylesheet" href="assets/css/base.css?v=7">
-  <link rel="stylesheet" href="assets/css/viewer.css?v=21">
+  <link rel="stylesheet" href="assets/css/viewer.css?v=22">
   <script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/openseadragon.min.js"></script>
 </head>
 <body class="viewer-body">
@@ -126,18 +126,16 @@
           <div class="panel__header">
             <div class="menu-wrap">
               <button class="btn btn--sm" id="btn-view-menu" type="button" aria-haspopup="true" aria-expanded="false"
-                      title="Choose what this panel shows">View: OCR &#9662;</button>
+                      title="Choose what this panel shows">View: Text &#9662;</button>
               <div class="menu" id="view-menu" role="menu" aria-label="Panel view" hidden>
-                <button class="menu__item" type="button" role="menuitemradio" aria-checked="true" data-view="ocr"
+                <button class="menu__item" type="button" role="menuitemradio" aria-checked="true" data-view="text"
+                        title="Annotated reading view: rendered TEI with GND entities and review candidates">Text</button>
+                <button class="menu__item" type="button" role="menuitemradio" aria-checked="false" data-view="ocr"
                         title="Raw OCR text of this page (Mistral)">OCR</button>
-                <button class="menu__item" type="button" role="menuitemradio" aria-checked="false" data-view="text"
-                        title="TEI rendered as a reading view">Text</button>
-                <button class="menu__item" type="button" role="menuitemradio" aria-checked="false" data-view="markup"
-                        title="Reading view with annotation highlighting (entities, foreign text, footnotes, editorial interventions) and legend">Text + markup</button>
-                <button class="menu__item" type="button" role="menuitemradio" aria-checked="false" data-view="entities"
-                        title="GND entity preview of this document (read-only inspection layer)">Entities</button>
                 <button class="menu__item" type="button" role="menuitemradio" aria-checked="false" data-view="xml"
                         title="TEI-XML source; the current page by default, the full document on request">XML</button>
+                <button class="menu__item menu__item--toggle" type="button" role="menuitemcheckbox" aria-checked="false" data-view-toggle="markup"
+                        title="Highlight annotations in the reading view (foreign text, footnotes, editorial interventions) and show the legend">Markup highlights</button>
               </div>
             </div>
             <div class="menu-wrap panel__header-actions">
@@ -204,6 +202,6 @@
   <script src="assets/js/fs-access.js?v=5"></script>
   <script src="assets/js/layout-editor.js?v=4"></script>
   <script src="assets/js/transcription-editor.js?v=4"></script>
-  <script src="assets/js/viewer.js?v=25"></script>
+  <script src="assets/js/viewer.js?v=26"></script>
 </body>
 </html>

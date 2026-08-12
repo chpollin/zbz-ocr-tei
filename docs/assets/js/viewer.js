@@ -25,7 +25,7 @@
         catalog: null,
         doc: null,
         page: 1,
-        textSource: 'ocr',    // ocr | tei | xml
+        textSource: 'tei',    // ocr | tei | xml
         // XML view scope: 'page' shows the current page slice (read-only, cheap),
         // 'full' the whole final TEI. Only 'full' may be edited, because writeTei
         // replaces {doc}_final.xml as a whole (E72).
@@ -47,7 +47,7 @@
         teiMarkup: false,     // markup mode in the rendered view (annotation highlighting + legend)
         // Entity layer: strictly read-only inspection of the GND entity preview
         // (docs/data/pages/{doc}/{doc}_entity_p{N}.xml). No save path ever writes it.
-        entityMode: false,      // toggle / ?entities=1
+        entityMode: false,      // annotated reading view; on by default (?entities=0 opts out)
         entityAvailable: false, // an entity preview exists for the current document
         entityWorklist: null,   // {doc, pages: {N: [{gid, category, surface, text, occurrence,
                                 //                rule, alternatives, matched_form, form_source,
@@ -86,7 +86,6 @@
     const entityPagePath     = (doc, page) => 'data/pages/' + doc + '/' + doc + '_entity_p' + page + '.xml';
     const entityWorklistPath = (doc) => 'data/pages/' + doc + '/' + doc + '_entity_worklist.json';
     const ENTITY_CATEGORY_LABEL = { person: 'Person', organisation: 'Organisation', work: 'Work' };
-    const ENTITY_READONLY_HINT = 'Entity mode is read-only. Leave it to edit.';
     const ENTITY_MENTION_SEL = '.tei__entity[data-ref], .tei__bibl[data-ref]';
     // Candidates (worklist) are shown inline as well; both open the same popover.
     const ENTITY_POP_SEL = ENTITY_MENTION_SEL + ', .entity-cand';
@@ -224,6 +223,7 @@
         btnViewMenu:    $('#btn-view-menu'),
         viewMenu:       $('#view-menu'),
         viewItems:      $$('#view-menu .menu__item[data-view]'),
+        viewToggleMarkup: $('#view-menu .menu__item[data-view-toggle="markup"]'),
         btnEditMenu:    $('#btn-edit-menu'),
         editMenu:       $('#edit-menu'),
         editItems:      $$('#edit-menu .menu__item[data-edit]'),
@@ -257,13 +257,7 @@
     // A view is a combination of text source, markup highlighting and entity mode; the
     // dropdown names the combination, the state fields below it stay the ones the
     // separate buttons drove.
-    const VIEW_LABEL = {
-        ocr:      'OCR',
-        text:     'Text',
-        markup:   'Text + markup',
-        entities: 'Entities',
-        xml:      'XML'
-    };
+    const VIEW_LABEL = { text: 'Text', ocr: 'OCR', xml: 'XML' };
     const EDIT_LABEL = { layout: 'Layout', ocr: 'OCR', xml: 'XML' };
     const CARET = ' ▾';
     // Menu tooltips as authored in the markup; entity mode swaps some for a hint.
@@ -305,7 +299,7 @@
             return;
         }
 
-        state.entityMode = ZBZ.getParam('entities') === '1';
+        state.entityMode = ZBZ.getParam('entities') !== '0';
         const urlPage = parseInt(ZBZ.getParam('page'), 10);
         await selectDoc(doc, isNaN(urlPage) ? 1 : urlPage);
         ZBZ.log('Viewer', 'init done, doc ' + doc.id);
@@ -386,9 +380,8 @@
             ZBZ.toast('No entity preview for this document', 'warn');
         }
         if (state.entityMode) {
-            // The entity layer is a TEI reading view; markup highlighting belongs to it.
+            // The entity layer is a TEI reading view.
             state.textSource = 'tei';
-            state.teiMarkup = true;
         }
         updateEntityUi();
     }
@@ -416,15 +409,14 @@
         if (next && !state.entityAvailable) return;
         state.entityMode = next;
         closeEntityPopover(false);
-        if (next) state.teiMarkup = true;
         if (next && state.textSource !== 'tei') {
             // setTextSource confirms unsaved edits, leaves edit mode and re-renders
             if (!setTextSource('tei')) { state.entityMode = false; updateEntityUi(); return; }
-            ZBZ.setParams({ entities: 1 });
+            ZBZ.setParams({ entities: null });
             updateEntityUi();
             return;
         }
-        ZBZ.setParams({ entities: next ? 1 : null });
+        ZBZ.setParams({ entities: next ? null : 0 });
         updateEntityUi();
         renderTextPanel();
     }
@@ -1658,10 +1650,9 @@
     // ---- View dropdown: text source + markup highlighting + entity mode in one control ----
 
     function currentView() {
-        if (state.entityMode) return 'entities';
         if (state.textSource === 'ocr') return 'ocr';
         if (state.textSource === 'xml') return 'xml';
-        return state.teiMarkup ? 'markup' : 'text';
+        return 'text';
     }
 
     function syncViewUi() {
@@ -1672,26 +1663,34 @@
             const active = (v === view);
             item.setAttribute('aria-checked', active ? 'true' : 'false');
             item.classList.toggle('menu__item--on', active);
-            if (v !== 'entities') return;
-            item.disabled = !state.entityAvailable;
-            item.title = state.entityAvailable
-                ? VIEW_TITLES.entities
-                : 'No entity preview generated for this document';
         });
+        if (refs.viewToggleMarkup) {
+            refs.viewToggleMarkup.setAttribute('aria-checked', state.teiMarkup ? 'true' : 'false');
+            refs.viewToggleMarkup.classList.toggle('menu__item--on', state.teiMarkup);
+            refs.viewToggleMarkup.disabled = (view !== 'text');
+        }
     }
 
-    // Every branch ends in the same state fields the separate buttons drove; the markup
-    // flag is set before the re-render so no view renders twice.
+    // Text is the annotated reading view (entity layer on wherever a preview exists);
+    // OCR and XML are the specialized source views.
     function setView(view) {
         closeDropdown();
         if (!VIEW_LABEL[view] || view === currentView()) return;
-        if (view === 'entities') { setEntityMode(true); return; }
-        const src = (view === 'ocr') ? 'ocr' : (view === 'xml') ? 'xml' : 'tei';
-        const sourceChanges = (src !== state.textSource);
-        if (src === 'tei') state.teiMarkup = (view === 'markup');
-        if (state.entityMode) setEntityMode(false);
-        else if (!sourceChanges) applyTeiMarkup();
-        if (sourceChanges) setTextSource(src);
+        if (view === 'text') {
+            if (state.entityAvailable && !state.entityMode) { setEntityMode(true); syncViewUi(); return; }
+            if (state.textSource !== 'tei') setTextSource('tei');
+            syncViewUi();
+            return;
+        }
+        const src = (view === 'ocr') ? 'ocr' : 'xml';
+        if (src !== state.textSource) setTextSource(src);
+        syncViewUi();
+    }
+
+    function toggleMarkupHighlight() {
+        closeDropdown();
+        state.teiMarkup = !state.teiMarkup;
+        applyTeiMarkup();
         syncViewUi();
     }
 
@@ -1704,10 +1703,10 @@
         return (kind === 'layout') ? state.imageEdit : (state.textEdit && state.textSource === kind);
     }
 
-    // Empty where the mode is reachable, otherwise the reason shown as the tooltip.
-    // The entity view is strictly read-only, layout editing excepted.
-    function editBlockedReason(kind) {
-        return (kind !== 'layout' && state.entityMode) ? ENTITY_READONLY_HINT : '';
+    // Every editing mode is reachable; picking OCR or XML switches the panel to that
+    // source first (the annotated reading view itself is never editable).
+    function editBlockedReason() {
+        return '';
     }
 
     function updateEditButtons() {
@@ -1735,7 +1734,6 @@
     }
 
     function toggleEdit(src) {
-        if (state.entityMode) { ZBZ.toast(ENTITY_READONLY_HINT, 'warn'); return; }
         if (state.textEdit && state.textSource === src) { setTextEdit(false); return; }
         if (state.textSource !== src && !setTextSource(src)) return; // user kept unsaved edits
         // XML edits are persisted as the whole final TEI (E72), so editing needs the full
@@ -1875,6 +1873,7 @@
         });
         refs.viewItems.forEach(item =>
             item.addEventListener('click', () => setView(item.getAttribute('data-view'))));
+        if (refs.viewToggleMarkup) refs.viewToggleMarkup.addEventListener('click', toggleMarkupHighlight);
         if (refs.btnEditMenu) refs.btnEditMenu.addEventListener('click', (e) => {
             e.stopPropagation();
             toggleDropdown(refs.btnEditMenu, refs.editMenu);
