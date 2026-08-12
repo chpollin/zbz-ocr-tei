@@ -35,6 +35,7 @@
     <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
+    <change when="2026-08-12" who="cover-strip" n="cover-strip">E-Periodica-Deckblatt entfernt (Seite 1); Seitenmarke bleibt als pb type=cover erhalten.</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -136,29 +137,8 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="[365]" />
-        <p facs="#facs_1_r_1">
-          Zeitschrift: Revue syndicale suisse : organe de l’Union syndicale suisse
-        </p>
-        <p facs="#facs_1_r_2">
-          Herausgeber: Union syndicale suisse
-        </p>
-        <p facs="#facs_1_r_3">
-          Band: 36 (1944)
-        </p>
-        <p facs="#facs_1_r_4">
-          Heft: 11
-        </p>
-        <p facs="#facs_1_r_5">
-          Artikel: Le centre d’éducation, foyer de la culture générale de l’ouvrier
-        </p>
-        <p facs="#facs_1_r_6">
-          Autor: Hersch, Jeanne
-        </p>
-        <p facs="#facs_1_r_7">
-          DOI: https://doi.org/10.5169/seals-384407
-        </p>
-      <pb facs="#facs_2" n="[366]" />
+        <pb facs="#facs_1" n="[365]" type="cover" />
+<pb facs="#facs_2" n="[366]" />
         
         <p facs="#facs_2_r_2">
           Le centre d’éducation, foyer de la culture générale de l’ouvrier.

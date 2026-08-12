@@ -36,6 +36,7 @@
     <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
+    <change when="2026-08-12" who="cover-strip" n="cover-strip">E-Periodica-Deckblatt entfernt (Seite 1); Seitenmarke bleibt als pb type=cover erhalten.</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -311,50 +312,8 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="1" />
-        <p>
-          Zeitschrift: Studia philosophica : Schweizerische Zeitschrift für Philosophie = Revue suisse de philosophie = Rivista svizzera della filosofia = Swiss journal of philosophy
-        </p>
-        <p>
-          Herausgeber: Schweizerische Philosophische Gesellschaft
-        </p>
-        <p>
-          Band: 30-31 (1970-1971)
-        </p>
-        <p>
-          Artikel: La question de Dieu et la philosophie aujourd’hui = Die philosophische Gottesfrage heute
-        </p>
-        <p>
-          Autor: Mende, Georg / Widmer, Gabriel / Hersch, Jeanne
-        </p>
-        <p>
-          DOI: https://doi.org/10.5169/seals-883255
-        </p>
-        <p>
-          Nutzungsbedingungen
-        </p>
-        <p>
-          Die ETH-Bibliothek ist die Anbieterin der digitalisierten Zeitschriften. Sie besitzt keine Urheberrechte an den Zeitschriften und ist nicht verantwortlich für deren Inhalte. Die Rechte liegen in der Regel bei den Herausgebern beziehungsweise den externen Rechteinhabern. Siehe Rechtliche Hinweise.
-        </p>
-        <p>
-          Conditions d’utilisation
-        </p>
-        <p>
-          L’ETH Library est le fournisseur des revues numérisées. Elle ne détient aucun droit d’auteur sur les revues et n’est pas responsable de leur contenu. En règle générale, les droits sont détenus par les éditeurs ou les détenteurs de droits externes. Voir Informations légales.
-        </p>
-        <p>
-          Terms of use
-        </p>
-        <p>
-          The ETH Library is the provider of the digitised journals. It does not own any copyrights to the journals and is not responsible for their content. The rights usually lie with the publishers or the external rights holders. See Legal notice.
-        </p>
-        <p>
-          Download PDF: 27.02.2025
-        </p>
-        <p>
-          ETH-Bibliothek Zürich, E-Periodica, https://www.e-periodica.ch
-        </p>
-      <pb facs="#facs_2" n="[1]" />
+        <pb facs="#facs_1" n="1" type="cover" />
+<pb facs="#facs_2" n="[1]" />
         
         <p facs="#facs_2_r_2">
           Symposium 1970<lb facs="#facs_2_l_2_1" n="N001" />LA QUESTION DE DIEU ET LA PHILOSOPHIE AUJOURD’HUI<lb facs="#facs_2_l_2_2" n="N002" />DIE PHILOSOPHISCHE GOTTESFRAGE HEUTE

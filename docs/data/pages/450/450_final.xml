@@ -35,6 +35,7 @@
     <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
+    <change when="2026-08-12" who="cover-strip" n="cover-strip">E-Periodica-Deckblatt entfernt (Seite 1); Seitenmarke bleibt als pb type=cover erhalten.</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -126,26 +127,8 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="[113]" />
-        <p facs="#facs_1_r_1">
-          Zeitschrift: Studia philosophica : Schweizerische Zeitschrift für Philosophie = Revue suisse de philosophie = Rivista svizzera della filosofia = Swiss journal of philosophy
-        </p>
-        <p facs="#facs_1_r_2">
-          Herausgeber: Schweizerische Philosophische Gesellschaft
-        </p>
-        <p facs="#facs_1_r_3">
-          Band: 18 (1958)
-        </p>
-        <p facs="#facs_1_r_4">
-          Artikel: Société et État
-        </p>
-        <p facs="#facs_1_r_5">
-          Autor: Hersch, Jeanne
-        </p>
-        <p facs="#facs_1_r_6">
-          DOI: https://doi.org/10.5169/seals-883326
-        </p>
-      <pb facs="#facs_2" n="[114]" />
+        <pb facs="#facs_1" n="[113]" type="cover" />
+<pb facs="#facs_2" n="[114]" />
         
         <p facs="#facs_2_r_2">
           Société et Etat

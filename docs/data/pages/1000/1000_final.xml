@@ -35,6 +35,7 @@
     <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
+    <change when="2026-08-12" who="cover-strip" n="cover-strip">E-Periodica-Deckblatt entfernt (Seite 1); Seitenmarke bleibt als pb type=cover erhalten.</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -126,24 +127,7 @@
   <text>
     <body>
 <div n="1">
-  <pb facs="#facs_1" n="1" />
-  <div type="text">
-<head facs="#facs_1_r_1">
-    <lb facs="#facs_1_r_1" n="N001" />Zeitschrift: Éducateur et bulletin corporatif : organe hebdomadaire de la Société Pédagogique de la Suisse Romande
-  </head>
-  <p facs="#facs_1_r_2">
-    <lb facs="#facs_1_r_2" n="N001" />Herausgeber: Société Pédagogique de la Suisse Romande
-  </p>
-  <p facs="#facs_1_r_3">
-    <lb facs="#facs_1_r_3" n="N001" />Band: 109 (1973)
-  </p>
-  <p facs="#facs_1_r_4">
-    <lb facs="#facs_1_r_4" n="N001" />Heft: 39
-  </p>
-  <p facs="#facs_1_r_5">
-    <lb facs="#facs_1_r_5" n="N001" />Heft
-  </p>
-</div>
+  <pb facs="#facs_1" n="1" type="cover" />
 <pb facs="#facs_2" n="39" />
         <div type="text">
 <head>

@@ -35,6 +35,7 @@
     <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
+    <change when="2026-08-12" who="cover-strip" n="cover-strip">E-Periodica-Deckblatt entfernt (Seite 1); Seitenmarke bleibt als pb type=cover erhalten.</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -149,23 +150,8 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="1" />
-        <p facs="#facs_1_r_1">
-          Zeitschrift: Schweizerische Lehrerzeitung
-        </p>
-        <p facs="#facs_1_r_2">
-          Herausgeber: Schweizerischer Lehrerverein
-        </p>
-        <p facs="#facs_1_r_3">
-          Band: 115 (1970)
-        </p>
-        <p facs="#facs_1_r_4">
-          Heft: 51-52
-        </p>
-        <p facs="#facs_1_r_5">
-          Heft
-        </p>
-      <pb facs="#facs_2" n="2" />
+        <pb facs="#facs_1" n="1" type="cover" />
+<pb facs="#facs_2" n="2" />
         <p facs="#facs_2_r_1">
           Neben kantonalen Ansätzen gibt es seit langem auch zahlreiche Unternehmen auf schweizerischer Ebene. Ich nenne die seit über einem Jahrhundert erfolgende, oft allzu bescheiden erwähnte Tätigkeit des Schweizerischen Lehrervereins, jene des Vereins Schweizerischer Gymnasiallehrer und anderer umfassender Verbände, der verschiedenen interkantonalen Stufenkonferenzen usw., ich erinnere an die Studiengruppen der KOFISCH, an das Schweizerische Schulwandbilderwerk und, warum nicht, an die seit 115 Jahren Impulse vermittelnde Schweizerische Lehrerzeitung!
         </p>

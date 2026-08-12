@@ -35,6 +35,7 @@
     <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
+    <change when="2026-08-12" who="cover-strip" n="cover-strip">E-Periodica-Deckblatt entfernt (Seite 1); Seitenmarke bleibt als pb type=cover erhalten.</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -116,26 +117,8 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="[43]" />
-        <p facs="#facs_1_r_1">
-          Zeitschrift: Studia philosophica : Schweizerische Zeitschrift für Philosophie = Revue suisse de philosophie = Rivista svizzera della filosofia = Swiss journal of philosophy
-        </p>
-        <p facs="#facs_1_r_2">
-          Herausgeber: Schweizerische Philosophische Gesellschaft
-        </p>
-        <p facs="#facs_1_r_3">
-          Band: 10 (1950)
-        </p>
-        <p facs="#facs_1_r_4">
-          Artikel: La transcendance du singulier
-        </p>
-        <p facs="#facs_1_r_5">
-          Autor: Hersch, Jeanne
-        </p>
-        <p facs="#facs_1_r_6">
-          DOI: https://doi.org/10.5169/seals-883439
-        </p>
-      <pb facs="#facs_2" n="[44]" />
+        <pb facs="#facs_1" n="[43]" type="cover" />
+<pb facs="#facs_2" n="[44]" />
         
         <p facs="#facs_2_r_2">
           La transcendance du singulier¹

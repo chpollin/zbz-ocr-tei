@@ -35,6 +35,7 @@
     <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
+    <change when="2026-08-12" who="cover-strip" n="cover-strip">E-Periodica-Deckblatt entfernt (Seite 1); Seitenmarke bleibt als pb type=cover erhalten.</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -134,23 +135,8 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="[1105]" />
-        <p facs="#facs_1_r_1">
-          Zeitschrift: Schweizerische Lehrerzeitung
-        </p>
-        <p facs="#facs_1_r_2">
-          Herausgeber: Schweizerischer Lehrerverein
-        </p>
-        <p facs="#facs_1_r_3">
-          Band: 115 (1970)
-        </p>
-        <p facs="#facs_1_r_4">
-          Heft: 34
-        </p>
-        <p facs="#facs_1_r_5">
-          Heft
-        </p>
-      <pb facs="#facs_2" n="[1106]" />
+        <pb facs="#facs_1" n="[1105]" type="cover" />
+<pb facs="#facs_2" n="[1106]" />
         
         <p facs="#facs_2_r_2">
           Der Lehrer in der heutigen Krise

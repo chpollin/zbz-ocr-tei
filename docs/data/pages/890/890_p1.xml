@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <text>
-    <body><pb facs="#facs_1" n="1" />
-        <p facs="#facs_1_r_1">
-          Zeitschrift: Schweizerische Lehrerzeitung
-        </p>
-        <p facs="#facs_1_r_2">
-          Herausgeber: Schweizerischer Lehrerverein
-        </p>
-        <p facs="#facs_1_r_3">
-          Band: 115 (1970)
-        </p>
-        <p facs="#facs_1_r_4">
-          Heft: 51-52
-        </p>
-        <p facs="#facs_1_r_5">
-          Heft
-        </p>
-      </body>
+    <body><pb facs="#facs_1" n="1" type="cover" />
+</body>
   </text>
 </TEI>

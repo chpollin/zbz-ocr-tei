@@ -35,6 +35,7 @@
     <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
+    <change when="2026-08-12" who="cover-strip" n="cover-strip">E-Periodica-Deckblatt entfernt (Seite 1); Seitenmarke bleibt als pb type=cover erhalten.</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -83,29 +84,8 @@
   <text>
     <body>
 <div type="review">
-        <pb facs="#facs_1" n="1" />
-        <p facs="#facs_1_r_1">
-          Zeitschrift: Revue syndicale suisse : organe de l’Union syndicale suisse
-        </p>
-        <p facs="#facs_1_r_2">
-          Herausgeber: Union syndicale suisse
-        </p>
-        <p facs="#facs_1_r_3">
-          Band: 36 (1944)
-        </p>
-        <p facs="#facs_1_r_4">
-          Heft: 11
-        </p>
-        <p facs="#facs_1_r_5">
-          Artikel: Un roman soviétique : "J’aime", par Avdeenko
-        </p>
-        <p facs="#facs_1_r_6">
-          Autor: Hersch, Jeanne
-        </p>
-        <p facs="#facs_1_r_7">
-          DOI: https://doi.org/10.5169/seals-384410
-        </p>
-      <pb facs="#facs_2" n="[395]" />
+        <pb facs="#facs_1" n="1" type="cover" />
+<pb facs="#facs_2" n="[395]" />
         <p facs="#facs_2_r_1">
           les moyens de s’éprouver. Offrons-les lui en lui proposant ce qu’il y a de meilleur dans tous les genres.
         </p>

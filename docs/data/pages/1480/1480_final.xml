@@ -36,6 +36,7 @@
     <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
+    <change when="2026-08-12" who="cover-strip" n="cover-strip">E-Periodica-Deckblatt entfernt (Seite 1); Seitenmarke bleibt als pb type=cover erhalten.</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -88,56 +89,7 @@
   <text>
     <body>
 <div n="1" type="review">
-  <pb facs="#facs_1" n="1" />
-  
-    <div type="text">
-<p facs="#facs_1_r_1">
-      <lb n="N001" />Zeitschrift: Zeitschrift für Krankenpflege = Revue suisse des infirmières
-    </p>
-    <p facs="#facs_1_r_2">
-      <lb n="N001" />Herausgeber: Schweizerischer Verband diplomierter Krankenschwestern und Krankenpfleger
-    </p>
-    <p facs="#facs_1_r_3">
-      <lb n="N001" />Band: 70 (1977)
-    </p>
-    <p facs="#facs_1_r_4">
-      <lb n="N001" />Heft: 2
-    </p>
-    <p facs="#facs_1_r_5">
-      <lb n="N001" />Heft
-    </p>
-    <p facs="#facs_1_r_6">
-      <lb n="N001" />Nutzungsbedingungen
-    </p>
-    <p facs="#facs_1_r_7">
-      <lb n="N001" />Die ETH-Bibliothek ist die Anbieterin der digitalisierten Zeitschriften. Sie besitzt keine Urheberrechte 
-      <lb n="N002" />an den Zeitschriften und ist nicht verantwortlich für deren Inhalte. Die Rechte liegen in der Regel bei 
-      <lb n="N003" />den Herausgebern beziehungsweise den externen Rechteinhabern. Siehe Rechtliche Hinweise.
-    </p>
-    <p facs="#facs_1_r_8">
-      <lb n="N001" />Conditions d’utilisation
-    </p>
-    <p facs="#facs_1_r_9">
-      <lb n="N001" />L’ETH Library est le fournisseur des revues numérisées. Elle ne détient aucun droit d’auteur sur les 
-      <lb n="N002" />revues et n’est pas responsable de leur contenu. En règle générale, les droits sont détenus par les 
-      <lb n="N003" />éditeurs ou les détenteurs de droits externes. Voir Informations légales.
-    </p>
-    <p facs="#facs_1_r_10">
-      <lb n="N001" />Terms of use
-    </p>
-    <p facs="#facs_1_r_11">
-      <lb n="N001" />The ETH Library is the provider of the digitised journals. It does not own any copyrights to the journals 
-      <lb n="N002" />and is not responsible for their content. The rights usually lie with the publishers or the external rights 
-      <lb n="N003" />holders. See Legal notice.
-    </p>
-    <p facs="#facs_1_r_12">
-      <lb n="N001" />Download PDF: 24.02.2025
-    </p>
-    <p facs="#facs_1_r_13">
-      <lb n="N001" />ETH-Bibliothek Zürich, E-Periodica, https://www.e-periodica.ch
-    </p>
-  
-</div>
+  <pb facs="#facs_1" n="1" type="cover" />
 <pb facs="#facs_2" n="[38]" />
         <div type="text">
 <head facs="#facs_2_r_1">

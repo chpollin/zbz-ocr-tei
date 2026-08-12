@@ -35,6 +35,7 @@
     <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
     <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
+    <change when="2026-08-12" who="cover-strip" n="cover-strip">E-Periodica-Deckblatt entfernt (Seite 1); Seitenmarke bleibt als pb type=cover erhalten.</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -96,50 +97,8 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="[228]" />
-        <p facs="#facs_1_r_1">
-          Zeitschrift: Bulletin der Schweizerischen Akademie der Medizinischen Wissenschaften = Bulletin de l’Académie suisse des sciences médicales = Bollettino dell’Accademia svizzera delle scienze mediche
-        </p>
-        <p facs="#facs_1_r_2">
-          Herausgeber: Schweizerische Akademie der Medizinischen Wissenschaften
-        </p>
-        <p facs="#facs_1_r_3">
-          Band: 36 (1980)
-        </p>
-        <p facs="#facs_1_r_4">
-          Artikel: La liberté du malade face à la médecin d’aujourd’hui
-        </p>
-        <p facs="#facs_1_r_5">
-          Autor: Hersch, Jeanne
-        </p>
-        <p facs="#facs_1_r_6">
-          DOI: https://doi.org/10.5169/seals-308238
-        </p>
-        <p facs="#facs_1_r_7">
-          Nutzungsbedingungen
-        </p>
-        <p facs="#facs_1_r_8">
-          Die ETH-Bibliothek ist die Anbieterin der digitalisierten Zeitschriften auf E-Periodica. Sie besitzt keine Urheberrechte an den Zeitschriften und ist nicht verantwortlich für deren Inhalte. Die Rechte liegen in der Regel bei den Herausgebern beziehungsweise den externen Rechteinhabern. Das Veröffentlichen von Bildern in Print- und Online-Publikationen sowie auf Social Media-Kanälen oder Webseiten ist nur mit vorheriger Genehmigung der Rechteinhaber erlaubt. Mehr erfahren
-        </p>
-        <p facs="#facs_1_r_9">
-          Conditions d’utilisation
-        </p>
-        <p facs="#facs_1_r_10">
-          L’ETH Library est le fournisseur des revues numérisées. Elle ne détient aucun droit d’auteur sur les revues et n’est pas responsable de leur contenu. En règle générale, les droits sont détenus par les éditeurs ou les détenteurs de droits externes. La reproduction d’images dans des publications imprimées ou en ligne ainsi que sur des canaux de médias sociaux ou des sites web n’est autorisée qu’avec l’accord préalable des détenteurs des droits. En savoir plus
-        </p>
-        <p facs="#facs_1_r_11">
-          Terms of use
-        </p>
-        <p facs="#facs_1_r_12">
-          The ETH Library is the provider of the digitised journals. It does not own any copyrights to the journals and is not responsible for their content. The rights usually lie with the publishers or the external rights holders. Publishing images in print and online publications, as well as on social media channels or websites, is only permitted with the prior consent of the rights holders. Find out more
-        </p>
-        <p facs="#facs_1_r_13">
-          Download PDF: 04.08.2025
-        </p>
-        <p facs="#facs_1_r_14">
-          ETH-Bibliothek Zürich, E-Periodica, https://www.e-periodica.ch
-        </p>
-      <pb facs="#facs_2" n="[229]" />
+        <pb facs="#facs_1" n="[228]" type="cover" />
+<pb facs="#facs_2" n="[229]" />
         <p facs="#facs_2_r_1">
           Bull. Schweiz. Akad. Med. Wiss. 36, 229-233 (1980)
         </p>
