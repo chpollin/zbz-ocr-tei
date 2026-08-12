@@ -28,6 +28,7 @@ Thematically separated documents:
 - [literature-comparison.md](knowledge/literature-comparison.md): print-OCR state of research and comparability caveats
 - [ground-truth-map.md](knowledge/ground-truth-map.md): the 25 reference TEIs, phenomenon map and exception catalog
 - [entity-integration.md](knowledge/entity-integration.md): design plan for the GND entity integration (input data, target model, three-tier matching, milestones, verification)
+- [entity-evaluation.md](knowledge/entity-evaluation.md): sampling workflow for the entity layer (facsimile-adjudicated precision and recall, agreement check, statistics, consequences)
 - [arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md): the project report (German, client-facing); measured values are in `docs/data/cer_statistics.json`
 - [journal.md](knowledge/journal.md): chronological session overview
 - [index.md](knowledge/index.md): navigation + key concepts

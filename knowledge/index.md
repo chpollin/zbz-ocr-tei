@@ -47,6 +47,7 @@ principle is a single source of truth per domain, one file per topic.
 | [literature-comparison.md](literature-comparison.md) | How good is it against the state of research? Print-OCR comparison table and comparability caveats |
 | [ground-truth-map.md](ground-truth-map.md) | What do the 25 reference TEIs contain and where do they deviate? Phenomenon map and exception catalog (former Appendix B) |
 | [entity-integration.md](entity-integration.md) | How do GND entities get into the delivered TEI? Design plan: input data, target-model rules, three-tier matching, milestones M0-M7, verification |
+| [entity-evaluation.md](entity-evaluation.md) | How do we know the entity layer is right? Sampling workflow: facsimile-adjudicated precision and recall, agreement check, consequences |
 | [arbeitsbericht-v3.md](arbeitsbericht-v3.md) | The project report (German, client-facing): headline CER, per-document breakdown, corpus proxy, stock corrections, limits, outlook; canonical values in `docs/data/cer_statistics.json` |
 | [journal.md](journal.md) | What was done when? Compact session overview (since Jan 2026), recurring patterns |
 
@@ -73,6 +74,7 @@ Each document carries one function of the [Convention Knowledge Documents](https
 | [ground-truth-map.md](ground-truth-map.md) | Material (specialisation: reference corpus and deviation catalog) | freehand: a deviation catalog, not the corpus description the Datengrundlage template structures |
 | [literature-comparison.md](literature-comparison.md) | Domain Knowledge (print-OCR state of research) | freehand: no function in the catalogue |
 | [entity-integration.md](entity-integration.md) | Specification (design plan for the entity-integration epic) | freehand: a forward-looking design plan, the catalogue holds no plan template |
+| [entity-evaluation.md](entity-evaluation.md) | Method (sampling evaluation of the entity layer) | freehand: a measurement workflow, follows the CER methodology discipline |
 | [methodology.md](methodology.md) | Working method of the project | freehand: describes the way of working, not the scholarly domain, so Domänenwissen does not carry |
 | [ecosystem-synthesis.md](ecosystem-synthesis.md) | Cross-project overall picture | freehand: a survey without the bilateral delivery contract that triggers the Integration function |
 
