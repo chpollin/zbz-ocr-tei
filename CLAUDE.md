@@ -219,7 +219,8 @@ python -m scripts.eval.entity_gold_benchmark                     # M4: precision
 python -m scripts.eval.entity_corpus_digest                      # tier-1 harvest as one context-window digest
 python -m scripts.eval.entity_unlisted_scan                      # id-free proposal channel: name-shaped surfaces outside the list
 python -m scripts.eval.entity_eval_sample --seed 42             # evaluation draw: 300 tier-1 marks + 40 pages, stratified, frozen (knowledge/entity-evaluation.md)
-python -m pytest tests/test_entity_matcher.py tests/test_entity_lint.py tests/test_entity_regressions.py tests/test_entity_preview.py tests/test_entity_corpus_scan.py tests/test_generate_entity_preview_data.py tests/test_cover_strip.py tests/test_fetch_gnd_variants.py -q  # entity gates
+python -m scripts.eval.build_mention_verdicts                    # mention verdict store: adjudicated judgments -> data/entities/mention_verdicts.json (snapshot-bound, deterministic)
+python -m pytest tests/test_entity_matcher.py tests/test_entity_lint.py tests/test_entity_regressions.py tests/test_entity_preview.py tests/test_entity_corpus_scan.py tests/test_generate_entity_preview_data.py tests/test_cover_strip.py tests/test_fetch_gnd_variants.py tests/test_mention_verdicts.py tests/test_entity_ref_invariant.py -q  # entity gates
 ```
 
 The viewer shows the previews read-only via `viewer.html?doc={DOC_ID}&entities=1`.
