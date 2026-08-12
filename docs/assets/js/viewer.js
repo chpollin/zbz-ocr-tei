@@ -216,19 +216,19 @@
     const refs = {
         subbar:         $('#doc-subbar'),
         docMeta:        $('#doc-meta'),
-        pageInfo:       $('#page-info'),
         btnPrev:        $('#btn-prev'),
         btnNext:        $('#btn-next'),
         pageGoto:       $('#page-goto'),
-        btnImageEdit:   $('#btn-image-edit'),
-        btnEditOcr:     $('#btn-edit-ocr'),
-        btnEditXml:     $('#btn-edit-xml'),
-        btnMarkup:      $('#btn-markup'),
-        btnEntities:    $('#btn-entities'),
-        textSourceBtns: $$('.mode-btn[data-text-source]'),
+        pageTotal:      $('#page-total'),
+        // Panel chrome: one dropdown for the view, one for the edit mode
+        btnViewMenu:    $('#btn-view-menu'),
+        viewMenu:       $('#view-menu'),
+        viewItems:      $$('#view-menu .menu__item[data-view]'),
+        btnEditMenu:    $('#btn-edit-menu'),
+        editMenu:       $('#edit-menu'),
+        editItems:      $$('#edit-menu .menu__item[data-edit]'),
         imageBody:      $('#image-body'),
         textBody:       $('#text-body'),
-        textTitle:      $('#text-panel-title'),
         regionCount:    $('#region-count'),
         layoutToolbar:  $('#layout-toolbar'),
         // Save + export dropdown + identity chip
@@ -253,16 +253,33 @@
         statusHint:     $('#status-hint')
     };
 
-    // Original edit-button tooltips; entity mode swaps them for the read-only hint.
-    const EDIT_TITLES = {
-        ocr: refs.btnEditOcr ? refs.btnEditOcr.title : '',
-        xml: refs.btnEditXml ? refs.btnEditXml.title : ''
+    // ---- Panel dropdowns ----
+    // A view is a combination of text source, markup highlighting and entity mode; the
+    // dropdown names the combination, the state fields below it stay the ones the
+    // separate buttons drove.
+    const VIEW_LABEL = {
+        ocr:      'OCR',
+        text:     'Text',
+        markup:   'Text + markup',
+        entities: 'Entities',
+        xml:      'XML'
     };
+    const EDIT_LABEL = { layout: 'Layout', ocr: 'OCR', xml: 'XML' };
+    const CARET = ' ▾';
+    // Menu tooltips as authored in the markup; entity mode swaps some for a hint.
+    const VIEW_TITLES = {};
+    refs.viewItems.forEach(i => { VIEW_TITLES[i.getAttribute('data-view')] = i.title; });
+    const EDIT_TITLES = {};
+    refs.editItems.forEach(i => { EDIT_TITLES[i.getAttribute('data-edit')] = i.title; });
+    // Region count of the current page: shown in the layout toolbar, and in the tooltip
+    // of the layout entry so it stays reachable while reading.
+    let regionCountText = '';
 
     // ============================================================ Init ============================================================
 
     async function init() {
         bindEvents();
+        updateEntityUi();
 
         renderIdentity();
         // Restore persisted repo folder (File System Access)
@@ -326,10 +343,8 @@
         // Enable buttons
         refs.btnPrev.disabled = state.page <= 1;
         refs.btnNext.disabled = state.page >= (doc.page_count || 1);
-        if (refs.pageGoto) {
-            refs.pageGoto.disabled = false;
-            refs.pageGoto.max = doc.page_count || 1;
-        }
+        if (refs.pageGoto) refs.pageGoto.disabled = false;
+        syncPageInput();
         refs.btnDlLayout.disabled = false;
         refs.btnDlText.disabled = false;
         refs.btnDlTei.disabled = false;
@@ -374,7 +389,6 @@
             // The entity layer is a TEI reading view; markup highlighting belongs to it.
             state.textSource = 'tei';
             state.teiMarkup = true;
-            syncTextSourceButtons();
         }
         updateEntityUi();
     }
@@ -389,24 +403,11 @@
         return xml;
     }
 
+    // Availability of the entity view and the read-only lock it puts on the text editors
+    // are both read by the two dropdowns.
     function updateEntityUi() {
-        if (refs.btnEntities) {
-            refs.btnEntities.disabled = !state.doc || !state.entityAvailable;
-            refs.btnEntities.setAttribute('aria-pressed', state.entityMode ? 'true' : 'false');
-            refs.btnEntities.title = state.entityAvailable
-                ? 'GND entity preview of this document (read-only inspection layer)'
-                : 'No entity preview generated for this document';
-        }
-        // Strictly read-only: no editor may attach while the entity file is on screen.
-        const locked = state.entityMode;
-        if (refs.btnEditOcr) {
-            refs.btnEditOcr.disabled = locked;
-            refs.btnEditOcr.title = locked ? ENTITY_READONLY_HINT : EDIT_TITLES.ocr;
-        }
-        if (refs.btnEditXml) {
-            refs.btnEditXml.disabled = locked;
-            refs.btnEditXml.title = locked ? ENTITY_READONLY_HINT : EDIT_TITLES.xml;
-        }
+        syncViewUi();
+        updateEditButtons();
     }
 
     function setEntityMode(on) {
@@ -945,7 +946,7 @@
                     downloaded = true;
                 }
                 state.layoutDirty = false;
-                if (refs.regionCount) refs.regionCount.textContent = state.layout.regions.length + ' regions';
+                setRegionCount(state.layout.regions.length + ' regions');
                 saved.push('Layout p.' + state.page);
             }
             if (dt) {
@@ -1011,14 +1012,14 @@
     function exportLayout() {
         if (!state.doc || !state.layout) { ZBZ.toast('No layout data', 'warn'); return; }
         ZBZ.Download.layout(state.doc.id, state.page, state.layout.regions, layoutSourceMeta());
-        closeExportMenu();
+        closeDropdown();
     }
     function exportText() {
         if (!state.doc) return;
         const content = (state._currentEditedText != null) ? state._currentEditedText : state._currentText;
         if (!content) { ZBZ.toast('No text loaded', 'warn'); return; }
         ZBZ.Download.text(state.doc.id, state.page, content);
-        closeExportMenu();
+        closeDropdown();
     }
     async function exportTei() {
         if (!state.doc) return;
@@ -1029,30 +1030,59 @@
         }
         if (!xml) { ZBZ.toast('No TEI available', 'warn'); return; }
         ZBZ.Download.tei(state.doc.id, xml, 'curated');
-        closeExportMenu();
+        closeDropdown();
     }
     function exportManifest() {
         if (!state.manifest) { ZBZ.toast('No manifest loaded', 'warn'); return; }
         ZBZ.Download.manifest(state.doc.id, state.manifest);
-        closeExportMenu();
+        closeDropdown();
     }
 
-    function toggleExportMenu() {
-        if (refs.exportMenu.hidden) openExportMenu(); else closeExportMenu();
+    // ============================================================ Dropdown menus (export, view, edit) ============================================================
+
+    // One open menu at a time; outside click and Escape close it. The menus are
+    // position:fixed, so a panel with overflow:hidden cannot clip them; the price is
+    // placing them by hand and closing them on resize.
+    let openMenu = null;   // { btn, menu }
+
+    function positionDropdown(btn, menu, align) {
+        const r = btn.getBoundingClientRect();
+        menu.style.visibility = 'hidden';
+        menu.style.left = '0px';
+        menu.style.top = '0px';
+        const w = menu.offsetWidth;
+        const raw = (align === 'right') ? (r.right - w) : r.left;
+        menu.style.left = Math.max(8, Math.min(raw, window.innerWidth - w - 8)) + 'px';
+        menu.style.top = (r.bottom + 4) + 'px';
+        menu.style.visibility = '';
     }
-    function openExportMenu() {
-        refs.exportMenu.hidden = false;
-        refs.btnExportMenu.setAttribute('aria-expanded', 'true');
+
+    function openDropdown(btn, menu) {
+        closeDropdown();
+        menu.hidden = false;
+        positionDropdown(btn, menu, menu.classList.contains('menu--right') ? 'right' : 'left');
+        btn.setAttribute('aria-expanded', 'true');
+        openMenu = { btn: btn, menu: menu };
         setTimeout(() => document.addEventListener('click', onDocClickForMenu), 0);
     }
-    function closeExportMenu() {
-        if (!refs.exportMenu || refs.exportMenu.hidden) return;
-        refs.exportMenu.hidden = true;
-        refs.btnExportMenu.setAttribute('aria-expanded', 'false');
+
+    function closeDropdown(restoreFocus) {
         document.removeEventListener('click', onDocClickForMenu);
+        if (!openMenu) return;
+        openMenu.menu.hidden = true;
+        openMenu.btn.setAttribute('aria-expanded', 'false');
+        if (restoreFocus) openMenu.btn.focus();
+        openMenu = null;
     }
+
+    function toggleDropdown(btn, menu) {
+        if (menu.hidden) openDropdown(btn, menu); else closeDropdown();
+    }
+
     function onDocClickForMenu(e) {
-        if (!refs.exportMenu.contains(e.target) && e.target !== refs.btnExportMenu) closeExportMenu();
+        if (!openMenu) return;
+        if (openMenu.menu.contains(e.target) || e.target === openMenu.btn) return;
+        closeDropdown();
     }
 
     // ============================================================ Repo folder (File System Access) ============================================================
@@ -1118,7 +1148,7 @@
         state.textDirty = false;
         state._currentEditedText = null;
         renderSaveState();
-        refs.pageInfo.textContent = page + ' / ' + (doc.page_count || '?');
+        syncPageInput();
         refs.btnPrev.disabled = page <= 1;
         refs.btnNext.disabled = page >= (doc.page_count || 1);
         ZBZ.setParams({ page });
@@ -1149,6 +1179,14 @@
         }
         cache.set(ck, blank);
         return blank;
+    }
+
+    // The count lives in the layout toolbar (visible while editing) and in the tooltip of
+    // the layout entry, so it stays readable in view mode.
+    function setRegionCount(text) {
+        regionCountText = text || '';
+        if (refs.regionCount) refs.regionCount.textContent = regionCountText;
+        updateEditButtons();
     }
 
     async function renderFacsimile() {
@@ -1191,11 +1229,11 @@
         // Blank page: do not draw phantom regions (Gemini hallucinates boxes on carbon copies)
         // and replace the misleading count with a blank-page label.
         if (state._isBlank) {
-            refs.regionCount.textContent = 'Blank page, no text';
+            setRegionCount('Blank page, no text');
         } else {
-            refs.regionCount.textContent = (layout && layout.regions)
+            setRegionCount((layout && layout.regions)
                 ? layout.regions.length + ' regions'
-                : 'no layout data';
+                : 'no layout data');
         }
 
         const imgUrl = ZBZ.path.image(doc.id, page);
@@ -1279,10 +1317,10 @@
         if (state.doc !== doc || state.page !== page || !state.imageEdit) return;
         state.layout = layout;
         if (layout && layout.regions) {
-            refs.regionCount.textContent = layout.regions.length + ' regions';
+            setRegionCount(layout.regions.length + ' regions');
             renderRegionOverlay(overlay, layout.regions);
         } else {
-            refs.regionCount.textContent = 'no layout data';
+            setRegionCount('no layout data');
         }
 
         if (state.imageEdit && ZBZ.LayoutEditor) {
@@ -1322,7 +1360,7 @@
     function onLayoutChanged(regions) {
         if (!state.layout) state.layout = { regions: [] };
         state.layout.regions = regions;
-        refs.regionCount.textContent = regions.length + ' regions (edited)';
+        setRegionCount(regions.length + ' regions (edited)');
         state.layoutDirty = true;
         renderSaveState();
         // E66: first real layout change -> set stream to in_arbeit
@@ -1330,16 +1368,6 @@
     }
 
     // ============================================================ Text panel ============================================================
-
-    function textPanelTitle() {
-        if (state.textSource === 'tei') return state.entityPage ? 'TEI · entities (read-only)' : 'TEI · rendered';
-        if (state.textSource === 'xml') {
-            return state.xmlScope === 'full'
-                ? 'TEI · XML (full document)'
-                : 'TEI · XML (page ' + state.page + ')';
-        }
-        return 'OCR · ' + state.ocrSource;
-    }
 
     async function renderTextPanel() {
         const doc = state.doc, page = state.page;
@@ -1353,7 +1381,6 @@
         // In text edit mode render normally so the raw text can be cleaned if needed.
         // XML mode is exempt (it shows the TEI source, blank or not).
         if (state._isBlank && !state.textEdit && state.textSource !== 'xml') {
-            refs.textTitle.textContent = textPanelTitle();
             refs.textBody.innerHTML = '';
             refs.textBody.appendChild(ZBZ.el('div', {
                 cls: 'empty empty--blank-page', text: 'Blank page, no text'
@@ -1365,7 +1392,6 @@
         refs.textBody.innerHTML = '<div class="empty">Loading...</div>';
 
         if (state.textSource === 'ocr') {
-            refs.textTitle.textContent = 'OCR · ' + state.ocrSource;
             const res = await ZBZ.fetchFirstOk(candidates('ocr', page, ZBZ.path.ocr(state.ocrSource, doc.id, page)));
             if (stale()) return;
             if (!res) {
@@ -1389,7 +1415,6 @@
                 xml = await loadTeiPage(doc.id, page);
                 if (stale()) return;
             }
-            refs.textTitle.textContent = textPanelTitle();
             if (!xml) {
                 renderLoadError('No TEI for page ' + page);
                 return;
@@ -1418,7 +1443,6 @@
             const full = state.xmlScope === 'full';
             const xml = full ? await loadTeiFinal(doc.id) : await loadTeiPage(doc.id, page);
             if (stale()) return;
-            refs.textTitle.textContent = textPanelTitle();
             if (!xml) {
                 renderLoadError(full ? 'No final TEI for document ' + doc.id : 'No TEI for page ' + page);
                 renderXmlScopeBar(0);
@@ -1567,7 +1591,7 @@
     function setImageEdit(on) {
         const prev = state.imageEdit;
         state.imageEdit = !!on;
-        refs.btnImageEdit.setAttribute('aria-pressed', state.imageEdit ? 'true' : 'false');
+        updateEditButtons();
 
         // Layout toolbar toggle (shows: add region, delete, type selector)
         refs.layoutToolbar.classList.toggle('hidden', !state.imageEdit);
@@ -1604,10 +1628,7 @@
     ];
 
     function applyTeiMarkup() {
-        if (refs.btnMarkup) {
-            refs.btnMarkup.disabled = state.textSource !== 'tei';
-            refs.btnMarkup.setAttribute('aria-pressed', (state.textSource === 'tei' && state.teiMarkup) ? 'true' : 'false');
-        }
+        syncViewUi();
         const old = refs.textBody.querySelector('.tei-legend');
         if (old) old.remove();
         const wrap = refs.textBody.querySelector('.tei');
@@ -1634,13 +1655,83 @@
         refs.textBody.insertBefore(legend, wrap);
     }
 
-    // Each edit button binds edit mode to its source (Edit OCR -> ocr, Edit XML -> xml).
+    // ---- View dropdown: text source + markup highlighting + entity mode in one control ----
+
+    function currentView() {
+        if (state.entityMode) return 'entities';
+        if (state.textSource === 'ocr') return 'ocr';
+        if (state.textSource === 'xml') return 'xml';
+        return state.teiMarkup ? 'markup' : 'text';
+    }
+
+    function syncViewUi() {
+        const view = currentView();
+        if (refs.btnViewMenu) refs.btnViewMenu.textContent = 'View: ' + VIEW_LABEL[view] + CARET;
+        refs.viewItems.forEach(item => {
+            const v = item.getAttribute('data-view');
+            const active = (v === view);
+            item.setAttribute('aria-checked', active ? 'true' : 'false');
+            item.classList.toggle('menu__item--on', active);
+            if (v !== 'entities') return;
+            item.disabled = !state.entityAvailable;
+            item.title = state.entityAvailable
+                ? VIEW_TITLES.entities
+                : 'No entity preview generated for this document';
+        });
+    }
+
+    // Every branch ends in the same state fields the separate buttons drove; the markup
+    // flag is set before the re-render so no view renders twice.
+    function setView(view) {
+        closeDropdown();
+        if (!VIEW_LABEL[view] || view === currentView()) return;
+        if (view === 'entities') { setEntityMode(true); return; }
+        const src = (view === 'ocr') ? 'ocr' : (view === 'xml') ? 'xml' : 'tei';
+        const sourceChanges = (src !== state.textSource);
+        if (src === 'tei') state.teiMarkup = (view === 'markup');
+        if (state.entityMode) setEntityMode(false);
+        else if (!sourceChanges) applyTeiMarkup();
+        if (sourceChanges) setTextSource(src);
+        syncViewUi();
+    }
+
+    // ---- Edit dropdown: layout (facsimile), OCR text, TEI-XML ----
     // The rendered TEI view has no edit entry point: it cannot be round-tripped
     // (transcription-editor reads innerText only), save/export take TEI edits
     // exclusively from XML mode.
+
+    function editActive(kind) {
+        return (kind === 'layout') ? state.imageEdit : (state.textEdit && state.textSource === kind);
+    }
+
+    // Empty where the mode is reachable, otherwise the reason shown as the tooltip.
+    // The entity view is strictly read-only, layout editing excepted.
+    function editBlockedReason(kind) {
+        return (kind !== 'layout' && state.entityMode) ? ENTITY_READONLY_HINT : '';
+    }
+
     function updateEditButtons() {
-        refs.btnEditOcr.setAttribute('aria-pressed', (state.textEdit && state.textSource === 'ocr') ? 'true' : 'false');
-        refs.btnEditXml.setAttribute('aria-pressed', (state.textEdit && state.textSource === 'xml') ? 'true' : 'false');
+        const on = [];
+        refs.editItems.forEach(item => {
+            const kind = item.getAttribute('data-edit');
+            const active = editActive(kind);
+            const blocked = editBlockedReason(kind);
+            const hint = (kind === 'layout' && regionCountText) ? ' · ' + regionCountText : '';
+            item.setAttribute('aria-checked', active ? 'true' : 'false');
+            item.classList.toggle('menu__item--on', active);
+            item.disabled = !!blocked;
+            item.title = blocked || (EDIT_TITLES[kind] + hint);
+            if (active) on.push(EDIT_LABEL[kind]);
+        });
+        if (!refs.btnEditMenu) return;
+        refs.btnEditMenu.textContent = (on.length ? 'Edit: ' + on.join(', ') : 'Edit') + CARET;
+        refs.btnEditMenu.classList.toggle('menu-btn--on', on.length > 0);
+    }
+
+    function toggleEditMode(kind) {
+        closeDropdown();
+        if (kind === 'layout') setImageEdit(!state.imageEdit);
+        else toggleEdit(kind);
     }
 
     function toggleEdit(src) {
@@ -1699,15 +1790,9 @@
         // Detach before re-render: cancels pending debounced commits of the old source
         if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
         state.textSource = src;
-        syncTextSourceButtons();
-        applyTeiMarkup();   // button enable state; the render callback re-applies highlighting
+        applyTeiMarkup();   // dropdown label; the render callback re-applies highlighting
         renderTextPanel();
         return true;
-    }
-
-    function syncTextSourceButtons() {
-        refs.textSourceBtns.forEach(b => b.setAttribute(
-            'aria-pressed', b.getAttribute('data-text-source') === state.textSource ? 'true' : 'false'));
     }
 
     // ============================================================ Save (direct write or download) ============================================================
@@ -1736,15 +1821,26 @@
         loadPage();
     }
 
+    // The pager number is the jump field: it always shows the current page, typed input
+    // that is not a page number is discarded when the field is left.
+    function syncPageInput() {
+        if (refs.pageGoto) refs.pageGoto.value = state.doc ? String(state.page) : '';
+        if (refs.pageTotal) refs.pageTotal.textContent = '/ ' + ((state.doc && state.doc.page_count) || '?');
+    }
+
     function bindEvents() {
         refs.btnPrev.addEventListener('click', () => gotoPage(state.page - 1));
         refs.btnNext.addEventListener('click', () => gotoPage(state.page + 1));
         if (refs.pageGoto) {
+            refs.pageGoto.addEventListener('focus', () => refs.pageGoto.select());
+            refs.pageGoto.addEventListener('blur', syncPageInput);
             refs.pageGoto.addEventListener('keydown', (e) => {
-                if (e.key !== 'Enter') return;
+                if (e.key !== 'Enter' && e.key !== 'Escape') return;
                 e.preventDefault();
-                const n = parseInt(refs.pageGoto.value, 10);
-                if (!isNaN(n)) { gotoPage(n); refs.pageGoto.value = ''; refs.pageGoto.blur(); }
+                const n = (e.key === 'Enter') ? parseInt(refs.pageGoto.value, 10) : NaN;
+                if (!isNaN(n)) gotoPage(n);
+                syncPageInput();   // invalid input and a cancelled jump revert
+                refs.pageGoto.blur();
             });
         }
 
@@ -1753,6 +1849,11 @@
             if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
                 e.preventDefault();
                 if (refs.btnSave && !refs.btnSave.disabled) saveAll();
+                return;
+            }
+            if (e.key === 'Escape' && openMenu) {
+                e.preventDefault();
+                closeDropdown(true);
                 return;
             }
             if (e.key === 'Escape' && entityPopover && !entityPopover.hidden) {
@@ -1767,14 +1868,19 @@
             else if (e.key === 'End')        { e.preventDefault(); gotoPage(state.doc ? (state.doc.page_count || 1) : 1); }
         });
 
-        refs.btnImageEdit.addEventListener('click', () => setImageEdit(!state.imageEdit));
-        refs.btnEditOcr.addEventListener('click', () => toggleEdit('ocr'));
-        refs.btnEditXml.addEventListener('click', () => toggleEdit('xml'));
-        if (refs.btnMarkup) refs.btnMarkup.addEventListener('click', () => {
-            state.teiMarkup = !state.teiMarkup;
-            applyTeiMarkup();
+        // View + edit dropdowns (same handlers as the buttons they replace)
+        if (refs.btnViewMenu) refs.btnViewMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleDropdown(refs.btnViewMenu, refs.viewMenu);
         });
-        if (refs.btnEntities) refs.btnEntities.addEventListener('click', () => setEntityMode(!state.entityMode));
+        refs.viewItems.forEach(item =>
+            item.addEventListener('click', () => setView(item.getAttribute('data-view'))));
+        if (refs.btnEditMenu) refs.btnEditMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleDropdown(refs.btnEditMenu, refs.editMenu);
+        });
+        refs.editItems.forEach(item =>
+            item.addEventListener('click', () => toggleEditMode(item.getAttribute('data-edit'))));
 
         // Entity mentions open the popover (click and keyboard); delegated, the text panel
         // is re-rendered on every page change.
@@ -1794,12 +1900,15 @@
             showEntityPopover(el);
         });
         refs.textBody.addEventListener('scroll', () => closeEntityPopover(false), { passive: true });
-        window.addEventListener('resize', () => closeEntityPopover(false));
-        refs.textSourceBtns.forEach(b => b.addEventListener('click', () => setTextSource(b.getAttribute('data-text-source'))));
+        // The menus are placed by hand, so a resize invalidates their position.
+        window.addEventListener('resize', () => { closeEntityPopover(false); closeDropdown(); });
 
         // Save (all streams directly to repo) + Export dropdown (single-file download)
         if (refs.btnSave) refs.btnSave.addEventListener('click', saveAll);
-        if (refs.btnExportMenu) refs.btnExportMenu.addEventListener('click', (e) => { e.stopPropagation(); toggleExportMenu(); });
+        if (refs.btnExportMenu) refs.btnExportMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleDropdown(refs.btnExportMenu, refs.exportMenu);
+        });
         refs.btnDlLayout.addEventListener('click', exportLayout);
         refs.btnDlText.addEventListener('click', exportText);
         refs.btnDlTei.addEventListener('click', exportTei);

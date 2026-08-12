@@ -185,43 +185,12 @@
   font-size: var(--h-xs);
   padding: 3px 8px;
 }
-.page-info {
-  font-family: var(--h-font-mono);
-  font-size: var(--h-sm);
-  min-width: 56px;
-  text-align: center;
-  color: var(--h-text-secondary);
-}
-
-.toolbar__mode {
-  display: inline-flex;
-  gap: 2px;
-  background: var(--h-bg-alt);
-  padding: 3px;
-  border-radius: var(--h-radius);
-  border: 1px solid var(--h-border);
-}
-.toolbar__mode--inline { padding: 2px; }
-.mode-btn {
-  padding: 5px 14px;
-  border: none;
-  background: transparent;
-  font-family: var(--h-font-heading);
+/* Passive reading in a toolbar (region count of the current page) */
+.toolbar__hint {
   font-size: var(--h-xs);
-  letter-spacing: var(--h-tracking-caps);
-  text-transform: uppercase;
-  color: var(--h-text-secondary);
-  cursor: pointer;
-  border-radius: var(--h-radius-sm);
-  transition: background var(--h-transition-fast), color var(--h-transition-fast);
+  color: var(--h-text-muted);
+  font-family: var(--h-font-mono);
 }
-.mode-btn:hover { background: var(--h-anthrazit-subtle); color: var(--h-text); }
-.mode-btn[aria-pressed="true"] {
-  background: var(--h-anthrazit);
-  color: var(--h-text-inverse);
-  box-shadow: var(--h-shadow-sm);
-}
-.mode-btn[aria-pressed="true"]:hover { color: var(--h-text-inverse); }
 
 /* ============================================================
    Editor-Toolbar (im Layout-Modus)
@@ -278,53 +247,13 @@
   background: var(--h-surface);
 }
 .panel--facsimile .panel__header { background: var(--h-bg-alt); }
-.panel__title {
-  font-family: var(--h-font-heading);
-  font-size: var(--h-xs);
-  letter-spacing: var(--h-tracking-caps);
-  text-transform: uppercase;
-  color: var(--h-text-muted);
-}
-.panel__hint {
-  font-size: var(--h-xs);
-  color: var(--h-text-muted);
-  font-family: var(--h-font-mono);
-}
 
-/* Header-Actions Container: rechts ausgerichtet, gruppiert Source-Switch + Edit-Toggle */
+/* Rechts ausgerichtete Gruppe im Panel-Header (Edit-Dropdown) */
 .panel__header-actions {
   margin-left: auto;
   display: flex;
   align-items: center;
   gap: var(--h-space-sm);
-}
-
-/* Edit-Toggle pro Panel (E60): klein, anthrazit-aktiv */
-.panel__edit-toggle {
-  padding: 4px 12px;
-  border: 1px solid var(--h-border);
-  background: transparent;
-  font-family: var(--h-font-heading);
-  font-size: var(--h-xs);
-  letter-spacing: var(--h-tracking-caps);
-  text-transform: uppercase;
-  color: var(--h-text-secondary);
-  cursor: pointer;
-  border-radius: var(--h-radius-sm);
-  transition: background var(--h-transition-fast), color var(--h-transition-fast), border-color var(--h-transition-fast);
-}
-.panel__edit-toggle:hover {
-  background: var(--h-anthrazit-subtle);
-  color: var(--h-text);
-}
-.panel__edit-toggle[aria-pressed="true"] {
-  background: var(--h-anthrazit);
-  color: var(--h-text-inverse);
-  border-color: var(--h-anthrazit);
-}
-.panel__edit-toggle[aria-pressed="true"]:hover {
-  background: var(--h-anthrazit-light);
-  color: var(--h-text-inverse);
 }
 .panel__body {
   flex: 1;
@@ -368,10 +297,6 @@
 }
 .facsimile__overlay.editing { pointer-events: auto; cursor: default; touch-action: none; }
 
-/* Gehe-zu-Seite-Feld in der Seitennavigation */
-.page-goto { width: 58px; text-align: center; }
-.page-goto::-webkit-outer-spin-button,
-.page-goto::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .empty__retry { margin-top: var(--h-space-sm); }
 .facsimile__overlay.creating { cursor: crosshair; }
 .facsimile__overlay.creating .region { pointer-events: none; }
@@ -1002,21 +927,21 @@ a.tei__ref { color: var(--h-preussischblau); }
 /* Speichern: primaer (Ziegelrot); dezenter Ring, solange Aenderungen ungespeichert sind. */
 #btn-save.btn--dirty { box-shadow: 0 0 0 3px var(--h-ziegelrot-subtle); }
 
-/* Export-Dropdown */
-.export-wrap { position: relative; }
-.export-menu {
-  position: absolute;
-  top: calc(100% + 4px);
-  right: 0;
+/* ---- Dropdown-Menue: ein Bauteil fuer Export, Panel-Ansicht und Edit-Modus ----
+   position:fixed (Koordinaten aus positionDropdown()), weil .panel overflow:hidden traegt
+   und ein absolut positioniertes Menue im Panel-Header abgeschnitten wuerde. */
+.menu-wrap { display: inline-flex; align-items: center; }
+.menu {
+  position: fixed;
   z-index: 50;
-  min-width: 210px;
+  min-width: 200px;
   padding: 6px;
   background: var(--h-paper);
   border: 1px solid var(--h-border);
   border-radius: var(--h-radius);
   box-shadow: var(--h-shadow-md);
 }
-.export-menu__label {
+.menu__label {
   font-family: var(--h-font-heading);
   font-size: var(--h-xs);
   letter-spacing: var(--h-tracking-caps);
@@ -1024,7 +949,7 @@ a.tei__ref { color: var(--h-preussischblau); }
   color: var(--h-text-muted);
   padding: 4px 8px 6px;
 }
-.export-menu__item {
+.menu__item {
   display: block;
   width: 100%;
   text-align: left;
@@ -1037,23 +962,42 @@ a.tei__ref { color: var(--h-preussischblau); }
   cursor: pointer;
   border-radius: var(--h-radius-sm);
 }
-.export-menu__item:hover:not(:disabled) { background: var(--h-bg-alt); }
-.export-menu__item:disabled { color: var(--h-text-muted); cursor: not-allowed; }
-.export-menu__sep { height: 1px; background: var(--h-border); margin: 6px 4px; }
+.menu__item:hover:not(:disabled) { background: var(--h-bg-alt); }
+.menu__item:disabled { color: var(--h-text-muted); cursor: not-allowed; }
+/* Aktiver Eintrag und aktiver Menue-Knopf: Anthrazit-Flaeche mit inverser Schrift,
+   die Aktiv-Sprache der frueheren Panel-Toggles. */
+.menu__item--on { background: var(--h-anthrazit); color: var(--h-text-inverse); }
+.menu__item--on:hover:not(:disabled) { background: var(--h-anthrazit-light); }
+.menu-btn--on {
+  background: var(--h-anthrazit);
+  border-color: var(--h-anthrazit);
+  color: var(--h-text-inverse);
+}
+.menu-btn--on:hover {
+  background: var(--h-anthrazit-light);
+  border-color: var(--h-anthrazit-light);
+  color: var(--h-text-inverse);
+}
 
-/* Seitennavigation im Faksimile-Panel-Header (statt in der Doc-Subbar) */
+/* Seitennavigation im Faksimile-Panel-Header: die aktuelle Seitenzahl IST das Sprungfeld. */
 .page-nav {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  margin-right: var(--h-space-sm);
 }
-.page-nav .page-info {
+.page-goto {
+  width: 3.4em;
+  padding: 0.25em 0.3em;
+  font-family: var(--h-font-mono);
   font-size: var(--h-xs);
-  color: var(--h-text-secondary);
-  min-width: 3.6em;
   text-align: center;
+}
+.page-nav__total {
+  font-family: var(--h-font-mono);
+  font-size: var(--h-xs);
+  color: var(--h-text-muted);
   white-space: nowrap;
+  margin-right: 2px;
 }
 
 /* ---- Info-Modal (einmalige Erklaerung beim ersten Repo-Verbinden) ---- */

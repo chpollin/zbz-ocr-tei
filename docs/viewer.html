@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css?v=7">
   <link rel="stylesheet" href="assets/css/base.css?v=7">
-  <link rel="stylesheet" href="assets/css/viewer.css?v=20">
+  <link rel="stylesheet" href="assets/css/viewer.css?v=21">
   <script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/openseadragon.min.js"></script>
 </head>
 <body class="viewer-body">
@@ -54,14 +54,14 @@
           </button>
           <input class="input identity-input" type="text" id="identity-input" maxlength="12" placeholder="Initials" autocomplete="off" aria-label="Editor initials" hidden>
           <button class="btn btn--sm btn--primary" id="btn-save" title="Save all changes (layout, text, workflow status) directly into the connected repo folder" disabled>Save</button>
-          <div class="export-wrap">
+          <div class="menu-wrap">
             <button class="btn btn--sm" id="btn-export-menu" type="button" aria-haspopup="true" aria-expanded="false" title="Download individual files / connect repo folder" disabled>Export &#9662;</button>
-            <div class="export-menu" id="export-menu" role="menu" hidden>
-              <div class="export-menu__label">Single export (download)</div>
-              <button class="export-menu__item" id="btn-download-layout" type="button" role="menuitem" disabled>Layout (page) &darr;</button>
-              <button class="export-menu__item" id="btn-download-text" type="button" role="menuitem" disabled>Text (page) &darr;</button>
-              <button class="export-menu__item" id="btn-download-tei" type="button" role="menuitem" disabled>TEI (final) &darr;</button>
-              <button class="export-menu__item" id="btn-download-manifest" type="button" role="menuitem" disabled>Manifest &darr;</button>
+            <div class="menu menu--right" id="export-menu" role="menu" hidden>
+              <div class="menu__label">Single export (download)</div>
+              <button class="menu__item" id="btn-download-layout" type="button" role="menuitem" disabled>Layout (page) &darr;</button>
+              <button class="menu__item" id="btn-download-text" type="button" role="menuitem" disabled>Text (page) &darr;</button>
+              <button class="menu__item" id="btn-download-tei" type="button" role="menuitem" disabled>TEI (final) &darr;</button>
+              <button class="menu__item" id="btn-download-manifest" type="button" role="menuitem" disabled>Manifest &darr;</button>
             </div>
           </div>
         </div>
@@ -91,6 +91,8 @@
             <label class="region-coords__field"><span>W</span><input class="input region-coords__input" type="number" step="0.1" min="0.5" max="100" id="rc-w" disabled></label>
             <label class="region-coords__field"><span>H</span><input class="input region-coords__input" type="number" step="0.1" min="0.5" max="100" id="rc-h" disabled></label>
           </div>
+          <div class="toolbar__divider"></div>
+          <span class="toolbar__hint" id="region-count"></span>
         </div>
       </div>
     </div>
@@ -103,18 +105,14 @@
 
         <section class="panel panel--facsimile" id="panel-image" aria-label="Facsimile with layout overlay">
           <div class="panel__header">
-            <span class="panel__title">Facsimile</span>
-            <span class="panel__hint" id="region-count"></span>
-            <div class="panel__header-actions">
-              <div class="page-nav" role="group" aria-label="Page navigation">
-                <button class="btn btn--sm btn--icon" id="btn-prev" title="Previous page (arrow left)" disabled>&blacktriangleleft;</button>
-                <span class="page-info" id="page-info">&mdash; / &mdash;</span>
-                <button class="btn btn--sm btn--icon" id="btn-next" title="Next page (arrow right)" disabled>&blacktriangleright;</button>
-                <input class="input page-goto" id="page-goto" type="number" min="1" inputmode="numeric"
-                       aria-label="Go to page" title="Go to page (Enter jumps; Home/End = first/last page)" placeholder="p." disabled>
-              </div>
-              <button class="panel__edit-toggle" id="btn-image-edit" aria-pressed="false"
-                      title="Edit layout (bounding boxes, reading order)">Edit layout</button>
+            <div class="page-nav" role="group" aria-label="Page navigation">
+              <button class="btn btn--sm btn--icon" id="btn-prev" title="Previous page (arrow left)" disabled>&blacktriangleleft;</button>
+              <input class="input page-goto" id="page-goto" type="text" inputmode="numeric" autocomplete="off"
+                     aria-label="Page number, type a number and press Enter to jump"
+                     title="Current page. Type a number and press Enter to jump (arrow keys page, Home/End = first/last page)"
+                     value="&mdash;" disabled>
+              <span class="page-nav__total" id="page-total">/ &mdash;</span>
+              <button class="btn btn--sm btn--icon" id="btn-next" title="Next page (arrow right)" disabled>&blacktriangleright;</button>
             </div>
           </div>
           <div class="panel__body" id="image-body">
@@ -126,21 +124,33 @@
 
         <section class="panel panel--text" id="panel-text" aria-label="Transcription + TEI">
           <div class="panel__header">
-            <span class="panel__title" id="text-panel-title">Transcription</span>
-            <div class="panel__header-actions">
-              <div role="group" aria-label="Text source" class="toolbar__mode toolbar__mode--inline">
-                <button class="mode-btn" data-text-source="ocr" aria-pressed="true"  title="Raw OCR text (Mistral)">OCR</button>
-                <button class="mode-btn" data-text-source="tei" aria-pressed="false" title="TEI rendered as reading view (read-only)">Rendered</button>
-                <button class="mode-btn" data-text-source="xml" aria-pressed="false" title="TEI-XML source of the current page; the full document loads on request">TEI-XML</button>
+            <div class="menu-wrap">
+              <button class="btn btn--sm" id="btn-view-menu" type="button" aria-haspopup="true" aria-expanded="false"
+                      title="Choose what this panel shows">View: OCR &#9662;</button>
+              <div class="menu" id="view-menu" role="menu" aria-label="Panel view" hidden>
+                <button class="menu__item" type="button" role="menuitemradio" aria-checked="true" data-view="ocr"
+                        title="Raw OCR text of this page (Mistral)">OCR</button>
+                <button class="menu__item" type="button" role="menuitemradio" aria-checked="false" data-view="text"
+                        title="TEI rendered as a reading view">Text</button>
+                <button class="menu__item" type="button" role="menuitemradio" aria-checked="false" data-view="markup"
+                        title="Reading view with annotation highlighting (entities, foreign text, footnotes, editorial interventions) and legend">Text + markup</button>
+                <button class="menu__item" type="button" role="menuitemradio" aria-checked="false" data-view="entities"
+                        title="GND entity preview of this document (read-only inspection layer)">Entities</button>
+                <button class="menu__item" type="button" role="menuitemradio" aria-checked="false" data-view="xml"
+                        title="TEI-XML source; the current page by default, the full document on request">XML</button>
               </div>
-              <button class="panel__edit-toggle" id="btn-markup" aria-pressed="false" disabled
-                      title="Highlight annotations in the rendered view (entities, foreign text, footnotes, editorial interventions)">Markup</button>
-              <button class="panel__edit-toggle" id="btn-entities" aria-pressed="false" disabled
-                      title="GND entity preview of this document (read-only inspection layer)">Entities</button>
-              <button class="panel__edit-toggle" id="btn-edit-ocr" aria-pressed="false"
-                      title="Correct the raw OCR text of this page">Edit OCR</button>
-              <button class="panel__edit-toggle" id="btn-edit-xml" aria-pressed="false"
-                      title="Edit the TEI-XML source (whole document)">Edit XML</button>
+            </div>
+            <div class="menu-wrap panel__header-actions">
+              <button class="btn btn--sm" id="btn-edit-menu" type="button" aria-haspopup="true" aria-expanded="false"
+                      title="Switch an editing mode on or off">Edit &#9662;</button>
+              <div class="menu menu--right" id="edit-menu" role="menu" aria-label="Editing mode" hidden>
+                <button class="menu__item" type="button" role="menuitemcheckbox" aria-checked="false" data-edit="layout"
+                        title="Edit layout on the facsimile (bounding boxes, reading order)">Layout</button>
+                <button class="menu__item" type="button" role="menuitemcheckbox" aria-checked="false" data-edit="ocr"
+                        title="Correct the raw OCR text of this page">OCR</button>
+                <button class="menu__item" type="button" role="menuitemcheckbox" aria-checked="false" data-edit="xml"
+                        title="Edit the TEI-XML source (loads the full document)">XML</button>
+              </div>
             </div>
           </div>
           <div class="panel__body panel__body--paper" id="text-body">
@@ -194,6 +204,6 @@
   <script src="assets/js/fs-access.js?v=5"></script>
   <script src="assets/js/layout-editor.js?v=4"></script>
   <script src="assets/js/transcription-editor.js?v=4"></script>
-  <script src="assets/js/viewer.js?v=24"></script>
+  <script src="assets/js/viewer.js?v=25"></script>
 </body>
 </html>
