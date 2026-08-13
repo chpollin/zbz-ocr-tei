@@ -44,6 +44,7 @@ from scripts.tei.pb_split import BODY_INNER_RE, PB_RE
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
 VARIANT_REVIEW_PATH = DATA_DIR / "entities" / "variant_review.json"
+MARKING_POLICY_PATH = DATA_DIR / "entities" / "marking_policy.json"
 LEGACY_MENTIONS_PATH = DATA_DIR / "entities" / "legacy_mentions.json"
 REPORT_PATH = AUDIT_OUTPUT_DIR / "entity_corpus_scan.json"
 
@@ -286,6 +287,8 @@ def main() -> None:
                         help="Old mention index (optional, used when present)")
     parser.add_argument("--review", type=Path, default=VARIANT_REVIEW_PATH,
                         help="Variant review verdicts (optional, used when present)")
+    parser.add_argument("--policy", type=Path, default=MARKING_POLICY_PATH,
+                        help="Markierungspolitik (JSON, optional)")
     parser.add_argument("--src-dir", type=Path, default=TEI_FINAL_DIR,
                         help="Source TEI directory (read only)")
     args = parser.parse_args()
@@ -295,8 +298,9 @@ def main() -> None:
     doc_paths = resolve_docs(args.src_dir, _parse_doc_ids(args.docs) if args.docs else None)
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
     review = args.review if args.review.exists() else None
+    policy = args.policy if args.policy.exists() else None
     lexicon = build_lexicon(args.entities, args.cache, legacy_path=legacy,
-                            review_path=review)
+                            review_path=review, policy_path=policy)
     sources = {
         "entities": str(args.entities),
         "cache": str(args.cache) if Path(args.cache).exists() else None,

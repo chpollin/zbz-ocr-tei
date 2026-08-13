@@ -53,7 +53,8 @@ def _cache_entry(preferred: str | None = None, variants: tuple[str, ...] = ()) -
     }
 
 
-def _build(tmp_path, persons=(), orgs=(), works=(), cache=None, legacy=None, review=None):
+def _build(tmp_path, persons=(), orgs=(), works=(), cache=None, legacy=None, review=None,
+           policy=None):
     """Write the mini fixtures to tmp_path and build the lexicon from them."""
     entities_path = tmp_path / "all_entities.json"
     entities_path.write_text(
@@ -80,7 +81,8 @@ def _build(tmp_path, persons=(), orgs=(), works=(), cache=None, legacy=None, rev
     if review is not None:
         review_path = tmp_path / "variant_review.json"
         review_path.write_text(json.dumps(review, ensure_ascii=False), encoding="utf-8")
-    return em.build_lexicon(entities_path, cache_path, legacy_path, review_path=review_path)
+    return em.build_lexicon(entities_path, cache_path, legacy_path, review_path=review_path,
+                            policy_path=policy)
 
 
 def _review(persons=None, orgs=None, works=None):
@@ -2006,3 +2008,225 @@ def test_a_hyphen_extension_never_invents_a_surname(tmp_path):
     cands = em.find_candidates(xml, lexicon)
     assert [c["surface"] for c in cands] == ["Karl Jaspers", "Jaspers"]
     assert cands[1]["rule"] == "anchored-surname:suspect"
+
+
+# --- operator marking policy (data/entities/marking_policy.json) --------------------
+
+
+def _policy(tmp_path, anchor_free=(), held_out=(), drop=(), corroborate=(), extra=None):
+    """Minimal marking_policy.json payload; anchor_free items are (gid, keys) pairs."""
+    payload = {
+        "note": "test fixture",
+        "decided": "2026-08-13",
+        "anchor_free_surnames": [
+            {"gid": gid, "label": "fixture", "keys": list(keys), "unanchored_at_decision": 1}
+            for gid, keys in anchor_free
+        ],
+        "held_out_surnames": [{"gid": gid, "reason": "test"} for gid in held_out],
+        "work_titles": {
+            "drop_from_scope": [{"gid": gid, "candidates_at_decision": 1} for gid in drop],
+            "require_typographic_corroboration": [
+                {"gid": gid, "candidates_at_decision": 1} for gid in corroborate
+            ],
+        },
+    }
+    if extra is not None:
+        payload.update(extra)
+    path = tmp_path / "marking_policy.json"
+    path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+    return path
+
+
+def _marcel_released(tmp_path, **kwargs):
+    return _build(tmp_path, persons=PERSONS, works=WORKS,
+                  policy=_policy(tmp_path, anchor_free=[("118577190", ["Marcel"])]),
+                  **kwargs)
+
+
+# --- policy validation (trust boundary) --------------------------------------------
+
+
+def test_policy_reaches_the_lexicon(tmp_path):
+    lexicon = _marcel_released(tmp_path)
+    assert lexicon["policy"]["anchor_free"] == {"Marcel": frozenset({"118577190"})}
+    assert lexicon["policy"]["source"].endswith("marking_policy.json")
+
+
+def test_policy_with_an_unknown_gid_fails_fast(tmp_path):
+    path = _policy(tmp_path, anchor_free=[("999999999", ["Nobody"])])
+    with pytest.raises(ValueError, match="999999999"):
+        _build(tmp_path, persons=PERSONS, policy=path)
+
+
+def test_policy_with_a_malformed_entry_fails_fast(tmp_path):
+    path = tmp_path / "marking_policy.json"
+    path.write_text(
+        json.dumps({"anchor_free_surnames": [{"gid": "118577190", "keys": "Marcel"}]}),
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="keys"):
+        _build(tmp_path, persons=PERSONS, policy=path)
+
+
+def test_policy_with_a_gid_in_two_buckets_fails_fast(tmp_path):
+    path = _policy(tmp_path, anchor_free=[("118594893", ["Platon"])], held_out=["118594893"])
+    with pytest.raises(ValueError, match="118594893"):
+        _build(tmp_path, persons=PERSONS, policy=path)
+
+
+def test_policy_with_an_unknown_bucket_fails_fast(tmp_path):
+    path = _policy(tmp_path, extra={"anchor_free_surname": []})
+    with pytest.raises(ValueError, match="anchor_free_surname"):
+        _build(tmp_path, persons=PERSONS, policy=path)
+
+
+def test_held_out_surname_is_validated_and_releases_nothing(tmp_path):
+    lexicon = _build(tmp_path, persons=PERSONS,
+                     policy=_policy(tmp_path, held_out=["118594893"]))
+    assert lexicon["policy"]["held_out"] == frozenset({"118594893"})
+    cands = em.find_candidates(_tei("<p>Schon Platon wusste es.</p>"), lexicon)
+    assert [(c["rule"], c["tier"]) for c in cands] == [("bare-surname", 2)]
+
+
+# --- decision 1: anchor-free surnames ----------------------------------------------
+
+
+def test_released_surname_reaches_tier1_without_a_document_anchor(tmp_path):
+    lexicon = _marcel_released(tmp_path)
+    cands = em.find_candidates(_tei("<p>Pour Marcel, la question reste.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["Marcel"]
+    assert cands[0]["rule"] == "anchor-free-surname"
+    assert cands[0]["tier"] == 1
+    assert cands[0]["gid"] == "118577190"
+
+
+def test_unreleased_surname_still_needs_its_anchor(tmp_path):
+    lexicon = _marcel_released(tmp_path)
+    cands = em.find_candidates(_tei("<p>Schon Platon wusste es.</p>"), lexicon)
+    assert [(c["rule"], c["tier"]) for c in cands] == [("bare-surname", 2)]
+
+
+def test_document_anchor_outranks_the_release(tmp_path):
+    lexicon = _marcel_released(tmp_path)
+    xml = _tei("<p>Gabriel Marcel schrieb.</p><p>Pour Marcel, la question reste.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["rule"] for c in cands] == ["full-name", "anchored-surname"]
+    assert all(c["tier"] == 1 for c in cands)
+
+
+def test_release_covers_only_the_listed_keys(tmp_path):
+    # a second surname key of the same entity stays unreleased, and the released hit
+    # is no document anchor for it
+    lexicon = _build(
+        tmp_path,
+        persons=[_curated(_person("118577190", "Marcel, Gabriel"), "Marcellus")],
+        policy=_policy(tmp_path, anchor_free=[("118577190", ["Marcel"])]),
+    )
+    assert "Marcellus" in lexicon["surnames"]
+    xml = _tei("<p>Pour Marcel, la question reste.</p><p>Und Marcellus schwieg.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [(c["surface"], c["rule"], c["tier"]) for c in cands] == [
+        ("Marcel", "anchor-free-surname", 1),
+        ("Marcellus", "bare-surname", 2),
+    ]
+
+
+def test_released_surname_keeps_the_suspicion_demotion(tmp_path):
+    lexicon = _marcel_released(tmp_path)
+    cands = em.find_candidates(_tei("<p>Der Marcel-Kreis tagte.</p>"), lexicon)
+    assert [(c["rule"], c["tier"]) for c in cands] == [("anchor-free-surname:suspect", 2)]
+
+
+def test_released_surname_keeps_the_plain_bibl_demotion(tmp_path):
+    lexicon = _marcel_released(tmp_path)
+    cands = em.find_candidates(_tei("<p><bibl>Marcel, Paris 1949.</bibl></p>"), lexicon)
+    assert [(c["rule"], c["tier"]) for c in cands] == [
+        ("anchor-free-surname:in-plain-bibl", 2)
+    ]
+
+
+def test_released_surname_keeps_the_figure_demotion(tmp_path):
+    lexicon = _marcel_released(tmp_path)
+    xml = _tei("<figure><head>Marcel im Gespraech.</head></figure>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [(c["rule"], c["tier"]) for c in cands] == [("anchor-free-surname:in-figure", 2)]
+
+
+def test_released_surname_keeps_the_running_head_demotion(tmp_path):
+    lexicon = _marcel_released(tmp_path)
+    pages = [
+        "<p>Marcel und die Existenz</p>\n<p>Der erste Absatz handelt von Philosophie.</p>",
+        "<p>Marcel und die Existenz</p>\n<p>Ein zweiter Gedanke folgt zur Freiheit.</p>",
+        "<p>Marcel und die Existenz</p>\n<p>Im dritten Teil geht es um Wahrheit.</p>",
+    ]
+    cands = em.find_candidates(_paged(pages), lexicon)
+    assert [(c["rule"], c["tier"]) for c in cands] == [
+        ("anchor-free-surname:running-head", 2)
+    ] * 3
+
+
+# --- decision 2: generic work titles -----------------------------------------------
+
+
+def test_dropped_work_title_produces_no_candidate(tmp_path):
+    lexicon = _build(tmp_path, persons=PERSONS, works=WORKS,
+                     policy=_policy(tmp_path, drop=["4006406-2"]))
+    assert "Bibel" not in lexicon["forms"]
+    assert "4006406-2" in lexicon["entries"]
+    assert em.find_candidates(_tei("<p>In der Bibel steht es.</p>"), lexicon) == []
+    xml = _tei('<p>In der <hi rendition="#i">Bibel</hi> steht es.</p>')
+    assert em.find_candidates(xml, lexicon) == []
+
+
+def test_dropping_a_work_leaves_the_other_bearer_of_its_surface(tmp_path):
+    lexicon = _build(
+        tmp_path,
+        persons=[_person("118587943", "Nietzsche, Friedrich")],
+        works=[_work("1078795312", "Nietzsche")],
+        policy=_policy(tmp_path, drop=["1078795312"]),
+    )
+    cands = em.find_candidates(_tei("<p>Bei Nietzsche steht es anders.</p>"), lexicon)
+    assert [(c["gid"], c["rule"], c["tier"]) for c in cands] == [
+        ("118587943", "bare-surname", 2)
+    ]
+
+
+def test_corroboration_drops_a_one_word_title_without_typography(tmp_path):
+    lexicon = _build(tmp_path, persons=PERSONS, works=WORKS,
+                     policy=_policy(tmp_path, corroborate=["4006406-2"]))
+    assert em.find_candidates(_tei("<p>In der Bibel steht es.</p>"), lexicon) == []
+
+
+@pytest.mark.parametrize("body", [
+    '<p>In der <hi rendition="#i">Bibel</hi> steht es.</p>',
+    "<p>In der «Bibel» steht es.</p>",
+    "<p>Er las seine Bibel laut.</p>",
+])
+def test_corroboration_keeps_a_typographically_framed_one_word_title(tmp_path, body):
+    lexicon = _build(tmp_path, persons=PERSONS, works=WORKS,
+                     policy=_policy(tmp_path, corroborate=["4006406-2"]))
+    cands = em.find_candidates(_tei(body), lexicon)
+    assert [(c["surface"], c["rule"], c["evidence"]) for c in cands] == [
+        ("Bibel", "short-title", "typographic")
+    ]
+
+
+def test_corroboration_binds_the_multi_word_title_of_the_same_entry(tmp_path):
+    lexicon = _build(tmp_path, persons=PERSONS, works=WORKS,
+                     policy=_policy(tmp_path, corroborate=["4558181-2"]))
+    plain = _tei("<p>Er las Allgemeine Psychopathologie erneut.</p>")
+    assert em.find_candidates(plain, lexicon) == []
+    framed = _tei('<p>Er las <hi rendition="#i">Allgemeine Psychopathologie</hi> erneut.</p>')
+    cands = em.find_candidates(framed, lexicon)
+    assert [(c["surface"], c["rule"], c["tier"], c["evidence"]) for c in cands] == [
+        ("Allgemeine Psychopathologie", "work-title", 1, "typographic")
+    ]
+
+
+def test_a_work_outside_the_policy_keeps_its_candidates(tmp_path):
+    lexicon = _build(tmp_path, persons=PERSONS, works=WORKS,
+                     policy=_policy(tmp_path, corroborate=["4006406-2"]))
+    cands = em.find_candidates(_tei("<p>Er las Allgemeine Psychopathologie erneut.</p>"),
+                               lexicon)
+    assert [(c["rule"], c["tier"]) for c in cands] == [("work-title", 1)]
+    assert "evidence" not in cands[0]

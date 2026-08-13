@@ -29,110 +29,14 @@
         "context": "professeur de théologie dogmatique à la Faculté de Théologie de l'Université de Genève. On trouvera",
         "text": "Faculté de Théologie",
         "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "issance, au nom de la Société suisse de Philosophie, aux orateurs, au public, venu nombreux",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
       }
     ],
     "3": [
       {
-        "gid": "118540238",
-        "category": "person",
-        "surface": "Goethe",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Goethe",
-        "form_source": "surname-index",
-        "context": "chen Materialismus; Lessing, Jacobi und Goethe; Kant, Fichte, Hegel und Feuerbach; die",
-        "text": "Goethe",
-        "occurrence": 1
-      },
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "erialismus; Lessing, Jacobi und Goethe; Kant, Fichte, Hegel und Feuerbach; die russi",
-        "text": "Kant",
-        "occurrence": 1
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "ssing, Jacobi und Goethe; Kant, Fichte, Hegel und Feuerbach; die russischen revolutio",
-        "text": "Hegel",
-        "occurrence": 1
-      },
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "bekannten Definition der Aufklärung bei Kant: «Aufklärung ist der Ausgang des Mensch",
-        "text": "Kant",
-        "occurrence": 2
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "Range, nämlich dem Loslösungsprozeß der Philosophie von der Theologie und dem Verschmelzung",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "ologie und dem Verschmelzungsprozeß der Philosophie mit der Wissenschaft. Wir müssen uns au",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
-      },
-      {
         "gid": "118524844",
         "category": "person",
         "surface": "Descartes",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Descartes",
         "form_source": "surname-index",
@@ -144,7 +48,7 @@
         "gid": "118524844",
         "category": "person",
         "surface": "Descartes",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Descartes",
         "form_source": "surname-index",
@@ -154,22 +58,6 @@
       }
     ],
     "4": [
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "he Trennung von Wissen und Glauben, von Philosophie und Theologie; es ging um eine historis",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
       {
         "gid": "4006406-2",
         "category": "work",
@@ -194,239 +82,47 @@
         "context": "ein Erlebnis sein (z. B. bei Moses, bei Christus, bei Mohammed), wer ihrer nicht teilhaf",
         "text": "Christus",
         "occurrence": 1
-      },
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "icht teilhaftig geworden ist (wie z. B. Kant), vermag sich darunter nichts Rechtes v",
-        "text": "Kant",
-        "occurrence": 1
-      },
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "efreit habenden Individuums formulierte Kant seine drei berümten Fragen: Was kann ic",
-        "text": "Kant",
-        "occurrence": 2
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "rgangene geistige Landschaft. Sie umgab Marx, als er aufwuchs. Damit soll gesagt sei",
-        "text": "Marx",
-        "occurrence": 1
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "r aufwuchs. Damit soll gesagt sein, daß Marx den Atheismus nicht zu erfinden braucht",
-        "text": "Marx",
-        "occurrence": 2
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "klung der vorhergegangenen bürgerlichen Philosophie. Wenn Marx (1843/44) die Kritik der Rel",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "gangenen bürgerlichen Philosophie. Wenn Marx (1843/44) die Kritik der Religion für D",
-        "text": "Marx",
-        "occurrence": 3
       }
     ],
     "5": [
       {
-        "gid": "118578537",
+        "gid": "118587943",
         "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "k der Politik» verwandelt werden, sagte Marx. Damit wollen wir die philosophiehistor",
-        "text": "Marx",
-        "occurrence": 1
-      },
-      {
-        "gid": "1248933664",
-        "category": "work",
-        "surface": "Antwort",
-        "rule": "work-title:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Antwort",
-        "form_source": "headword",
-        "context": "zudenken, ob dein Verhalten je nach der Antwort auf diese Frage sich ändern würde. Würd",
-        "text": "Antwort",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "Gegenüberstellung von spätbürgerlicher Philosophie und dialektischem Materialismus hinsich",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "Erbschaft auch bei der spätbürgerlichen Philosophie auf Interesse gestoßen ist. Ich nenne z",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "chst wieder einige Namen: Schopenhauer, Kierkegaard, Nietzsche, Sartre. Schopenhauer, der d",
-        "text": "Kierkegaard",
-        "occurrence": 1
-      },
-      {
-        "gid": "1078795312",
-        "category": "work",
         "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
+        "rule": "bare-surname",
+        "alternatives": [],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "inige Namen: Schopenhauer, Kierkegaard, Nietzsche, Sartre. Schopenhauer, der das Christen",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 1
       },
       {
-        "gid": "11860564X",
+        "gid": "118587943",
         "category": "person",
-        "surface": "Sartre",
+        "surface": "Nietzsche",
         "rule": "bare-surname",
         "alternatives": [],
-        "matched_form": "Sartre",
-        "form_source": "surname-index",
-        "context": ": Schopenhauer, Kierkegaard, Nietzsche, Sartre. Schopenhauer, der das Christentum ents",
-        "text": "Sartre",
-        "occurrence": 1
-      },
-      {
-        "gid": "1078795312",
-        "category": "work",
-        "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "r, die «Umwertung aller Werte», wie bei Nietzsche, zu einer «Übermenschlichkeit». Das ist",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 2
       },
       {
-        "gid": "1078795312",
-        "category": "work",
+        "gid": "118587943",
+        "category": "person",
         "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
+        "rule": "bare-surname",
+        "alternatives": [],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "nung von Wert, Sinn und Wünschbarkeit» (Nietzsche). Solche vermeintlich auf sich allein g",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 3
       }
     ],
     "6": [
-      {
-        "gid": "118547798",
-        "category": "person",
-        "surface": "Heidegger",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Heidegger",
-        "form_source": "surname-index",
-        "context": "lche Redeweisen anzuzeigen, wie die von Heidegger: «Das Nichts nichtet», oder auch bei Ja",
-        "text": "Heidegger",
-        "occurrence": 1
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "rlichen Individualismus geschieht durch Marx an einer Stelle, die dem Individuum erm",
-        "text": "Marx",
-        "occurrence": 2
-      },
       {
         "gid": "118530380",
         "category": "person",
@@ -438,38 +134,6 @@
         "context": "ns das vorgelebt, und das gilt auch von Engels, und das gilt auch von Lenin. Der Vorga",
         "text": "Engels",
         "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "s der Entwicklungszeit der bürgerlichen Philosophie; der dialektische und historische Mater",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "istorische Materialismus aber ist keine Philosophie der Bourgeoisie, sondern der Arbeiterkl",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
       }
     ],
     "7": [
@@ -477,53 +141,13 @@
         "gid": "118578537",
         "category": "person",
         "surface": "Marx",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Marx",
         "form_source": "surname-index",
         "context": "t der Marxismus nichts gemeinsam. Indem Marx Philosophie und Arbeiterbewegung mitein",
         "text": "Marx",
         "occurrence": 2
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "Marxismus nichts gemeinsam. Indem Marx Philosophie und Arbeiterbewegung miteinander verban",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "ur mittels der Gesellschaft vereinzeln. Marx hat das Individuum gelehrt, sich in Gem",
-        "text": "Marx",
-        "occurrence": 3
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "prung heißt Arbeit. Die Arbeit ist nach Marx jener «Prozeß zwischen Mensch und Natur",
-        "text": "Marx",
-        "occurrence": 4
       },
       {
         "gid": "118555006",
@@ -538,18 +162,6 @@
         "occurrence": 1
       },
       {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "beitenden Menschen. «Ideen», so schrieb Marx, «können nie über einen alten Weltzusta",
-        "text": "Marx",
-        "occurrence": 5
-      },
-      {
         "gid": "118554735",
         "category": "person",
         "surface": "d. h.",
@@ -562,33 +174,7 @@
         "occurrence": 1
       }
     ],
-    "8": [
-      {
-        "gid": "1248933664",
-        "category": "work",
-        "surface": "Antwort",
-        "rule": "work-title:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Antwort",
-        "form_source": "headword",
-        "context": "er seinen ethischen Auftrag hatte? Die Antwort ist im bisher Gesagten enthalten. Ich k",
-        "text": "Antwort",
-        "occurrence": 1
-      }
-    ],
     "10": [
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "Atheist geblieben war, aber inzwischen Marx und Lenin studiert hatte), der todkrank",
-        "text": "Marx",
-        "occurrence": 1
-      },
       {
         "gid": "118557106",
         "category": "person",
@@ -659,30 +245,14 @@
     ],
     "13": [
       {
-        "gid": "118578537",
+        "gid": "118587943",
         "category": "person",
-        "surface": "Marx",
+        "surface": "Nietzsche",
         "rule": "bare-surname",
         "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "message biblique. D'un côté, Feuerbach, Marx, Nietzsche, Freud dénoncent les complic",
-        "text": "Marx",
-        "occurrence": 1
-      },
-      {
-        "gid": "1078795312",
-        "category": "work",
-        "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "e biblique. D'un côté, Feuerbach, Marx, Nietzsche, Freud dénoncent les complicités des ph",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 1
       },
@@ -696,42 +266,6 @@
         "form_source": "surname-index",
         "context": "D'un côté, Feuerbach, Marx, Nietzsche, Freud dénoncent les complicités des philosoph",
         "text": "Freud",
-        "occurrence": 1
-      },
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "comme celui des dieux; d'un autre côté, Kant, Hegel, Schelling et leurs successeurs",
-        "text": "Kant",
-        "occurrence": 1
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "celui des dieux; d'un autre côté, Kant, Hegel, Schelling et leurs successeurs tentent",
-        "text": "Hegel",
-        "occurrence": 1
-      },
-      {
-        "gid": "118607057",
-        "category": "person",
-        "surface": "Schelling",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Schelling",
-        "form_source": "surname-index",
-        "context": "es dieux; d'un autre côté, Kant, Hegel, Schelling et leurs successeurs tentent de situer",
-        "text": "Schelling",
         "occurrence": 1
       }
     ],
@@ -767,13 +301,13 @@
       {
         "gid": "118557513",
         "category": "person",
-        "surface": "Jésus",
-        "rule": "bare-surname:suspect",
+        "surface": "Jésus-Christ",
+        "rule": "bare-surname",
         "alternatives": [],
-        "matched_form": "Jésus, de Nazareth",
+        "matched_form": "Jésus-Christ",
         "form_source": "cache-variant",
-        "context": "e manière exemplaire dans l'Evangile de Jésus-Christ, les Pères grecs créèrent la not",
-        "text": "Jésus",
+        "context": "e manière exemplaire dans l'Evangile de Jésus-Christ, les Pères grecs créèrent la notion de",
+        "text": "Jésus-Christ",
         "occurrence": 1
       }
     ],
@@ -781,27 +315,13 @@
       {
         "gid": "118557513",
         "category": "person",
-        "surface": "Jésus",
-        "rule": "bare-surname:suspect",
-        "alternatives": [],
-        "matched_form": "Jésus, de Nazareth",
-        "form_source": "cache-variant",
-        "context": "rent de l'enseignement et de l'œuvre de Jésus-Christ leur permit de critiquer ce qu'i",
-        "text": "Jésus",
-        "occurrence": 1
-      }
-    ],
-    "18": [
-      {
-        "gid": "118506803",
-        "category": "person",
-        "surface": "Barth",
+        "surface": "Jésus-Christ",
         "rule": "bare-surname",
         "alternatives": [],
-        "matched_form": "Barth",
-        "form_source": "surname-index",
-        "context": "ellénisation » poursuivi (à la suite de Barth d'une part, et d'autre part de l'ancien",
-        "text": "Barth",
+        "matched_form": "Jésus-Christ",
+        "form_source": "cache-variant",
+        "context": "rent de l'enseignement et de l'œuvre de Jésus-Christ leur permit de critiquer ce qu'il y ava",
+        "text": "Jésus-Christ",
         "occurrence": 1
       }
     ],
@@ -833,54 +353,14 @@
     ],
     "20": [
       {
-        "gid": "118559796",
+        "gid": "118587943",
         "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "ive? On pressent combien l'influence de Kant est sous-jacente à cette manière de pos",
-        "text": "Kant",
-        "occurrence": 1
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "it d'ailleurs sentir à travers celle de Hegel, de Marx, de Nietzsche chez les théolog",
-        "text": "Hegel",
-        "occurrence": 1
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "urs sentir à travers celle de Hegel, de Marx, de Nietzsche chez les théologiens cont",
-        "text": "Marx",
-        "occurrence": 1
-      },
-      {
-        "gid": "1078795312",
-        "category": "work",
         "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
+        "rule": "bare-surname",
+        "alternatives": [],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "r à travers celle de Hegel, de Marx, de Nietzsche chez les théologiens contemporains, abo",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 1
       }
@@ -889,13 +369,13 @@
       {
         "gid": "118557513",
         "category": "person",
-        "surface": "Jésus",
-        "rule": "bare-surname:suspect",
+        "surface": "Jésus-Christ",
+        "rule": "bare-surname",
         "alternatives": [],
-        "matched_form": "Jésus, de Nazareth",
+        "matched_form": "Jésus-Christ",
         "form_source": "cache-variant",
-        "context": "i homme, ni femme, mais tous sont un en Jésus-Christ (Gal. 3.28), là où chacun répond",
-        "text": "Jésus",
+        "context": "i homme, ni femme, mais tous sont un en Jésus-Christ (Gal. 3.28), là où chacun répond à la q",
+        "text": "Jésus-Christ",
         "occurrence": 1
       }
     ],
@@ -913,33 +393,7 @@
         "occurrence": 1
       }
     ],
-    "24": [
-      {
-        "gid": "118524844",
-        "category": "person",
-        "surface": "Descartes",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Descartes",
-        "form_source": "surname-index",
-        "context": "ême évident. C'est le cercle vicieux de Descartes: il fonde la validité des idées claires",
-        "text": "Descartes",
-        "occurrence": 1
-      }
-    ],
     "25": [
-      {
-        "gid": "118548670",
-        "category": "person",
-        "surface": "Heisenberg",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Heisenberg",
-        "form_source": "surname-index",
-        "context": "ection. Je lisais récemment un livre de Heisenberg, qui rapporte des entretiens qu'il a eu",
-        "text": "Heisenberg",
-        "occurrence": 1
-      },
       {
         "gid": "118592122",
         "category": "person",
@@ -951,32 +405,6 @@
         "context": "ens qu'il a eus avec Niels Bohr et avec Pauli: tous trois tombèrent d'accord pour dir",
         "text": "Pauli",
         "occurrence": 1
-      }
-    ],
-    "29": [
-      {
-        "gid": "1248933664",
-        "category": "work",
-        "surface": "Antwort",
-        "rule": "work-title:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Antwort",
-        "form_source": "headword",
-        "context": "Frage, emphatisch gestellt, bereits die Antwort in einem positiven Sinne enthält, ander",
-        "text": "Antwort",
-        "occurrence": 1
-      },
-      {
-        "gid": "1248933664",
-        "category": "work",
-        "surface": "Antwort",
-        "rule": "work-title:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Antwort",
-        "form_source": "headword",
-        "context": "ciété des esprits pensants. Mende : Die Antwort auf die Gottesfrage muß heute im Rahmen",
-        "text": "Antwort",
-        "occurrence": 3
       }
     ],
     "30": [
@@ -1016,22 +444,6 @@
         "context": "rschied zwischen Christen und Sokrates, d. h. zwischen Religion und Philosophie. Widm",
         "text": "d. h.",
         "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "d Sokrates, d. h. zwischen Religion und Philosophie. Widmer : Ce qui donne un sens à la par",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
       }
     ],
     "31": [
@@ -1045,46 +457,6 @@
         "form_source": "cache-variant",
         "context": "ch orientierte Frage von Kollege Gustav Müller* möchte ich hinsichtlich der zur Diskus",
         "text": "Müller",
-        "occurrence": 1
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegels",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "t einzelner Denker, z. B. Spinozas oder Hegels, mit ihrer Zeit hervorgehoben werden. N",
-        "text": "Hegels",
-        "occurrence": 1
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "t ihrer Zeit hervorgehoben werden. Nach Hegel ist die Philosophie «ihre Zeit in Gedan",
-        "text": "Hegel",
-        "occurrence": 2
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "ervorgehoben werden. Nach Hegel ist die Philosophie «ihre Zeit in Gedanken erfaßt». Warum s",
-        "evidence": "none",
-        "text": "Philosophie",
         "occurrence": 1
       },
       {

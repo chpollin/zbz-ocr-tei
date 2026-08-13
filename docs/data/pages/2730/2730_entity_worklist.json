@@ -73,94 +73,14 @@
     ],
     "6": [
       {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "57 Die Ausstrahlung der hermeneutischen Philosophie Reiner Wiehl Erfahrung und philosophisc",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "erra Hans-Georg Gadamers hermeneutische Philosophie in Italien . 177 Emilio Lledò Gedächtni",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
-      },
-      {
         "gid": "1166599876",
         "category": "person",
         "surface": "Smith",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Smith",
         "form_source": "surname-index",
         "context": "ilio Lledò Gedächtnis . 189 Christopher Smith Sichberatenlassen, Nachgiebigkeit, Vers",
-        "text": "Smith",
-        "occurrence": 1
-      }
-    ],
-    "7": [
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": ". h.c. Hans-Georg Gadamer, Emeritus für Philosophie, Am Büchsenackerhang 53, 6900 Heidelber",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "g Prof. Dr. Jeanne Hersch, Emeritus für Philosophie der Universität Basel, 14, Av. Pierre-O",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
-      }
-    ],
-    "8": [
-      {
-        "gid": "1166599876",
-        "category": "person",
-        "surface": "Smith",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Smith",
-        "form_source": "surname-index",
-        "context": ", 6900 Heidelberg Prof. Dr. Christopher Smith, 123 Market St., Apt. I, Portsmouth, NH",
         "text": "Smith",
         "occurrence": 1
       }
@@ -224,22 +144,6 @@
         "occurrence": 4
       },
       {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "öffentlicht hatte: es hieß ganz einfach Philosophie. * Rede anläßlich der Karl-Jaspers-Prei",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
         "gid": "118557106",
         "category": "person",
         "surface": "Jaspers",
@@ -281,18 +185,6 @@
         "occurrence": 1
       },
       {
-        "gid": "1248933664",
-        "category": "work",
-        "surface": "Antwort",
-        "rule": "work-title:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Antwort",
-        "form_source": "headword",
-        "context": "as Wesen seiner Ablehnung bestätigt die Antwort, die ich immer wieder auf die Frage geg",
-        "text": "Antwort",
-        "occurrence": 1
-      },
-      {
         "gid": "118557106",
         "category": "person",
         "surface": "Jaspers",
@@ -308,18 +200,14 @@
         "occurrence": 3
       },
       {
-        "gid": "1078795312",
-        "category": "work",
+        "gid": "118587943",
+        "category": "person",
         "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
+        "rule": "bare-surname",
+        "alternatives": [],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "Glaubens oder der Moralität bloßlegten: Nietzsche, Freud, Marx, – vielleicht sogar auch H",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 1
       },
@@ -336,18 +224,6 @@
         "occurrence": 1
       },
       {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "Moralität bloßlegten: Nietzsche, Freud, Marx, – vielleicht sogar auch Husserl. Bei j",
-        "text": "Marx",
-        "occurrence": 1
-      },
-      {
         "gid": "118555006",
         "category": "person",
         "surface": "Husserl",
@@ -358,74 +234,6 @@
         "context": "e, Freud, Marx, – vielleicht sogar auch Husserl. Bei jedem sucht er Hindernisse für das",
         "text": "Husserl",
         "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "ene Denken. Es ist als wäre für ihn die Philosophie der Tradition zu leicht geworden, mit i",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
-        "gid": "118524844",
-        "category": "person",
-        "surface": "Descartes",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Descartes",
-        "form_source": "surname-index",
-        "context": "eutigen Ton, ihrer quasi Zeitlosigkeit. Descartes. Kant. Und wohl nach diesem letzten Den",
-        "text": "Descartes",
-        "occurrence": 1
-      },
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": ", ihrer quasi Zeitlosigkeit. Descartes. Kant. Und wohl nach diesem letzten Denker au",
-        "text": "Kant",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "auch Jaspers, der gewiß in der modernen Philosophie als Kantianer dasteht. Die Frage nach d",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
-      },
-      {
-        "gid": "1248933664",
-        "category": "work",
-        "surface": "Antwort",
-        "rule": "work-title:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Antwort",
-        "form_source": "headword",
-        "context": "m Ausklang unseres Jahrhunderts ist die Antwort zunächst negativ. Denn was ausgesagt wi",
-        "text": "Antwort",
-        "occurrence": 2
       }
     ],
     "11": [
@@ -466,18 +274,6 @@
         "occurrence": 1
       },
       {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "lungen Freud's, in die Entlarvungen von Marx. Der Weg, der ihm allenfalls eine Mögli",
-        "text": "Marx",
-        "occurrence": 1
-      },
-      {
         "gid": "118554735",
         "category": "person",
         "surface": "d. h.",
@@ -500,22 +296,6 @@
         "context": "tehen. Es handelt sich hier zunächst um Freud's Traumdeutung; da hat man es mit dem S",
         "text": "Freud",
         "occurrence": 2
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "r die Rolle zu spielen, die in Jaspers' Philosophie der Chiffre des erlebten Scheiterns ent",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
       }
     ],
     "12": [
@@ -529,22 +309,6 @@
         "form_source": "headword",
         "context": "Teleologie zu einer einzigen Dialektik Jeanne Hersch verbindet. Und er schreibt: „Die reflex",
         "text": "Jeanne Hersch",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "bindet. Und er schreibt: „Die reflexive Philosophie soll wieder in Angriff genommen, der Um",
-        "evidence": "none",
-        "text": "Philosophie",
         "occurrence": 1
       },
       {
@@ -608,18 +372,6 @@
         "occurrence": 4
       },
       {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "st das Werk von Freud, wie auch das von Marx, nicht eine jener großen „philosophisch",
-        "text": "Marx",
-        "occurrence": 1
-      },
-      {
         "gid": "118557106",
         "category": "person",
         "surface": "Jaspers",
@@ -638,56 +390,12 @@
         "gid": "118559796",
         "category": "person",
         "surface": "Kants",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Kants, Immanuēls",
         "form_source": "cache-variant",
         "context": "zur Kritik werden kann, nicht, im Sinne Kants, einer Rechtfertigung der Wissenschaft",
         "text": "Kants",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "lsches Bewußtsein“ ist). Eine reflexive Philosophie – etwas ganz anderes, sagt Ricoeur, als",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "as ganz anderes, sagt Ricoeur, als eine Philosophie des Bewußtseins – gründet in einer Logi",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 3
-      },
-      {
-        "gid": "118524844",
-        "category": "person",
-        "surface": "Descartes",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Descartes",
-        "form_source": "surname-index",
-        "context": "ereinfacht Ricoeur etwas das Cogito von Descartes, vielleicht sogar dasjenige von Husserl",
-        "text": "Descartes",
         "occurrence": 1
       },
       {
@@ -701,84 +409,6 @@
         "context": "scartes, vielleicht sogar dasjenige von Husserl, wie auch die „Philosophie des Bewußtse",
         "text": "Husserl",
         "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "ar dasjenige von Husserl, wie auch die „Philosophie des Bewußtseins“ von Kant. Diese letzte",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 4
-      },
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "h die „Philosophie des Bewußtseins“ von Kant. Diese letztere insbesondere scheint mi",
-        "text": "Kant",
-        "occurrence": 2
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "Weise gleichzeitig auch eine reflexive Philosophie zu sein, vor allem, wenn man es vermeid",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 5
-      }
-    ],
-    "13": [
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "rgangene und fast vergessene Zeiten der Philosophie wieder aufleben lassen. Ricoeur ist soz",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "selber vielleicht zum Trotz, zur ewigen Philosophie. Dafür sagen wir ihm heute großen Dank.",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
       }
     ]
   }

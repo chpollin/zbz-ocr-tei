@@ -79,6 +79,7 @@ ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
 LEGACY_MENTIONS_PATH = DATA_DIR / "entities" / "legacy_mentions.json"
 VARIANT_REVIEW_PATH = DATA_DIR / "entities" / "variant_review.json"
+MARKING_POLICY_PATH = DATA_DIR / "entities" / "marking_policy.json"
 VERDICTS_PATH = DATA_DIR / "entities" / "mention_verdicts.json"
 
 REPORT_STEM = "entity_pilot_report"
@@ -325,7 +326,9 @@ def preview_document(doc_id: str, xml_string: str, candidates: list[dict],
     tier 1 and tier 2 alike; ``wrapped``/``worklist`` give the split.
     """
     wrapped_xml = apply_candidates(xml_string, candidates)
+    body_only = len(wrapped_xml)
     wrapped_xml = insert_resp_stmts(wrapped_xml, resp_statements(candidates, snapshot))
+    header_shift = len(wrapped_xml) - body_only
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"{doc_id}_final.xml"
     # bytes in, bytes out: text-mode IO would rewrite line endings on Windows
@@ -337,6 +340,7 @@ def preview_document(doc_id: str, xml_string: str, candidates: list[dict],
     tier2 = [c for c in candidates if c.get("tier") == 2]
     return {
         "doc": doc_id,
+        "header_shift": header_shift,
         "wrapped": tier1,
         "worklist": tier2,
         "counts": {
@@ -473,6 +477,8 @@ def main():
                     help="Old mention index (optional, used when present)")
     ap.add_argument("--review", type=Path, default=VARIANT_REVIEW_PATH,
                     help="Variant review verdicts (optional, used when present)")
+    ap.add_argument("--policy", type=Path, default=MARKING_POLICY_PATH,
+                        help="Markierungspolitik (JSON, optional)")
     ap.add_argument("--verdicts", type=Path, default=VERDICTS_PATH,
                     help="Mention verdict store (optional; absent means every mark unverified)")
     ap.add_argument("--src-dir", type=Path, default=TEI_FINAL_DIR, help="Source TEI directory (read only)")
@@ -487,8 +493,9 @@ def main():
         doc_ids = PANEL_DOCS if args.panel else _parse_doc_ids(args.docs)
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
     review = args.review if args.review.exists() else None
+    policy = args.policy if args.policy.exists() else None
     lexicon = build_lexicon(args.entities, args.cache, legacy_path=legacy,
-                            review_path=review)
+                            review_path=review, policy_path=policy)
 
     print(f"Entity preview over {len(doc_ids)} document(s); tei_final is not written.")
     report = run_preview(doc_ids, find_candidates, lexicon,

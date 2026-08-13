@@ -52,20 +52,6 @@
         "occurrence": 1
       }
     ],
-    "2": [
-      {
-        "gid": "121587177",
-        "category": "person",
-        "surface": "S.S.",
-        "rule": "full-name:initials",
-        "alternatives": [],
-        "matched_form": "S.S.",
-        "form_source": "headword",
-        "context": "éservés pour tous pays, y compris l'U.R.S.S. © Copyright by « Marzorati - Éditeur -",
-        "text": "S.S.",
-        "occurrence": 1
-      }
-    ],
     "3": [
       {
         "gid": "118555006",
@@ -99,40 +85,12 @@
         "gid": "118559796",
         "category": "person",
         "surface": "Kant",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Kant",
         "form_source": "surname-index",
         "context": "rls in der gegenwärtigen Kritik, dans « Kant-Studien », Bd. XXXVIII (1933), p. 319.",
         "text": "Kant",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "usserls, dans « Revue Internationale de Philosophie », Bd. 1-2 (1939), p. 226. — L'analyse",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
-      },
-      {
-        "gid": "118547798",
-        "category": "person",
-        "surface": "Heidegger",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Heidegger",
-        "form_source": "surname-index",
-        "context": "découvrant l'Existence avec Husserl et Heidegger, Paris, Vrin, 1949. L. LANDGREBE, Phäno",
-        "text": "Heidegger",
         "occurrence": 1
       },
       {
@@ -226,34 +184,6 @@
         "occurrence": 1
       },
       {
-        "gid": "118525727",
-        "category": "person",
-        "surface": "Dilthey",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Dilthey",
-        "form_source": "surname-index",
-        "context": "périences par les malades eux-mêmes. Et Dilthey, qui avait opposé à la « psychologie ex",
-        "text": "Dilthey",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "ssé à maintes reprises de le proclamer. Philosophie; Die Schuldfrage; Ursprung und Ziel der",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
         "gid": "1088013961",
         "category": "work",
         "surface": "les grands philosophes",
@@ -275,22 +205,6 @@
         "form_source": "cache-variant",
         "context": "affiner, par un commerce constant avec les grands philosophes, les schèmes et les opérations intellec",
         "text": "les grands philosophes",
-        "occurrence": 2
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "n 1931, en trois volumes, sous le titre Philosophie. La réflexion de l'auteur comportait de",
-        "evidence": "none",
-        "text": "Philosophie",
         "occurrence": 2
       }
     ],
@@ -317,22 +231,6 @@
         "form_source": "headword",
         "context": "phie pour obtenir des 806 JEANNE HERSCH Karl Jaspers 807 résultats. Mais elle est impuissant",
         "text": "Karl Jaspers",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "i. Exposons succinctement le contenu de Philosophie. On y trouve trois notions positives fo",
-        "evidence": "none",
-        "text": "Philosophie",
         "occurrence": 1
       }
     ],
@@ -401,6 +299,18 @@
         "occurrence": 1
       },
       {
+        "gid": "118569678",
+        "category": "person",
+        "surface": "Lao-Tsé",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Lao-Tsé",
+        "form_source": "curated-variant",
+        "context": "nément quoique séparément, Confucius et Lao-Tsé en Chine, Bouddha aux Indes, Zarathustr",
+        "text": "Lao-Tsé",
+        "occurrence": 1
+      },
+      {
         "gid": "118664417",
         "category": "person",
         "surface": "Bouddha",
@@ -437,66 +347,14 @@
         "occurrence": 1
       },
       {
-        "gid": "118594893",
+        "gid": "118587943",
         "category": "person",
-        "surface": "Platon",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Platon, dÁthènes",
-        "form_source": "cache-variant",
-        "context": "lus grands métaphysiciens eux-mêmes. De Platon à Kant, à Hegel, à Kierkegaard et à Nie",
-        "text": "Platon",
-        "occurrence": 1
-      },
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "s métaphysiciens eux-mêmes. De Platon à Kant, à Hegel, à Kierkegaard et à Nietzsche",
-        "text": "Kant",
-        "occurrence": 1
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "ysiciens eux-mêmes. De Platon à Kant, à Hegel, à Kierkegaard et à Nietzsche se dé 810",
-        "text": "Hegel",
-        "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "eux-mêmes. De Platon à Kant, à Hegel, à Kierkegaard et à Nietzsche se dé 810 JEANNE HERSCH",
-        "text": "Kierkegaard",
-        "occurrence": 1
-      },
-      {
-        "gid": "1078795312",
-        "category": "work",
         "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
+        "rule": "bare-surname",
+        "alternatives": [],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "ton à Kant, à Hegel, à Kierkegaard et à Nietzsche se dé 810 JEANNE HERSCH Karl Jaspers 81",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 1
       }
@@ -565,22 +423,6 @@
         "occurrence": 1
       },
       {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "ns anglaise, espagnole, japonaise. 1932 Philosophie, Berlin 1932, Springer, 3 volumes. 1ᵉ v",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
         "gid": "2024349-2",
         "category": "organisation",
         "surface": "Université",
@@ -608,30 +450,14 @@
         "occurrence": 1
       },
       {
-        "gid": "118562002",
+        "gid": "118587943",
         "category": "person",
-        "surface": "Kierkegaard",
+        "surface": "Nietzsche",
         "rule": "bare-surname",
         "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "ctuelle (la signification historique de Kierkegaard et de Nietzsche). Conférences 2ᵉ à 4ᵉ:",
-        "text": "Kierkegaard",
-        "occurrence": 1
-      },
-      {
-        "gid": "1078795312",
-        "category": "work",
-        "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "ication historique de Kierkegaard et de Nietzsche). Conférences 2ᵉ à 4ᵉ: Réflexions tenda",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 1
       }
@@ -662,62 +488,34 @@
         "occurrence": 1
       },
       {
-        "gid": "1078795312",
-        "category": "work",
-        "surface": "Nietzsche. Einführung in das Verständnis seines Philosophierens",
-        "rule": "work-title:subtitle-join",
+        "gid": "118587943",
+        "category": "person",
+        "surface": "Nietzsche",
+        "rule": "bare-surname",
         "alternatives": [],
-        "matched_form": "Nietzsche. Einführung in das Verständnis seines Philosophierens",
-        "form_source": "cache-variant",
-        "context": "ns italienne, japonaise, anglaise. 1936 Nietzsche. Einführung in das Verständnis seines Philosophierens, Berlin 1936, de Gruyter, 487 pages. Tr",
-        "text": "Nietzsche. Einführung in das Verständnis seines Philosophierens",
+        "matched_form": "Nietzsche",
+        "form_source": "surname-index",
+        "context": "ns italienne, japonaise, anglaise. 1936 Nietzsche. Einführung in das Verständnis seines P",
+        "text": "Nietzsche",
         "occurrence": 1
       },
       {
-        "gid": "1078795312",
-        "category": "work",
+        "gid": "118587943",
+        "category": "person",
         "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
+        "rule": "bare-surname:suspect",
+        "alternatives": [],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "pages. Traduction française de H. Niel, Nietzsche (avec une lettre-préface de Jean Wahl),",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 2
       },
       {
-        "gid": "118524844",
-        "category": "person",
-        "surface": "Descartes",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Descartes",
-        "form_source": "surname-index",
-        "context": "ns Karl Jaspers, La mia filosofia. 1937 Descartes et la philosophie. Numéro spécial de la",
-        "text": "Descartes",
-        "occurrence": 1
-      },
-      {
         "gid": "118540238",
         "category": "person",
         "surface": "Goethe",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Goethe",
-        "form_source": "surname-index",
-        "context": "çais et en italien). Unsere Zukunft und Goethe, Discours prononcé le 28 août 1947 lors",
-        "text": "Goethe",
-        "occurrence": 1
-      },
-      {
-        "gid": "118540238",
-        "category": "person",
-        "surface": "Goethe",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Goethe",
         "form_source": "surname-index",
@@ -750,38 +548,6 @@
         "occurrence": 1
       },
       {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "s de foi philosophiques. 3) L'homme. 4) Philosophie et religion. 5) Philosophie et antiphil",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "L'homme. 4) Philosophie et religion. 5) Philosophie et antiphilosophie. 6) La philosophie d",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 3
-      },
-      {
         "gid": "2024349-2",
         "category": "organisation",
         "surface": "Université",
@@ -795,54 +561,6 @@
         "context": "erer Zeit. Trois conférences faites à l'Université de Heidelberg, 1950, Munich, Piper, 71",
         "text": "Université",
         "occurrence": 2
-      },
-      {
-        "gid": "118540238",
-        "category": "person",
-        "surface": "Goethe",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Goethe",
-        "form_source": "surname-index",
-        "context": "8 pages. I. Max Weber - Notre avenir et Goethe - Humanité de Goethe - Solon - Le proph",
-        "text": "Goethe",
-        "occurrence": 3
-      },
-      {
-        "gid": "118540238",
-        "category": "person",
-        "surface": "Goethe",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Goethe",
-        "form_source": "surname-index",
-        "context": "- Notre avenir et Goethe - Humanité de Goethe - Solon - Le prophète Exéchiel - Le mal",
-        "text": "Goethe",
-        "occurrence": 4
-      },
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "prophète Exéchiel - Le mal radical chez Kant - Kierkegaard. II. Renouvellement de l'",
-        "text": "Kant",
-        "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "e Exéchiel - Le mal radical chez Kant - Kierkegaard. II. Renouvellement de l'Université - P",
-        "text": "Kierkegaard",
-        "occurrence": 1
       },
       {
         "gid": "2024349-2",
@@ -873,46 +591,6 @@
         "context": "igfrid Undset - De l'esprit vivant de l'Université - La science dans l'État d'Hitler - Le",
         "text": "Université",
         "occurrence": 4
-      },
-      {
-        "gid": "118551655",
-        "category": "person",
-        "surface": "Hitler",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hitler",
-        "form_source": "surname-index",
-        "context": "l'Université - La science dans l'État d'Hitler - Le peuple et l'université - Philosoph",
-        "text": "Hitler",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "d'Hitler - Le peuple et l'université - Philosophie et science - Pour une critique de la ps",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 5
-      },
-      {
-        "gid": "118607057",
-        "category": "person",
-        "surface": "Schelling",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Schelling",
-        "form_source": "surname-index",
-        "context": "olf Bultmann), Munich 1954, Piper. 1955 Schelling, Grösse und Verhängnis, Munich 1955, Pi",
-        "text": "Schelling",
-        "occurrence": 1
       }
     ],
     "10": [
@@ -977,18 +655,6 @@
         "occurrence": 1
       },
       {
-        "gid": "118594893",
-        "category": "person",
-        "surface": "Platon",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Platon, dÁthènes",
-        "form_source": "cache-variant",
-        "context": "ent d'engendrer la quête philosophique: Platon, St. Augustin, Kant - Métaphysiciens do",
-        "text": "Platon",
-        "occurrence": 1
-      },
-      {
         "gid": "118505114",
         "category": "person",
         "surface": "Augustin",
@@ -998,30 +664,6 @@
         "form_source": "cache-variant",
         "context": "rer la quête philosophique: Platon, St. Augustin, Kant - Métaphysiciens dont la pensée j",
         "text": "Augustin",
-        "occurrence": 1
-      },
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "te philosophique: Platon, St. Augustin, Kant - Métaphysiciens dont la pensée jaillit",
-        "text": "Kant",
-        "occurrence": 1
-      },
-      {
-        "gid": "118549421",
-        "category": "person",
-        "surface": "Héraclite",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Héraclite",
-        "form_source": "cache-variant",
-        "context": "nsée jaillit de l'origine: Anaximandre, Héraclite, Parménide, Plotin, St. Anselme, Spinoz",
-        "text": "Héraclite",
         "occurrence": 1
       },
       {
@@ -1037,18 +679,6 @@
         "occurrence": 1
       },
       {
-        "gid": "118595164",
-        "category": "person",
-        "surface": "Plotin",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Plotin, de Lycopolis",
-        "form_source": "cache-variant",
-        "context": "ine: Anaximandre, Héraclite, Parménide, Plotin, St. Anselme, Spinoza, Lao-tse, Nagarju",
-        "text": "Plotin",
-        "occurrence": 1
-      },
-      {
         "gid": "118616242",
         "category": "person",
         "surface": "Spinoza",
@@ -1058,6 +688,18 @@
         "form_source": "surname-index",
         "context": "aclite, Parménide, Plotin, St. Anselme, Spinoza, Lao-tse, Nagarjuna. - Traduction franç",
         "text": "Spinoza",
+        "occurrence": 1
+      },
+      {
+        "gid": "118569678",
+        "category": "person",
+        "surface": "Lao-tse",
+        "rule": "bare-surname",
+        "alternatives": [],
+        "matched_form": "Lao-tse",
+        "form_source": "cache-variant",
+        "context": "arménide, Plotin, St. Anselme, Spinoza, Lao-tse, Nagarjuna. - Traduction française sous",
+        "text": "Lao-tse",
         "occurrence": 1
       },
       {
@@ -1115,86 +757,6 @@
         "occurrence": 2
       },
       {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "z und Transzendenz in der gegenwärtigen Philosophie, Helbing u. Lichtenhahn, Bâle. En 1959,",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "t, Die Pflichtenkollision im Lichte der Philosophie von Karl Jaspers, Beck, Munich. En 1960",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "istenzphilosophie, dans « Systematische Philosophie », Kohlhammer, Stuttgart 1942, p. 315-4",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 3
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "rl Jaspers, dans « Blätter für deutsche Philosophie », 1937, cahier 4°, p. 337-378; I. M. B",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 4
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": ". 337-378; I. M. BOCHENSKI, Europäische Philosophie der Gegenwart, Berne 1947); LEO GABRIEL",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 5
-      },
-      {
         "gid": "2024349-2",
         "category": "organisation",
         "surface": "Universitas",
@@ -1217,22 +779,6 @@
         "context": "jubilaire. Cf. notamment celui de ERNST MAYER sur Philosophie und philosophische Logi",
         "text": "MAYER",
         "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "Cf. notamment celui de ERNST MAYER sur Philosophie und philosophische Logik bei Jaspers, i",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 6
       },
       {
         "gid": "119395800",
@@ -1273,18 +819,6 @@
         "form_source": "surname-index",
         "context": "939. En 1958, ALBERTO CARACCIOLO, Studi Jaspersiani, Milan, Marzorati. En anglais, cf. ADOL",
         "text": "Jaspersiani",
-        "occurrence": 1
-      },
-      {
-        "gid": "118613723",
-        "category": "person",
-        "surface": "Shakespeare",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Shakespeare",
-        "form_source": "surname-index",
-        "context": "MANN, The owl and the nightingale, from Shakespeare to existentialism, Faber, Londres. En 1",
-        "text": "Shakespeare",
         "occurrence": 1
       }
     ]

@@ -6,14 +6,21 @@ cache and the legacy mention index; it never calls a language model, and ids alw
 come from the curated list. The scan that consumes the lexicon is
 scripts.tei.entity_matcher, which re-exports `build_lexicon`.
 
-One public function:
+Two public functions:
 
-    build_lexicon(entities_path, cache_path, legacy_path=None, review_path=None) -> dict
+    build_lexicon(entities_path, cache_path, legacy_path=None, review_path=None,
+                  policy_path=None) -> dict
         Merges the curated list `data/entities/all_entities.json`, the lobid cache
         `data/entities/gnd_cache.json` (name variants, optional) and the legacy
         mention index `data/entities/legacy_mentions.json` (optional) into one
         lexicon. Entries without a label are skipped, so are entries whose cache
         answer is 404 (defective GND id).
+
+    load_marking_policy(path, listed_gids) -> dict
+        Reads and validates the operator marking decisions
+        `data/entities/marking_policy.json`. The file is the single load point of the
+        policy; `build_lexicon` carries the parsed result in `lexicon["policy"]`, so
+        every consumer of the lexicon reads the same decisions.
 
 Deliberate simplifications (upgrade path in the milestones M3 to M5):
 
@@ -60,6 +67,14 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   full-name channel; as tier-1 forms they would claim unrelated initials
   document-wide (the doc-1220 pilot finding). The initials of a headword reach the
   worklist through the ":initials" channel and nothing beyond it.
+- The operator marking policy binds two entity-level decisions. A work in
+  `work_titles.drop_from_scope` registers no form at all, so its title produces no
+  candidate in any tier, while the entry stays in `entries` and keeps its label for
+  the reports; a surface another entity also carries stays reachable through that
+  entity ("Nietzsche" as the listed surname). The anchor release
+  (`anchor_free_surnames`) and the corroboration requirement
+  (`work_titles.require_typographic_corroboration`) are positional and therefore
+  matcher rules; the lexicon only carries them in `lexicon["policy"]`.
 - A legacy surface form that its bearer's own record does not corroborate stays a
   candidate source but reaches only tier 2, with the rule "legacy-form", and never
   enters the surname index. The legacy index was harvested from the gold references,
@@ -79,11 +94,16 @@ from pathlib import Path
 MIN_TOKEN_LEN = 4
 MIN_SHORT_TITLE_LEN = 3
 
+# A bare surname the operator released from the anchor requirement; its own rule id, so
+# the released population stays countable in every downstream report.
+ANCHOR_FREE_RULE = "anchor-free-surname"
+
 TIER_BY_RULE = {
     "full-name": 1,
     "variant-full-name": 1,
     "initial-surname": 1,
     "anchored-surname": 1,
+    ANCHOR_FREE_RULE: 1,
     "caps-full-name": 1,
     "org-name": 1,
     "org-variant": 1,
@@ -144,11 +164,134 @@ def _form_tier(rule: str) -> int:
     return 2 if suffix else TIER_BY_RULE[base]
 
 
+# --- operator marking policy (data/entities/marking_policy.json) --------------------
+
+POLICY_ANCHOR_FREE = "anchor_free_surnames"
+POLICY_HELD_OUT = "held_out_surnames"
+POLICY_WORK_TITLES = "work_titles"
+POLICY_DROP = "drop_from_scope"
+POLICY_CORROBORATE = "require_typographic_corroboration"
+
+# Documentation fields of the curated file. Every other key has to be a known bucket,
+# so a mistyped bucket name fails loudly instead of releasing nothing in silence.
+POLICY_NOTE_FIELDS = ("note", "decided")
+
+EMPTY_POLICY = {
+    "source": None,
+    "decided": None,
+    "anchor_free": {},
+    "held_out": frozenset(),
+    "drop_from_scope": frozenset(),
+    "require_corroboration": frozenset(),
+}
+
+
+def load_marking_policy(path: Path | str, listed_gids) -> dict:
+    """Read and validate the operator marking decisions; the single load point."""
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    return parse_marking_policy(data, listed_gids, source=str(path))
+
+
+def parse_marking_policy(data, listed_gids, source: str = "") -> dict:
+    """Validate the marking decisions and project them for lexicon and matcher.
+
+    The file is a trust boundary: an unknown bucket name, a malformed entry, a gid the
+    curated list does not carry, or a gid in two buckets raises ValueError instead of
+    binding a decision nobody can read back. `anchor_free` maps a surname key to the
+    gids released for exactly that key; nothing is derived from a key.
+    """
+    where = f"marking policy {source}".strip()
+    if not isinstance(data, dict):
+        raise ValueError(f"{where}: policy must be a JSON object")
+    _reject_unknown(data, (POLICY_ANCHOR_FREE, POLICY_HELD_OUT, POLICY_WORK_TITLES,
+                           *POLICY_NOTE_FIELDS), where)
+    works = data.get(POLICY_WORK_TITLES) or {}
+    if not isinstance(works, dict):
+        raise ValueError(f"{where}: {POLICY_WORK_TITLES} must be a JSON object")
+    _reject_unknown(works, (POLICY_DROP, POLICY_CORROBORATE), f"{where} {POLICY_WORK_TITLES}")
+
+    listed = {str(gid) for gid in listed_gids}
+    seen: dict[str, str] = {}
+    anchor_free: dict[str, set[str]] = {}
+    for entry in _policy_entries(data, POLICY_ANCHOR_FREE, where):
+        gid = _policy_gid(entry, POLICY_ANCHOR_FREE, listed, seen, where)
+        keys = entry.get("keys")
+        if not isinstance(keys, list) or not keys:
+            raise ValueError(f"{where}: entry {gid} needs keys as a non-empty list")
+        for raw in keys:
+            key = _collapse(raw) if isinstance(raw, str) else ""
+            if not key:
+                raise ValueError(f"{where}: entry {gid} has an empty key in keys")
+            anchor_free.setdefault(key, set()).add(gid)
+    held_out = _policy_gids(data, POLICY_HELD_OUT, listed, seen, where)
+    drop = _policy_gids(works, POLICY_DROP, listed, seen, f"{where} {POLICY_WORK_TITLES}")
+    corroborate = _policy_gids(works, POLICY_CORROBORATE, listed, seen,
+                               f"{where} {POLICY_WORK_TITLES}")
+    return {
+        "source": source or None,
+        "decided": data.get("decided"),
+        "anchor_free": {key: frozenset(gids) for key, gids in anchor_free.items()},
+        "held_out": held_out,
+        "drop_from_scope": drop,
+        "require_corroboration": corroborate,
+    }
+
+
+def _reject_unknown(data: dict, known: tuple[str, ...], where: str) -> None:
+    unknown = sorted(set(data) - set(known))
+    if unknown:
+        raise ValueError(f"{where}: unknown key(s) {', '.join(unknown)}")
+
+
+def _policy_entries(data: dict, bucket: str, where: str) -> list[dict]:
+    entries = data.get(bucket)
+    if entries is None:
+        return []
+    if not isinstance(entries, list) or not all(isinstance(e, dict) for e in entries):
+        raise ValueError(f"{where}: {bucket} must be a list of objects")
+    return entries
+
+
+def _policy_gid(entry: dict, bucket: str, listed: set[str], seen: dict[str, str],
+                where: str) -> str:
+    gid = entry.get("gid")
+    if not isinstance(gid, str) or not gid.strip():
+        raise ValueError(f"{where}: {bucket} carries an entry without a gid")
+    gid = gid.strip()
+    if gid not in listed:
+        raise ValueError(f"{where}: gid {gid} is absent from the curated entity list")
+    if gid in seen:
+        prior = seen[gid]
+        place = f"twice in {bucket}" if prior == bucket else f"in {prior} and in {bucket}"
+        raise ValueError(f"{where}: gid {gid} stands {place}")
+    seen[gid] = bucket
+    return gid
+
+
+def _policy_gids(data: dict, bucket: str, listed: set[str], seen: dict[str, str],
+                 where: str) -> frozenset[str]:
+    return frozenset(
+        _policy_gid(entry, bucket, listed, seen, where)
+        for entry in _policy_entries(data, bucket, where)
+    )
+
+
+def listed_gids(entities: dict) -> set[str]:
+    """Every GND id the curated list carries, whatever the entry's other defects."""
+    return {
+        str(raw.get("GND_id")).strip()
+        for list_key in _CATEGORY_BY_LIST
+        for raw in entities.get(list_key, []) or []
+        if str(raw.get("GND_id") or "").strip()
+    }
+
+
 def build_lexicon(
     entities_path: Path | str,
     cache_path: Path | str,
     legacy_path: Path | str | None = None,
     review_path: Path | str | None = None,
+    policy_path: Path | str | None = None,
 ) -> dict:
     """Build the matching lexicon from list, GND cache and legacy mention index.
 
@@ -163,10 +306,16 @@ def build_lexicon(
     `caps_forms` / `caps_by_first_word` / `caps_surnames` / `caps_surname_forms`,
     `legacy_demoted` (the (gid, form) pairs the bearer's record does not corroborate),
     `review_suspect` (the (gid, form) pairs the variant review holds back at tier 2),
-    `skipped` (counters) and `sources` (the input paths).
+    `policy` (the validated operator marking decisions), `skipped` (counters) and
+    `sources` (the input paths).
 
     The derived-form channels run as a second pass over the finished base lexicon, so
     they see every entity and displace none; their catalogue is in the module docstring.
+
+    `policy_path` names the operator marking decisions marking_policy.json. It is
+    validated on load (`parse_marking_policy`), reaches the matcher as
+    `lexicon["policy"]`, and drops the forms of every work the operator took out of the
+    marking scope. Without it the lexicon carries EMPTY_POLICY and nothing changes.
 
     `review_path` names the operator-gated variant_review.json: a cache form with the
     verdict `reject` never enters the lexicon (neither as full form nor via the surname
@@ -180,6 +329,9 @@ def build_lexicon(
     cache_entries = cache.get("entries", {}) if isinstance(cache, dict) else {}
     legacy_index = legacy_names(_read_json(legacy_path)) if legacy_path else {}
     review = _read_json(review_path) if review_path else None
+    policy = (EMPTY_POLICY if policy_path is None
+              else load_marking_policy(policy_path, listed_gids(entities)))
+    out_of_scope = policy["drop_from_scope"]
 
     forms: dict[str, list[tuple[str, str, str, str]]] = {}
     surnames: dict[str, set[str]] = {}
@@ -188,7 +340,7 @@ def build_lexicon(
     legacy_demoted: list[tuple[str, str]] = []
     review_suspect: set[tuple[str, str]] = set()
     skipped = {"no_label": 0, "gnd_404": 0, "short_org_token": 0, "duplicate_gid": 0,
-               "review_reject": 0}
+               "review_reject": 0, "policy_out_of_scope": 0}
 
     for list_key, category in _CATEGORY_BY_LIST.items():
         for raw in entities.get(list_key, []) or []:
@@ -210,6 +362,10 @@ def build_lexicon(
                 "label": label,
                 "author_gnd_id": str(raw.get("author_gnd_id") or "") or None,
             }
+            if gid in out_of_scope:
+                # The entry stays known (label, closed-world id) and registers no form.
+                skipped["policy_out_of_scope"] += 1
+                continue
             legacy = legacy_index.get(normalize_gid(gid), ())
             corroborated, demoted = _split_legacy(legacy, label, cached)
             variants = _variants(cached, _curated_variants(raw), corroborated)
@@ -241,7 +397,8 @@ def build_lexicon(
                 _add_legacy_form(forms, gid, category, form)
 
     for gid, entry in entries.items():
-        _add_derived(forms, surnames, gid, entry["category"], entry["label"])
+        if gid not in out_of_scope:
+            _add_derived(forms, surnames, gid, entry["category"], entry["label"])
 
     caps_forms = _caps_index(forms)
     return {
@@ -257,12 +414,14 @@ def build_lexicon(
         "caps_surname_forms": _caps_surname_forms(surname_forms),
         "legacy_demoted": tuple(legacy_demoted),
         "review_suspect": frozenset(review_suspect),
+        "policy": policy,
         "skipped": skipped,
         "sources": {
             "entities": str(entities_path),
             "cache": str(cache_path),
             "legacy": str(legacy_path) if legacy_path else None,
             "review": str(review_path) if review is not None else None,
+            "policy": policy["source"],
             "cache_retrieved": cache.get("retrieved") if isinstance(cache, dict) else None,
         },
     }

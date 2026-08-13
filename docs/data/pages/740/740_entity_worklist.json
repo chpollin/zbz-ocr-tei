@@ -7,7 +7,7 @@
         "gid": "118562002",
         "category": "person",
         "surface": "Kierkegaard",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Kierkegaard",
         "form_source": "surname-index",
@@ -21,7 +21,7 @@
         "gid": "118562002",
         "category": "person",
         "surface": "Kierkegaard",
-        "rule": "bare-surname:suspect:running-head",
+        "rule": "anchor-free-surname:suspect:running-head",
         "alternatives": [],
         "matched_form": "Kierkegaard",
         "form_source": "surname-index",
@@ -54,30 +54,6 @@
         "context": "RSCH, NIELS THULSTRUP Gallimard KATALOG JEANNE HERSCH « L'Instant » Je n'ai pas pu retrouver",
         "text": "JEANNE HERSCH",
         "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "ant » Je n'ai pas pu retrouver si c'est Kierkegaard lui-même qui a parlé d'« intrépidité di",
-        "text": "Kierkegaard",
-        "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "système. Tenir ferme le problème, pour Kierkegaard, c'est presque toujours enfoncer dans l",
-        "text": "Kierkegaard",
-        "occurrence": 2
       }
     ],
     "4": [
@@ -92,42 +68,6 @@
         "context": "s de fuite de l'objectif et du général. Jeanne Hersch 95 Or, l'intrépidité kierkegaardienne n",
         "text": "Jeanne Hersch",
         "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "int de l'impossible. L'impossible, pour Kierkegaard, n'est pas signe de néant, mais d'exist",
-        "text": "Kierkegaard",
-        "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "strait. S'il y a une « philosophie » de Kierkegaard, elle ressemble moins à un système qu'à",
-        "text": "Kierkegaard",
-        "occurrence": 2
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "point, c'est l'instant. L'instant, chez Kierkegaard, a au moins trois sens. C'est le point",
-        "text": "Kierkegaard",
-        "occurrence": 3
       }
     ],
     "5": [
@@ -135,25 +75,13 @@
         "gid": "118562002",
         "category": "person",
         "surface": "Kierkegaard",
-        "rule": "bare-surname:running-head",
+        "rule": "anchor-free-surname:running-head",
         "alternatives": [],
         "matched_form": "Kierkegaard",
         "form_source": "surname-index",
         "context": "lqu'un surgit et fait acte de présence. Kierkegaard vivant L'« instant autour de quoi tourn",
         "text": "Kierkegaard",
         "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "stant autour de quoi tourne tout », dit Kierkegaard. En effet, il y insiste. Il oppose « le",
-        "text": "Kierkegaard",
-        "occurrence": 2
       },
       {
         "gid": "118615270",
@@ -180,30 +108,6 @@
         "occurrence": 2
       },
       {
-        "gid": "118594893",
-        "category": "person",
-        "surface": "Platon",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Platon, dÁthènes",
-        "form_source": "cache-variant",
-        "context": "trouve dans l'âme d'emblée, — d'où chez Platon la preuve de la préexistence de l'âme a",
-        "text": "Platon",
-        "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "celle de sa survie. C'est pourquoi, dit Kierkegaard, Socrate est un accoucheur, rapport, se",
-        "text": "Kierkegaard",
-        "occurrence": 3
-      },
-      {
         "gid": "118615270",
         "category": "person",
         "surface": "Socrate",
@@ -225,18 +129,6 @@
         "form_source": "cache-variant",
         "context": "era d'avoir raison ». (Et il ajoute que Socrate était « une sage-femme diplômée par le",
         "text": "Socrate",
-        "occurrence": 4
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "oblesse, l'humanité, la magnanimité que Kierkegaard reconnaît à Socrate consiste justement",
-        "text": "Kierkegaard",
         "occurrence": 4
       },
       {
@@ -288,18 +180,6 @@
         "context": "mais, en tant qu'autorité, fait du bien Jeanne Hersch 97 à un autre. » Donc, ici, peu importe",
         "text": "Jeanne Hersch",
         "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "atique (la plus haute au niveau humain) Kierkegaard oppose la nouveauté qu'est la situation",
-        "text": "Kierkegaard",
-        "occurrence": 1
       }
     ],
     "7": [
@@ -307,25 +187,13 @@
         "gid": "118562002",
         "category": "person",
         "surface": "Kierkegaard",
-        "rule": "bare-surname:running-head",
+        "rule": "anchor-free-surname:running-head",
         "alternatives": [],
         "matched_form": "Kierkegaard",
         "form_source": "surname-index",
         "context": "'instant, le maître recrée le disciple, Kierkegaard vivant avant de commencer à l'enseigner",
         "text": "Kierkegaard",
         "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "pos des preuves de l'existence du dieu, Kierkegaard dit : « Ma conclusion n'aboutit jamais",
-        "text": "Kierkegaard",
-        "occurrence": 2
       }
     ],
     "8": [
@@ -340,138 +208,6 @@
         "context": ", mais que cette chose, qui existe, est Jeanne Hersch 99 une pierre. » L'instant, cette « déc",
         "text": "Jeanne Hersch",
         "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "« décision de l'éternité », dit encore Kierkegaard. Par sa discontinuité radicale, l'insta",
-        "text": "Kierkegaard",
-        "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "ment aucune nécessité de type hégélien. Kierkegaard souligne : il n'y a pas plus de nécessi",
-        "text": "Kierkegaard",
-        "occurrence": 2
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "urait pas de raison de ne pas passer de Hegel à Marx). « Si la nécessité pouvait péné",
-        "text": "Hegel",
-        "occurrence": 1
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "s de raison de ne pas passer de Hegel à Marx). « Si la nécessité pouvait pénétrer en",
-        "text": "Marx",
-        "occurrence": 1
-      },
-      {
-        "gid": "4675131-2",
-        "category": "work",
-        "surface": "le malentendu",
-        "rule": "work-title:suspect",
-        "alternatives": [],
-        "matched_form": "Le malentendu",
-        "form_source": "headword",
-        "context": "Ici apparaît de la façon la plus nette le malentendu qui seul a permis à certains d'imaginer",
-        "text": "le malentendu",
-        "occurrence": 1
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "l a permis à certains d'imaginer, entre Marx et Kierkegaard, un point de convergence",
-        "text": "Marx",
-        "occurrence": 2
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "is à certains d'imaginer, entre Marx et Kierkegaard, un point de convergence. Ce malentendu",
-        "text": "Kierkegaard",
-        "occurrence": 3
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "important : tous deux, particularisant Hegel, font réaction aux philosophies « étern",
-        "text": "Hegel",
-        "occurrence": 2
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "ment unique de sa situation. Tous deux, Marx et Kierkegaard, donnent un relief quasi",
-        "text": "Marx",
-        "occurrence": 3
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "que de sa situation. Tous deux, Marx et Kierkegaard, donnent un relief quasi fatal au fait",
-        "text": "Kierkegaard",
-        "occurrence": 4
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "toutes différentes, irréductibles. Pour Marx, la particularité de toute « situa- 100",
-        "text": "Marx",
-        "occurrence": 4
       }
     ],
     "9": [
@@ -479,7 +215,7 @@
         "gid": "118562002",
         "category": "person",
         "surface": "Kierkegaard",
-        "rule": "bare-surname:running-head",
+        "rule": "anchor-free-surname:running-head",
         "alternatives": [],
         "matched_form": "Kierkegaard",
         "form_source": "surname-index",
@@ -488,70 +224,26 @@
         "occurrence": 1
       },
       {
-        "gid": "118562002",
+        "gid": "118587943",
         "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "a totalité de l'espace historique. Pour Kierkegaard, elle constitue l'unicité ponctuelle de",
-        "text": "Kierkegaard",
-        "occurrence": 2
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "table de ce qui arrive, mais, comme dit Kierkegaard, « que cela arrive ». « Ce qui est arri",
-        "text": "Kierkegaard",
-        "occurrence": 3
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "pu rapprocher les deux « exceptions », Kierkegaard et Nietzsche, et comparer le refus kier",
-        "text": "Kierkegaard",
-        "occurrence": 4
-      },
-      {
-        "gid": "1078795312",
-        "category": "work",
         "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
+        "rule": "bare-surname",
+        "alternatives": [],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "les deux « exceptions », Kierkegaard et Nietzsche, et comparer le refus kierkegaardien de",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 1
       },
       {
-        "gid": "1078795312",
-        "category": "work",
+        "gid": "118587943",
+        "category": "person",
         "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
+        "rule": "bare-surname",
+        "alternatives": [],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "nts temporels avec l'instant dansant de Nietzsche ou son éternel retour hiératique. La vi",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 2
       }
@@ -568,30 +260,6 @@
         "context": "techniques, au fil d'un temps asservi, Jeanne Hersch 101 qui façonnaient le monde contempora",
         "text": "Jeanne Hersch",
         "occurrence": 1
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "est existentiel : l'acte libre. Lorsque Hegel tente d'exposer des relations « dialect",
-        "text": "Hegel",
-        "occurrence": 1
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "ais à n'importe quoi. Pourtant, lorsque Hegel démêle la dialectique de l'instant, qu'",
-        "text": "Hegel",
-        "occurrence": 2
       }
     ],
     "11": [
@@ -599,61 +267,13 @@
         "gid": "118562002",
         "category": "person",
         "surface": "Kierkegaard",
-        "rule": "bare-surname:running-head",
+        "rule": "anchor-free-surname:running-head",
         "alternatives": [],
         "matched_form": "Kierkegaard",
         "form_source": "surname-index",
         "context": "ructure constitutive, il en fait la 102 Kierkegaard vivant description. Description inévita",
         "text": "Kierkegaard",
         "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "ssement concret, elle le fait cheminer. Kierkegaard, lui, au lieu de décrire dialectiquemen",
-        "text": "Kierkegaard",
-        "occurrence": 2
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "parler d'elle ou de la « comprendre ». Kierkegaard ne parle pas de dialectique, il est cet",
-        "text": "Kierkegaard",
-        "occurrence": 3
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "la devient. Il s'agit donc, comme chez Marx, d'une dialectique non pas théorique ma",
-        "text": "Marx",
-        "occurrence": 1
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": ". Seulement, au lieu d'être, comme chez Marx, acte déployé dans l'espace et le temps",
-        "text": "Marx",
-        "occurrence": 2
       }
     ],
     "12": [
@@ -670,18 +290,6 @@
         "occurrence": 1
       },
       {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "e fait acte pour en hâter l'heure. Mais Kierkegaard écrit : « Tandis que tout le pathos de",
-        "text": "Kierkegaard",
-        "occurrence": 1
-      },
-      {
         "gid": "118615270",
         "category": "person",
         "surface": "Socrate",
@@ -692,42 +300,6 @@
         "context": "Quand il n'y a que « l'occasion » (cf. Socrate), « l'instant n'apparaît pas, mais le s",
         "text": "Socrate",
         "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "stemporel avec le temporel. A propos de Kierkegaard, nous pouvons mettre en lumière ce qui",
-        "text": "Kierkegaard",
-        "occurrence": 2
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "penseurs d'aujourd'hui. Les uns — comme Marx, comme aussi, d'une manière bien différ",
-        "text": "Marx",
-        "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "utissement temporel. Les autres — comme Kierkegaard, et après lui Jaspers — pensent que tou",
-        "text": "Kierkegaard",
-        "occurrence": 3
       }
     ],
     "13": [
@@ -735,7 +307,7 @@
         "gid": "118562002",
         "category": "person",
         "surface": "Kierkegaard",
-        "rule": "bare-surname:running-head",
+        "rule": "anchor-free-surname:running-head",
         "alternatives": [],
         "matched_form": "Kierkegaard",
         "form_source": "surname-index",
@@ -763,7 +335,7 @@
         "gid": "118562002",
         "category": "person",
         "surface": "Kierkegaard",
-        "rule": "bare-surname:running-head",
+        "rule": "anchor-free-surname:running-head",
         "alternatives": [],
         "matched_form": "Kierkegaard",
         "form_source": "surname-index",
@@ -788,13 +360,13 @@
       {
         "gid": "118557513",
         "category": "person",
-        "surface": "Jésus",
-        "rule": "bare-surname:suspect",
+        "surface": "Jésus-Christ",
+        "rule": "bare-surname",
         "alternatives": [],
-        "matched_form": "Jésus, de Nazareth",
+        "matched_form": "Jésus-Christ",
         "form_source": "cache-variant",
-        "context": "e historique que fut l'instant où vécut Jésus-Christ. Mais rien de moins lié aussi à",
-        "text": "Jésus",
+        "context": "e historique que fut l'instant où vécut Jésus-Christ. Mais rien de moins lié aussi à aucune",
+        "text": "Jésus-Christ",
         "occurrence": 1
       }
     ],
@@ -803,25 +375,13 @@
         "gid": "118562002",
         "category": "person",
         "surface": "Kierkegaard",
-        "rule": "bare-surname:running-head",
+        "rule": "anchor-free-surname:running-head",
         "alternatives": [],
         "matched_form": "Kierkegaard",
         "form_source": "surname-index",
         "context": "glise de se satisfaire d'elle-même. 108 Kierkegaard vivant Insupportable aux chrétiens, ref",
         "text": "Kierkegaard",
         "occurrence": 1
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "e un gros clou fiché au cœur du sens et Kierkegaard se déguise pour l'enfoncer encore et en",
-        "text": "Kierkegaard",
-        "occurrence": 2
       }
     ],
     "18": [
@@ -855,7 +415,7 @@
         "gid": "118562002",
         "category": "person",
         "surface": "Kierkegaard",
-        "rule": "bare-surname:running-head",
+        "rule": "anchor-free-surname:running-head",
         "alternatives": [],
         "matched_form": "Kierkegaard",
         "form_source": "surname-index",
@@ -897,30 +457,6 @@
         "form_source": "headword",
         "context": ", par-delà les décisions officielles, l'Unesco suscite et doit susciter des confrontat",
         "text": "Unesco",
-        "occurrence": 3
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "personnes. Ce soir, c'était au sujet de Kierkegaard. Puisse Kierkegaard ici rappeler durabl",
-        "text": "Kierkegaard",
-        "occurrence": 2
-      },
-      {
-        "gid": "118562002",
-        "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "c'était au sujet de Kierkegaard. Puisse Kierkegaard ici rappeler durablement que même aux d",
-        "text": "Kierkegaard",
         "occurrence": 3
       }
     ]

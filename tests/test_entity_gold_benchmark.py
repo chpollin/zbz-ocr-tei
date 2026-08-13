@@ -397,7 +397,8 @@ def _argv(tmp_path, out, extra=()):
             "--ref-dir", str(ref_dir), "--src-dir", str(pipe_dir),
             "--entities", str(entities),
             "--cache", str(tmp_path / "missing_cache.json"),
-            "--legacy", str(tmp_path / "missing_legacy.json"), *extra]
+            "--legacy", str(tmp_path / "missing_legacy.json"),
+            "--policy", str(tmp_path / "missing_policy.json"), *extra]
 
 
 def test_main_writes_the_report_and_prints_ascii(tmp_path, monkeypatch, capsys):

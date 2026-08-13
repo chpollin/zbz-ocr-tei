@@ -16,22 +16,6 @@
         "occurrence": 1
       },
       {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "EYVRAZ LE TEMPLE ET LE DIEU Essai d'une Philosophie de la Relation 'O ἄναξ οὗ τὸ μαντεῖον ἐ",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
         "gid": "118549421",
         "category": "person",
         "surface": "HÉRACLITE",
@@ -61,7 +45,7 @@
         "gid": "118506803",
         "category": "person",
         "surface": "Barth",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Barth",
         "form_source": "surname-index",
@@ -96,22 +80,6 @@
         "occurrence": 1
       },
       {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "EYVRAZ LE TEMPLE ET LE DIEU Essai d'une Philosophie de la Relation Ὁ ἄναξ οὗ τὸ μαντεῖον ἐσ",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
         "gid": "118549421",
         "category": "person",
         "surface": "HÉRACLITE",
@@ -122,32 +90,6 @@
         "context": "dit pas ne cache pas, mais il signale. HÉRACLITE. Phil. Conv. 145 /1. 2463 LIBRAIRIE JOS",
         "text": "HÉRACLITE",
         "occurrence": 1
-      }
-    ],
-    "8": [
-      {
-        "gid": "11860564X",
-        "category": "person",
-        "surface": "Sartre",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Sartre",
-        "form_source": "surname-index",
-        "context": "il d'une tentative analogue à celle que Sartre suggérait lorsqu'il distinguait, à la f",
-        "text": "Sartre",
-        "occurrence": 1
-      },
-      {
-        "gid": "11860564X",
-        "category": "person",
-        "surface": "Sartre",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Sartre",
-        "form_source": "surname-index",
-        "context": "ré. La métaphysique serait alors, selon Sartre, à l'ontologie comme l'histoire à la so",
-        "text": "Sartre",
-        "occurrence": 2
       }
     ]
   }

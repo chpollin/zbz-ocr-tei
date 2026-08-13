@@ -62,43 +62,15 @@
         "occurrence": 2
       },
       {
-        "gid": "1078795312",
-        "category": "work",
+        "gid": "118587943",
+        "category": "person",
         "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
+        "rule": "bare-surname",
+        "alternatives": [],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "ceton University. Publications include: Nietzsche (1950); Critique of Religion and Philos",
-        "evidence": "none",
         "text": "Nietzsche",
-        "occurrence": 1
-      },
-      {
-        "gid": "118613723",
-        "category": "person",
-        "surface": "Shakespeare",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Shakespeare",
-        "form_source": "surname-index",
-        "context": "of Religion and Philosophy (1958); From Shakespeare to Existentialism (1959); Hegel: Reinte",
-        "text": "Shakespeare",
-        "occurrence": 1
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "m Shakespeare to Existentialism (1959); Hegel: Reinterpretation, Texts, and Commentar",
-        "text": "Hegel",
         "occurrence": 1
       },
       {
@@ -114,18 +86,14 @@
         "occurrence": 1
       },
       {
-        "gid": "1078795312",
-        "category": "work",
+        "gid": "118587943",
+        "category": "person",
         "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
+        "rule": "bare-surname",
+        "alternatives": [],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "ranslator and editor, Basic Writings of Nietzsche (5 complete books) (1968). F. E. SPARSH",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 2
       },
@@ -286,30 +254,6 @@
         "context": "HOOK Professor of Philosophy, New York University; Guggenheim Fellow (1928-1929); Fellow,",
         "text": "University",
         "occurrence": 6
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "(1959-1960). Publications include: From Hegel to Marx (1936); Heresy, 333",
-        "text": "Hegel",
-        "occurrence": 2
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "0). Publications include: From Hegel to Marx (1936); Heresy, 333",
-        "text": "Marx",
-        "occurrence": 1
       }
     ]
   }

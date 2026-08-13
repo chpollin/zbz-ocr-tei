@@ -2,49 +2,7 @@
   "doc": "2020",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
-    "1": [
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "ncé à poser certaines questions\". (\"Die Philosophie stellt diejenigen Fragen, die nicht ges",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      }
-    ],
     "3": [
-      {
-        "gid": "118590146",
-        "category": "person",
-        "surface": "Oppenheimer",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Oppenheimer",
-        "form_source": "surname-index",
-        "context": "processus et l'unité, ou, comme disait Oppenheimer, de „déchiffrer la beauté du monde\". C.",
-        "text": "Oppenheimer",
-        "occurrence": 1
-      },
-      {
-        "gid": "118548670",
-        "category": "person",
-        "surface": "Heisenberg",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Heisenberg",
-        "form_source": "surname-index",
-        "context": "re de son livre \"La Partie et le Tout\", Heisenberg rapporte plusieurs entretiens qu'il eut",
-        "text": "Heisenberg",
-        "occurrence": 1
-      },
       {
         "gid": "118592122",
         "category": "person",
@@ -92,32 +50,6 @@
         "context": "nions jamais quelque chose aux atomes?\" Bohr hésita un instant, puis dit: \"Tout de m",
         "text": "Bohr",
         "occurrence": 3
-      },
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "age, n'a de sens que s'il se veut vrai. Kant avait déjà vu que le crime le plus grav",
-        "text": "Kant",
-        "occurrence": 1
-      }
-    ],
-    "6": [
-      {
-        "gid": "118548670",
-        "category": "person",
-        "surface": "Heisenberg",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Heisenberg",
-        "form_source": "surname-index",
-        "context": "lles. \"Correspondance\" mystérieuse (cf. Heisenberg). Selon certains savants, la science n'",
-        "text": "Heisenberg",
-        "occurrence": 1
       }
     ]
   }

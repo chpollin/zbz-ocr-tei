@@ -13,7 +13,7 @@
           <lb facs="#facs_1_r_3" n="N001" />Bern, im Januar 1976
         </p>
         <p facs="#facs_1_r_4">
-          <lb facs="#facs_1_r_4" n="N001" /><persName ref="GND:104535342">H. Aebi</persName> V. Gorgé
+          <lb facs="#facs_1_r_4" n="N001" /><persName ref="GND:104535342" source="initial-surname" cert="medium" resp="#resp-entity-matcher">H. Aebi</persName> V. Gorgé
         </p>
         </div>
 <div n="2">
@@ -21,8 +21,8 @@
             <lb facs="#facs_1_r_5" n="N001" />La responsabilité du savant
           </head>
           <p facs="#facs_1_r_6">
-            <lb facs="#facs_1_r_6" n="N001" /><persName ref="GND:118815679">Jeanne Hersch</persName>
-            <lb facs="#facs_1_l_6_1" n="N002" />Département de philosophie, Faculté des lettres, <orgName ref="GND:1010450-1">Université de Genève</orgName>
+            <lb facs="#facs_1_r_6" n="N001" /><persName ref="GND:118815679" source="full-name" cert="medium" resp="#resp-entity-matcher">Jeanne Hersch</persName>
+            <lb facs="#facs_1_l_6_1" n="N002" />Département de philosophie, Faculté des lettres, <orgName ref="GND:1010450-1" source="org-variant" cert="medium" resp="#resp-entity-matcher">Université de Genève</orgName>
           </p>
           <p facs="#facs_1_r_7">
             <lb facs="#facs_1_r_7" n="N001" />Thèses

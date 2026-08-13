@@ -6,10 +6,10 @@
           überall vermeiden –, scheint mir eine sehr legitime und sehr funktionale Forderung zu sein, wie an diesem Beispiel zu sehen ist.
         </p>
         <p facs="#facs_21_r_2">
-          Sie, Frau <persName ref="GND:118815679">Hersch</persName>, haben heute im Seminar gesagt, <persName ref="GND:118557106">Jaspers</persName> sei ein Mensch gewesen, der keine Angst hatte. Das ist eine Aussage, die philosophisch zunächst überrascht, weil wir alle immer irgendwie auf dem Hintergrund der Philosophie Kierkegaards und Heideggers denken und Angst eben als Existential interpretieren. Ebenso wie wir jene Angst, von der Sie sprechen, als eine dem existierenden Individuum <persName ref="GND:118557106">Karl Jaspers</persName> zuzuschreibende Eigenschaft verstehen müssen, die nicht identisch ist mit jener fundamentalen Angst, die wir existentialet zuschreiben als charakterisierende menschliche Größe, ebenso müssen wir wahrscheinlich unterscheiden zwischen jenen Paradoxen oder Paradoxien, die wir auf unserer individuellen Interaktionsebene vermeiden müssen, und jener existentiellen Grundverfassung, von der Sie sprechen, daß wir nämlich, wenn wir nur lang genug versuchen, unsere Gedankengänge weiterzuführen, letztlich überall in Paradoxien landen werden. Wie ich vorhin sagte, ist dies aber keine Lizenz, nun die anderen Paradoxien und Widersprüche bestehen zu lassen.
+          Sie, Frau <persName ref="GND:118815679" source="anchored-surname" cert="medium" resp="#resp-entity-matcher">Hersch</persName>, haben heute im Seminar gesagt, <persName ref="GND:118557106" source="anchored-surname" cert="high" resp="#resp-entity-matcher #resp-entity-adjudication">Jaspers</persName> sei ein Mensch gewesen, der keine Angst hatte. Das ist eine Aussage, die philosophisch zunächst überrascht, weil wir alle immer irgendwie auf dem Hintergrund der Philosophie Kierkegaards und <persName ref="GND:118547798" source="anchor-free-surname" cert="medium" resp="#resp-entity-matcher">Heideggers</persName> denken und Angst eben als Existential interpretieren. Ebenso wie wir jene Angst, von der Sie sprechen, als eine dem existierenden Individuum <persName ref="GND:118557106" source="full-name" cert="medium" resp="#resp-entity-matcher">Karl Jaspers</persName> zuzuschreibende Eigenschaft verstehen müssen, die nicht identisch ist mit jener fundamentalen Angst, die wir existentialet zuschreiben als charakterisierende menschliche Größe, ebenso müssen wir wahrscheinlich unterscheiden zwischen jenen Paradoxen oder Paradoxien, die wir auf unserer individuellen Interaktionsebene vermeiden müssen, und jener existentiellen Grundverfassung, von der Sie sprechen, daß wir nämlich, wenn wir nur lang genug versuchen, unsere Gedankengänge weiterzuführen, letztlich überall in Paradoxien landen werden. Wie ich vorhin sagte, ist dies aber keine Lizenz, nun die anderen Paradoxien und Widersprüche bestehen zu lassen.
         </p>
         <p facs="#facs_21_r_3">
-          <persName ref="GND:118815679">Jeanne Hersch</persName>:
+          <persName ref="GND:118815679" source="full-name" cert="medium" resp="#resp-entity-matcher">Jeanne Hersch</persName>:
         </p>
         <sp>
           <speaker />
@@ -27,7 +27,7 @@
           </p>
         </sp>
         <p facs="#facs_21_r_7">
-          <persName ref="GND:118815679">Jeanne Hersch</persName>:
+          <persName ref="GND:118815679" source="full-name" cert="high" resp="#resp-entity-matcher #resp-entity-adjudication">Jeanne Hersch</persName>:
         </p>
         <p facs="#facs_21_r_8">
           Also mir scheint, daß das nicht begrenzt werden kann, daß man nicht sagen kann: hier kann es begrenzt werden, sonst sei es unannehmbar, und dann erhielte man das Anständige und das Nichtanständige, sondern das Ganze ist dann angesteckt und verloren. Denn diese Unmöglichkeit der Wortwörtlichkeit – und

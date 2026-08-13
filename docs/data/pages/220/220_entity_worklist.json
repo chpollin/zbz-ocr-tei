@@ -2,24 +2,6 @@
   "doc": "220",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
-    "1": [
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "phil., Privatdozentin für systematische Philosophie an der Universität Genf Perspektiven un",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      }
-    ],
     "2": [
       {
         "gid": "122446887",
@@ -81,18 +63,6 @@
         "form_source": "surname-index",
         "context": "scher Dichter, 8.-7. Jh. v. Chr. Jeans, James englischer Mathematiker und Astronom. G",
         "text": "James",
-        "occurrence": 1
-      },
-      {
-        "gid": "118615688",
-        "category": "person",
-        "surface": "Sophokles",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Sophokles, Tragiker",
-        "form_source": "cache-variant",
-        "context": ", Mathematiker und Philosoph. Geb. 1872 Sophokles griechischer Tragödiendichter. Geb. 497",
-        "text": "Sophokles",
         "occurrence": 1
       }
     ]

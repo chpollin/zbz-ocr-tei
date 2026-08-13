@@ -178,67 +178,15 @@
     ],
     "23": [
       {
-        "gid": "118562002",
+        "gid": "118587943",
         "category": "person",
-        "surface": "Kierkegaard",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kierkegaard",
-        "form_source": "surname-index",
-        "context": "de la vie humaine et de l'histoire. De Kierkegaard à Nietzsche, William James, Dilthey, Be",
-        "text": "Kierkegaard",
-        "occurrence": 1
-      },
-      {
-        "gid": "1078795312",
-        "category": "work",
         "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
+        "rule": "bare-surname",
+        "alternatives": [],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "aine et de l'histoire. De Kierkegaard à Nietzsche, William James, Dilthey, Bergson, Unamu",
-        "evidence": "none",
         "text": "Nietzsche",
-        "occurrence": 1
-      },
-      {
-        "gid": "118525727",
-        "category": "person",
-        "surface": "Dilthey",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Dilthey",
-        "form_source": "surname-index",
-        "context": "Kierkegaard à Nietzsche, William James, Dilthey, Bergson, Unamuno, Spengler, la pensée",
-        "text": "Dilthey",
-        "occurrence": 1
-      },
-      {
-        "gid": "118509578",
-        "category": "person",
-        "surface": "Bergson",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Bergson",
-        "form_source": "surname-index",
-        "context": "rd à Nietzsche, William James, Dilthey, Bergson, Unamuno, Spengler, la pensée a abandon",
-        "text": "Bergson",
-        "occurrence": 1
-      },
-      {
-        "gid": "118594893",
-        "category": "person",
-        "surface": "Platon",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Platon, dÁthènes",
-        "form_source": "cache-variant",
-        "context": "n : λόγον διδόναι, disaient Hérodote et Platon. L'homme doit saisir la réalité dans so",
-        "text": "Platon",
         "occurrence": 1
       },
       {
@@ -259,18 +207,6 @@
     ],
     "24": [
       {
-        "gid": "118525727",
-        "category": "person",
-        "surface": "Dilthey",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Dilthey",
-        "form_source": "surname-index",
-        "context": "HISTORIQUE 253 à l'histoire dont rêvait Dilthey, mais de la raison qu'est l'histoire, d",
-        "text": "Dilthey",
-        "occurrence": 1
-      },
-      {
         "gid": "118537555",
         "category": "person",
         "surface": "R. G.",
@@ -281,32 +217,6 @@
         "context": "ium of knowledge, like « Verstehen » or R. G. Collingwood's « re-enactment ». But I w",
         "text": "R. G.",
         "occurrence": 1
-      }
-    ],
-    "27": [
-      {
-        "gid": "118594893",
-        "category": "person",
-        "surface": "Plato",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Plato",
-        "form_source": "surname-index",
-        "context": "enced more by what philosophers thought Plato believed than by what Plato believed; a",
-        "text": "Plato",
-        "occurrence": 1
-      },
-      {
-        "gid": "118594893",
-        "category": "person",
-        "surface": "Plato",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Plato",
-        "form_source": "surname-index",
-        "context": "ers thought Plato believed than by what Plato believed; and in studying some period i",
-        "text": "Plato",
-        "occurrence": 2
       }
     ]
   }

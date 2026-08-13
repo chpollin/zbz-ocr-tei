@@ -2,83 +2,17 @@
   "doc": "1920",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
-    "2": [
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "Geschichtsphilosophie, der politischen Philosophie und der Nationalökonomie; Mitglied der",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      }
-    ],
     "4": [
       {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "fidèle à ses grands maîtres, avant tout Kant et Max Weber, auxquels il faut sans dou",
-        "text": "Kant",
-        "occurrence": 1
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "er, auxquels il faut sans doute ajouter Marx, que cet anti-marxiste célèbre connaît",
-        "text": "Marx",
-        "occurrence": 1
-      },
-      {
         "gid": "118818619",
         "category": "person",
-        "surface": "Merleau",
-        "rule": "bare-surname:suspect",
-        "alternatives": [],
-        "matched_form": "Merleau, Maurice",
-        "form_source": "cache-variant",
-        "context": "ou l'opposition la plus radicale, tels Merleau-Ponty et surtout Sartre. Mais par delà,",
-        "text": "Merleau",
-        "occurrence": 1
-      },
-      {
-        "gid": "118818619",
-        "category": "person",
-        "surface": "Ponty",
-        "rule": "bare-surname:suspect",
-        "alternatives": [],
-        "matched_form": "Ponty, Maurice Merleau-",
-        "form_source": "cache-variant",
-        "context": "position la plus radicale, tels Merleau-Ponty et surtout Sartre. Mais par delà, fidèl",
-        "text": "Ponty",
-        "occurrence": 1
-      },
-      {
-        "gid": "11860564X",
-        "category": "person",
-        "surface": "Sartre",
+        "surface": "Merleau-Ponty",
         "rule": "bare-surname",
         "alternatives": [],
-        "matched_form": "Sartre",
+        "matched_form": "Merleau-Ponty",
         "form_source": "surname-index",
-        "context": "radicale, tels Merleau-Ponty et surtout Sartre. Mais par delà, fidèle sans aucun compr",
-        "text": "Sartre",
+        "context": "ou l'opposition la plus radicale, tels Merleau-Ponty et surtout Sartre. Mais par delà, fidèl",
+        "text": "Merleau-Ponty",
         "occurrence": 1
       }
     ],
@@ -96,18 +30,6 @@
         "occurrence": 1
       },
       {
-        "gid": "11860564X",
-        "category": "person",
-        "surface": "Sartre",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Sartre",
-        "form_source": "surname-index",
-        "context": "une pléiade de camarades qu'il admire: Sartre, Nizan, Lagache, Canguilhem, Marrou — e",
-        "text": "Sartre",
-        "occurrence": 1
-      },
-      {
         "gid": "1088013961",
         "category": "work",
         "surface": "les grands philosophes",
@@ -120,58 +42,10 @@
         "occurrence": 1
       },
       {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "la pensée allemandes, il se plonge dans Marx et Max Weber. Il passe les années 1931-",
-        "text": "Marx",
-        "occurrence": 1
-      },
-      {
         "gid": "118551655",
         "category": "person",
         "surface": "Hitler",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hitler",
-        "form_source": "surname-index",
-        "context": "Allemagne qu'en août 1933. Il a entendu Hitler, perçu « son satanisme »; il a le senti",
-        "text": "Hitler",
-        "occurrence": 1
-      },
-      {
-        "gid": "4597459-7",
-        "category": "work",
-        "surface": "ma vie",
-        "rule": "work-variant:qualifier-strip:suspect",
-        "alternatives": [],
-        "matched_form": "Ma vie",
-        "form_source": "cache-variant",
-        "context": "Une fois de plus, comme d'habitude dans ma vie, j'étais dans un petit groupe solitaire",
-        "text": "ma vie",
-        "occurrence": 1
-      },
-      {
-        "gid": "118551655",
-        "category": "person",
-        "surface": "Hitler",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hitler",
-        "form_source": "surname-index",
-        "context": "soviétique pour gagner la guerre contre Hitler. Le pacte Hitler-Staline, c'était évide",
-        "text": "Hitler",
-        "occurrence": 2
-      },
-      {
-        "gid": "118551655",
-        "category": "person",
-        "surface": "Hitler",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Hitler",
         "form_source": "surname-index",
@@ -181,54 +55,6 @@
       }
     ],
     "6": [
-      {
-        "gid": "121587177",
-        "category": "person",
-        "surface": "S.S.",
-        "rule": "full-name:initials",
-        "alternatives": [],
-        "matched_form": "S.S.",
-        "form_source": "headword",
-        "context": "'hui, ses excès, en Allemagne ou en U.R.S.S., restent difficiles à comprendre. On au",
-        "text": "S.S.",
-        "occurrence": 1
-      },
-      {
-        "gid": "118551655",
-        "category": "person",
-        "surface": "Hitler",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hitler",
-        "form_source": "surname-index",
-        "context": "iles à comprendre. On aurait pu arrêter Hitler sans risque de guerre en 36, quand il o",
-        "text": "Hitler",
-        "occurrence": 1
-      },
-      {
-        "gid": "11860564X",
-        "category": "person",
-        "surface": "Sartre",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Sartre",
-        "form_source": "surname-index",
-        "context": "ger Munich. Il raconte un déjeuner avec Sartre et Simone de Beauvoir. Tous deux, par p",
-        "text": "Sartre",
-        "occurrence": 1
-      },
-      {
-        "gid": "11860564X",
-        "category": "person",
-        "surface": "Sartre",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Sartre",
-        "form_source": "surname-index",
-        "context": "ent-ils. Par la suite, dans un roman de Sartre, tous ceux qui étaient pour Munich sont",
-        "text": "Sartre",
-        "occurrence": 2
-      },
       {
         "gid": "118518739",
         "category": "person",
@@ -257,30 +83,6 @@
         "context": "u'en avril 47. Il refuse de revenir à l'Université, à Toulouse ou à Bordeaux, parce que, d",
         "text": "Université",
         "occurrence": 1
-      },
-      {
-        "gid": "11860564X",
-        "category": "person",
-        "surface": "Sartre",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Sartre",
-        "form_source": "surname-index",
-        "context": "els» entraîna pour Aron sa rupture avec Sartre. Peu d'événements privés semblent avoir",
-        "text": "Sartre",
-        "occurrence": 1
-      },
-      {
-        "gid": "11860564X",
-        "category": "person",
-        "surface": "Sartre",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Sartre",
-        "form_source": "surname-index",
-        "context": "loureusement ressentis. Son amitié pour Sartre n'a jamais été détruite, et cette amiti",
-        "text": "Sartre",
-        "occurrence": 2
       }
     ],
     "9": [

@@ -176,12 +176,15 @@ def occurrence_in_page(preview_xml: str, page_start: int, start: int, text: str)
 def worklist_pages(doc_result: dict, preview_xml: str) -> tuple[dict[str, list[dict]], int]:
     """Group the tier-2 worklist per page; the second value counts dropped stale entries."""
     positions, cumulative = wrapper_shifts(doc_result.get("wrapped") or [])
+    # The respStmt declarations sit in the header, in front of the body, so they move
+    # every body offset by a constant the preview runner records per document.
+    header_shift = doc_result.get("header_shift") or 0
     pb_starts = pb_offsets(preview_xml)
     pages: dict[int, list[dict]] = {}
     stale = 0
     for cand in doc_result.get("worklist") or []:
-        start = shifted(positions, cumulative, cand["start"], inclusive=True)
-        end = shifted(positions, cumulative, cand["end"], inclusive=False)
+        start = header_shift + shifted(positions, cumulative, cand["start"], inclusive=True)
+        end = header_shift + shifted(positions, cumulative, cand["end"], inclusive=False)
         if preview_xml[start:end] != cand.get("surface"):
             stale += 1
             continue

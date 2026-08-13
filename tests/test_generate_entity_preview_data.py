@@ -166,6 +166,26 @@ def test_page_of_clamps_content_before_the_first_pb():
 # --- Worklist -------------------------------------------------------------------------
 
 
+def test_worklist_survives_the_header_responsibility_declarations():
+    """The respStmt block sits in front of the body, so every body offset moves with it.
+
+    The preview runner records that shift; without it every worklist entry of a
+    document that declares a responsibility would be dropped as stale.
+    """
+    from scripts.tei.tei_entity_preview import insert_resp_stmts
+
+    statements = [("resp-entity-matcher", "Automatic entity matching")]
+    preview = insert_resp_stmts(_preview_xml(), statements)
+    result = _doc_result()
+    shift = len(preview) - len(_preview_xml())
+    assert shift > 0
+
+    pages, stale = worklist_pages({**result, "header_shift": shift}, preview)
+    assert stale == 0
+    assert [e["surface"] for e in pages["1"]] == ["Corneille"]
+    assert [e["surface"] for e in pages["2"]] == ["Hitler"]
+
+
 def test_worklist_grouped_by_page_over_shifted_offsets():
     pages, stale = worklist_pages(_doc_result(), _preview_xml())
     assert stale == 0

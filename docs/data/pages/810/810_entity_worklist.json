@@ -80,30 +80,6 @@
     ],
     "8": [
       {
-        "gid": "1248933664",
-        "category": "work",
-        "surface": "Antwort",
-        "rule": "work-title:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Antwort",
-        "form_source": "headword",
-        "context": "erte Rationalität benötigen, suchen wir Antwort auf die uns heute hier gestellte Frage.",
-        "text": "Antwort",
-        "occurrence": 1
-      },
-      {
-        "gid": "1248933664",
-        "category": "work",
-        "surface": "Antwort",
-        "rule": "work-title:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Antwort",
-        "form_source": "headword",
-        "context": "iebe Frau Hersch, sehr gespannt, welche Antwort Sie uns darauf geben werden. Darf ich S",
-        "text": "Antwort",
-        "occurrence": 2
-      },
-      {
         "gid": "118815679",
         "category": "person",
         "surface": "Hersch",
@@ -130,34 +106,6 @@
         "form_source": "surname-index",
         "context": "in Freiheit sein. Die marxistische, die Freudsche und die strukturalistische Reduktion ha",
         "text": "Freudsche",
-        "occurrence": 1
-      },
-      {
-        "gid": "1248933664",
-        "category": "work",
-        "surface": "Antwort",
-        "rule": "work-title:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Antwort",
-        "form_source": "headword",
-        "context": "geschieht, dann erhält man darauf keine Antwort. Dazu kommt die Problematik der moderne",
-        "text": "Antwort",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "Kultur, fast byzantinisch – auch in der Philosophie. Daraus entwickelt sich eine Leere, ein",
-        "evidence": "none",
-        "text": "Philosophie",
         "occurrence": 1
       }
     ],
@@ -188,18 +136,6 @@
         "context": "chen – und schon gar nicht aus Angst. 4 Hersch Ich habe bewußt das Vulgärbild des Marx",
         "text": "Hersch",
         "occurrence": 3
-      },
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "Es geht mir nicht um eine Polemik gegen Marx und Freud, sondern gegen das, was in de",
-        "text": "Marx",
-        "occurrence": 4
       },
       {
         "gid": "118535315",
@@ -413,47 +349,19 @@
         "occurrence": 1
       },
       {
-        "gid": "118527053",
+        "gid": "118587943",
         "category": "person",
-        "surface": "Dostojewski",
+        "surface": "Nietzsche",
         "rule": "bare-surname",
         "alternatives": [],
-        "matched_form": "Dostojewski, Fjodor Michailowitch",
-        "form_source": "cache-variant",
-        "context": "erk hierfür nenne ich „Die Dämonen“ von Dostojewski und verweise weiterhin auf Nietzsche, d",
-        "text": "Dostojewski",
-        "occurrence": 1
-      },
-      {
-        "gid": "1078795312",
-        "category": "work",
-        "surface": "Nietzsche",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "1078795312",
-          "118587943"
-        ],
         "matched_form": "Nietzsche",
-        "form_source": "headword",
+        "form_source": "surname-index",
         "context": "Dostojewski und verweise weiterhin auf Nietzsche, der den europäischen Nihilismus sehr g",
-        "evidence": "none",
         "text": "Nietzsche",
         "occurrence": 1
       }
     ],
     "19": [
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "rstanden wurde. In diesem Sinne ist bei Kant die Kritik der Urteilskraft als Übergip",
-        "text": "Kant",
-        "occurrence": 1
-      },
       {
         "gid": "118518739",
         "category": "person",
@@ -506,18 +414,6 @@
         "occurrence": 1
       },
       {
-        "gid": "118527053",
-        "category": "person",
-        "surface": "Dostojewski",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Dostojewski, Fjodor Michailowitch",
-        "form_source": "cache-variant",
-        "context": "des 19. Jahrhunderts verbinde sich bei Dostojewski mit einem Übermaß an Freiheit. Aber zuv",
-        "text": "Dostojewski",
-        "occurrence": 1
-      },
-      {
         "gid": "117085391",
         "category": "person",
         "surface": "Mayer",
@@ -562,7 +458,7 @@
         "gid": "118509578",
         "category": "person",
         "surface": "Bergson",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Bergson",
         "form_source": "surname-index",
@@ -611,18 +507,6 @@
       }
     ],
     "21": [
-      {
-        "gid": "118578537",
-        "category": "person",
-        "surface": "Marx",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Marx",
-        "form_source": "surname-index",
-        "context": "ch der Notwendigkeit entstanden, wie es Marx nennt. Nun beginnt etwa ein Fünftel der",
-        "text": "Marx",
-        "occurrence": 1
-      },
       {
         "gid": "118815679",
         "category": "person",
@@ -712,34 +596,6 @@
         "occurrence": 1
       }
     ],
-    "24": [
-      {
-        "gid": "1248933664",
-        "category": "work",
-        "surface": "Antwort",
-        "rule": "work-title:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Antwort",
-        "form_source": "headword",
-        "context": "falls sinnvoll religiöses Verhalten als Antwort auf eine an mich appellierende Wirklich",
-        "text": "Antwort",
-        "occurrence": 1
-      }
-    ],
-    "25": [
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "h meine Freiheit bestimmen. Das ist von Hegel im Herr-Knecht-Bild nachgewiesen worden",
-        "text": "Hegel",
-        "occurrence": 1
-      }
-    ],
     "28": [
       {
         "gid": "118578537",
@@ -781,57 +637,9 @@
         "context": "n dadurch die Möglichkeit individueller Wahl aus einem vielfältigen Angebot von Kons",
         "text": "Wahl",
         "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "ie in den Bereich einer therapeutischen Philosophie fallenden Probleme drohenden Sinnverlus",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
       }
     ],
     "31": [
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "technik\". Jetzt wäre es die Aufgabe der Philosophie, mit diesen sich neu ergebenden Kontrol",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "u setzen, ohne in ihrem Hochmut auf die Philosophie zu hören und mit ihr gemeinsam darüber",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
-      },
       {
         "gid": "118630148",
         "category": "person",
@@ -953,18 +761,6 @@
     ],
     "34": [
       {
-        "gid": "1248933664",
-        "category": "work",
-        "surface": "Antwort",
-        "rule": "work-title:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Antwort",
-        "form_source": "headword",
-        "context": "ehr weit entfernt. Vielleicht liegt die Antwort auf die Frage, wie man damit fertig wir",
-        "text": "Antwort",
-        "occurrence": 1
-      },
-      {
         "gid": "118630717",
         "category": "person",
         "surface": "Weizsäcker",
@@ -999,22 +795,6 @@
         "context": "Weizsäcker, die Lust am Leiden? 109 von Weizsäcker Nein, die Lust am Leiden ist auch eine",
         "text": "Weizsäcker",
         "occurrence": 3
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "beispielsweise auch die therapeutische Philosophie eines Wittgenstein. Als Arzt verwahre i",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
       },
       {
         "gid": "118634313",
@@ -1215,22 +995,6 @@
         "occurrence": 1
       },
       {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "e sich immer wieder gezeigt hat –, eine Philosophie oder zumindest eine Terminologie zu erf",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
         "gid": "119194589",
         "category": "person",
         "surface": "Wahl",
@@ -1274,20 +1038,6 @@
         "occurrence": 1
       }
     ],
-    "51": [
-      {
-        "gid": "1248933664",
-        "category": "work",
-        "surface": "Antwort",
-        "rule": "work-title:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Antwort",
-        "form_source": "headword",
-        "context": "iner der kommenden Bergedorfer Tagungen Antwort auf die Frage nach der Zukunft der indu",
-        "text": "Antwort",
-        "occurrence": 1
-      }
-    ],
     "52": [
       {
         "gid": "118616145",
@@ -1308,7 +1058,7 @@
         "gid": "118613723",
         "category": "person",
         "surface": "Shakespeare",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Shakespeare",
         "form_source": "surname-index",
@@ -1327,37 +1077,9 @@
         "context": "8); zahlreiche Übersetzungsbände, Dylan Thomas, Shakespeare, T. S. Eliot, u. a. Dr.-In",
         "text": "Thomas",
         "occurrence": 1
-      },
-      {
-        "gid": "118613723",
-        "category": "person",
-        "surface": "Shakespeare",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Shakespeare",
-        "form_source": "surname-index",
-        "context": "reiche Übersetzungsbände, Dylan Thomas, Shakespeare, T. S. Eliot, u. a. Dr.-Ing. Heinz Gret",
-        "text": "Shakespeare",
-        "occurrence": 2
       }
     ],
     "53": [
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "eanne Hersch geb. 1910 o. Professor für Philosophie an der Universität Genf, Mitglied der S",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
       {
         "gid": "2011312-2",
         "category": "organisation",
@@ -1444,22 +1166,6 @@
         "form_source": "cache-variant",
         "context": "l Prof. Dr. Carl-Friedrich Freiherr von Weizsäcker geb. 1912 o. Prof. für Philosophie an d",
         "text": "Weizsäcker",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "r von Weizsäcker geb. 1912 o. Prof. für Philosophie an der Universität Hamburg Schriften: Z",
-        "evidence": "none",
-        "text": "Philosophie",
         "occurrence": 1
       }
     ],
@@ -1659,18 +1365,6 @@
         "occurrence": 1
       },
       {
-        "gid": "118554735",
-        "category": "person",
-        "surface": "D. H.",
-        "rule": "full-name:initials",
-        "alternatives": [],
-        "matched_form": "D. H.",
-        "form_source": "headword",
-        "context": "lfgang Hilligen Dr. W. Hochkeppel Prof. D. H. J. Hoefnagels Prof. Dr. P. R. Hofstätte",
-        "text": "D. H.",
-        "occurrence": 2
-      },
-      {
         "gid": "122375874",
         "category": "person",
         "surface": "a. M.",
@@ -1829,7 +1523,7 @@
         "gid": "118578537",
         "category": "person",
         "surface": "Marx",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Marx",
         "form_source": "surname-index",
@@ -2034,18 +1728,6 @@
         "occurrence": 8
       },
       {
-        "gid": "118815679",
-        "category": "person",
-        "surface": "J. H.",
-        "rule": "full-name:initials",
-        "alternatives": [],
-        "matched_form": "J. H.",
-        "form_source": "headword",
-        "context": "Dr. D. Oberndörfer | Freiburg | | Prof. J. H. P. Paelinck | Brüssel/Belgien | | Prof.",
-        "text": "J. H.",
-        "occurrence": 2
-      },
-      {
         "gid": "122375874",
         "category": "person",
         "surface": "a. M.",
@@ -2097,18 +1779,6 @@
         "form_source": "headword",
         "context": "MdB, MdB Helmut Schmidt, MdB Prof. Dr. F. M. Schmölz Dr. F. Schneider Eberhard Schne",
         "text": "F. M.",
-        "occurrence": 1
-      },
-      {
-        "gid": "118640011",
-        "category": "person",
-        "surface": "B. J.",
-        "rule": "full-name:initials",
-        "alternatives": [],
-        "matched_form": "B. J.",
-        "form_source": "headword",
-        "context": "Heinrich Wilhelm Schötter Prof. Dr. D. B. J. Schouten Prof. Dr. J. F. Schouten Caspa",
-        "text": "B. J.",
         "occurrence": 1
       },
       {

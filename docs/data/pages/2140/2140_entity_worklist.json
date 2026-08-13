@@ -1,34 +1,5 @@
 {
   "doc": "2140",
   "generator": "scripts/edition/generate_entity_preview_data.py",
-  "pages": {
-    "3": [
-      {
-        "gid": "1051972493",
-        "category": "person",
-        "surface": "E. W.",
-        "rule": "full-name:initials",
-        "alternatives": [],
-        "matched_form": "E. W.",
-        "form_source": "headword",
-        "context": "UES | 57 | | RAYMUNDO PANIKKAR | 61 | | E. W. F. TOMLIN | 73 | | Conclusions par | |",
-        "text": "E. W.",
-        "occurrence": 1
-      }
-    ],
-    "6": [
-      {
-        "gid": "4675131-2",
-        "category": "work",
-        "surface": "le malentendu",
-        "rule": "work-title:suspect",
-        "alternatives": [],
-        "matched_form": "Le malentendu",
-        "form_source": "headword",
-        "context": "\"intelligentes\" ou parfois \"stupides\", le malentendu s'aggrave. Ce qui s'efface, dans la con",
-        "text": "le malentendu",
-        "occurrence": 1
-      }
-    ]
-  }
+  "pages": {}
 }

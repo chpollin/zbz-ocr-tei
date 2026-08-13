@@ -2,54 +2,6 @@
   "doc": "1060",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
-    "2": [
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "n und leitete 1966-68 die Abteilung für Philosophie an der UNESCO in Paris. Sie vertrat die",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": "ienen. Jeanne Hersch ist Ordinarius für Philosophie an der Universität Genf und Mitglied de",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 2
-      }
-    ],
-    "3": [
-      {
-        "gid": "4597459-7",
-        "category": "work",
-        "surface": "mein <lb facs=\"#facs_3_r_4\" n=\"N006\" />Leben",
-        "rule": "work-title:qualifier-strip:suspect",
-        "alternatives": [],
-        "matched_form": "Mein Leben",
-        "form_source": "headword",
-        "context": "h habe sie verpasst. Geschützt habe ich mein Leben in der Schweiz verbracht, und unter die",
-        "text": "mein Leben",
-        "occurrence": 1
-      }
-    ],
     "5": [
       {
         "gid": "118522175",
@@ -67,7 +19,7 @@
         "gid": "118551655",
         "category": "person",
         "surface": "Hitler",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Hitler",
         "form_source": "surname-index",
@@ -87,18 +39,6 @@
         "form_source": "surname-index",
         "context": ": Stagnieren und Isolierung. Bei dieser Wahl scheint den Menschen das Widerstehen se",
         "text": "Wahl",
-        "occurrence": 1
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "der \"Luft der Zeit\", dem Zeitgeist, wie Hegel ihn genannt hat, ausgesetzt zu sein und",
-        "text": "Hegel",
         "occurrence": 1
       }
     ],
@@ -163,18 +103,6 @@
         "form_source": "cache-variant",
         "context": "en: Solschenizyn, Sacharow, Grigorenko, Amalrik – und andere, eine Handvoll Menschen, d",
         "text": "Amalrik",
-        "occurrence": 1
-      },
-      {
-        "gid": "4453024-9",
-        "category": "work",
-        "surface": "die <lb facs=\"#facs_8_r_3\" n=\"N003\" />Mauer",
-        "rule": "work-variant:suspect",
-        "alternatives": [],
-        "matched_form": "Die Mauer",
-        "form_source": "cache-variant",
-        "context": "die so sehr verzweifelt sind, dass sie die Mauer der Angst durchbrochen haben, helfen un",
-        "text": "die Mauer",
         "occurrence": 1
       }
     ]

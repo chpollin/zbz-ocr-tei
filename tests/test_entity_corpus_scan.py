@@ -357,6 +357,7 @@ def test_main_writes_the_report_and_prints_ascii(tmp_path, monkeypatch, capsys):
         "--src-dir", str(src), "--entities", str(entities),
         "--cache", str(tmp_path / "missing_cache.json"),
         "--legacy", str(tmp_path / "missing_legacy.json"),
+        "--policy", str(tmp_path / "missing_policy.json"),
         "--out", str(out),
     ])
 
@@ -384,6 +385,7 @@ def test_main_scans_only_the_requested_documents(tmp_path, monkeypatch):
         "--src-dir", str(src), "--entities", str(_write_entities(tmp_path)),
         "--cache", str(tmp_path / "missing_cache.json"),
         "--legacy", str(tmp_path / "missing_legacy.json"),
+        "--policy", str(tmp_path / "missing_policy.json"),
         "--out", str(out),
     ])
 

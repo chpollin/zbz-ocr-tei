@@ -483,3 +483,61 @@ def test_real_cache_marks_the_defective_ids_as_not_found():
     # "000000" placeholder entry left the list with E112.
     assert not_found == {"11862974", "454611536", "1076202632", "1393920942"}
     assert not [e for e in report["errors"] if e["type"] == "cache_status"]
+
+
+# --- operator marking policy -------------------------------------------------------
+
+
+def _policy(anchor_free=(), held_out=(), drop=(), corroborate=()):
+    return {
+        "note": "test fixture",
+        "decided": "2026-08-13",
+        "anchor_free_surnames": [{"gid": gid, "keys": list(keys)} for gid, keys in anchor_free],
+        "held_out_surnames": [{"gid": gid, "reason": "test"} for gid in held_out],
+        "work_titles": {
+            "drop_from_scope": [{"gid": gid} for gid in drop],
+            "require_typographic_corroboration": [{"gid": gid} for gid in corroborate],
+        },
+    }
+
+
+def test_without_a_policy_the_counts_stay_empty():
+    report = lint(_entities(persons=[_person("104535342")]))
+    assert report["counts"]["policy"] is None
+
+
+def test_policy_counts_are_reported():
+    report = lint(
+        _entities(persons=[_person("104535342")], works=[_work("4558181-2")]),
+        policy=_policy(anchor_free=[("104535342", ["Muster", "Musters"])],
+                       corroborate=["4558181-2"]),
+    )
+    assert report["errors"] == []
+    assert report["counts"]["policy"] == {
+        "decided": "2026-08-13",
+        "anchor_free_entries": 1,
+        "anchor_free_keys": 2,
+        "held_out": 0,
+        "drop_from_scope": 0,
+        "require_corroboration": 1,
+    }
+
+
+def test_policy_with_an_unknown_gid_is_an_error():
+    report = lint(
+        _entities(persons=[_person("104535342")]),
+        policy=_policy(anchor_free=[("999999999", ["Nobody"])]),
+    )
+    assert _types(report) == ["invalid_marking_policy"]
+    assert "999999999" in report["errors"][0]["message"]
+    assert report["counts"]["policy"] is None
+
+
+def test_policy_gid_of_the_wrong_category_is_a_warning():
+    report = lint(
+        _entities(persons=[_person("104535342")], works=[_work("4558181-2")]),
+        policy=_policy(anchor_free=[("4558181-2", ["Musterwerk"])],
+                       drop=["104535342"]),
+    )
+    assert report["errors"] == []
+    assert _types(report, "warnings") == ["policy_category", "policy_category"]

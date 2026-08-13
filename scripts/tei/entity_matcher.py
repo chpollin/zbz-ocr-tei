@@ -40,8 +40,9 @@ Two public functions:
                        `variants` field of the curated list), "cache-variant" (GND
                        cache), "legacy" (legacy mention index), "surname-index" (the
                        bare surname of a curated headword).
-        evidence       one-word work titles only: "typographic" when the setting
-                       corroborates the title reading, "none" otherwise (see below).
+        evidence       one-word work titles and the titles the marking policy puts
+                       under the corroboration requirement: "typographic" when the
+                       setting corroborates the title reading, "none" otherwise.
 
 Search model. The scan runs on a normalized projection of the raw string: markup
 contributes nothing, `<lb break="no"/>` joins a broken word, a plain `<lb/>` counts
@@ -99,6 +100,15 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   punctuation). Honorific prefixes ("Mlle Hersch") therefore fall through to the
   general surname rules; whether ZBZ wants the honorific inside the element is an
   open modelling point.
+- The operator marking policy (data/entities/marking_policy.json, carried in
+  `lexicon["policy"]`) binds two rules here. A surname key of `anchor_free_surnames`
+  reaches tier 1 without a document anchor, under the rule id "anchor-free-surname";
+  every demotion keeps its effect (suspicion, plain bibl, figure, running head), a
+  document anchor still outranks the release, and a released hit anchors nothing
+  itself, so the release stays on the listed keys. An entity of
+  `work_titles.require_typographic_corroboration` produces a candidate only where the
+  typographic evidence below corroborates the reading, whatever the title's token
+  count; the second rule of the policy, the scope drop, is a lexicon matter.
 - Every one-word work title candidate carries the typographic pre-sorting `evidence`:
   "typographic" when the span sits completely inside an `hi`, when quotation marks or
   guillemets enclose it directly, or when a possessive stands right in front of it
@@ -155,6 +165,8 @@ from dataclasses import dataclass, replace
 # The `X as X` form marks the names only re-exported, unused inside this module.
 from scripts.tei.entity_lexicon import (
     _WORD_RUN_RE,
+    ANCHOR_FREE_RULE,
+    EMPTY_POLICY,
     FORM_SOURCES as FORM_SOURCES,
     INITIALS_SUFFIX,
     MIN_TOKEN_LEN as MIN_TOKEN_LEN,
@@ -169,7 +181,9 @@ from scripts.tei.entity_lexicon import (
     build_lexicon as build_lexicon,
     legacy_form_is_covered as legacy_form_is_covered,
     legacy_names as legacy_names,
+    load_marking_policy as load_marking_policy,
     normalize_gid as normalize_gid,
+    parse_marking_policy as parse_marking_policy,
 )
 from scripts.tei.running_heads import head_spans
 
@@ -236,8 +250,8 @@ HONORIFICS = frozenset({
     "prof", "professor", "signor", "signora", "signorina", "sir",
 })
 
-# Only these two rules carry the homograph check; full names are distinctive enough.
-_SUSPECT_RULES = frozenset({"bare-surname", "anchored-surname"})
+# Only the surname rules carry the homograph check; full names are distinctive enough.
+_SUSPECT_RULES = frozenset({"bare-surname", "anchored-surname", ANCHOR_FREE_RULE})
 
 # A word behind one of these is capitalized by position, which is no name signal.
 _SENTENCE_END = frozenset(".!?:;" + SENTINEL)
@@ -585,9 +599,18 @@ def _anchor_gids(candidates: list[dict]) -> set[str]:
     """
     return {
         c["gid"] for c in candidates
-        if c["category"] == "person"
+        if c["category"] == "person" and _anchors(c["rule"])
         and (c["tier"] == 1 or _tier1_before_zone_demotion(c["rule"]))
     }
+
+
+def _anchors(rule: str) -> bool:
+    """True for a tier-1 rule that may anchor other surnames of its entity.
+
+    A released surname is no anchor: the operator released the listed keys, and
+    anchoring would carry the release to every other spelling of that person.
+    """
+    return base_rule(rule) != ANCHOR_FREE_RULE
 
 
 def _tier1_before_zone_demotion(rule: str) -> bool:
@@ -612,6 +635,7 @@ def _scan(
     out: list[dict] = []
     anchored: set[str] = set(seed_anchors or ())
     review_suspect = lexicon.get("review_suspect") or frozenset()
+    corroboration = (lexicon.get("policy") or EMPTY_POLICY)["require_corroboration"]
     pos = 0
     while pos < len(text):
         if not _is_word(text[pos]) or (pos > 0 and _is_word(text[pos - 1])):
@@ -632,7 +656,7 @@ def _scan(
             hit = replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
         if hit.tier == 1 and (hit.gid, hit.matched_form) in review_suspect:
             hit = replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
-        candidate, resume = _build_candidate(xml, norm, zones, hit)
+        candidate, resume = _build_candidate(xml, norm, zones, hit, corroboration)
         if candidate is not None:
             # Position demotions in the documented suffix order: the figure zone
             # (a property of the block) before the running head (of the page). Both
@@ -645,7 +669,7 @@ def _scan(
                 candidate["rule"] += RUNNING_HEAD_SUFFIX
                 candidate["tier"] = 2
             out.append(candidate)
-            if anchor_tier == 1:
+            if anchor_tier == 1 and _anchors(candidate["rule"]):
                 anchored.add(candidate["gid"])
         pos = max(resume, pos + 1)
     return out
@@ -985,8 +1009,22 @@ def _surname_at(
         return _surname_hit(pos, end, in_document[0], "anchored-surname", 1, key, gids, lexicon)
     if len(in_document) > 1:
         return _surname_hit(pos, end, in_document[0], "ambiguous-surname", 2, key, gids, lexicon)
+    # Document evidence first, the operator release second: a released canonical
+    # surname reaches tier 1 where nothing in the document decides its bearer.
+    released = [gid for gid in gids if gid in _anchor_free_gids(lexicon, key)]
+    if len(released) == 1:
+        return _surname_hit(pos, end, released[0], ANCHOR_FREE_RULE, 1, key, gids, lexicon)
     return _hit(pos, end, gids[0], "person", "bare-surname", 2, gids,
                 *_surname_origin(lexicon, "surname_forms", key, gids[0]))
+
+
+def _anchor_free_gids(lexicon: dict, key: str) -> frozenset[str]:
+    """Gids the operator released from the anchor requirement for exactly this key.
+
+    The policy lists the surname keys its release covers, so nothing derived from a
+    key is released: another spelling of the same person keeps needing its anchor.
+    """
+    return (lexicon.get("policy") or EMPTY_POLICY)["anchor_free"].get(key, frozenset())
 
 
 def _hyphenated_surname(
@@ -1095,6 +1133,7 @@ def _build_candidate(
     norm: _Norm,
     zones: _Zones,
     hit: _Hit,
+    corroboration: frozenset[str] = frozenset(),
 ) -> tuple[dict | None, int]:
     """Map a normalized hit back to raw offsets and apply the zone downgrades."""
     n_start, n_end = hit.start, hit.end
@@ -1112,6 +1151,14 @@ def _build_candidate(
     if _in_spans(raw_start, zones.plain_bibl):
         rule += PLAIN_BIBL_SUFFIX
         tier = 2
+    required = _needs_corroboration(hit, corroboration)
+    evidence = None
+    if required or base_rule(rule) == "short-title":
+        evidence = _title_evidence(norm, zones, hit, raw_start, raw_end)
+        if required and evidence != EVIDENCE_TYPOGRAPHIC:
+            # The operator took the generic title out of the automatic reading unless
+            # the setting corroborates it; an uncorroborated hit is no candidate.
+            return None, n_end
     candidate = {
         "gid": hit.gid,
         "category": hit.category,
@@ -1124,10 +1171,22 @@ def _build_candidate(
         "matched_form": hit.matched_form,
         "form_source": hit.form_source,
     }
-    if base_rule(rule) == "short-title":
-        candidate["evidence"] = _title_evidence(norm, zones, hit, raw_start, raw_end)
+    if evidence is not None:
+        candidate["evidence"] = evidence
     candidate["context"] = _context(norm.text, n_start, n_end)
     return candidate, max(bisect_right(norm.ends, raw_end), n_start + 1)
+
+
+def _needs_corroboration(hit: _Hit, corroboration: frozenset[str]) -> bool:
+    """True when the operator requires typographic evidence for this entity's title.
+
+    Every possible bearer counts, because the requirement is about the surface reading
+    and an ambiguous candidate would otherwise carry the generic title back in under
+    the other bearer's id.
+    """
+    if not corroboration:
+        return False
+    return hit.gid in corroboration or any(gid in corroboration for gid in hit.alternatives)
 
 
 def _title_evidence(

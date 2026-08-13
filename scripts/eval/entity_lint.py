@@ -20,6 +20,8 @@ Errors (block an entry or one of its forms from automatic matching):
   redundant_variant    a curated variant repeats the entry's own label
   gnd_not_found        the cache holds HTTP 404 for the id (defective id)
   cache_status         the cache holds another non-200 status (retrieval incomplete)
+  invalid_marking_policy  marking_policy.json fails its own validation (unknown gid,
+                       malformed entry, unknown bucket, gid in two buckets)
 
 Warnings (reported, never blocking):
   not_in_cache             id missing from the cache, so the remote checks did not run
@@ -49,6 +51,7 @@ from pathlib import Path
 
 from scripts.config import DATA_DIR
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
+from scripts.tei.entity_lexicon import parse_marking_policy
 from scripts.tei.entity_matcher import (
     legacy_form_is_covered,
     legacy_names,
@@ -58,6 +61,7 @@ from scripts.tei.entity_matcher import (
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
 LEGACY_PATH = DATA_DIR / "entities" / "legacy_mentions.json"
+POLICY_PATH = DATA_DIR / "entities" / "marking_policy.json"
 REPORT_PATH = AUDIT_OUTPUT_DIR / "entity_lint.json"
 
 CATEGORIES = ("persons", "organisations", "works")
@@ -266,12 +270,14 @@ def _legacy_findings(forms, category: str, index: int, gnd_id, label, record) ->
     return pairs, findings
 
 
-def lint(entities: dict, cache: dict | None = None, legacy: dict | None = None) -> dict:
+def lint(entities: dict, cache: dict | None = None, legacy: dict | None = None,
+         policy: dict | None = None) -> dict:
     """Audit the entity list, optionally against the GND cache and the legacy index.
 
     Pure: takes and returns plain data, touches no files. Without a cache only the
     offline checks run and counts["cache"] stays None; without the legacy index the
-    pairing check does not run and counts["legacy"] stays None.
+    pairing check does not run and counts["legacy"] stays None; without the marking
+    policy counts["policy"] stays None.
     """
     errors, warnings = [], []
     cache_entries = None if cache is None else (cache.get("entries") or {})
@@ -353,6 +359,10 @@ def lint(entities: dict, cache: dict | None = None, legacy: dict | None = None) 
                 legacy_pairs += pairs
                 warnings.extend(findings)
 
+    policy_counts = None
+    if policy is not None:
+        policy_counts = _policy_findings(policy, entities, listed_ids, errors, warnings)
+
     sizes = {category: len(entities.get(category) or []) for category in CATEGORIES}
     counts = {
         "entities": {**sizes, "total": sum(sizes.values())},
@@ -368,19 +378,63 @@ def lint(entities: dict, cache: dict | None = None, legacy: dict | None = None) 
             "checked_pairs": legacy_pairs,
             "uncorroborated": sum(1 for w in warnings if w["type"] == "legacy_pairing"),
         },
+        "policy": policy_counts,
     }
     return {"errors": errors, "warnings": warnings, "counts": counts}
 
 
+# The policy buckets bind entity categories: a surname release only makes sense for a
+# person, a title scope decision only for a work. A mismatch is reported, not blocked,
+# because the matcher simply finds nothing to apply it to.
+_POLICY_CATEGORY = {"anchor_free": "persons", "held_out": "persons",
+                    "drop_from_scope": "works", "require_corroboration": "works"}
+
+
+def _policy_findings(policy: dict, entities: dict, listed_ids: set,
+                     errors: list, warnings: list) -> dict | None:
+    """Validate the marking policy against the list; None when it does not parse."""
+    try:
+        parsed = parse_marking_policy(policy, listed_ids)
+    except ValueError as error:
+        errors.append(_finding("invalid_marking_policy", "policy", 0, None, str(error)))
+        return None
+
+    by_category = {
+        category: {entry.get("GND_id") for entry in entities.get(category) or []}
+        for category in CATEGORIES
+    }
+    anchor_free_gids = {gid for gids in parsed["anchor_free"].values() for gid in gids}
+    buckets = {"anchor_free": anchor_free_gids, "held_out": parsed["held_out"],
+               "drop_from_scope": parsed["drop_from_scope"],
+               "require_corroboration": parsed["require_corroboration"]}
+    for bucket, gids in buckets.items():
+        expected = _POLICY_CATEGORY[bucket]
+        for gid in sorted(gids):
+            if gid not in by_category[expected]:
+                warnings.append(_finding(
+                    "policy_category", "policy", 0, gid,
+                    f"{bucket}: GND-ID {gid} ist kein Eintrag in {expected}"))
+
+    return {
+        "decided": parsed["decided"],
+        "anchor_free_entries": len(anchor_free_gids),
+        "anchor_free_keys": len(parsed["anchor_free"]),
+        "held_out": len(parsed["held_out"]),
+        "drop_from_scope": len(parsed["drop_from_scope"]),
+        "require_corroboration": len(parsed["require_corroboration"]),
+    }
+
+
 def build_report(entities: dict, cache, entities_path, cache_path,
-                 legacy=None, legacy_path=None) -> dict:
+                 legacy=None, legacy_path=None, policy=None, policy_path=None) -> dict:
     """Full JSON payload: the lint result plus its provenance."""
-    result = lint(entities, cache, legacy)
+    result = lint(entities, cache, legacy, policy)
     return {
         "audit": "entity_lint",
         "entities_file": str(entities_path),
         "cache_file": str(cache_path) if cache_path else None,
         "legacy_file": str(legacy_path) if legacy_path else None,
+        "policy_file": str(policy_path) if policy_path else None,
         "cache_retrieved": cache.get("retrieved") if cache else None,
         "errors": result["errors"],
         "warnings": result["warnings"],
@@ -441,11 +495,13 @@ def main() -> None:
     parser.add_argument("--cache", default=str(CACHE_PATH), help="GND-Cache (JSON, optional)")
     parser.add_argument("--legacy", default=str(LEGACY_PATH),
                         help="Legacy-Erwaehnungsindex (JSON, optional)")
+    parser.add_argument("--policy", default=str(POLICY_PATH),
+                        help="Markierungspolitik (JSON, optional)")
     parser.add_argument("--out", default=str(REPORT_PATH), help="Zieldatei fuer den Report")
     args = parser.parse_args()
 
     entities_path, cache_path, out_path = Path(args.entities), Path(args.cache), Path(args.out)
-    legacy_path = Path(args.legacy)
+    legacy_path, policy_path = Path(args.legacy), Path(args.policy)
     if not entities_path.exists():
         print(f"FEHLER: Entitaetendatei nicht gefunden: {entities_path}")
         return
@@ -453,8 +509,10 @@ def main() -> None:
     entities = _load(entities_path)
     cache = _load(cache_path) if cache_path.exists() else None
     legacy = _load(legacy_path) if legacy_path.exists() else None
+    policy = _load(policy_path) if policy_path.exists() else None
     report = build_report(entities, cache, entities_path, cache_path if cache else None,
-                          legacy, legacy_path if legacy else None)
+                          legacy, legacy_path if legacy else None,
+                          policy, policy_path if policy else None)
     _print_summary(report)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)

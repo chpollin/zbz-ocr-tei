@@ -417,6 +417,7 @@ def _argv(tmp_path, src, catalog, out, *extra):
         "--entities", str(tmp_path / "entities.json"),
         "--cache", str(tmp_path / "missing_cache.json"),
         "--legacy", str(tmp_path / "missing_legacy.json"),
+        "--policy", str(tmp_path / "missing_policy.json"),
         "--catalog", str(catalog),
         "--out", str(out),
         *extra,

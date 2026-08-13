@@ -7,7 +7,7 @@
         "gid": "118540238",
         "category": "person",
         "surface": "Goethe",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Goethe",
         "form_source": "surname-index",
@@ -624,32 +624,6 @@
         "occurrence": 1
       }
     ],
-    "4": [
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "ar as well. At that time he was reading Hegel's Aesthetics with his students. They al",
-        "text": "Hegel",
-        "occurrence": 1
-      },
-      {
-        "gid": "118547739",
-        "category": "person",
-        "surface": "Hegel",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hegel",
-        "form_source": "surname-index",
-        "context": "task to persuade someone to lend me the Hegel volume just for one night, so that I co",
-        "text": "Hegel",
-        "occurrence": 2
-      }
-    ],
     "5": [
       {
         "gid": "118615270",
@@ -673,18 +647,6 @@
         "form_source": "surname-index",
         "context": "philosophy, like that of a Socrates, a Spinoza, or a Kant, is derived, not from a sing",
         "text": "Spinoza",
-        "occurrence": 1
-      },
-      {
-        "gid": "118559796",
-        "category": "person",
-        "surface": "Kant",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Kant",
-        "form_source": "surname-index",
-        "context": "ike that of a Socrates, a Spinoza, or a Kant, is derived, not from a single momentar",
-        "text": "Kant",
         "occurrence": 1
       }
     ],
@@ -717,30 +679,6 @@
         "context": "anxiety for the preservation of Liberty Jaspers, shortly before Hitler seized power, pu",
         "text": "Jaspers",
         "occurrence": 4
-      },
-      {
-        "gid": "118551655",
-        "category": "person",
-        "surface": "Hitler",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hitler",
-        "form_source": "surname-index",
-        "context": "tion of Liberty Jaspers, shortly before Hitler seized power, published a serious warni",
-        "text": "Hitler",
-        "occurrence": 1
-      },
-      {
-        "gid": "118551655",
-        "category": "person",
-        "surface": "Hitler",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Hitler",
-        "form_source": "surname-index",
-        "context": "r the years of silence and ganger under Hitler's rule, immediately after Germany's def",
-        "text": "Hitler",
-        "occurrence": 2
       }
     ],
     "11": [

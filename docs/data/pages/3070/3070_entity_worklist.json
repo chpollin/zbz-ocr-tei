@@ -75,22 +75,10 @@
         "occurrence": 1
       },
       {
-        "gid": "118509578",
-        "category": "person",
-        "surface": "Bergson",
-        "rule": "bare-surname",
-        "alternatives": [],
-        "matched_form": "Bergson",
-        "form_source": "surname-index",
-        "context": "us les philosophes juifs comme Spinoza, Bergson et les autres ont un rapport privilégié",
-        "text": "Bergson",
-        "occurrence": 1
-      },
-      {
         "gid": "118625985",
         "category": "person",
         "surface": "Valery",
-        "rule": "bare-surname:suspect",
+        "rule": "anchor-free-surname:suspect",
         "alternatives": [],
         "matched_form": "Valery, P.",
         "form_source": "cache-variant",

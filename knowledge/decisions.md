@@ -639,6 +639,20 @@ Consequences: the preview panel wraps its marks with provenance, schema validity
 
 Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
 
+---
+
+### E119 Operator marking policy: anchor-free surnames and generic work titles (2026-08-13)
+
+Occasion: the anchor rule requires a full-name anchor in the same document before a bare surname reaches tier 1, which punishes exactly the canonical authors philosophical prose never spells out; the evidence table counted several hundred review candidates for single such names. In the opposite direction, generic titles flooded the worklist with surfaces that are ordinary words in running text.
+
+Decision: the operator decisions live in `data/entities/marking_policy.json`, deliberately apart from the curated entity list, which is an external export and may be replaced wholesale. Twenty-eight surnames are released from the anchor requirement for exactly the keys the entry names, so nothing derived from a released key inherits the release, and every demotion suffix keeps its effect: a released surname inside a running head, a figure zone, a plain bibl or under a suspicion signal stays on the worklist. Seven generic titles leave the marking scope entirely, three are bound to typographic corroboration. One surname was held out because person and work reading are not locally separable and the list carries no work entry the surface could resolve against. The policy is a trust boundary, validated on load, and a gid absent from the list is an error rather than a silent skip. Rejected alternative: an entry-level field inside the entity list, rejected because a re-export would silently drop the decisions.
+
+Consequences: the worklist loses roughly a third of its volume while the auto-marked layer grows by about the same number of marks; the verdict guard stays at zero violations. One title left the corroboration bucket during verification, because the guard proved that the condition destroys a facsimile-verified recall mention where the corpus spells the title as a compound without typographic frame; a verified judgment outranks a rule change. The corpus-wide preview run now covers every document with schema validity and text invariance, a gate previously proven on ten documents only. A defect the corpus run exposed: the responsibility declarations of E118 sit in the header and move every body offset, so the viewer mirror dropped nearly every worklist entry as stale; the preview runner now records that shift per document and the mirror consumes it.
+
+Follow-up, binding: the released marks exist in no earlier draw, so the published precision no longer covers the whole auto-marked layer until a supplementary sample is adjudicated ([entity-evaluation.md](entity-evaluation.md), population validity).
+
+Documents: [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 96
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |
