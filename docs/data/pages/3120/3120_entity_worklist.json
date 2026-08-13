@@ -73,9 +73,24 @@
         "alternatives": [],
         "matched_form": "Karl Jaspers",
         "form_source": "headword",
-        "context": "Karl-Jaspers-Gesellschaft Umschlagbild: Karl Jaspers-Archiv, Basel I. Reflexion über Wissen",
+        "context": "Karl-Jaspers-Gesellschaft Umschlagbild: Karl Jaspers-Archiv, Basel © Eigentümer: Österreichi",
         "text": "Karl Jaspers",
         "occurrence": 1
+      },
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Jaspers",
+        "rule": "anchored-surname:suspect:in-figure",
+        "alternatives": [
+          "117085391",
+          "118557106"
+        ],
+        "matched_form": "Jaspers",
+        "form_source": "surname-index",
+        "context": "asel © Eigentümer: Österreichische Karl-Jaspers-Gesellschaft Verlag und Herstellung: Ve",
+        "text": "Jaspers",
+        "occurrence": 5
       }
     ],
     "3": [

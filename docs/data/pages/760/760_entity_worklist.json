@@ -11,7 +11,7 @@
         "alternatives": [],
         "matched_form": "Marc Chagall",
         "form_source": "headword",
-        "context": "Marc Chagall Portrait par la signature Marc Chagall Chagall à travers quelques toiles «L'ho",
+        "context": "VII 7.14 7.15 Portrait par la signature Marc Chagall Chagall à travers quelques toiles «L'ho",
         "text": "Marc Chagall",
         "occurrence": 1
       },
@@ -46,7 +46,57 @@
         "occurrence": 3
       }
     ],
+    "3": [
+      {
+        "gid": "1002027-5",
+        "category": "organisation",
+        "surface": "Fondation Maeght",
+        "rule": "org-name:in-figure",
+        "alternatives": [],
+        "matched_form": "Fondation Maeght",
+        "form_source": "headword",
+        "context": "de l'humain ? «La Vie» 1964, 200 x 400, Fondation Maeght, St-Paul-de-Vence Oui, une chose: un ve",
+        "text": "Fondation Maeght",
+        "occurrence": 1
+      }
+    ],
     "4": [
+      {
+        "gid": "1384587985",
+        "category": "work",
+        "surface": "Lumières allumées",
+        "rule": "work-variant:in-plain-bibl:in-figure:running-head",
+        "alternatives": [],
+        "matched_form": "Lumières allumées",
+        "form_source": "cache-variant",
+        "context": ".. (du magasin)» illustration du livre «Lumières allumées» de Bella Chagall «La pendule» 1914, 48",
+        "text": "Lumières allumées",
+        "occurrence": 1
+      },
+      {
+        "gid": "118519972",
+        "category": "person",
+        "surface": "Bella Chagall",
+        "rule": "full-name:in-figure",
+        "alternatives": [],
+        "matched_form": "Bella Chagall",
+        "form_source": "headword",
+        "context": "tration du livre «Lumières allumées» de Bella Chagall «La pendule» 1914, 48 × 36. Galerie d'E",
+        "text": "Bella Chagall",
+        "occurrence": 1
+      },
+      {
+        "gid": "16133764-8",
+        "category": "organisation",
+        "surface": "Galerie d’Etat Tretiakov",
+        "rule": "org-variant:in-figure",
+        "alternatives": [],
+        "matched_form": "Galerie d'Etat Tretiakov",
+        "form_source": "curated-variant",
+        "context": "lla Chagall «La pendule» 1914, 48 × 36. Galerie d'Etat Tretiakov, Moscou «Lourdement elle frappe ses heu",
+        "text": "Galerie d’Etat Tretiakov",
+        "occurrence": 1
+      },
       {
         "gid": "1384587985",
         "category": "work",
@@ -61,18 +111,6 @@
       }
     ],
     "5": [
-      {
-        "gid": "2077960-4",
-        "category": "organisation",
-        "surface": "Musée",
-        "rule": "org-variant:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Musée",
-        "form_source": "cache-variant",
-        "context": "Dédié à ma femme» 1933/1944, 131 x 194, Musée National d'Art Moderne, Paris Dans une",
-        "text": "Musée",
-        "occurrence": 1
-      },
       {
         "gid": "118519972",
         "category": "person",
@@ -90,6 +128,18 @@
       }
     ],
     "7": [
+      {
+        "gid": "1007559-8",
+        "category": "organisation",
+        "surface": "Musée d’Art Moderne",
+        "rule": "org-variant:qualifier-strip:in-figure",
+        "alternatives": [],
+        "matched_form": "Musée d'Art Moderne",
+        "form_source": "cache-variant",
+        "context": "ans rive» 1939, 103 × 83, dernier état, Musée d'Art Moderne, New-York En contraste radical, il faut",
+        "text": "Musée d’Art Moderne",
+        "occurrence": 1
+      },
       {
         "gid": "118519972",
         "category": "person",
@@ -162,6 +212,56 @@
         "occurrence": 2
       }
     ],
+    "10": [
+      {
+        "gid": "1384587985",
+        "category": "work",
+        "surface": "Lumières allumées",
+        "rule": "work-variant:in-plain-bibl:in-figure:running-head",
+        "alternatives": [],
+        "matched_form": "Lumières allumées",
+        "form_source": "cache-variant",
+        "context": "1 «Une nouvelle illustration du livre » Lumières allumées de Marc Chagall «...Tant de péchés se s",
+        "text": "Lumières allumées",
+        "occurrence": 1
+      },
+      {
+        "gid": "118519980",
+        "category": "person",
+        "surface": "Marc Chagall",
+        "rule": "full-name:in-figure",
+        "alternatives": [],
+        "matched_form": "Marc Chagall",
+        "form_source": "headword",
+        "context": "tration du livre » Lumières allumées de Marc Chagall «...Tant de péchés se sont accumulés pe",
+        "text": "Marc Chagall",
+        "occurrence": 1
+      },
+      {
+        "gid": "118519980",
+        "category": "person",
+        "surface": "Marc Chagall",
+        "rule": "full-name:in-figure",
+        "alternatives": [],
+        "matched_form": "Marc Chagall",
+        "form_source": "headword",
+        "context": "hés se sont accumulés pendant l'année » Marc Chagall «Lumières allumées» «Nu et Christ» (195",
+        "text": "Marc Chagall",
+        "occurrence": 2
+      },
+      {
+        "gid": "1384587985",
+        "category": "work",
+        "surface": "Lumières allumées",
+        "rule": "work-variant:in-plain-bibl:in-figure",
+        "alternatives": [],
+        "matched_form": "Lumières allumées",
+        "form_source": "cache-variant",
+        "context": "cumulés pendant l'année » Marc Chagall «Lumières allumées» «Nu et Christ» (1953). Collection part",
+        "text": "Lumières allumées",
+        "occurrence": 2
+      }
+    ],
     "11": [
       {
         "gid": "118519972",
@@ -174,12 +274,38 @@
         ],
         "matched_form": "Chagall",
         "form_source": "surname-index",
-        "context": "fient «être» ou «vivre». La peinture de Chagall, circulaire, tournoyante, y parvient.",
+        "context": "fient «être» ou «vivre». La peinture de Chagall, circulaire, tournoyante, y parvient. «",
         "text": "Chagall",
         "occurrence": 1
       }
     ],
+    "12": [
+      {
+        "gid": "10185852-8",
+        "category": "organisation",
+        "surface": "Maeght, éditeur",
+        "rule": "org-variant:in-figure",
+        "alternatives": [],
+        "matched_form": "Maeght, éditeur",
+        "form_source": "curated-variant",
+        "context": "l'horloge » 1956, 21 x 24 lithographie, Maeght, éditeur Dans ce creux cosmique, il n'y a ni dis",
+        "text": "Maeght, éditeur",
+        "occurrence": 1
+      }
+    ],
     "13": [
+      {
+        "gid": "1007559-8",
+        "category": "organisation",
+        "surface": "Musée d’Art Moderne",
+        "rule": "org-variant:qualifier-strip:in-figure",
+        "alternatives": [],
+        "matched_form": "Musée d'Art Moderne",
+        "form_source": "cache-variant",
+        "context": "Moi et le village» 1911, 191,2 x 150,5, Musée d'Art Moderne, New-York Fonds Mme Simon Guggenheim «M",
+        "text": "Musée d’Art Moderne",
+        "occurrence": 1
+      },
       {
         "gid": "118519972",
         "category": "person",
@@ -243,7 +369,59 @@
         "occurrence": 3
       }
     ],
+    "15": [
+      {
+        "gid": "1384587985",
+        "category": "work",
+        "surface": "Lumières allumées",
+        "rule": "work-variant:in-plain-bibl:in-figure:running-head",
+        "alternatives": [],
+        "matched_form": "Lumières allumées",
+        "form_source": "cache-variant",
+        "context": "Le magasin» dessin illustrant le livre «Lumières allumées» de Bella Chagall «Les horloges marchen",
+        "text": "Lumières allumées",
+        "occurrence": 1
+      },
+      {
+        "gid": "118519972",
+        "category": "person",
+        "surface": "Bella Chagall",
+        "rule": "full-name:in-figure",
+        "alternatives": [],
+        "matched_form": "Bella Chagall",
+        "form_source": "headword",
+        "context": "ustrant le livre «Lumières allumées» de Bella Chagall «Les horloges marchent, soupirent, se b",
+        "text": "Bella Chagall",
+        "occurrence": 1
+      }
+    ],
+    "16": [
+      {
+        "gid": "2077960-4",
+        "category": "organisation",
+        "surface": "Musée",
+        "rule": "org-variant:qualifier-strip:in-figure",
+        "alternatives": [],
+        "matched_form": "Musée",
+        "form_source": "cache-variant",
+        "context": "ètrent jamais. «Le Sabbat 1910, 90 x 95 Musée Wallraf-Richartz, Cologne «Le Nu rouge»",
+        "text": "Musée",
+        "occurrence": 1
+      }
+    ],
     "17": [
+      {
+        "gid": "132037696",
+        "category": "person",
+        "surface": "Rosensaft",
+        "rule": "bare-surname:suspect:in-figure",
+        "alternatives": [],
+        "matched_form": "Rosensaft",
+        "form_source": "surname-index",
+        "context": "ge» 1964/55, 100x73, Hadassah et Joseph Rosensaft, New-York Mais il y a quelque chose de",
+        "text": "Rosensaft",
+        "occurrence": 1
+      },
       {
         "gid": "118519972",
         "category": "person",
@@ -305,6 +483,36 @@
       }
     ],
     "19": [
+      {
+        "gid": "118519972",
+        "category": "person",
+        "surface": "Chagall",
+        "rule": "ambiguous-surname:in-figure",
+        "alternatives": [
+          "118519972",
+          "118519980"
+        ],
+        "matched_form": "Chagall",
+        "form_source": "surname-index",
+        "context": "astique. Je ne vois pas d'éternité chez Chagall. La simultanéité qui nous assaille dans",
+        "text": "Chagall",
+        "occurrence": 1
+      },
+      {
+        "gid": "118519972",
+        "category": "person",
+        "surface": "Chagall",
+        "rule": "ambiguous-surname:in-figure",
+        "alternatives": [
+          "118519972",
+          "118519980"
+        ],
+        "matched_form": "Chagall",
+        "form_source": "surname-index",
+        "context": "facile. Toujours est-il que le monde de Chagall est en nous un monde où l'on se perd, o",
+        "text": "Chagall",
+        "occurrence": 2
+      },
       {
         "gid": "118519972",
         "category": "person",
@@ -425,18 +633,6 @@
         "occurrence": 2
       },
       {
-        "gid": "2077960-4",
-        "category": "organisation",
-        "surface": "Musée",
-        "rule": "org-variant:qualifier-strip",
-        "alternatives": [],
-        "matched_form": "Musée",
-        "form_source": "cache-variant",
-        "context": "te: «Autour d'Elle» 1945, 130,9 × 109,7 Musée National d'Art Moderne, Paris «...Il es",
-        "text": "Musée",
-        "occurrence": 1
-      },
-      {
         "gid": "118519972",
         "category": "person",
         "surface": "Chagall",
@@ -450,6 +646,33 @@
         "context": ", fût-elle la plus violente, s'est chez Chagall la vie ou l'être même. Rien de moins st",
         "text": "Chagall",
         "occurrence": 1
+      },
+      {
+        "gid": "118520113",
+        "category": "person",
+        "surface": "Charlot",
+        "rule": "anchored-surname:in-figure",
+        "alternatives": [],
+        "matched_form": "Charlot",
+        "form_source": "cache-variant",
+        "context": "e, parmi mille gags ambigus. Mais comme Charlot, à force de fragilité, a acquis la prés",
+        "text": "Charlot",
+        "occurrence": 3
+      },
+      {
+        "gid": "118519972",
+        "category": "person",
+        "surface": "Chagall",
+        "rule": "ambiguous-surname:in-figure",
+        "alternatives": [
+          "118519972",
+          "118519980"
+        ],
+        "matched_form": "Chagall",
+        "form_source": "surname-index",
+        "context": "ieuse d'un mythe, de même les toiles de Chagall imposent au regard le choc de leur stru",
+        "text": "Chagall",
+        "occurrence": 2
       }
     ]
   }

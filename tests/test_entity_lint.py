@@ -400,13 +400,86 @@ def test_real_legacy_index_pins_the_poisoned_pairing():
     assert ("118557394", "Jérémie") not in pairings
 
 
+# --- curated variants ----------------------------------------------------
+
+
+def test_variants_field_is_accepted():
+    report = lint(_entities(persons=[_person("104535342", variants=["Muster"])]))
+    assert report["errors"] == []
+    assert report["warnings"] == []
+    assert report["counts"]["variants"] == {"entries": 1, "strings": 1}
+
+
+def test_absent_variants_field_is_no_finding():
+    report = lint(_entities(persons=[_person("104535342")]))
+    assert report["errors"] == []
+    assert report["counts"]["variants"] == {"entries": 0, "strings": 0}
+
+
+def test_variants_must_be_a_list_of_non_empty_strings():
+    report = lint(
+        _entities(
+            persons=[_person("104535342", variants="Muster")],
+            organisations=[_org("5005966-X", variants=["  ", 7])],
+        )
+    )
+    assert _types(report) == ["invalid_variants"] * 3
+
+
+def test_duplicate_variant_within_one_entry_is_error():
+    report = lint(
+        _entities(persons=[_person("104535342", variants=["Muster", "muster ", "Andere"])])
+    )
+    assert _types(report) == ["duplicate_variant"]
+    assert report["errors"][0]["variant"] == "muster "
+
+
+def test_variant_echoing_the_own_label_is_error():
+    report = lint(
+        _entities(
+            organisations=[_org("5005966-X", org_name="Musterverein",
+                                variants=["Musterverein"])]
+        )
+    )
+    assert _types(report) == ["redundant_variant"]
+
+
+def test_variant_equal_to_a_form_of_another_entity_is_warning():
+    report = lint(
+        _entities(
+            persons=[
+                _person("104535342", name="Muster, Anna"),
+                _person("1150680555", name="Beispiel, Bert", variants=["Muster, Anna"]),
+            ]
+        )
+    )
+    assert report["errors"] == []
+    assert _types(report, "warnings") == ["variant_collision"]
+    assert report["warnings"][0]["collides_with"] == ["104535342"]
+
+
+def test_variant_colliding_with_another_curated_variant_is_warning():
+    report = lint(
+        _entities(
+            persons=[_person("104535342", variants=["Doppelform"])],
+            works=[_work("4558181-2", variants=["Doppelform"])],
+        )
+    )
+    assert report["errors"] == []
+    assert [(w["gnd_id"], w["collides_with"]) for w in report["warnings"]] == [
+        ("104535342", ["4558181-2"]),
+        ("4558181-2", ["104535342"]),
+    ]
+
+
 def test_real_cache_marks_the_defective_ids_as_not_found():
     if not CACHE_PATH.exists():
         pytest.skip("GND cache not built")
     cache = json.loads(CACHE_PATH.read_text(encoding="utf-8"))
     report = lint(_real_entities(), cache)
     not_found = {e["gnd_id"] for e in report["errors"] if e["type"] == "gnd_not_found"}
-    # full 404 set of the 2026-08-12 cache: test entry, truncated stub, and the three
-    # works the API lookup exposed (one of them a DNB catalog number, not a GND id)
-    assert not_found == {"000000", "11862974", "454611536", "1076202632", "1393920942"}
+    # full 404 set of the 2026-08-12 cache: truncated stub and the three works the
+    # API lookup exposed (one of them a DNB catalog number, not a GND id). The
+    # "000000" placeholder entry left the list with E112.
+    assert not_found == {"11862974", "454611536", "1076202632", "1393920942"}
     assert not [e for e in report["errors"] if e["type"] == "cache_status"]

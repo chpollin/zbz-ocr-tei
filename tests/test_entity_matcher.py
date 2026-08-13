@@ -380,11 +380,6 @@ def test_teiheader_is_excluded(lex):
     assert em.find_candidates(xml, lex) == []
 
 
-def test_figure_content_is_excluded(lex):
-    xml = _tei("<figure><figDesc>Karl Jaspers im Garten</figDesc></figure>")
-    assert em.find_candidates(xml, lex) == []
-
-
 def test_bibliography_div_is_excluded(lex):
     xml = _tei('<div type="bibliography"><bibl>Karl Jaspers, Werke</bibl></div>')
     assert em.find_candidates(xml, lex) == []
@@ -835,6 +830,77 @@ def test_document_without_recurring_head_is_unaffected(lex):
     cands = em.find_candidates(_paged(pages), lex)
     assert [c["rule"] for c in cands] == ["full-name"]
     assert cands[0]["tier"] == 1
+
+
+# --- figure zones -------------------------------------------------------------------
+#
+# A figure is scanned instead of excluded, and every candidate inside it is demoted to
+# the worklist: doc 760 is a plate catalogue whose whole provenance apparatus stands in
+# the captions, so exclusion loses real content while auto-marking would assert what no
+# facsimile check has confirmed.
+
+
+def test_person_in_a_figure_caption_is_demoted_to_the_worklist(lex):
+    xml = _tei("<figure><head>Karl Jaspers im Garten</head></figure>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["surface"] for c in cands] == ["Karl Jaspers"]
+    assert cands[0]["rule"] == "full-name" + em.IN_FIGURE_SUFFIX
+    assert cands[0]["tier"] == 2
+    assert cands[0]["gid"] == "118557106"
+
+
+def test_org_headword_in_a_figure_is_demoted(lex):
+    xml = _tei("<figure><head>Leihgabe der UNESCO, Paris</head></figure>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["surface"] for c in cands] == ["UNESCO"]
+    assert cands[0]["rule"] == "org-token:in-figure"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["category"] == "organisation"
+
+
+def test_content_outside_the_figure_keeps_its_tier(lex):
+    xml = _tei(
+        "<p>Zuvor sprach Gabriel Marcel.</p>\n"
+        "<figure><head>Karl Jaspers</head></figure>\n"
+        "<p>Danach tagte der Deutscher Gewerkschaftsbund.</p>"
+    )
+    cands = em.find_candidates(xml, lex)
+    assert [c["rule"] for c in cands] == [
+        "full-name", "full-name:in-figure", "org-name",
+    ]
+    assert [c["tier"] for c in cands] == [1, 2, 1]
+
+
+def test_demoted_figure_name_keeps_its_anchor_power(lex):
+    # the caption still names the person, so a bare surname resolves against it in
+    # both directions; only the mark inside the figure leaves tier 1
+    xml = _tei(
+        "<p>Zuerst antwortete Jaspers ausfuehrlich.</p>\n"
+        "<figure><head>Karl Jaspers</head></figure>\n"
+        "<p>Danach schwieg Jaspers lange.</p>"
+    )
+    cands = em.find_candidates(xml, lex)
+    assert [c["rule"] for c in cands] == [
+        "anchored-surname", "full-name:in-figure", "anchored-surname",
+    ]
+    assert [c["tier"] for c in cands] == [1, 2, 1]
+    assert all(c["gid"] == "118557106" for c in cands)
+
+
+def test_teiheader_stays_excluded_while_figures_are_scanned(lex):
+    xml = _tei("<figure><head>Karl Jaspers</head></figure>")
+    cands = em.find_candidates(xml, lex)
+    assert len(cands) == 1
+    assert cands[0]["start"] > xml.index("</teiHeader>")
+
+
+def test_ambiguity_suffix_precedes_the_figure_suffix(lex):
+    xml = _tei("<figure><head>Bildnis von Jaspers</head></figure>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["surface"] for c in cands] == ["Jaspers"]
+    assert cands[0]["rule"] == "bare-surname:ambiguous:in-figure"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["alternatives"] == ["118557106", "118557107"]
 
 
 # --- adjudicated precision guards (E109) -------------------------------------------
@@ -1705,3 +1771,158 @@ def test_review_verdict_keyed_with_typographic_apostrophe_still_applies(tmp_path
                      cache=cache, review=review)
     assert "Jean d'Alembert" not in lexicon["forms"]
     assert lexicon["skipped"]["review_reject"] == 1
+
+
+# --- curated variants ---------------------------------------------------------------
+#
+# The optional `variants` field of a list entry registers a corpus spelling the GND norm
+# form does not carry; the zero-mention classification named the class (the list holds
+# "Colombo, Cristoforo", the corpus writes "Kolumbus"). Every string runs through the
+# form derivation of its category headword, reports the source "curated-variant", and
+# takes the tier its own shape earns. Operator authority reaches the verdict split of
+# the variant review, which governs the cache channel alone.
+
+COLOMBO = _person("118564994", "Colombo, Cristoforo")
+PSYCHOPATHOLOGIE = _work("4558181-2", "Allgemeine Psychopathologie", "118557106")
+
+
+def _curated(entry: dict, *variants: str) -> dict:
+    """Copy of a fixture entry carrying the curated variants field."""
+    return {**entry, "variants": list(variants)}
+
+
+def test_curated_variant_is_a_declared_form_source():
+    assert "curated-variant" in em.FORM_SOURCES
+
+
+@pytest.mark.parametrize("text", ["Christoph Kolumbus", "Kolumbus, Christoph"])
+def test_curated_person_variant_matches_in_both_orders(tmp_path, text):
+    lexicon = _build(tmp_path, persons=[_curated(COLOMBO, "Kolumbus, Christoph")])
+    cands = em.find_candidates(_tei(f"<p>Hier spricht {text}.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == [text]
+    assert cands[0]["gid"] == "118564994"
+    assert cands[0]["rule"] == "variant-full-name"
+    assert cands[0]["tier"] == 1
+    assert cands[0]["matched_form"] == text
+    assert cands[0]["form_source"] == "curated-variant"
+
+
+def test_curated_single_token_variant_registers_the_surname(tmp_path):
+    lexicon = _build(tmp_path, persons=[_curated(COLOMBO, "Kolumbus")])
+    assert lexicon["surnames"]["Kolumbus"] == ("118564994",)
+    assert lexicon["surname_forms"]["Kolumbus"]["118564994"] == ("Kolumbus", "curated-variant")
+    xml = _tei("<p>Cristoforo Colombo segelte los.</p><p>Danach kehrte Kolumbus zurueck.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["rule"] for c in cands] == ["full-name", "anchored-surname"]
+    assert all(c["tier"] == 1 and c["gid"] == "118564994" for c in cands)
+
+
+def test_curated_single_token_variant_skips_the_length_guard(tmp_path):
+    # the guard filters the transliteration fragments of the cache channel; the same
+    # string curated is operator authority and enters as unguarded as a headword
+    laozi = _person("118569720", "Laozi")
+    lexicon = _build(tmp_path, persons=[_curated(laozi, "Lao")])
+    assert lexicon["surnames"]["Lao"] == ("118569720",)
+    guarded = _build(
+        tmp_path, persons=[laozi], cache={"118569720": _cache_entry("Laozi", ("Lao",))}
+    )
+    assert "Lao" not in guarded["surnames"]
+
+
+def test_curated_org_variant_matches_like_the_headword(tmp_path):
+    # the corpus writes "l'Unesco"; the curated string lifts that spelling out of the
+    # worklist-only acronym channel
+    lexicon = _build(tmp_path, orgs=[_curated(UNESCO, "Unesco")])
+    cands = em.find_candidates(_tei("<p>Ein Bericht der l'Unesco aus Paris.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["Unesco"]
+    assert cands[0]["rule"] == "org-token"
+    assert cands[0]["tier"] == 1
+    assert cands[0]["gid"] == "2023755-8"
+    assert cands[0]["form_source"] == "curated-variant"
+
+
+def test_curated_multiword_org_variant_is_tier1(tmp_path):
+    lexicon = _build(
+        tmp_path,
+        orgs=[_curated(_org("2008287-3", "Deutscher Gewerkschaftsbund"),
+                       "Deutsche Gewerkschaften")],
+    )
+    cands = em.find_candidates(_tei("<p>Die Deutsche Gewerkschaften luden ein.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["Deutsche Gewerkschaften"]
+    assert cands[0]["rule"] == "org-variant"
+    assert cands[0]["tier"] == 1
+    assert cands[0]["form_source"] == "curated-variant"
+
+
+def test_curated_work_variant_is_tier1(tmp_path):
+    lexicon = _build(
+        tmp_path, works=[_curated(PSYCHOPATHOLOGIE, "Psychopathologie generale")]
+    )
+    cands = em.find_candidates(_tei("<p>Er las Psychopathologie generale zuerst.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["Psychopathologie generale"]
+    assert cands[0]["rule"] == "work-variant"
+    assert cands[0]["tier"] == 1
+    assert cands[0]["form_source"] == "curated-variant"
+
+
+def test_curated_one_word_work_variant_takes_the_short_title_path(tmp_path):
+    lexicon = _build(tmp_path, works=[_curated(PSYCHOPATHOLOGIE, "Psychopathologie")])
+    assert lexicon["forms"]["Psychopathologie"] == (
+        ("4558181-2", "work", "short-title", "curated-variant"),
+    )
+    cands = em.find_candidates(_tei("<p>Er las die Psychopathologie im Original.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["Psychopathologie"]
+    assert cands[0]["rule"] == "short-title"
+    assert cands[0]["tier"] == 2
+    assert cands[0]["form_source"] == "curated-variant"
+
+
+def test_curated_variant_bypasses_a_reject_verdict_of_the_same_string(tmp_path):
+    # the verdict split governs the cache channel; the operator's own string is not
+    # held back by a review that rejected the identical cache form
+    review = _review(persons=_verdicts("118535749", "Freud, Sigmund",
+                                       {"Freud, Sigmund": "approve",
+                                        "Freund, Sigmund": "reject"}))
+    lexicon = _build(
+        tmp_path,
+        persons=[_curated(_person("118535749", "Freud, Sigmund"), "Freund, Sigmund")],
+        cache={"118535749": _cache_entry("Freud, Sigmund", ("Freund, Sigmund",))},
+        review=review,
+    )
+    assert lexicon["forms"]["Sigmund Freund"][0][3] == "curated-variant"
+    assert lexicon["skipped"]["review_reject"] == 0
+    assert lexicon["review_suspect"] == frozenset()
+    cands = em.find_candidates(_tei("<p>Hier spricht Sigmund Freund.</p>"), lexicon)
+    assert cands[0]["rule"] == "variant-full-name"
+    assert cands[0]["tier"] == 1
+
+
+def test_curated_variant_is_never_review_suspect(tmp_path):
+    # an unreviewed cache form counts as suspect; the same string as a curated variant
+    # stays tier 1
+    review = _review(persons=_verdicts("118557106", "Jaspers, Karl",
+                                       {"Jaspers, Karl": "approve"}))
+    lexicon = _build(
+        tmp_path,
+        persons=[_curated(_person("118557106", "Jaspers, Karl"), "Jaspers, Karl Theodor")],
+        cache={"118557106": _cache_entry("Jaspers, Karl", ("Jaspers, Karl Theodor",))},
+        review=review,
+    )
+    cands = em.find_candidates(_tei("<p>Karl Theodor Jaspers sprach.</p>"), lexicon)
+    assert cands[0]["rule"] == "variant-full-name"
+    assert cands[0]["tier"] == 1
+    assert cands[0]["form_source"] == "curated-variant"
+
+
+def test_absent_variants_field_changes_nothing(tmp_path):
+    plain = _build(tmp_path, persons=[COLOMBO])
+    empty = _build(tmp_path, persons=[_curated(COLOMBO)])
+    assert plain["forms"] == empty["forms"]
+    assert plain["surnames"] == empty["surnames"]
+
+
+def test_malformed_variants_field_is_ignored_by_the_build(tmp_path):
+    # the field is a trust boundary; entity_lint reports the defect, the build stays up
+    lexicon = _build(tmp_path, persons=[{**COLOMBO, "variants": "Kolumbus"}])
+    assert "Kolumbus" not in lexicon["surnames"]
+    assert "Cristoforo Colombo" in lexicon["forms"]

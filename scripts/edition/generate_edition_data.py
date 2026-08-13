@@ -7,6 +7,7 @@ Generiert Edition-Daten fuer den statischen Viewer (docs/):
 - entity_index.json     : Entity-Index fuer NER-Highlighting im TEI-Render
 - manifests/{doc}.json  : Spiegel der Pro-Objekt-Manifeste (Status + History + Leerseiten)
 - pages/{doc}/...       : Per-Seiten-Mirror (Layout, Mistral-OCR, TEI extrahiert aus _final.xml)
+                          inkl. {doc}_facs.json (Textseite -> Scanbild aus pb@facs)
 - thumbs/{doc}.jpg      : Thumbnail der ersten Seite (140x200 JPEG)
 
 Damit funktioniert der Viewer ohne lokalen Server fuer alle 285 Docs (GitHub Pages tauglich).
@@ -15,6 +16,8 @@ Usage:
     python -m scripts.edition.generate_edition_data                  # voller Lauf inkl. Mirror + Thumbs
     python -m scripts.edition.generate_edition_data --no-mirror      # nur Katalog + Entity-Index
     python -m scripts.edition.generate_edition_data --mirror-only    # nur Mirror + Thumbs
+    python -m scripts.edition.generate_edition_data --doc 1350       # nur dieses Dokument spiegeln
+    python -m scripts.edition.generate_edition_data --facs-audit     # read-only pb->facs-Befund
 """
 
 import argparse
@@ -22,11 +25,18 @@ import json
 import re
 import shutil
 from datetime import datetime
+from itertools import pairwise
 from pathlib import Path
 
-from scripts.config import PROJECT_ROOT, DOCS_DIR, TEI_FINAL_DIR, TEI_CURATED_DIR, DOC_METADATA_PATH
-from scripts.utils import load_json
+from scripts.config import (
+    DOC_METADATA_PATH,
+    DOCS_DIR,
+    PROJECT_ROOT,
+    TEI_CURATED_DIR,
+    TEI_FINAL_DIR,
+)
 from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
+from scripts.utils import load_json
 
 LAYOUT_DIR = PROJECT_ROOT / "output" / "layout"
 MISTRAL_DIR = PROJECT_ROOT / "output" / "mistral_results"
@@ -123,7 +133,7 @@ def _extract_pages_from_final(final_path: Path) -> dict:
     """
     try:
         raw = final_path.read_text(encoding="utf-8")
-    except (IOError, OSError):
+    except OSError:
         return {}
 
     clean = _NS_RE.sub("", raw)
@@ -156,6 +166,140 @@ def _wrap_page(body_xml: str) -> str:
         '  </text>\n'
         '</TEI>\n'
     )
+
+
+# ---------------------------------------------------------------------------
+# Textseite -> Scanbild: pb@facs statt sequenzieller Annahme
+# ---------------------------------------------------------------------------
+
+# Doppelseitige Scans tragen mehr <pb> als Bilder, gestrippte Deckblaetter weniger;
+# die sequenzielle Annahme "Textseite N = Bild N" bricht dort. <pb facs="#facs_N">
+# benennt den physischen Scan, die zugehoerige <surface> traegt sein Bild.
+_SURFACE_GRAPHIC_RE = re.compile(
+    r'<surface\b[^>]*\bxml:id="facs_(\d+)"[^>]*>\s*<graphic\b[^>]*\burl="([^"]+)"'
+)
+_PB_FACS_RE = re.compile(r'\bfacs="#facs_(\d+)"')
+
+
+def _surface_images(clean: str) -> dict:
+    """facs-Index -> Bilddateiname, aus <surface xml:id="facs_N"><graphic url=.../>."""
+    return {int(m.group(1)): m.group(2) for m in _SURFACE_GRAPHIC_RE.finditer(clean)}
+
+
+def facs_anchors(clean: str) -> list:
+    """facs-Index je Textseite in Dokumentreihenfolge; None wo ein <pb> keinen Anker hat."""
+    body_match = BODY_INNER_RE.search(clean)
+    if not body_match:
+        return []
+    out = []
+    for span in iter_page_spans(body_match.group(1)):
+        m = _PB_FACS_RE.search(span.pb_tag)
+        out.append(int(m.group(1)) if m else None)
+    return out
+
+
+def build_facs_map(final_text: str) -> dict:
+    """Textseite (1-basierte <pb>-Position) -> Bilddateiname des Scans.
+
+    Seiten ohne facs-Anker und Anker ohne aufloesbare <surface> bleiben weg; dort
+    gilt beim Konsumenten weiter die sequenzielle Konvention.
+    """
+    clean = _NS_RE.sub("", final_text)
+    images = _surface_images(clean)
+    out = {}
+    for page, idx in enumerate(facs_anchors(clean), start=1):
+        img = images.get(idx) if idx is not None else None
+        if img:
+            out[page] = img
+    return out
+
+
+def write_facs_map(doc_dir: Path, doc_id: str, final_text: str) -> bool:
+    """Schreibt den Spiegel-Sidecar {doc}_facs.json (deterministisch, ohne Zeitstempel)."""
+    facs_map = build_facs_map(final_text)
+    dst = doc_dir / f"{doc_id}_facs.json"
+    if not facs_map:
+        if dst.exists():
+            dst.unlink()
+        return False
+    payload = {
+        "doc_id": doc_id,
+        "facs_image": {str(p): name for p, name in sorted(facs_map.items())},
+    }
+    dst.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return True
+
+
+def audit_facs_mapping(final_dir: Path = TEI_FINAL_DIR, images_dir: Path = IMAGES_DIR) -> dict:
+    """Read-only-Befund: Dokumente, deren pb->facs-Folge nicht 1,2,3... ist.
+
+    Klassen pro Dokument: `offset_start` (erster Anker != 1, z. B. gestripptes
+    Deckblatt), `duplicate_scan` (zwei Textseiten auf einem Scan = Doppelseite),
+    `out_of_order` (Folge nicht monoton steigend), `unresolved_surface` (Anker ohne
+    <surface>), `missing_anchor` (<pb> ohne facs).
+    """
+    entries = []
+    scanned = 0
+    for final_path in sorted(final_dir.glob("*_final.xml"), key=lambda p: int(p.stem.split("_")[0])):
+        doc_id = final_path.stem.replace("_final", "")
+        try:
+            clean = _NS_RE.sub("", final_path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeDecodeError):
+            continue
+        scanned += 1
+        anchors = facs_anchors(clean)
+        if not anchors:
+            continue
+        present = [a for a in anchors if a is not None]
+        if anchors == list(range(1, len(anchors) + 1)):
+            continue
+
+        images = _surface_images(clean)
+        seen, duplicates = set(), []
+        for a in present:
+            if a in seen and a not in duplicates:
+                duplicates.append(a)
+            seen.add(a)
+        unresolved = sorted({a for a in present if a not in images})
+        facs_map = build_facs_map(clean)
+        on_disk = {p.name for p in (images_dir / doc_id).glob("*.png")} if (images_dir / doc_id).is_dir() else set()
+        missing_images = sorted({n for n in facs_map.values() if n not in on_disk}) if on_disk else []
+
+        kinds = []
+        if present and present[0] != 1:
+            kinds.append("offset_start")
+        if duplicates:
+            kinds.append("duplicate_scan")
+        if any(b < a for a, b in pairwise(present)):
+            kinds.append("out_of_order")
+        if unresolved:
+            kinds.append("unresolved_surface")
+        if len(present) != len(anchors):
+            kinds.append("missing_anchor")
+
+        entries.append({
+            "doc_id": doc_id,
+            "kinds": kinds,
+            "pb_count": len(anchors),
+            "surface_count": len(images),
+            "image_count": len(on_disk),
+            "facs_sequence": anchors,
+            "duplicate_scans": duplicates,
+            "unresolved_facs": unresolved,
+            "mapped_pages": len(facs_map),
+            "missing_images": missing_images,
+        })
+
+    return {
+        "generator": "scripts/edition/generate_edition_data.py --facs-audit",
+        "source": "output/tei_final/*_final.xml",
+        "summary": {
+            "documents_scanned": scanned,
+            "documents_affected": len(entries),
+            "affected_ids": [e["doc_id"] for e in entries],
+        },
+        "documents": entries,
+    }
 
 
 def generate_thumbnails(verbose: bool = False) -> int:
@@ -232,16 +376,19 @@ def mirror_manifests(verbose: bool = False) -> int:
     return n
 
 
-def mirror_per_page_data(verbose: bool = False) -> dict:
+def mirror_per_page_data(verbose: bool = False, only_docs=None) -> dict:
     """Spiegelt per-Seiten-Daten (Layout, Mistral-OCR, TEI) fuer alle 285 Docs
     nach docs/data/pages/{doc}/.
 
     Damit funktioniert der Viewer ohne lokalen Server (GitHub Pages tauglich)
     fuer das gesamte Korpus, nicht nur die 4 Demo-Docs.
 
-    Returns: Statistik-Dict {layout, ocr, tei, docs}.
+    `only_docs` beschraenkt den Lauf auf einzelne Dokument-IDs (gezielte
+    Regeneration statt Vollspiegelung).
+
+    Returns: Statistik-Dict {layout, ocr, tei, facs, docs}.
     """
-    stats = {"docs": 0, "layout": 0, "ocr": 0, "tei": 0, "skipped": 0}
+    stats = {"docs": 0, "layout": 0, "ocr": 0, "tei": 0, "facs": 0, "skipped": 0}
 
     if not TEI_FINAL_DIR.exists():
         print("  Mirror: tei_final/ nicht gefunden, ueberspringe")
@@ -249,6 +396,9 @@ def mirror_per_page_data(verbose: bool = False) -> dict:
 
     PAGES_DIR.mkdir(parents=True, exist_ok=True)
     final_files = sorted(TEI_FINAL_DIR.glob("*_final.xml"))
+    if only_docs:
+        wanted = {str(d) for d in only_docs}
+        final_files = [p for p in final_files if p.stem.replace("_final", "") in wanted]
 
     for final_path in final_files:
         doc_id = final_path.stem.replace("_final", "")
@@ -283,9 +433,17 @@ def mirror_per_page_data(verbose: bool = False) -> dict:
             try:
                 dst.write_text(xml, encoding="utf-8")
                 tei_n += 1
-            except (IOError, OSError):
+            except OSError:
                 pass
         stats["tei"] += tei_n
+
+        # 3b. Textseite -> Scanbild (pb@facs); ohne diesen Sidecar zeigt der Viewer
+        # bei Doppelseiten-Scans und gestrippten Deckblaettern das falsche Faksimile.
+        try:
+            if write_facs_map(doc_dir, doc_id, final_path.read_text(encoding="utf-8")):
+                stats["facs"] += 1
+        except (OSError, UnicodeDecodeError):
+            pass
 
         # 4. Finales TEI auch nach pages/ kopieren (fuer Download-Fallback)
         dst_final = doc_dir / f"{doc_id}_final.xml"
@@ -315,6 +473,7 @@ _ASSET_PAGE_PATTERNS = (
 )
 _ASSET_FLAGS = (
     ("entity_worklist", "_entity_worklist.json"),
+    ("facs_map", "_facs.json"),
     ("final", "_final.xml"),
 )
 
@@ -451,7 +610,7 @@ def build_catalog():
                         "last_by": last.get("by"),
                     }
                 manifest_streams[did] = streams_out
-            except (json.JSONDecodeError, IOError):
+            except (OSError, json.JSONDecodeError):
                 pass
 
     # Kurations-Status vorladen (aus curated_tei/ Metadaten)
@@ -462,7 +621,7 @@ def build_catalog():
                 meta = json.loads(meta_file.read_text(encoding="utf-8"))
                 did = meta.get("doc_id", meta_file.parent.name)
                 curation_status[did] = meta.get("status", "uncurated")
-            except (json.JSONDecodeError, IOError):
+            except (OSError, json.JSONDecodeError):
                 pass
 
     # Dokument-Eintraege bauen
@@ -554,11 +713,35 @@ def main():
                         help="Per-Seiten-Mirror ueberspringen (schneller, aber Viewer broken fuer 281 Docs)")
     parser.add_argument("--mirror-only", action="store_true",
                         help="Nur per-Seiten-Mirror laufen lassen, Katalog/Index unveraendert")
+    parser.add_argument("--doc", action="append", metavar="DOC_ID",
+                        help="Nur diese Dokument-ID(s) spiegeln (mehrfach angebbar); "
+                             "Katalog und Thumbs bleiben unberuehrt")
+    parser.add_argument("--facs-audit", action="store_true",
+                        help="Read-only: pb->facs-Folgen des Korpus pruefen "
+                             "-> output/audits/facs_mapping_report.json")
     parser.add_argument("--verbose", "-v", action="store_true",
                         help="Pro Doc Output")
     args = parser.parse_args()
 
+    if args.facs_audit:
+        report = audit_facs_mapping()
+        out = PROJECT_ROOT / "output" / "audits" / "facs_mapping_report.json"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        s = report["summary"]
+        print(f"facs-Audit: {s['documents_affected']}/{s['documents_scanned']} Docs nicht sequenziell")
+        print(f"  betroffen: {', '.join(s['affected_ids'])}")
+        print(f"  Bericht: {out}")
+        return
+
     print("Edition-Daten generieren...")
+
+    if args.doc:
+        print(f"Gezielter Mirror fuer {', '.join(args.doc)} nach docs/data/pages/...")
+        stats = mirror_per_page_data(verbose=args.verbose, only_docs=args.doc)
+        print(f"  Mirror fertig: {stats['docs']} Docs, {stats['layout']} Layout, "
+              f"{stats['ocr']} OCR, {stats['tei']} TEI-Seiten, {stats['facs']} facs-Maps")
+        return
 
     if args.mirror_only:
         print("Per-Seiten-Mirror nach docs/data/pages/...")

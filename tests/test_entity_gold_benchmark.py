@@ -191,13 +191,14 @@ def test_hit_when_the_pipeline_marks_the_same_mention(tmp_path):
 
 
 def test_miss_when_neither_tier_reaches_the_mention(tmp_path):
-    caption = ("<figure><figDesc>Bildnis von {mention} im Jahr neunzehnhundertfuenfzig "
-               "vor der Universitaet.</figDesc></figure>")
+    # the pipeline text carries an OCR-corrupted spelling no lexicon form reaches;
+    # a figure caption no longer works as the unreachable place (":in-figure" scans)
     ref = (f"<p>Im Sommer sprach {_persname(JASPERS, 'Karl Jaspers')} in Basel ueber die "
            "Grenzen der Vernunft.</p>"
-           + caption.format(mention=_persname(JASPERS, "Karl Jaspers")))
+           f"<p>Im Herbst kehrte {_persname(JASPERS, 'Karl Jaspers')} nach Basel "
+           "zurueck und sprach erneut.</p>")
     pipe = ("<p>Im Sommer sprach Karl Jaspers in Basel ueber die Grenzen der Vernunft.</p>"
-            + caption.format(mention="Karl Jaspers"))
+            "<p>Im Herbst kehrte Karl Jaspars nach Basel zurueck und sprach erneut.</p>")
     result = _run(tmp_path, ref, pipe)
     assert _counts(result)["hit"] == 1
     assert _counts(result)["miss"] == 1
@@ -218,9 +219,8 @@ def test_worklist_available_is_its_own_class_with_the_rule(tmp_path):
 
 def test_an_ambiguous_surname_counts_as_worklist_not_as_miss(tmp_path):
     """Both Jaspers spouses are listed, so the matcher reports one id and defers the choice."""
-    from scripts.tei.entity_matcher import build_lexicon, find_candidates
-
     from scripts.eval.entity_gold_benchmark import candidate_alternatives
+    from scripts.tei.entity_matcher import build_lexicon, find_candidates
 
     entities = dict(_ENTITIES, persons=[*_ENTITIES["persons"],
                                         {"GND_id": GERTRUD, "name": "Jaspers, Gertrud"}])

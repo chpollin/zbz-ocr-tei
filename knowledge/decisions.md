@@ -555,6 +555,54 @@ Consequences: 53 additional marks corpus-wide, five list entries left the zero-m
 
 Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
 
+---
+
+### E112 Curated-variant channel and list hygiene (2026-08-13)
+
+Occasion: the zero-mention classification (E110 wave) isolated entries whose corpus spelling the GND norm form does not carry, and one placeholder defect in the curated list. The operator released the open work program for agent execution; list content changes stay orchestrator-applied, never agent-applied.
+
+Decision: the curated list gains an optional per-entry field `variants`, the operator's channel for corpus spellings ("Kolumbus" for "Colombo, Cristoforo"). Every string runs through the form derivation of its category headword with form source "curated-variant" and takes the tier its own shape earns; the field lifts nothing into tier 1 by itself. Curated variants bypass the cache-variant review split (operator authority outranks the review of generated forms); `entity_lint` validates the field (list of non-empty strings, no in-entry duplicates by fold, no headword echo, cross-entity collisions as warnings). Applied stock: the "Test" placeholder (gid 000000) left the list; twenty entries received evidence-backed variants from the classification report. Deliberately not added, each with its reason in the wave report: bare "Elie" (homograph with a listed historian), "Phedre" (mostly Racine's title), "Hadassah" (organisation homograph), the subphrase "Le probleme du mal" (common philosophical French, tier-1 shape), "Bund"/"Populaire" bare short forms (precision holes without a context rule), the work "Karl Marx" (person-name homograph).
+
+Consequences: lint green with the two hard-coded real-stock expectations updated (placeholder gone from the 404 set); the verdict-store reproduction test became digest-aware, because legitimate text repairs move the live fingerprint while every adjudication payload must still reproduce (the guard consumes the drift as text_changed).
+
+Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
+
+---
+
+### E113 Pointwise text repairs of the three adjudicated OCR defects (2026-08-13)
+
+Occasion: the verdict guard held four adjudicated-wrong marks in tier 1, all of them text-side defects (E110). The operator released the repair.
+
+Decision: three pointwise, facsimile-verified, backed-up repairs on `output/tei_final/` (backups `output/_backup_pre_text_repairs/`, evidence report `output/audits/text_repairs/report.json`). Doc 900: the degenerate OCR loop of the Jaures spread truncated after the last facsimile-corroborated sentence. Doc 1520: the ghost page transcribed from a blank leaf's show-through replaced by the house blank convention (`<pb type="blank"/>`, pb kept so page ordinals stay stable); the page-level blank ruling outranks the single ghost-legible heading mark. Doc 2330: the two adjudicated speaker echoes unwrapped to plain paragraphs. The six further sp/speaker title-echo constructs of doc 2330 sit on interview and credit content where the correct repair differs; they stay a named open generator defect rather than a bulk fix.
+
+Consequences: validator and corpus schema gate green; CER chain re-run, headline unchanged (fidelity mean 2.08, median 1.28, `docs/data/cer_statistics.json` regenerated), so the repairs lie outside the partial-transcription reference scope; the guard now classifies the three documents' records as text_changed instead of carrying violations.
+
+Documents: [cer-methodology.md](cer-methodology.md) unchanged, [journal.md](journal.md) session 95
+
+---
+
+### E114 Facsimile mapping via pb anchors in the delivery chain (2026-08-13)
+
+Occasion: the adjudication had marked three mentions undecidable because the viewer showed the wrong facsimile; the defect class (double-page spreads, more text pages than scans) was identified on docs 1350 and 120.
+
+Decision: the generated mirror carries a per-document sidecar `{doc}_facs.json` mapping text page to image file, derived from `pb@facs` resolved against the TEI's surface/graphic elements; the viewer prefers the sidecar and keeps the sequential convention as fallback; the page cap counts text pages instead of scans so spread pages stay reachable. The corpus audit of the pb-to-facs sequences found the affected population (spreads, cover-offset starts, irregular anchor reuse) and lives in `output/audits/facs_mapping_report.json`.
+
+Consequences: doc 1350 text pages 5 and 6 resolve to the correct third and fourth scan; the layout-overlay stream still resolves per text page and is a named follow-up, because sharing one scan's curated layout between two text pages is a data-model decision.
+
+Documents: [workflow.md](workflow.md) persistence section to be extended on the next touch, [journal.md](journal.md) session 95
+
+---
+
+### E115 Figure zones scanned and demoted instead of excluded (2026-08-13)
+
+Occasion: the zero-mention classification proved that the blanket `<figure>` exclusion loses real content; the Chagall plate catalogue (doc 760) keeps its whole provenance apparatus (Fondation Maeght, Maeght editeur, Galerie d'Etat Tretiakov, Musee d'Art Moderne) in captions the matcher never read.
+
+Decision (operator-released program, reversible middle path): `<figure>` zones take part in the scan, and every candidate inside is demoted to the worklist with the ":in-figure" suffix; the machine asserts nothing there, exactly like the running-head convention. Suffix order extends to base rule, derived channel, ":ambiguous", ":suspect", ":in-plain-bibl", ":in-figure", ":running-head" last. A demoted full name keeps its document-wide anchor power. The apparatus exclusion (E-Periodica cover, photo credit lines) stays. The unlisted proposal channel reads figure zones on purpose, because plate captions carry exactly the unlisted names. Rejected alternative: marking figure candidates tier 1, rejected because caption identity (depicted person against owning institution against work title) needs the caption read.
+
+Consequences: corpus-wide the change adds worklist candidates only, the tier-1 population is unchanged; doc 760's provenance apparatus is fully visible; overview gains the class "figure"; the gold-benchmark miss fixture moved off figure captions. Downstream follow-up recorded: the layout-overlay stream of spread documents still resolves per text page (E114 note).
+
+Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |

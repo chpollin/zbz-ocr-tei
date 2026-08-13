@@ -52,6 +52,8 @@ CLASSES = (
      "repeated page furniture; outside the marking scope by convention (E105)"),
     ("bibliography", "Citation context",
      "inside a plain bibl element; identity needs the citation read"),
+    ("figure", "Figure caption",
+     "inside a figure zone; scanned but never asserted (plate provenance, credits)"),
     ("derived", "Derived spelling",
      "a spelling derived from a listed form (initials, acronym case, subtitle join, legacy)"),
     ("markup", "Markup boundary",
@@ -85,6 +87,8 @@ def classify(rule: str, tier: int) -> str:
         return "ambiguous"
     if ":in-plain-bibl" in rule:
         return "bibliography"
+    if ":in-figure" in rule:
+        return "figure"
     if any(marker in rule for marker in _DERIVED_MARKERS) or base in _DERIVED_BASES:
         return "derived"
     if base in ("bare-surname", "caps-surname"):

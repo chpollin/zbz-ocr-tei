@@ -61,6 +61,20 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-13 Session 95 (continued): released work program executed with three build agents (E112-E115)
+
+**Occasion** The operator released the whole open program of the entity workflow for agent execution; the designed operator gates (M6 review, M7 release, the two IAA disputes, list admissions of new entities such as the frequent unlisted person candidates) stay open by design.
+
+**Goal** Every safely reachable gap closed under the verdict guard: curated variants, the adjudicated text defects, the facsimile mapping, the figure-zone convention, then remeasurement material frozen.
+
+**Course** Three Opus build agents on disjoint file sets, every self-report verified against disk. Agent one built the curated-variant channel (optional `variants` field, form source "curated-variant", lint validation); the orchestrator applied the data edits, removed the "Test" placeholder and registered evidence-backed variants on twenty entries with documented skips. The delegation of the text repairs was blocked by the permission classifier, so the orchestrator performed them directly with backups and facsimile verification (E113: hallucination loop 900, ghost page 1520 as blank pb, speaker echoes 2330); the CER chain re-ran with unchanged headline figures. Agent two built the pb-anchor facsimile mapping (per-document sidecar, viewer preference with sequential fallback, affected population audited: spreads, cover offsets, irregular anchors). Agent three switched figure zones from excluded to worklist-demoted (":in-figure", anchor power kept); the orchestrator carried the three named follow-ups (overview class "figure", unlisted channel reads captions on purpose, gold-benchmark miss fixture). Full cycle after the waves: battery green, ruff clean over every touched file, corpus scan regenerated, verdict guard at zero violations for the first time (the repaired documents' records classify text_changed, nothing adjudicated lost), previews, viewer mirror, overview and edition data regenerated. The zero-mention set fell from thirty-seven to seventeen: eight absent or outside the digitized pages, four deliberate homograph skips, one uncertain, four mechanical residuals (hyphenated single-name variants meet a general scan gap for hyphenated surnames; one work-title casing question). Remeasurement material frozen: gold benchmark re-run on the new rules, fresh stratified sample drawn with seed 42 into the dated directory `output/audits/eval_sample_2026-08-13/` beside its frozen scan, so the 2026-08-12 evidence stays untouched.
+
+**Decisions** E112 (curated-variant channel and list hygiene), E113 (pointwise text repairs), E114 (facs mapping via pb anchors), E115 (figure zones demoted instead of excluded); the verdict-store reproduction test became digest-aware.
+
+**Status** Committed and pushed; guard zero violations, battery green, mirror current; the new sample awaits its adjudication wave.
+
+**Next steps** 1. Adjudication wave over the 2026-08-13 sample, then the remeasured precision and recall. 2. Hyphenated-surname scan gap and the work-title casing question as one test-first repair. 3. Operator decisions: IAA disputes p145/p193, unlisted person admissions (ZBZ list domain), M6/M7.
+
 ### 2026-08-13 Session 95: verdict guard, zero-mention classification wave, apostrophe folding (E110/E111)
 
 **Occasion** Operator question whether the entity layer really captures every listed entity and how agent-driven repairs can proceed without overwriting adjudicated ground truth; parallel operator review of five problem classes in the viewer.

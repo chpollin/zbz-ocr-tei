@@ -16,10 +16,10 @@ import csv
 import json
 
 from scripts.eval.entity_unlisted_scan import (
-    CLASSES,
     CLASS_CAPS,
     CLASS_MULTI,
     CLASS_SINGLE,
+    CLASSES,
     DEFAULT_MIN_MULTI,
     DEFAULT_MIN_SINGLE,
     MAX_EXAMPLES,
@@ -157,12 +157,16 @@ def test_reported_names_are_trimmed_off_a_longer_run(tmp_path):
     assert _surfaces(found) == ["Bradley"]
 
 
-def test_header_figure_and_bibliography_are_excluded(tmp_path):
+def test_header_and_bibliography_are_excluded_while_figures_are_scanned(tmp_path):
+    # figure zones joined the scan scope with the ":in-figure" demotion; the
+    # unlisted channel reads them on purpose, plate captions carry unlisted names
     body = (
         "<figure><figDesc>Foto von Jurek Becker</figDesc></figure>"
         '<div type="bibliography"><bibl>Hilde Domin, Gedichte</bibl></div>'
     )
-    assert _found(body, tmp_path, allow_single_words=True) == []
+    found = _found(body, tmp_path, allow_single_words=True)
+    assert "Jurek Becker" in {f["surface"] for f in found}
+    assert not any("Domin" in f["surface"] for f in found)
 
 
 def test_marked_entity_element_is_excluded(tmp_path):

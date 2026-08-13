@@ -9,12 +9,15 @@ affected entries; repairing the list is the job of the tool that produced it.
 DIAGNOSIS ONLY -- reads the entity list and the cache, writes a JSON report to
 output/audits/, changes no data and is no pass/fail gate (exit code always 0).
 
-Errors (block an entry from automatic matching):
+Errors (block an entry or one of its forms from automatic matching):
   missing_label        persons.name / organisations.orgName / works.title absent or empty
   invalid_gnd_id       GND_id absent or outside both real GND id forms
   duplicate_gnd_id     the same GND id twice, inside or across the categories
   dnb_link_mismatch    listBibl DNB_link does not match https://d-nb.info/gnd/{GND_id}
   unresolved_author    works.author_gnd_id points to no persons entry
+  invalid_variants     the optional variants field is no list of non-empty strings
+  duplicate_variant    the same curated variant twice inside one entry
+  redundant_variant    a curated variant repeats the entry's own label
   gnd_not_found        the cache holds HTTP 404 for the id (defective id)
   cache_status         the cache holds another non-200 status (retrieval incomplete)
 
@@ -25,7 +28,13 @@ Warnings (reported, never blocking):
   legacy_pairing           a legacy surface form the id's own GND record does not
                            corroborate (gid plus form); the matcher demotes exactly
                            these forms to tier 2
+  variant_collision        a curated variant that another entry carries as its label or
+                           as its own variant; both entries then own the same form
   editor_reviewed = false is counted only, never listed per entry
+
+The curated variants field is the operator's channel for a corpus spelling the GND norm
+form does not carry ("Kolumbus" for "Colombo, Cristoforo"). Its strings are compared
+like labels, in NFC with collapsed whitespace and case folded.
 
 Usage:
     python -m scripts.eval.entity_lint
@@ -161,6 +170,79 @@ def _cache_counts(cache: dict, listed_ids: set) -> dict:
     }
 
 
+def _variant_strings(entry: dict) -> list:
+    """The usable curated variants of an entry; malformed items are left to the checks."""
+    values = entry.get("variants")
+    if not isinstance(values, list):
+        return []
+    return [value for value in values if isinstance(value, str) and value.strip()]
+
+
+def _form_owners(entities: dict) -> dict:
+    """Normalized label and curated variant strings -> the entries that carry them."""
+    owners = {}
+    for category in CATEGORIES:
+        for index, entry in enumerate(entities.get(category) or []):
+            forms = [_label(entry, category), *_variant_strings(entry)]
+            for form in forms:
+                if form:
+                    owners.setdefault(_normalized(form), []).append(
+                        (category, index, entry.get("GND_id"))
+                    )
+    return owners
+
+
+def _variant_findings(entry: dict, category: str, index: int, gnd_id, label,
+                      owners: dict) -> tuple:
+    """Checks for the curated variants field of one entry. Returns (errors, warnings).
+
+    An absent field is the normal case and yields nothing. A variant another entry
+    carries as its label or its own variant is a warning: both entries then own the
+    same form, which the matcher reports as a multi-owner candidate.
+    """
+    values = entry.get("variants")
+    if values is None:
+        return [], []
+    if not isinstance(values, list):
+        return [_finding("invalid_variants", category, index, gnd_id,
+                         "Feld variants ist keine Liste")], []
+
+    errors, warnings, seen = [], [], set()
+    for value in values:
+        if not isinstance(value, str) or not value.strip():
+            errors.append(
+                _finding("invalid_variants", category, index, gnd_id,
+                         "Variante ist kein nicht-leerer String",
+                         variant=value if isinstance(value, str) else None)
+            )
+            continue
+        key = _normalized(value)
+        if key in seen:
+            errors.append(
+                _finding("duplicate_variant", category, index, gnd_id,
+                         "Variante steht mehrfach im selben Eintrag", variant=value)
+            )
+            continue
+        seen.add(key)
+        if label and key == _normalized(label):
+            errors.append(
+                _finding("redundant_variant", category, index, gnd_id,
+                         "Variante wiederholt das Label des Eintrags", variant=value)
+            )
+        foreign = [
+            other_id for other_category, other_index, other_id in owners.get(key, ())
+            if (other_category, other_index) != (category, index)
+            and isinstance(other_id, str)
+        ]
+        if foreign:
+            warnings.append(
+                _finding("variant_collision", category, index, gnd_id,
+                         "Variante ist zugleich Form eines anderen Eintrags",
+                         variant=value, collides_with=foreign)
+            )
+    return errors, warnings
+
+
 def _legacy_findings(forms, category: str, index: int, gnd_id, label, record) -> tuple:
     """Pairing check for one entry: (checked pairs, warnings).
 
@@ -194,7 +276,9 @@ def lint(entities: dict, cache: dict | None = None, legacy: dict | None = None) 
     errors, warnings = [], []
     cache_entries = None if cache is None else (cache.get("entries") or {})
     legacy_index = legacy_names(legacy) if legacy is not None else {}
+    form_owners = _form_owners(entities)
     legacy_pairs = 0
+    variant_entries, variant_strings = 0, 0
     person_ids = {
         entry.get("GND_id")
         for entry in entities.get("persons") or []
@@ -234,6 +318,15 @@ def lint(entities: dict, cache: dict | None = None, legacy: dict | None = None) 
 
             errors.extend(_dnb_findings(entry, category, index, gnd_id))
 
+            variant_errors, variant_warnings = _variant_findings(
+                entry, category, index, gnd_id, label, form_owners
+            )
+            errors.extend(variant_errors)
+            warnings.extend(variant_warnings)
+            usable_variants = _variant_strings(entry)
+            variant_entries += bool(usable_variants)
+            variant_strings += len(usable_variants)
+
             if category == "works":
                 author = entry.get("author_gnd_id")
                 if isinstance(author, str) and author.strip() and author.strip() not in person_ids:
@@ -268,6 +361,7 @@ def lint(entities: dict, cache: dict | None = None, legacy: dict | None = None) 
         "errors_by_type": dict(Counter(item["type"] for item in errors)),
         "warnings_by_type": dict(Counter(item["type"] for item in warnings)),
         "editor_reviewed_false": reviewed_false,
+        "variants": {"entries": variant_entries, "strings": variant_strings},
         "cache": _cache_counts(cache, listed_ids) if cache is not None else None,
         "legacy": None if legacy is None else {
             "index_ids": len(legacy_index),
@@ -307,6 +401,9 @@ def _print_summary(report: dict) -> None:
           f"(persons {entities['persons']}, organisations {entities['organisations']}, "
           f"works {entities['works']})")
     print(f"  editor_reviewed = false: {counts['editor_reviewed_false']}")
+    variants = counts["variants"]
+    print(f"  Kuratierte Varianten: {variants['strings']} Strings "
+          f"in {variants['entries']} Eintraegen")
     if counts["cache"] is None:
         print("  Cache: nicht vorhanden (nur Offline-Pruefungen)")
     else:

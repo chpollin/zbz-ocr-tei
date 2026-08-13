@@ -48,10 +48,14 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   candidates they produce is the scan's `evidence` field.
 - A surname taken from a cache or legacy variant enters the surname index only when
   it passes the same distinctiveness test the org-token rule states (at least four
-  characters, capitalized). Curated headwords are registered unguarded, so the test
-  only filters variant artifacts, the transliteration fragments lobid carries
-  ("Ma, Kesi" for Marx, "Big, abbe" for Voltaire). Forename-shaped variants
-  ("Pierre") pass it and stay as tier-2 noise for the judge stage.
+  characters, capitalized). Curated headwords and curated variants are registered
+  unguarded, so the test only filters variant artifacts, the transliteration fragments
+  lobid carries ("Ma, Kesi" for Marx, "Big, abbe" for Voltaire). Forename-shaped
+  variants ("Pierre") pass it and stay as tier-2 noise for the judge stage.
+- The optional `variants` field of a list entry is the operator's channel for a corpus
+  spelling the GND norm form does not carry ("Kolumbus" for "Colombo, Cristoforo").
+  Every string runs through the form derivation of its category headword and takes the
+  tier its own shape earns; the field itself lifts nothing into tier 1.
 - Variants made only of dotted initials ("J. H." for Pestalozzi) never enter the
   full-name channel; as tier-1 forms they would claim unrelated initials
   document-wide (the doc-1220 pilot finding). The initials of a headword reach the
@@ -122,7 +126,9 @@ PLACE_ADJECTIVES = {
 # Where the matched form comes from. "surname-index" is the curated headword's bare
 # surname, which is an index entry rather than a form of its own; a surname taken from
 # a variant reports that variant instead ("Mayer, Gertrud" behind a hit on "Mayer").
-FORM_SOURCES = ("headword", "cache-variant", "legacy", "surname-index")
+# "curated-variant" is the operator-registered corpus spelling of a list entry.
+CURATED_SOURCE = "curated-variant"
+FORM_SOURCES = ("headword", CURATED_SOURCE, "cache-variant", "legacy", "surname-index")
 
 _CATEGORY_BY_LIST = {"persons": "person", "organisations": "organisation", "works": "work"}
 _LABEL_FIELD = {"persons": "name", "organisations": "orgName", "works": "title"}
@@ -166,7 +172,8 @@ def build_lexicon(
     verdict `reject` never enters the lexicon (neither as full form nor via the surname
     index), a `suspect` form enters but yields tier-2 candidates only, and a cache form
     the review does not know counts as suspect until the next review run. The review
-    binds only the cache channel; curated headwords and legacy forms pass unfiltered.
+    binds only the cache channel; curated headwords, curated variants and legacy forms
+    pass unfiltered.
     """
     entities = _read_json(entities_path, required=True) or {}
     cache = _read_json(cache_path) or {}
@@ -205,7 +212,7 @@ def build_lexicon(
             }
             legacy = legacy_index.get(normalize_gid(gid), ())
             corroborated, demoted = _split_legacy(legacy, label, cached)
-            variants = _variants(cached, corroborated)
+            variants = _variants(cached, _curated_variants(raw), corroborated)
             suspect_variants: tuple[tuple[str, str], ...] = ()
             if review is not None:
                 variants, suspect_variants = _filter_reviewed(
@@ -416,9 +423,31 @@ def _dedup(values) -> tuple[str, ...]:
     return tuple(seen)
 
 
-def _variants(cached: dict, extra: tuple[str, ...] = ()) -> tuple[tuple[str, str], ...]:
-    """(form, source) pairs beyond the headword; the first source of a form wins."""
+def _curated_variants(raw: dict) -> tuple[str, ...]:
+    """The `variants` field of one list entry; a malformed field contributes nothing.
+
+    The field is a trust boundary like every other input channel: `entity_lint` reports
+    its defects, the build reads only what is usable.
+    """
+    value = raw.get("variants")
+    return _dedup(value) if isinstance(value, list) else ()
+
+
+def _variants(
+    cached: dict,
+    curated: tuple[str, ...] = (),
+    extra: tuple[str, ...] = (),
+) -> tuple[tuple[str, str], ...]:
+    """(form, source) pairs beyond the headword; the first source of a form wins.
+
+    Curated strings come first, so a form the list and the cache both carry counts as
+    curated and stays outside the reach of the variant review.
+    """
     seen: dict[str, str] = {}
+    for value in curated:
+        form = _collapse(str(value or ""))
+        if form:
+            seen.setdefault(form, CURATED_SOURCE)
     for value in [cached.get("preferred_name"), *(cached.get("variant_names") or [])]:
         form = _collapse(str(value or ""))
         if form:
@@ -568,9 +597,18 @@ def _add_person_variant(
     variant: str,
     source: str,
 ) -> None:
+    """Register one variant form of a person.
+
+    The distinctiveness guard on the surname index filters variant artifacts of the
+    cache and legacy channels; a curated string is operator authority and enters
+    unguarded, exactly like a curated one-token headword. The initials guard binds
+    every channel, because initials claim unrelated positions document-wide.
+    """
+    curated = source == CURATED_SOURCE
     if "," in variant:
         surname, forenames = _split_person_label(variant)
-        if _is_distinctive_token(surname) and not _is_initials_only(surname):
+        if ((curated or _is_distinctive_token(surname))
+                and not _is_initials_only(surname)):
             _register_surname(surnames, surname_forms, surname, gid, variant, source)
         if surname and forenames and not _is_initials_only(f"{forenames} {surname}"):
             _add_form(forms, f"{forenames} {surname}", gid, "person", "variant-full-name",
@@ -582,7 +620,7 @@ def _add_person_variant(
         return
     if len(tokens) >= 2:
         _add_form(forms, variant, gid, "person", "variant-full-name", source)
-    elif tokens and _is_distinctive_token(tokens[0]):
+    elif tokens and (curated or _is_distinctive_token(tokens[0])):
         _register_surname(surnames, surname_forms, tokens[0], gid, variant, source)
 
 

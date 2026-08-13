@@ -314,6 +314,66 @@
     ],
     "18": [
       {
+        "gid": "121278018",
+        "category": "person",
+        "surface": "ANDEREGG",
+        "rule": "caps-surname:in-figure",
+        "alternatives": [],
+        "matched_form": "Anderegg",
+        "form_source": "surname-index",
+        "context": "rstarrung, nie von zuviel Risiko-freude ANDEREGG: Herr Schmidheiny, Sie haben Ihre Antwo",
+        "text": "ANDEREGG",
+        "occurrence": 1
+      },
+      {
+        "gid": "121587177",
+        "category": "person",
+        "surface": "Schmidheiny",
+        "rule": "anchored-surname:in-figure",
+        "alternatives": [],
+        "matched_form": "Schmidheiny",
+        "form_source": "surname-index",
+        "context": "von zuviel Risiko-freude ANDEREGG: Herr Schmidheiny, Sie haben Ihre Antwort an Herrn Muheim",
+        "text": "Schmidheiny",
+        "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip:in-figure",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "EREGG: Herr Schmidheiny, Sie haben Ihre Antwort an Herrn Muheim gleich wieder ins Allge",
+        "text": "Antwort",
+        "occurrence": 1
+      },
+      {
+        "gid": "120652293",
+        "category": "person",
+        "surface": "Muheim",
+        "rule": "anchored-surname:in-figure",
+        "alternatives": [],
+        "matched_form": "Muheim",
+        "form_source": "surname-index",
+        "context": "dheiny, Sie haben Ihre Antwort an Herrn Muheim gleich wieder ins Allgemeinphilosophisc",
+        "text": "Muheim",
+        "occurrence": 1
+      },
+      {
+        "gid": "120652293",
+        "category": "person",
+        "surface": "Muheim",
+        "rule": "anchored-surname:in-figure",
+        "alternatives": [],
+        "matched_form": "Muheim",
+        "form_source": "surname-index",
+        "context": "n sie also, daß ich die Frage von Herrn Muheim noch einmal aufgreife und zuspitze. Sie",
+        "text": "Muheim",
+        "occurrence": 2
+      },
+      {
         "gid": "121587177",
         "category": "person",
         "surface": "SCHMIDHEINY",
@@ -321,7 +381,7 @@
         "alternatives": [],
         "matched_form": "Schmidheiny",
         "form_source": "surname-index",
-        "context": "starrung, nie von zuviel Risiko-freude SCHMIDHEINY SCHMIDHEINY: Ich freue mich über diese",
+        "context": "die von anderen getragen werden müssen? SCHMIDHEINY SCHMIDHEINY: Ich freue mich über diese",
         "text": "SCHMIDHEINY",
         "occurrence": 1
       },
@@ -333,9 +393,33 @@
         "alternatives": [],
         "matched_form": "Schmidheiny",
         "form_source": "surname-index",
-        "context": "e von zuviel Risiko-freude SCHMIDHEINY SCHMIDHEINY: Ich freue mich über diese Zuspitzung d",
+        "context": "ren getragen werden müssen? SCHMIDHEINY SCHMIDHEINY: Ich freue mich über diese Zuspitzung d",
         "text": "SCHMIDHEINY",
         "occurrence": 2
+      },
+      {
+        "gid": "121278018",
+        "category": "person",
+        "surface": "Anderegg",
+        "rule": "anchored-surname:in-figure",
+        "alternatives": [],
+        "matched_form": "Anderegg",
+        "form_source": "surname-index",
+        "context": "tschaft, die ich meine. Sie haben, Herr Anderegg, in Ihrer Einleitung an frühere Zeiten",
+        "text": "Anderegg",
+        "occurrence": 1
+      },
+      {
+        "gid": "118564994",
+        "category": "person",
+        "surface": "Kolumbus",
+        "rule": "bare-surname:in-figure",
+        "alternatives": [],
+        "matched_form": "Kolumbus",
+        "form_source": "curated-variant",
+        "context": "frühere Zeiten erinnert. Denken wir an Kolumbus! Für ihn und Spanien wäre es sicherer g",
+        "text": "Kolumbus",
+        "occurrence": 1
       },
       {
         "gid": "121278018",
@@ -345,7 +429,7 @@
         "alternatives": [],
         "matched_form": "Anderegg",
         "form_source": "surname-index",
-        "context": "der Risikobereitschaft, die ich meine. ANDEREGG ANDEREGG: ...daß er ein Schiff voller M",
+        "context": "t froh, daß er damals aufgebrochen ist? ANDEREGG ANDEREGG: ...daß er ein Schiff voller M",
         "text": "ANDEREGG",
         "occurrence": 2
       },
@@ -357,7 +441,7 @@
         "alternatives": [],
         "matched_form": "Anderegg",
         "form_source": "surname-index",
-        "context": "obereitschaft, die ich meine. ANDEREGG ANDEREGG: ...daß er ein Schiff voller Matrosen h",
+        "context": "aß er damals aufgebrochen ist? ANDEREGG ANDEREGG: ...daß er ein Schiff voller Matrosen h",
         "text": "ANDEREGG",
         "occurrence": 3
       }
@@ -466,6 +550,23 @@
         "occurrence": 4
       }
     ],
+    "20": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Hersch",
+        "rule": "anchored-surname:in-figure",
+        "alternatives": [
+          "118815679",
+          "172155800"
+        ],
+        "matched_form": "Hersch",
+        "form_source": "surname-index",
+        "context": "komme deshalb zurück auf das, was Frau Hersch gesagt hat. Es scheint mir fundamental",
+        "text": "Hersch",
+        "occurrence": 1
+      }
+    ],
     "21": [
       {
         "gid": "118815679",
@@ -564,6 +665,30 @@
         "context": "cht mehr unmittelbar einzusehen. HERSCH HERSCH: So lange es um das Überleben geht, ste",
         "text": "HERSCH",
         "occurrence": 2
+      },
+      {
+        "gid": "121587177",
+        "category": "person",
+        "surface": "SCHMIDHEINY",
+        "rule": "caps-surname:in-figure",
+        "alternatives": [],
+        "matched_form": "Schmidheiny",
+        "form_source": "surname-index",
+        "context": "n, stellt sich die Frage nach dem Sinn. SCHMIDHEINY: Gerade deshalb ist der Dialog mit eine",
+        "text": "SCHMIDHEINY",
+        "occurrence": 1
+      },
+      {
+        "gid": "1248933664",
+        "category": "work",
+        "surface": "Antwort",
+        "rule": "work-title:qualifier-strip:in-figure",
+        "alternatives": [],
+        "matched_form": "Antwort",
+        "form_source": "headword",
+        "context": "n, auf die wir nicht ohne weiteres eine Antwort haben. Wir müssen uns – ich zähle mich",
+        "text": "Antwort",
+        "occurrence": 1
       }
     ],
     "23": [
@@ -575,7 +700,7 @@
         "alternatives": [],
         "matched_form": "Antwort",
         "form_source": "headword",
-        "context": "rlust in der Sicherheit Innovation als Antwort auf die Sinnfrage Im Innofrieg der Zuku",
+        "context": "wischen den Generationen Innovation als Antwort auf die Sinnfrage Im Innofrieg der Zuku",
         "text": "Antwort",
         "occurrence": 1
       },
@@ -804,6 +929,21 @@
         "occurrence": 2
       },
       {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "HERSCH",
+        "rule": "caps-surname:ambiguous:in-figure",
+        "alternatives": [
+          "118815679",
+          "172155800"
+        ],
+        "matched_form": "Hersch",
+        "form_source": "surname-index",
+        "context": "en – des Kleinstaates gefährdet werden. HERSCH: Warum verbinden Sie die Gefahr der tot",
+        "text": "HERSCH",
+        "occurrence": 1
+      },
+      {
         "gid": "120652293",
         "category": "person",
         "surface": "MUHEIM",
@@ -996,6 +1136,18 @@
     ],
     "32": [
       {
+        "gid": "121278018",
+        "category": "person",
+        "surface": "ANDEREGG",
+        "rule": "caps-surname:in-figure",
+        "alternatives": [],
+        "matched_form": "Anderegg",
+        "form_source": "surname-index",
+        "context": "Sinne des Wortes menschlich nahestehen. ANDEREGG: Wir sind hier, scheint mir, an einem s",
+        "text": "ANDEREGG",
+        "occurrence": 1
+      },
+      {
         "gid": "1248933664",
         "category": "work",
         "surface": "Antwort",
@@ -1003,7 +1155,7 @@
         "alternatives": [],
         "matched_form": "Antwort",
         "form_source": "headword",
-        "context": "nschlich nahestehen. und eine mögliche Antwort: mehr Autorität Sicherheit durch Autori",
+        "context": "as mit Absicherung zu und eine mögliche Antwort: mehr Autorität Sicherheit durch Autori",
         "text": "Antwort",
         "occurrence": 1
       }
@@ -1305,6 +1457,32 @@
         "form_source": "surname-index",
         "context": ", zur Einleitung das Wort geben. HERSCH HERSCH: Wenn ich unsere Zeitgenossen höre, so",
         "text": "HERSCH",
+        "occurrence": 2
+      }
+    ],
+    "40": [
+      {
+        "gid": "118630148",
+        "category": "person",
+        "surface": "Weil",
+        "rule": "bare-surname:suspect:in-figure",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
+        "context": "ht schwerer, sondern leichter geworden. Weil die Vergänglichkeit zum Bild des Lebens",
+        "text": "Weil",
+        "occurrence": 1
+      },
+      {
+        "gid": "118630148",
+        "category": "person",
+        "surface": "Weil",
+        "rule": "bare-surname:suspect:in-figure",
+        "alternatives": [],
+        "matched_form": "Weil",
+        "form_source": "surname-index",
+        "context": "kann als an die unmittelbare Bedrohung. Weil der Mensch jeden Tag essen muß, steht e",
+        "text": "Weil",
         "occurrence": 2
       }
     ],
@@ -1611,6 +1789,21 @@
         "context": "als schwere Einengung seiner Freiheit. Hersch Hersch: Ja, er empfindet das so, aber v",
         "text": "Hersch",
         "occurrence": 1
+      },
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Hersch",
+        "rule": "anchored-surname:in-figure",
+        "alternatives": [
+          "118815679",
+          "172155800"
+        ],
+        "matched_form": "Hersch",
+        "form_source": "surname-index",
+        "context": "damit allein noch nicht wirklich frei. Hersch: Das ist richtig. Man bekommt die Freih",
+        "text": "Hersch",
+        "occurrence": 3
       }
     ],
     "51": [

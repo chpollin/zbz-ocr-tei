@@ -11,7 +11,7 @@
         "alternatives": [],
         "matched_form": "Jeanne Hersch",
         "form_source": "headword",
-        "context": "FG 60672 Jeanne Hersch Jeanne Hersch KARL JASPERS MOBILES L'A",
+        "context": "FG 60672 Jeanne Hersch Jeanne Hersch KARL JASPERS MOBILES L'AG",
         "text": "Jeanne Hersch",
         "occurrence": 1
       }
@@ -25,7 +25,7 @@
         "alternatives": [],
         "matched_form": "Jeanne Hersch",
         "form_source": "headword",
-        "context": "FG 60672 Jeanne Hersch Jeanne Hersch KARL JASPERS MOBILES L'AGE D'HOMME DEC",
+        "context": "FG 60672 Jeanne Hersch Jeanne Hersch KARL JASPERS MOBILES L'AGE D'HOMME DECL",
         "text": "Jeanne Hersch",
         "occurrence": 1
       },
@@ -37,7 +37,7 @@
         "alternatives": [],
         "matched_form": "KARL JASPERS",
         "form_source": "headword",
-        "context": "FG 60672 Jeanne Hersch Jeanne Hersch KARL JASPERS MOBILES L'AGE D'HOMME DECLASSIFIED Aut",
+        "context": "FG 60672 Jeanne Hersch Jeanne Hersch KARL JASPERS MOBILES L'AGE D'HOMME DECLASSIFIED Auth",
         "text": "KARL JASPERS",
         "occurrence": 1
       }
@@ -1360,6 +1360,18 @@
         "context": "ntre enfin, à la limite. Les paroles de Jérémie sont rudes. Elles ne sont plus liées à",
         "text": "Jérémie",
         "occurrence": 1
+      },
+      {
+        "gid": "108801397X",
+        "category": "work",
+        "surface": "Introduction à la philosophie",
+        "rule": "work-variant:in-plain-bibl:in-figure",
+        "alternatives": [],
+        "matched_form": "Introduction à la philosophie",
+        "form_source": "cache-variant",
+        "context": "ute solidité définitive dans le monde. (Introduction à la philosophie, traduction française 1ère édition, p.",
+        "text": "Introduction à la philosophie",
+        "occurrence": 1
       }
     ],
     "97": [
@@ -1388,7 +1400,33 @@
         "occurrence": 1
       }
     ],
+    "100": [
+      {
+        "gid": "139403475X",
+        "category": "work",
+        "surface": "Von der Wahrheit",
+        "rule": "work-title:in-plain-bibl:in-figure",
+        "alternatives": [],
+        "matched_form": "Von der Wahrheit",
+        "form_source": "headword",
+        "context": "ans relâche le lien de tout avec tout. (Von der Wahrheit, p. 49-50) Dans n'importe quelle situat",
+        "text": "Von der Wahrheit",
+        "occurrence": 1
+      }
+    ],
     "101": [
+      {
+        "gid": "139403475X",
+        "category": "work",
+        "surface": "Von der Wahrheit",
+        "rule": "work-title:in-plain-bibl:in-figure",
+        "alternatives": [],
+        "matched_form": "Von der Wahrheit",
+        "form_source": "headword",
+        "context": "t étranger, qui la menace, qui la nie. (Von der Wahrheit, p. 114-115) 33. Raison et liberté Répé",
+        "text": "Von der Wahrheit",
+        "occurrence": 1
+      },
       {
         "gid": "118562002",
         "category": "person",
@@ -1908,6 +1946,18 @@
     ],
     "123": [
       {
+        "gid": "1092385584",
+        "category": "work",
+        "surface": "Vom Ursprung und Ziel der Geschichte",
+        "rule": "work-title:in-plain-bibl:in-figure",
+        "alternatives": [],
+        "matched_form": "Vom Ursprung und Ziel der Geschichte",
+        "form_source": "headword",
+        "context": "rner l'histoire, tous passent en elle. (Vom Ursprung und Ziel der Geschichte, p. 262-263) 61. TEXTE NÉCROLOGIQUE DE",
+        "text": "Vom Ursprung und Ziel der Geschichte",
+        "occurrence": 1
+      },
+      {
         "gid": "2024349-2",
         "category": "organisation",
         "surface": "Université",
@@ -2315,78 +2365,6 @@
         "context": "es de l'histoire de l'idée d'existence: Kierkegaard - Jaspers. Jean Wahl. Paris, Centre de",
         "text": "Kierkegaard",
         "occurrence": 1
-      }
-    ],
-    "130": [
-      {
-        "gid": "1398705772",
-        "category": "person",
-        "surface": "E. L.",
-        "rule": "full-name:initials",
-        "alternatives": [],
-        "matched_form": "E. L.",
-        "form_source": "headword",
-        "context": "titude et en shoodt. (1961). Trad. : E. E. L. de Lando, L'Histoire de l'art, 157 p. B",
-        "text": "E. L.",
-        "occurrence": 1
-      },
-      {
-        "gid": "2024349-2",
-        "category": "organisation",
-        "surface": "Université",
-        "rule": "org-variant:qualifier-strip:ambiguous",
-        "alternatives": [
-          "2024349-2",
-          "36146-X"
-        ],
-        "matched_form": "Université",
-        "form_source": "cache-variant",
-        "context": "Nicolas de Lemos, 4. Le tonopoeau de l'Université. 3. Pour le premier numéro de la revue",
-        "text": "Université",
-        "occurrence": 1
-      },
-      {
-        "gid": "118577484",
-        "category": "person",
-        "surface": "Marcel",
-        "rule": "anchored-surname:suspect",
-        "alternatives": [],
-        "matched_form": "Marcel",
-        "form_source": "surname-index",
-        "context": "del shodlende. Trad. et avant-propos de Marcel Méry, S.L. Gais et, 1975, 109 p. Orig.",
-        "text": "Marcel",
-        "occurrence": 1
-      },
-      {
-        "gid": "4343581-6",
-        "category": "work",
-        "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
-        "alternatives": [
-          "4343581-6",
-          "4343582-8"
-        ],
-        "matched_form": "Philosophie",
-        "form_source": "headword",
-        "context": ", 1947. Gabriel Marcel et Karl Jaspers. Philosophie du nombre et philosophie du paradoxe. P",
-        "evidence": "none",
-        "text": "Philosophie",
-        "occurrence": 1
-      },
-      {
-        "gid": "118557106",
-        "category": "person",
-        "surface": "Jaspers",
-        "rule": "anchored-surname:suspect",
-        "alternatives": [
-          "117085391",
-          "118557106"
-        ],
-        "matched_form": "Jaspers",
-        "form_source": "surname-index",
-        "context": "l'histoire de l'idée d'existence : Karl-Jaspers - Jaspers. Jean Wahl, Paris, Centre de",
-        "text": "Jaspers",
-        "occurrence": 4
       }
     ],
     "131": [

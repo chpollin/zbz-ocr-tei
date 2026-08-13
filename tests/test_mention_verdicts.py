@@ -32,7 +32,6 @@ from scripts.eval.build_mention_verdicts import (
     check_distributions,
     entity_gids,
     load_precision_verdicts,
-    load_recall_pages,
     occurrence_map,
     serialize,
     validate,
@@ -271,4 +270,11 @@ def test_schema_fields_present(wave):
 def test_written_store_matches_a_fresh_build(wave):
     if not OUT_PATH.exists():
         pytest.skip("store not built yet")
-    assert OUT_PATH.read_text(encoding="utf-8") == serialize(wave)
+    stored = json.loads(OUT_PATH.read_text(encoding="utf-8"))
+    fresh = json.loads(serialize(wave))
+    # text_sha256 fingerprints the live tei_final and drifts when a text repair
+    # touches a document after the snapshot; the verdict guard consumes that
+    # drift as text_changed. Every adjudication payload must still reproduce.
+    for record in (*stored["marks"], *fresh["marks"]):
+        record["text_sha256"] = "MASKED"
+    assert stored == fresh

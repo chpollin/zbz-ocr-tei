@@ -21,8 +21,11 @@ Two public functions:
         line, detected by scripts.tei.running_heads) demote their candidates to tier 2
         with the ":running-head" suffix, so page furniture never auto-marks (E105); a
         demoted full name keeps its anchor power, because the head still names the
-        document's subject. The document's own author is matched like every other
-        listed entity (operator decision E108); there is no byline exception.
+        document's subject. Figure zones work the same way with the ":in-figure"
+        suffix: a plate catalogue keeps its whole provenance apparatus in the captions,
+        so the zone is scanned instead of excluded, and the machine asserts nothing
+        inside it. The document's own author is matched like every other listed entity
+        (operator decision E108); there is no byline exception.
 
         alternatives   every listed id the matched form or surname belongs to, sorted
                        and including the reported gid. Empty for an unambiguous
@@ -33,9 +36,10 @@ Two public functions:
                        is the form which registered the surname ("Mayer, Gertrud"
                        behind a hit on "Mayer"), not the surname itself.
         form_source    which channel the form came from: "headword" (curated label and
-                       everything derived from it), "cache-variant" (GND cache),
-                       "legacy" (legacy mention index), "surname-index" (the bare
-                       surname of a curated headword).
+                       everything derived from it), "curated-variant" (the operator's
+                       `variants` field of the curated list), "cache-variant" (GND
+                       cache), "legacy" (legacy mention index), "surname-index" (the
+                       bare surname of a curated headword).
         evidence       one-word work titles only: "typographic" when the setting
                        corroborates the title reading, "none" otherwise (see below).
 
@@ -46,9 +50,11 @@ decoded. Every normalized character keeps the raw offsets it came from, so a mat
 maps back to an exact byte span whose slice is the surface. Excluded zones emit a
 sentinel character instead of their text, which blocks any match from running across
 them. The apparatus zone (E-Periodica cover sheet, photo credit lines) is excluded
-as well, so library apparatus never carries entity markup. A superscript digit counts
-as a separator rather than a word character, so a name that carries a footnote marker
-("Nietzsche" with a superscript two) keeps the boundary it has in front of a comma.
+as well, so library apparatus never carries entity markup. A `<figure>` is no excluded
+zone; its caption text takes part in the scan and reaches the worklist through the
+":in-figure" demotion. A superscript digit counts as a separator rather than a word
+character, so a name that carries a footnote marker ("Nietzsche" with a superscript
+two) keeps the boundary it has in front of a comma.
 
 Deliberate simplifications (upgrade path in the milestones M3 to M5):
 
@@ -64,8 +70,9 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   (several of them, which the rule name already says).
 - Suffix order is fixed and stackable: base rule, then the derived-channel suffix (a
   property of the lexicon form), then ":ambiguous" (a property of the lexicon), then
-  ":suspect" (a property of the context), then ":in-plain-bibl" (a property of the
-  position), then ":running-head" (a property of the page position, appended last).
+  ":suspect" (a property of the context), then ":in-plain-bibl" and ":in-figure" (both
+  properties of the position), then ":running-head" (a property of the page position,
+  appended last).
 - Five derived-form channels close gaps of the facsimile-adjudicated evaluation. They
   are worklist-only by construction and catalogued in scripts.tei.entity_lexicon; the
   scan reads them as a lexicon rule that carries a suffix.
@@ -161,6 +168,7 @@ CONTEXT_RADIUS = 40
 PLAIN_BIBL_SUFFIX = ":in-plain-bibl"
 AMBIGUOUS_SUFFIX = ":ambiguous"
 SUSPECT_SUFFIX = ":suspect"
+IN_FIGURE_SUFFIX = ":in-figure"
 RUNNING_HEAD_SUFFIX = ":running-head"
 
 # Tier-1 person rules the citation-frame, container and particle logic applies to.
@@ -259,6 +267,7 @@ class _Zones:
     plain_bibl: tuple[Span, ...]
     speakers: tuple[Span, ...]
     emphasis: tuple[Span, ...]
+    figures: tuple[Span, ...] = ()
     running_heads: tuple[Span, ...] = ()
 
 
@@ -300,13 +309,14 @@ def iter_tags(fragment: str) -> Iterator[str]:
 
 
 def _scan_zones(xml: str) -> _Zones:
-    """Collect the content ranges of text, excluded zones, plain bibl and speaker."""
+    """Collect the content ranges of text, excluded zones, plain bibl, speaker, figure."""
     text: list[Span] = []
     excluded: list[Span] = []
     plain_bibl: list[Span] = []
     speakers: list[Span] = []
     paragraphs: list[Span] = []
     emphasis: list[Span] = []
+    figures: list[Span] = []
     stack: list[tuple[str, dict[str, str], int]] = []
 
     for match in _TOKEN_RE.finditer(xml):
@@ -325,7 +335,7 @@ def _scan_zones(xml: str) -> _Zones:
             del stack[index:]
             _record_zone(
                 open_name, attrs, content_start, match.start(),
-                text, excluded, plain_bibl, speakers, paragraphs, emphasis,
+                text, excluded, plain_bibl, speakers, paragraphs, emphasis, figures,
             )
             continue
         if token.endswith("/>"):
@@ -341,6 +351,7 @@ def _scan_zones(xml: str) -> _Zones:
         plain_bibl=_merge(plain_bibl),
         speakers=tuple(sorted(speakers)),
         emphasis=tuple(sorted(emphasis)),
+        figures=_merge(figures),
     )
 
 
@@ -355,12 +366,15 @@ def _record_zone(
     speakers: list[Span],
     paragraphs: list[Span],
     emphasis: list[Span],
+    figures: list[Span],
 ) -> None:
     if start > end:
         return
     if name == "text":
         text.append((start, end))
-    elif name in ("figure", "persName", "orgName"):  # noqa: SIM114
+    elif name == "figure":
+        figures.append((start, end))
+    elif name in ("persName", "orgName"):  # noqa: SIM114
         excluded.append((start, end))
     elif name == "div" and attrs.get("type") == "bibliography":
         excluded.append((start, end))
@@ -553,23 +567,24 @@ def _lowercase_words(text: str) -> frozenset[str]:
 def _anchor_gids(candidates: list[dict]) -> set[str]:
     """Person gids that anchor bare surnames document-wide.
 
-    A running-head demotion keeps its anchor power: the head still names the
-    document's subject, only the mark itself leaves tier 1 (E105). Every other
-    demotion (ambiguity, suspicion, plain bibl) loses it as before.
+    A zone demotion keeps its anchor power: the running head still names the
+    document's subject and a figure caption still names the person it shows, only the
+    mark itself leaves tier 1 (E105). Every other demotion (ambiguity, suspicion,
+    plain bibl) loses it as before.
     """
     return {
         c["gid"] for c in candidates
         if c["category"] == "person"
-        and (c["tier"] == 1 or _tier1_before_head_demotion(c["rule"]))
+        and (c["tier"] == 1 or _tier1_before_zone_demotion(c["rule"]))
     }
 
 
-def _tier1_before_head_demotion(rule: str) -> bool:
-    """True when only the running-head suffix separates the rule from tier 1."""
-    if not rule.endswith(RUNNING_HEAD_SUFFIX):
-        return False
-    base = rule[:-len(RUNNING_HEAD_SUFFIX)]
-    return ":" not in base and TIER_BY_RULE.get(base) == 1
+def _tier1_before_zone_demotion(rule: str) -> bool:
+    """True when only the position suffixes separate the rule from tier 1."""
+    for suffix in (RUNNING_HEAD_SUFFIX, IN_FIGURE_SUFFIX):
+        if rule.endswith(suffix):
+            rule = rule[:-len(suffix)]
+    return ":" not in rule and TIER_BY_RULE.get(rule) == 1
 
 
 def _scan(
@@ -607,7 +622,13 @@ def _scan(
             hit = replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
         candidate, resume = _build_candidate(xml, norm, zones, hit)
         if candidate is not None:
+            # Position demotions in the documented suffix order: the figure zone
+            # (a property of the block) before the running head (of the page). Both
+            # read the tier the rules produced, so the anchor survives the demotion.
             anchor_tier = candidate["tier"]
+            if _in_spans(candidate["start"], zones.figures):
+                candidate["rule"] += IN_FIGURE_SUFFIX
+                candidate["tier"] = 2
             if _in_spans(candidate["start"], zones.running_heads):
                 candidate["rule"] += RUNNING_HEAD_SUFFIX
                 candidate["tier"] = 2
@@ -861,9 +882,9 @@ def _hit(
     """Build a hit; several bearers make it ambiguous, which is always tier 2.
 
     Suffix order is fixed: base rule, then ":ambiguous" (a property of the lexicon),
-    then ":suspect" (a property of the context), then ":in-plain-bibl" (a property of
-    the position), then ":running-head" (a property of the page position). Rules that
-    already name the ambiguity in their base keep it.
+    then ":suspect" (a property of the context), then ":in-plain-bibl" and ":in-figure"
+    (both properties of the position), then ":running-head" (a property of the page
+    position). Rules that already name the ambiguity in their base keep it.
     """
     if len(bearers) <= 1:
         return _Hit(start, end, gid, category, rule, tier, (), matched_form, source)

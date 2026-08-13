@@ -53,7 +53,8 @@
                                 //                rule, alternatives, matched_form, form_source,
                                 //                evidence?, context}]}}
         entityPage: false,      // the current page is rendered from the entity preview
-        entityCandidates: []    // worklist entries of the current page (popover lookup)
+        entityCandidates: [],   // worklist entries of the current page (popover lookup)
+        facsMap: null           // text page -> scan image name (generated {doc}_facs.json)
     };
 
     // E77: workflow status per stream, three levels: unverifiziert -> in_arbeit -> verifiziert -> unverifiziert
@@ -85,6 +86,10 @@
     const ENTITY_INDEX_PATH = 'data/entities.json';
     const entityPagePath     = (doc, page) => 'data/pages/' + doc + '/' + doc + '_entity_p' + page + '.xml';
     const entityWorklistPath = (doc) => 'data/pages/' + doc + '/' + doc + '_entity_worklist.json';
+    // Text page -> scan image, generated from pb@facs. Double-page scans carry more text
+    // pages than images, stripped cover sheets fewer, so the sequential convention
+    // "text page N = image N" breaks there.
+    const facsMapPath = (doc) => 'data/pages/' + doc + '/' + doc + '_facs.json';
     const ENTITY_CATEGORY_LABEL = { person: 'Person', organisation: 'Organisation', work: 'Work' };
     const ENTITY_MENTION_SEL = '.tei__entity[data-ref], .tei__bibl[data-ref]';
     // Candidates (worklist) are shown inline as well; both open the same popover.
@@ -327,6 +332,7 @@
         state.xmlScope = 'page';
         state.manifest = null;
         state.manifestDirty = false;
+        state.facsMap = null;
         ZBZ.setParams({ doc: doc.id, page: state.page });
         document.title = (doc.title ? doc.title.slice(0, 60) + ' — ' : '') + 'Hersch Pipeline Viewer';
 
@@ -336,7 +342,7 @@
 
         // Enable buttons
         refs.btnPrev.disabled = state.page <= 1;
-        refs.btnNext.disabled = state.page >= (doc.page_count || 1);
+        refs.btnNext.disabled = state.page >= textPageCount();
         if (refs.pageGoto) refs.pageGoto.disabled = false;
         syncPageInput();
         refs.btnDlLayout.disabled = false;
@@ -347,6 +353,9 @@
 
         // E66: load manifest for workflow status (parallel to page rendering)
         loadManifest(doc.id);
+
+        // Facsimile mapping: must be known before the first page renders an image
+        await loadFacsMap(doc.id);
 
         // Entity layer: must be known before the first text render decides its source
         await loadEntityAssets(doc.id);
@@ -1142,7 +1151,7 @@
         renderSaveState();
         syncPageInput();
         refs.btnPrev.disabled = page <= 1;
-        refs.btnNext.disabled = page >= (doc.page_count || 1);
+        refs.btnNext.disabled = page >= textPageCount();
         ZBZ.setParams({ page });
 
         // Detect blank page upfront (from Mistral base OCR) so facsimile AND text
@@ -1179,6 +1188,28 @@
         regionCountText = text || '';
         if (refs.regionCount) refs.regionCount.textContent = regionCountText;
         updateEditButtons();
+    }
+
+    // The generator resolves pb@facs against the <surface>/<graphic> of the final TEI and
+    // writes the result per document. A missing sidecar, or a page missing from it, keeps
+    // the sequential convention of ZBZ.path.image.
+    async function loadFacsMap(docId) {
+        const j = await ZBZ.fetchJSON(facsMapPath(docId));
+        state.facsMap = (j && j.facs_image) || null;
+    }
+
+    function facsImageUrl(docId, page) {
+        const name = state.facsMap && state.facsMap[String(page)];
+        return name ? 'images/' + docId + '/' + name : ZBZ.path.image(docId, page);
+    }
+
+    // Paging runs over text pages. `page_count` in the catalog counts scans, so a document
+    // with double-page spreads would cut its last text pages off the navigation.
+    function textPageCount() {
+        const fromCatalog = (state.doc && state.doc.page_count) || 1;
+        if (!state.facsMap) return fromCatalog;
+        const pages = Object.keys(state.facsMap).map(Number).filter(n => !isNaN(n));
+        return Math.max(fromCatalog, pages.length ? Math.max.apply(null, pages) : 0);
     }
 
     async function renderFacsimile() {
@@ -1228,7 +1259,7 @@
                 : 'no layout data');
         }
 
-        const imgUrl = ZBZ.path.image(doc.id, page);
+        const imgUrl = facsImageUrl(doc.id, page);
         state.osdViewer = OpenSeadragon({
             element: container,
             tileSources: { type: 'image', url: imgUrl },
@@ -1290,14 +1321,15 @@
         refs.imageBody.classList.remove('panel__body--canvas');
 
         const facs = ZBZ.el('div', { cls: 'facsimile' });
+        const imgUrl = facsImageUrl(doc.id, page);
         const img = ZBZ.el('img', {
             cls: 'facsimile__img',
-            attrs: { src: ZBZ.path.image(doc.id, page), alt: 'Facsimile page ' + page, loading: 'eager' }
+            attrs: { src: imgUrl, alt: 'Facsimile page ' + page, loading: 'eager' }
         });
         img.addEventListener('error', () => {
             refs.imageBody.innerHTML =
                 '<div class="empty">Facsimile not available for page ' + page +
-                '<br><code style="font-size:0.85em">' + ZBZ.esc(ZBZ.path.image(doc.id, page)) + '</code></div>';
+                '<br><code style="font-size:0.85em">' + ZBZ.esc(imgUrl) + '</code></div>';
         });
 
         const overlay = ZBZ.el('div', { cls: 'facsimile__overlay', attrs: { id: 'layout-overlay' } });
@@ -1811,7 +1843,7 @@
 
     function gotoPage(n) {
         if (!state.doc) return;
-        const max = state.doc.page_count || 1;
+        const max = textPageCount();
         const target = Math.min(max, Math.max(1, n));
         if (target === state.page) return;
         if (!confirmLeavePage()) return;
@@ -1823,7 +1855,7 @@
     // that is not a page number is discarded when the field is left.
     function syncPageInput() {
         if (refs.pageGoto) refs.pageGoto.value = state.doc ? String(state.page) : '';
-        if (refs.pageTotal) refs.pageTotal.textContent = '/ ' + ((state.doc && state.doc.page_count) || '?');
+        if (refs.pageTotal) refs.pageTotal.textContent = '/ ' + (state.doc ? textPageCount() : '?');
     }
 
     function bindEvents() {
@@ -1863,7 +1895,7 @@
             if (e.key === 'ArrowLeft')       refs.btnPrev.click();
             else if (e.key === 'ArrowRight') refs.btnNext.click();
             else if (e.key === 'Home')       { e.preventDefault(); gotoPage(1); }
-            else if (e.key === 'End')        { e.preventDefault(); gotoPage(state.doc ? (state.doc.page_count || 1) : 1); }
+            else if (e.key === 'End')        { e.preventDefault(); gotoPage(state.doc ? textPageCount() : 1); }
         });
 
         // View + edit dropdowns (same handlers as the buttons they replace)

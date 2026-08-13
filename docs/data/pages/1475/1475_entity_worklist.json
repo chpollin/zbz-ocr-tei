@@ -14,6 +14,46 @@
         "context": "t die ganze Wahrheit sein...». machen». Weil diesem Tourismus keinerlei bestimmte Er",
         "text": "Weil",
         "occurrence": 1
+      },
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Jeanne Hersch",
+        "rule": "full-name:in-figure",
+        "alternatives": [],
+        "matched_form": "Jeanne Hersch",
+        "form_source": "headword",
+        "context": "mgebrachten Photos oder Ansichtskarten. Jeanne Hersch, Professorin der Philosophie an der Uni",
+        "text": "Jeanne Hersch",
+        "occurrence": 1
+      },
+      {
+        "gid": "4343581-6",
+        "category": "work",
+        "surface": "Philosophie",
+        "rule": "short-title:ambiguous:in-figure",
+        "alternatives": [
+          "4343581-6",
+          "4343582-8"
+        ],
+        "matched_form": "Philosophie",
+        "form_source": "headword",
+        "context": "skarten. Jeanne Hersch, Professorin der Philosophie an der Universität Genf Vom guten und v",
+        "evidence": "none",
+        "text": "Philosophie",
+        "occurrence": 2
+      },
+      {
+        "gid": "1010450-1",
+        "category": "organisation",
+        "surface": "Universität Genf",
+        "rule": "org-variant:in-figure",
+        "alternatives": [],
+        "matched_form": "Universität Genf",
+        "form_source": "cache-variant",
+        "context": "sch, Professorin der Philosophie an der Universität Genf Vom guten und vom schlechten Tourismus",
+        "text": "Universität Genf",
+        "occurrence": 1
       }
     ]
   }

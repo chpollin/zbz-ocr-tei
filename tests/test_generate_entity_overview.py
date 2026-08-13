@@ -42,6 +42,8 @@ ENTRIES = {
     (1, "full-name", "auto"),
     (1, "org-name", "auto"),
     (2, "caps-full-name:running-head", "running_head"),
+    (2, "full-name:in-figure", "figure"),
+    (2, "bare-surname:ambiguous:in-figure", "ambiguous"),
     (2, "org-token:suspect", "suspect"),
     (2, "bare-surname:ambiguous", "ambiguous"),
     (2, "ambiguous-surname", "ambiguous"),
@@ -64,12 +66,13 @@ def test_classify_assigns_the_documented_class(tier, rule, expected):
 def test_classify_priority_running_head_beats_every_other_suffix():
     assert classify("bare-surname:ambiguous:running-head", 2) == "running_head"
     assert classify("org-token:suspect:running-head", 2) == "running_head"
+    assert classify("org-name:in-figure:running-head", 2) == "running_head"
 
 
 def test_class_catalog_keys_are_unique_and_cover_classify_output():
     keys = [key for key, _, _ in CLASSES]
     assert len(keys) == len(set(keys))
-    assert set(keys) >= {"ambiguous", "suspect", "unanchored", "running_head",
+    assert set(keys) >= {"ambiguous", "suspect", "unanchored", "running_head", "figure",
                          "bibliography", "derived", "markup", "short_title", "other"}
 
 
