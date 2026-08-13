@@ -7,12 +7,24 @@
         "gid": "118547798",
         "category": "person",
         "surface": "Heidegger",
-        "rule": "anchored-surname:suspect",
+        "rule": "anchored-surname:suspect:running-head",
         "alternatives": [],
         "matched_form": "Heidegger",
         "form_source": "surname-index",
         "context": "474 Les enjeux du débat autour de Heidegger JEANNE HERSCH L’œuvre de Heidegger a co",
         "text": "Heidegger",
+        "occurrence": 1
+      },
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "JEANNE HERSCH",
+        "rule": "caps-full-name:running-head",
+        "alternatives": [],
+        "matched_form": "JEANNE HERSCH",
+        "form_source": "headword",
+        "context": "Les enjeux du débat autour de Heidegger JEANNE HERSCH L’œuvre de Heidegger a connu, depuis la",
+        "text": "JEANNE HERSCH",
         "occurrence": 1
       }
     ],
@@ -21,7 +33,7 @@
         "gid": "118547798",
         "category": "person",
         "surface": "HEIDEGGER",
-        "rule": "caps-surname",
+        "rule": "caps-surname:running-head",
         "alternatives": [],
         "matched_form": "Heidegger",
         "form_source": "surname-index",
@@ -43,6 +55,18 @@
       }
     ],
     "3": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "JEANNE HERSCH",
+        "rule": "caps-full-name:running-head",
+        "alternatives": [],
+        "matched_form": "JEANNE HERSCH",
+        "form_source": "headword",
+        "context": "’elle qu’un exercice, magique ou poéti- JEANNE HERSCH que, à juger de façon extrinsèque, par",
+        "text": "JEANNE HERSCH",
+        "occurrence": 1
+      },
       {
         "gid": "118547798",
         "category": "person",
@@ -85,7 +109,7 @@
         "gid": "118547798",
         "category": "person",
         "surface": "HEIDEGGER",
-        "rule": "caps-surname",
+        "rule": "caps-surname:running-head",
         "alternatives": [],
         "matched_form": "Heidegger",
         "form_source": "surname-index",
@@ -123,6 +147,18 @@
     ],
     "5": [
       {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "JEANNE HERSCH",
+        "rule": "caps-full-name:running-head",
+        "alternatives": [],
+        "matched_form": "JEANNE HERSCH",
+        "form_source": "headword",
+        "context": "de sa démission. Si Heidegger a été pro JEANNE HERSCH fondément déçu, ce n’est pas, me semble",
+        "text": "JEANNE HERSCH",
+        "occurrence": 1
+      },
+      {
         "gid": "118559796",
         "category": "person",
         "surface": "Kant",
@@ -152,7 +188,7 @@
         "gid": "118547798",
         "category": "person",
         "surface": "HEIDEGGER",
-        "rule": "caps-surname",
+        "rule": "caps-surname:running-head",
         "alternatives": [],
         "matched_form": "Heidegger",
         "form_source": "surname-index",
@@ -285,6 +321,20 @@
         "evidence": "typographic",
         "text": "Philosophie",
         "occurrence": 2
+      }
+    ],
+    "7": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "JEANNE HERSCH",
+        "rule": "caps-full-name:running-head",
+        "alternatives": [],
+        "matched_form": "JEANNE HERSCH",
+        "form_source": "headword",
+        "context": "e, trad. Jeanne Hersch, Springer, 1986. JEANNE HERSCH « Haut dans la montagne, sur un plateau",
+        "text": "JEANNE HERSCH",
+        "occurrence": 1
       }
     ]
   }

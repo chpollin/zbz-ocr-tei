@@ -13,16 +13,18 @@ Two public functions:
         lexicon. Entries without a label are skipped, so are entries whose cache
         answer is 404 (defective GND id).
 
-    find_candidates(xml_string, lexicon, author_labels=()) -> list[dict]
+    find_candidates(xml_string, lexicon) -> list[dict]
         Reports mentions as raw character spans of the input string. Every candidate
         carries gid, category, surface, start, end, tier, rule, alternatives,
         matched_form, form_source, context; one-word work titles additionally carry
         evidence. Hard invariants: xml_string[start:end] == surface, candidates sorted
         by start and free of overlap, spans only inside <text>, and the surface carries
-        no markup other than <lb/> tags. `author_labels` holds the labels of the
-        document's own author (Masterfile metadata); all-caps and case-deviating hits
-        on that entity are skipped, because bylines, running headers and signatures
-        stay unmarked.
+        no markup other than <lb/> tags. Running-head zones (the recurring page-head
+        line, detected by scripts.tei.running_heads) demote their candidates to tier 2
+        with the ":running-head" suffix, so page furniture never auto-marks (E105); a
+        demoted full name keeps its anchor power, because the head still names the
+        document's subject. The document's own author is matched like every other
+        listed entity (operator decision E108); there is no byline exception.
 
         alternatives   every listed id the matched form or surname belongs to, sorted
                        and including the reported gid. Empty for an unambiguous
@@ -65,7 +67,7 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
 - Suffix order is fixed and stackable: base rule, then the derived-channel suffix (a
   property of the lexicon form), then ":ambiguous" (a property of the lexicon), then
   ":suspect" (a property of the context), then ":in-plain-bibl" (a property of the
-  position).
+  position), then ":running-head" (a property of the page position, appended last).
 - Four derived-form channels close the recall gaps of the facsimile-adjudicated
   evaluation. Each registers a further spelling of a form the entity already carries,
   and each is worklist-only: the suffix sits on the lexicon rule, which fixes the tier
@@ -147,9 +149,8 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
     * a capitalized form written all in lower case drops to tier 2 with the ":suspect"
       suffix, because "le capital" and "les grands philosophes" are ordinary prose far
       more often than they are the listed titles;
-    * all-caps person surfaces stay with the caps channel and its byline exception,
-      and a case-deviating writing of the document author's own name is skipped like an
-      all-caps one, the corpus setting bylines as "Jeanne HERSCH".
+    * all-caps person surfaces stay with the caps channel and its own rule id, so a
+      caps mention is recognizable in every downstream report.
 """
 
 from __future__ import annotations
@@ -162,6 +163,8 @@ from bisect import bisect_left, bisect_right
 from collections.abc import Iterator
 from dataclasses import dataclass, replace
 from pathlib import Path
+
+from scripts.tei.running_heads import head_spans
 
 SENTINEL = "\x00"
 CONTEXT_RADIUS = 40
@@ -192,6 +195,7 @@ TIER_BY_RULE = {
 PLAIN_BIBL_SUFFIX = ":in-plain-bibl"
 AMBIGUOUS_SUFFIX = ":ambiguous"
 SUSPECT_SUFFIX = ":suspect"
+RUNNING_HEAD_SUFFIX = ":running-head"
 
 # Derived-form channels. Each one registers a further spelling of a form the entity
 # already carries; the suffix sits on the lexicon rule itself, which makes every such
@@ -234,11 +238,6 @@ POSSESSIVES = frozenset({
 # corpus belong here ("weil" the conjunction, "Wahl" the election); the list grows
 # with the corpus scan, never by guessing.
 FUNCTION_WORDS = frozenset({"weil", "wahl"})
-
-# The corpus is the author's own estate, so her label is the default byline
-# exception for caps matching. Upgrade path: per-document author from the Masterfile
-# once documents by other authors enter the corpus.
-CORPUS_AUTHOR_LABELS = ("Hersch, Jeanne",)
 
 # Honorifics and functions in front of a name. They corroborate the name reading, so
 # they are no doubt signal; without them the corpus scan drowns the real forename
@@ -298,6 +297,7 @@ class _Zones:
     plain_bibl: tuple[Span, ...]
     speakers: tuple[Span, ...]
     emphasis: tuple[Span, ...]
+    running_heads: tuple[Span, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -1182,27 +1182,25 @@ def _normalize(xml: str, zones: _Zones) -> _Norm:
 def find_candidates(
     xml_string: str,
     lexicon: dict,
-    author_labels: tuple[str, ...] = (),
 ) -> list[dict]:
     """Report entity mention candidates as raw character spans of `xml_string`."""
     required = ("by_first_word", "lower_by_first_word", "surnames", "caps_by_first_word")
     if any(key not in lexicon for key in required):
         raise ValueError("lexicon must be the return value of build_lexicon()")
-    zones = _scan_zones(xml_string)
+    zones = replace(_scan_zones(xml_string), running_heads=head_spans(xml_string))
     norm = _normalize(xml_string, zones)
     speaker_hits = _speaker_hits(norm, zones, lexicon)
     lowercase_words = _lowercase_words(norm.text)
-    author_gids = _author_gids(lexicon, author_labels)
     # Anchors count document-wide (operator decision 2026-08-12): the first pass
     # collects the tier-1 person gids, the second applies them everywhere, so a
     # bare surname BEFORE the first full-name mention anchors as well.
     first_pass = _scan(xml_string, norm, zones, lexicon, speaker_hits,
-                       lowercase_words=lowercase_words, author_gids=author_gids)
-    anchors = {c["gid"] for c in first_pass if c["tier"] == 1 and c["category"] == "person"}
+                       lowercase_words=lowercase_words)
+    anchors = _anchor_gids(first_pass)
     if not anchors:
         return first_pass
     return _scan(xml_string, norm, zones, lexicon, speaker_hits, anchors,
-                 lowercase_words, author_gids)
+                 lowercase_words)
 
 
 def _lowercase_words(text: str) -> frozenset[str]:
@@ -1212,15 +1210,26 @@ def _lowercase_words(text: str) -> frozenset[str]:
     )
 
 
-def _author_gids(lexicon: dict, author_labels: tuple[str, ...]) -> frozenset[str]:
-    """Listed entities that are the document's own author, matched by name tokens."""
-    keys = {_fold_tokens(label) for label in author_labels if _fold_tokens(label)}
-    if not keys:
-        return frozenset()
-    return frozenset(
-        gid for gid, entry in lexicon["entries"].items()
-        if _fold_tokens(entry["label"]) in keys
-    )
+def _anchor_gids(candidates: list[dict]) -> set[str]:
+    """Person gids that anchor bare surnames document-wide.
+
+    A running-head demotion keeps its anchor power: the head still names the
+    document's subject, only the mark itself leaves tier 1 (E105). Every other
+    demotion (ambiguity, suspicion, plain bibl) loses it as before.
+    """
+    return {
+        c["gid"] for c in candidates
+        if c["category"] == "person"
+        and (c["tier"] == 1 or _tier1_before_head_demotion(c["rule"]))
+    }
+
+
+def _tier1_before_head_demotion(rule: str) -> bool:
+    """True when only the running-head suffix separates the rule from tier 1."""
+    if not rule.endswith(RUNNING_HEAD_SUFFIX):
+        return False
+    base = rule[:-len(RUNNING_HEAD_SUFFIX)]
+    return ":" not in base and TIER_BY_RULE.get(base) == 1
 
 
 def _scan(
@@ -1231,7 +1240,6 @@ def _scan(
     speaker_hits: dict[int, _Hit],
     seed_anchors: set[str] | None = None,
     lowercase_words: frozenset[str] = frozenset(),
-    author_gids: frozenset[str] = frozenset(),
 ) -> list[dict]:
     """Left-to-right pass; `seed_anchors` carries the document-wide tier-1 anchors."""
     text = norm.text
@@ -1247,9 +1255,6 @@ def _scan(
         if hit is None:
             pos = _word_end(text, pos)
             continue
-        if hit.gid in author_gids and (hit.rule.startswith("caps-") or hit.case_tolerant):
-            pos = max(hit.end, pos + 1)
-            continue
         if _base_rule(hit.rule) in _SUSPECT_RULES and _is_suspect(
             xml, norm, hit, lexicon, lowercase_words
         ):
@@ -1258,8 +1263,12 @@ def _scan(
             hit = replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
         candidate, resume = _build_candidate(xml, norm, zones, hit)
         if candidate is not None:
+            anchor_tier = candidate["tier"]
+            if _in_spans(candidate["start"], zones.running_heads):
+                candidate["rule"] += RUNNING_HEAD_SUFFIX
+                candidate["tier"] = 2
             out.append(candidate)
-            if candidate["tier"] == 1:
+            if anchor_tier == 1:
                 anchored.add(candidate["gid"])
         pos = max(resume, pos + 1)
     return out
@@ -1381,8 +1390,8 @@ def _form_hit(
         end, kind = result
         owners = lexicon["forms"][form]
         gid, category, rule, source = owners[0]
-        # The all-caps writing of a person name belongs to the caps channel, which
-        # carries the byline exception of the document author.
+        # The all-caps writing of a person name belongs to the caps channel and
+        # keeps its own rule id there.
         if ignore_case and category == "person" and text[pos:end].isupper():
             continue
         # A one-word title such as "Nietzsche" can also be a listed surname; reporting
@@ -1438,7 +1447,8 @@ def _hit(
 
     Suffix order is fixed: base rule, then ":ambiguous" (a property of the lexicon),
     then ":suspect" (a property of the context), then ":in-plain-bibl" (a property of
-    the position). Rules that already name the ambiguity in their base keep it.
+    the position), then ":running-head" (a property of the page position). Rules that
+    already name the ambiguity in their base keep it.
     """
     if len(bearers) <= 1:
         return _Hit(start, end, gid, category, rule, tier, (), matched_form, source)

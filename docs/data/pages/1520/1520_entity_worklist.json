@@ -2,6 +2,114 @@
   "doc": "1520",
   "generator": "scripts/edition/generate_entity_preview_data.py",
   "pages": {
+    "3": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Jeanne Hersch",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Jeanne Hersch",
+        "form_source": "headword",
+        "context": "FG 60672 Jeanne Hersch Jeanne Hersch KARL JASPERS MOBILES L’A",
+        "text": "Jeanne Hersch",
+        "occurrence": 1
+      }
+    ],
+    "5": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Jeanne Hersch",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Jeanne Hersch",
+        "form_source": "headword",
+        "context": "FG 60672 Jeanne Hersch Jeanne Hersch KARL JASPERS MOBILES L’AGE D’HOMME DEC",
+        "text": "Jeanne Hersch",
+        "occurrence": 1
+      },
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "KARL JASPERS",
+        "rule": "caps-full-name:running-head",
+        "alternatives": [],
+        "matched_form": "KARL JASPERS",
+        "form_source": "headword",
+        "context": "FG 60672 Jeanne Hersch Jeanne Hersch KARL JASPERS MOBILES L’AGE D’HOMME DECLASSIFIED Aut",
+        "text": "KARL JASPERS",
+        "occurrence": 1
+      }
+    ],
+    "7": [
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Karl Jaspers",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Karl Jaspers",
+        "form_source": "headword",
+        "context": "D’HOMME DECLASSIFIED Authority RF 74365 Karl Jaspers Jeanne Hersch Karl Jaspers Karl Jaspers",
+        "text": "Karl Jaspers",
+        "occurrence": 1
+      }
+    ],
+    "9": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Jeanne Hersch",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Jeanne Hersch",
+        "form_source": "headword",
+        "context": "SSIFIED Authority RF 74365 Karl Jaspers Jeanne Hersch Karl Jaspers Karl Jaspers © Copyright 1",
+        "text": "Jeanne Hersch",
+        "occurrence": 1
+      },
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Karl Jaspers",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Karl Jaspers",
+        "form_source": "headword",
+        "context": "ity RF 74365 Karl Jaspers Jeanne Hersch Karl Jaspers Karl Jaspers © Copyright 1978 by Editio",
+        "text": "Karl Jaspers",
+        "occurrence": 1
+      }
+    ],
+    "10": [
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Karl Jaspers",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Karl Jaspers",
+        "form_source": "headword",
+        "context": "Karl Jaspers Jeanne Hersch Karl Jaspers Karl Jaspers © Copyright 1978 by Editions L’Age d’Ho",
+        "text": "Karl Jaspers",
+        "occurrence": 1
+      }
+    ],
+    "11": [
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "KARL JASPERS",
+        "rule": "caps-full-name:running-head",
+        "alternatives": [],
+        "matched_form": "KARL JASPERS",
+        "form_source": "headword",
+        "context": "by Editions L’Age d’Homme SA, Lausanne KARL JASPERS KARL JASPER’S LEGISLATIVE EDITION L’AGE",
+        "text": "KARL JASPERS",
+        "occurrence": 1
+      }
+    ],
     "12": [
       {
         "gid": "108801397X",
@@ -854,7 +962,7 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
+        "rule": "short-title:ambiguous:running-head",
         "alternatives": [
           "4343581-6",
           "4343582-8"
@@ -872,7 +980,7 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
+        "rule": "short-title:ambiguous:running-head",
         "alternatives": [
           "4343581-6",
           "4343582-8"
@@ -906,7 +1014,7 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
+        "rule": "short-title:ambiguous:running-head",
         "alternatives": [
           "4343581-6",
           "4343582-8"
@@ -940,7 +1048,7 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
+        "rule": "short-title:ambiguous:running-head",
         "alternatives": [
           "4343581-6",
           "4343582-8"
@@ -974,7 +1082,7 @@
         "gid": "4343581-6",
         "category": "work",
         "surface": "Philosophie",
-        "rule": "short-title:ambiguous",
+        "rule": "short-title:ambiguous:running-head",
         "alternatives": [
           "4343581-6",
           "4343582-8"
@@ -1268,7 +1376,33 @@
         "occurrence": 1
       }
     ],
+    "103": [
+      {
+        "gid": "139403475X",
+        "category": "work",
+        "surface": "Von der Wahrheit",
+        "rule": "work-title:running-head",
+        "alternatives": [],
+        "matched_form": "Von der Wahrheit",
+        "form_source": "headword",
+        "context": "ert d’elle pour se donner de l’espace. (Von der Wahrheit, p. 733-734) 35. Résumé : relatif et ab",
+        "text": "Von der Wahrheit",
+        "occurrence": 1
+      }
+    ],
     "105": [
+      {
+        "gid": "139403475X",
+        "category": "work",
+        "surface": "Von der Wahrheit",
+        "rule": "work-title:running-head",
+        "alternatives": [],
+        "matched_form": "Von der Wahrheit",
+        "form_source": "headword",
+        "context": "ment (in die Weite und auf den Grund). (Von der Wahrheit, p. 737-738) LA FOI PHILOSOPHIQUE FACE",
+        "text": "Von der Wahrheit",
+        "occurrence": 1
+      },
       {
         "gid": "1088013937",
         "category": "work",

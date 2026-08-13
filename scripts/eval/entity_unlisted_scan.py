@@ -544,7 +544,7 @@ def main() -> None:
                         help="Source TEI directory (read only)")
     args = parser.parse_args()
 
-    from scripts.tei.entity_matcher import CORPUS_AUTHOR_LABELS, build_lexicon, find_candidates
+    from scripts.tei.entity_matcher import build_lexicon, find_candidates
 
     doc_ids = [d.strip() for value in (args.docs or []) for d in value.split(",") if d.strip()]
     doc_paths = resolve_docs(args.src_dir, doc_ids or None)
@@ -562,14 +562,11 @@ def main() -> None:
         "catalog": str(args.catalog) if languages else None,
     }
 
-    def find_with_author(xml_string, lex):
-        return find_candidates(xml_string, lex, author_labels=CORPUS_AUTHOR_LABELS)
-
     min_single = DEFAULT_MIN_SINGLE if args.min_count is None else args.min_count
     min_multi = DEFAULT_MIN_MULTI if args.min_count is None else args.min_count
     print(f"Unlisted-name scan over {len(doc_paths)} document(s); "
           f"nothing is written to TEI, no ids are assigned.")
-    report = run_scan(doc_paths, lexicon, find_with_author, languages,
+    report = run_scan(doc_paths, lexicon, find_candidates, languages,
                       min_single, min_multi, sources)
     _print_summary(report)
 

@@ -10,7 +10,7 @@ method:
 status: active
 language: en
 created: 2026-08-12
-updated: 2026-08-12
+updated: 2026-08-13
 tags: [zbz-ocr-tei, entities, gnd, design-plan]
 related: [specification, decisions, ground-truth-map, pipeline, entity-evaluation, journal]
 authors: [Christopher Pollin]
@@ -90,18 +90,21 @@ Detail rules, settled against the reference corpus and by operator decision:
 - Interview speakers follow the reference pattern `speaker > persName@ref`, colon
   outside the element.
 - All-caps mentions are in scope (operator direction 2026-08-12). A full name in
-  capitals matches through its own rule; bylines, running headers and signatures
-  naming the document's own author stay unmarked, and that exception is decided by a
-  metadata comparison against the Masterfile author. The reference practice supports
-  the split, reference 100 marks the caps title mention of its subject while
-  reference 1060 leaves the author byline unmarked.
+  capitals matches through its own rule. Mentions of the corpus author are marked
+  like every other listed entity, in bylines and signatures as well (operator
+  decision E108); the earlier byline exception is removed. The references leave the
+  author byline mostly unmarked (reference 1060), which the gold benchmark counts
+  apart as author deviations rather than plain false positives.
 - Page apparatus follows the operator convention of 2026-08-12. Running heads stay
   outside the marking scope, because such a line repeats the document or section title
   as page furniture instead of naming an entity in the text. Title pages, organisation
   names in bylines and picture captions carry marks, because they state provenance with
-  research value. The suppression side needs a deterministic instrument (see Planned);
-  until it runs, running-head matches stay in the preview output and the evaluation
-  evidence counts them apart, so the convention reading of precision stays computable
+  research value. The suppression is deterministic and active in the matcher (E108):
+  the shared detection core `scripts/tei/running_heads.py` locates the recurring
+  page-head zones, and every candidate inside one is demoted to the worklist with the
+  `:running-head` suffix, so nothing in a head zone auto-marks while the mark stays
+  visible for curation; a demoted full name keeps its document-wide anchor power. The
+  convention reading of the measured precision is computed by the running-head audit
   ([entity-evaluation.md](entity-evaluation.md)).
 - Library apparatus is out of scope. E-Periodica cover sheets and photo-credit lines
   are never matched (apparatus zone). Cover-sheet text leaves the delivered TEI
@@ -191,7 +194,8 @@ Built, each with its pytest suite:
 - `scripts/tei/entity_matcher.py` builds the lexicon (headwords, inverted forms, cache
   variants, legacy surface forms) and finds candidates with exact offsets. Exclusion
   zones: everything outside `text`, figures, bibliography divs, already marked
-  elements. Contract: candidates are offset-verified, non-overlapping, and may embed at
+  elements. Running-head zones demote instead of excluding (`:running-head`, tier 2).
+  Contract: candidates are offset-verified, non-overlapping, and may embed at
   most `lb` tags. Variant-derived surnames pass a distinctiveness filter, because raw
   lobid variants contribute noise tokens. Variants made only of dotted initials
   ("J. H." for Pestalozzi) never enter the full-name channel; the pilot evaluation
@@ -236,6 +240,13 @@ Built, each with its pytest suite:
   text holds. The build reads its inputs read-only, produces byte-identical output on a
   rerun, and reports a deviation from the adjudicated distribution instead of adjusting
   it.
+- `scripts/tei/running_heads.py` is the shared running-head detection core (the
+  recurring normalized page-head line, verso/recto companions, merged one-off
+  variants). The matcher consumes its zones for the `:running-head` demotion;
+  `scripts/eval/running_head_audit.py` validates the detection against the
+  adjudicated ground truth, counts the corpus suppression scope on the scan snapshot
+  and computes the convention reading of the adjudicated precision
+  (`convention_precision`, seeded percentile bootstrap).
 - `scripts/eval/entity_risk_ranking.py` is the instrument of the false-positive hunt. It
   scores every tier-1 mark of the scan snapshot with additive deterministic features
   (form from a variant channel, case-tolerant rule, single-token surface, short surface,
@@ -263,10 +274,6 @@ Built, each with its pytest suite:
 
 Planned:
 
-- Deterministic running-head suppression, a rule that recognizes the repeated page-head
-  line of a document and holds its surfaces out of tier 1, so the marked stock follows
-  the page-apparatus convention of 2026-08-12 by itself. It also makes the convention
-  reading of the measured precision computable.
 - `scripts/eval/entity_lexicon_audit.py` (before M4): groups every form the built
   lexicon would match by shape class (dotted initials, single tokens at the length
   floor, all-caps forms, forms with digits, non-Latin scripts) with counts and
@@ -340,7 +347,8 @@ the package, the preview rerun and the corpus scan diff close M3.
    deterministic signal (lowercase twin in the same document, function-word list,
    adjacent hyphen, adjacent unknown capitalized word).
 4. Caps rule: all-caps full names match; mentions of the document's own author in
-   bylines and running headers are skipped via the Masterfile author.
+   bylines and running headers were skipped via the Masterfile author (this byline
+   exception was removed again with E108; the zone suppression covers running heads).
 5. Apparatus zone: cover sheets and photo-credit lines are never matched; the
    operator-gated cover strip run removes cover text from the delivered TEI.
 6. Adjective forms become worklist candidates; a single-word work title that shadows
@@ -393,14 +401,16 @@ Nothing before M7 touches `tei_final`.
 | M6 | Corpus dry-run | full change preview and distribution report reviewed by the operator |
 | M7 | Stock run | operator-released marker run, gates green, mirror regenerated, register entry |
 
-State on 2026-08-12: M0 to M3 are reached, the pilot and the independent evaluation wave
+State on 2026-08-13: M0 to M3 are reached, the pilot and the independent evaluation wave
 included. Beyond the pilot the sampling measurement of
 [entity-evaluation.md](entity-evaluation.md) has run once over the whole delivered
 corpus, its judgments are persisted in the verdict store, and the consequences that need
 no convention decision are implemented, the derived channels, the invariant gate and the
-risk ranking. M4 has its instrument and a report; the milestone closes with the
-frozen-rules run on the held-out references and its evidence under `docs/data/`. M5 to
-M7 stand open, and `tei_final` carries no entity markup.
+risk ranking. The running-head suppression is active in the matcher and the author
+convention is decided (E108); scan, previews, mirror and audits carry that state. M4 has
+its instrument and a report; the milestone closes with the frozen-rules run on the
+held-out references and its evidence under `docs/data/`. M5 to M7 stand open, and
+`tei_final` carries no entity markup.
 
 ## Open operator decisions
 
@@ -410,16 +420,16 @@ M7 stand open, and `tei_final` carries no entity markup.
 2. Curation channel for tiers two and three (proposal: the viewer entity stream,
    read-only first, confirm/reject actions writing verdict files later).
 3. Role of `editor_reviewed` (proposal: report field, no gate function).
-4. Scope of the author herself: mentions of Jeanne Hersch dominate the future stock
-   run by volume while the references mark her almost never; whether and where her
-   mentions are annotated is the volumetrically largest open convention (with ZBZ).
-   The recall reading of the executed evaluation records what the byline exception
-   costs per drawn page, so the decision now rests on adjudicated evidence
-   ([entity-evaluation.md](entity-evaluation.md)).
-5. Hyphen compounds (with ZBZ, see the open modelling points).
+4. Hyphen compounds (see the open modelling points; ZBZ feedback is not available in
+   this phase, so the operator decides when the worklist evidence suffices).
 
 Decided 2026-08-12 (operator): title-only for works binds even against wider
-reference spans; all-caps mentions are in scope with the author-byline exception;
-cover sheets leave the delivered TEI; apparatus zones are out of matching scope;
-running heads stay outside the marking scope, while title pages, organisation names in
-bylines and picture captions are marked.
+reference spans; all-caps mentions are in scope; cover sheets leave the delivered
+TEI; apparatus zones are out of matching scope; running heads stay outside the
+marking scope, while title pages, organisation names in bylines and picture captions
+are marked.
+
+Decided 2026-08-13 (operator, E108): mentions of the corpus author are marked like
+every other listed entity, in bylines and signatures as well; the byline exception is
+removed. ZBZ feedback is not available in this project phase, so open convention
+questions of the entity layer fall to the operator.

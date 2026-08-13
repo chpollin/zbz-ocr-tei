@@ -10,7 +10,7 @@ method:
 status: draft
 language: en
 created: 2026-01-29
-updated: 2026-08-12
+updated: 2026-08-13
 tags: [zbz-ocr-tei, journal]
 template:
   name: Vorlage Journal
@@ -61,6 +61,20 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-13 Session 94: running-head suppression active in the matcher, author convention decided (E108)
+
+**Occasion** Operator decisions on the entity layer: build the validated running-head detector into the matcher as the E105 suppression, and settle the author scope question without ZBZ, whose feedback channel is unavailable in this phase; mentions of the corpus author are always marked.
+
+**Goal** The matcher enforces the page-apparatus convention by itself, the byline exception disappears, and the convention reading of the adjudicated precision becomes computable.
+
+**Course** The detection core moved unchanged from the audit into the shared module `scripts/tei/running_heads.py`; the matcher demotes every candidate inside a detected head zone to tier 2 with the `:running-head` suffix, while a demoted full name keeps its document-wide anchor power (the head names the document's subject, so bare surnames in the body still resolve). The author machinery (`author_labels`, `CORPUS_AUTHOR_LABELS`) was removed from the matcher and all callers. Test-first throughout: new suppression and anchor fixtures, rewritten author tests, the full entity battery green. Regenerated on the new rules: corpus scan (671 candidates demoted in head zones, author marks now included), all 285 previews schema-valid and text-invariant, viewer mirror, risk ranking, gold benchmark (reference trend improved to tier-1 precision 0.61, tier-1-plus-2 coverage 0.87). `running_head_audit` gained the `convention_precision` block (seeded percentile bootstrap): 0.9511 with interval 0.9248 to 0.9737 over 266 decidable in-scope cases, within the interval of the protocol reading 0.952, so running heads were not inflating the published figure; after suppression 0 of 3925 tier-1 marks sit in a zone. Correction to the session-93 recall claim of 24/24: the keyword criterion counts 25 ground-truth marks, one of them (doc 2510) is body text whose verdict reason merely mentions the intervening running header, so the criterion reads 24 of 25 while no real head is missed.
+
+**Decisions** E108 (operator): author mentions always marked, byline exception removed; running-head suppression active with anchor power preserved for demoted heads; convention questions of the entity layer fall to the operator while ZBZ feedback is unavailable.
+
+**Status** Entity gates, running-head audit tests and script health green (702 tests in the affected battery); scan, previews, mirror and audits carry the new rules; `tei_final` still carries no entity markup. Committed and pushed.
+
+**Next steps** 1. Operator decision on works in tier 1 (assessment delivered: persons and organisations first, works stay on the worklist for the first stock wave). 2. M4 frozen-rules gold run on the held-out references, evidence under `docs/data/`. 3. Redraw and remeasure recall; the byline gaps of the executed run become hits. 4. Remaining session-93 items: IAA disputes p145/p193, FP-hunt wave including the hallucination candidates, lexicon audit before M4.
+
 ### 2026-08-12 Session 93 (evening): documentation trued up, viewer reduced, paratext detector validated
 
 **Occasion** Operator direction to finish the day rolled out, refactored and documented: execute every decision-free consequence, reduce the viewer UI step by step, and audit the documentation for freshness and self-reference.

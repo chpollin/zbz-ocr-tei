@@ -503,6 +503,18 @@ Decision (operator, 2026-08-12): the subtitle and the panel state labels are rem
 
 Documents: [workflow.md](workflow.md) section 3.7, `reports/2026-08-12_viewer-ui-analyse.md`; commits e7f9dd6d, baecc433, d65854a3.
 
+---
+
+### E108 Author mentions always marked; running-head suppression active in the matcher (2026-08-13)
+
+Occasion: two open points of the entity layer were ready for decision. The volumetrically largest open convention asked whether mentions of the corpus author herself are annotated (open operator decision 4 of the design plan; the recall evaluation priced the byline exception at four gaps in the drawn pages), and E105 had named a deterministic running-head suppression as its follow-up instrument, whose detector was already validated against the adjudicated ground truth. ZBZ feedback is not available in this project phase, so convention questions of the entity layer fall to the operator.
+
+Decision (operator, 2026-08-13): mentions of the corpus author are marked like every other listed entity, in bylines and signatures as well; the byline exception of the caps channel is removed (matcher parameter `author_labels` and `CORPUS_AUTHOR_LABELS` deleted). At the same time the running-head suppression is switched on in the matcher: the detection core moved to `scripts/tei/running_heads.py`, shared by matcher and audit, and every candidate inside a detected head zone is demoted to tier 2 with the `:running-head` suffix. A demoted full name keeps its document-wide anchor power, because the head still names the document's subject. Rejected alternatives: dropping in-zone candidates entirely, rejected because the validated detector carries two known false alarms and a dropped candidate is invisible to curation, while a demoted one stays countable on the worklist; and letting suppressed heads lose their anchor power, rejected because bare surnames in the body would then drop to the worklist beyond the intended furniture scope.
+
+Consequences: corpus scan, all 285 previews (schema-valid and text-invariant), viewer mirror, risk ranking and gold benchmark regenerated; no tier-1 mark sits in a head zone any more (suppression scope 671 candidates corpus-wide). The convention reading of the adjudicated precision is computed by `running_head_audit` (`convention_precision`, seeded percentile bootstrap) at 0.9511 over 266 decidable in-scope cases, within the interval of the protocol reading 0.952, so the running heads were not inflating the measured figure. One ground-truth caveat: a single adjudicated mark counts as a running head only through the keyword in its verdict reason while being body text (doc 2510), so the keyword criterion reads detector recall as 24 of 25 without a real head being missed.
+
+Documents: [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 94
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |

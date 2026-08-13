@@ -414,7 +414,7 @@ def main():
     ap.add_argument("--out-dir", type=Path, default=ENTITY_PREVIEW_DIR, help="Preview directory")
     args = ap.parse_args()
 
-    from scripts.tei.entity_matcher import CORPUS_AUTHOR_LABELS, build_lexicon, find_candidates
+    from scripts.tei.entity_matcher import build_lexicon, find_candidates
 
     doc_ids = PANEL_DOCS if args.panel else _parse_doc_ids(args.docs)
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
@@ -422,11 +422,8 @@ def main():
     lexicon = build_lexicon(args.entities, args.cache, legacy_path=legacy,
                             review_path=review)
 
-    def find_with_author(xml_string, lex):
-        return find_candidates(xml_string, lex, author_labels=CORPUS_AUTHOR_LABELS)
-
     print(f"Entity preview over {len(doc_ids)} document(s); tei_final is not written.")
-    report = run_preview(doc_ids, find_with_author, lexicon,
+    report = run_preview(doc_ids, find_candidates, lexicon,
                          src_dir=args.src_dir, out_dir=args.out_dir)
 
     totals = report["totals"]

@@ -1,41 +1,13 @@
-"""Deterministic detector for running heads (Kolumnentitel) at page starts.
+"""Audit of the deterministic running-head detector (Kolumnentitel zones).
 
 Operator convention E105 keeps running heads out of the entity layer: the author name or
 work title printed as page furniture on every page is not a mention of the person or the
-work. The convention names a deterministic suppression instrument as its follow-up. This
-module builds the measurement half of it -- it locates the head zones and scores them
-against the facsimile-adjudicated ground truth, so the suppression can later be switched
-on with a known recall and a known false-alarm cost. Nothing here writes TEI and nothing
-here touches the matcher.
-
-Detection, applied per document to output/tei_final/{doc}_final.xml:
-
-  1. Page starts are the `<pb>` positions inside `<body>`, taken from the shared
-     segmentation of scripts.tei.pb_split (read only), so the page numbering matches the
-     rest of the pipeline.
-  2. The head window of a page is its first MAX_HEAD_SEGMENTS non-empty segments. A
-     segment ends at every line or block tag (`<lb/>`, `<p>`, `<head>`, ...); inline
-     markup stays inside it. Whitespace-only and pure-number segments are skipped without
-     consuming a slot of the window, because the printed folio often stands alone in its
-     own line ahead of the head.
-  3. A segment is normalized for recurrence: inline markup dropped, whitespace collapsed,
-     apostrophe variants unified, diacritics folded (the same OCR word appears with and
-     without accents across the corpus), casefolded, leading and trailing digits and
-     punctuation stripped -- the printed page number rides along with the head and varies
-     per page.
-  4. A normalized form recurring on MIN_RECURRENCE distinct pages of the document is a
-     head pattern. Alternating verso/recto heads (author on one side, work title on the
-     other) need no separate rule at this step: each of the two forms still recurs on its
-     own half of the pages. In a short document that halving can push the counterpart
-     below the threshold, so inside a document that already carries a primary pattern a
-     second form recurring on MIN_COMPANION_RECURRENCE pages is accepted as its companion.
-  5. A one-off segment that contains a primary form as a whole word and stays within
-     CONTAINS_LENGTH_FACTOR of its length is accepted too; OCR merges the folio or the
-     author prefix into the head line on single pages.
-
-Speaker labels are excluded: `<speaker>` is a structural element of the recorded
-discussions, and the speaker name at a page start is a real mention rather than page
-furniture.
+work. The detection core lives in scripts.tei.running_heads (shared with the entity
+matcher, which holds in-zone candidates out of tier 1). This module is the measurement
+half: it locates the head zones corpus-wide, scores them against the facsimile-adjudicated
+ground truth, counts the suppression scope on the corpus scan, and computes the convention
+reading of the adjudicated precision (precision over the marks the E105 convention keeps
+in scope). Nothing here writes TEI and nothing here touches the matcher.
 
 DIAGNOSIS ONLY -- reads output/tei_final, the adjudicated verdicts and the corpus scan
 snapshot, writes one report and is no pass/fail gate.
@@ -50,16 +22,31 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import re
+import random
 import sys
-import unicodedata
-from bisect import bisect_right
 from collections import defaultdict
 from pathlib import Path
 
 from scripts.config import DATA_DIR, TEI_FINAL_DIR
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, doc_id_from_path
-from scripts.tei.pb_split import BODY_INNER_RE, PB_RE
+from scripts.tei.running_heads import (
+    CONTAINS_LENGTH_FACTOR,
+    EXCLUDED_PARENT_TAGS,
+    MAX_HEAD_CHARS,
+    MAX_HEAD_SEGMENTS,
+    MIN_COMPANION_RECURRENCE,
+    MIN_HEAD_CHARS,
+    MIN_RECURRENCE,
+    detect_document,
+    normalize_head,
+    zone_lookup,
+)
+
+__all__ = [
+    "CONTAINS_LENGTH_FACTOR", "MAX_HEAD_CHARS", "MAX_HEAD_SEGMENTS",
+    "MIN_COMPANION_RECURRENCE", "MIN_RECURRENCE", "audit_corpus", "build_report",
+    "convention_precision", "detect_document", "normalize_head", "zone_lookup",
+]
 
 SNAPSHOT = "2026-08-12"
 
@@ -67,167 +54,16 @@ VERDICTS_PATH = DATA_DIR / "entities" / "mention_verdicts.json"
 SCAN_PATH = AUDIT_OUTPUT_DIR / "entity_corpus_scan.json"
 REPORT_PATH = AUDIT_OUTPUT_DIR / "running_head_audit.json"
 
-# Detection constants. Calibrated against the 25 facsimile-adjudicated running-head marks
-# of data/entities/mention_verdicts.json; every value is deliberately on the conservative
-# side, because a false alarm costs a real entity mention while a miss only leaves a head
-# unsuppressed.
-MAX_HEAD_SEGMENTS = 2       # head window: first non-empty segments of a page
-MIN_HEAD_CHARS = 2          # below this a normalized form is noise
-MAX_HEAD_CHARS = 80         # a head line is short; body prose is not
-MIN_RECURRENCE = 3          # distinct pages carrying the form -> primary pattern
-MIN_COMPANION_RECURRENCE = 2  # alternating counterpart in a document with a primary
-CONTAINS_LENGTH_FACTOR = 2.0  # a merged head variant stays close to the primary length
-
-TAG_RE = re.compile(r"<\s*(/?)\s*([A-Za-z][\w:.-]*)[^>]*>")
-
-# Inline markup stays inside a segment; every other element ends one. The whitelist is the
-# safe direction: an unknown element becomes a boundary rather than silently gluing two
-# printed lines into one candidate.
-INLINE_TAGS = frozenset({
-    "hi", "foreign", "title", "sic", "corr", "choice", "orig", "reg", "unclear",
-    "supplied", "add", "del", "ref", "persName", "name", "rs", "orgName", "placeName",
-    "date", "abbr", "expan", "seg", "q", "emph", "gap", "space", "num", "g", "c",
-})
-
-# A speaker label is a structural element of the discussion transcripts, not page
-# furniture; its name is a real mention even when it opens a page.
-EXCLUDED_PARENT_TAGS = frozenset({"speaker"})
-
-APOSTROPHES = {0x2018: "'", 0x2019: "'", 0x201B: "'", 0x02BC: "'", 0x00B4: "'", 0x0060: "'"}
-
 RUNNING_HEAD_REASON = "running head"
 CORRECT_VERDICT = "correct"
+DECIDABLE_VERDICTS = frozenset({"correct", "wrong_entity", "wrong_span", "not_in_source"})
 TIER_1 = 1
 TOP_PRINTED = 12
 
-
-# ---------------------------------------------------------------------------
-# Normalization and page segmentation
-# ---------------------------------------------------------------------------
-
-def normalize_head(raw: str) -> str:
-    """Recurrence key of a page-start segment; empty when nothing but furniture is left."""
-    text = " ".join(TAG_RE.sub(" ", raw).split())
-    text = text.translate(APOSTROPHES)
-    text = "".join(c for c in unicodedata.normalize("NFD", text)
-                   if not unicodedata.combining(c))
-    text = text.casefold()
-    text = re.sub(r"^[\W\d_]+", "", text)
-    text = re.sub(r"[\W\d_]+$", "", text)
-    return " ".join(text.split())
-
-
-def head_window(xml_text: str, lo: int, hi: int) -> list[dict]:
-    """The first MAX_HEAD_SEGMENTS non-empty segments of the page span [lo, hi).
-
-    Offsets are absolute in `xml_text`, so a zone can be looked up against the mark
-    offsets of the entity wave, which index the same stream.
-    """
-    raw: list[tuple[int, int, str]] = []
-    cursor, stack = lo, []
-    for match in TAG_RE.finditer(xml_text, lo, hi):
-        name = match.group(2)
-        if name in INLINE_TAGS:
-            continue
-        if match.start() > cursor:
-            raw.append((cursor, match.start(), stack[-1] if stack else ""))
-        if match.group(1) == "/":
-            if stack and stack[-1] == name:
-                stack.pop()
-        elif not match.group(0).rstrip().endswith("/>"):
-            stack.append(name)
-        cursor = match.end()
-    if hi > cursor:
-        raw.append((cursor, hi, stack[-1] if stack else ""))
-
-    window = []
-    for start, end, parent in raw:
-        form = normalize_head(xml_text[start:end])
-        if not form:
-            continue
-        window.append({"start": start, "end": end, "form": form, "parent": parent,
-                       "position": len(window),
-                       "text": " ".join(TAG_RE.sub(" ", xml_text[start:end]).split())})
-        if len(window) >= MAX_HEAD_SEGMENTS:
-            break
-    return window
-
-
-def page_candidates(xml_text: str) -> tuple[int, dict[str, list[dict]]]:
-    """(page count, normalized form -> its page-start occurrences) for one document."""
-    body = BODY_INNER_RE.search(xml_text)
-    if not body:
-        return 0, {}
-    base, inner = body.start(1), body.group(1)
-    breaks = list(PB_RE.finditer(inner))
-    by_form: dict[str, list[dict]] = defaultdict(list)
-    for index, pb in enumerate(breaks):
-        end = breaks[index + 1].start() if index + 1 < len(breaks) else len(inner)
-        for segment in head_window(xml_text, base + pb.end(), base + end):
-            if segment["parent"] in EXCLUDED_PARENT_TAGS:
-                continue
-            if not MIN_HEAD_CHARS <= len(segment["form"]) <= MAX_HEAD_CHARS:
-                continue
-            by_form[segment["form"]].append(dict(segment, page=index + 1))
-    return len(breaks), dict(by_form)
-
-
-# ---------------------------------------------------------------------------
-# Detection
-# ---------------------------------------------------------------------------
-
-def _pages_of(occurrences: list[dict]) -> set[int]:
-    return {occurrence["page"] for occurrence in occurrences}
-
-
-def _accept(by_form: dict[str, list[dict]]) -> dict[str, str]:
-    """Accepted forms mapped to the rule that accepted them, applied in a fixed order."""
-    accepted = {form: "primary" for form, occurrences in by_form.items()
-                if len(_pages_of(occurrences)) >= MIN_RECURRENCE}
-    if not accepted:
-        return accepted
-    primary = sorted(accepted)
-    for form, occurrences in by_form.items():
-        if form not in accepted and len(_pages_of(occurrences)) >= MIN_COMPANION_RECURRENCE:
-            accepted[form] = "companion"
-    for form in sorted(by_form):
-        if form in accepted:
-            continue
-        for base in primary:
-            if len(form) <= CONTAINS_LENGTH_FACTOR * len(base) and re.search(
-                    r"(?:^|\W)" + re.escape(base) + r"(?:\W|$)", form):
-                accepted[form] = "contains"
-                break
-    return accepted
-
-
-def _parity(pages: list[int]) -> str:
-    """Page parity of a pattern; an alternating verso/recto head lands on one side."""
-    remainders = {page % 2 for page in pages}
-    if len(remainders) > 1:
-        return "mixed"
-    return "odd" if remainders == {1} else "even"
-
-
-def detect_document(xml_text: str) -> dict:
-    """Head patterns of one document, ordered by normalized form."""
-    page_count, by_form = page_candidates(xml_text)
-    accepted = _accept(by_form)
-    patterns = []
-    for form in sorted(accepted):
-        occurrences = sorted(by_form[form], key=lambda o: (o["page"], o["start"]))
-        pages = sorted(_pages_of(occurrences))
-        patterns.append({
-            "form": form,
-            "kind": accepted[form],
-            "pages": pages,
-            "page_parity": _parity(pages),
-            "segment_positions": sorted({o["position"] for o in occurrences}),
-            "parent_elements": sorted({o["parent"] for o in occurrences}),
-            "zones": [{"page": o["page"], "start": o["start"], "end": o["end"],
-                       "text": o["text"]} for o in occurrences],
-        })
-    return {"pages": page_count, "patterns": patterns}
+# Bootstrap parameters of the convention reading, matching the executed evaluation
+# (percentile interval, seed 42; reports/2026-08-12_entity-eval-ergebnis.md).
+BOOTSTRAP_SEED = 42
+BOOTSTRAP_N = 10000
 
 
 def audit_corpus(tei_dir) -> list[dict]:
@@ -239,30 +75,6 @@ def audit_corpus(tei_dir) -> list[dict]:
                               doc=doc_id_from_path(path),
                               sha256=hashlib.sha256(xml_text.encode("utf-8")).hexdigest()))
     return documents
-
-
-# ---------------------------------------------------------------------------
-# Zone lookup
-# ---------------------------------------------------------------------------
-
-def zone_lookup(documents: list[dict]):
-    """(doc, offset) -> the zone containing the offset, or None."""
-    index: dict[str, tuple[list[int], list[dict]]] = {}
-    for document in documents:
-        zones = [dict(zone, form=pattern["form"], kind=pattern["kind"])
-                 for pattern in document["patterns"] for zone in pattern["zones"]]
-        zones.sort(key=lambda z: z["start"])
-        index[document["doc"]] = ([z["start"] for z in zones], zones)
-
-    def resolve(doc: str, offset: int) -> dict | None:
-        starts, zones = index.get(doc, ([], []))
-        position = bisect_right(starts, offset) - 1
-        if position < 0:
-            return None
-        zone = zones[position]
-        return zone if zone["start"] <= offset < zone["end"] else None
-
-    return resolve
 
 
 # ---------------------------------------------------------------------------
@@ -363,6 +175,61 @@ def corpus_impact(scan: dict | None, lookup) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Convention reading of the adjudicated precision (E105)
+# ---------------------------------------------------------------------------
+
+def convention_precision(verdicts: dict | None, lookup) -> dict:
+    """Precision over the adjudicated marks the E105 convention keeps in scope.
+
+    The executed evaluation measured precision over every decidable drawn mark
+    (reports/2026-08-12_entity-eval-ergebnis.md). The convention reading drops the
+    marks inside a running-head zone from both numerator and denominator, because
+    E105 puts them outside the marking scope; `undecidable` verdicts stay excluded
+    exactly as in the protocol reading. The interval is a percentile bootstrap with
+    a fixed seed, matching the evaluation's statistics discipline.
+    """
+    marks = (verdicts or {}).get("marks") or []
+    if not marks:
+        return {"available": False, "reason": "no adjudicated marks available"}
+    in_scope = [m for m in marks if not lookup(m.get("doc"), m.get("start"))]
+    in_zone_verdicts: dict[str, int] = defaultdict(int)
+    for mark in marks:
+        if lookup(mark.get("doc"), mark.get("start")):
+            in_zone_verdicts[mark.get("verdict") or "missing"] += 1
+    decidable = [m for m in in_scope if m.get("verdict") in DECIDABLE_VERDICTS]
+    correct = sum(1 for m in decidable if m["verdict"] == CORRECT_VERDICT)
+    result = {
+        "available": True,
+        "criterion": "marks inside a detected running-head zone are out of scope "
+                     "(E105); undecidable verdicts stay excluded",
+        "marks_total": len(marks),
+        "in_zone": len(marks) - len(in_scope),
+        "in_zone_by_verdict": dict(sorted(in_zone_verdicts.items())),
+        "in_scope_decidable": len(decidable),
+        "correct": correct,
+    }
+    if decidable:
+        result["precision"] = round(correct / len(decidable), 4)
+        result["ci95"] = _bootstrap_ci([1 if m["verdict"] == CORRECT_VERDICT else 0
+                                        for m in decidable])
+    else:
+        result["precision"] = None
+        result["ci95"] = None
+    return result
+
+
+def _bootstrap_ci(outcomes: list[int]) -> list[float]:
+    """Seeded percentile bootstrap of the mean, deterministic across runs."""
+    rng = random.Random(BOOTSTRAP_SEED)
+    n = len(outcomes)
+    means = sorted(sum(rng.choice(outcomes) for _ in range(n)) / n
+                   for _ in range(BOOTSTRAP_N))
+    lo = means[int(0.025 * BOOTSTRAP_N)]
+    hi = means[min(int(0.975 * BOOTSTRAP_N), BOOTSTRAP_N - 1)]
+    return [round(lo, 4), round(hi, 4)]
+
+
+# ---------------------------------------------------------------------------
 # Report
 # ---------------------------------------------------------------------------
 
@@ -415,6 +282,7 @@ def build_report(documents: list[dict], verdicts: dict | None, scan: dict | None
             "pages_with_zone": pages_with_zone,
         },
         "validation": validate(documents, verdicts, lookup),
+        "convention_precision": convention_precision(verdicts, lookup),
         "corpus_impact": corpus_impact(scan, lookup),
         "documents": [{"doc": d["doc"], "pages": d["pages"], "patterns": d["patterns"]}
                       for d in documents if d["patterns"]],
@@ -464,6 +332,15 @@ def _print_summary(report: dict) -> None:
     if validation["tei_drift"]:
         print(f"\n  WARNING: TEI changed since adjudication in "
               f"{', '.join(validation['tei_drift'])}; offsets may be stale.")
+
+    reading = report["convention_precision"]
+    if reading.get("available"):
+        print(f"\n  Convention precision (in-scope marks): {reading['precision']} "
+              f"[{reading['ci95'][0]}, {reading['ci95'][1]}] over "
+              f"{reading['in_scope_decidable']} decidable "
+              f"({reading['in_zone']} of {reading['marks_total']} marks in a zone)")
+    else:
+        print(f"\n  Convention precision unavailable: {reading.get('reason')}")
 
     impact = report["corpus_impact"]
     if impact["available"]:

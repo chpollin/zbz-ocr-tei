@@ -760,20 +760,78 @@ def test_caps_surname_alone_is_tier2(lex):
     assert cands[0]["gid"] == "118708422"
 
 
-def test_caps_hits_of_the_document_author_are_skipped(lex):
+def test_caps_hits_of_the_document_author_are_candidates(lex):
+    # the author is marked like every other listed entity (operator decision E108);
+    # running heads are held back by the zone suppression, not by an author exception
     xml = _tei("<p>JEANNE HERSCH</p>\n<p>HERSCH und KARL JASPERS.</p>")
     assert [c["surface"] for c in em.find_candidates(xml, lex)] == [
         "JEANNE HERSCH",
         "HERSCH",
         "KARL JASPERS",
     ]
-    skipped = em.find_candidates(xml, lex, author_labels=("Hersch, Jeanne",))
-    assert [c["surface"] for c in skipped] == ["KARL JASPERS"]
 
 
-def test_author_exception_applies_only_to_caps_hits(lex):
-    xml = _tei("<p>Jeanne Hersch schrieb.</p>")
-    cands = em.find_candidates(xml, lex, author_labels=("Hersch, Jeanne",))
+# --- running-head suppression (E105/E108) ------------------------------------------
+
+
+def _paged(pages: list[str]) -> str:
+    """One <pb> per entry, so the running-head detector sees real page starts."""
+    body = "\n".join(f'<pb n="{i}"/>\n{content}'
+                     for i, content in enumerate(pages, start=1))
+    return _tei(body)
+
+
+def test_running_head_mentions_are_demoted_to_the_worklist(lex):
+    pages = [
+        "<p>KARL JASPERS</p>\n<p>Der erste Absatz handelt von Philosophie.</p>",
+        "<p>KARL JASPERS</p>\n<p>Ein zweiter Gedanke folgt zur Existenz.</p>",
+        "<p>KARL JASPERS</p>\n<p>Im dritten Teil geht es um Wahrheit.</p>",
+        "<p>KARL JASPERS</p>\n<p>Der vierte Abschnitt handelt vom Umgreifenden.</p>",
+    ]
+    cands = em.find_candidates(_paged(pages), lex)
+    assert [c["rule"] for c in cands] == ["caps-full-name:running-head"] * 4
+    assert all(c["tier"] == 2 for c in cands)
+
+
+def test_body_mention_outside_the_head_zone_stays_tier1(lex):
+    pages = [
+        "<p>KARL JASPERS</p>\n<p>Erster Zwischentext.</p>\n"
+        "<p>Karl Jaspers schrieb dazu ein Buch.</p>",
+        "<p>KARL JASPERS</p>\n<p>Zweiter Zwischentext.</p>\n"
+        "<p>Spaeter antwortete Karl Jaspers ausfuehrlich.</p>",
+        "<p>KARL JASPERS</p>\n<p>Dritter Zwischentext.</p>\n"
+        "<p>Zum Schluss dankte Karl Jaspers dem Publikum.</p>",
+    ]
+    cands = em.find_candidates(_paged(pages), lex)
+    body_hits = [c for c in cands if c["surface"] == "Karl Jaspers"]
+    assert len(body_hits) == 3
+    assert all(c["rule"] == "full-name" and c["tier"] == 1 for c in body_hits)
+    head_hits = [c for c in cands if c["surface"] == "KARL JASPERS"]
+    assert all(c["rule"] == "caps-full-name:running-head" for c in head_hits)
+
+
+def test_suppressed_head_keeps_its_anchor_power(lex):
+    # the head names the document's subject, so a bare surname in the body still
+    # resolves against it; only the head mark itself leaves tier 1
+    pages = [
+        "<p>KARL JASPERS</p>\n<p>Erste Seite.</p>\n<p>Jaspers antwortete zuerst.</p>",
+        "<p>KARL JASPERS</p>\n<p>Zweite Seite.</p>\n<p>Dann sprach Jaspers weiter.</p>",
+        "<p>KARL JASPERS</p>\n<p>Dritte Seite.</p>\n<p>Am Ende dankte Jaspers allen.</p>",
+    ]
+    cands = em.find_candidates(_paged(pages), lex)
+    surnames = [c for c in cands if c["surface"] == "Jaspers"]
+    assert len(surnames) == 3
+    assert all(c["rule"] == "anchored-surname" and c["tier"] == 1 for c in surnames)
+    assert all(c["gid"] == "118557106" for c in surnames)
+
+
+def test_document_without_recurring_head_is_unaffected(lex):
+    pages = [
+        "<p>Karl Jaspers eroeffnete die Tagung.</p>",
+        "<p>Die zweite Seite gehoert einem anderen Thema.</p>",
+        "<p>Ein Schlusswort beendet die dritte Seite.</p>",
+    ]
+    cands = em.find_candidates(_paged(pages), lex)
     assert [c["rule"] for c in cands] == ["full-name"]
     assert cands[0]["tier"] == 1
 
@@ -1034,16 +1092,12 @@ def test_all_lowercase_writing_of_a_title_is_suspect(tmp_path):
     assert kept[0]["tier"] == 1
 
 
-def test_case_deviating_hit_on_the_document_author_is_skipped(lex):
-    # the corpus sets the byline as "Jeanne HERSCH"; bylines stay unmarked
+def test_case_deviating_byline_of_the_author_is_a_candidate(lex):
+    # the corpus sets the byline as "Jeanne HERSCH"; bylines are marked (E105/E108)
     xml = _tei("<p>Jeanne HERSCH</p>\n<p>Dazu schrieb Jeanne Hersch spaeter mehr.</p>")
-    cands = em.find_candidates(xml, lex, author_labels=("Hersch, Jeanne",))
-    assert [c["surface"] for c in cands] == ["Jeanne Hersch"]
-    # without the author metadata the same byline is a normal full-name hit
-    assert [c["surface"] for c in em.find_candidates(xml, lex)] == [
-        "Jeanne HERSCH",
-        "Jeanne Hersch",
-    ]
+    cands = em.find_candidates(xml, lex)
+    assert [c["surface"] for c in cands] == ["Jeanne HERSCH", "Jeanne Hersch"]
+    assert all(c["tier"] == 1 for c in cands)
 
 
 # --- typographic evidence of one-word titles (iteration 4, point 4) ----------------

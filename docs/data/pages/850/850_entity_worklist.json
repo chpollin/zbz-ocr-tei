@@ -17,6 +17,33 @@
         "context": "1968-69 Les allégeances multiples de l’Université par Mlle Jeanne HERSCH, professeur TA k",
         "text": "Université",
         "occurrence": 1
+      },
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Jeanne",
+        "rule": "crosses-markup",
+        "alternatives": [],
+        "matched_form": "Jeanne Hersch",
+        "form_source": "headword",
+        "context": "nces multiples de l’Université par Mlle Jeanne HERSCH, professeur TA kaol 39 Les allégeances",
+        "text": "Jeanne",
+        "occurrence": 1
+      },
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "HERSCH",
+        "rule": "caps-surname:ambiguous",
+        "alternatives": [
+          "118815679",
+          "172155800"
+        ],
+        "matched_form": "Hersch",
+        "form_source": "surname-index",
+        "context": "ltiples de l’Université par Mlle Jeanne HERSCH, professeur TA kaol 39 Les allégeances",
+        "text": "HERSCH",
+        "occurrence": 1
       }
     ],
     "2": [

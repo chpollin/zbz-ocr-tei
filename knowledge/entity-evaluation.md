@@ -136,10 +136,24 @@ The operator took a convention decision (2026-08-12) on the described part of th
 result. Running heads stay outside the marking scope, while title pages, organisation
 names in bylines and picture captions are marked. This settles the page-apparatus
 question the executed run left open and makes a second, convention reading of precision
-computable, precision over the marks the convention keeps in scope. The reading follows
-once the deterministic running-head suppression named in
-[entity-integration.md](entity-integration.md) is in place; a redraw and a remeasurement
-follow the repair wave, so a later run compares against the same design.
+computable, precision over the marks the convention keeps in scope. The deterministic
+running-head suppression is in place since 2026-08-13 (E108), and the reading is
+computed by `scripts/eval/running_head_audit.py` into
+`output/audits/running_head_audit.json` (block `convention_precision`): marks inside a
+detected head zone leave numerator and denominator, `undecidable` verdicts stay
+excluded exactly as in the protocol reading, and the interval is a seeded percentile
+bootstrap. The computed reading lies within the interval of the protocol reading, so
+the running heads were not inflating the published precision figure. One ground-truth
+caveat is recorded: a single adjudicated mark counts as a running head only through
+the keyword in its verdict reason while being body text (doc 2510), so the keyword
+criterion reads detector recall as 24 of 25 without a real head being missed. A redraw
+and a remeasurement still follow the repair wave, so a later run compares against the
+same design.
+
+A second convention decision followed on 2026-08-13 (E108): mentions of the corpus
+author are marked like every other listed entity, in bylines and signatures as well.
+The byline exception whose recall cost the executed run had recorded is removed, and
+the recall gaps it caused become hits on a future redraw.
 
 ## Roles
 

@@ -186,12 +186,14 @@ def test_caps_full_name_in_a_title_is_tier1(tmp_path):
     assert cands[0]["gid"] == "118557106"
 
 
-def test_caps_byline_of_the_document_author_is_skipped(tmp_path):
+def test_caps_byline_of_the_document_author_is_marked(tmp_path):
+    # the author is marked like every other listed entity (operator decision E108);
+    # running heads are held back by the zone suppression, not by an author exception
     lexicon = _build(tmp_path, persons=[_person("118815679", "Hersch, Jeanne")])
     xml = _tei("<p>JEANNE HERSCH</p>")
-    assert em.find_candidates(xml, lexicon, author_labels=("Hersch, Jeanne",)) == []
-    # without the author metadata the same mention is a normal caps hit
-    assert [c["rule"] for c in em.find_candidates(xml, lexicon)] == ["caps-full-name"]
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["rule"] for c in cands] == ["caps-full-name"]
+    assert cands[0]["tier"] == 1
 
 
 # --- E-Periodica cover sheet ------------------------------------------------------
@@ -243,12 +245,11 @@ def test_case_divergent_work_title_is_a_candidate(tmp_path):
 
 
 def test_case_tolerance_leaves_the_all_caps_person_regime_alone(tmp_path):
-    # the caps channel keeps its own rule and its byline exception; the case-tolerant
-    # channel must not take an all-caps person name away from it
+    # the caps channel keeps its own rule; the case-tolerant channel must not take
+    # an all-caps person name away from it
     lexicon = _build(tmp_path, persons=[_person("118815679", "Hersch, Jeanne")])
     xml = _tei("<p>JEANNE HERSCH</p>")
     assert [c["rule"] for c in em.find_candidates(xml, lexicon)] == ["caps-full-name"]
-    assert em.find_candidates(xml, lexicon, author_labels=("Hersch, Jeanne",)) == []
 
 
 # --- ambiguous bare surname: both Jaspers spouses (frontend evaluation, point 1) ---

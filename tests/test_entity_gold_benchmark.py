@@ -64,14 +64,14 @@ def _persname(gid: str, surface: str) -> str:
 
 def _finder(tmp_path):
     """The real matcher, bound to the mini entity list (no cache, no legacy index)."""
-    from scripts.tei.entity_matcher import CORPUS_AUTHOR_LABELS, build_lexicon, find_candidates
+    from scripts.tei.entity_matcher import build_lexicon, find_candidates
 
     path = tmp_path / "entities.json"
     path.write_text(json.dumps(_ENTITIES), encoding="utf-8")
     lexicon = build_lexicon(path, tmp_path / "missing_cache.json")
 
     def find(xml_string):
-        return find_candidates(xml_string, lexicon, author_labels=CORPUS_AUTHOR_LABELS)
+        return find_candidates(xml_string, lexicon)
 
     return find, set(lexicon["entries"])
 

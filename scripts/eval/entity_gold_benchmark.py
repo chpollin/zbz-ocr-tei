@@ -910,7 +910,7 @@ def main() -> int:
                         help="Pipeline TEI directory (read only)")
     args = parser.parse_args()
 
-    from scripts.tei.entity_matcher import CORPUS_AUTHOR_LABELS, build_lexicon, find_candidates
+    from scripts.tei.entity_matcher import build_lexicon, find_candidates
 
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
     review = args.review if args.review.exists() else None
@@ -919,7 +919,7 @@ def main() -> int:
     doc_ids = _parse_doc_ids(args.docs) if args.docs else reference_doc_ids(args.ref_dir)
 
     def find(xml_string):
-        return find_candidates(xml_string, lexicon, author_labels=CORPUS_AUTHOR_LABELS)
+        return find_candidates(xml_string, lexicon)
 
     print(f"Entity gold benchmark over {len(doc_ids)} reference document(s); "
           "nothing is written to TEI.")

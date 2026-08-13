@@ -20,6 +20,7 @@ from scripts.eval.running_head_audit import (
     MIN_RECURRENCE,
     audit_corpus,
     build_report,
+    convention_precision,
     detect_document,
     normalize_head,
     zone_lookup,
@@ -340,3 +341,60 @@ def test_report_is_deterministic(corpus):
     first = json.dumps(build_report(documents, {"marks": []}, None, sources={}))
     second = json.dumps(build_report(audit_corpus(tmp_path), {"marks": []}, None, sources={}))
     assert first == second
+
+
+# ---------------------------------------------------------------------------
+# Convention reading of the adjudicated precision (E105)
+# ---------------------------------------------------------------------------
+
+
+def _in_zone_at_10(doc: str, offset: int):
+    return {"form": "head"} if offset == 10 else None
+
+
+def test_convention_precision_excludes_in_zone_marks():
+    marks = [
+        {"doc": "1", "start": 10, "verdict": "correct"},       # in zone -> out of scope
+        {"doc": "1", "start": 500, "verdict": "correct"},
+        {"doc": "1", "start": 600, "verdict": "wrong_entity"},
+        {"doc": "1", "start": 700, "verdict": "undecidable"},  # never decidable
+    ]
+    result = convention_precision({"marks": marks}, _in_zone_at_10)
+    assert result["marks_total"] == 4
+    assert result["in_zone"] == 1
+    assert result["in_scope_decidable"] == 2
+    assert result["correct"] == 1
+    assert result["precision"] == 0.5
+    assert 0.0 <= result["ci95"][0] <= 0.5 <= result["ci95"][1] <= 1.0
+
+
+def test_convention_precision_is_deterministic():
+    marks = [{"doc": "1", "start": i * 100, "verdict": v}
+             for i, v in enumerate(["correct"] * 8 + ["wrong_span"] * 2)]
+    first = convention_precision({"marks": marks}, _in_zone_at_10)
+    second = convention_precision({"marks": marks}, _in_zone_at_10)
+    assert first == second
+
+
+def test_convention_precision_without_verdicts_is_unavailable():
+    result = convention_precision(None, _in_zone_at_10)
+    assert result["available"] is False
+    assert convention_precision({"marks": []}, _in_zone_at_10)["available"] is False
+
+
+def test_convention_precision_appears_in_the_report(corpus):
+    tmp_path, with_head, _ = corpus
+    documents = audit_corpus(tmp_path)
+    zone = documents[0]["patterns"][0]["zones"][0]
+    verdicts = {"marks": [
+        {"doc": "10", "page": 1, "start": zone["start"], "end": zone["end"],
+         "surface": "Jeanne Hersch", "verdict": "correct",
+         "reason": "Running head of the printed page.", "text_sha256": _sha(with_head)},
+        {"doc": "20", "page": 1, "start": 5, "end": 7, "surface": "x",
+         "verdict": "correct", "reason": "Body mention.", "text_sha256": _sha(with_head)},
+    ]}
+    report = build_report(documents, verdicts, None, sources={})
+    reading = report["convention_precision"]
+    assert reading["in_zone"] == 1
+    assert reading["in_scope_decidable"] == 1
+    assert reading["precision"] == 1.0

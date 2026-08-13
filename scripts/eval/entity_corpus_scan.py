@@ -291,7 +291,7 @@ def main() -> None:
                         help="Source TEI directory (read only)")
     args = parser.parse_args()
 
-    from scripts.tei.entity_matcher import CORPUS_AUTHOR_LABELS, build_lexicon, find_candidates
+    from scripts.tei.entity_matcher import build_lexicon, find_candidates
 
     doc_paths = resolve_docs(args.src_dir, _parse_doc_ids(args.docs) if args.docs else None)
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
@@ -304,11 +304,8 @@ def main() -> None:
         "legacy": str(legacy) if legacy else None,
     }
 
-    def find_with_author(xml_string, lex):
-        return find_candidates(xml_string, lex, author_labels=CORPUS_AUTHOR_LABELS)
-
     print(f"Entity corpus scan over {len(doc_paths)} document(s); nothing is written to TEI.")
-    report = run_scan(doc_paths, lexicon, find_with_author, sources)
+    report = run_scan(doc_paths, lexicon, find_candidates, sources)
     _print_summary(report)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
