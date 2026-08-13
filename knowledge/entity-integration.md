@@ -112,9 +112,11 @@ Detail rules, settled against the reference corpus and by operator decision:
   the E94 pattern that keeps the page break with a type marker, so pagination,
   facsimile links, completeness gate and Transkribus round trip survive; the corpus
   scan names the affected documents.
-- The stock run documents itself in the header: one dated `<change>` entry per run in
+- The stock run documents itself in the header, one dated `<change>` entry per run in
   `revisionDesc` (E42 convention, idempotent, pattern of `tei_status_marker`). Preview
-  files carry no header entry; their provenance is the pilot report.
+  files carry no `revisionDesc` entry; their header declares the responsibilities their
+  own marks point to (section "Mark provenance and verification state"), and the
+  run-level account of a preview pass stays in the pilot report.
 
 Open modelling points, owned outside this plan:
 
@@ -129,6 +131,53 @@ Open modelling points, owned outside this plan:
 - Hyphen compounds ("Karl-Jaspers-Symposium", "Hersch-Vortrag"): the references leave
   them unmarked, the tool currently decides them inconsistently. The suspicion signal
   parks them on the worklist until ZBZ decides.
+
+## Mark provenance and verification state
+
+Every mark the preview layer writes carries its own provenance and verification state, so
+the annotation stays auditable outside this pipeline and a later pass can tell a settled
+mark from an open one. Three things stay separate and are never merged into one value.
+
+Provenance says who asserted the mark. It sits in `@resp` as a pointer to a `respStmt` of
+the preview `teiHeader`. Two responsibilities exist today. `resp-entity-matcher` is the
+deterministic closed-world matcher, named together with a short digest over the
+rule-bearing modules, so the rule state behind a mark is identifiable rather than merely
+dated. `resp-entity-adjudication` is the facsimile adjudication of the evaluation wave,
+named with the wave's snapshot. A document declares only the responsibilities its own
+marks point to. Nothing is declared for a model judge, because no producer writes such
+marks, and a declaration without a producer would assert a provenance nothing carries.
+
+Verification state says whether a human checked the mark and against what. It sits in
+`@cert` and takes only the tokens the schema names, `high`, `medium`, `low`, `unknown`. A
+mark whose adjudicated judgment reads correct is `high`, a mark the matcher asserted
+without a human judgment is `medium`. A mark whose adjudicated judgment reads wrong is not
+written at all, and the verdict guard reports such a mark as a violation
+([entity-evaluation.md](entity-evaluation.md)). The tokens `low` and `unknown` stay
+unassigned until a producer needs them.
+
+Measured reliability is a property of the rule class. The individual mark never carries
+it. Precision per category and per rule family comes from the adjudicated sample and is
+reported there, next to its sample size. A model-produced confidence number never enters
+the data at all. The schema would accept a numeric `@cert`, so the ban is a project rule
+rather than a format constraint. A number invites reading a calibrated probability where
+none was measured, and it blurs the one distinction the attribute exists for, whether a
+human looked at this mention.
+
+The rule that produced the mark travels with it in `@source`, so the reason for a mark is
+readable in the file without the report beside it. Among the candidate attributes only
+`@source` is legal on all three wrapped elements; `@evidence` validates on `persName` and
+`orgName` and fails on `bibl`, and `@ana` is absent from `zbz_hersch.rng` altogether.
+
+The verdict store `data/entities/mention_verdicts.json` remains the source of truth of the
+judgments, and the attributes are a regenerable projection of it. The projection reuses
+the classification of the verdict guard and inherits its honesty about drift. A judgment
+binds the bytes it was made on, so a document whose sha256 fingerprint has moved since the
+adjudication (guard class `text_changed`) falls back to `medium` throughout instead of
+claiming a verification its current text no longer supports. The same fallback holds where
+the adjudicated span or the adjudicated entity is no longer what the matcher would write.
+
+The attributes exist in the preview layer only. Whether they belong in the delivered TEI
+is part of the stock run (M7) and a decision for the library.
 
 ## Matching method: three tiers
 
@@ -240,8 +289,11 @@ Built, each with its pytest suite:
 - `scripts/tei/tei_entity_preview.py` wraps tier 1 into `output/entity_preview/` and
   proves per document: RelaxNG-valid against `zbz_hersch.rng`, text of the `text`
   subtree character-identical, byte-identical outside the insertions (bytes in, bytes
-  out; stripping the wrappers restores the original). It refuses to write into
-  `output/tei_final` and reports JSON plus HTML.
+  out; stripping the wrappers and the header declarations restores the original). Every
+  written mark carries `@resp`, `@cert` and `@source` under the vocabulary of the section
+  "Mark provenance and verification state", and the verification state is read from the
+  verdict store through the classification of `entity_verdict_guard`. It refuses to write
+  into `output/tei_final` and reports JSON.
 - `scripts/eval/entity_corpus_scan.py` dumps every candidate corpus-wide read-only,
   with rule, tier, page and context, plus distribution views (per document, per rule, per
   entity) and invariant checks (no tier-1 form on the function-word list, none adjacent

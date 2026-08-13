@@ -57,7 +57,7 @@ MENTIONS = [
     ("Hitler", "118551655", "person", "bare-surname", 2),
 ]
 
-_WRAPPER_RE = re.compile(r"</?(?:persName|orgName|bibl)(?: ref=\"GND:[^\"]*\")?>")
+_WRAPPER_RE = re.compile(r"</?(?:persName|orgName|bibl)(?=[\s>])[^>]*>")
 
 
 def _candidate(source: str, surface: str, gid: str, category: str, rule: str, tier: int,
@@ -178,7 +178,7 @@ def test_worklist_grouped_by_page_over_shifted_offsets():
 def test_worklist_entries_carry_exactly_the_viewer_fields():
     pages, _ = worklist_pages(_doc_result(), _preview_xml())
     entry = pages["1"][0]
-    assert tuple(entry) == WORKLIST_FIELDS + ("text", "occurrence")
+    assert tuple(entry) == (*WORKLIST_FIELDS, "text", "occurrence")
     assert entry["gid"] == "118522175"
     assert entry["rule"] == "bare-surname"
     assert entry["alternatives"] == []
@@ -320,9 +320,11 @@ def test_split_writes_one_entity_file_per_page(tmp_path):
     page2 = (doc_dir / f"{DOC_ID}_entity_p2.xml").read_text(encoding="utf-8")
     assert stats["pages"] == 2
     assert not (doc_dir / f"{DOC_ID}_entity_p3.xml").exists()
-    assert '<persName ref="GND:118557106">Karl Jaspers</persName>' in page1
+    assert '<persName ref="GND:118557106" source="full-name"' in page1
+    assert "Karl Jaspers</persName>" in page1
     assert "UNESCO" not in page1
-    assert '<orgName ref="GND:2023755-8">UNESCO</orgName>' in page2
+    assert '<orgName ref="GND:2023755-8" source="org-token"' in page2
+    assert "UNESCO</orgName>" in page2
     assert page1.startswith("<?xml") and "<body>" in page1
 
 

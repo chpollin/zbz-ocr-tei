@@ -51,6 +51,7 @@ from scripts.tei.tei_entity_preview import (
     CATEGORY_ELEMENT,
     ENTITY_PREVIEW_DIR,
     REPORT_STEM,
+    opening_tag,
 )
 
 PAGES_DIR = DOCS_DIR / "data" / "pages"
@@ -91,13 +92,17 @@ def page_of(pb_starts: list[int], offset: int) -> int:
 
 
 def wrapper_shifts(wrapped: list[dict]) -> tuple[list[int], list[int]]:
-    """Insertion positions of the tier-1 wrappers plus their cumulative lengths."""
+    """Insertion positions of the tier-1 wrappers plus their cumulative lengths.
+
+    The opening tag is rebuilt by the preview runner's own builder, because it carries
+    per-mark provenance attributes whose length a second implementation would get wrong.
+    """
     events: list[tuple[int, int]] = []
     for cand in wrapped:
         element = CATEGORY_ELEMENT.get(cand.get("category"))
         if element is None:
             continue
-        events.append((cand["start"], len(f'<{element} ref="GND:{cand["gid"]}">')))
+        events.append((cand["start"], len(opening_tag(cand))))
         events.append((cand["end"], len(f"</{element}>")))
     events.sort()
     positions: list[int] = []

@@ -627,6 +627,18 @@ Consequences: the completeness question the page exists for is answered without 
 
 Documents: [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 95
 
+---
+
+### E118 Every mark carries its provenance and verification state (2026-08-13)
+
+Occasion: the operator asked that an annotation state in the data itself who asserted it and whether a human checked it, so a later pass can separate settled marks from open ones and so the annotation stays auditable outside this pipeline.
+
+Decision: three things stay separate and never merge. Provenance names the asserting agency and travels as `@resp` pointing to a `respStmt` this run declares per document, so no document declares a responsibility none of its marks uses. The verification state travels as `@cert` and takes only the tokens `high` for an adjudicated-correct mark and `medium` for a plain matcher assertion; a number never enters, although the schema would accept a double, so the ban is a project rule with its own test rather than a schema effect. The producing rule travels as `@source`, the one attribute the delivery schema permits on `persName`, `orgName` and `bibl` alike, since `bibl` carries no `@evidence` and `@ana` exists nowhere in the schema. The measured reliability of a rule class stays out of the individual mark and remains a property of the adjudicated sample. Only responsibilities with a real producer are declared, so no model judge appears until one exists. The verdict store stays the source of truth of the judgments; the attributes are a regenerable projection that reuses the classification of the verdict guard, so a document whose text moved since the adjudication falls back to unverified instead of claiming a verification its bytes no longer support. The version of the assertion is a digest over the rule-bearing modules, because a hand-maintained version constant ages silently.
+
+Consequences: the preview panel wraps its marks with provenance, schema validity and text invariance unchanged, two runs byte-identical. A mark with an adjudicated-wrong judgment is deliberately not suppressed inside the writer, because the verdict guard exists to fail such a run loudly and a silent drop would mask the regression. The delivered TEI stays untouched; whether these attributes belong in the delivery is the library's decision, its guidelines require the inline reference and say nothing about certainty.
+
+Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |
