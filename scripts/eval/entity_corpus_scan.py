@@ -36,8 +36,9 @@ from bisect import bisect_right
 from collections import Counter
 from pathlib import Path
 
-from scripts.config import DATA_DIR, OUTPUT_DIR, TEI_FINAL_DIR
+from scripts.config import DATA_DIR, TEI_FINAL_DIR
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, iter_final_tei
+from scripts.tei.entity_matcher import FUNCTION_WORDS as _MATCHER_FUNCTION_WORDS
 from scripts.tei.pb_split import BODY_INNER_RE, PB_RE
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
@@ -54,8 +55,6 @@ INVARIANTS = ("function_word_tier1", "hyphen_adjacent_tier1")
 # Ordinary words that a surname rule must never claim automatically. The homograph
 # set is imported from the matcher (single source, drift-proof); the plain function
 # words below stay as a safety net the matcher never needs to know.
-from scripts.tei.entity_matcher import FUNCTION_WORDS as _MATCHER_FUNCTION_WORDS
-
 FUNCTION_WORDS = _MATCHER_FUNCTION_WORDS | frozenset({
     "aber", "auch", "dann", "denn", "doch", "durch", "nach", "noch", "oder",
     "sein", "seit", "sind", "unter", "viel", "wenn", "wie", "wird",
@@ -201,7 +200,7 @@ def run_scan(doc_paths: list[tuple[str, Path]], lexicon: dict, find_candidates,
 
 def _sorted_counts(counter: Counter) -> dict:
     """Counts as a plain dict, most frequent first, ties by key (deterministic output)."""
-    return {k: v for k, v in sorted(counter.items(), key=lambda kv: (-kv[1], kv[0]))}
+    return dict(sorted(counter.items(), key=lambda kv: (-kv[1], kv[0])))
 
 
 def build_scan_report(records: list[dict], by_doc: dict, violations: dict,

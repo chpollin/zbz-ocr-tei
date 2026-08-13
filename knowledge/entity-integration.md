@@ -213,8 +213,10 @@ Built, each with its pytest suite:
 - `scripts/eval/entity_lint.py` audits the list offline (labels, id syntax, duplicates,
   DNB links, author resolution) and against the cache (404s, name and type
   consistency); the known real-stock defects are pinned as tests.
-- `scripts/tei/entity_matcher.py` builds the lexicon (headwords, inverted forms, cache
-  variants, legacy surface forms) and finds candidates with exact offsets. Exclusion
+- `scripts/tei/entity_lexicon.py` builds the lexicon (headwords, inverted forms, cache
+  variants, legacy surface forms, derived-form channels);
+  `scripts/tei/entity_matcher.py` finds candidates with exact offsets and re-exports
+  the lexicon API, so both read as one module from the outside. Exclusion
   zones: everything outside `text`, figures, bibliography divs, already marked
   elements. Running-head zones demote instead of excluding (`:running-head`, tier 2).
   Contract: candidates are offset-verified, non-overlapping, and may embed at

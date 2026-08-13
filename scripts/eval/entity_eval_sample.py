@@ -27,16 +27,18 @@ import argparse
 import json
 import random
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from scripts.config import PROJECT_ROOT, TEI_FINAL_DIR
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
 
 # Page assignment uses the pb rule of the per-page mirror (page = sequential <pb>
 # position); a second implementation would place cases next to the wrong facsimile.
-from scripts.edition.generate_entity_preview_data import page_of as page_of_offset
-from scripts.edition.generate_entity_preview_data import pb_offsets as page_starts
+from scripts.edition.generate_entity_preview_data import (
+    page_of as page_of_offset,
+    pb_offsets as page_starts,
+)
+from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
 from scripts.tei.entity_matcher import _base_rule
 
 SCAN_PATH = AUDIT_OUTPUT_DIR / "entity_corpus_scan.json"
@@ -78,7 +80,7 @@ def allocate(available: dict, total: int, minimum: int) -> dict:
 
 def _proportional(residual: dict, amount: int) -> dict:
     """Largest-remainder distribution of ``amount`` over the residual capacities."""
-    extra = {key: 0 for key in residual}
+    extra = dict.fromkeys(residual, 0)
     pool = {key: count for key, count in residual.items() if count > 0}
     capacity = sum(pool.values())
     if not pool or amount <= 0:
@@ -253,7 +255,7 @@ def draw_recall(documents: list[dict], total: int, seed: int) -> tuple[list[dict
 
 def _source_info(path: Path, **counters) -> dict:
     stat = path.stat()
-    modified = datetime.fromtimestamp(stat.st_mtime, tz=timezone.utc)
+    modified = datetime.fromtimestamp(stat.st_mtime, tz=UTC)
     return {"path": _repo_path(path), "modified": modified.isoformat(timespec="seconds"),
             "size_bytes": stat.st_size, **counters}
 

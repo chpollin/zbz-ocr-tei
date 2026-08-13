@@ -12,6 +12,7 @@ ZBZ.EntityOverview = (() => {
   const state = {
     view: 'entities',      // 'entities' | 'documents'
     entityRows: [],
+    byGid: {},             // gid -> entity row, built once after load
     docRows: [],
     classes: [],
     titles: {},            // doc id -> {title, author, date}
@@ -87,6 +88,7 @@ ZBZ.EntityOverview = (() => {
       ndocs: Object.keys(e.docs).length,
       search: fold(`${gid} ${e.label}`),
     }));
+    state.byGid = Object.fromEntries(state.entityRows.map((row) => [row.gid, row]));
     state.docRows = catalog.documents.map((doc) => {
       const record = overview.documents[doc.id] ||
         { auto: 0, review: 0, classes: {}, entities: [] };
@@ -343,8 +345,6 @@ ZBZ.EntityOverview = (() => {
   };
 
   const renderDocEntityTable = (row) => {
-    const byGid = {};
-    state.entityRows.forEach((e) => { byGid[e.gid] = e; });
     const table = el('table', 'eo-table');
     const head = el('thead');
     const headRow = el('tr');
@@ -357,7 +357,7 @@ ZBZ.EntityOverview = (() => {
     table.appendChild(head);
     const tbody = el('tbody');
     row.entities.forEach((entity) => {
-      const info = byGid[entity.gid] || {};
+      const info = state.byGid[entity.gid] || {};
       const tr = el('tr');
       const name = el('td');
       name.appendChild(el('span', `eo-dot eo-dot--${info.category || 'unknown'}`));

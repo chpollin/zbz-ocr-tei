@@ -23,6 +23,7 @@ from scripts.tei.tei_entity_preview import (
     build_html_report,
     build_report,
     check_text_invariance,
+    discover_doc_ids,
     preview_document,
     run_preview,
     text_signature,
@@ -400,6 +401,20 @@ def test_html_report_escapes_markup_in_surfaces():
 
 def test_panel_is_the_ten_pilot_documents():
     assert PANEL_DOCS == ["1060", "100", "290", "1440", "890", "1350", "1360", "2030", "1220", "3090"]
+
+
+# --- corpus discovery (--all) ------------------------------------------------
+
+def test_discover_doc_ids_orders_numerically_and_skips_non_final_files(tmp_path):
+    for name in ("100_final.xml", "20_final.xml", "1000_final.xml", "20_manifest.json"):
+        (tmp_path / name).write_text("x", encoding="utf-8")
+    assert discover_doc_ids(tmp_path) == ["20", "100", "1000"]
+
+
+def test_discover_doc_ids_puts_non_numeric_ids_after_the_numeric_ones(tmp_path):
+    for name in ("100_final.xml", "20_final.xml", "beilage_final.xml", "anhang_final.xml"):
+        (tmp_path / name).write_text("x", encoding="utf-8")
+    assert discover_doc_ids(tmp_path) == ["20", "100", "anhang", "beilage"]
 
 
 # --- byte fidelity and round trips -------------------------------------------

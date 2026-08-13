@@ -1,0 +1,25 @@
+# No [build-system]: this repo is a dependency set and script pipeline, not a package.
+
+[project]
+name = "zbz-ocr-tei"
+version = "0"
+requires-python = ">=3.11"
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM", "PTH", "RUF"]
+ignore = ["E501"]  # line length is the formatter's business
+# Deliberately inactive: D (docstring prose stays free), TRY/EM/BLE (the pipeline's
+# skip-and-log-and-collect error style would fight them), ANN not enabled globally.
+
+[tool.ruff.lint.per-file-ignores]
+# The stopword blocks are written as `"""...""".split()`; SIM905 would turn the
+# word lists into hundreds of quoted items.
+"scripts/eval/entity_unlisted_scan.py" = ["SIM905"]
+
+[tool.ruff.lint.isort]
+# Keeps re-exports (`X as X`) inside their parenthesized block instead of one
+# import statement per aliased name.
+combine-as-imports = true

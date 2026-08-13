@@ -38,9 +38,13 @@ import unicodedata
 from collections import Counter
 from pathlib import Path
 
-from scripts.config import DATA_DIR, OUTPUT_DIR
+from scripts.config import DATA_DIR
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
-from scripts.tei.entity_matcher import legacy_form_is_covered, legacy_names, normalize_gid
+from scripts.tei.entity_matcher import (
+    legacy_form_is_covered,
+    legacy_names,
+    normalize_gid,
+)
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
@@ -123,15 +127,15 @@ def _cache_findings(record, category: str, index: int, gnd_id, label) -> tuple:
 
     warnings = []
     preferred = record.get("preferred_name")
-    if label and isinstance(preferred, str) and preferred.strip():
-        if _normalized(preferred) != _normalized(label):
-            warnings.append(
-                _finding(
-                    "preferred_name_mismatch", category, index, gnd_id,
-                    "lokales Label weicht vom GND-Vorzugsnamen ab",
-                    local_label=label, preferred_name=preferred,
-                )
+    if (label and isinstance(preferred, str) and preferred.strip()
+            and _normalized(preferred) != _normalized(label)):
+        warnings.append(
+            _finding(
+                "preferred_name_mismatch", category, index, gnd_id,
+                "lokales Label weicht vom GND-Vorzugsnamen ab",
+                local_label=label, preferred_name=preferred,
             )
+        )
     types = record.get("types") or []
     if types and EXPECTED_TYPE[category] not in types:
         warnings.append(

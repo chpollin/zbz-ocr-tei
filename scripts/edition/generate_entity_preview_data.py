@@ -39,12 +39,19 @@ from bisect import bisect_left, bisect_right
 from pathlib import Path
 
 from scripts.config import DATA_DIR, DOCS_DIR
+
 # Same splitter as the per-page TEI mirror: page number = sequential <pb> position. A second,
 # diverging implementation would place entity pages next to the wrong facsimile.
-from scripts.edition.generate_edition_data import _extract_pages_from_final as split_pages
+from scripts.edition.generate_edition_data import (
+    _extract_pages_from_final as split_pages,
+)
 from scripts.tei.entity_matcher import build_lexicon
 from scripts.tei.pb_split import BODY_INNER_RE, PB_RE
-from scripts.tei.tei_entity_preview import CATEGORY_ELEMENT, ENTITY_PREVIEW_DIR, REPORT_STEM
+from scripts.tei.tei_entity_preview import (
+    CATEGORY_ELEMENT,
+    ENTITY_PREVIEW_DIR,
+    REPORT_STEM,
+)
 
 PAGES_DIR = DOCS_DIR / "data" / "pages"
 ENTITIES_JSON_PATH = DOCS_DIR / "data" / "entities.json"

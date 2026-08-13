@@ -23,6 +23,7 @@ Deterministic, offline, no model call.
 Usage:
     python -m scripts.tei.tei_entity_preview --panel
     python -m scripts.tei.tei_entity_preview --docs 1060,100
+    python -m scripts.tei.tei_entity_preview --all
 """
 
 from __future__ import annotations
@@ -190,6 +191,17 @@ def preview_document(doc_id: str, xml_string: str, candidates: list[dict],
     }
 
 
+def discover_doc_ids(src_dir: Path) -> list[str]:
+    """Doc ids of every ``{doc}_final.xml`` in src_dir, numeric ones first and in numeric order.
+
+    Kept local rather than imported from the eval audits: scripts/tei must not depend on
+    scripts/eval. A non-numeric id keeps its filename order and follows the numeric block.
+    """
+    doc_ids = [path.stem.removesuffix("_final")
+               for path in sorted(Path(src_dir).glob("*_final.xml"))]
+    return sorted(doc_ids, key=lambda d: (0, int(d)) if d.isdigit() else (1, 0))
+
+
 def run_preview(doc_ids: list[str], find_candidates, lexicon: dict,
                 src_dir: Path | None = None, out_dir: Path | None = None) -> dict:
     """Preview over doc_ids; ``find_candidates`` is injected so this stays matcher-agnostic."""
@@ -221,7 +233,7 @@ def run_preview(doc_ids: list[str], find_candidates, lexicon: dict,
 
 def _sorted_counts(counter) -> dict:
     """Counts as a plain dict, most frequent first, ties by key (deterministic output)."""
-    return {k: v for k, v in sorted(counter.items(), key=lambda kv: (-kv[1], kv[0]))}
+    return dict(sorted(counter.items(), key=lambda kv: (-kv[1], kv[0])))
 
 
 def build_report(results: list[dict]) -> dict:
@@ -404,6 +416,7 @@ def main():
     group = ap.add_mutually_exclusive_group(required=True)
     group.add_argument("--docs", nargs="+", help="Document ids, e.g. --docs 1060,100")
     group.add_argument("--panel", action="store_true", help="The ten M3 pilot documents")
+    group.add_argument("--all", action="store_true", help="Every document in --src-dir")
     ap.add_argument("--entities", type=Path, default=ENTITIES_PATH, help="Curated entity list")
     ap.add_argument("--cache", type=Path, default=GND_CACHE_PATH, help="GND variant cache")
     ap.add_argument("--legacy", type=Path, default=LEGACY_MENTIONS_PATH,
@@ -416,7 +429,10 @@ def main():
 
     from scripts.tei.entity_matcher import build_lexicon, find_candidates
 
-    doc_ids = PANEL_DOCS if args.panel else _parse_doc_ids(args.docs)
+    if args.all:
+        doc_ids = discover_doc_ids(args.src_dir)
+    else:
+        doc_ids = PANEL_DOCS if args.panel else _parse_doc_ids(args.docs)
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
     review = args.review if args.review.exists() else None
     lexicon = build_lexicon(args.entities, args.cache, legacy_path=legacy,

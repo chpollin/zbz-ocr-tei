@@ -168,7 +168,7 @@ def add_run_change(raw: str, when: str):
             if not _is_own_change(m.group(1))]
     entry = (f'<change when="{when}" who="{CHANGE_WHO}" n="{CHANGE_N}">'
              f"{CHANGE_TEXT}</change>")
-    inner = "\n" + "\n".join("    " + c for c in kept + [entry]) + "\n  "
+    inner = "\n" + "\n".join("    " + c for c in [*kept, entry]) + "\n  "
     new_revision = match.group(1) + inner + match.group(3)
     return raw[:match.start()] + new_revision + raw[match.end():], True
 

@@ -29,6 +29,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from scripts.config import DATA_DIR, DOCS_DIR
+from scripts.tei.entity_matcher import base_rule
 
 SCAN_PATH = Path("output/audits/entity_corpus_scan.json")
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
@@ -75,7 +76,7 @@ def classify(rule: str, tier: int) -> str:
     """
     if tier == 1:
         return "auto"
-    base = rule.split(":", 1)[0]
+    base = base_rule(rule)
     if ":running-head" in rule:
         return "running_head"
     if ":suspect" in rule:

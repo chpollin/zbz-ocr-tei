@@ -44,6 +44,7 @@ from pathlib import Path
 
 from scripts.config import DATA_DIR, TEI_FINAL_DIR
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
+from scripts.tei.entity_matcher import base_rule
 from scripts.tei.pb_split import BODY_INNER_RE, PB_RE
 
 SNAPSHOT = "2026-08-12"
@@ -92,14 +93,6 @@ CASE_TOLERANT_EXCLUDED = {
 
 SUSPECT_SUFFIX = ":suspect"
 TAG_RE = re.compile(r"<[^>]*>")
-
-
-# Local copy of the matcher's suffix split (base rule, then ":ambiguous", ":suspect",
-# ":in-plain-bibl"); the ranking works from the JSON snapshot alone and imports no
-# matcher code, so a matcher change while the wave runs cannot shift the ranking.
-def base_rule(rule: str) -> str:
-    """The rule without its suffixes."""
-    return rule.split(":", 1)[0]
 
 
 def is_case_tolerant_rule(rule: str) -> bool:

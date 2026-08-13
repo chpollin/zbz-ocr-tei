@@ -48,10 +48,11 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from scripts.config import DATA_DIR, PROJECT_ROOT, TEI_FINAL_DIR
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
+
 # Page assignment via the pb rule of the sample draw (same helpers as
 # scripts/eval/entity_eval_sample.py); a second implementation would drift.
 from scripts.edition.generate_entity_preview_data import page_of, pb_offsets
+from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
 
 SAMPLE_DIR = AUDIT_OUTPUT_DIR / "eval_sample"
 VERDICTS_DIR = SAMPLE_DIR / "verdicts"
@@ -338,9 +339,9 @@ def load_inputs(*, sample_dir: Path = SAMPLE_DIR, entities_path: Path = ENTITIES
     docs = [case["doc"] for case in cases]
     scan = _read_json(scan_path)
 
-    sources = [repo_path(p) for p in ([cases_path, pages_path, manifest_path, iaa_path,
-                                       Path(entities_path), Path(scan_path)]
-                                      + precision_paths + recall_paths)]
+    sources = [repo_path(p) for p in [cases_path, pages_path, manifest_path, iaa_path,
+                                      Path(entities_path), Path(scan_path),
+                                      *precision_paths, *recall_paths]]
     sources.append(repo_path(tei_dir))
     return {
         "snapshot": snapshot_label(manifest),

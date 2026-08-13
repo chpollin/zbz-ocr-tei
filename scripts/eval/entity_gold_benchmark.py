@@ -388,7 +388,7 @@ def _wellformedness_error(xml: str) -> str | None:
 
 
 def _empty_counts() -> dict:
-    return {verdict: 0 for verdict in VERDICTS}
+    return dict.fromkeys(VERDICTS, 0)
 
 
 def _skipped(doc_id: str, status: str, error: str | None = None) -> dict:

@@ -96,8 +96,8 @@ NAME, PARTICLE, BREAK = "name", "particle", "break"
 # One dotted initial, or a run of letters; digits and punctuation separate tokens.
 _TOKEN_RE = re.compile(r"[^\W\d_]\.|[^\W\d_]+")
 # Tokens of one run are joined by a single space, an apostrophe or a hyphen.
-_SEP_RE = re.compile(r"[ ]|['’ʼ]|[-‐‑]")
-_APOSTROPHES = frozenset("'’ʼ")
+_SEP_RE = re.compile(r"[ ]|['’ʼ]|[-‐‑]")  # noqa: RUF001
+_APOSTROPHES = frozenset("'’ʼ")  # noqa: RUF001
 _LANG_SPLIT_RE = re.compile(r"[/,;+ ]+")
 
 # Name particles; they carry no name signal of their own but stay inside a surface.

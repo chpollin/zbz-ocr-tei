@@ -7,11 +7,9 @@ language model; ids always come from the curated list.
 Two public functions:
 
     build_lexicon(entities_path, cache_path, legacy_path=None, review_path=None) -> dict
-        Merges the curated list `data/entities/all_entities.json`, the lobid cache
-        `data/entities/gnd_cache.json` (name variants, optional) and the legacy
-        mention index `data/entities/legacy_mentions.json` (optional) into one
-        lexicon. Entries without a label are skipped, so are entries whose cache
-        answer is 404 (defective GND id).
+        Re-exported from scripts.tei.entity_lexicon, which builds the lexicon out of
+        curated list, GND cache, legacy mention index and variant review, and
+        documents the form channels behind it.
 
     find_candidates(xml_string, lexicon) -> list[dict]
         Reports mentions as raw character spans of the input string. Every candidate
@@ -68,30 +66,9 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   property of the lexicon form), then ":ambiguous" (a property of the lexicon), then
   ":suspect" (a property of the context), then ":in-plain-bibl" (a property of the
   position), then ":running-head" (a property of the page position, appended last).
-- Five derived-form channels close gaps of the facsimile-adjudicated
-  evaluation. Each registers a further spelling of a form the entity already carries,
-  and each is worklist-only: the suffix sits on the lexicon rule, which fixes the tier
-  at 2 (`_form_tier`); the speaker rule ignores such forms; and a spelling the lexicon
-  already reads at tier 1, a surname or a tier-1 base form, is left untouched.
-    * ":acronym-case", an all-caps one-token organisation of at least MIN_ACRONYM_LEN
-      letters also matches its capitalized spelling ("l'Unesco" beside "UNESCO");
-    * ":qualifier-strip", a form with a trailing parenthetical qualifier also matches
-      without it ("Le populaire (Zeitung, Paris)" as "Le populaire"). The head passes
-      the distinctiveness test of the org-token rule, because the channel also produces
-      ordinary German words ("Bund" out of a disambiguated organisation name);
-    * ":place-adjective", a two-token organisation whose second token stands in
-      PLACE_ADJECTIVES also matches the inverted German form ("Universitaet Genf"
-      reached through "Genfer Universitaet"); the table is static and small, no
-      morphology is generated;
-    * ":initials", a person headword also matches its dotted initials ("K.J." and
-      "K. J." for "Jaspers, Karl"), which is how interview transcripts label the
-      speaker. Initials several persons share become a multi-owner candidate.
-    * ":subtitle-join", a one-token work title joins each of its own multi-word
-      forms as "Title. Subtitle" ("Nietzsche. Einfuehrung in das Verstaendnis
-      seines Philosophierens"), so the full printed title reaches the worklist as
-      one span instead of a truncated tier-1 wrap of the subtitle (doc 650).
-  The channels read the forms that were actually registered, so every earlier gate
-  binds them as well; a cache form the variant review rejected has no derived form.
+- Five derived-form channels close gaps of the facsimile-adjudicated evaluation. They
+  are worklist-only by construction and catalogued in scripts.tei.entity_lexicon; the
+  scan reads them as a lexicon rule that carries a suffix.
 - The adjudicated precision guards (E109) demote a tier-1 hit to the worklist on the
   deterministic signals of the confirmed error classes of the 2026-08-12 evaluation:
   a hyphen directly at the span border (compound, "UNESCO-Kommission"), a citation
@@ -101,34 +78,16 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   case-tolerant work title ("die Mauer"). An internal particle bridges a person form
   to its own surname instead ("Saint Ignace de Loyola" as one span). Every signal is
   grown from adjudicated cases only, never by guessing.
-- Person labels without a forename (mononyms such as "Platon") reach no tier-1 rule;
-  they enter the surname index and can only surface as tier 2.
 - The speaker rule compares the slot text verbatim (after stripping surrounding
   punctuation). Honorific prefixes ("Mlle Hersch") therefore fall through to the
   general surname rules; whether ZBZ wants the honorific inside the element is an
   open modelling point.
-- Single-token work titles need at least three characters to enter the lexicon at
-  all, otherwise the worklist fills with noise. Every such candidate carries the
-  typographic pre-sorting `evidence`: "typographic" when the span sits completely
-  inside an `hi`, when quotation marks or guillemets enclose it directly, or when a
-  possessive stands right in front of it (POSSESSIVES), else "none". Both stay tier 2
-  and no class is dropped; the field is the measurement basis for that decision.
-- A surname taken from a cache or legacy variant enters the surname index only when
-  it passes the same distinctiveness test the org-token rule states (at least four
-  characters, capitalized). Curated headwords are registered unguarded, so the test
-  only filters variant artifacts, the transliteration fragments lobid carries
-  ("Ma, Kesi" for Marx, "Big, abbe" for Voltaire). Forename-shaped variants
-  ("Pierre") pass it and stay as tier-2 noise for the judge stage.
-- Variants made only of dotted initials ("J. H." for Pestalozzi) never enter the
-  full-name channel; as tier-1 forms they would claim unrelated initials
-  document-wide (the doc-1220 pilot finding). The initials of a headword reach the
-  worklist through the ":initials" channel and nothing beyond it.
-- A legacy surface form that its bearer's own record does not corroborate stays a
-  candidate source but reaches only tier 2, with the rule "legacy-form", and never
-  enters the surname index. The legacy index was harvested from the gold references,
-  so its uncorroborated pairings would both leak gold into tier 1 and carry the
-  known poisoning ("Jérémie" filed under Jaspers). Corroboration is the shared
-  predicate `legacy_form_is_covered`, which `entity_lint` reports as warnings.
+- Every one-word work title candidate carries the typographic pre-sorting `evidence`:
+  "typographic" when the span sits completely inside an `hi`, when quotation marks or
+  guillemets enclose it directly, or when a possessive stands right in front of it
+  (POSSESSIVES), else "none". Both stay tier 2 and no class is dropped; the field is
+  the measurement basis for that decision. The minimum length such a title needs to
+  enter the lexicon at all is a lexicon rule (scripts.tei.entity_lexicon).
 - A bare or anchored surname drops to tier 2 with the rule suffix ":suspect" on any
   homograph signal: a lowercase twin of the word in the same document, membership in
   FUNCTION_WORDS, an adjacent hyphen, or an adjacent unknown capitalized word. The
@@ -169,47 +128,40 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
 from __future__ import annotations
 
 import html
-import json
 import re
-import unicodedata
 from bisect import bisect_left, bisect_right
 from collections.abc import Iterator
 from dataclasses import dataclass, replace
-from pathlib import Path
 
+# The lexicon side lives in entity_lexicon; the names it owns stay importable from
+# here, which is the import surface of the pipeline scripts and the test suite.
+# The `X as X` form marks the names only re-exported, unused inside this module.
+from scripts.tei.entity_lexicon import (
+    _WORD_RUN_RE,
+    FORM_SOURCES as FORM_SOURCES,
+    MIN_TOKEN_LEN as MIN_TOKEN_LEN,
+    PLACE_ADJECTIVES as PLACE_ADJECTIVES,
+    TIER_BY_RULE,
+    _collapse as _collapse,
+    _form_tier,
+    _is_initials_only as _is_initials_only,
+    _is_word,
+    _is_word_at,
+    _word_end,
+    build_lexicon as build_lexicon,
+    legacy_form_is_covered as legacy_form_is_covered,
+    legacy_names as legacy_names,
+    normalize_gid as normalize_gid,
+)
 from scripts.tei.running_heads import head_spans
 
 SENTINEL = "\x00"
 CONTEXT_RADIUS = 40
-MIN_TOKEN_LEN = 4
-MIN_SHORT_TITLE_LEN = 3
-
-TIER_BY_RULE = {
-    "full-name": 1,
-    "variant-full-name": 1,
-    "initial-surname": 1,
-    "anchored-surname": 1,
-    "caps-full-name": 1,
-    "org-name": 1,
-    "org-variant": 1,
-    "org-token": 1,
-    "work-title": 1,
-    "work-variant": 1,
-    "speaker": 1,
-    "bare-surname": 2,
-    "ambiguous-surname": 2,
-    "caps-surname": 2,
-    "short-title": 2,
-    "crosses-markup": 2,
-    "legacy-form": 2,
-    "adjective-form": 2,
-}
 
 PLAIN_BIBL_SUFFIX = ":in-plain-bibl"
 AMBIGUOUS_SUFFIX = ":ambiguous"
 SUSPECT_SUFFIX = ":suspect"
 RUNNING_HEAD_SUFFIX = ":running-head"
-SUBTITLE_JOIN_SUFFIX = ":subtitle-join"
 
 # Tier-1 person rules the citation-frame, container and particle logic applies to.
 _PERSON_FULL_RULES = frozenset({
@@ -240,39 +192,12 @@ _PAREN_AFTER_RE = re.compile(r" ?\(([^)]{0,60})\)")
 
 _WORD_BEFORE_RE = re.compile(r"(\S+) $")
 
-# Derived-form channels. Each one registers a further spelling of a form the entity
-# already carries; the suffix sits on the lexicon rule itself, which makes every such
-# form tier 2 by construction (_form_tier), so no channel here can auto-mark.
-ACRONYM_CASE_SUFFIX = ":acronym-case"
-QUALIFIER_SUFFIX = ":qualifier-strip"
-PLACE_ADJECTIVE_SUFFIX = ":place-adjective"
-INITIALS_SUFFIX = ":initials"
-
-MIN_ACRONYM_LEN = 4
-
-# Place adjectives of the adjectival inversion ("Universitaet Genf" reached through
-# "Genfer Universitaet"). A static table rather than generative morphology; Lausanne
-# has no German adjective and therefore no entry. Keys are compared in NFC, because
-# the curated list carries its umlauts decomposed.
-PLACE_ADJECTIVES = {
-    "Genf": "Genfer",
-    "Zürich": "Zürcher",
-    "Basel": "Basler",
-    "Bern": "Berner",
-    "Luzern": "Luzerner",
-}
-
-# Where the matched form comes from. "surname-index" is the curated headword's bare
-# surname, which is an index entry rather than a form of its own; a surname taken from
-# a variant reports that variant instead ("Mayer, Gertrud" behind a hit on "Mayer").
-FORM_SOURCES = ("headword", "cache-variant", "legacy", "surname-index")
-
 EVIDENCE_TYPOGRAPHIC = "typographic"
 EVIDENCE_NONE = "none"
 
 # Typographic evidence of a one-word work title: quotation marks of every shape the
 # corpus carries, and the possessives that mark a following noun as a titled work.
-QUOTE_CHARS = frozenset("\"'«»‹›‚“”„‘’")
+QUOTE_CHARS = frozenset("\"'«»‹›‚“”„‘’")  # noqa: RUF001
 POSSESSIVES = frozenset({
     "sa", "son", "ses", "seine", "seiner", "his", "her", "sua", "suo",
 })
@@ -304,10 +229,6 @@ COVER_FIELDS = ("Zeitschrift:", "Herausgeber:", "Band:", "Heft:")
 COVER_FIELD_MIN = 3
 CREDIT_PREFIXES = ("Porträts:", "Fotos:")
 
-_CATEGORY_BY_LIST = {"persons": "person", "organisations": "organisation", "works": "work"}
-_LABEL_FIELD = {"persons": "name", "organisations": "orgName", "works": "title"}
-_LEGACY_KEY = {"persons": "persons", "organisations": "organizations", "works": "works"}
-
 # Adjective derivations of a name (Freudschen, freudien, nietzschiano); longest
 # first, so the longer ending wins over its own prefix.
 _ADJECTIVE_SUFFIXES = (
@@ -317,12 +238,10 @@ _ADJECTIVE_SUFFIXES = (
 
 _TOKEN_RE = re.compile(r"<!--.*?-->|<\?.*?\?>|<![^>]*>|</?[A-Za-z][^>]*>", re.DOTALL)
 _PB_RE = re.compile(r"<pb\b[^>]*/?>", re.DOTALL)
-_WORD_RUN_RE = re.compile(r"\w+")
 _TAG_RE = re.compile(r"<[^>]*>")
 _NAME_RE = re.compile(r"^</?([A-Za-z][\w.:-]*)")
 _ATTR_RE = re.compile(r"([\w.:-]+)\s*=\s*(\"([^\"]*)\"|'([^']*)')")
 _ENTITY_RE = re.compile(r"&(?:#[0-9]+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);")
-_QUALIFIER_RE = re.compile(r"^(.*?)\s*\([^()]*\)$")
 _LB_RE = re.compile(r"<lb\b[^>]*/?>", re.DOTALL)
 _TRAILING_MARKUP_RE = re.compile(r"(?:\s|<lb\b[^>]*/?>)+$", re.DOTALL)
 
@@ -375,645 +294,6 @@ def iter_tags(fragment: str) -> Iterator[str]:
     """Yield the markup tokens of a raw XML fragment (used to check surfaces)."""
     for match in _TAG_RE.finditer(fragment):
         yield match.group(0)
-
-
-# --- lexicon ----------------------------------------------------------------------
-
-
-def build_lexicon(
-    entities_path: Path | str,
-    cache_path: Path | str,
-    legacy_path: Path | str | None = None,
-    review_path: Path | str | None = None,
-) -> dict:
-    """Build the matching lexicon from list, GND cache and legacy mention index.
-
-    The list is a trust boundary and must exist; cache and legacy index are optional
-    and simply contribute fewer name forms when missing. The returned dict carries
-    `entries` (gid -> record), `forms` (form string -> owners as
-    (gid, category, rule, source)), `by_first_word` (first word -> forms, longest
-    first), `lower_by_first_word` (the same index lowercased and reduced to the
-    multi-token forms, which is the case-tolerant channel), `surnames` (surname ->
-    gids), `surname_forms` (surname -> gid -> (form, source), the provenance of every
-    surname entry), the all-caps indexes
-    `caps_forms` / `caps_by_first_word` / `caps_surnames` / `caps_surname_forms`,
-    `legacy_demoted` (the (gid, form) pairs the bearer's record does not corroborate),
-    `review_suspect` (the (gid, form) pairs the variant review holds back at tier 2),
-    `skipped` (counters) and `sources` (the input paths).
-
-    The derived-form channels run as a second pass over the finished base lexicon, so
-    they see every entity and displace none; their catalogue is in the module docstring.
-
-    `review_path` names the operator-gated variant_review.json: a cache form with the
-    verdict `reject` never enters the lexicon (neither as full form nor via the surname
-    index), a `suspect` form enters but yields tier-2 candidates only, and a cache form
-    the review does not know counts as suspect until the next review run. The review
-    binds only the cache channel; curated headwords and legacy forms pass unfiltered.
-    """
-    entities = _read_json(entities_path, required=True) or {}
-    cache = _read_json(cache_path) or {}
-    cache_entries = cache.get("entries", {}) if isinstance(cache, dict) else {}
-    legacy_index = legacy_names(_read_json(legacy_path)) if legacy_path else {}
-    review = _read_json(review_path) if review_path else None
-
-    forms: dict[str, list[tuple[str, str, str, str]]] = {}
-    surnames: dict[str, set[str]] = {}
-    surname_forms: dict[str, dict[str, tuple[str, str]]] = {}
-    entries: dict[str, dict] = {}
-    legacy_demoted: list[tuple[str, str]] = []
-    review_suspect: set[tuple[str, str]] = set()
-    skipped = {"no_label": 0, "gnd_404": 0, "short_org_token": 0, "duplicate_gid": 0,
-               "review_reject": 0}
-
-    for list_key, category in _CATEGORY_BY_LIST.items():
-        for raw in entities.get(list_key, []) or []:
-            gid = str(raw.get("GND_id") or "").strip()
-            label = _collapse(str(raw.get(_LABEL_FIELD[list_key]) or ""))
-            if not gid or not label:
-                skipped["no_label"] += 1
-                continue
-            cached = cache_entries.get(gid) or cache_entries.get(normalize_gid(gid)) or {}
-            if cached.get("http_status") == 404:
-                skipped["gnd_404"] += 1
-                continue
-            if gid in entries:
-                skipped["duplicate_gid"] += 1
-                continue
-            entries[gid] = {
-                "gid": gid,
-                "category": category,
-                "label": label,
-                "author_gnd_id": str(raw.get("author_gnd_id") or "") or None,
-            }
-            legacy = legacy_index.get(normalize_gid(gid), ())
-            corroborated, demoted = _split_legacy(legacy, label, cached)
-            variants = _variants(cached, corroborated)
-            suspect_variants: tuple[tuple[str, str], ...] = ()
-            if review is not None:
-                variants, suspect_variants = _filter_reviewed(
-                    review, gid, category, variants, skipped
-                )
-            if category == "person":
-                _add_person(forms, surnames, surname_forms, gid, label, variants)
-            elif category == "organisation":
-                _add_org(forms, gid, label, variants, skipped)
-            else:
-                _add_work(forms, gid, label, variants)
-            for form, source in suspect_variants:
-                added = _capture_added(forms, gid, lambda: _add_suspect_variant(
-                    forms, surnames, surname_forms, gid, category, label, form, source,
-                    skipped,
-                ))
-                for new_form in added:
-                    review_suspect.add((gid, new_form))
-                    upper = new_form.upper()
-                    if (category == "person" and len(new_form.split()) >= 2
-                            and len(upper) == len(new_form)):
-                        review_suspect.add((gid, upper))
-            for form in demoted:
-                legacy_demoted.append((gid, form))
-                _add_legacy_form(forms, gid, category, form)
-
-    for gid, entry in entries.items():
-        _add_derived(forms, surnames, gid, entry["category"], entry["label"])
-
-    caps_forms = _caps_index(forms)
-    return {
-        "entries": entries,
-        "forms": {form: tuple(sorted(owners)) for form, owners in forms.items()},
-        "by_first_word": _first_word_index(forms),
-        "lower_by_first_word": _first_word_index(forms, fold=True),
-        "surnames": {name: tuple(sorted(gids)) for name, gids in surnames.items()},
-        "surname_forms": surname_forms,
-        "caps_forms": {form: tuple(sorted(owners)) for form, owners in caps_forms.items()},
-        "caps_by_first_word": _first_word_index(caps_forms),
-        "caps_surnames": _caps_surnames(surnames),
-        "caps_surname_forms": _caps_surname_forms(surname_forms),
-        "legacy_demoted": tuple(legacy_demoted),
-        "review_suspect": frozenset(review_suspect),
-        "skipped": skipped,
-        "sources": {
-            "entities": str(entities_path),
-            "cache": str(cache_path),
-            "legacy": str(legacy_path) if legacy_path else None,
-            "review": str(review_path) if review is not None else None,
-            "cache_retrieved": cache.get("retrieved") if isinstance(cache, dict) else None,
-        },
-    }
-
-
-_REVIEW_LIST_KEY = {"person": "persons", "organisation": "organisations", "work": "works"}
-
-
-def _filter_reviewed(
-    review: dict,
-    gid: str,
-    category: str,
-    variants: tuple[tuple[str, str], ...],
-    skipped: dict[str, int],
-) -> tuple[tuple[tuple[str, str], ...], tuple[tuple[str, str], ...]]:
-    """Split the cache channel by verdict: reject drops, suspect (or unreviewed) demotes."""
-    verdicts = ((review.get(_REVIEW_LIST_KEY[category]) or {}).get(gid) or {}).get(
-        "verdicts"
-    ) or {}
-    kept: list[tuple[str, str]] = []
-    suspect: list[tuple[str, str]] = []
-    for form, source in variants:
-        if source != "cache-variant":
-            kept.append((form, source))
-            continue
-        verdict = (verdicts.get(form) or {}).get("verdict")
-        if verdict == "reject":
-            skipped["review_reject"] += 1
-        elif verdict == "approve":
-            kept.append((form, source))
-        else:
-            suspect.append((form, source))
-    return tuple(kept), tuple(suspect)
-
-
-def _add_suspect_variant(
-    forms: dict[str, list[tuple[str, str, str, str]]],
-    surnames: dict[str, set[str]],
-    surname_forms: dict[str, dict[str, tuple[str, str]]],
-    gid: str,
-    category: str,
-    label: str,
-    form: str,
-    source: str,
-    skipped: dict[str, int],
-) -> None:
-    """Register one suspect cache form through the regular per-category derivation."""
-    if category == "person":
-        _add_person_variant(forms, surnames, surname_forms, gid, form, source)
-    elif category == "organisation":
-        _add_org(forms, gid, label, ((form, source),), skipped)
-    else:
-        _add_work(forms, gid, label, ((form, source),))
-
-
-def _capture_added(
-    forms: dict[str, list[tuple[str, str, str, str]]],
-    gid: str,
-    adder,
-) -> list[str]:
-    """Forms `adder` newly registers for `gid`; owner dedup makes re-adds invisible."""
-    before = {form for form, owners in forms.items() if any(o[0] == gid for o in owners)}
-    adder()
-    return [
-        form
-        for form, owners in forms.items()
-        if form not in before and any(o[0] == gid for o in owners)
-    ]
-
-
-def _first_word_index(forms: dict[str, list], fold: bool = False) -> dict[str, tuple[str, ...]]:
-    """First word -> the forms starting with it, longest first (the scan tries in order).
-
-    With `fold` the key is lowercased and only the forms of at least two tokens enter,
-    which is the index of the case-tolerant channel.
-    """
-    buckets: dict[str, list[str]] = {}
-    for form in forms:
-        if fold and len(form.split()) < 2:
-            continue
-        word = _first_word(form)
-        buckets.setdefault(word.lower() if fold else word, []).append(form)
-    return {
-        word: tuple(sorted(bucket, key=lambda form: (-len(form), form)))
-        for word, bucket in buckets.items()
-    }
-
-
-def _caps_index(forms: dict[str, list[tuple[str, str, str, str]]]) -> dict[str, list]:
-    """All-caps projection of the person full names (at least two tokens)."""
-    caps: dict[str, list[tuple[str, str, str, str]]] = {}
-    for form, owners in forms.items():
-        upper = form.upper()
-        if len(upper) != len(form) or len(form.split()) < 2:
-            continue
-        for gid, category, rule, source in owners:
-            if category == "person" and rule in ("full-name", "variant-full-name"):
-                _add_form(caps, upper, gid, category, "caps-full-name", source)
-    return caps
-
-
-def _caps_surnames(surnames: dict[str, set[str]]) -> dict[str, tuple[str, ...]]:
-    caps: dict[str, set[str]] = {}
-    for surname, gids in surnames.items():
-        upper = surname.upper()
-        if len(upper) == len(surname) and len(upper) > 1:
-            caps.setdefault(upper, set()).update(gids)
-    return {name: tuple(sorted(gids)) for name, gids in caps.items()}
-
-
-def _caps_surname_forms(
-    surname_forms: dict[str, dict[str, tuple[str, str]]],
-) -> dict[str, dict[str, tuple[str, str]]]:
-    """Provenance of the all-caps surnames, taken from the mixed-case entries."""
-    caps: dict[str, dict[str, tuple[str, str]]] = {}
-    for surname, origins in surname_forms.items():
-        upper = surname.upper()
-        if len(upper) == len(surname) and len(upper) > 1:
-            for gid, origin in origins.items():
-                caps.setdefault(upper, {}).setdefault(gid, origin)
-    return caps
-
-
-def _read_json(path: Path | str | None, required: bool = False) -> dict | None:
-    if path is None:
-        return None
-    file_path = Path(path)
-    if not file_path.exists():
-        if required:
-            raise FileNotFoundError(f"entity list not found: {file_path}")
-        return None
-    return json.loads(file_path.read_text(encoding="utf-8"))
-
-
-def legacy_names(legacy: dict | None) -> dict[str, tuple[str, ...]]:
-    """Invert the legacy index into normalized gid -> name forms."""
-    if not legacy:
-        return {}
-    out: dict[str, list[str]] = {}
-    for legacy_key in _LEGACY_KEY.values():
-        for raw_gid, payload in (legacy.get(legacy_key) or {}).items():
-            names = payload.get("names") if isinstance(payload, dict) else None
-            if not names:
-                continue
-            out.setdefault(normalize_gid(str(raw_gid)), []).extend(str(n) for n in names)
-    return {gid: tuple(names) for gid, names in out.items()}
-
-
-def _dedup(values) -> tuple[str, ...]:
-    """Whitespace-normalized, order-preserving deduplication; empty forms drop out."""
-    seen: dict[str, None] = {}
-    for value in values:
-        form = _collapse(str(value or ""))
-        if form:
-            seen.setdefault(form, None)
-    return tuple(seen)
-
-
-def _variants(cached: dict, extra: tuple[str, ...] = ()) -> tuple[tuple[str, str], ...]:
-    """(form, source) pairs beyond the headword; the first source of a form wins."""
-    seen: dict[str, str] = {}
-    for value in [cached.get("preferred_name"), *(cached.get("variant_names") or [])]:
-        form = _collapse(str(value or ""))
-        if form:
-            seen.setdefault(form, "cache-variant")
-    for value in extra:
-        form = _collapse(str(value or ""))
-        if form:
-            seen.setdefault(form, "legacy")
-    return tuple(seen.items())
-
-
-def normalize_gid(gid: str) -> str:
-    """Drop the GND check character so the legacy index (without it) joins."""
-    return gid.split("-", 1)[0].strip()
-
-
-def _fold(text: str) -> str:
-    """Comparison form: diacritics removed, whitespace collapsed, case folded."""
-    decomposed = unicodedata.normalize("NFKD", text)
-    stripped = "".join(char for char in decomposed if not unicodedata.combining(char))
-    return " ".join(stripped.split()).casefold()
-
-
-def _fold_tokens(text: str) -> frozenset[str]:
-    return frozenset(_WORD_RUN_RE.findall(_fold(text)))
-
-
-def legacy_form_is_covered(form: str, label: str, cached: dict | None) -> bool:
-    """True when the bearer's own record corroborates a legacy surface form.
-
-    Corroboration means the folded form is a substring of the list label, the GND
-    preferred name or one of its variants, or that its name tokens are a subset of
-    one of those; the token test carries the reordered and all-caps forms the legacy
-    index harvested from the references ("JASPERS Karl" for "Jaspers, Karl").
-    Uncorroborated pairings are the poisoning class ("Jérémie" under Jaspers).
-    """
-    key = _fold(form)
-    if not key:
-        return True
-    tokens = _fold_tokens(form)
-    references = [label]
-    if cached:
-        references.append(str(cached.get("preferred_name") or ""))
-        references.extend(str(value) for value in (cached.get("variant_names") or []))
-    for reference in references:
-        if not reference:
-            continue
-        if key in _fold(reference) or tokens <= _fold_tokens(reference):
-            return True
-    return False
-
-
-def _split_legacy(
-    legacy: tuple[str, ...],
-    label: str,
-    cached: dict,
-) -> tuple[tuple[str, ...], tuple[str, ...]]:
-    """Split the legacy forms of one entity into corroborated and demoted ones."""
-    corroborated, demoted = [], []
-    for form in _dedup(legacy):
-        target = corroborated if legacy_form_is_covered(form, label, cached) else demoted
-        target.append(form)
-    return tuple(corroborated), tuple(demoted)
-
-
-def _add_legacy_form(
-    forms: dict[str, list[tuple[str, str, str, str]]],
-    gid: str,
-    category: str,
-    form: str,
-) -> None:
-    """Register a demoted legacy form: tier-2 candidate source, never a surname."""
-    tokens = form.split()
-    if len(tokens) == 1 and not _is_distinctive_token(tokens[0]):
-        return
-    _add_form(forms, form, gid, category, "legacy-form", "legacy")
-
-
-def _add_form(
-    forms: dict[str, list[tuple[str, str, str, str]]],
-    form: str,
-    gid: str,
-    category: str,
-    rule: str,
-    source: str,
-) -> None:
-    form = _collapse(form)
-    if not form or not _first_word(form):
-        return
-    owners = forms.setdefault(form, [])
-    if any(owner[0] == gid for owner in owners):
-        return
-    owners.append((gid, category, rule, source))
-
-
-def _register_surname(
-    surnames: dict[str, set[str]],
-    surname_forms: dict[str, dict[str, tuple[str, str]]],
-    surname: str,
-    gid: str,
-    form: str,
-    source: str,
-) -> None:
-    """Add a surname to the index and remember the form that put it there."""
-    surnames.setdefault(surname, set()).add(gid)
-    surname_forms.setdefault(surname, {}).setdefault(gid, (form, source))
-
-
-def _split_person_label(label: str) -> tuple[str, str]:
-    """Split a headword into (surname, forenames); inverted form wins."""
-    if "," in label:
-        surname, _, forenames = label.partition(",")
-        return surname.strip(), _collapse(forenames)
-    tokens = label.split()
-    if len(tokens) == 1:
-        return tokens[0], ""
-    return tokens[-1], " ".join(tokens[:-1])
-
-
-def _add_person(
-    forms: dict[str, list[tuple[str, str, str, str]]],
-    surnames: dict[str, set[str]],
-    surname_forms: dict[str, dict[str, tuple[str, str]]],
-    gid: str,
-    label: str,
-    variants: tuple[tuple[str, str], ...],
-) -> None:
-    surname, forenames = _split_person_label(label)
-    if surname:
-        _register_surname(surnames, surname_forms, surname, gid, surname, "surname-index")
-    if surname and forenames:
-        _add_form(forms, f"{forenames} {surname}", gid, "person", "full-name", "headword")
-        _add_form(forms, label, gid, "person", "full-name", "headword")
-        initial = forenames[0]
-        if initial.isalpha():
-            _add_form(forms, f"{initial}. {surname}", gid, "person", "initial-surname",
-                      "headword")
-    for variant, source in variants:
-        _add_person_variant(forms, surnames, surname_forms, gid, variant, source)
-
-
-def _add_person_variant(
-    forms: dict[str, list[tuple[str, str, str, str]]],
-    surnames: dict[str, set[str]],
-    surname_forms: dict[str, dict[str, tuple[str, str]]],
-    gid: str,
-    variant: str,
-    source: str,
-) -> None:
-    if "," in variant:
-        surname, forenames = _split_person_label(variant)
-        if _is_distinctive_token(surname) and not _is_initials_only(surname):
-            _register_surname(surnames, surname_forms, surname, gid, variant, source)
-        if surname and forenames and not _is_initials_only(f"{forenames} {surname}"):
-            _add_form(forms, f"{forenames} {surname}", gid, "person", "variant-full-name",
-                      source)
-            _add_form(forms, variant, gid, "person", "variant-full-name", source)
-        return
-    tokens = variant.split()
-    if _is_initials_only(variant):
-        return
-    if len(tokens) >= 2:
-        _add_form(forms, variant, gid, "person", "variant-full-name", source)
-    elif tokens and _is_distinctive_token(tokens[0]):
-        _register_surname(surnames, surname_forms, tokens[0], gid, variant, source)
-
-
-def _add_org(
-    forms: dict[str, list[tuple[str, str, str, str]]],
-    gid: str,
-    label: str,
-    variants: tuple[tuple[str, str], ...],
-    skipped: dict[str, int],
-) -> None:
-    for rule, form, source in _labelled_forms(label, variants, "org-name", "org-variant"):
-        tokens = form.split()
-        if len(tokens) >= 2:
-            _add_form(forms, form, gid, "organisation", rule, source)
-        elif tokens and _is_distinctive_token(tokens[0]):
-            _add_form(forms, tokens[0], gid, "organisation", "org-token", source)
-        else:
-            skipped["short_org_token"] += 1
-
-
-def _labelled_forms(
-    label: str,
-    variants: tuple[tuple[str, str], ...],
-    head_rule: str,
-    variant_rule: str,
-) -> Iterator[tuple[str, str, str]]:
-    """(rule, form, source) for the headword and every variant of an org or work."""
-    yield head_rule, label, "headword"
-    for form, source in variants:
-        yield variant_rule, form, source
-
-
-def _is_distinctive_token(token: str) -> bool:
-    """One-token names carry a mention only when long enough and capitalized."""
-    return len(token) >= MIN_TOKEN_LEN and (token[0].isupper() or token.isupper())
-
-
-_INITIAL_TOKEN_RE = re.compile(r"[^\W\d_]{1,2}\.|[^\W\d_]")
-
-
-def _is_initials_only(form: str) -> bool:
-    """True for forms made only of dotted initials or bare single letters.
-
-    lobid carries such variants ("J. H." for Pestalozzi, "B. P." for Pascal); as
-    full-name forms they would mislabel unrelated initials document-wide. Dotless
-    two-letter words ("Mo Ti") are real transliterated name forms and stay.
-    """
-    tokens = form.replace(".", ". ").split()
-    return bool(tokens) and all(_INITIAL_TOKEN_RE.fullmatch(t) for t in tokens)
-
-
-def _add_work(
-    forms: dict[str, list[tuple[str, str, str, str]]],
-    gid: str,
-    label: str,
-    variants: tuple[tuple[str, str], ...],
-) -> None:
-    for rule, form, source in _labelled_forms(label, variants, "work-title", "work-variant"):
-        tokens = form.split()
-        if len(tokens) >= 2:
-            _add_form(forms, form, gid, "work", rule, source)
-        elif tokens and len(tokens[0]) >= MIN_SHORT_TITLE_LEN:
-            _add_form(forms, tokens[0], gid, "work", "short-title", source)
-
-
-# --- derived forms (worklist-only recall channels) ---------------------------------
-
-
-def _add_derived(
-    forms: dict[str, list[tuple[str, str, str, str]]],
-    surnames: dict[str, set[str]],
-    gid: str,
-    category: str,
-    label: str,
-) -> None:
-    """Register the derived spellings of one entity; every one of them is tier 2.
-
-    The channels read the forms the entity already registered instead of its raw
-    inputs, which keeps them behind every earlier gate: a cache form the variant review
-    rejected never entered `forms`, so it cannot return through a derived form either.
-    The pass runs after the base forms of the whole list, so a derived form neither
-    shadows a listed spelling (the owner dedup in `_add_form` keeps the first
-    registration) nor displaces a reading that can reach tier 1 (`_reaches_tier1`).
-    """
-    own = _own_forms(forms, gid)
-    for form, rule, source in own:
-        for derived, suffix in _derived_forms(form, category):
-            if not _reaches_tier1(forms, surnames, derived):
-                _add_form(forms, derived, gid, category, rule + suffix, source)
-    for derived in _initials_forms(label, category):
-        if not _reaches_tier1(forms, surnames, derived):
-            _add_form(forms, derived, gid, category, "full-name" + INITIALS_SUFFIX,
-                      "headword")
-    # Subtitle join: a one-token work title printed as "Title. Subtitle" (doc 650,
-    # "Nietzsche. Einfuehrung in das Verstaendnis seines Philosophierens"). The
-    # joined form outranks the subtitle-only variant by length, so the full printed
-    # title reaches the worklist as one span instead of a truncated tier-1 wrap.
-    if category == "work":
-        singles = [form for form, _, _ in own if len(form.split()) == 1]
-        multis = [(form, source) for form, _, source in own if len(form.split()) > 1]
-        for short in singles:
-            for long_form, source in multis:
-                joined = f"{short}. {long_form}"
-                if not _reaches_tier1(forms, surnames, joined):
-                    _add_form(forms, joined, gid, category,
-                              "work-title" + SUBTITLE_JOIN_SUFFIX, source)
-
-
-def _reaches_tier1(
-    forms: dict[str, list[tuple[str, str, str, str]]],
-    surnames: dict[str, set[str]],
-    form: str,
-) -> bool:
-    """True when the lexicon already reads `form` at tier 1, so no channel may take it.
-
-    A surname counts, because an anchor lifts it to tier 1 inside a document. The
-    derived channels add recall on the worklist and must never cost an auto-mark, and
-    the scan prefers the form index over the surname index.
-    """
-    if form in surnames:
-        return True
-    return any(_form_tier(rule) == 1 for _, _, rule, _ in forms.get(form, ()))
-
-
-def _own_forms(
-    forms: dict[str, list[tuple[str, str, str, str]]],
-    gid: str,
-) -> list[tuple[str, str, str]]:
-    """(form, rule, source) of the base forms one entity owns; derived ones excluded."""
-    out: list[tuple[str, str, str]] = []
-    for form, owners in forms.items():
-        for owner_gid, _, rule, source in owners:
-            if owner_gid == gid and ":" not in rule:
-                out.append((form, rule, source))
-                break
-    return out
-
-
-def _derived_forms(form: str, category: str) -> Iterator[tuple[str, str]]:
-    """(derived form, rule suffix) of the shape-driven channels of one form.
-
-    Acronym case: an all-caps single-token organisation also matches its capitalized
-    spelling, the corpus writing "l'Unesco" beside "UNESCO". Qualifier strip: a form
-    with a trailing parenthetical also matches without it ("Le Populaire (Paris)" as
-    "Le Populaire"). Place adjective: a two-token organisation whose second token is a
-    listed place also matches the inverted German form ("Genfer Universitaet").
-    """
-    tokens = form.split()
-    if (category == "organisation" and len(tokens) == 1 and form.isalpha()
-            and form.isupper() and len(form) >= MIN_ACRONYM_LEN):
-        yield form.capitalize(), ACRONYM_CASE_SUFFIX
-    head = _strip_qualifier(form)
-    if head:
-        yield head, QUALIFIER_SUFFIX
-    if category == "organisation" and len(tokens) == 2:
-        adjective = PLACE_ADJECTIVES.get(unicodedata.normalize("NFC", tokens[1]))
-        if adjective:
-            yield f"{adjective} {tokens[0]}", PLACE_ADJECTIVE_SUFFIX
-
-
-def _strip_qualifier(form: str) -> str:
-    """Head of a form with a trailing parenthetical qualifier, else the empty string.
-
-    The head has to pass the distinctiveness test of the org-token rule, because the
-    channel also produces ordinary German words ("Bund" out of the disambiguated
-    organisation name); that those reach the worklist and nothing else is what makes
-    the channel acceptable.
-    """
-    match = _QUALIFIER_RE.match(form)
-    if match is None:
-        return ""
-    head = match.group(1).strip()
-    if len(head) < MIN_TOKEN_LEN or not any(char.isupper() for char in head):
-        return ""
-    return head
-
-
-def _initials_forms(label: str, category: str) -> tuple[str, ...]:
-    """Dotted initials of a person headword ("Jaspers, Karl" -> "K.J." and "K. J.").
-
-    Interview transcripts label the speaker with initials, which is the mention class
-    this channel reaches. Both spellings stay tier 2: initials claim unrelated
-    positions document-wide far too easily (the doc-1220 finding), and a pair several
-    persons share simply becomes a multi-owner worklist candidate.
-    """
-    if category != "person":
-        return ()
-    surname, forenames = _split_person_label(label)
-    if not (surname and forenames and surname[0].isalpha() and forenames[0].isalpha()):
-        return ()
-    initials = f"{forenames[0].upper()}.{surname[0].upper()}."
-    return (initials, initials.replace(".", ". ", 1))
 
 
 # --- zones ------------------------------------------------------------------------
@@ -1080,7 +360,7 @@ def _record_zone(
         return
     if name == "text":
         text.append((start, end))
-    elif name in ("figure", "persName", "orgName"):
+    elif name in ("figure", "persName", "orgName"):  # noqa: SIM114
         excluded.append((start, end))
     elif name == "div" and attrs.get("type") == "bibliography":
         excluded.append((start, end))
@@ -1314,7 +594,7 @@ def _scan(
             continue
         if hit.tier == 1:
             hit = _bridge_particle_surname(text, hit, lexicon)
-        if _base_rule(hit.rule) in _SUSPECT_RULES and _is_suspect(
+        if base_rule(hit.rule) in _SUSPECT_RULES and _is_suspect(
             xml, norm, hit, lexicon, lowercase_words
         ):
             hit = replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
@@ -1335,15 +615,13 @@ def _scan(
     return out
 
 
-def _base_rule(rule: str) -> str:
+def base_rule(rule: str) -> str:
     """The rule without its suffixes (derived channel, :ambiguous, :suspect, position)."""
     return rule.split(":", 1)[0]
 
 
-def _form_tier(rule: str) -> int:
-    """Tier of a lexicon rule; a derived channel carries a suffix and stays worklist."""
-    base, suffix, _ = rule.partition(":")
-    return 2 if suffix else TIER_BY_RULE[base]
+# Established import name of the suffix split (scripts.eval.entity_eval_sample).
+_base_rule = base_rule
 
 
 # --- homograph suspicion ----------------------------------------------------------
@@ -1406,7 +684,7 @@ def _tier1_guard(xml: str, norm: _Norm, hit: _Hit) -> bool:
     """
     if _hyphen_adjacent(xml, norm, hit):
         return True
-    if hit.category != "person" or _base_rule(hit.rule) not in _PERSON_FULL_RULES:
+    if hit.category != "person" or base_rule(hit.rule) not in _PERSON_FULL_RULES:
         return False
     text = norm.text
     if _EDITOR_AFTER_RE.match(text, hit.end):
@@ -1426,7 +704,7 @@ def _bridge_particle_surname(text: str, hit: _Hit, lexicon: dict) -> _Hit:
     adjudicated wrong_span of doc 2330). Only the hit's own entity may continue the
     name, so "Karl Jaspers de Marcel" never merges.
     """
-    if hit.category != "person" or _base_rule(hit.rule) not in _PERSON_FULL_RULES:
+    if hit.category != "person" or base_rule(hit.rule) not in _PERSON_FULL_RULES:
         return hit
     match = _PARTICLE_RE.match(text, hit.end)
     if match is None:
@@ -1763,7 +1041,7 @@ def _build_candidate(
         "matched_form": hit.matched_form,
         "form_source": hit.form_source,
     }
-    if _base_rule(rule) == "short-title":
+    if base_rule(rule) == "short-title":
         candidate["evidence"] = _title_evidence(norm, zones, hit, raw_start, raw_end)
     candidate["context"] = _context(norm.text, n_start, n_end)
     return candidate, max(bisect_right(norm.ends, raw_end), n_start + 1)
@@ -1818,36 +1096,3 @@ def _first_text_part(surface: str) -> str | None:
 def _context(text: str, n_start: int, n_end: int) -> str:
     window = text[max(0, n_start - CONTEXT_RADIUS):n_end + CONTEXT_RADIUS]
     return " ".join(window.replace(SENTINEL, " ").split())
-
-
-# --- small text helpers -----------------------------------------------------------
-
-
-def _collapse(value: str) -> str:
-    return " ".join(value.split())
-
-
-def _first_word(form: str) -> str:
-    """Leading run of word characters; empty when the form cannot be reached by the scan."""
-    return form[:_word_end(form, 0)]
-
-
-def _word_end(text: str, pos: int) -> int:
-    end = pos
-    while end < len(text) and _is_word(text[end]):
-        end += 1
-    return end
-
-
-def _is_word(char: str) -> bool:
-    """Word character of the scan; a superscript footnote digit separates instead.
-
-    The corpus glues footnote markers to the word they annotate, and a name in front of
-    one must end where the marker starts, exactly as it does in front of a comma. The
-    numeric-other category holds the superscripts and is therefore no word character.
-    """
-    return char.isalnum() and (char.isalpha() or unicodedata.category(char) != "No")
-
-
-def _is_word_at(text: str, pos: int) -> bool:
-    return pos < len(text) and _is_word(text[pos])

@@ -64,15 +64,6 @@
 }
 
 /* Legend */
-.eo-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1rem;
-  font-size: var(--h-sm);
-  color: var(--h-text-secondary);
-  margin-bottom: 1.2rem;
-}
-
 .eo-legend__chip {
   display: inline-flex;
   align-items: center;
@@ -199,8 +190,6 @@
   border-radius: 999px;
   padding: 0.1rem 0.55rem;
 }
-
-.eo-checked { margin: 0 0 0.8rem; font-size: var(--h-sm); }
 
 .eo-table {
   width: 100%;
