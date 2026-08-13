@@ -312,19 +312,22 @@ pipeline streams (section 3.6). Matching method, modelling rules and milestones
 live in [entity-integration.md](entity-integration.md); the sampling measurement
 of the built layer lives in [entity-evaluation.md](entity-evaluation.md).
 
-The corpus-wide complement is the overview page `docs/entities.html`. It
-answers, per object, which entities are annotated, how many mentions, and how
-certain the annotation is: auto-marked mentions against review candidates as a
-stacked bar per document, the review side broken down into its classes
-(ambiguous, suspicion signal, running head, and so on), the facsimile-adjudicated
-sample as a hand-checked badge where one exists, and the workflow status of the
-entities stream as the familiar traffic light. Each document expands into its
-entity table (label, category, counts, review classes) and links into the
-viewer's annotated reading view. The page reads
+The corpus-wide complement is the overview page `docs/entities.html`, built as
+a completeness instrument for the developer question "do we have every listed
+entity". The primary view aggregates per listed entity, including every list
+entry without a single corpus mention (sorted first by default), with
+auto-marked against review counts and the documents each entity occurs in; the
+secondary view aggregates per document with the review classes as tooltip
+chips. Certainty is carried by the two-color bar (auto-marked against review),
+the corpus totals sit on the same bar above the list, and every row links into
+the viewer's annotated reading view. The page reads
 `docs/data/entity_overview.json`, generated deterministically by
 `scripts/edition/generate_entity_overview.py` from the corpus scan and the
-mention verdict store; the closed-world gate covers its ids like every other
-mirror file.
+curated list; the closed-world gate covers its ids like every other mirror
+file. Deliberately absent after operator feedback: stat cards, intro copy,
+class-definition prose (tooltips instead), the workflow-status dot, and the
+adjudicated evaluation sample, which is measurement evidence rather than a
+record of the operator's own review.
 
 ### 3.8 Hersch Design System
 

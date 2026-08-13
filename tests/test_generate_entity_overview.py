@@ -1,8 +1,9 @@
 """Tests for scripts/edition/generate_entity_overview.py (entity overview mirror).
 
-Synthetic candidate and verdict fixtures only; the aggregation contract is pinned here:
-class assignment per rule string, per-document and per-entity counts, deterministic
-ordering, closed-world failure on an unknown gid, and byte-identical serialization.
+Synthetic candidate fixtures only; the aggregation contract is pinned here: class
+assignment per rule string, the per-entity completeness aggregation including
+zero-mention list entries, per-document counts, deterministic ordering, closed-world
+failure on an unknown gid, and byte-identical serialization.
 """
 
 from __future__ import annotations
@@ -15,6 +16,7 @@ from scripts.edition.generate_entity_overview import (
     CLASSES,
     build_overview,
     classify,
+    list_entries,
     serialize,
 )
 
@@ -22,6 +24,13 @@ from scripts.edition.generate_entity_overview import (
 def _cand(doc, gid, tier, rule, category="person", page=1):
     return {"doc": doc, "gid": gid, "tier": tier, "rule": rule,
             "category": category, "page": page}
+
+
+ENTRIES = {
+    "g1": {"label": "Jaspers, Karl", "category": "person"},
+    "g2": {"label": "UNESCO", "category": "organisation"},
+    "g3": {"label": "Nietzsche", "category": "work"},
+}
 
 
 # ---------------------------------------------------------------------------
@@ -65,71 +74,67 @@ def test_class_catalog_keys_are_unique_and_cover_classify_output():
 
 
 # ---------------------------------------------------------------------------
+# List intake
+# ---------------------------------------------------------------------------
+
+
+def test_list_entries_read_all_three_categories_and_skip_defects():
+    entries = list_entries({
+        "persons": [{"GND_id": "p1", "name": "Jaspers, Karl"},
+                    {"GND_id": "", "name": "no id"},
+                    {"GND_id": "p2", "name": ""}],
+        "organisations": [{"GND_id": "o1", "orgName": "UNESCO"}],
+        "works": [{"GND_id": "w1", "title": "Nietzsche"}],
+    })
+    assert set(entries) == {"p1", "o1", "w1"}
+    assert entries["o1"] == {"label": "UNESCO", "category": "organisation"}
+
+
+# ---------------------------------------------------------------------------
 # Aggregation
 # ---------------------------------------------------------------------------
 
 
-ALLOWED = {"g1", "g2", "g3"}
+def test_per_entity_aggregation_includes_zero_mention_entries():
+    candidates = [
+        _cand("20", "g1", 1, "full-name"),
+        _cand("20", "g1", 2, "bare-surname"),
+        _cand("30", "g1", 1, "full-name"),
+        _cand("30", "g2", 2, "org-token:suspect", category="organisation"),
+    ]
+    overview = build_overview(candidates, ENTRIES)
+    g1 = overview["entities"]["g1"]
+    assert g1["label"] == "Jaspers, Karl"
+    assert g1["auto"] == 2 and g1["review"] == 1
+    assert g1["docs"] == {"20": [1, 1], "30": [1, 0]}
+    # the completeness signal: a listed entity without a single mention stays visible
+    g3 = overview["entities"]["g3"]
+    assert g3["auto"] == 0 and g3["review"] == 0 and g3["docs"] == {}
+    totals = overview["totals"]
+    assert totals["listed_entities"] == 3
+    assert totals["entities_found"] == 2
 
 
-def test_build_overview_counts_per_document_and_entity():
+def test_per_document_aggregation_counts_and_orders():
     candidates = [
         _cand("20", "g1", 1, "full-name"),
         _cand("20", "g1", 1, "full-name"),
         _cand("20", "g1", 2, "bare-surname:ambiguous"),
         _cand("20", "g2", 2, "org-token:suspect", category="organisation"),
-        _cand("30", "g3", 1, "work-title", category="work"),
     ]
-    overview = build_overview(candidates, marks=[], allowed_gids=ALLOWED)
+    overview = build_overview(candidates, ENTRIES)
     doc20 = overview["documents"]["20"]
-    assert doc20["auto"] == 2
-    assert doc20["review"] == 2
+    assert doc20["auto"] == 2 and doc20["review"] == 2
     assert doc20["classes"] == {"ambiguous": 1, "suspect": 1}
     assert [e["gid"] for e in doc20["entities"]] == ["g1", "g2"]
     assert doc20["entities"][0] == {
         "gid": "g1", "auto": 2, "review": 1, "classes": {"ambiguous": 1},
     }
-    assert overview["documents"]["30"]["auto"] == 1
-    totals = overview["totals"]
-    assert totals["documents"] == 2
-    assert totals["auto"] == 3
-    assert totals["review"] == 2
-
-
-def test_entities_are_ordered_by_volume_then_gid():
-    candidates = [
-        _cand("20", "g2", 1, "org-name", category="organisation"),
-        _cand("20", "g1", 1, "full-name"),
-        _cand("20", "g1", 1, "full-name"),
-        _cand("20", "g3", 1, "work-title", category="work"),
-    ]
-    overview = build_overview(candidates, marks=[], allowed_gids=ALLOWED)
-    assert [e["gid"] for e in overview["documents"]["20"]["entities"]] == [
-        "g1", "g2", "g3",
-    ]
-
-
-def test_adjudicated_marks_join_per_document():
-    marks = [
-        {"doc": "20", "verdict": "correct"},
-        {"doc": "20", "verdict": "correct"},
-        {"doc": "20", "verdict": "wrong_entity"},
-        {"doc": "99", "verdict": "correct"},
-    ]
-    overview = build_overview([_cand("20", "g1", 1, "full-name")],
-                              marks=marks, allowed_gids=ALLOWED)
-    assert overview["documents"]["20"]["checked"] == {
-        "total": 3, "correct": 2, "wrong_entity": 1,
-    }
-    # a verdict for a document without candidates still surfaces
-    assert overview["documents"]["99"]["checked"]["total"] == 1
-    assert overview["totals"]["checked"]["total"] == 4
 
 
 def test_unknown_gid_fails_the_closed_world():
     with pytest.raises(ValueError, match="outside the curated list"):
-        build_overview([_cand("20", "nope", 1, "full-name")],
-                       marks=[], allowed_gids=ALLOWED)
+        build_overview([_cand("20", "nope", 1, "full-name")], ENTRIES)
 
 
 def test_serialization_is_deterministic():
@@ -137,7 +142,7 @@ def test_serialization_is_deterministic():
         _cand("20", "g1", 1, "full-name"),
         _cand("30", "g2", 2, "org-token:suspect", category="organisation"),
     ]
-    first = serialize(build_overview(candidates, [], ALLOWED))
-    second = serialize(build_overview(list(reversed(candidates)), [], ALLOWED))
+    first = serialize(build_overview(candidates, ENTRIES))
+    second = serialize(build_overview(list(reversed(candidates)), dict(ENTRIES)))
     assert first == second
     json.loads(first)

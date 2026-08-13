@@ -61,6 +61,20 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-13 Session 94 (night): overview page refocused as completeness instrument
+
+**Occasion** Operator feedback on the freshly built page: the purpose is the developer check "do we really have every listed entity", aggregated rather than exploratory, with less text; the workflow-status dot is unnecessary, and the "hand-checked" badge misled, since it showed the adjudicated evaluation sample rather than anything the operator personally reviewed.
+
+**Goal** The page answers the completeness question first, and every element the operator named leaves.
+
+**Course** The generator now aggregates per listed entity, including every list entry without a single corpus mention; the run surfaced the central finding directly, a substantial share of the curated list never matches in the corpus, visible per entry with label and id. The page opens in the entity view with the unmatched entries sorted first, a warn badge carries the found-of-listed count on the corpus bar line, and each entity expands into the documents it occurs in with viewer links; the document view stays as the secondary toggle, without status dot and without the adjudicated-sample badge, review classes as tooltip chips instead of a definitions box. The verdict-store join left the generator; the closed-world gate now also covers the entity section keys. Verified again in headless Chromium (both views, search, toggle, screenshots reviewed). Two general frontend rules were recorded in the session memory earlier the same evening: no KPI/stat cards, no intro copy; numbers belong in functional elements, explanations on demand.
+
+**Decisions** The adjudicated sample stays out of the page: it is measurement evidence (reports, verdict store), and presenting it as review progress overstated it. Per-mention operator review has no tracking mechanism yet; the per-document status pill of the viewer remains the only human-review record.
+
+**Status** Committed and pushed; generator suite, ref-invariant gate and script health green. The unmatched-entries list is the operative worklist for the completeness question, either genuinely absent from the corpus or missed by the matcher; distinguishing the two is the next measurement task.
+
+**Next steps** 1. Classify the unmatched list entries (absent in corpus against matcher gap), agent-assisted against the OCR text. 2. Redraw and remeasure on the new rules. 3. M4 frozen-rules gold run.
+
 ### 2026-08-13 Session 94 (evening): entity overview page per document
 
 **Occasion** Operator request for a frontend that answers, per object, which and how many entities are annotated and how certain the annotation is.

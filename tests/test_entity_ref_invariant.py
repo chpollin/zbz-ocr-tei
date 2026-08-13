@@ -201,7 +201,7 @@ def test_worklist_gids_point_into_the_curated_list():
 
 
 def test_overview_gids_point_into_the_curated_list():
-    """Covers every per-entity gid of the overview mirror (docs/entities.html)."""
+    """Covers the entity section keys and every per-document gid of the overview."""
     overview_path = REPO / "docs" / "data" / "entity_overview.json"
     if not overview_path.exists():
         pytest.skip("entity overview mirror not generated")
@@ -210,6 +210,10 @@ def test_overview_gids_point_into_the_curated_list():
     violations: list[tuple[Path, object, str]] = []
     seen: set[object] = set()
 
+    for gid in overview.get("entities", {}):
+        seen.add(gid)
+        if gid not in allowed:
+            violations.append((overview_path, gid, f"$.entities.{gid}"))
     for doc_id, record in overview.get("documents", {}).items():
         for index, entity in enumerate(record.get("entities", [])):
             gid = entity.get("gid")

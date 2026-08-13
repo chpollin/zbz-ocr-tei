@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css?v=4">
   <link rel="stylesheet" href="assets/css/base.css?v=7">
-  <link rel="stylesheet" href="assets/css/entity-overview.css?v=2">
+  <link rel="stylesheet" href="assets/css/entity-overview.css?v=3">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
   <main class="eo-main">
 
     <section class="eo-intro">
-      <h1>Entity annotation per document
+      <h1>Entity annotation
         <span class="badge badge--info"
               title="Preview layer: the delivered TEI carries no entity markup yet. Auto-marked mentions carry the measured precision of the annotation layer; review candidates wait on the worklist until a human or a calibrated judge decides them.">Preview layer</span>
       </h1>
@@ -50,37 +50,26 @@
       </div>
       <div class="eo-corpus__labels">
         <span class="eo-legend__chip"><span class="eo-swatch eo-swatch--auto"></span>
-          <span id="eo-corpus-label-auto">auto-marked (tier 1)</span></span>
+          <span id="eo-corpus-label-auto">auto-marked</span></span>
         <span class="eo-legend__chip"><span class="eo-swatch eo-swatch--review"></span>
-          <span id="eo-corpus-label-review">review candidates (worklist)</span></span>
-        <span class="badge badge--ok" id="eo-corpus-checked" hidden></span>
+          <span id="eo-corpus-label-review">review candidates</span></span>
+        <span class="badge badge--warn" id="eo-corpus-found">&ndash;</span>
       </div>
     </section>
 
-    <details class="eo-doc eo-classes">
-      <summary class="eo-doc__summary eo-doc__summary--single">What do the review classes mean?</summary>
-      <div class="eo-doc__body eo-legend" id="eo-class-legend"></div>
-    </details>
-
-    <section class="eo-controls" aria-label="Filter and sort">
+    <section class="eo-controls" aria-label="View, filter and sort">
+      <div class="eo-view" role="group" aria-label="View">
+        <button class="btn" id="eo-view-entities" aria-pressed="true">Entities</button>
+        <button class="btn" id="eo-view-documents" aria-pressed="false">Documents</button>
+      </div>
       <input class="input" id="eo-search" type="search"
-             placeholder="Search by ID, title, author&hellip;" aria-label="Search documents">
-      <select class="input" id="eo-sort" aria-label="Sort order">
-        <option value="id">Sort: Document ID</option>
-        <option value="mentions">Sort: Most mentions</option>
-        <option value="reviewshare">Sort: Highest review share</option>
-        <option value="auto">Sort: Most auto-marked</option>
-      </select>
-      <select class="input" id="eo-filter" aria-label="Filter">
-        <option value="all">All documents</option>
-        <option value="review">With review candidates</option>
-        <option value="checked">Hand-checked sample</option>
-        <option value="none">Without mentions</option>
-      </select>
+             placeholder="Search by name or GND id&hellip;" aria-label="Search">
+      <select class="input" id="eo-sort" aria-label="Sort order"></select>
+      <select class="input" id="eo-filter" aria-label="Filter"></select>
       <span class="eo-count" id="eo-result-count" aria-live="polite">&ndash;</span>
     </section>
 
-    <section class="eo-list" id="eo-list" aria-label="Documents">
+    <section class="eo-list" id="eo-list" aria-label="Results">
       <p class="eo-empty">Loading&hellip;</p>
     </section>
 
@@ -101,6 +90,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/entity-overview.js?v=2"></script>
+  <script src="assets/js/entity-overview.js?v=3"></script>
 </body>
 </html>

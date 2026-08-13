@@ -89,12 +89,20 @@
 .eo-swatch--auto { background: var(--h-olivgruen); }
 .eo-swatch--review { background: var(--h-ocker); }
 
-/* Review-class legend box */
-.eo-classes { margin-bottom: 1rem; }
-.eo-doc__summary.eo-doc__summary--single { grid-template-columns: 1fr; }
-.eo-classes .eo-legend { flex-direction: column; gap: 0.35rem; }
+/* View toggle: two pressed-state buttons, active carries the accent */
+.eo-view { display: inline-flex; gap: 0; }
 
-/* Document list */
+.eo-view .btn { border-radius: 0; }
+.eo-view .btn:first-child { border-radius: 4px 0 0 4px; }
+.eo-view .btn:last-child { border-radius: 0 4px 4px 0; margin-left: -1px; }
+
+.eo-view .btn[aria-pressed="true"] {
+  background: var(--h-anthrazit);
+  border-color: var(--h-anthrazit);
+  color: var(--h-text-inverse);
+}
+
+/* Result list */
 .eo-list { display: flex; flex-direction: column; gap: 0.45rem; }
 
 .eo-doc {
@@ -107,12 +115,16 @@
 
 .eo-doc__summary {
   display: grid;
-  grid-template-columns: 3.2rem minmax(10rem, 1fr) auto minmax(6rem, 11rem) auto;
+  grid-template-columns: 3.2rem minmax(10rem, 1fr) auto minmax(6rem, 11rem);
   gap: 0.8rem;
   align-items: center;
   padding: 0.55rem 0.85rem;
   cursor: pointer;
   list-style: none;
+}
+
+.eo-doc__summary--entity {
+  grid-template-columns: minmax(12rem, 1fr) auto auto minmax(6rem, 11rem);
 }
 
 .eo-doc__summary::-webkit-details-marker { display: none; }
@@ -164,18 +176,6 @@
 
 .eo-bar__auto { background: var(--h-olivgruen); }
 .eo-bar__review { background: var(--h-ocker); }
-
-/* Workflow status of the entities stream (traffic light of the manifest) */
-.eo-status {
-  width: 0.6rem;
-  height: 0.6rem;
-  border-radius: 50%;
-  display: inline-block;
-  background: var(--h-text-muted);
-}
-
-.eo-status--in_arbeit { background: var(--h-ocker); }
-.eo-status--verifiziert { background: var(--h-olivgruen); }
 
 /* Detail body */
 .eo-doc__body {
@@ -246,7 +246,13 @@
   text-align: center;
 }
 
+.eo-doc__body .eo-empty {
+  padding: 0.1rem 0;
+  text-align: left;
+}
+
 @media (max-width: 44rem) {
   .eo-doc__summary { grid-template-columns: 3rem 1fr auto; }
-  .eo-doc__summary .eo-bar, .eo-doc__summary .eo-status { display: none; }
+  .eo-doc__summary--entity { grid-template-columns: 1fr auto auto; }
+  .eo-doc__summary .eo-bar { display: none; }
 }
