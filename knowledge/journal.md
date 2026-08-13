@@ -61,6 +61,20 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-13 Session 94 (evening): entity overview page per document
+
+**Occasion** Operator request for a frontend that answers, per object, which and how many entities are annotated and how certain the annotation is.
+
+**Goal** A static overview page in the existing docs site, fed by a deterministic mirror file, with the certainty model of the tier architecture made visible.
+
+**Course** New generator `scripts/edition/generate_entity_overview.py` aggregates the corpus scan into `docs/data/entity_overview.json` (per document: auto-marked against review counts, review classes, per-entity breakdown; the facsimile-adjudicated sample joins as a hand-checked layer per document), deterministic and pinned by its own pytest suite; the closed-world gate `test_entity_ref_invariant` gained a case over the new file's ids. New page `docs/entities.html` with `entity-overview.css` and `entity-overview.js` (ZBZ.EntityOverview, no-build, tokens only): summary strip, review-class legend, search, sort (id, mentions, review share, auto), filter, one expandable row per document with stacked certainty bar, workflow-status dot of the entities stream, class chips, entity table and a link into the viewer's annotated reading view. Verified in headless Chromium against the served docs root: summary numbers, drill-down rendering, search and sort behavior, screenshots reviewed; one grid-specificity defect found and fixed that way. Nav of index, methode and about gained the Entities item; workflow.md 3.7, CLAUDE.md commands and the script inventory carry the page.
+
+**Decisions** Certainty is presented in two levels (auto-marked in Olivgruen, review candidates in Ocker, matching the badge palette), with the review classes as the explanatory second layer; the page reads only generated mirror files and stays read-only.
+
+**Status** Committed and pushed; generator tests, ref-invariant gate and script health green. The page ships with the GitHub Pages docroot as-is.
+
+**Next steps** 1. Redraw and remeasure on the new rules, then the per-category numbers appear next to the certainty bars. 2. M4 frozen-rules gold run. 3. Judge calibration for the worklist classes the page now exposes.
+
 ### 2026-08-13 Session 94 (continued): adjudicated error classes repaired, verdict store rebound (E109)
 
 **Occasion** Operator direction to repair whatever blocks capturing the work class and, beyond it, every listed entity; the nine facsimile-confirmed wrong_entity and wrong_span cases of the evaluation snapshot were the concrete material.

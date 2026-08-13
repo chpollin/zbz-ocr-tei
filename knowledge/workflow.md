@@ -312,6 +312,20 @@ pipeline streams (section 3.6). Matching method, modelling rules and milestones
 live in [entity-integration.md](entity-integration.md); the sampling measurement
 of the built layer lives in [entity-evaluation.md](entity-evaluation.md).
 
+The corpus-wide complement is the overview page `docs/entities.html`. It
+answers, per object, which entities are annotated, how many mentions, and how
+certain the annotation is: auto-marked mentions against review candidates as a
+stacked bar per document, the review side broken down into its classes
+(ambiguous, suspicion signal, running head, and so on), the facsimile-adjudicated
+sample as a hand-checked badge where one exists, and the workflow status of the
+entities stream as the familiar traffic light. Each document expands into its
+entity table (label, category, counts, review classes) and links into the
+viewer's annotated reading view. The page reads
+`docs/data/entity_overview.json`, generated deterministically by
+`scripts/edition/generate_entity_overview.py` from the corpus scan and the
+mention verdict store; the closed-world gate covers its ids like every other
+mirror file.
+
 ### 3.8 Hersch Design System
 
 The authority for token values is `docs/assets/css/tokens.css`; the

@@ -198,3 +198,25 @@ def test_worklist_gids_point_into_the_curated_list():
 
     assert seen, "no gid in the entity worklists - the gate would prove nothing"
     assert not violations, _message("worklist gid value(s)", violations)
+
+
+def test_overview_gids_point_into_the_curated_list():
+    """Covers every per-entity gid of the overview mirror (docs/entities.html)."""
+    overview_path = REPO / "docs" / "data" / "entity_overview.json"
+    if not overview_path.exists():
+        pytest.skip("entity overview mirror not generated")
+    allowed = _allowed_gids()
+    overview = json.loads(overview_path.read_text(encoding="utf-8"))
+    violations: list[tuple[Path, object, str]] = []
+    seen: set[object] = set()
+
+    for doc_id, record in overview.get("documents", {}).items():
+        for index, entity in enumerate(record.get("entities", [])):
+            gid = entity.get("gid")
+            seen.add(gid)
+            if not isinstance(gid, str) or gid not in allowed:
+                violations.append((overview_path, gid,
+                                   f"$.documents.{doc_id}.entities[{index}]"))
+
+    assert seen, "no gid in the entity overview - the gate would prove nothing"
+    assert not violations, _message("overview gid value(s)", violations)

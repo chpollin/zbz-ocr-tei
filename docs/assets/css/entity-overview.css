@@ -1,0 +1,259 @@
+/* Entity overview page (docs/entities.html). Consumes --h-* tokens only.
+   Certainty semantics follow the badge palette of base.css: auto-marked mentions in
+   Olivgruen (the measured, trusted layer), review candidates in Ocker (worklist).
+   Entity category dots reuse the viewer legend: person Preussischblau, organisation
+   Olivgruen, work Ziegelrot. */
+
+.eo-main {
+  max-width: 66rem;
+  margin: 0 auto;
+  padding: var(--h-space-6, 2rem) var(--h-space-4, 1rem) 4rem;
+}
+
+.eo-intro h1 {
+  font-family: var(--h-font-heading);
+  color: var(--h-heading);
+  font-size: 1.6rem;
+  margin: 0 0 0.4rem;
+}
+
+.eo-intro p {
+  color: var(--h-text-secondary);
+  max-width: 46rem;
+  margin: 0 0 1.4rem;
+}
+
+/* Summary strip */
+.eo-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.eo-stat {
+  background: var(--h-surface);
+  border: 1px solid var(--h-border);
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+}
+
+.eo-stat__value {
+  font-family: var(--h-font-heading);
+  font-size: 1.35rem;
+  color: var(--h-text);
+  display: block;
+}
+
+.eo-stat__label {
+  font-size: var(--h-sm);
+  color: var(--h-text-muted);
+}
+
+.eo-stat--auto .eo-stat__value { color: var(--h-olivgruen); }
+.eo-stat--review .eo-stat__value { color: var(--h-ocker); }
+
+/* Controls */
+.eo-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.eo-controls .input { max-width: 18rem; }
+
+.eo-count {
+  font-size: var(--h-sm);
+  color: var(--h-text-muted);
+  margin-left: auto;
+}
+
+/* Legend */
+.eo-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  font-size: var(--h-sm);
+  color: var(--h-text-secondary);
+  margin-bottom: 1.2rem;
+}
+
+.eo-legend__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.eo-swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.eo-swatch--auto { background: var(--h-olivgruen); }
+.eo-swatch--review { background: var(--h-ocker); }
+
+/* Review-class legend box */
+.eo-classes { margin-bottom: 1rem; }
+.eo-doc__summary.eo-doc__summary--single { grid-template-columns: 1fr; }
+.eo-classes .eo-legend { flex-direction: column; gap: 0.35rem; }
+
+/* Document list */
+.eo-list { display: flex; flex-direction: column; gap: 0.45rem; }
+
+.eo-doc {
+  background: var(--h-surface);
+  border: 1px solid var(--h-border);
+  border-radius: 6px;
+}
+
+.eo-doc[open] { border-color: var(--h-border-emphasis); }
+
+.eo-doc__summary {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(10rem, 1fr) auto minmax(6rem, 11rem) auto;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.eo-doc__summary::-webkit-details-marker { display: none; }
+
+.eo-doc__summary:focus-visible {
+  outline: 2px solid var(--h-preussischblau);
+  outline-offset: -2px;
+  border-radius: 6px;
+}
+
+.eo-doc__id {
+  font-family: var(--h-font-mono);
+  font-size: var(--h-sm);
+  color: var(--h-text-secondary);
+}
+
+.eo-doc__title {
+  font-family: var(--h-font-body);
+  color: var(--h-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.eo-doc__meta {
+  color: var(--h-text-muted);
+  font-size: var(--h-sm);
+  margin-left: 0.4rem;
+}
+
+.eo-doc__counts {
+  font-size: var(--h-sm);
+  color: var(--h-text-secondary);
+  white-space: nowrap;
+  text-align: right;
+}
+
+.eo-doc__counts strong { color: var(--h-olivgruen); font-weight: 600; }
+.eo-doc__counts em { color: var(--h-ocker); font-style: normal; font-weight: 600; }
+
+/* Stacked certainty bar */
+.eo-bar {
+  height: 0.5rem;
+  border-radius: 3px;
+  background: var(--h-bg-alt);
+  overflow: hidden;
+  display: flex;
+}
+
+.eo-bar__auto { background: var(--h-olivgruen); }
+.eo-bar__review { background: var(--h-ocker); }
+
+/* Workflow status of the entities stream (traffic light of the manifest) */
+.eo-status {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  display: inline-block;
+  background: var(--h-text-muted);
+}
+
+.eo-status--in_arbeit { background: var(--h-ocker); }
+.eo-status--verifiziert { background: var(--h-olivgruen); }
+
+/* Detail body */
+.eo-doc__body {
+  border-top: 1px solid var(--h-border);
+  padding: 0.8rem 0.85rem 1rem;
+}
+
+.eo-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 0.8rem;
+}
+
+.eo-chip {
+  font-size: var(--h-xs);
+  font-family: var(--h-font-heading);
+  color: var(--h-text-secondary);
+  background: var(--h-ocker-subtle);
+  border: 1px solid var(--h-border);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+}
+
+.eo-checked { margin: 0 0 0.8rem; font-size: var(--h-sm); }
+
+.eo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--h-sm);
+}
+
+.eo-table th {
+  text-align: left;
+  font-family: var(--h-font-heading);
+  font-weight: 500;
+  color: var(--h-text-muted);
+  border-bottom: 1px solid var(--h-border);
+  padding: 0.25rem 0.5rem 0.25rem 0;
+}
+
+.eo-table td {
+  padding: 0.3rem 0.5rem 0.3rem 0;
+  border-bottom: 1px solid var(--h-anthrazit-subtle);
+  vertical-align: top;
+}
+
+.eo-table td.eo-num, .eo-table th.eo-num { text-align: right; width: 4rem; }
+
+.eo-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.4rem;
+  background: var(--h-text-muted);
+}
+
+.eo-dot--person { background: var(--h-preussischblau); }
+.eo-dot--organisation { background: var(--h-olivgruen); }
+.eo-dot--work { background: var(--h-ziegelrot); }
+
+.eo-doc__actions { margin-top: 0.8rem; }
+
+.eo-empty {
+  color: var(--h-text-muted);
+  padding: 1.2rem 0;
+  text-align: center;
+}
+
+@media (max-width: 44rem) {
+  .eo-doc__summary { grid-template-columns: 3rem 1fr auto; }
+  .eo-doc__summary .eo-bar, .eo-doc__summary .eo-status { display: none; }
+}
