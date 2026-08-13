@@ -170,6 +170,22 @@ from, so the store reproduces byte-identically however the live rules move.
 - ZBZ: spec questions (what counts as a mention in their editorial practice) and
   list extensions from the recall causes.
 
+## Population validity of a measured rate
+
+A measured rate describes the population the sample was drawn from, and nothing else. Any
+rule change that moves marks into tier 1 creates a stratum the existing draw does not
+cover, so the published precision stops describing the whole auto-marked layer even though
+every sampled mark still holds. The first case of this kind is the anchor-free surname
+release (E119), which lifts bare surnames of canonical authors into tier 1 without a
+document anchor; those marks exist in no earlier draw.
+
+The rule that follows: after such a change the rate is reported per stratum, the covered
+one and the new one, until a supplementary draw over the new stratum has been adjudicated.
+A single corpus-wide rate returns only when the draw covers the whole population again.
+The same reasoning applies in reverse to a change that removes marks from tier 1, with the
+difference that a shrinking population keeps its rate conservative rather than making it
+too optimistic.
+
 ## Standing layer after the measurement
 
 The sample says how much trust the unverified mass deserves; the per-document

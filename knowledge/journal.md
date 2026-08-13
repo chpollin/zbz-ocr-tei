@@ -61,6 +61,20 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-13 Session 96: matching repairs, overview as evidence surface, mark provenance in the XML (E116-E118)
+
+**Occasion** The operator questioned a review candidate that turned out to be a dotted abbreviation read as initials, then asked what the published overview page actually proves about the workflow, then proposed that every annotation carry in the data itself who asserted it and whether a human checked it.
+
+**Goal** Close the two deterministic matching defects, turn the counting board into an evidence surface, and fix the provenance vocabulary before a second producer of marks exists.
+
+**Course** Four agent waves on disjoint file sets, every self-report verified against disk before it was committed. The first classified all 1113 initials candidates against the raw text and proved that no occurrence of the disputed surface was a mention; the guard tests raw adjacency rather than the normalized projection, because markup between two initials groups separates two mentions and a normalized test kills the genuine speaker labels of doc 1220. The same wave closed the hyphen gap of the surname index, where the word-end cut could never produce the 210 hyphenated keys. The second wave rebuilt the overview: the mirror gained an ambiguity count, a per-entity class breakdown, the adjudicated quality block and a provenance stamp, the page gained the total, inline SVG icons, tooltips and the ambiguity note. The third wave put provenance and verification state on every wrapped mark and wrote the vocabulary into [entity-integration.md](entity-integration.md); `@source` carries the rule because it is the only attribute the delivery schema permits on all three wrapped elements. The pilot preview lost its second HTML renderer, since the overview page is now the reading surface. Two evidence agents produced the decision tables for the pending marking questions, working from a frozen scan copy. Alongside, the reference corpus settled one of the two open adjudication disputes: in 190 citations of the 25 reference TEIs not one carries a marked person name, so a name span coextensive with a cited title denotes the work.
+
+**Decisions** E116 (dotted-abbreviation guard and hyphen reach), E117 (ambiguity, adjudicated quality and provenance on the overview), E118 (mark provenance and verification state in the preview TEI). Operator marking decisions taken on the evidence tables and written to `data/entities/marking_policy.json`: 28 canonical surnames released from the anchor requirement, one held out because person and work reading are not locally separable; seven generic work titles dropped from scope, four bound to typographic corroboration. Unlisted entities are admitted by the project itself, annotated, and marked in the data as an addition outside the curated list.
+
+**Status** E116 to E118 committed and pushed, guard at zero violations, battery green, mirror current, page live. The marking policy is decided and its implementation was in flight at the time of writing, as was the admission dossier for the unlisted entities.
+
+**Next steps** 1. Land the marking policy, then the corpus-wide preview run over all documents with the provenance attributes. 2. Supplementary draw over the newly auto-marked stratum, because the published rate no longer covers the whole tier-1 population. 3. Work the missed recall mentions into named rule gaps. 4. Operator: the remaining IAA dispute on the show-through page, the held-out surname.
+
 ### 2026-08-13 Session 95 (continued): released work program executed with three build agents (E112-E115)
 
 **Occasion** The operator released the whole open program of the entity workflow for agent execution; the designed operator gates (M6 review, M7 release, the two IAA disputes, list admissions of new entities such as the frequent unlisted person candidates) stay open by design.
