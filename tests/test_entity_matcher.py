@@ -1926,3 +1926,83 @@ def test_malformed_variants_field_is_ignored_by_the_build(tmp_path):
     lexicon = _build(tmp_path, persons=[{**COLOMBO, "variants": "Kolumbus"}])
     assert "Kolumbus" not in lexicon["surnames"]
     assert "Cristoforo Colombo" in lexicon["forms"]
+
+
+# --- initials inside a longer dotted abbreviation ----------------------------------
+
+
+SCHMIDHEINY = _person("121587177", "Schmidheiny, Stephan")
+DUFOUR = _person("113248423", "Dufour-Kowalska, Gabrielle")
+
+
+@pytest.mark.parametrize("abbreviation", ["U.R.S.S.", "U. R. S. S."])
+def test_initials_as_the_tail_of_an_abbreviation_are_no_candidate(tmp_path, abbreviation):
+    # docs 330/1350: a dot is no word character, so the scan starts a match at the
+    # third letter of the Soviet Union's abbreviation and reads it as the initials
+    # "S.S." of a listed person
+    lexicon = _build(tmp_path, persons=[SCHMIDHEINY])
+    xml = _tei(f"<p>Die Lage in der {abbreviation} blieb offen.</p>")
+    assert em.find_candidates(xml, lexicon) == []
+
+
+def test_initials_before_a_dotted_continuation_are_no_candidate(tmp_path):
+    # doc 2330: the interviewer's label "G.D.K." is three initials; reading its first
+    # two as a listed person produced the document-level outlier
+    lexicon = _build(tmp_path, persons=[DUFOUR])
+    xml = _tei("<p>G.D.K. - Vous etes l'auteur d'une oeuvre diverse.</p>")
+    assert em.find_candidates(xml, lexicon) == []
+
+
+@pytest.mark.parametrize("surface", ["J.H.", "J. H."])
+def test_adjacent_initials_labels_across_markup_stay_candidates(tmp_path, surface):
+    # doc 1220: <speaker> label and the repeated label of its paragraph are two real
+    # mentions; only the markup between them separates the two dotted groups
+    lexicon = _build(tmp_path, persons=[_person("118708422", "Hersch, Jeanne")])
+    xml = _tei(f"<sp><speaker>{surface}</speaker><p>{surface}: Ja, gewiss.</p></sp>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["surface"] for c in cands] == [surface, surface]
+    assert all(c["rule"] == "full-name:initials" for c in cands)
+
+
+def test_an_honorific_abbreviation_does_not_block_the_initials(tmp_path):
+    # "Dr." is a word abbreviation, not an initial, so the initials behind it stay
+    lexicon = _build(tmp_path, persons=[_person("118557106", "Jaspers, Karl")])
+    cands = em.find_candidates(_tei("<p>Dr. K. J. sprach dazu.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["K. J."]
+
+
+# --- hyphenated single-token surnames ----------------------------------------------
+
+
+LAOZI = _curated(_person("118569678", "Laozi"), "Lao-Tseu")
+SCHWARZ_BART = _person("119498014", "Schwarz-Bart, Andre")
+
+
+def test_hyphenated_curated_variant_reaches_the_scan(tmp_path):
+    # doc 1520: the surname index carries "Lao-Tseu", the scan reads words up to the
+    # hyphen, so the key was unreachable
+    lexicon = _build(tmp_path, persons=[LAOZI])
+    assert "Lao-Tseu" in lexicon["surnames"]
+    cands = em.find_candidates(_tei("<p>Chez Lao-Tseu, la voie reste simple.</p>"), lexicon)
+    assert [c["surface"] for c in cands] == ["Lao-Tseu"]
+    assert cands[0]["rule"] == "bare-surname"
+    assert cands[0]["tier"] == 2
+
+
+def test_hyphenated_headword_surname_is_anchored_as_one_span(tmp_path):
+    lexicon = _build(tmp_path, persons=[SCHWARZ_BART])
+    xml = _tei("<p>Andre Schwarz-Bart schrieb.</p><p>Der Roman von Schwarz-Bart erschien.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["surface"] for c in cands] == ["Andre Schwarz-Bart", "Schwarz-Bart"]
+    assert cands[1]["rule"] == "anchored-surname"
+    assert cands[1]["tier"] == 1
+
+
+def test_a_hyphen_extension_never_invents_a_surname(tmp_path):
+    # "Jaspers-Kreis" is no listed surname, so the span stays on the listed part and
+    # keeps the compound demotion
+    lexicon = _build(tmp_path, persons=[_person("118557106", "Jaspers, Karl")])
+    xml = _tei("<p>Karl Jaspers schrieb.</p><p>Der Jaspers-Kreis tagte.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["surface"] for c in cands] == ["Karl Jaspers", "Jaspers"]
+    assert cands[1]["rule"] == "anchored-surname:suspect"

@@ -85,6 +85,16 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   case-tolerant work title ("die Mauer"). An internal particle bridges a person form
   to its own surname instead ("Saint Ignace de Loyola" as one span). Every signal is
   grown from adjudicated cases only, never by guessing.
+- An initials form is rejected where it is only a part of a longer dotted
+  abbreviation, either behind a single-letter dotted initial ("U.R.S.S.",
+  "U. R. S. S.") or in front of one ("G.D.K."). Raw adjacency decides, so two initials
+  groups separated by markup stay two mentions (a speaker label and the repeated label
+  of its paragraph, doc 1220). Word abbreviations are no initials ("Dr. K. J." keeps
+  its hit), and the three-letter form itself stays outside the lexicon.
+- A surname key carries its hyphens ("Schwarz-Bart", "Merleau-Ponty") while the scan
+  reads a word up to the hyphen, so the surname channel extends a hit across a hyphen
+  as far as the index still knows the token. An unknown token changes nothing, which
+  keeps the compound demotion of "Jaspers-Kreis".
 - The speaker rule compares the slot text verbatim (after stripping surrounding
   punctuation). Honorific prefixes ("Mlle Hersch") therefore fall through to the
   general surname rules; whether ZBZ wants the honorific inside the element is an
@@ -146,6 +156,7 @@ from dataclasses import dataclass, replace
 from scripts.tei.entity_lexicon import (
     _WORD_RUN_RE,
     FORM_SOURCES as FORM_SOURCES,
+    INITIALS_SUFFIX,
     MIN_TOKEN_LEN as MIN_TOKEN_LEN,
     PLACE_ADJECTIVES as PLACE_ADJECTIVES,
     TIER_BY_RULE,
@@ -607,7 +618,8 @@ def _scan(
             pos += 1
             continue
         hit = speaker_hits.get(pos) or _match_at(text, pos, lexicon, anchored)
-        if hit is None:
+        if hit is None or (INITIALS_SUFFIX in hit.rule
+                           and _in_dotted_abbreviation(xml, norm, hit)):
             pos = _word_end(text, pos)
             continue
         if hit.tier == 1:
@@ -646,6 +658,27 @@ def base_rule(rule: str) -> str:
 
 # Established import name of the suffix split (scripts.eval.entity_eval_sample).
 _base_rule = base_rule
+
+
+def _in_dotted_abbreviation(xml: str, norm: _Norm, hit: _Hit) -> bool:
+    """True when an initials form is a part of a longer dotted abbreviation.
+
+    A dot is no word character, so the scan starts a match at the third letter of
+    "U.R.S.S." and ends one after the second of "G.D.K.". Raw neighbours decide rather
+    than normalized ones: an abbreviation is one contiguous run of characters, while
+    markup between two initials groups (a speaker label and the repeated label of its
+    paragraph) separates two mentions of their own.
+    """
+    start = norm.starts[hit.start]
+    if start and xml[start - 1] == " ":
+        start -= 1
+    if (start >= 2 and xml[start - 1] == "." and xml[start - 2].isalpha()
+            and (start < 3 or not xml[start - 3].isalpha())):
+        return True
+    end = norm.ends[hit.end - 1]
+    if xml[end:end + 1] == " ":
+        end += 1
+    return xml[end:end + 1].isalpha() and xml[end + 1:end + 2] == "."
 
 
 # --- homograph suspicion ----------------------------------------------------------
@@ -936,6 +969,7 @@ def _surname_at(
     anchored: set[str],
 ) -> _Hit | None:
     surnames = lexicon["surnames"]
+    word = _hyphenated_surname(text, pos, word, surnames)
     end = pos + len(word)
     if word in surnames:
         key = word
@@ -953,6 +987,31 @@ def _surname_at(
         return _surname_hit(pos, end, in_document[0], "ambiguous-surname", 2, key, gids, lexicon)
     return _hit(pos, end, gids[0], "person", "bare-surname", 2, gids,
                 *_surname_origin(lexicon, "surname_forms", key, gids[0]))
+
+
+def _hyphenated_surname(
+    text: str,
+    pos: int,
+    word: str,
+    surnames: dict[str, tuple[str, ...]],
+) -> str:
+    """Longest hyphenated token at `pos` the surname index knows, else `word`.
+
+    Surname keys carry their hyphens ("Schwarz-Bart", "Merleau-Ponty") while the scan
+    reads a word up to the hyphen, so without this step no hyphenated key is reachable.
+    A token the index does not know changes nothing, which leaves the compound cases
+    ("Jaspers-Kreis") with the listed part and its hyphen demotion.
+    """
+    end = pos + len(word)
+    while text[end:end + 1] == "-":
+        run_end = _word_end(text, end + 1)
+        if run_end == end + 1:
+            break
+        end = run_end
+        token = text[pos:end]
+        if token in surnames or (token.endswith("s") and token[:-1] in surnames):
+            word = token
+    return word
 
 
 def _surname_hit(

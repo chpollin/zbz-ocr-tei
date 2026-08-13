@@ -603,6 +603,18 @@ Consequences: corpus-wide the change adds worklist candidates only, the tier-1 p
 
 Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
 
+---
+
+### E116 Dotted-abbreviation guard and hyphen reach of the surname index (2026-08-13)
+
+Occasion: the operator questioned a tier-2 hit "S.S." inside "U.R.S.S." on the review list. The empirical classification of all 1113 initials candidates against the raw TEI showed that not one occurrence of "S.S." or "S. S." was a genuine mention; all of them sat inside "U.R.S.S.", "U.S.S.R." or "S.S.P.". The same defect produced the document outlier of the interview transcript in doc 2330, where the interviewer label "G.D.K." fed 351 candidates for the surface "G.D.". Independently the scan reported zero candidates for hyphenated single-token names, although "Merleau-Ponty", "Cohn-Bendit" and "Lao-Tseu" occur in the corpus.
+
+Decision: two narrow repairs in the matcher. An initials hit is dropped when the raw text directly adjoins a single-letter dotted token on either side, so an abbreviation is recognized as one contiguous run. The test runs on the raw text rather than the normalized projection, because markup between two initials groups separates two mentions; a normalized test kills the 35 genuine speaker labels of doc 1220, where "J. H." as speaker and "J. H." in the paragraph collapse into one run. The surname channel extends a hit across a hyphen as far as the index still carries the compound token, which closes the gap that the word-end cut opened against the 210 hyphenated surname keys. An unknown second token changes nothing, so the compound demotion of "Jaspers-Kreis" stays.
+
+Consequences: the worklist loses 442 candidates that were provably no mention, the tier-1 population is bit-identical, and 22 truncated suspect spans become correct spans ("Merleau" plus "Ponty" to "Merleau-Ponty", "Bendit" to "Cohn-Bendit"). Three list entries leave the zero-mention set. The verdict guard confirms the identical adjudicated state, no judgment violated. Recall accounting turns six partial hits of the surface "G.D.K." from "now_worklist" to "still_missing", which restores the honest state; a three-letter initials form derived from a hyphenated surname would close them and is a recall feature, not part of this repair. Open on the data side: the work entry with GND id 454611536 stays unreachable because the variant cache holds a 404 for it, so the title never enters the lexicon; `entity_lint` reports it, and it needs either a resolvable id or an exception for operator-curated titles.
+
+Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |
