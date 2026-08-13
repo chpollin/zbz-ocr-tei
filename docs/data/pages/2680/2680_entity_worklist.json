@@ -116,6 +116,18 @@
         "evidence": "none",
         "text": "Philosophie",
         "occurrence": 4
+      },
+      {
+        "gid": "2023755-8",
+        "category": "organisation",
+        "surface": "UNESCO",
+        "rule": "org-token:suspect",
+        "alternatives": [],
+        "matched_form": "UNESCO",
+        "form_source": "headword",
+        "context": "Mitglied der Nationalen Schweizerischen UNESCO-Kommission und vertrat die Schweiz bis",
+        "text": "UNESCO",
+        "occurrence": 2
       }
     ],
     "10": [
@@ -141,6 +153,18 @@
         "form_source": "surname-index",
         "context": ", 1979 mit dem Montaigne-, 1980 dem Max Schmidheiny- und 1985 mit dem Max Petitpierre-Preis",
         "text": "Schmidheiny",
+        "occurrence": 1
+      },
+      {
+        "gid": "118529579",
+        "category": "person",
+        "surface": "Albert Einstein",
+        "rule": "full-name:suspect",
+        "alternatives": [],
+        "matched_form": "Albert Einstein",
+        "form_source": "headword",
+        "context": "titpierre-Preis; 1987 wurde sie mit der Albert Einstein-Medaille ausgezeichnet. Die Hans Erni-S",
+        "text": "Albert Einstein",
         "occurrence": 1
       }
     ],

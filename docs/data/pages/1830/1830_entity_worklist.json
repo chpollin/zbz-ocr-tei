@@ -103,6 +103,18 @@
         "evidence": "none",
         "text": "Philosophie",
         "occurrence": 1
+      },
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Karl Jaspers",
+        "rule": "full-name:suspect",
+        "alternatives": [],
+        "matched_form": "Karl Jaspers",
+        "form_source": "headword",
+        "context": "demic life - Présidente de la Fondation Karl Jaspers, Dâle office held in international life",
+        "text": "Karl Jaspers",
+        "occurrence": 1
       }
     ],
     "4": [
@@ -340,7 +352,7 @@
         "gid": "4597459-7",
         "category": "work",
         "surface": "mein Leben",
-        "rule": "work-title:qualifier-strip",
+        "rule": "work-title:qualifier-strip:suspect",
         "alternatives": [],
         "matched_form": "Mein Leben",
         "form_source": "headword",
@@ -624,6 +636,18 @@
         "context": "20 Gibt die Tradition bei Jaspers eine Antwort auf das, was unserer Zeit not tut? (in",
         "text": "Antwort",
         "occurrence": 1
+      },
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Karl Jaspers",
+        "rule": "full-name:suspect",
+        "alternatives": [],
+        "matched_form": "Karl Jaspers",
+        "form_source": "headword",
+        "context": "auf das, was unserer Zeit not tut? (in Karl Jaspers, ed. P. A. SCHILPP, W. Kohlhammer Verla",
+        "text": "Karl Jaspers",
+        "occurrence": 2
       },
       {
         "gid": "119395800",

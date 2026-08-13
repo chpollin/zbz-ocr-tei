@@ -164,15 +164,37 @@ surfaces outside the list as proposals for ZBZ, diagnosis only.
 ### Derived form channels
 
 Tier two grows through derived spellings of forms the list and the cache already carry.
-Four shape-driven channels register such spellings. An all-caps one-token organisation
+Five shape-driven channels register such spellings. An all-caps one-token organisation
 also matches its capitalized spelling ("l'Unesco" beside "UNESCO"); a form with a
 trailing parenthetical qualifier also matches its head ("Le populaire" out of "Le
 populaire (Zeitung, Paris)"); a two-token organisation whose second token stands in a
 static table of places also matches the inverted German adjective form ("Genfer
 Universität" for the listed "Universität Genf"); a person headword also matches its
-dotted initials, the form interview transcripts use in the speaker slot. Word
+dotted initials, the form interview transcripts use in the speaker slot; a one-token
+work title joins each of its own multi-word forms as "Title. Subtitle", so the full
+printed title reaches the worklist as one span instead of a truncated auto-wrap of the
+subtitle (the adjudicated wrong span of the Nietzsche monograph). Word
 boundaries treat a superscript digit as a separator, so a name carrying a footnote
 marker keeps the boundary it has on the page.
+
+### Adjudicated precision guards (E109)
+
+Every wrong_entity and wrong_span case the facsimile adjudication confirmed is answered
+by a deterministic guard, each pinned as a regression fixture. A hyphen directly at the
+span border demotes the hit as part of a compound ("UNESCO-Kommission"); the citation
+title-slot frames demote a full name that follows an author-initial pattern ("Salamun
+K., Karl Jaspers, Munich, 1985") or precedes an editor abbreviation ("Karl Jaspers, éd.
+P.A. Schilpp"); an eponymous institution word in front of a full name demotes it
+("Fondation Karl Jaspers"); an undated parenthetical behind a surname demotes it
+("Augustin (de Malègue)", while "Jaspers (1883-1969)" keeps its tier); the lowercased
+incipit of a case-tolerant work title demotes it ("die Mauer" against the listed "Die
+Mauer"). Two repairs correct the span instead of the tier: the internal particle bridge
+reads "Saint Ignace de Loyola" as one mention, and the subtitle-join channel covers the
+full printed "Title. Subtitle". Demotion always means worklist, never a silent drop,
+and every signal is grown from adjudicated cases only. Title-position names in citation
+lines without a deterministic frame stay tier 1 and belong to the judge stage. One
+recall exception is decided: the calendar formula "avant J.-C." never enters the
+lexicon, because the abbreviation would fire on every date while naming no mention.
 
 Every derived spelling enters as a tier-2 worklist candidate, so the channels raise
 what an operator gets to see while the automatic marks stay as the base rules set them.
@@ -232,7 +254,8 @@ Built, each with its pytest suite:
 - `scripts/eval/build_mention_verdicts.py` builds `data/entities/mention_verdicts.json`,
   the persistence layer of the human and adjudicated judgments. A record is keyed by
   (doc, page, surface, gid, occurrence), where the occurrence index counts over the full
-  tier-1 candidate population of the scan rather than over a drawn sample, and it
+  tier-1 candidate population of the frozen scan snapshot the sample was drawn from
+  (never the live scan, whose population moves with every rule change), and it
   carries the verdict, its reason, the offsets, the drawing wave and a sha256
   fingerprint of the delivered TEI it was judged on. A later text change (re-OCR,
   correction run, stock correction) moves the fingerprint and marks the affected records

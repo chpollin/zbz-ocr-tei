@@ -836,6 +836,133 @@ def test_document_without_recurring_head_is_unaffected(lex):
     assert cands[0]["tier"] == 1
 
 
+# --- adjudicated precision guards (E109) -------------------------------------------
+# Each guard answers a facsimile-confirmed error class of the 2026-08-12 evaluation;
+# the fixture text mirrors the corpus case named in the comment.
+
+
+def test_hyphen_adjacent_tier1_hit_is_suspect(lex):
+    # docs 2450/2680: "Nationale Schweizerische UNESCO-Kommission"; the token names
+    # only part of the compound organisation
+    xml = _tei("<p>Mitglied der Nationalen Schweizerischen UNESCO-Kommission.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["rule"] for c in cands] == ["org-token:suspect"]
+    assert cands[0]["tier"] == 2
+
+
+def test_full_name_before_editor_abbreviation_is_suspect(lex):
+    # doc 2330 p232: "in Karl Jaspers, éd. P.A. Schilpp, Stuttgart" names the
+    # Schilpp-edited volume, not the philosopher
+    xml = _tei("<p>in Karl Jaspers, éd. P.A. Schilpp, Stuttgart, 1957.</p>")
+    cands = em.find_candidates(xml, lex)
+    jaspers = [c for c in cands if c["surface"] == "Karl Jaspers"]
+    assert jaspers and jaspers[0]["rule"] == "full-name:suspect"
+    assert jaspers[0]["tier"] == 2
+
+
+def test_full_name_after_author_initial_comma_is_suspect(lex):
+    # doc 3040 p8: "Salamun K., Karl Jaspers, Munich, 1985" names the monograph
+    xml = _tei("<p>Salamun K., Karl Jaspers, Munich, 1985.</p>")
+    cands = em.find_candidates(xml, lex)
+    jaspers = [c for c in cands if c["surface"] == "Karl Jaspers"]
+    assert jaspers and jaspers[0]["rule"] == "full-name:suspect"
+    assert jaspers[0]["tier"] == 2
+
+
+def test_full_name_in_running_prose_keeps_tier1(lex):
+    xml = _tei("<p>Damals traf Karl Jaspers in Basel ein, und Karl Jaspers blieb.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["rule"] for c in cands] == ["full-name", "full-name"]
+    assert all(c["tier"] == 1 for c in cands)
+
+
+def test_org_container_prefix_demotes_full_name(lex):
+    # doc 1830 p3: "Présidente de la Fondation Karl Jaspers" names the foundation
+    xml = _tei("<p>Présidente de la Fondation Karl Jaspers, Basel.</p>")
+    cands = em.find_candidates(xml, lex)
+    jaspers = [c for c in cands if c["surface"] == "Karl Jaspers"]
+    assert jaspers and jaspers[0]["rule"] == "full-name:suspect"
+    assert jaspers[0]["tier"] == 2
+
+
+def test_surname_before_undated_parenthesis_is_suspect(tmp_path):
+    # doc 110 p83: "le roman, d'Augustin (de Malègue)" is the novel's title;
+    # a dated parenthesis ("Jaspers (1883-1969)") corroborates the person instead
+    lexicon = _build(tmp_path, persons=[
+        _person("118505114", "Augustin, Aurelius"),
+        _person("118557106", "Jaspers, Karl"),
+    ])
+    xml = _tei(
+        "<p>Aurelius Augustin schrieb viel. Karl Jaspers auch.</p>\n"
+        "<p>le roman, d'Augustin (de Malègue), cette œuvre.</p>\n"
+        "<p>Jaspers (1883-1969) lehrte in Basel.</p>"
+    )
+    by_surface = {c["surface"]: c for c in em.find_candidates(xml, lexicon)}
+    assert by_surface["Augustin"]["rule"].endswith(":suspect")
+    assert by_surface["Augustin"]["tier"] == 2
+    assert by_surface["Jaspers"]["rule"] == "anchored-surname"
+    assert by_surface["Jaspers"]["tier"] == 1
+
+
+def test_lowercased_incipit_of_case_tolerant_title_is_suspect(tmp_path):
+    # doc 1060 p8: "die Mauer der Angst" is a common noun, not the listed title
+    lexicon = _build(tmp_path, works=[_work("4099310-0", "Die Mauer")])
+    cands = em.find_candidates(
+        _tei("<p>dass sie die Mauer der Angst durchbrochen haben.</p>"), lexicon
+    )
+    assert [c["surface"] for c in cands] == ["die Mauer"]
+    assert cands[0]["rule"] == "work-title:suspect"
+    assert cands[0]["tier"] == 2
+    kept = em.find_candidates(_tei("<p>Er las Die Mauer von Sartre.</p>"), lexicon)
+    assert kept[0]["rule"] == "work-title"
+    assert kept[0]["tier"] == 1
+
+
+def test_internal_particle_bridges_to_same_gid_surname(tmp_path):
+    # doc 2330 p54: "Saint Ignace de Loyola" is one mention; the split into
+    # "Saint Ignace" plus "Loyola" was the adjudicated wrong_span
+    lexicon = _build(
+        tmp_path,
+        persons=[_person("118555359", "Ignacio, de Loyola")],
+        cache={"118555359": _cache_entry("Ignacio, de Loyola",
+                                         ("Ignace, Saint", "Loyola, Ignatius of"))},
+    )
+    xml = _tei("<p>les Exercices spirituels de Saint Ignace de Loyola sont connus.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["surface"] for c in cands] == ["Saint Ignace de Loyola"]
+    assert cands[0]["gid"] == "118555359"
+    assert cands[0]["tier"] == 1
+
+
+def test_particle_does_not_bridge_to_another_entity(lex):
+    # "de" followed by a different person's surname stays two readings, no merge
+    xml = _tei("<p>Der Brief Karl Jaspers de Marcel war erfunden.</p>")
+    cands = em.find_candidates(xml, lex)
+    assert [c["surface"] for c in cands][0] == "Karl Jaspers"
+
+
+def test_subtitle_join_form_covers_the_full_printed_title(tmp_path):
+    # doc 650 p9: "Nietzsche. Einfuehrung in das Verstaendnis seines Philosophierens";
+    # wrapping the subtitle alone was the adjudicated wrong_span
+    lexicon = _build(
+        tmp_path,
+        works=[_work("1078795312", "Nietzsche")],
+        cache={"1078795312": _cache_entry(
+            "Nietzsche",
+            ("Einfuehrung in das Verstaendnis seines Philosophierens",),
+        )},
+    )
+    xml = _tei("<p>1936 Nietzsche. Einfuehrung in das Verstaendnis seines "
+               "Philosophierens, Berlin 1936, de Gruyter.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    full = [c for c in cands if c["surface"].startswith("Nietzsche. Einfuehrung")]
+    assert len(full) == 1
+    assert ":subtitle-join" in full[0]["rule"]
+    assert full[0]["tier"] == 2
+    # the subtitle alone is no longer reported as its own tier-1 span there
+    assert not any(c["surface"].startswith("Einfuehrung") for c in cands)
+
+
 # --- apparatus zone (fix package 5) -----------------------------------------------
 
 COVER_SHEET = (

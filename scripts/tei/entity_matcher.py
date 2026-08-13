@@ -68,7 +68,7 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   property of the lexicon form), then ":ambiguous" (a property of the lexicon), then
   ":suspect" (a property of the context), then ":in-plain-bibl" (a property of the
   position), then ":running-head" (a property of the page position, appended last).
-- Four derived-form channels close the recall gaps of the facsimile-adjudicated
+- Five derived-form channels close gaps of the facsimile-adjudicated
   evaluation. Each registers a further spelling of a form the entity already carries,
   and each is worklist-only: the suffix sits on the lexicon rule, which fixes the tier
   at 2 (`_form_tier`); the speaker rule ignores such forms; and a spelling the lexicon
@@ -86,8 +86,21 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
     * ":initials", a person headword also matches its dotted initials ("K.J." and
       "K. J." for "Jaspers, Karl"), which is how interview transcripts label the
       speaker. Initials several persons share become a multi-owner candidate.
+    * ":subtitle-join", a one-token work title joins each of its own multi-word
+      forms as "Title. Subtitle" ("Nietzsche. Einfuehrung in das Verstaendnis
+      seines Philosophierens"), so the full printed title reaches the worklist as
+      one span instead of a truncated tier-1 wrap of the subtitle (doc 650).
   The channels read the forms that were actually registered, so every earlier gate
   binds them as well; a cache form the variant review rejected has no derived form.
+- The adjudicated precision guards (E109) demote a tier-1 hit to the worklist on the
+  deterministic signals of the confirmed error classes of the 2026-08-12 evaluation:
+  a hyphen directly at the span border (compound, "UNESCO-Kommission"), a citation
+  title-slot frame (after "Salamun K.,", before ", éd."), an eponymous institution
+  word in front of a full name ("Fondation Karl Jaspers"), an undated parenthetical
+  behind a surname ("Augustin (de Malègue)"), and the lowercased incipit of a
+  case-tolerant work title ("die Mauer"). An internal particle bridges a person form
+  to its own surname instead ("Saint Ignace de Loyola" as one span). Every signal is
+  grown from adjudicated cases only, never by guessing.
 - Person labels without a forename (mononyms such as "Platon") reach no tier-1 rule;
   they enter the surname index and can only surface as tier 2.
 - The speaker rule compares the slot text verbatim (after stripping surrounding
@@ -196,6 +209,36 @@ PLAIN_BIBL_SUFFIX = ":in-plain-bibl"
 AMBIGUOUS_SUFFIX = ":ambiguous"
 SUSPECT_SUFFIX = ":suspect"
 RUNNING_HEAD_SUFFIX = ":running-head"
+SUBTITLE_JOIN_SUFFIX = ":subtitle-join"
+
+# Tier-1 person rules the citation-frame, container and particle logic applies to.
+_PERSON_FULL_RULES = frozenset({
+    "full-name", "variant-full-name", "caps-full-name", "initial-surname",
+})
+
+# Eponymous-institution words directly in front of a full name ("Fondation Karl
+# Jaspers", doc 1830): the name denotes the institution. Attested member plus its
+# direct paradigm; grown from adjudicated cases only, never by guessing.
+ORG_CONTAINERS = frozenset({"Fondation", "Stiftung", "Foundation", "Fondazione"})
+
+# Citation frames of the adjudicated bibliography errors (E109): a full name in the
+# title slot of a citation follows the author-initial pattern ("Salamun K., Karl
+# Jaspers, Munich, 1985") or precedes an editor abbreviation ("Karl Jaspers, éd.
+# P.A. Schilpp"). Both demote to the worklist; author-position names in citations
+# ("Monique Saint-Hélier, Annalen, 1944") match neither frame and keep their tier.
+_AUTHOR_SLOT_RE = re.compile(r"[A-ZÀ-Þ]\S* [A-ZÀ-Þ]\.(?: ?[A-ZÀ-Þ]\.)*, $")
+_EDITOR_AFTER_RE = re.compile(r", (?:éd|ed|hrsg|Hrsg|Hg)\.")
+
+# Internal name particle bridging a person form to its own surname ("Saint Ignace
+# de Loyola", doc 2330). Attested particle plus its direct paradigm.
+_PARTICLE_RE = re.compile(r" (?:de|von|van) (\w+)")
+
+# A bare parenthetical directly after a surname ("Augustin (de Malègue)", doc 110)
+# reads as a work or qualifier; a dated one ("Jaspers (1883-1969)") corroborates
+# the person and keeps its tier.
+_PAREN_AFTER_RE = re.compile(r" ?\(([^)]{0,60})\)")
+
+_WORD_BEFORE_RE = re.compile(r"(\S+) $")
 
 # Derived-form channels. Each one registers a further spelling of a form the entity
 # already carries; the suffix sits on the lexicon rule itself, which makes every such
@@ -863,7 +906,8 @@ def _add_derived(
     shadows a listed spelling (the owner dedup in `_add_form` keeps the first
     registration) nor displaces a reading that can reach tier 1 (`_reaches_tier1`).
     """
-    for form, rule, source in _own_forms(forms, gid):
+    own = _own_forms(forms, gid)
+    for form, rule, source in own:
         for derived, suffix in _derived_forms(form, category):
             if not _reaches_tier1(forms, surnames, derived):
                 _add_form(forms, derived, gid, category, rule + suffix, source)
@@ -871,6 +915,19 @@ def _add_derived(
         if not _reaches_tier1(forms, surnames, derived):
             _add_form(forms, derived, gid, category, "full-name" + INITIALS_SUFFIX,
                       "headword")
+    # Subtitle join: a one-token work title printed as "Title. Subtitle" (doc 650,
+    # "Nietzsche. Einfuehrung in das Verstaendnis seines Philosophierens"). The
+    # joined form outranks the subtitle-only variant by length, so the full printed
+    # title reaches the worklist as one span instead of a truncated tier-1 wrap.
+    if category == "work":
+        singles = [form for form, _, _ in own if len(form.split()) == 1]
+        multis = [(form, source) for form, _, source in own if len(form.split()) > 1]
+        for short in singles:
+            for long_form, source in multis:
+                joined = f"{short}. {long_form}"
+                if not _reaches_tier1(forms, surnames, joined):
+                    _add_form(forms, joined, gid, category,
+                              "work-title" + SUBTITLE_JOIN_SUFFIX, source)
 
 
 def _reaches_tier1(
@@ -1255,9 +1312,13 @@ def _scan(
         if hit is None:
             pos = _word_end(text, pos)
             continue
+        if hit.tier == 1:
+            hit = _bridge_particle_surname(text, hit, lexicon)
         if _base_rule(hit.rule) in _SUSPECT_RULES and _is_suspect(
             xml, norm, hit, lexicon, lowercase_words
         ):
+            hit = replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
+        if hit.tier == 1 and _tier1_guard(xml, norm, hit):
             hit = replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
         if hit.tier == 1 and (hit.gid, hit.matched_form) in review_suspect:
             hit = replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
@@ -1302,8 +1363,9 @@ def _is_suspect(
     folded = word.casefold()
     if folded in lowercase_words or folded in FUNCTION_WORDS:
         return True
-    raw_start, raw_end = norm.starts[n_start], norm.ends[n_end - 1]
-    if xml[max(raw_start - 1, 0):raw_start] == "-" or xml[raw_end:raw_end + 1] == "-":
+    if _hyphen_adjacent(xml, norm, hit):
+        return True
+    if _paren_without_digit_after(text, n_end):
         return True
     if _unknown_capital_before(text, n_start, n_end, lexicon):
         return True
@@ -1311,6 +1373,69 @@ def _is_suspect(
     # noun, so the trailing signal would fire on every correct genitive mention.
     genitive = word.endswith("s") and word[:-1] in lexicon["surnames"]
     return not genitive and _unknown_capital_after(text, n_start, n_end, lexicon)
+
+
+def _hyphen_adjacent(xml: str, norm: _Norm, hit: _Hit) -> bool:
+    """A hyphen directly at the span border makes the hit part of a compound.
+
+    The adjudicated cases are "UNESCO-Kommission" (docs 2450/2680), where the token
+    names only part of the printed organisation; hyphens inside a listed form
+    ("Saint-Hélier") sit inside the span and never trigger this.
+    """
+    raw_start, raw_end = norm.starts[hit.start], norm.ends[hit.end - 1]
+    return (xml[max(raw_start - 1, 0):raw_start] == "-"
+            or xml[raw_end:raw_end + 1] == "-")
+
+
+def _paren_without_digit_after(text: str, n_end: int) -> bool:
+    """A bare parenthetical right after the surname reads as a work or qualifier.
+
+    The adjudicated case is "d'Augustin (de Malègue)" (doc 110), the novel's title;
+    a dated parenthesis ("Jaspers (1883-1969)") corroborates the person instead.
+    """
+    match = _PAREN_AFTER_RE.match(text, n_end)
+    return bool(match) and not any(char.isdigit() for char in match.group(1))
+
+
+def _tier1_guard(xml: str, norm: _Norm, hit: _Hit) -> bool:
+    """Tier-1 demotions from the adjudicated error classes of the evaluation (E109).
+
+    The compound signal binds every tier-1 rule; the citation frames and the
+    institution container bind the person full-name rules, whose confirmed errors
+    all name a work or an institution rather than the person.
+    """
+    if _hyphen_adjacent(xml, norm, hit):
+        return True
+    if hit.category != "person" or _base_rule(hit.rule) not in _PERSON_FULL_RULES:
+        return False
+    text = norm.text
+    if _EDITOR_AFTER_RE.match(text, hit.end):
+        return True
+    tail = text[max(0, hit.start - 40):hit.start]
+    if _AUTHOR_SLOT_RE.search(tail):
+        return True
+    before = _WORD_BEFORE_RE.search(tail)
+    return bool(before) and before.group(1) in ORG_CONTAINERS
+
+
+def _bridge_particle_surname(text: str, hit: _Hit, lexicon: dict) -> _Hit:
+    """Extend a person full-name hit across an internal particle to its own surname.
+
+    The corpus prints "Saint Ignace de Loyola" as one mention; without the bridge
+    the scan reports the leading form and the trailing surname as two spans (the
+    adjudicated wrong_span of doc 2330). Only the hit's own entity may continue the
+    name, so "Karl Jaspers de Marcel" never merges.
+    """
+    if hit.category != "person" or _base_rule(hit.rule) not in _PERSON_FULL_RULES:
+        return hit
+    match = _PARTICLE_RE.match(text, hit.end)
+    if match is None:
+        return hit
+    word = match.group(1)
+    key = word[:-1] if word.endswith("s") and word[:-1] in lexicon["surnames"] else word
+    if hit.gid not in lexicon["surnames"].get(key, ()):
+        return hit
+    return replace(hit, end=match.end())
 
 
 def _unknown_capital_before(text: str, n_start: int, n_end: int, lexicon: dict) -> bool:
@@ -1408,9 +1533,18 @@ def _form_hit(
 
 
 def _case_tolerant(hit: _Hit, segment: str, form: str) -> _Hit:
-    """Mark a hit that only letter case separates from its form, and weigh its case."""
+    """Mark a hit that only letter case separates from its form, and weigh its case.
+
+    A lowercased incipit ("die Mauer" for the listed "Die Mauer", doc 1060) is
+    ordinary prose exactly like the fully lowercased writing: a title mention keeps
+    its capitalized first word in this corpus. Works only, because German inflects
+    the leading adjective of an organisation name in running prose ("deutscher
+    Gewerkschaftsbund"), which is a genuine mention.
+    """
     hit = replace(hit, case_tolerant=True)
-    if _is_lowercase_writing(segment, form):
+    if _is_lowercase_writing(segment, form) or (
+        hit.category == "work" and segment[:1].islower() and form[:1].isupper()
+    ):
         return replace(hit, rule=hit.rule + SUSPECT_SUFFIX, tier=2)
     return hit
 

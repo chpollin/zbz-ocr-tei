@@ -61,6 +61,20 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-13 Session 94 (continued): adjudicated error classes repaired, verdict store rebound (E109)
+
+**Occasion** Operator direction to repair whatever blocks capturing the work class and, beyond it, every listed entity; the nine facsimile-confirmed wrong_entity and wrong_span cases of the evaluation snapshot were the concrete material.
+
+**Goal** Every confirmed error class answered deterministically, span defects repaired, nothing silently dropped, and the measurement basis kept sound.
+
+**Course** Corpus probes grounded each candidate rule before building (hyphen-adjacent tier-1 marks, citation frames, container prefix, italics distribution); a broad italics guard was rejected because the probe showed genuine mentions (interview labels, bylines) sharing the signal. Implemented test-first: five worklist demotions (compound hyphen, author-initial frame, editor-abbreviation frame, eponymous institution prefix, undated parenthetical after a surname, lowercased work-title incipit) and two span repairs (internal particle bridge for "Saint Ignace de Loyola", subtitle-join channel for "Title. Subtitle" prints). All nine adjudicated cases verified fixed at their corpus positions; the scan's hyphen invariant fell from eleven violations to zero. A latent wiring defect surfaced and was fixed at the root: `build_mention_verdicts` read the live scan, whose tier-1 population the new rules had moved; it now reads the frozen snapshot the sample was drawn from, and the rebuilt store differs only in its source line. A false alarm was cleared on the way, the verdict-store offsets are exact against the current TEI when read byte-based; an earlier text-mode read had shifted them by the CRLF count. Regenerated: scan, 285 previews (all schema-valid, text-invariant), viewer mirror, risk ranking, running-head audit, gold benchmark; the reference trend rose to tier-1 precision 0.67 with recall and coverage unchanged, the signature of pure false-positive removal. Entity battery green (712 tests).
+
+**Decisions** E109 (guards and span repairs from adjudicated cases only; citation lines without a deterministic frame stay for the judge; "avant J.-C." never enters the lexicon; store build bound to the frozen scan).
+
+**Status** Committed and pushed. `tei_final` still carries no entity markup; the work class now has its confirmed error classes closed, and the tier-1 promotion of works awaits the next measured per-category precision.
+
+**Next steps** 1. M4 frozen-rules gold run on the held-out references. 2. Redraw and remeasure precision and recall on the new rules (byline gaps become hits, work errors closed). 3. Judge calibration (M5) for the grown worklist. 4. Operator decisions: works in tier 1 after the remeasurement, IAA disputes p145/p193.
+
 ### 2026-08-13 Session 94: running-head suppression active in the matcher, author convention decided (E108)
 
 **Occasion** Operator decisions on the entity layer: build the validated running-head detector into the matcher as the E105 suppression, and settle the author scope question without ZBZ, whose feedback channel is unavailable in this phase; mentions of the corpus author are always marked.

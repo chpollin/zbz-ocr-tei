@@ -41,7 +41,7 @@
         "gid": "4597459-7",
         "category": "work",
         "surface": "mein <lb facs=\"#facs_3_r_4\" n=\"N006\" />Leben",
-        "rule": "work-title:qualifier-strip",
+        "rule": "work-title:qualifier-strip:suspect",
         "alternatives": [],
         "matched_form": "Mein Leben",
         "form_source": "headword",
@@ -163,6 +163,18 @@
         "form_source": "cache-variant",
         "context": "en: Solschenizyn, Sacharow, Grigorenko, Amalrik – und andere, eine Handvoll Menschen, d",
         "text": "Amalrik",
+        "occurrence": 1
+      },
+      {
+        "gid": "4453024-9",
+        "category": "work",
+        "surface": "die <lb facs=\"#facs_8_r_3\" n=\"N003\" />Mauer",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "Die Mauer",
+        "form_source": "cache-variant",
+        "context": "die so sehr verzweifelt sind, dass sie die Mauer der Angst durchbrochen haben, helfen un",
+        "text": "die Mauer",
         "occurrence": 1
       }
     ]

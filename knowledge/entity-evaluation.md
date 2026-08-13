@@ -155,6 +155,14 @@ author are marked like every other listed entity, in bylines and signatures as w
 The byline exception whose recall cost the executed run had recorded is removed, and
 the recall gaps it caused become hits on a future redraw.
 
+The consequence loop of phase 6 has run for the error side (E109): every confirmed
+wrong_entity and wrong_span case of the snapshot is answered by a deterministic matcher
+guard or span repair, each pinned as a regression fixture; the catalog lives in
+[entity-integration.md](entity-integration.md), section "Adjudicated precision guards".
+The rebind of the verdict-store build to the frozen scan snapshot belongs to the same
+wave: the occurrence key counts over the frozen tier-1 population the sample was drawn
+from, so the store reproduces byte-identically however the live rules move.
+
 ## Roles
 
 - Agents: pre-adjudication of drawn cases, exhaustive page reading, statistics runs.

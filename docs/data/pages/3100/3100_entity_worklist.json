@@ -643,6 +643,20 @@
         "occurrence": 2
       }
     ],
+    "12": [
+      {
+        "gid": "4006406-2",
+        "category": "work",
+        "surface": "la Bible",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "La Bible",
+        "form_source": "cache-variant",
+        "context": "es couronnait. La critique négatrice de la Bible et des dogmes jette le soupçon sur les",
+        "text": "la Bible",
+        "occurrence": 1
+      }
+    ],
     "13": [
       {
         "gid": "118578537",
@@ -802,6 +816,18 @@
         "form_source": "cache-variant",
         "context": "textes comme celui de la prédication de Jésus sur les devoirs envers les miséreux («.",
         "text": "Jésus",
+        "occurrence": 1
+      },
+      {
+        "gid": "4006406-2",
+        "category": "work",
+        "surface": "la Bible",
+        "rule": "work-variant:suspect",
+        "alternatives": [],
+        "matched_form": "La Bible",
+        "form_source": "cache-variant",
+        "context": "erspective eschatologique et éthique de la Bible, Dieu se révèle comme le Dieu d’amour.",
+        "text": "la Bible",
         "occurrence": 1
       }
     ],
@@ -1065,7 +1091,7 @@
         "gid": "132229900",
         "category": "person",
         "surface": "Müller",
-        "rule": "bare-surname",
+        "rule": "bare-surname:suspect",
         "alternatives": [],
         "matched_form": "Müller, Kurt",
         "form_source": "cache-variant",

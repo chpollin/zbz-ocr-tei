@@ -515,6 +515,20 @@ Consequences: corpus scan, all 285 previews (schema-valid and text-invariant), v
 
 Documents: [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 94
 
+---
+
+### E109 Adjudicated error classes repaired by deterministic guards; verdict store rebound to the frozen scan (2026-08-13)
+
+Occasion: the operator directed the repair program toward capturing the work class and, beyond it, every listed entity. The facsimile adjudication of 2026-08-12 had confirmed nine wrong_entity and wrong_span cases (five of them naming a work or an institution where a person was marked), and corpus probes grounded each candidate rule before it was built: the scan invariant carried eleven hyphen-adjacent tier-1 marks, the citation frames matched twelve tier-1 full names, the eponymous container exactly one.
+
+Decision (operator direction, implementation 2026-08-13): every confirmed error class receives a deterministic answer, grown from adjudicated cases only. Five guards demote to the worklist: hyphen at the span border (compound "UNESCO-Kommission"), author-initial citation frame ("Salamun K., Karl Jaspers, Munich, 1985"), editor-abbreviation frame ("Karl Jaspers, éd. P.A. Schilpp"), eponymous institution prefix ("Fondation Karl Jaspers"), undated parenthetical after a surname ("Augustin (de Malègue)"), and the lowercased incipit of a case-tolerant work title ("die Mauer", works only, because German inflects the leading adjective of organisation names). Two repairs correct the span: the internal particle bridge ("Saint Ignace de Loyola" as one mention) and the subtitle-join channel ("Nietzsche. Einfuehrung in das Verstaendnis seines Philosophierens" as one worklist span). Rejected alternatives: a broad italics guard for person names, rejected because the probe showed the signal mixed (interview labels and bylines in italics are genuine mentions); and a general citation-line detector, rejected as heuristic-fragile, so title-position names without a deterministic frame stay tier 1 for the judge stage. One recall exception is decided: the calendar formula "avant J.-C." never enters the lexicon.
+
+Root-cause fix in the same wave: `build_mention_verdicts` read the live corpus scan, which E108/E109 made diverge from the population the sample was drawn from; the build now reads the frozen snapshot `entity_corpus_scan_frozen_2026-08-12.json`, and the store reproduces byte-identically however the live rules move.
+
+Consequences: all nine adjudicated cases verified fixed at their corpus positions; the hyphen invariant of the scan reads zero violations; 285 previews schema-valid and text-invariant; the reference trend rose to tier-1 precision 0.67 with recall and coverage unchanged, which is the expected signature of pure false-positive removal; entity battery green.
+
+Documents: [entity-integration.md](entity-integration.md) section "Adjudicated precision guards", [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 94
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |

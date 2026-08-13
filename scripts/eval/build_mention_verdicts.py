@@ -55,7 +55,10 @@ from scripts.edition.generate_entity_preview_data import page_of, pb_offsets
 
 SAMPLE_DIR = AUDIT_OUTPUT_DIR / "eval_sample"
 VERDICTS_DIR = SAMPLE_DIR / "verdicts"
-SCAN_PATH = AUDIT_OUTPUT_DIR / "entity_corpus_scan.json"
+# The store is snapshot-bound: occurrence indexes count over the FROZEN scan the
+# sample was drawn from, never over the live scan, whose tier-1 population moves
+# with every matcher rule change (E108/E109 made the two diverge).
+SCAN_PATH = SAMPLE_DIR / "entity_corpus_scan_frozen_2026-08-12.json"
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 OUT_PATH = DATA_DIR / "entities" / "mention_verdicts.json"
 
