@@ -272,9 +272,11 @@ def _filter_reviewed(
     skipped: dict[str, int],
 ) -> tuple[tuple[tuple[str, str], ...], tuple[tuple[str, str], ...]]:
     """Split the cache channel by verdict: reject drops, suspect (or unreviewed) demotes."""
-    verdicts = ((review.get(_REVIEW_LIST_KEY[category]) or {}).get(gid) or {}).get(
+    raw_verdicts = ((review.get(_REVIEW_LIST_KEY[category]) or {}).get(gid) or {}).get(
         "verdicts"
     ) or {}
+    # Review keys are cache forms as written; fold them like every registered form.
+    verdicts = {_collapse(key): value for key, value in raw_verdicts.items()}
     kept: list[tuple[str, str]] = []
     suspect: list[tuple[str, str]] = []
     for form, source in variants:
@@ -779,7 +781,13 @@ def _initials_forms(label: str, category: str) -> tuple[str, ...]:
 
 
 def _collapse(value: str) -> str:
-    return " ".join(value.split())
+    """One-space form with the typographic apostrophe folded to ASCII.
+
+    E94 normalized the corpus text to U+2019 while list and cache carry U+0027;
+    both sides fold at registration so a French elision matches either way. The
+    scan projection folds identically (entity_matcher._normalize).
+    """
+    return " ".join(value.replace(chr(0x2019), "'").split())
 
 
 def _first_word(form: str) -> str:

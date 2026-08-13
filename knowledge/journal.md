@@ -61,6 +61,20 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-13 Session 95: verdict guard, zero-mention classification wave, apostrophe folding (E110/E111)
+
+**Occasion** Operator question whether the entity layer really captures every listed entity and how agent-driven repairs can proceed without overwriting adjudicated ground truth; parallel operator review of five problem classes in the viewer.
+
+**Goal** A standing regression gate over the adjudicated judgments, the 42 zero-mention list entries classified (absent in corpus against matcher gap), and every safely reachable gap closed under that gate.
+
+**Course** Built `entity_verdict_guard` test-first: every adjudicated judgment is held against the current scan and classified; violations are exactly a vanished correct mark, a wrong mark still asserted in tier 1, and a real mention that no longer surfaces; tier moves stay informational because rule changes move marks legitimately. First run evidence: all 279 correct marks survive, 10 of 14 wrong marks repaired, the 4 remaining are text-side defects (OCR phantom on a blank leaf in 1520, hallucination loop in 900, generated speaker duplication in 2330); of the 30 adjudicated misses 27 now surface and 3 remain (two the decided J.-C. exception, one the newspaper short form). A planned footnote-digit repair was refuted by a corpus probe before any code: real names never carry glued ASCII digits, the true superscripts are already separated. Three Opus agents classified the 42 zero-mention entries read-only against cache and both text streams: two genuine absences, two entries out of digitized page range (foreword of 2635), one placeholder defect ("Test", gid 000000), the rest matcher or lexicon gaps with evidence and proposed variants (report under `output/audits/zero_mention_classification/`). Their sharpest finding, the apostrophe mismatch (corpus U+2019 after E94, list and cache ASCII), was verified and folded at matching time in three consistent places (E111); the guard confirmed the identical adjudicated state after the change, previews, viewer mirror and overview regenerated, five entries left the zero-mention set. The stored empty unlisted report of 2026-08-12 was refuted by a fresh run; the channel carries ranked candidates (top person-shaped: Raymond Aron, Pere Fessard). Also identified: doc 1350 maps six text pages onto four facsimile images although the pb elements carry correct facs anchors; the mirror numbers pages sequentially and drops the anchor, a delivery-chain defect outside the entity layer.
+
+**Decisions** E110 (guard semantics and gate capability), E111 (apostrophe folding, diacritic folding deliberately excluded); list edits from the classification wave stay operator-gated, the agents proposed variants without touching curated data.
+
+**Status** Committed and pushed; battery green, ruff clean over the touched files, guard at the 4 known text-side violations, overview shows 37 zero-mention entries remaining.
+
+**Next steps** 1. Operator review of the classification report, then the variant additions to the curated list. 2. Text-side repair backlog (1520 phantom, 900 hallucination loop, 2330 speaker duplication, 1350 facs mapping). 3. Fresh sample and gold run under frozen rules (M4 close), then remeasured precision and recall.
+
 ### 2026-08-13 Session 94 (late night): entity-layer refactoring wave with three Opus agents
 
 **Occasion** Operator direction to name and execute honest refactoring and optimization, delegated to Opus subagents.

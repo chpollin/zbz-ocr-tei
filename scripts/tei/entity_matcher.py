@@ -455,6 +455,9 @@ def _normalize(xml: str, zones: _Zones) -> _Norm:
         return _in_spans(pos, zones.text) and not _in_spans(pos, zones.excluded)
 
     def add_char(char: str, raw_start: int, raw_end: int) -> None:
+        if char == chr(0x2019):
+            # fold the typographic apostrophe like the lexicon does (_collapse)
+            char = "'"
         if char.isspace():
             if not state["suppress"] and state["pending_ws"] < 0:
                 state["pending_ws"] = raw_start

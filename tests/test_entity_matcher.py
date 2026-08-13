@@ -8,6 +8,7 @@ drive the fixtures one by one.
 
 from __future__ import annotations
 
+import itertools
 import json
 
 import pytest
@@ -531,7 +532,7 @@ def test_surface_matches_offsets_for_every_candidate(lex):
 
 def test_candidates_are_sorted_and_free_of_overlap(lex):
     cands = em.find_candidates(COMPOSITE, lex)
-    for prev, cur in zip(cands, cands[1:]):
+    for prev, cur in itertools.pairwise(cands):
         assert prev["start"] < cur["start"]
         assert prev["end"] <= cur["start"]
 
@@ -938,7 +939,7 @@ def test_particle_does_not_bridge_to_another_entity(lex):
     # "de" followed by a different person's surname stays two readings, no merge
     xml = _tei("<p>Der Brief Karl Jaspers de Marcel war erfunden.</p>")
     cands = em.find_candidates(xml, lex)
-    assert [c["surface"] for c in cands][0] == "Karl Jaspers"
+    assert next(c["surface"] for c in cands) == "Karl Jaspers"
 
 
 def test_subtitle_join_form_covers_the_full_printed_title(tmp_path):
@@ -1672,3 +1673,35 @@ def test_every_derived_candidate_is_tier2_and_span_exact(tmp_path):
         assert cand["tier"] == 2
         assert DERIVED_COMPOSITE[cand["start"]:cand["end"]] == cand["surface"]
         assert cand["form_source"] in em.FORM_SOURCES
+
+
+# --- apostrophe folding (E111) ----------------------------------------------------
+
+
+def test_typographic_apostrophe_in_text_matches_the_ascii_list_form(tmp_path):
+    # E94 normalized the corpus to U+2019 while list and cache carry ASCII apostrophes
+    lexicon = _build(tmp_path, works=[_work("1389909646", "Le droit d'être un homme")])
+    xml = _tei("<p>Voir Le droit d\u2019être un homme, Paris 1968.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["surface"] for c in cands] == ["Le droit d\u2019être un homme"]
+    assert xml[cands[0]["start"]:cands[0]["end"]] == cands[0]["surface"]
+
+
+def test_typographic_apostrophe_in_a_cache_variant_matches_ascii_text(tmp_path):
+    cache = {"118647962": _cache_entry("Alembert, Jean", ("d\u2019Alembert, Jean",))}
+    lexicon = _build(tmp_path, persons=[_person("118647962", "Alembert, Jean")],
+                     cache=cache)
+    xml = _tei("<p>Nach Jean d'Alembert bleibt dies bestehen.</p>")
+    cands = em.find_candidates(xml, lexicon)
+    assert [c["gid"] for c in cands] == ["118647962"]
+    assert cands[0]["surface"] == "Jean d'Alembert"
+
+
+def test_review_verdict_keyed_with_typographic_apostrophe_still_applies(tmp_path):
+    review = _review(persons=_verdicts("118647962", "Alembert, Jean",
+                                       {"d\u2019Alembert, Jean": "reject"}))
+    cache = {"118647962": _cache_entry("Alembert, Jean", ("d\u2019Alembert, Jean",))}
+    lexicon = _build(tmp_path, persons=[_person("118647962", "Alembert, Jean")],
+                     cache=cache, review=review)
+    assert "Jean d'Alembert" not in lexicon["forms"]
+    assert lexicon["skipped"]["review_reject"] == 1

@@ -529,6 +529,32 @@ Consequences: all nine adjudicated cases verified fixed at their corpus position
 
 Documents: [entity-integration.md](entity-integration.md) section "Adjudicated precision guards", [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 94
 
+---
+
+### E110 Verdict guard as standing regression gate over the adjudicated judgments (2026-08-13)
+
+Occasion: the operator asked how agent-driven repairs can proceed without overwriting what the facsimile adjudication secured. The verdict store (E109) held the judgments, but nothing compared them against the live scan; the comparison was manual.
+
+Decision: `scripts/eval/entity_verdict_guard.py` holds every adjudicated judgment against the current corpus scan and classifies it. Violations are exactly three cases: a correct mark that disappeared, a wrong_entity or not_in_source mark still asserted in tier 1, and an adjudicated real mention that no longer surfaces at all. Tier moves are reported, never violations, because rule changes move marks legitimately (the running-head demotion postdates the adjudication). Ambiguous candidates match over their `alternatives` list, and a changed document digest shields its records as text_changed instead of producing false alarms. The guard runs after every matcher, lexicon or text change; exit code 1 on violations makes it gate-capable.
+
+Refuted in the same session: a matcher repair for footnote digits glued to names. The corpus probe showed the phenomenon does not exist on real names (the corpus writes true superscripts, which the scan already separates; the only glued ASCII digits sit in OCR garbage of two documents), and the adjudicated Nietzsche case already surfaces through the superscript rule. Verification replaced code.
+
+First run evidence (2026-08-13, scan of the E109 state): 279 correct marks all survive (252 tier 1, 27 legitimate moves to the worklist), 10 of 14 wrong marks repaired, the 4 remaining are text-side defects outside the matcher's reach (OCR phantom on a blank leaf, hallucination loop, generated speaker duplication); of the 30 adjudicated misses 27 now surface and 3 remain (two of them the decided J.-C. exception of E109, one the newspaper short form "Populaire"). The empty unlisted report of 2026-08-12 was refuted by a fresh run; the proposal channel carries ranked candidates (top person-shaped: Raymond Aron, Pere Fessard).
+
+Documents: [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 95
+
+---
+
+### E111 Apostrophe folding between corpus text and entity lexicon (2026-08-13)
+
+Occasion: the zero-mention classification wave (three Opus agents over the 42 list entries without a single match) isolated one root cause behind most missed work titles: the E94 stock correction normalized the corpus text to the typographic apostrophe U+2019, while the curated list and the GND cache carry ASCII U+0027, and the matcher compares literally. One French title alone was invisible in every document that cites it.
+
+Decision: both sides fold U+2019 to ASCII at matching time, in exactly three places with one semantics: the scan projection (`entity_matcher._normalize`), the form registration (`entity_lexicon._collapse`), and the review-verdict key lookup (`_split_by_verdict`), so verdicts keyed with either spelling keep applying. Raw text, surfaces and offsets stay untouched; the fold exists only in the comparison space. Diacritic folding stays out (an accent difference is a real spelling difference, no adjudicated case requires it).
+
+Consequences: 53 additional marks corpus-wide, five list entries left the zero-mention set (37 remain), the recovered title surfaces in 15 documents; the verdict guard (E110) confirms the identical adjudicated state before and after, no judgment violated; previews, viewer mirror and overview regenerated; battery green, ruff clean.
+
+Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |

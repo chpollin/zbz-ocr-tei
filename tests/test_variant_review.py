@@ -46,10 +46,11 @@ def cache_forms(entry):
 
 
 def reviewed_forms(review):
+    """Verdict keys in registration identity: folded like every lexicon form (E111)."""
     for category in CATEGORIES:
         for gid, bucket in review[category].items():
             for form, entry in bucket["verdicts"].items():
-                yield category, gid, form, entry
+                yield category, gid, _collapse(form), entry
 
 
 def test_top_level_shape():

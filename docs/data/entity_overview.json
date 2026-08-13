@@ -49,9 +49,9 @@
  "totals": {
   "documents": 285,
   "listed_entities": 290,
-  "entities_found": 248,
-  "auto": 3855,
-  "review": 6039
+  "entities_found": 253,
+  "auto": 3897,
+  "review": 6050
  },
  "entities": {
   "104535342": {
@@ -277,9 +277,14 @@
   "1150680555": {
    "label": "Anikina vremena",
    "category": "work",
-   "auto": 0,
+   "auto": 1,
    "review": 0,
-   "docs": {}
+   "docs": {
+    "1910": [
+     1,
+     0
+    ]
+   }
   },
   "118503251": {
    "label": "Anouilh, Jean",
@@ -1047,8 +1052,17 @@
    "label": "Bibel. Altes Testament",
    "category": "work",
    "auto": 0,
-   "review": 0,
-   "docs": {}
+   "review": 3,
+   "docs": {
+    "110": [
+     0,
+     1
+    ],
+    "1520": [
+     0,
+     2
+    ]
+   }
   },
   "4135630-5": {
    "label": "Bibel. Chronik, 1.",
@@ -2031,7 +2045,7 @@
   "1088013910": {
    "label": "Die Atombombe und die Zukunft des Menschen",
    "category": "work",
-   "auto": 6,
+   "auto": 11,
    "review": 0,
    "docs": {
     "650": [
@@ -2039,11 +2053,19 @@
      0
     ],
     "1520": [
-     3,
+     5,
+     0
+    ],
+    "1830": [
+     1,
+     0
+    ],
+    "2330": [
+     1,
      0
     ],
     "3040": [
-     1,
+     2,
      0
     ]
    }
@@ -5022,7 +5044,7 @@
   "118556851": {
    "label": "James, William",
    "category": "person",
-   "auto": 4,
+   "auto": 3,
    "review": 6,
    "docs": {
     "220": [
@@ -5030,7 +5052,7 @@
      1
     ],
     "380": [
-     2,
+     1,
      0
     ],
     "540": [
@@ -6382,15 +6404,47 @@
   "4138406-4": {
    "label": "L' être et le néant",
    "category": "work",
-   "auto": 1,
-   "review": 2,
+   "auto": 13,
+   "review": 4,
    "docs": {
+    "110": [
+     1,
+     0
+    ],
+    "120": [
+     4,
+     0
+    ],
+    "200": [
+     1,
+     0
+    ],
+    "390": [
+     1,
+     0
+    ],
+    "510": [
+     3,
+     0
+    ],
+    "680": [
+     0,
+     1
+    ],
+    "910": [
+     0,
+     1
+    ],
     "1910": [
      0,
      2
     ],
     "2160": [
      1,
+     0
+    ],
+    "2330": [
+     2,
      0
     ]
    }
@@ -6430,8 +6484,13 @@
    "label": "La mort dans l'âme",
    "category": "work",
    "auto": 0,
-   "review": 0,
-   "docs": {}
+   "review": 1,
+   "docs": {
+    "340": [
+     0,
+     1
+    ]
+   }
   },
   "4099334-6": {
    "label": "La nausée",
@@ -6460,9 +6519,14 @@
   "1394029357": {
    "label": "La notion d'expérience d'après William James",
    "category": "work",
-   "auto": 0,
+   "auto": 1,
    "review": 0,
-   "docs": {}
+   "docs": {
+    "380": [
+     1,
+     0
+    ]
+   }
   },
   "118569678": {
    "label": "Laozi",
@@ -6518,9 +6582,70 @@
   "1389909646": {
    "label": "Le droit d'être un homme",
    "category": "work",
-   "auto": 0,
-   "review": 0,
-   "docs": {}
+   "auto": 20,
+   "review": 5,
+   "docs": {
+    "880": [
+     1,
+     0
+    ],
+    "980": [
+     1,
+     1
+    ],
+    "1220": [
+     1,
+     0
+    ],
+    "1530": [
+     1,
+     0
+    ],
+    "1620": [
+     1,
+     0
+    ],
+    "1730": [
+     1,
+     0
+    ],
+    "1830": [
+     1,
+     0
+    ],
+    "2200": [
+     2,
+     1
+    ],
+    "2330": [
+     4,
+     0
+    ],
+    "2440": [
+     1,
+     0
+    ],
+    "2670": [
+     1,
+     0
+    ],
+    "2720": [
+     1,
+     0
+    ],
+    "2920": [
+     2,
+     0
+    ],
+    "3010": [
+     1,
+     0
+    ],
+    "3200": [
+     1,
+     3
+    ]
+   }
   },
   "1384590161": {
    "label": "Le dur désir de durer",
@@ -10992,7 +11117,7 @@
   "1092385584": {
    "label": "Vom Ursprung und Ziel der Geschichte",
    "category": "work",
-   "auto": 7,
+   "auto": 11,
    "review": 1,
    "docs": {
     "290": [
@@ -11000,11 +11125,15 @@
      1
     ],
     "650": [
+     2,
+     0
+    ],
+    "900": [
      1,
      0
     ],
     "1520": [
-     4,
+     5,
      0
     ],
     "2350": [
@@ -11012,7 +11141,7 @@
      0
     ],
     "3040": [
-     1,
+     2,
      0
     ]
    }
@@ -12403,14 +12532,14 @@
    ]
   },
   "110": {
-   "auto": 29,
-   "review": 93,
+   "auto": 30,
+   "review": 94,
    "classes": {
     "ambiguous": 7,
     "derived": 1,
     "running_head": 2,
     "short_title": 2,
-    "suspect": 8,
+    "suspect": 9,
     "unanchored": 73
    },
    "entities": [
@@ -12670,7 +12799,21 @@
      }
     },
     {
+     "gid": "4001515-4",
+     "auto": 0,
+     "review": 1,
+     "classes": {
+      "suspect": 1
+     }
+    },
+    {
      "gid": "4099257-3",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
+    },
+    {
+     "gid": "4138406-4",
      "auto": 1,
      "review": 0,
      "classes": {}
@@ -12692,7 +12835,7 @@
    ]
   },
   "120": {
-   "auto": 62,
+   "auto": 66,
    "review": 42,
    "classes": {
     "ambiguous": 1,
@@ -12734,6 +12877,12 @@
     {
      "gid": "118557106",
      "auto": 7,
+     "review": 0,
+     "classes": {}
+    },
+    {
+     "gid": "4138406-4",
+     "auto": 4,
      "review": 0,
      "classes": {}
     },
@@ -13347,7 +13496,7 @@
    ]
   },
   "200": {
-   "auto": 13,
+   "auto": 14,
    "review": 34,
    "classes": {
     "ambiguous": 3,
@@ -13478,6 +13627,12 @@
      "classes": {
       "short_title": 1
      }
+    },
+    {
+     "gid": "4138406-4",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "4138407-6",
@@ -14314,11 +14469,11 @@
   },
   "340": {
    "auto": 2,
-   "review": 14,
+   "review": 15,
    "classes": {
     "derived": 3,
     "running_head": 8,
-    "suspect": 1,
+    "suspect": 2,
     "unanchored": 2
    },
    "entities": [
@@ -14348,6 +14503,14 @@
     },
     {
      "gid": "4099334-6",
+     "auto": 0,
+     "review": 1,
+     "classes": {
+      "suspect": 1
+     }
+    },
+    {
+     "gid": "4382025-6",
      "auto": 0,
      "review": 1,
      "classes": {
@@ -14459,7 +14622,7 @@
     },
     {
      "gid": "118556851",
-     "auto": 2,
+     "auto": 1,
      "review": 0,
      "classes": {}
     },
@@ -14500,6 +14663,12 @@
      "classes": {}
     },
     {
+     "gid": "1394029357",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
+    },
+    {
      "gid": "172447941",
      "auto": 1,
      "review": 0,
@@ -14514,7 +14683,7 @@
    ]
   },
   "390": {
-   "auto": 5,
+   "auto": 6,
    "review": 5,
    "classes": {
     "derived": 1,
@@ -14562,6 +14731,12 @@
      "classes": {
       "derived": 1
      }
+    },
+    {
+     "gid": "4138406-4",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
     }
    ]
   },
@@ -15192,7 +15367,7 @@
    ]
   },
   "510": {
-   "auto": 117,
+   "auto": 120,
    "review": 78,
    "classes": {
     "ambiguous": 7,
@@ -15297,6 +15472,12 @@
      "classes": {
       "unanchored": 3
      }
+    },
+    {
+     "gid": "4138406-4",
+     "auto": 3,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "118503251",
@@ -16311,7 +16492,7 @@
    ]
   },
   "650": {
-   "auto": 142,
+   "auto": 143,
    "review": 97,
    "classes": {
     "ambiguous": 26,
@@ -16496,6 +16677,12 @@
      "classes": {}
     },
     {
+     "gid": "1092385584",
+     "auto": 2,
+     "review": 0,
+     "classes": {}
+    },
+    {
      "gid": "118505114",
      "auto": 0,
      "review": 2,
@@ -16553,12 +16740,6 @@
     },
     {
      "gid": "1088014062",
-     "auto": 1,
-     "review": 0,
-     "classes": {}
-    },
-    {
-     "gid": "1092385584",
      "auto": 1,
      "review": 0,
      "classes": {}
@@ -17015,10 +17196,10 @@
   },
   "680": {
    "auto": 30,
-   "review": 27,
+   "review": 28,
    "classes": {
     "short_title": 2,
-    "suspect": 4,
+    "suspect": 5,
     "unanchored": 21
    },
    "entities": [
@@ -17128,6 +17309,14 @@
      "auto": 1,
      "review": 0,
      "classes": {}
+    },
+    {
+     "gid": "4138406-4",
+     "auto": 0,
+     "review": 1,
+     "classes": {
+      "suspect": 1
+     }
     }
    ]
   },
@@ -18569,7 +18758,7 @@
    ]
   },
   "880": {
-   "auto": 11,
+   "auto": 12,
    "review": 3,
    "classes": {
     "ambiguous": 2,
@@ -18606,6 +18795,12 @@
     },
     {
      "gid": "118557106",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
+    },
+    {
+     "gid": "1389909646",
      "auto": 1,
      "review": 0,
      "classes": {}
@@ -18732,7 +18927,7 @@
    ]
   },
   "900": {
-   "auto": 39,
+   "auto": 40,
    "review": 14,
    "classes": {
     "ambiguous": 5,
@@ -18824,6 +19019,12 @@
      "classes": {}
     },
     {
+     "gid": "1092385584",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
+    },
+    {
      "gid": "118559796",
      "auto": 0,
      "review": 1,
@@ -18891,10 +19092,10 @@
   },
   "910": {
    "auto": 2,
-   "review": 15,
+   "review": 16,
    "classes": {
     "running_head": 5,
-    "suspect": 1,
+    "suspect": 2,
     "unanchored": 9
    },
    "entities": [
@@ -18934,6 +19135,14 @@
      "review": 1,
      "classes": {
       "unanchored": 1
+     }
+    },
+    {
+     "gid": "4138406-4",
+     "auto": 0,
+     "review": 1,
+     "classes": {
+      "suspect": 1
      }
     }
    ]
@@ -19191,11 +19400,11 @@
    ]
   },
   "980": {
-   "auto": 8,
-   "review": 3,
+   "auto": 9,
+   "review": 4,
    "classes": {
     "derived": 1,
-    "suspect": 2
+    "suspect": 3
    },
    "entities": [
     {
@@ -19203,6 +19412,14 @@
      "auto": 5,
      "review": 0,
      "classes": {}
+    },
+    {
+     "gid": "1389909646",
+     "auto": 1,
+     "review": 1,
+     "classes": {
+      "suspect": 1
+     }
     },
     {
      "gid": "1010450-1",
@@ -19918,7 +20135,7 @@
    ]
   },
   "1220": {
-   "auto": 16,
+   "auto": 17,
    "review": 69,
    "classes": {
     "ambiguous": 5,
@@ -20104,6 +20321,12 @@
      "classes": {
       "unanchored": 1
      }
+    },
+    {
+     "gid": "1389909646",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
     }
    ]
   },
@@ -21280,15 +21503,15 @@
    ]
   },
   "1520": {
-   "auto": 277,
-   "review": 180,
+   "auto": 280,
+   "review": 182,
    "classes": {
     "ambiguous": 60,
     "bibliography": 1,
     "derived": 7,
     "running_head": 15,
     "short_title": 3,
-    "suspect": 33,
+    "suspect": 35,
     "unanchored": 61
    },
    "entities": [
@@ -21400,12 +21623,24 @@
      "classes": {}
     },
     {
+     "gid": "1088013910",
+     "auto": 5,
+     "review": 0,
+     "classes": {}
+    },
+    {
      "gid": "108801397X",
      "auto": 3,
      "review": 2,
      "classes": {
       "suspect": 2
      }
+    },
+    {
+     "gid": "1092385584",
+     "auto": 5,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "118594893",
@@ -21418,12 +21653,6 @@
     {
      "gid": "119194589",
      "auto": 5,
-     "review": 0,
-     "classes": {}
-    },
-    {
-     "gid": "1092385584",
-     "auto": 4,
      "review": 0,
      "classes": {}
     },
@@ -21459,12 +21688,6 @@
       "ambiguous": 2,
       "derived": 1
      }
-    },
-    {
-     "gid": "1088013910",
-     "auto": 3,
-     "review": 0,
-     "classes": {}
     },
     {
      "gid": "1088014011",
@@ -21623,6 +21846,14 @@
      "review": 2,
      "classes": {
       "derived": 2
+     }
+    },
+    {
+     "gid": "4001515-4",
+     "auto": 0,
+     "review": 2,
+     "classes": {
+      "suspect": 2
      }
     },
     {
@@ -21798,7 +22029,7 @@
    ]
   },
   "1530": {
-   "auto": 59,
+   "auto": 60,
    "review": 53,
    "classes": {
     "ambiguous": 1,
@@ -21984,6 +22215,12 @@
      "classes": {
       "derived": 1
      }
+    },
+    {
+     "gid": "1389909646",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "2024349-2",
@@ -22441,7 +22678,7 @@
    ]
   },
   "1620": {
-   "auto": 22,
+   "auto": 23,
    "review": 13,
    "classes": {
     "ambiguous": 4,
@@ -22553,6 +22790,12 @@
      "classes": {
       "suspect": 1
      }
+    },
+    {
+     "gid": "1389909646",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "36146-X",
@@ -22893,7 +23136,7 @@
    ]
   },
   "1730": {
-   "auto": 2,
+   "auto": 3,
    "review": 2,
    "classes": {
     "derived": 2
@@ -22909,6 +23152,12 @@
     },
     {
      "gid": "118815679",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
+    },
+    {
+     "gid": "1389909646",
      "auto": 1,
      "review": 0,
      "classes": {}
@@ -23091,7 +23340,7 @@
    ]
   },
   "1830": {
-   "auto": 42,
+   "auto": 44,
    "review": 61,
    "classes": {
     "ambiguous": 27,
@@ -23229,6 +23478,12 @@
      }
     },
     {
+     "gid": "1088013910",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
+    },
+    {
      "gid": "118503251",
      "auto": 0,
      "review": 1,
@@ -23286,6 +23541,12 @@
     },
     {
      "gid": "1382846452",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
+    },
+    {
+     "gid": "1389909646",
      "auto": 1,
      "review": 0,
      "classes": {}
@@ -23609,7 +23870,7 @@
    ]
   },
   "1910": {
-   "auto": 4,
+   "auto": 5,
    "review": 17,
    "classes": {
     "derived": 2,
@@ -23639,6 +23900,12 @@
      "classes": {
       "suspect": 2
      }
+    },
+    {
+     "gid": "1150680555",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "118503014",
@@ -25075,10 +25342,11 @@
    ]
   },
   "2200": {
-   "auto": 10,
-   "review": 1,
+   "auto": 12,
+   "review": 2,
    "classes": {
-    "derived": 1
+    "derived": 1,
+    "suspect": 1
    },
    "entities": [
     {
@@ -25092,6 +25360,14 @@
      "auto": 4,
      "review": 0,
      "classes": {}
+    },
+    {
+     "gid": "1389909646",
+     "auto": 2,
+     "review": 1,
+     "classes": {
+      "suspect": 1
+     }
     },
     {
      "gid": "118557513",
@@ -25692,7 +25968,7 @@
    ]
   },
   "2330": {
-   "auto": 346,
+   "auto": 353,
    "review": 1087,
    "classes": {
     "ambiguous": 35,
@@ -25947,6 +26223,12 @@
      }
     },
     {
+     "gid": "1389909646",
+     "auto": 4,
+     "review": 0,
+     "classes": {}
+    },
+    {
      "gid": "1088059414",
      "auto": 3,
      "review": 0,
@@ -26068,6 +26350,12 @@
      }
     },
     {
+     "gid": "4138406-4",
+     "auto": 2,
+     "review": 0,
+     "classes": {}
+    },
+    {
      "gid": "4367-9",
      "auto": 0,
      "review": 2,
@@ -26099,6 +26387,12 @@
     },
     {
      "gid": "1077991495",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
+    },
+    {
+     "gid": "1088013910",
      "auto": 1,
      "review": 0,
      "classes": {}
@@ -26905,7 +27199,7 @@
    ]
   },
   "2440": {
-   "auto": 3,
+   "auto": 4,
    "review": 3,
    "classes": {
     "ambiguous": 3
@@ -26933,6 +27227,12 @@
     },
     {
      "gid": "118815679",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
+    },
+    {
+     "gid": "1389909646",
      "auto": 1,
      "review": 0,
      "classes": {}
@@ -28248,7 +28548,7 @@
    ]
   },
   "2670": {
-   "auto": 1,
+   "auto": 2,
    "review": 12,
    "classes": {
     "derived": 2,
@@ -28289,6 +28589,12 @@
      "classes": {
       "suspect": 1
      }
+    },
+    {
+     "gid": "1389909646",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
     }
    ]
   },
@@ -28545,7 +28851,7 @@
    ]
   },
   "2720": {
-   "auto": 8,
+   "auto": 9,
    "review": 0,
    "classes": {},
    "entities": [
@@ -28564,6 +28870,12 @@
     {
      "gid": "2023755-8",
      "auto": 2,
+     "review": 0,
+     "classes": {}
+    },
+    {
+     "gid": "1389909646",
+     "auto": 1,
      "review": 0,
      "classes": {}
     }
@@ -29440,7 +29752,7 @@
    ]
   },
   "2920": {
-   "auto": 2,
+   "auto": 4,
    "review": 22,
    "classes": {
     "ambiguous": 2,
@@ -29472,6 +29784,12 @@
      "classes": {
       "derived": 5
      }
+    },
+    {
+     "gid": "1389909646",
+     "auto": 2,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "117085391",
@@ -30091,7 +30409,7 @@
    ]
   },
   "3010": {
-   "auto": 9,
+   "auto": 10,
    "review": 10,
    "classes": {
     "ambiguous": 2,
@@ -30141,6 +30459,12 @@
      "classes": {
       "unanchored": 1
      }
+    },
+    {
+     "gid": "1389909646",
+     "auto": 1,
+     "review": 0,
+     "classes": {}
     }
    ]
   },
@@ -30205,7 +30529,7 @@
    ]
   },
   "3040": {
-   "auto": 53,
+   "auto": 55,
    "review": 133,
    "classes": {
     "ambiguous": 65,
@@ -30344,7 +30668,19 @@
      }
     },
     {
+     "gid": "1088013910",
+     "auto": 2,
+     "review": 0,
+     "classes": {}
+    },
+    {
      "gid": "108801397X",
+     "auto": 2,
+     "review": 0,
+     "classes": {}
+    },
+    {
+     "gid": "1092385584",
      "auto": 2,
      "review": 0,
      "classes": {}
@@ -30433,18 +30769,6 @@
     },
     {
      "gid": "1088013457",
-     "auto": 1,
-     "review": 0,
-     "classes": {}
-    },
-    {
-     "gid": "1088013910",
-     "auto": 1,
-     "review": 0,
-     "classes": {}
-    },
-    {
-     "gid": "1092385584",
      "auto": 1,
      "review": 0,
      "classes": {}
@@ -31744,11 +32068,11 @@
    ]
   },
   "3200": {
-   "auto": 43,
-   "review": 33,
+   "auto": 44,
+   "review": 36,
    "classes": {
     "ambiguous": 19,
-    "bibliography": 2,
+    "bibliography": 5,
     "suspect": 11,
     "unanchored": 1
    },
@@ -31790,6 +32114,14 @@
      "auto": 4,
      "review": 0,
      "classes": {}
+    },
+    {
+     "gid": "1389909646",
+     "auto": 1,
+     "review": 3,
+     "classes": {
+      "bibliography": 3
+     }
     },
     {
      "gid": "118630148",
