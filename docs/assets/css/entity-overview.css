@@ -14,44 +14,37 @@
   font-family: var(--h-font-heading);
   color: var(--h-heading);
   font-size: 1.6rem;
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.8rem;
 }
 
-.eo-intro p {
-  color: var(--h-text-secondary);
-  max-width: 46rem;
-  margin: 0 0 1.4rem;
+.eo-intro h1 .badge {
+  vertical-align: 0.25em;
+  margin-left: 0.5rem;
 }
 
-/* Summary strip */
-.eo-summary {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+/* Corpus bar: the totals live on the same stacked bar the document rows use;
+   its labels double as the legend. No stat cards, no intro copy (operator rule). */
+.eo-corpus { margin-bottom: 1.4rem; }
+
+.eo-corpus__bar {
+  display: flex;
+  height: 0.9rem;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--h-bg-alt);
 }
 
-.eo-stat {
-  background: var(--h-surface);
-  border: 1px solid var(--h-border);
-  border-radius: 6px;
-  padding: 0.7rem 0.9rem;
-}
-
-.eo-stat__value {
-  font-family: var(--h-font-heading);
-  font-size: 1.35rem;
-  color: var(--h-text);
-  display: block;
-}
-
-.eo-stat__label {
+.eo-corpus__labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  align-items: center;
+  margin-top: 0.4rem;
   font-size: var(--h-sm);
-  color: var(--h-text-muted);
+  color: var(--h-text-secondary);
 }
 
-.eo-stat--auto .eo-stat__value { color: var(--h-olivgruen); }
-.eo-stat--review .eo-stat__value { color: var(--h-ocker); }
+.eo-corpus__labels .badge { margin-left: auto; }
 
 /* Controls */
 .eo-controls {

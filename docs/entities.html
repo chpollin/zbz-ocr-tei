@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css?v=4">
   <link rel="stylesheet" href="assets/css/base.css?v=7">
-  <link rel="stylesheet" href="assets/css/entity-overview.css?v=1">
+  <link rel="stylesheet" href="assets/css/entity-overview.css?v=2">
 </head>
 <body>
 
@@ -37,40 +37,25 @@
   <main class="eo-main">
 
     <section class="eo-intro">
-      <h1>Entity annotation per document</h1>
-      <p>
-        Which listed entities (persons, organisations, works with GND identifier) are
-        annotated in each object, how many mentions, and how certain the annotation is.
-        Auto-marked mentions carry the measured precision of the annotation layer;
-        review candidates are deliberately held back on a worklist until a human or a
-        calibrated judge decides them. The delivered TEI carries no entity markup yet;
-        everything shown here is the preview layer.
-      </p>
+      <h1>Entity annotation per document
+        <span class="badge badge--info"
+              title="Preview layer: the delivered TEI carries no entity markup yet. Auto-marked mentions carry the measured precision of the annotation layer; review candidates wait on the worklist until a human or a calibrated judge decides them.">Preview layer</span>
+      </h1>
     </section>
 
-    <section class="eo-summary" aria-label="Corpus totals">
-      <div class="eo-stat">
-        <span class="eo-stat__value" id="eo-sum-docs">&ndash;</span>
-        <span class="eo-stat__label">Documents</span>
+    <section class="eo-corpus" aria-label="Corpus totals">
+      <div class="eo-corpus__bar" id="eo-corpus-bar" role="img">
+        <span class="eo-bar__auto" id="eo-corpus-auto"></span>
+        <span class="eo-bar__review" id="eo-corpus-review"></span>
       </div>
-      <div class="eo-stat eo-stat--auto">
-        <span class="eo-stat__value" id="eo-sum-auto">&ndash;</span>
-        <span class="eo-stat__label">Auto-marked mentions</span>
-      </div>
-      <div class="eo-stat eo-stat--review">
-        <span class="eo-stat__value" id="eo-sum-review">&ndash;</span>
-        <span class="eo-stat__label">Review candidates</span>
-      </div>
-      <div class="eo-stat">
-        <span class="eo-stat__value" id="eo-sum-checked">&ndash;</span>
-        <span class="eo-stat__label">Hand-checked correct (sampled)</span>
+      <div class="eo-corpus__labels">
+        <span class="eo-legend__chip"><span class="eo-swatch eo-swatch--auto"></span>
+          <span id="eo-corpus-label-auto">auto-marked (tier 1)</span></span>
+        <span class="eo-legend__chip"><span class="eo-swatch eo-swatch--review"></span>
+          <span id="eo-corpus-label-review">review candidates (worklist)</span></span>
+        <span class="badge badge--ok" id="eo-corpus-checked" hidden></span>
       </div>
     </section>
-
-    <div class="eo-legend" aria-hidden="false">
-      <span class="eo-legend__chip"><span class="eo-swatch eo-swatch--auto"></span> auto-marked (tier 1)</span>
-      <span class="eo-legend__chip"><span class="eo-swatch eo-swatch--review"></span> review candidate (worklist)</span>
-    </div>
 
     <details class="eo-doc eo-classes">
       <summary class="eo-doc__summary eo-doc__summary--single">What do the review classes mean?</summary>
@@ -116,6 +101,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/entity-overview.js?v=1"></script>
+  <script src="assets/js/entity-overview.js?v=2"></script>
 </body>
 </html>

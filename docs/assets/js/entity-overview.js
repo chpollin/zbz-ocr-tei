@@ -70,17 +70,32 @@ ZBZ.EntityOverview = (() => {
     render();
   };
 
-  // ------------------------------------------------------------ summary strip
+  // ------------------------------------------------------------ corpus bar
 
   const renderSummary = (totals) => {
+    const total = totals.auto + totals.review;
+    const bar = document.getElementById('eo-corpus-bar');
+    if (total) {
+      document.getElementById('eo-corpus-auto').style.width =
+        `${(totals.auto / total) * 100}%`;
+      document.getElementById('eo-corpus-review').style.width =
+        `${(totals.review / total) * 100}%`;
+    }
+    bar.setAttribute('aria-label',
+      `${totals.auto.toLocaleString('en-GB')} auto-marked and `
+      + `${totals.review.toLocaleString('en-GB')} review mentions `
+      + `across ${totals.documents} documents`);
+    document.getElementById('eo-corpus-label-auto').textContent =
+      `${totals.auto.toLocaleString('en-GB')} auto-marked (tier 1)`;
+    document.getElementById('eo-corpus-label-review').textContent =
+      `${totals.review.toLocaleString('en-GB')} review candidates (worklist)`;
     const checked = totals.checked || {};
-    const set = (id, value) => { document.getElementById(id).textContent = value; };
-    set('eo-sum-docs', String(totals.documents));
-    set('eo-sum-auto', totals.auto.toLocaleString('en-GB'));
-    set('eo-sum-review', totals.review.toLocaleString('en-GB'));
-    const total = checked.total || 0;
-    const correct = checked.correct || 0;
-    set('eo-sum-checked', total ? `${correct} / ${total}` : '0');
+    if (checked.total) {
+      const badge = document.getElementById('eo-corpus-checked');
+      badge.textContent =
+        `Hand-checked sample: ${checked.correct || 0} of ${checked.total} correct`;
+      badge.hidden = false;
+    }
   };
 
   const renderLegendDescriptions = () => {
