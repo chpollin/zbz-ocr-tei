@@ -61,6 +61,20 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-13 Session 96 (continued): marking policy in force, corpus-wide preview run (E119)
+
+**Occasion** The operator decided the two pending marking questions on the evidence tables and released a full run; during the wave the operator also ruled out further subagent use, so the half-finished delegation was stopped and finished by the orchestrator.
+
+**Goal** Both decisions in force, the preview extended from the ten-document panel to the whole delivered corpus, everything verified and documented.
+
+**Course** The two running agents were stopped mid-flight. The lexicon and matcher side of the policy was complete, so the orchestrator finished the intake audit binding, wired the policy path into the four lexicon callers and adjusted the command-line tests, which must opt out of the real policy because loading it against a synthetic list is a genuine misconfiguration. Two defects surfaced only in the real run and not in any fixture. The verdict guard reported a lost recall mention, because the typographic condition destroys a facsimile-verified mention that the corpus spells as a compound without a frame; the title left the condition, since a verified judgment outranks a rule change. The corpus run then exposed that the responsibility declarations of E118 sit in the header and move every body offset, so the viewer mirror discarded nearly every worklist entry as stale; the preview runner now records the shift per document and the mirror consumes it, which is pinned by a test that builds its fixture with the declarations in place. The full run covers every delivered document, each schema-valid and text-invariant, which is a gate previously proven on ten documents only.
+
+**Decisions** E119 (anchor-free surnames and generic work titles through `data/entities/marking_policy.json`, kept apart from the external entity list). One surname held out. Unlisted entities are admitted by the project itself and marked in the data as an addition from outside the curated list. One of the two open adjudication disputes was settled by the reference corpus rather than by convention: in 190 citations of the 25 reference TEIs not one carries a marked person name, so a name span coextensive with a cited title denotes the work.
+
+**Status** Committed and pushed (`d59b94fd`); worklist volume down by about a third, the auto-marked layer up by about the same number of marks, guard at zero violations, full suite green, every changed file lint-clean, viewer mirror and overview regenerated over the whole corpus.
+
+**Next steps** 1. Supplementary draw over the newly released stratum, because the published rate no longer covers the whole auto-marked layer. 2. Admission dossier for the unlisted entities, with textual evidence and deterministic lobid lookups. 3. Work the missed recall mentions into named rule gaps. 4. Operator: the remaining dispute on the show-through page, the held-out surname.
+
 ### 2026-08-13 Session 96: matching repairs, overview as evidence surface, mark provenance in the XML (E116-E118)
 
 **Occasion** The operator questioned a review candidate that turned out to be a dotted abbreviation read as initials, then asked what the published overview page actually proves about the workflow, then proposed that every annotation carry in the data itself who asserted it and whether a human checked it.

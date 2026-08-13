@@ -52,6 +52,20 @@ a single character.
   character and are normalized before joining. A form its bearer's own GND record does
   not corroborate reaches tier 2 only.
 
+- The marking policy `data/entities/marking_policy.json` (git-tracked) holds the operator
+  decisions about what may be marked, deliberately apart from the entity list, which is
+  an external export and may be replaced wholesale. It is validated on load
+  (`parse_marking_policy`), reaches the matcher as `lexicon["policy"]`, and a gid it names
+  that the list does not carry is an error rather than a silent skip. Two decisions live
+  there, both taken on the evidence tables of 2026-08-13 (E119). `anchor_free_surnames`
+  releases a surname from the document-anchor requirement, for exactly the keys the entry
+  names, so nothing derived from a released key inherits the release and every demotion
+  suffix keeps its effect. `work_titles` takes a generic title out of the marking scope
+  entirely (`drop_from_scope`, a lexicon matter, the forms never enter) or binds it to the
+  typographic evidence of the one-word-title channel (`require_typographic_corroboration`,
+  a matcher matter). `held_out_surnames` records what was considered and deliberately not
+  released, so the reasoning survives.
+
 Every data channel, present or future, is its own trust boundary and passes three
 steps before its forms may match, an intake lint, a shape-class review of the forms
 it contributes, and a pilot round. Which tier a form may serve follows from the
@@ -480,7 +494,13 @@ Nothing before M7 touches `tei_final`.
 | M7 | Stock run | operator-released marker run, gates green, mirror regenerated, register entry |
 
 State on 2026-08-13: M0 to M3 are reached, the pilot and the independent evaluation wave
-included. Beyond the pilot the sampling measurement of
+included. The preview has since left the ten-document panel: it runs over every delivered
+document, each one schema-valid and text-invariant, and every wrapped mark carries its
+provenance and verification state (E118). The marking policy of E119 is in force, so the
+auto-marked layer now covers the released canonical surnames and the worklist no longer
+carries the generic titles taken out of scope. That growth of the auto-marked layer is
+also a measurement obligation, because the released marks appear in no earlier draw
+([entity-evaluation.md](entity-evaluation.md), population validity). Beyond the pilot the sampling measurement of
 [entity-evaluation.md](entity-evaluation.md) has run once over the whole delivered
 corpus, its judgments are persisted in the verdict store, and the consequences that need
 no convention decision are implemented, the derived channels, the invariant gate and the
@@ -511,3 +531,20 @@ Decided 2026-08-13 (operator, E108): mentions of the corpus author are marked li
 every other listed entity, in bylines and signatures as well; the byline exception is
 removed. ZBZ feedback is not available in this project phase, so open convention
 questions of the entity layer fall to the operator.
+
+Decided 2026-08-13 (operator, E119): canonical surnames are released from the document
+anchor, generic work titles are dropped from scope or bound to typographic corroboration,
+both through the marking policy. One surname stayed held out, because person and work
+reading are not locally separable there.
+
+Decided 2026-08-13 (operator): entities the corpus names frequently while the curated
+list omits them are admitted by the project itself, annotated, and marked in the data as
+an addition from outside that list. The provenance vocabulary carries the distinction, a
+third responsibility declaration for the proposal channel with `cert="low"`, and a
+reference only once an identification is confirmed; the admission dossier with textual
+evidence and deterministic lobid lookups is the open work item.
+
+Settled by the reference corpus 2026-08-13: a person-name span coextensive with the
+title of a cited work denotes the work, not the person. In 190 citations of the 25
+reference TEIs not one carries a marked person name, which closes one of the two open
+adjudication disputes without a convention decision.

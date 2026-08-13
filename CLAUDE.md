@@ -69,7 +69,7 @@ The token catalog lives in `docs/assets/css/tokens.css`, base components in `doc
 
 ### Directories (orientation)
 
-- `data/`: input and reference data. `source/` = ZB delivery (immutable input, mostly gitignored) with `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, and `guidelines/` (editorial guidelines, Editionsrichtlinien). Project authority (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (reserved for hand-verified TEI, currently empty) and `entities/` (curated entity list, GND variant cache, variant review, mention verdict store). Generated: `doc_metadata.json` (Gemini cache)
+- `data/`: input and reference data. `source/` = ZB delivery (immutable input, mostly gitignored) with `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, and `guidelines/` (editorial guidelines, Editionsrichtlinien). Project authority (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (reserved for hand-verified TEI, currently empty) and `entities/` (curated entity list, GND variant cache, variant review, mention verdict store, operator marking policy). Generated: `doc_metadata.json` (Gemini cache)
 - `scripts/`: pipeline + tools, grouped by domain into `ocr/`, `layout/`, `tei/`, `eval/`, `edition/`, `core/` (only `config.py` + `utils.py` top-level). Inventory: [scripts/README.md](scripts/README.md)
 - `output/`: all generated data streams (gitignored, NOT versioned)
 - `docs/`: static inspection/demo site (GitHub-Pages-ready) with HTML, `assets/` (`css/` + `js/`), `data/` (generated mirror), `images/`
@@ -211,10 +211,16 @@ The demotion run consumes the facsimile-verified verdicts in
 
 ## Entity integration (M0-M4 reached, M5-M7 open; plan: knowledge/entity-integration.md)
 
+The operator marking decisions live in `data/entities/marking_policy.json`, apart from the
+curated list because that list is an external export. It is validated on load and reaches
+the matcher through `build_lexicon(..., policy_path=...)`; every entity script takes
+`--policy` and defaults to the file (E119).
+
 ```bash
 python -m scripts.tei.fetch_gnd_variants                         # build/refresh the GND variant cache (lobid)
-python -m scripts.eval.entity_lint                               # entity list + cache + legacy pairing audit
+python -m scripts.eval.entity_lint                               # entity list + cache + legacy pairing + marking policy audit
 python -m scripts.tei.tei_entity_preview --panel                 # preview over the 10 pilot documents (tei_final untouched)
+python -m scripts.tei.tei_entity_preview --all                   # preview over the whole corpus; every mark carries @resp/@cert/@source (E118)
 python -m scripts.eval.entity_corpus_scan                        # read-only corpus scan: candidates, distributions, invariants
 python -m scripts.edition.generate_entity_preview_data           # viewer entity mirror (docs/data) from the previews
 python -m scripts.edition.generate_entity_overview               # per-document entity overview (docs/entities.html) from the corpus scan
