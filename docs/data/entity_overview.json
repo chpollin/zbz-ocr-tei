@@ -51,12 +51,82 @@
    "description": "remaining worklist candidates"
   }
  ],
+ "provenance": {
+  "scan": "output/audits/entity_corpus_scan.json",
+  "scan_sha256": "e78349db6bed7fe34893a5f6fabef500242d5d3176c998924c31123e65db2e47",
+  "scan_candidates": 9556,
+  "entity_list": "data/entities/all_entities.json",
+  "listed_entities": 289
+ },
  "totals": {
   "documents": 285,
   "listed_entities": 289,
   "entities_found": 275,
+  "entities_alternative_only": 3,
+  "mentions": 9556,
   "auto": 3883,
-  "review": 5673
+  "review": 5673,
+  "ambiguous_mentions": 2446
+ },
+ "quality": {
+  "source": "data/entities/mention_verdicts.json",
+  "method": "knowledge/entity-evaluation.md",
+  "snapshot": "2026-08-12",
+  "precision": {
+   "n": 300,
+   "distribution": {
+    "correct": 279,
+    "not_in_source": 5,
+    "undecidable": 7,
+    "wrong_entity": 5,
+    "wrong_span": 4
+   },
+   "decidable": 293,
+   "correct": 279,
+   "rate": 0.9522,
+   "ci95": [
+    0.9249,
+    0.9761
+   ],
+   "ci_method": "percentile bootstrap, seed 42, 10000 resamples"
+  },
+  "recall": {
+   "mentions": 67,
+   "pages_with_mentions": 22,
+   "status": {
+    "hit": 20,
+    "missed": 30,
+    "on_worklist": 17
+   },
+   "causes_missed": {
+    "lexicon_gap": 2,
+    "rule_gap": 28
+   },
+   "coverage_hit_or_worklist": 0.5522
+  },
+  "agreement": {
+   "n": 50,
+   "agree": 48,
+   "rate": 0.96,
+   "disagreements": [
+    {
+     "case": "p145",
+     "doc": "1520",
+     "page": 9,
+     "surface": "Jeanne Hersch",
+     "verdict": "not_in_source",
+     "second_verdict": "correct"
+    },
+    {
+     "case": "p193",
+     "doc": "3040",
+     "page": 8,
+     "surface": "Karl Jaspers",
+     "verdict": "wrong_entity",
+     "second_verdict": "correct"
+    }
+   ]
+  }
  },
  "entities": {
   "104535342": {
@@ -64,6 +134,11 @@
    "category": "person",
    "auto": 1,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 2,
+    "derived": 1
+   },
    "docs": {
     "90": [
      0,
@@ -84,6 +159,11 @@
    "category": "person",
    "auto": 0,
    "review": 11,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 5,
+    "unanchored": 6
+   },
    "docs": {
     "140": [
      0,
@@ -116,6 +196,10 @@
    "category": "work",
    "auto": 14,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "short_title": 5
+   },
    "docs": {
     "100": [
      0,
@@ -152,6 +236,10 @@
    "category": "organisation",
    "auto": 0,
    "review": 28,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 28
+   },
    "docs": {
     "600": [
      0,
@@ -196,6 +284,11 @@
    "category": "person",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 1,
+    "unanchored": 1
+   },
    "docs": {
     "1060": [
      0,
@@ -212,6 +305,11 @@
    "category": "person",
    "auto": 2,
    "review": 8,
+   "alternative_only": 2,
+   "classes": {
+    "suspect": 5,
+    "unanchored": 3
+   },
    "docs": {
     "160": [
      2,
@@ -252,6 +350,11 @@
    "category": "person",
    "auto": 10,
    "review": 28,
+   "alternative_only": 9,
+   "classes": {
+    "figure": 3,
+    "unanchored": 25
+   },
    "docs": {
     "2400": [
      10,
@@ -264,6 +367,10 @@
    "category": "person",
    "auto": 1,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "440": [
      1,
@@ -280,6 +387,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "1910": [
      1,
@@ -292,6 +401,11 @@
    "category": "person",
    "auto": 0,
    "review": 13,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 9,
+    "unanchored": 4
+   },
    "docs": {
     "160": [
      0,
@@ -348,6 +462,11 @@
    "category": "person",
    "auto": 0,
    "review": 67,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 2,
+    "unanchored": 65
+   },
    "docs": {
     "310": [
      0,
@@ -444,6 +563,11 @@
    "category": "work",
    "auto": 0,
    "review": 78,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 76,
+    "figure": 2
+   },
    "docs": {
     "90": [
      0,
@@ -556,6 +680,8 @@
    "category": "person",
    "auto": 0,
    "review": 0,
+   "alternative_only": 2,
+   "classes": {},
    "docs": {}
   },
   "118503863": {
@@ -563,6 +689,10 @@
    "category": "person",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 2
+   },
    "docs": {
     "1140": [
      0,
@@ -579,6 +709,11 @@
    "category": "person",
    "auto": 19,
    "review": 23,
+   "alternative_only": 1,
+   "classes": {
+    "suspect": 3,
+    "unanchored": 20
+   },
    "docs": {
     "20": [
      1,
@@ -675,6 +810,11 @@
    "category": "person",
    "auto": 9,
    "review": 9,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 8
+   },
    "docs": {
     "20": [
      0,
@@ -719,6 +859,11 @@
    "category": "person",
    "auto": 0,
    "review": 6,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 2,
+    "unanchored": 4
+   },
    "docs": {
     "840": [
      0,
@@ -743,6 +888,11 @@
    "category": "person",
    "auto": 0,
    "review": 7,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 6
+   },
    "docs": {
     "50": [
      0,
@@ -771,6 +921,8 @@
    "category": "person",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "440": [
      1,
@@ -783,6 +935,11 @@
    "category": "person",
    "auto": 2,
    "review": 6,
+   "alternative_only": 3,
+   "classes": {
+    "suspect": 2,
+    "unanchored": 4
+   },
    "docs": {
     "410": [
      2,
@@ -803,6 +960,8 @@
    "category": "person",
    "auto": 0,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {}
   },
   "118507877": {
@@ -810,6 +969,8 @@
    "category": "person",
    "auto": 7,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "120": [
      1,
@@ -838,6 +999,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "470": [
      0,
@@ -850,6 +1015,12 @@
    "category": "person",
    "auto": 18,
    "review": 71,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 3,
+    "suspect": 2,
+    "unanchored": 66
+   },
    "docs": {
     "20": [
      0,
@@ -958,6 +1129,10 @@
    "category": "person",
    "auto": 0,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 5
+   },
    "docs": {
     "110": [
      0,
@@ -982,6 +1157,11 @@
    "category": "work",
    "auto": 3,
    "review": 22,
+   "alternative_only": 0,
+   "classes": {
+    "short_title": 5,
+    "suspect": 17
+   },
    "docs": {
     "680": [
      0,
@@ -1042,6 +1222,10 @@
    "category": "work",
    "auto": 0,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 3
+   },
    "docs": {
     "110": [
      0,
@@ -1058,6 +1242,8 @@
    "category": "work",
    "auto": 0,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {}
   },
   "4041771-2": {
@@ -1065,6 +1251,10 @@
    "category": "work",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 2
+   },
    "docs": {
     "1520": [
      0,
@@ -1081,6 +1271,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "650": [
      0,
@@ -1093,6 +1287,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "1220": [
      0,
@@ -1105,6 +1303,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "1220": [
      0,
@@ -1117,6 +1319,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "2635": [
      1,
@@ -1129,6 +1333,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "670": [
      0,
@@ -1141,6 +1349,12 @@
    "category": "person",
    "auto": 1,
    "review": 7,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 3,
+    "suspect": 3,
+    "unanchored": 1
+   },
    "docs": {
     "380": [
      0,
@@ -1173,6 +1387,10 @@
    "category": "work",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "short_title": 2
+   },
    "docs": {
     "90": [
      0,
@@ -1185,6 +1403,12 @@
    "category": "work",
    "auto": 2,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "bibliography": 1,
+    "running_head": 3,
+    "suspect": 1
+   },
    "docs": {
     "760": [
      2,
@@ -1197,6 +1421,11 @@
    "category": "person",
    "auto": 1,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "unanchored": 1
+   },
    "docs": {
     "810": [
      0,
@@ -1217,6 +1446,12 @@
    "category": "person",
    "auto": 9,
    "review": 8,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "suspect": 1,
+    "unanchored": 6
+   },
    "docs": {
     "410": [
      9,
@@ -1233,6 +1468,11 @@
    "category": "person",
    "auto": 2,
    "review": 7,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 4,
+    "unanchored": 3
+   },
    "docs": {
     "570": [
      1,
@@ -1273,6 +1513,10 @@
    "category": "person",
    "auto": 17,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 4
+   },
    "docs": {
     "810": [
      0,
@@ -1317,6 +1561,10 @@
    "category": "person",
    "auto": 0,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 4
+   },
    "docs": {
     "650": [
      0,
@@ -1333,6 +1581,11 @@
    "category": "person",
    "auto": 4,
    "review": 8,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 7
+   },
    "docs": {
     "350": [
      0,
@@ -1377,6 +1630,12 @@
    "category": "person",
    "auto": 1,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 2,
+    "suspect": 1,
+    "unanchored": 2
+   },
    "docs": {
     "220": [
      0,
@@ -1409,6 +1668,10 @@
    "category": "work",
    "auto": 0,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "short_title": 5
+   },
    "docs": {
     "120": [
      0,
@@ -1425,6 +1688,10 @@
    "category": "person",
    "auto": 2,
    "review": 25,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 25
+   },
    "docs": {
     "120": [
      0,
@@ -1473,6 +1740,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "1220": [
      0,
@@ -1485,6 +1756,12 @@
    "category": "person",
    "auto": 2,
    "review": 27,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 24,
+    "derived": 1,
+    "figure": 2
+   },
    "docs": {
     "760": [
      2,
@@ -1509,6 +1786,11 @@
    "category": "person",
    "auto": 4,
    "review": 4,
+   "alternative_only": 24,
+   "classes": {
+    "figure": 2,
+    "running_head": 2
+   },
    "docs": {
     "760": [
      4,
@@ -1521,6 +1803,13 @@
    "category": "person",
    "auto": 2,
    "review": 13,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 2,
+    "figure": 1,
+    "suspect": 5,
+    "unanchored": 5
+   },
    "docs": {
     "470": [
      0,
@@ -1549,6 +1838,10 @@
    "category": "person",
    "auto": 8,
    "review": 1,
+   "alternative_only": 2,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "560": [
      5,
@@ -1577,6 +1870,8 @@
    "category": "organisation",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "2400": [
      1,
@@ -1589,6 +1884,10 @@
    "category": "person",
    "auto": 0,
    "review": 2,
+   "alternative_only": 2,
+   "classes": {
+    "unanchored": 2
+   },
    "docs": {
     "410": [
      0,
@@ -1605,6 +1904,11 @@
    "category": "person",
    "auto": 0,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 2,
+    "unanchored": 1
+   },
    "docs": {
     "1220": [
      0,
@@ -1621,6 +1925,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 2,
+   "classes": {
+    "figure": 1
+   },
    "docs": {
     "2400": [
      0,
@@ -1633,6 +1941,10 @@
    "category": "work",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 2
+   },
    "docs": {
     "760": [
      0,
@@ -1649,6 +1961,12 @@
    "category": "person",
    "auto": 0,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 2,
+    "suspect": 2,
+    "unanchored": 1
+   },
    "docs": {
     "160": [
      0,
@@ -1677,6 +1995,10 @@
    "category": "work",
    "auto": 0,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "short_title": 5
+   },
    "docs": {
     "50": [
      0,
@@ -1701,6 +2023,10 @@
    "category": "person",
    "auto": 1,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "670": [
      0,
@@ -1717,6 +2043,11 @@
    "category": "work",
    "auto": 4,
    "review": 22,
+   "alternative_only": 0,
+   "classes": {
+    "short_title": 2,
+    "suspect": 20
+   },
    "docs": {
     "330": [
      2,
@@ -1745,6 +2076,11 @@
    "category": "person",
    "auto": 1,
    "review": 9,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 8,
+    "unanchored": 1
+   },
    "docs": {
     "1910": [
      0,
@@ -1761,6 +2097,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "580": [
      1,
@@ -1773,6 +2111,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "410": [
      1,
@@ -1785,6 +2125,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "1290": [
      1,
@@ -1797,6 +2139,8 @@
    "category": "work",
    "auto": 0,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {}
   },
   "1088013937": {
@@ -1804,6 +2148,10 @@
    "category": "work",
    "auto": 47,
    "review": 18,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 18
+   },
    "docs": {
     "290": [
      3,
@@ -1872,6 +2220,8 @@
    "category": "work",
    "auto": 7,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "650": [
      1,
@@ -1892,6 +2242,8 @@
    "category": "work",
    "auto": 3,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "1330": [
      1,
@@ -1908,6 +2260,11 @@
    "category": "person",
    "auto": 0,
    "review": 55,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 3,
+    "unanchored": 52
+   },
    "docs": {
     "20": [
      0,
@@ -2012,6 +2369,10 @@
    "category": "organisation",
    "auto": 0,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 3
+   },
    "docs": {
     "520": [
      0,
@@ -2028,6 +2389,10 @@
    "category": "work",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "30": [
      0,
@@ -2040,6 +2405,8 @@
    "category": "work",
    "auto": 11,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "650": [
      2,
@@ -2068,6 +2435,11 @@
    "category": "work",
    "auto": 13,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 3,
+    "markup": 1
+   },
    "docs": {
     "20": [
      1,
@@ -2108,6 +2480,10 @@
    "category": "work",
    "auto": 20,
    "review": 11,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 11
+   },
    "docs": {
     "20": [
      0,
@@ -2160,6 +2536,12 @@
    "category": "work",
    "auto": 22,
    "review": 10,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "markup": 1,
+    "suspect": 8
+   },
    "docs": {
     "290": [
      2,
@@ -2212,6 +2594,10 @@
    "category": "person",
    "auto": 0,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 5
+   },
    "docs": {
     "540": [
      0,
@@ -2232,6 +2618,10 @@
    "category": "person",
    "auto": 0,
    "review": 13,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 13
+   },
    "docs": {
     "110": [
      0,
@@ -2280,6 +2670,10 @@
    "category": "person",
    "auto": 10,
    "review": 8,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 8
+   },
    "docs": {
     "970": [
      2,
@@ -2316,6 +2710,11 @@
    "category": "person",
    "auto": 1,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 1
+   },
    "docs": {
     "790": [
      0,
@@ -2336,6 +2735,10 @@
    "category": "person",
    "auto": 1,
    "review": 4,
+   "alternative_only": 4,
+   "classes": {
+    "ambiguous": 4
+   },
    "docs": {
     "410": [
      0,
@@ -2356,6 +2759,11 @@
    "category": "person",
    "auto": 5,
    "review": 2,
+   "alternative_only": 4,
+   "classes": {
+    "derived": 1,
+    "suspect": 1
+   },
    "docs": {
     "410": [
      4,
@@ -2376,6 +2784,10 @@
    "category": "person",
    "auto": 1,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1
+   },
    "docs": {
     "1540": [
      1,
@@ -2392,6 +2804,11 @@
    "category": "work",
    "auto": 21,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "bibliography": 1,
+    "suspect": 3
+   },
    "docs": {
     "290": [
      3,
@@ -2444,6 +2861,11 @@
    "category": "person",
    "auto": 5,
    "review": 12,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 2,
+    "unanchored": 10
+   },
    "docs": {
     "20": [
      0,
@@ -2492,6 +2914,8 @@
    "category": "person",
    "auto": 0,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {}
   },
   "118530062": {
@@ -2499,6 +2923,10 @@
    "category": "person",
    "auto": 1,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "760": [
      1,
@@ -2515,6 +2943,11 @@
    "category": "person",
    "auto": 0,
    "review": 11,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "unanchored": 10
+   },
    "docs": {
     "330": [
      0,
@@ -2555,6 +2988,8 @@
    "category": "work",
    "auto": 3,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "20": [
      1,
@@ -2571,6 +3006,11 @@
    "category": "work",
    "auto": 0,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "short_title": 2,
+    "suspect": 2
+   },
    "docs": {
     "790": [
      0,
@@ -2591,6 +3031,10 @@
    "category": "organisation",
    "auto": 3,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "630": [
      3,
@@ -2607,6 +3051,11 @@
    "category": "person",
    "auto": 0,
    "review": 6,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 5,
+    "unanchored": 1
+   },
    "docs": {
     "810": [
      0,
@@ -2623,6 +3072,11 @@
    "category": "person",
    "auto": 0,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 2,
+    "suspect": 1
+   },
    "docs": {
     "920": [
      0,
@@ -2639,6 +3093,10 @@
    "category": "organisation",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "figure": 1
+   },
    "docs": {
     "760": [
      0,
@@ -2651,6 +3109,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "120": [
      1,
@@ -2663,6 +3123,8 @@
    "category": "work",
    "auto": 10,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "650": [
      2,
@@ -2687,6 +3149,12 @@
    "category": "person",
    "auto": 2,
    "review": 22,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 2,
+    "suspect": 4,
+    "unanchored": 16
+   },
    "docs": {
     "810": [
      0,
@@ -2723,6 +3191,11 @@
    "category": "person",
    "auto": 2,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 2,
+    "suspect": 1
+   },
    "docs": {
     "160": [
      1,
@@ -2751,6 +3224,11 @@
    "category": "person",
    "auto": 0,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 2,
+    "unanchored": 3
+   },
    "docs": {
     "1220": [
      0,
@@ -2775,6 +3253,11 @@
    "category": "person",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "unanchored": 1
+   },
    "docs": {
     "540": [
      0,
@@ -2791,6 +3274,10 @@
    "category": "work",
    "auto": 0,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "short_title": 4
+   },
    "docs": {
     "300": [
      0,
@@ -2815,6 +3302,10 @@
    "category": "work",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "430": [
      0,
@@ -2827,6 +3318,10 @@
    "category": "person",
    "auto": 3,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 4
+   },
    "docs": {
     "220": [
      0,
@@ -2843,6 +3338,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "1540": [
      1,
@@ -2855,6 +3352,11 @@
    "category": "person",
    "auto": 1,
    "review": 14,
+   "alternative_only": 2,
+   "classes": {
+    "suspect": 2,
+    "unanchored": 12
+   },
    "docs": {
     "110": [
      0,
@@ -2911,6 +3413,8 @@
    "category": "person",
    "auto": 8,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "250": [
      1,
@@ -2939,6 +3443,8 @@
    "category": "person",
    "auto": 2,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "1400": [
      2,
@@ -2951,6 +3457,13 @@
    "category": "person",
    "auto": 0,
    "review": 252,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 8,
+    "figure": 1,
+    "suspect": 9,
+    "unanchored": 234
+   },
    "docs": {
     "20": [
      0,
@@ -3111,6 +3624,13 @@
    "category": "person",
    "auto": 124,
    "review": 45,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "running_head": 4,
+    "suspect": 5,
+    "unanchored": 35
+   },
    "docs": {
     "20": [
      0,
@@ -3247,6 +3767,10 @@
    "category": "person",
    "auto": 4,
    "review": 6,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 6
+   },
    "docs": {
     "1330": [
      0,
@@ -3275,6 +3799,10 @@
    "category": "organisation",
    "auto": 3,
    "review": 13,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 13
+   },
    "docs": {
     "660": [
      0,
@@ -3299,6 +3827,10 @@
    "category": "person",
    "auto": 0,
    "review": 8,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 8
+   },
    "docs": {
     "30": [
      0,
@@ -3331,6 +3863,15 @@
    "category": "person",
    "auto": 1207,
    "review": 1026,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 80,
+    "derived": 528,
+    "figure": 8,
+    "markup": 1,
+    "running_head": 310,
+    "suspect": 99
+   },
    "docs": {
     "20": [
      1,
@@ -4467,6 +5008,8 @@
    "category": "person",
    "auto": 1,
    "review": 0,
+   "alternative_only": 512,
+   "classes": {},
    "docs": {
     "630": [
      1,
@@ -4479,6 +5022,10 @@
    "category": "person",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 2
+   },
    "docs": {
     "810": [
      0,
@@ -4495,6 +5042,10 @@
    "category": "person",
    "auto": 0,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 3
+   },
    "docs": {
     "680": [
      0,
@@ -4515,6 +5066,11 @@
    "category": "person",
    "auto": 0,
    "review": 42,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 4,
+    "unanchored": 38
+   },
    "docs": {
     "290": [
      0,
@@ -4607,6 +5163,10 @@
    "category": "person",
    "auto": 0,
    "review": 9,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 9
+   },
    "docs": {
     "110": [
      0,
@@ -4639,6 +5199,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "1060": [
      0,
@@ -4651,6 +5215,11 @@
    "category": "person",
    "auto": 3,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 3,
+    "unanchored": 1
+   },
    "docs": {
     "160": [
      0,
@@ -4683,6 +5252,10 @@
    "category": "work",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1
+   },
    "docs": {
     "1650": [
      0,
@@ -4695,6 +5268,12 @@
    "category": "person",
    "auto": 0,
    "review": 22,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 3,
+    "suspect": 17,
+    "unanchored": 2
+   },
    "docs": {
     "110": [
      0,
@@ -4775,6 +5354,10 @@
    "category": "person",
    "auto": 6,
    "review": 15,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 15
+   },
    "docs": {
     "120": [
      0,
@@ -4831,6 +5414,8 @@
    "category": "person",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "2400": [
      1,
@@ -4843,6 +5428,13 @@
    "category": "work",
    "auto": 45,
    "review": 256,
+   "alternative_only": 0,
+   "classes": {
+    "bibliography": 2,
+    "markup": 1,
+    "running_head": 252,
+    "suspect": 1
+   },
    "docs": {
     "330": [
      0,
@@ -4935,6 +5527,11 @@
    "category": "person",
    "auto": 39,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 3,
+    "unanchored": 1
+   },
    "docs": {
     "50": [
      1,
@@ -4983,6 +5580,10 @@
    "category": "organisation",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "2400": [
      0,
@@ -4995,6 +5596,10 @@
    "category": "organisation",
    "auto": 0,
    "review": 6,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 6
+   },
    "docs": {
     "550": [
      0,
@@ -5023,6 +5628,12 @@
    "category": "person",
    "auto": 0,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "suspect": 1,
+    "unanchored": 1
+   },
    "docs": {
     "1860": [
      0,
@@ -5043,6 +5654,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "200": [
      0,
@@ -5055,6 +5670,11 @@
    "category": "person",
    "auto": 3,
    "review": 6,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 2,
+    "unanchored": 4
+   },
    "docs": {
     "220": [
      0,
@@ -5091,6 +5711,13 @@
    "category": "person",
    "auto": 1,
    "review": 146,
+   "alternative_only": 950,
+   "classes": {
+    "ambiguous": 111,
+    "running_head": 8,
+    "suspect": 21,
+    "unanchored": 6
+   },
    "docs": {
     "20": [
      0,
@@ -5223,6 +5850,13 @@
    "category": "person",
    "auto": 1180,
    "review": 106,
+   "alternative_only": 128,
+   "classes": {
+    "ambiguous": 12,
+    "figure": 2,
+    "running_head": 21,
+    "suspect": 71
+   },
    "docs": {
     "20": [
      64,
@@ -5599,6 +6233,10 @@
    "category": "person",
    "auto": 0,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 3
+   },
    "docs": {
     "1240": [
      0,
@@ -5619,6 +6257,10 @@
    "category": "person",
    "auto": 0,
    "review": 3,
+   "alternative_only": 12,
+   "classes": {
+    "derived": 3
+   },
    "docs": {
     "810": [
      0,
@@ -5635,6 +6277,12 @@
    "category": "person",
    "auto": 0,
    "review": 54,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 5,
+    "suspect": 3,
+    "unanchored": 46
+   },
    "docs": {
     "240": [
      0,
@@ -5743,6 +6391,8 @@
    "category": "organisation",
    "auto": 0,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {}
   },
   "118640011": {
@@ -5750,6 +6400,10 @@
    "category": "person",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 2
+   },
    "docs": {
     "920": [
      0,
@@ -5762,6 +6416,12 @@
    "category": "person",
    "auto": 1,
    "review": 382,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 10,
+    "suspect": 12,
+    "unanchored": 360
+   },
    "docs": {
     "20": [
      0,
@@ -6018,6 +6678,8 @@
    "category": "organisation",
    "auto": 2,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "130": [
      1,
@@ -6034,6 +6696,8 @@
    "category": "work",
    "auto": 0,
    "review": 0,
+   "alternative_only": 16,
+   "classes": {},
    "docs": {}
   },
   "1145431410": {
@@ -6041,6 +6705,10 @@
    "category": "person",
    "auto": 1,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 3
+   },
    "docs": {
     "1650": [
      0,
@@ -6061,6 +6729,12 @@
    "category": "person",
    "auto": 0,
    "review": 146,
+   "alternative_only": 0,
+   "classes": {
+    "running_head": 9,
+    "suspect": 2,
+    "unanchored": 135
+   },
    "docs": {
     "20": [
      0,
@@ -6221,6 +6895,8 @@
    "category": "work",
    "auto": 2,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "1520": [
      2,
@@ -6233,6 +6909,10 @@
    "category": "organisation",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 1
+   },
    "docs": {
     "2220": [
      0,
@@ -6245,6 +6925,10 @@
    "category": "organisation",
    "auto": 1,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "1060": [
      0,
@@ -6261,6 +6945,11 @@
    "category": "person",
    "auto": 0,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 4
+   },
    "docs": {
     "650": [
      0,
@@ -6285,6 +6974,11 @@
    "category": "person",
    "auto": 0,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 3
+   },
    "docs": {
     "2635": [
      0,
@@ -6297,6 +6991,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "2350": [
      1,
@@ -6309,6 +7005,10 @@
    "category": "work",
    "auto": 28,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 2
+   },
    "docs": {
     "20": [
      2,
@@ -6345,6 +7045,8 @@
    "category": "work",
    "auto": 3,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "110": [
      1,
@@ -6365,6 +7067,11 @@
    "category": "organisation",
    "auto": 0,
    "review": 9,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 8,
+    "figure": 1
+   },
    "docs": {
     "660": [
      0,
@@ -6385,6 +7092,10 @@
    "category": "person",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 2
+   },
    "docs": {
     "160": [
      0,
@@ -6401,6 +7112,10 @@
    "category": "work",
    "auto": 1,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1
+   },
    "docs": {
     "20": [
      0,
@@ -6417,6 +7132,10 @@
    "category": "work",
    "auto": 13,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 4
+   },
    "docs": {
     "110": [
      1,
@@ -6465,6 +7184,8 @@
    "category": "work",
    "auto": 0,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {}
   },
   "1205417575": {
@@ -6472,6 +7193,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "90": [
      1,
@@ -6484,6 +7207,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "520": [
      1,
@@ -6496,6 +7221,10 @@
    "category": "work",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1
+   },
    "docs": {
     "340": [
      0,
@@ -6508,6 +7237,10 @@
    "category": "work",
    "auto": 3,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 4
+   },
    "docs": {
     "40": [
      0,
@@ -6532,6 +7265,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "380": [
      1,
@@ -6544,6 +7279,10 @@
    "category": "person",
    "auto": 0,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 4
+   },
    "docs": {
     "650": [
      0,
@@ -6560,6 +7299,10 @@
    "category": "work",
    "auto": 1,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1
+   },
    "docs": {
     "30": [
      1,
@@ -6572,6 +7315,8 @@
    "category": "work",
    "auto": 3,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "90": [
      2,
@@ -6588,6 +7333,10 @@
    "category": "work",
    "auto": 4,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1
+   },
    "docs": {
     "310": [
      0,
@@ -6604,6 +7353,11 @@
    "category": "work",
    "auto": 20,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "bibliography": 3,
+    "suspect": 2
+   },
    "docs": {
     "880": [
      1,
@@ -6672,6 +7426,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "760": [
      1,
@@ -6684,6 +7440,8 @@
    "category": "work",
    "auto": 4,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "1270": [
      1,
@@ -6708,6 +7466,10 @@
    "category": "work",
    "auto": 5,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 3
+   },
    "docs": {
     "120": [
      2,
@@ -6740,6 +7502,10 @@
    "category": "work",
    "auto": 2,
    "review": 17,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 17
+   },
    "docs": {
     "40": [
      0,
@@ -6800,6 +7566,10 @@
    "category": "work",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "short_title": 2
+   },
    "docs": {
     "120": [
      0,
@@ -6816,6 +7586,10 @@
    "category": "work",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "2330": [
      0,
@@ -6828,6 +7602,8 @@
    "category": "work",
    "auto": 0,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {}
   },
   "4375734-0": {
@@ -6835,6 +7611,10 @@
    "category": "work",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1
+   },
    "docs": {
     "110": [
      0,
@@ -6847,6 +7627,10 @@
    "category": "work",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "short_title": 1
+   },
    "docs": {
     "200": [
      0,
@@ -6859,6 +7643,10 @@
    "category": "work",
    "auto": 3,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "running_head": 2
+   },
    "docs": {
     "490": [
      2,
@@ -6875,6 +7663,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "200": [
      1,
@@ -6887,6 +7677,10 @@
    "category": "work",
    "auto": 1,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 2
+   },
    "docs": {
     "200": [
      1,
@@ -6903,6 +7697,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "200": [
      1,
@@ -6915,6 +7711,10 @@
    "category": "work",
    "auto": 3,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1
+   },
    "docs": {
     "90": [
      1,
@@ -6939,6 +7739,10 @@
    "category": "person",
    "auto": 1,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "160": [
      0,
@@ -6955,6 +7759,11 @@
    "category": "person",
    "auto": 5,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "running_head": 2,
+    "unanchored": 1
+   },
    "docs": {
     "490": [
      1,
@@ -6983,6 +7792,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "1520": [
      0,
@@ -6995,6 +7808,10 @@
    "category": "person",
    "auto": 2,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 2
+   },
    "docs": {
     "240": [
      1,
@@ -7019,6 +7836,10 @@
    "category": "organisation",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "figure": 1
+   },
    "docs": {
     "760": [
      0,
@@ -7031,6 +7852,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "410": [
      1,
@@ -7043,6 +7866,13 @@
    "category": "person",
    "auto": 94,
    "review": 21,
+   "alternative_only": 0,
+   "classes": {
+    "markup": 1,
+    "running_head": 5,
+    "suspect": 10,
+    "unanchored": 5
+   },
    "docs": {
     "20": [
      4,
@@ -7159,6 +7989,12 @@
    "category": "person",
    "auto": 0,
    "review": 205,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 16,
+    "suspect": 14,
+    "unanchored": 175
+   },
    "docs": {
     "210": [
      0,
@@ -7263,6 +8099,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "110": [
      1,
@@ -7275,6 +8113,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "1910": [
      0,
@@ -7287,6 +8129,10 @@
    "category": "person",
    "auto": 1,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 1
+   },
    "docs": {
     "410": [
      1,
@@ -7303,6 +8149,11 @@
    "category": "work",
    "auto": 0,
    "review": 85,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 4,
+    "suspect": 81
+   },
    "docs": {
     "40": [
      0,
@@ -7395,6 +8246,11 @@
    "category": "person",
    "auto": 0,
    "review": 11,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 7,
+    "unanchored": 4
+   },
    "docs": {
     "510": [
      0,
@@ -7423,6 +8279,10 @@
    "category": "person",
    "auto": 4,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 2
+   },
    "docs": {
     "160": [
      2,
@@ -7447,6 +8307,10 @@
    "category": "person",
    "auto": 5,
    "review": 1,
+   "alternative_only": 1,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "1440": [
      1,
@@ -7475,6 +8339,11 @@
    "category": "person",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 1
+   },
    "docs": {
     "1520": [
      0,
@@ -7491,6 +8360,12 @@
    "category": "person",
    "auto": 6,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 2,
+    "suspect": 1,
+    "unanchored": 2
+   },
    "docs": {
     "950": [
      0,
@@ -7539,6 +8414,12 @@
    "category": "person",
    "auto": 16,
    "review": 29,
+   "alternative_only": 1,
+   "classes": {
+    "figure": 2,
+    "suspect": 1,
+    "unanchored": 26
+   },
    "docs": {
     "2400": [
      16,
@@ -7551,6 +8432,10 @@
    "category": "organisation",
    "auto": 0,
    "review": 4,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 4
+   },
    "docs": {
     "2530": [
      0,
@@ -7563,6 +8448,10 @@
    "category": "person",
    "auto": 2,
    "review": 27,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 27
+   },
    "docs": {
     "670": [
      1,
@@ -7587,6 +8476,8 @@
    "category": "organisation",
    "auto": 2,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "760": [
      2,
@@ -7599,6 +8490,10 @@
    "category": "organisation",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "figure": 1
+   },
    "docs": {
     "760": [
      0,
@@ -7611,6 +8506,11 @@
    "category": "person",
    "auto": 5,
    "review": 24,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 10,
+    "unanchored": 14
+   },
    "docs": {
     "410": [
      5,
@@ -7651,6 +8551,11 @@
    "category": "person",
    "auto": 0,
    "review": 8,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 3,
+    "unanchored": 5
+   },
    "docs": {
     "330": [
      0,
@@ -7687,6 +8592,11 @@
    "category": "work",
    "auto": 0,
    "review": 80,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 76,
+    "derived": 4
+   },
    "docs": {
     "20": [
      0,
@@ -7811,6 +8721,10 @@
    "category": "work",
    "auto": 8,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 2
+   },
    "docs": {
     "290": [
      0,
@@ -7843,6 +8757,13 @@
    "category": "person",
    "auto": 1,
    "review": 6,
+   "alternative_only": 76,
+   "classes": {
+    "derived": 1,
+    "running_head": 3,
+    "suspect": 1,
+    "unanchored": 1
+   },
    "docs": {
     "20": [
      0,
@@ -7867,6 +8788,8 @@
    "category": "person",
    "auto": 0,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {}
   },
   "118590146": {
@@ -7874,6 +8797,12 @@
    "category": "person",
    "auto": 16,
    "review": 9,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "suspect": 2,
+    "unanchored": 6
+   },
    "docs": {
     "520": [
      0,
@@ -7922,6 +8851,10 @@
    "category": "person",
    "auto": 0,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 5
+   },
    "docs": {
     "510": [
      0,
@@ -7950,6 +8883,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "1910": [
      0,
@@ -7962,6 +8899,11 @@
    "category": "person",
    "auto": 0,
    "review": 12,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 11
+   },
    "docs": {
     "30": [
      0,
@@ -8006,6 +8948,12 @@
    "category": "person",
    "auto": 0,
    "review": 18,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 2,
+    "suspect": 3,
+    "unanchored": 13
+   },
    "docs": {
     "20": [
      0,
@@ -8066,6 +9014,10 @@
    "category": "person",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 2
+   },
    "docs": {
     "2020": [
      0,
@@ -8082,6 +9034,11 @@
    "category": "person",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "unanchored": 1
+   },
    "docs": {
     "2230": [
      0,
@@ -8098,6 +9055,12 @@
    "category": "person",
    "auto": 0,
    "review": 14,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 7,
+    "suspect": 2,
+    "unanchored": 5
+   },
    "docs": {
     "90": [
      0,
@@ -8138,6 +9101,8 @@
    "category": "person",
    "auto": 0,
    "review": 0,
+   "alternative_only": 5,
+   "classes": {},
    "docs": {}
   },
   "4099328-0": {
@@ -8145,6 +9110,11 @@
    "category": "work",
    "auto": 0,
    "review": 24,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 5,
+    "short_title": 19
+   },
    "docs": {
     "90": [
      0,
@@ -8193,6 +9163,11 @@
    "category": "work",
    "auto": 0,
    "review": 475,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 435,
+    "running_head": 40
+   },
    "docs": {
     "20": [
      0,
@@ -8477,6 +9452,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "380": [
      1,
@@ -8489,6 +9466,8 @@
    "category": "work",
    "auto": 1,
    "review": 0,
+   "alternative_only": 475,
+   "classes": {},
    "docs": {
     "3040": [
      1,
@@ -8501,6 +9480,10 @@
    "category": "person",
    "auto": 3,
    "review": 1,
+   "alternative_only": 7,
+   "classes": {
+    "figure": 1
+   },
    "docs": {
     "580": [
      1,
@@ -8517,6 +9500,10 @@
    "category": "person",
    "auto": 0,
    "review": 83,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 83
+   },
    "docs": {
     "20": [
      0,
@@ -8697,6 +9684,10 @@
    "category": "person",
    "auto": 0,
    "review": 8,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 8
+   },
    "docs": {
     "20": [
      0,
@@ -8717,6 +9708,10 @@
    "category": "person",
    "auto": 0,
    "review": 6,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 6
+   },
    "docs": {
     "310": [
      0,
@@ -8745,6 +9740,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "120": [
      0,
@@ -8757,6 +9756,10 @@
    "category": "organisation",
    "auto": 0,
    "review": 2,
+   "alternative_only": 1,
+   "classes": {
+    "derived": 2
+   },
    "docs": {
     "650": [
      0,
@@ -8773,6 +9776,10 @@
    "category": "work",
    "auto": 10,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "20": [
      1,
@@ -8813,6 +9820,11 @@
    "category": "person",
    "auto": 0,
    "review": 13,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 2,
+    "unanchored": 11
+   },
    "docs": {
     "90": [
      0,
@@ -8861,6 +9873,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "1220": [
      0,
@@ -8873,6 +9889,8 @@
    "category": "work",
    "auto": 12,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "290": [
      2,
@@ -8901,6 +9919,10 @@
    "category": "work",
    "auto": 4,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1
+   },
    "docs": {
     "560": [
      2,
@@ -8921,6 +9943,12 @@
    "category": "person",
    "auto": 7,
    "review": 11,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 7,
+    "suspect": 3,
+    "unanchored": 1
+   },
    "docs": {
     "110": [
      2,
@@ -8961,6 +9989,8 @@
    "category": "person",
    "auto": 4,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "160": [
      1,
@@ -8977,6 +10007,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "810": [
      0,
@@ -8989,6 +10023,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "410": [
      0,
@@ -9001,6 +10039,10 @@
    "category": "person",
    "auto": 5,
    "review": 1,
+   "alternative_only": 7,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "460": [
      1,
@@ -9025,6 +10067,11 @@
    "category": "person",
    "auto": 0,
    "review": 16,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "unanchored": 15
+   },
    "docs": {
     "90": [
      0,
@@ -9089,6 +10136,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 7,
+   "classes": {
+    "suspect": 1
+   },
    "docs": {
     "760": [
      0,
@@ -9101,6 +10152,8 @@
    "category": "person",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "670": [
      1,
@@ -9113,6 +10166,10 @@
    "category": "person",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 2
+   },
    "docs": {
     "1060": [
      0,
@@ -9129,6 +10186,10 @@
    "category": "person",
    "auto": 22,
    "review": 1,
+   "alternative_only": 1,
+   "classes": {
+    "figure": 1
+   },
    "docs": {
     "90": [
      6,
@@ -9149,6 +10210,12 @@
    "category": "person",
    "auto": 43,
    "review": 86,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 3,
+    "suspect": 2,
+    "unanchored": 81
+   },
    "docs": {
     "20": [
      1,
@@ -9277,6 +10344,11 @@
    "category": "person",
    "auto": 0,
    "review": 10,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "unanchored": 9
+   },
    "docs": {
     "570": [
      0,
@@ -9313,6 +10385,10 @@
    "category": "person",
    "auto": 13,
    "review": 20,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 20
+   },
    "docs": {
     "90": [
      1,
@@ -9341,6 +10417,11 @@
    "category": "person",
    "auto": 1,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 4
+   },
    "docs": {
     "650": [
      0,
@@ -9373,6 +10454,10 @@
    "category": "person",
    "auto": 1,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "410": [
      1,
@@ -9389,6 +10474,12 @@
    "category": "person",
    "auto": 12,
    "review": 34,
+   "alternative_only": 0,
+   "classes": {
+    "figure": 2,
+    "suspect": 4,
+    "unanchored": 28
+   },
    "docs": {
     "2130": [
      0,
@@ -9417,6 +10508,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "1540": [
      0,
@@ -9429,6 +10524,10 @@
    "category": "organisation",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "790": [
      0,
@@ -9441,6 +10540,11 @@
    "category": "person",
    "auto": 0,
    "review": 8,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 7
+   },
    "docs": {
     "110": [
      0,
@@ -9477,6 +10581,11 @@
    "category": "person",
    "auto": 1,
    "review": 8,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 7
+   },
    "docs": {
     "410": [
      1,
@@ -9497,6 +10606,8 @@
    "category": "organisation",
    "auto": 4,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "380": [
      1,
@@ -9513,6 +10624,11 @@
    "category": "person",
    "auto": 0,
    "review": 60,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 2,
+    "unanchored": 58
+   },
    "docs": {
     "20": [
      0,
@@ -9641,6 +10757,10 @@
    "category": "person",
    "auto": 0,
    "review": 15,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 15
+   },
    "docs": {
     "1060": [
      0,
@@ -9689,6 +10809,10 @@
    "category": "person",
    "auto": 0,
    "review": 7,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 7
+   },
    "docs": {
     "90": [
      0,
@@ -9725,6 +10849,12 @@
    "category": "person",
    "auto": 7,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 1,
+    "suspect": 2,
+    "unanchored": 2
+   },
    "docs": {
     "330": [
      0,
@@ -9757,6 +10887,11 @@
    "category": "person",
    "auto": 7,
    "review": 32,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 3,
+    "unanchored": 29
+   },
    "docs": {
     "20": [
      0,
@@ -9865,6 +11000,8 @@
    "category": "person",
    "auto": 2,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "410": [
      1,
@@ -9881,6 +11018,8 @@
    "category": "organisation",
    "auto": 1,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "760": [
      1,
@@ -9893,6 +11032,8 @@
    "category": "organisation",
    "auto": 0,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {}
   },
   "1007559-8": {
@@ -9900,6 +11041,10 @@
    "category": "organisation",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "figure": 2
+   },
    "docs": {
     "760": [
      0,
@@ -9912,6 +11057,11 @@
    "category": "person",
    "auto": 4,
    "review": 34,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 17,
+    "unanchored": 17
+   },
    "docs": {
     "160": [
      0,
@@ -9980,6 +11130,10 @@
    "category": "person",
    "auto": 0,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "1520": [
      0,
@@ -9992,6 +11146,11 @@
    "category": "person",
    "auto": 0,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "unanchored": 2
+   },
    "docs": {
     "470": [
      0,
@@ -10012,6 +11171,11 @@
    "category": "organisation",
    "auto": 76,
    "review": 103,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 95,
+    "suspect": 8
+   },
    "docs": {
     "160": [
      1,
@@ -10208,6 +11372,10 @@
    "category": "organisation",
    "auto": 22,
    "review": 12,
+   "alternative_only": 202,
+   "classes": {
+    "derived": 12
+   },
    "docs": {
     "650": [
      0,
@@ -10296,6 +11464,11 @@
    "category": "organisation",
    "auto": 15,
    "review": 206,
+   "alternative_only": 0,
+   "classes": {
+    "ambiguous": 202,
+    "derived": 4
+   },
    "docs": {
     "20": [
      0,
@@ -10524,6 +11697,8 @@
    "category": "organisation",
    "auto": 0,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {}
   },
   "10030440-0": {
@@ -10531,6 +11706,8 @@
    "category": "organisation",
    "auto": 3,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {
     "650": [
      1,
@@ -10547,6 +11724,12 @@
    "category": "organisation",
    "auto": 106,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1,
+    "figure": 2,
+    "running_head": 2
+   },
    "docs": {
     "40": [
      1,
@@ -10863,6 +12046,11 @@
    "category": "organisation",
    "auto": 0,
    "review": 8,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 7,
+    "suspect": 1
+   },
    "docs": {
     "380": [
      0,
@@ -10895,6 +12083,11 @@
    "category": "person",
    "auto": 29,
    "review": 16,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 2,
+    "unanchored": 14
+   },
    "docs": {
     "20": [
      11,
@@ -10975,6 +12168,10 @@
    "category": "organisation",
    "auto": 24,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "derived": 1
+   },
    "docs": {
     "330": [
      1,
@@ -11047,6 +12244,11 @@
    "category": "person",
    "auto": 0,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 2
+   },
    "docs": {
     "250": [
      0,
@@ -11067,6 +12269,10 @@
    "category": "work",
    "auto": 5,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "bibliography": 1
+   },
    "docs": {
     "290": [
      2,
@@ -11087,6 +12293,12 @@
    "category": "person",
    "auto": 5,
    "review": 19,
+   "alternative_only": 0,
+   "classes": {
+    "running_head": 6,
+    "suspect": 3,
+    "unanchored": 10
+   },
    "docs": {
     "160": [
      1,
@@ -11147,6 +12359,11 @@
    "category": "work",
    "auto": 11,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "bibliography": 1,
+    "derived": 1
+   },
    "docs": {
     "290": [
      0,
@@ -11179,6 +12396,12 @@
    "category": "work",
    "auto": 17,
    "review": 6,
+   "alternative_only": 0,
+   "classes": {
+    "bibliography": 2,
+    "running_head": 2,
+    "suspect": 2
+   },
    "docs": {
     "290": [
      1,
@@ -11227,6 +12450,12 @@
    "category": "person",
    "auto": 99,
    "review": 99,
+   "alternative_only": 0,
+   "classes": {
+    "running_head": 3,
+    "suspect": 94,
+    "unanchored": 2
+   },
    "docs": {
     "20": [
      1,
@@ -11431,6 +12660,10 @@
    "category": "person",
    "auto": 25,
    "review": 85,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 85
+   },
    "docs": {
     "410": [
      0,
@@ -11615,6 +12848,11 @@
    "category": "person",
    "auto": 0,
    "review": 24,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 18,
+    "unanchored": 6
+   },
    "docs": {
     "810": [
      0,
@@ -11627,6 +12865,11 @@
    "category": "person",
    "auto": 3,
    "review": 21,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 18,
+    "unanchored": 3
+   },
    "docs": {
     "90": [
      0,
@@ -11695,6 +12938,11 @@
    "category": "person",
    "auto": 22,
    "review": 12,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 8,
+    "unanchored": 4
+   },
    "docs": {
     "670": [
      1,
@@ -11719,6 +12967,11 @@
    "category": "person",
    "auto": 0,
    "review": 5,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 4
+   },
    "docs": {
     "810": [
      0,
@@ -11743,6 +12996,10 @@
    "category": "person",
    "auto": 1,
    "review": 3,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 3
+   },
    "docs": {
     "650": [
      1,
@@ -11767,6 +13024,11 @@
    "category": "person",
    "auto": 0,
    "review": 6,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 5
+   },
    "docs": {
     "650": [
      0,
@@ -11791,6 +13053,11 @@
    "category": "person",
    "auto": 0,
    "review": 2,
+   "alternative_only": 0,
+   "classes": {
+    "suspect": 1,
+    "unanchored": 1
+   },
    "docs": {
     "160": [
      0,
@@ -11807,6 +13074,10 @@
    "category": "person",
    "auto": 1,
    "review": 1,
+   "alternative_only": 0,
+   "classes": {
+    "unanchored": 1
+   },
    "docs": {
     "1540": [
      1,
@@ -11823,6 +13094,8 @@
    "category": "work",
    "auto": 0,
    "review": 0,
+   "alternative_only": 0,
+   "classes": {},
    "docs": {}
   }
  },

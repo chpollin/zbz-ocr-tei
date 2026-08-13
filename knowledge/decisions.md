@@ -615,6 +615,18 @@ Consequences: the worklist loses 442 candidates that were provably no mention, t
 
 Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
 
+---
+
+### E117 The entity overview carries ambiguity and adjudicated quality (2026-08-13)
+
+Occasion: the overview page counted a candidate only for its reported id, so an entity that occurs exclusively as the other possible bearer of an ambiguous surface was displayed as "not found". Three list entries were affected, one of them sixteen times. The page also showed volume only, never the measured quality, although the adjudicated judgments have been available since the evaluation wave.
+
+Decision: the mirror gains three blocks and the page renders them. Ambiguity is counted separately as `alternative_only` per entity and as `ambiguous_mentions` in the totals, never folded into the auto and review counts, so the existing series stays comparable. The quality block projects the adjudicated sample from the verdict store, precision with its confidence interval, the raw recall status distribution, and the second-judgment agreement including both open disputes; recall stays a set of raw counts because the evaluation method defines no single rate, which keeps an invented formula out of the delivery surface. A provenance block names the scan digest and the list size, so a displayed number can be traced to the run that produced it. Every rate is displayed next to its sample size, because the sample is evidence about the corpus rather than a corpus-wide fact. Icons are inline SVG in the text colour; the standing ban on emojis and unicode status symbols is untouched by this.
+
+Consequences: the completeness question the page exists for is answered without the ambiguity distortion; the delivered instrument states what was measured, on which sample, and against which run. The pilot preview lost its separate HTML report in the same step, since the overview page is now the reading surface. Open: the sample-based recall of the annotation layer remains the weakest measured value and waits on the adjudication wave over the frozen 2026-08-13 draw.
+
+Documents: [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 95
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |

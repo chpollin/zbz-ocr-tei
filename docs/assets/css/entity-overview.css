@@ -1,8 +1,9 @@
 /* Entity overview page (docs/entities.html). Consumes --h-* tokens only.
    Certainty semantics follow the badge palette of base.css: auto-marked mentions in
    Olivgruen (the measured, trusted layer), review candidates in Ocker (worklist).
-   Entity category dots reuse the viewer legend: person Preussischblau, organisation
-   Olivgruen, work Ziegelrot. */
+   Entity category icons reuse the viewer legend colours: person Preussischblau,
+   organisation Olivgruen, work Ziegelrot; the glyph shape carries the distinction on
+   its own, the colour only reinforces it. */
 
 .eo-main {
   max-width: 66rem;
@@ -46,6 +47,58 @@
 
 .eo-corpus__labels .badge { margin-left: auto; }
 
+.eo-corpus__total {
+  font-family: var(--h-font-heading);
+  color: var(--h-text);
+  font-weight: 500;
+}
+
+/* Adjudicated evidence: one strip under the corpus bar, never a stat card.
+   Every item names its sample size next to its rate. */
+.eo-quality {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.1rem;
+  align-items: center;
+  margin-top: 0.55rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--h-border);
+  font-size: var(--h-sm);
+  color: var(--h-text-secondary);
+}
+
+.eo-quality__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: help;
+}
+
+.eo-quality__item:focus-visible,
+.eo-legend__chip:focus-visible,
+.eo-corpus__total:focus-visible,
+.eo-chip:focus-visible,
+.eo-corpus__labels .badge:focus-visible {
+  outline: 2px solid var(--h-preussischblau);
+  outline-offset: 2px;
+  border-radius: var(--h-radius-sm);
+}
+
+/* Icons: sized to the text, drawn in currentColor, never the sole carrier. */
+.eo-icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex: none;
+  display: inline-block;
+  vertical-align: -0.16em;
+}
+
+.eo-icon--person { color: var(--h-preussischblau); }
+.eo-icon--organisation { color: var(--h-olivgruen); }
+.eo-icon--work { color: var(--h-ziegelrot); }
+.eo-legend__chip--auto .eo-icon { color: var(--h-olivgruen); }
+.eo-legend__chip--review .eo-icon { color: var(--h-ocker); }
+
 /* Controls */
 .eo-controls {
   display: flex;
@@ -69,16 +122,6 @@
   align-items: center;
   gap: 0.35rem;
 }
-
-.eo-swatch {
-  width: 0.7rem;
-  height: 0.7rem;
-  border-radius: 2px;
-  display: inline-block;
-}
-
-.eo-swatch--auto { background: var(--h-olivgruen); }
-.eo-swatch--review { background: var(--h-ocker); }
 
 /* View toggle: two pressed-state buttons, active carries the accent */
 .eo-view { display: inline-flex; gap: 0; }
@@ -140,6 +183,8 @@
   white-space: nowrap;
 }
 
+.eo-doc__title .eo-icon { margin-right: 0.4rem; }
+
 .eo-doc__meta {
   color: var(--h-text-muted);
   font-size: var(--h-sm);
@@ -182,6 +227,9 @@
 }
 
 .eo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   font-size: var(--h-xs);
   font-family: var(--h-font-heading);
   color: var(--h-text-secondary);
@@ -189,6 +237,42 @@
   border: 1px solid var(--h-border);
   border-radius: 999px;
   padding: 0.1rem 0.55rem;
+  cursor: help;
+}
+
+/* Facts line and ambiguity note of the entity detail body */
+.eo-facts {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.6rem;
+  font-size: var(--h-sm);
+  color: var(--h-text-secondary);
+}
+
+.eo-facts .eo-doc__id { margin-left: 0.3rem; }
+
+.eo-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin: 0 0 0.7rem;
+  padding: 0.35rem 0.55rem;
+  border-left: 2px solid var(--h-ocker);
+  background: var(--h-bg-alt);
+  font-size: var(--h-sm);
+  color: var(--h-text-secondary);
+  cursor: help;
+}
+
+.eo-note .eo-icon { margin-top: 0.15em; color: var(--h-ocker); }
+
+.eo-doc__meta--alt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--h-ocker);
+  cursor: help;
 }
 
 .eo-table {
@@ -214,18 +298,11 @@
 
 .eo-table td.eo-num, .eo-table th.eo-num { text-align: right; width: 4rem; }
 
-.eo-dot {
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 0.4rem;
-  background: var(--h-text-muted);
-}
+.eo-table th[title] { cursor: help; }
 
-.eo-dot--person { background: var(--h-preussischblau); }
-.eo-dot--organisation { background: var(--h-olivgruen); }
-.eo-dot--work { background: var(--h-ziegelrot); }
+.eo-table td .eo-icon { margin-right: 0.4rem; }
+
+.eo-table td .eo-chips { margin: 0; gap: 0.25rem; }
 
 .eo-doc__actions { margin-top: 0.8rem; }
 

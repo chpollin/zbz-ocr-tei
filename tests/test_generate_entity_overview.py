@@ -1,9 +1,11 @@
 """Tests for scripts/edition/generate_entity_overview.py (entity overview mirror).
 
-Synthetic candidate fixtures only; the aggregation contract is pinned here: class
-assignment per rule string, the per-entity completeness aggregation including
-zero-mention list entries, per-document counts, deterministic ordering, closed-world
-failure on an unknown gid, and byte-identical serialization.
+Synthetic candidate fixtures for the aggregation contract: class assignment per rule
+string, the per-entity completeness aggregation including zero-mention list entries and
+their alternative-bearer count, per-document counts, deterministic ordering,
+closed-world failure on an unknown gid, and byte-identical serialization. The quality
+block is pinned twice, once synthetically for the formula and once against the committed
+verdict store, so the published snapshot figures cannot drift silently.
 """
 
 from __future__ import annotations
@@ -12,18 +14,33 @@ import json
 
 import pytest
 
+from scripts.config import DATA_DIR
 from scripts.edition.generate_entity_overview import (
     CLASSES,
     build_overview,
     classify,
     list_entries,
+    provenance_block,
+    quality_block,
     serialize,
 )
 
+VERDICTS_PATH = DATA_DIR / "entities" / "mention_verdicts.json"
 
-def _cand(doc, gid, tier, rule, category="person", page=1):
+
+def _cand(doc, gid, tier, rule, category="person", page=1, alternatives=None):
     return {"doc": doc, "gid": gid, "tier": tier, "rule": rule,
-            "category": category, "page": page}
+            "category": category, "page": page,
+            "alternatives": list(alternatives or [])}
+
+
+def _mark(verdict, iaa=None, agrees=None, case="p001"):
+    mark = {"doc": "20", "page": 1, "surface": "Jaspers", "gid": "g1",
+            "verdict": verdict, "source": {"case_id": case}}
+    if iaa is not None:
+        mark["iaa"] = {"verdict": iaa}
+        mark["iaa_agrees"] = agrees
+    return mark
 
 
 ENTRIES = {
@@ -135,6 +152,61 @@ def test_per_document_aggregation_counts_and_orders():
     }
 
 
+def test_entity_records_carry_the_review_class_breakdown():
+    candidates = [
+        _cand("20", "g1", 1, "full-name"),
+        _cand("20", "g1", 2, "bare-surname"),
+        _cand("30", "g1", 2, "bare-surname:ambiguous"),
+        _cand("30", "g1", 2, "org-token:suspect"),
+    ]
+    overview = build_overview(candidates, ENTRIES)
+    assert overview["entities"]["g1"]["classes"] == {
+        "ambiguous": 1, "suspect": 1, "unanchored": 1,
+    }
+    assert overview["entities"]["g2"]["classes"] == {}
+
+
+def test_totals_carry_the_explicit_mention_sum_and_the_split():
+    candidates = [
+        _cand("20", "g1", 1, "full-name"),
+        _cand("20", "g1", 2, "bare-surname"),
+        _cand("30", "g2", 2, "org-token:suspect", category="organisation"),
+    ]
+    totals = build_overview(candidates, ENTRIES)["totals"]
+    assert totals["mentions"] == 3
+    assert totals["auto"] == 1 and totals["review"] == 2
+    assert totals["mentions"] == totals["auto"] + totals["review"]
+
+
+# ---------------------------------------------------------------------------
+# Ambiguity: entities that only ever appear as an alternative bearer
+# ---------------------------------------------------------------------------
+
+
+def test_alternative_bearers_are_counted_apart_from_the_main_counts():
+    candidates = [
+        _cand("20", "g1", 1, "anchored-surname", alternatives=["g1", "g2"]),
+        _cand("30", "g1", 2, "bare-surname:ambiguous", alternatives=["g1", "g2"]),
+    ]
+    overview = build_overview(candidates, ENTRIES)
+    g1, g2 = overview["entities"]["g1"], overview["entities"]["g2"]
+    # the reported bearer keeps exactly the accounting of a run without alternatives
+    assert (g1["auto"], g1["review"], g1["alternative_only"]) == (1, 1, 0)
+    # the other possible bearer is visible without being folded into auto/review
+    assert (g2["auto"], g2["review"], g2["alternative_only"]) == (0, 0, 2)
+    totals = overview["totals"]
+    assert totals["mentions"] == 2
+    assert totals["ambiguous_mentions"] == 2
+    assert totals["entities_found"] == 1
+    assert totals["entities_alternative_only"] == 1
+
+
+def test_alternative_gid_outside_the_curated_list_fails_the_closed_world():
+    with pytest.raises(ValueError, match="outside the curated list"):
+        build_overview([_cand("20", "g1", 1, "full-name", alternatives=["g1", "nope"])],
+                       ENTRIES)
+
+
 def test_unknown_gid_fails_the_closed_world():
     with pytest.raises(ValueError, match="outside the curated list"):
         build_overview([_cand("20", "nope", 1, "full-name")], ENTRIES)
@@ -149,3 +221,102 @@ def test_serialization_is_deterministic():
     second = serialize(build_overview(list(reversed(candidates)), dict(ENTRIES)))
     assert first == second
     json.loads(first)
+
+
+# ---------------------------------------------------------------------------
+# Quality block (adjudicated evidence)
+# ---------------------------------------------------------------------------
+
+
+def test_quality_block_mirrors_the_distributions_and_the_protocol_reading():
+    verdicts = {
+        "snapshot": "2026-01-01",
+        "marks": [_mark("correct", iaa="correct", agrees=True, case="p001"),
+                  _mark("correct", case="p002"),
+                  _mark("wrong_entity", iaa="correct", agrees=False, case="p003"),
+                  _mark("undecidable", case="p004")],
+        "recall_mentions": [
+            {"doc": "20", "page": 1, "status": "hit"},
+            {"doc": "20", "page": 2, "status": "on_worklist"},
+            {"doc": "30", "page": 3, "status": "missed", "cause": "rule_gap"},
+        ],
+    }
+    quality = quality_block(verdicts)
+    assert quality["snapshot"] == "2026-01-01"
+    precision = quality["precision"]
+    assert precision["n"] == 4
+    assert precision["distribution"] == {"correct": 2, "undecidable": 1,
+                                         "wrong_entity": 1}
+    # undecidable verdicts leave the denominator (protocol reading)
+    assert precision["decidable"] == 3 and precision["correct"] == 2
+    assert precision["rate"] == round(2 / 3, 4)
+    assert precision["ci95"][0] <= precision["rate"] <= precision["ci95"][1]
+    recall = quality["recall"]
+    assert recall["mentions"] == 3
+    assert recall["status"] == {"hit": 1, "missed": 1, "on_worklist": 1}
+    assert recall["causes_missed"] == {"rule_gap": 1}
+    assert recall["pages_with_mentions"] == 3
+    agreement = quality["agreement"]
+    assert agreement["n"] == 2 and agreement["agree"] == 1
+    assert [d["case"] for d in agreement["disagreements"]] == ["p003"]
+    assert agreement["disagreements"][0]["second_verdict"] == "correct"
+
+
+def test_quality_block_without_decidable_marks_reports_no_rate():
+    quality = quality_block({"marks": [_mark("undecidable")], "recall_mentions": []})
+    assert quality["precision"]["rate"] is None
+    assert quality["precision"]["ci95"] is None
+    assert quality["recall"]["mentions"] == 0
+
+
+@pytest.mark.skipif(not VERDICTS_PATH.exists(), reason="verdict store not available")
+def test_quality_block_reproduces_the_published_snapshot_figures():
+    """The committed verdict store must keep yielding the published evaluation figures.
+
+    Interval procedure and values follow the executed evaluation
+    (reports/2026-08-12_entity-eval-ergebnis.md, output/audits/entity_eval_report.json).
+    """
+    quality = quality_block(json.loads(VERDICTS_PATH.read_text(encoding="utf-8")))
+    assert quality["snapshot"] == "2026-08-12"
+    precision = quality["precision"]
+    assert precision["n"] == 300
+    assert precision["distribution"] == {"correct": 279, "not_in_source": 5,
+                                         "undecidable": 7, "wrong_entity": 5,
+                                         "wrong_span": 4}
+    assert precision["decidable"] == 293 and precision["correct"] == 279
+    assert precision["rate"] == 0.9522
+    assert precision["ci95"] == [0.9249, 0.9761]
+    assert quality["recall"]["mentions"] == 67
+    assert quality["recall"]["status"] == {"hit": 20, "missed": 30, "on_worklist": 17}
+    assert quality["agreement"] == {
+        "n": 50, "agree": 48, "rate": 0.96,
+        "disagreements": quality["agreement"]["disagreements"],
+    }
+    assert len(quality["agreement"]["disagreements"]) == 2
+    assert [d["case"] for d in quality["agreement"]["disagreements"]] == ["p145", "p193"]
+
+
+# ---------------------------------------------------------------------------
+# Provenance
+# ---------------------------------------------------------------------------
+
+
+def test_provenance_block_names_the_snapshot_and_the_list_size():
+    provenance = provenance_block("abc123", 9556, 289)
+    assert provenance["scan_sha256"] == "abc123"
+    assert provenance["scan_candidates"] == 9556
+    assert provenance["listed_entities"] == 289
+    assert provenance["scan"].endswith("entity_corpus_scan.json")
+    assert "/" in provenance["scan"] and "\\" not in provenance["scan"]
+    assert provenance["entity_list"] == "data/entities/all_entities.json"
+
+
+def test_overview_carries_quality_and_provenance_when_supplied():
+    quality = quality_block({"marks": [_mark("correct")], "recall_mentions": []})
+    provenance = provenance_block("abc123", 1, 3)
+    overview = build_overview([_cand("20", "g1", 1, "full-name")], ENTRIES,
+                              quality=quality, provenance=provenance)
+    assert overview["provenance"] == provenance
+    assert overview["quality"]["precision"]["n"] == 1
+    assert list(overview) == ["classes", "provenance", "totals", "quality",
+                              "entities", "documents"]
