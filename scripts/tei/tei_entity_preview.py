@@ -33,7 +33,6 @@ import json
 import re
 from collections import Counter
 from functools import lru_cache
-from html import escape
 from pathlib import Path
 
 from lxml import etree
@@ -259,146 +258,12 @@ def build_report(results: list[dict]) -> dict:
     }
 
 
-_HTML_STYLE = """
-    body { font-family: system-ui, sans-serif; max-width: 1100px; margin: 2rem auto;
-           padding: 0 1rem; color: #222; }
-    h1 { font-size: 1.5rem; } h2 { font-size: 1.15rem; margin-top: 2rem; }
-    h3 { font-size: 1rem; margin-bottom: 0.3rem; }
-    table { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1.2rem; font-size: 0.9em; }
-    th, td { padding: 5px 9px; text-align: left; border-bottom: 1px solid #ddd;
-             vertical-align: top; }
-    th { background: #eee; }
-    td.num { text-align: right; }
-    .pass { color: #1a6b2a; font-weight: bold; }
-    .fail { color: #a01515; font-weight: bold; }
-    .empty { color: #777; font-style: italic; }
-    .ctx { color: #444; }
-"""
-
-
-def _status(ok: bool) -> str:
-    return '<span class="pass">PASS</span>' if ok else '<span class="fail">FAIL</span>'
-
-
-def _mention_ids(mention: dict) -> str:
-    """Ids of a mention: an undecided candidate names every bearer without a lead.
-
-    A tier-1 hit carries the id that goes into the file, so it leads and the remaining
-    bearers follow as alternatives. A tier-2 hit is undecided, and listing its reported
-    id first would read as a decision the matcher did not take.
-    """
-    gid = str(mention.get("gid", ""))
-    alternatives = mention.get("alternatives") or []
-    if not alternatives:
-        return gid
-    if mention.get("tier") != 1:
-        return ", ".join(alternatives)
-    others = [other for other in alternatives if other != gid]
-    return f"{gid} (alt: {', '.join(others)})" if others else gid
-
-
-def _mention_rule(mention: dict) -> str:
-    """Rule plus the typographic verdict of a one-word title, where there is one."""
-    rule = str(mention.get("rule", ""))
-    evidence = mention.get("evidence")
-    return f"{rule} (evidence: {evidence})" if evidence else rule
-
-
-def _mention_origin(mention: dict) -> str:
-    """Which lexicon form produced the hit, and from which data channel."""
-    form = mention.get("matched_form")
-    return f"{mention.get('form_source', '')}: {form}" if form else ""
-
-
-def _mention_table(mentions: list[dict]) -> str:
-    if not mentions:
-        return '<p class="empty">none</p>'
-    rows = "".join(
-        "<tr><td>{surface}</td><td>{gid}</td><td>{rule}</td><td>{origin}</td>"
-        "<td class=\"ctx\">{context}</td></tr>".format(
-            surface=escape(m.get("surface", "")),
-            gid=escape(_mention_ids(m)),
-            rule=escape(_mention_rule(m)),
-            origin=escape(_mention_origin(m)),
-            context=escape(m.get("context", "")),
-        )
-        for m in mentions
-    )
-    return ("<table><thead><tr><th>Surface</th><th>GND</th><th>Rule</th><th>Found via</th>"
-            f"<th>Context</th></tr></thead><tbody>{rows}</tbody></table>")
-
-
-def build_html_report(report: dict) -> str:
-    """Standalone HTML report: overview with both check columns, then one section per document."""
-    totals = report["totals"]
-    overview = "".join(
-        "<tr><td>{doc}</td><td class=\"num\">{w}</td><td class=\"num\">{wl}</td>"
-        "<td>{rng}</td><td>{txt}</td></tr>".format(
-            doc=escape(res["doc"]), w=res["counts"]["wrapped"], wl=res["counts"]["worklist"],
-            rng=_status(res["rng_valid"]), txt=_status(res["text_invariant"]),
-        )
-        for res in report["documents"]
-    )
-    rules = "".join(
-        f'<tr><td>{escape(k)}</td><td class="num">{v}</td></tr>'
-        for k, v in totals["by_rule"].items()
-    )
-    categories = "".join(
-        f'<tr><td>{escape(k)}</td><td class="num">{v}</td></tr>'
-        for k, v in totals["by_category"].items()
-    )
-    evidence = "".join(
-        f'<tr><td>{escape(k)}</td><td class="num">{v}</td></tr>'
-        for k, v in totals.get("by_evidence", {}).items()
-    ) or '<tr><td class="empty">none</td><td class="num">0</td></tr>'
-    sections = []
-    for res in report["documents"]:
-        errors = ""
-        if res.get("rng_errors"):
-            errors = "<p>Schema errors: " + escape("; ".join(res["rng_errors"])) + "</p>"
-        sections.append(
-            f'<h2>Document {escape(res["doc"])}</h2>{errors}'
-            f'<h3>Wrapped mentions (tier 1)</h3>{_mention_table(res["wrapped"])}'
-            f'<h3>Worklist (tier 2)</h3>{_mention_table(res["worklist"])}'
-        )
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Entity pilot preview</title>
-<style>{_HTML_STYLE}</style>
-</head>
-<body>
-<h1>Entity pilot preview</h1>
-<p>Inline GND markup written to the preview directory. The delivered TEI
-(output/tei_final) is not touched. Schema: data/schema/zbz_hersch.rng. Text invariance:
-concatenated text of the &lt;text&gt; subtree before and after wrapping.</p>
-<h2>Overview</h2>
-<p>Documents: {totals["documents"]} &middot; wrapped: {totals["wrapped"]} &middot;
-worklist: {totals["worklist"]} &middot; ambiguous (several bearers):
-{totals.get("ambiguous", 0)} &middot; schema PASS: {totals["rng_valid"]}/{totals["documents"]}
-&middot; text PASS: {totals["text_invariant"]}/{totals["documents"]}</p>
-<table><thead><tr><th>Document</th><th>Wrapped</th><th>Worklist</th><th>Schema</th>
-<th>Text invariance</th></tr></thead><tbody>{overview}</tbody></table>
-<h3>Candidates by rule</h3>
-<table><thead><tr><th>Rule</th><th>Count</th></tr></thead><tbody>{rules}</tbody></table>
-<h3>Candidates by category</h3>
-<table><thead><tr><th>Category</th><th>Count</th></tr></thead><tbody>{categories}</tbody></table>
-<h3>One-word titles by typographic evidence</h3>
-<table><thead><tr><th>Evidence</th><th>Count</th></tr></thead><tbody>{evidence}</tbody></table>
-{"".join(sections)}
-</body>
-</html>"""
-
-
-def write_reports(report: dict, out_dir: Path) -> tuple[Path, Path]:
-    """Write the JSON and HTML report next to the preview files."""
+def write_report(report: dict, out_dir: Path) -> Path:
+    """Write the JSON report next to the preview files."""
     out_dir.mkdir(parents=True, exist_ok=True)
     json_path = out_dir / f"{REPORT_STEM}.json"
-    html_path = out_dir / f"{REPORT_STEM}.html"
     json_path.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
-    html_path.write_text(build_html_report(report), encoding="utf-8")
-    return json_path, html_path
+    return json_path
 
 
 # ---------------------------------------------------------------------------
@@ -450,9 +315,8 @@ def main():
         print(f"  One-word titles by evidence: {evidence}")
     print(f"  Schema PASS: {totals['rng_valid']}/{totals['documents']}  "
           f"text invariance PASS: {totals['text_invariant']}/{totals['documents']}")
-    json_path, html_path = write_reports(report, args.out_dir)
+    json_path = write_report(report, args.out_dir)
     print(f"  Report: {json_path}")
-    print(f"  Report: {html_path}")
 
 
 if __name__ == "__main__":

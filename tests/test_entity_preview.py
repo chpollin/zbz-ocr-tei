@@ -20,7 +20,6 @@ import pytest
 from scripts.tei.tei_entity_preview import (
     PANEL_DOCS,
     apply_candidates,
-    build_html_report,
     build_report,
     check_text_invariance,
     discover_doc_ids,
@@ -379,26 +378,6 @@ def test_report_totals_and_determinism():
     assert json.dumps(a, ensure_ascii=False) == json.dumps(b, ensure_ascii=False)
 
 
-def test_html_report_is_standalone_and_uses_words_for_status():
-    html = build_html_report(build_report(_results()))
-    assert html.startswith("<!DOCTYPE html>")
-    assert "PASS" in html and "FAIL" in html
-    assert "http://" not in html and "https://" not in html  # no external dependency
-    assert "Worklist" in html
-    for doc in ("1060", "100"):
-        assert doc in html
-
-
-def test_html_report_escapes_markup_in_surfaces():
-    results = _results()
-    surface = 'Jeanne <lb break="no"/>Hersch'
-    results[0]["wrapped"][0]["surface"] = surface
-    results[0]["wrapped"][0]["context"] = surface
-    html = build_html_report(build_report(results))
-    assert "&lt;lb break=&quot;no&quot;/&gt;" in html
-    assert '<lb break="no"/>' not in html
-
-
 def test_panel_is_the_ten_pilot_documents():
     assert PANEL_DOCS == ["1060", "100", "290", "1440", "890", "1350", "1360", "2030", "1220", "3090"]
 
@@ -517,28 +496,3 @@ def test_report_totals_tolerate_documents_without_the_new_counts():
     assert totals["by_evidence"] == {}
 
 
-def test_html_report_names_every_bearer_of_an_ambiguous_candidate(tmp_path):
-    res = preview_document("9999", _MINI, _iteration4_candidates(), tmp_path)
-    html = build_html_report(build_report([res]))
-    assert "117085391, 118557106" in html
-
-
-def test_html_report_keeps_a_decided_tier1_id_in_the_lead(tmp_path):
-    # the anchor decided this one, and the file carries exactly that id
-    cands = [_cand(_MINI, "Karl Jaspers", "118557106", rule="anchored-surname",
-                   alternatives=("117085391", "118557106"))]
-    html = build_html_report(build_report([preview_document("9999", _MINI, cands, tmp_path)]))
-    assert "118557106 (alt: 117085391)" in html
-
-
-def test_html_report_names_the_form_the_hit_came_from(tmp_path):
-    res = preview_document("9999", _MINI, _iteration4_candidates(), tmp_path)
-    html = build_html_report(build_report([res]))
-    assert "cache-variant: Mayer, Gertrud" in html
-    assert "headword: Karl Jaspers" in html
-
-
-def test_html_report_marks_a_title_without_typographic_evidence(tmp_path):
-    res = preview_document("9999", _MINI, _iteration4_candidates(), tmp_path)
-    html = build_html_report(build_report([res]))
-    assert "short-title (evidence: none)" in html

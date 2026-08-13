@@ -324,7 +324,8 @@ Panel of ten documents, gold half 1060, 100, 290, 1440, 890 (reference TEIs exis
 transfer half 1350, 1360, 2030, 1220, 3090 (Italian, English, interview, and the
 documented ambiguity classes; type D and encyclopedia deliberately uncovered, 760 and
 3040 as swap candidates). Result state and counts live in
-`output/entity_preview/entity_pilot_report.json` and `.html`.
+`output/entity_preview/entity_pilot_report.json`; the reading surface is the entity
+overview page `docs/entities.html`.
 
 What the pilot established: the whole chain runs; every panel preview is schema-valid
 and text-invariant; the anchor rule visibly reproduces the reference convention (one
