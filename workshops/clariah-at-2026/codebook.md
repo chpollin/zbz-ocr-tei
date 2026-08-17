@@ -17,11 +17,11 @@ Eine Themenannotation formuliert einen analytisch eigenständigen Claim und verb
 - `direct`: Der Wortlaut belegt den Claim explizit.
 - `indirect`: Der Claim entsteht durch eine nachvollziehbare Synthese oder Interpretation mehrerer Textsignale.
 - `ambiguous`: Konkurrierende Lesarten oder noch unzureichende Textsignale verhindern eine eindeutige Zuordnung.
-- `unchecked`: Ein Mensch hat Zitat und Seitenanker noch nicht geprüft. Jeder Modelloutput startet hier.
+- `unchecked`: Die für `source_checked` erforderliche menschliche Prüfung von Zitat und Seitenanker liegt nicht vor. Agentische, visuelle oder automatisierte Vorprüfungen ändern diesen Status nicht. Jeder Modelloutput startet hier.
 - `source_checked`: Ein Mensch hat Zitat, Seite und Segmentgrenze geprüft.
 - `source_mismatch`: Zitat oder Seitenanker stimmt nicht mit der Quelle überein.
 - `unreviewed`: Es liegt noch keine fachliche Entscheidung vor. Jeder Modelloutput startet hier.
-- `accepted` und `rejected`: fachliche Annahme oder Ablehnung nach dem Source-Check.
+- `accepted` und `rejected`: fachliche Annahme oder Ablehnung nach einem dokumentierten menschlichen Source-Check. Beide Werte sind nur zusammen mit `source_check_status: source_checked` zulässig. Bei `unchecked` oder `source_mismatch` bleibt `review_status: unreviewed`.
 
 Entity-Kennungen werden nur vergeben, wenn eine kontrollierte Quelle die Identität trägt. Ohne geprüfte Kennung bleiben `identifier` und `identifier_source` null.
 

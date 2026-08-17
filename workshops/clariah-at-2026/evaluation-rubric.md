@@ -1,79 +1,89 @@
 # Evaluationsrubrik
 
-Die Rubrik vergleicht Transkription, offene Baseline, Schema-Lauf und Evidenzannotation. Jeder Punktwert bewertet eine beobachtbare Eigenschaft des Artefakts.
+Diese Rubrik trennt maschinenprüfbare Artefakteigenschaften von fachlichen Entscheidungen. Ein maschinelles Kriterium erhält `1`, wenn die im Validator definierte Bedingung vollständig erfüllt ist, sonst `0`. `nicht anwendbar` geht nicht in die Summe ein. Die Punktzahl bewertet technische Konsistenz und Quellenrückbindung; sie ist keine Bewertung der wissenschaftlichen Qualität.
 
-## Kriterien
+## Lauf 01: vollständige Transkription
 
-| Kriterium | 2 Punkte | 1 Punkt | 0 Punkte |
-|---|---|---|---|
-| Bildbasierte Transkription | p003 und p004 sind als primäre multimodale Eingabe dokumentiert; Markdown dient erst dem Source-Check. | Eingaben sind dokumentiert, ihre Reihenfolge bleibt unklar. | Die Transkription wurde aus dem Markdown-Spiegel erzeugt. |
-| Seitentreue | Transkription und Läufe 02/03 verwenden p003 und p004 vollständig; kein Beitrag wird stillschweigend ausgewählt. | Eine Randpassage fehlt ohne analytische Folge. | Hersch wird bereits vor Lauf 04 als Scope vorgegeben. |
-| Analytische Segmenttreue | Lauf 04 beginnt mit der Hersch-Überschrift und endet vor der Illich-Überschrift. | Eine unkritische Randzeile liegt außerhalb des Segments. | Bandelier- oder Illich-Evidenz beantwortet die Forschungsfrage. |
-| Offene Baseline | Prompt 02 erhält nur die vollständigen Seiten und enthält weder Beitragsscope, Forschungsfrage noch Schema, Themenliste oder Codebuchverweis. | Der Prompt enthält indirekte thematische oder strukturelle Lenkung. | Beitragsscope, Forschungsfrage, Schema oder kontrollierte Codes steuern die Baseline. |
-| Strukturisolierung | Prompt 03 erhält dieselben vollständigen Seiten und das generische Schema; `research_question` dokumentiert `unspecified in this run`. | Einzelne fachliche Vorgaben bleiben implizit. | Beitragsscope, Forschungsfrage oder Codebuch steuern Lauf 03. |
-| Scope-Kontamination als Befund | Die Outputs 02/03 machen die Vermischung benachbarter Beiträge sichtbar; Lauf 04 entfernt sie durch die explizite Grenze. | Der Vergleich dokumentiert die Vermischung nur teilweise. | Scope-Kontamination wird als Modellfehler behandelt oder im Lauf 04 übersehen. |
-| Entity-Vertrag | Jede Entity enthält Surface, normalisiertes Label, Typ, Seite, Beleg und das geprüfte Kennungspaar. | Ein Feld ist unpräzise oder fehlt in Einzelfällen. | Entity-Angaben sind nicht auf Erwähnungen rückführbar. |
-| Themenvertrag | Jede Themenannotation enthält ID, Label, Definition, Claim und Evidenz. | Definition oder Claim bleibt zu breit. | Thema und Claim sind nicht getrennt oder Evidenz fehlt. |
-| Zitatgenauigkeit | Jedes Zitat ist auf der angegebenen Seite und im Source-Check-Text exakt auffindbar. | Kleine normalisierte Abweichungen sind dokumentiert. | Zitat ist erfunden, paraphrasiert oder der falschen Seite zugewiesen. |
-| Evidenzstatus | `direct`, `indirect` und `ambiguous` werden gemäß ihrer semantischen Funktion verwendet. | Einzelne Statuswerte sind zu eindeutig oder zu unbestimmt. | Evidenzstatus fehlt oder fungiert als Sicherheitsskala. |
-| Quellenprüfstatus | Modelloutputs beginnen `unchecked`; `source_checked` oder `source_mismatch` beruhen auf dokumentierter Quellenprüfung. | Der Prüfweg ist vorhanden, aber lückenhaft. | Das Modell erklärt seine eigene Ausgabe für source-checked. |
-| Fachlicher Review | Modelloutputs beginnen `unreviewed`; `accepted` oder `rejected` beruhen auf fachlicher Entscheidung. | Entscheidung ist dokumentiert, aber nicht klar einer Rolle zugeordnet. | Quellenprüfung und fachliche Annahme werden vermischt. |
-| Schema und Provenienz | JSON validiert; Modell, Datum, Promptdatei, lokaler Kontext und Nicht-Gemini-Status sind dokumentiert. | Ein Provenienzfeld ist inkonsistent. | Ausgabe ist nicht schemafähig oder gibt ihre Herkunft falsch an. |
+| ID | Maschinenprüfbares Kriterium | Befund | Wert |
+|---|---|---|---:|
+| 01-A | Prompt fordert die vollständigen sichtbaren Seiten und keine analytische Beitragsauswahl. | erfüllt | 1 |
+| 01-B | Output enthält die Page-Marker `1000_p003` und `1000_p004`. | erfüllt | 1 |
+| 01-C | Bandelier-, Hersch- und Illich-Marker sind im vollständigen Output vorhanden. | erfüllt | 1 |
+| 01-D | Metadatenkopf initialisiert `source_check_status: unchecked` und `review_status: unreviewed`. | erfüllt | 1 |
+| 01-E | Prompt- und Output-SHA-256 stimmen mit Metadaten und Provenienz überein. | erfüllt | 1 |
 
-Maximal sind 26 Punkte erreichbar.
+**Summe Lauf 01: 5/5**
 
-## Interpretation
+## Lauf 02: offene Textbaseline
 
-- 23 bis 26 Punkte: technisch und quellenbezogen für den Pilotvergleich geeignet
-- 17 bis 22 Punkte: gezielte Quellen- oder Schema-Nachprüfung erforderlich
-- 0 bis 16 Punkte: erneuter Lauf oder grundlegende Revision erforderlich
+| ID | Maschinenprüfbares Kriterium | Befund | Wert |
+|---|---|---|---:|
+| 02-A | Prompt enthält weder exakte Forschungsfrage, Schema- oder Codebuchpfad noch Segmentanker. | erfüllt | 1 |
+| 02-B | Output ist eine Textantwort und kein JSON-Objekt. | erfüllt | 1 |
+| 02-C | Bandelier, Hersch und Illich sind als vollständiger Seitenscope nachweisbar. | erfüllt | 1 |
+| 02-D | Alle extrahierten Belege sind auf der angegebenen Seite exakt auffindbar. | 29/29 | 1 |
+| 02-E | Prompt- und Output-SHA-256 stimmen mit Metadaten und Provenienz überein. | erfüllt | 1 |
 
-Die fachliche Annahme einzelner Claims erfolgt unabhängig von der technischen Punktzahl.
+**Summe Lauf 02: 5/5**
 
-## Dokumentierter Vergleich der vier Läufe
+## Lauf 03: generischer Schema-Lauf
 
-Die folgende Tabelle trennt automatisch oder durch Artefaktinspektion messbare Eigenschaften von fachlichen Wertungen. `unreviewed` bedeutet, dass noch keine Entscheidung durch einen Critical Expert vorliegt.
+| ID | Maschinenprüfbares Kriterium | Befund | Wert |
+|---|---|---|---:|
+| 03-A | Prompt enthält Schema, aber keine exakte Forschungsfrage, keinen Codebuchpfad und keine Segmentanker. | erfüllt | 1 |
+| 03-B | JSON validiert gegen das aktuelle Schema. | erfüllt | 1 |
+| 03-C | `research_question` ist `unspecified in this run`; `dataset_id` bezeichnet die vollständigen Seiten. | erfüllt | 1 |
+| 03-D | Alle Entity- und Themenbelege sind auf der angegebenen Seite exakt auffindbar. | 26/26 | 1 |
+| 03-E | Alle Annotationen starten mit `unchecked` und `unreviewed`. | erfüllt | 1 |
+| 03-F | Prompt- und Output-SHA-256 stimmen mit Metadaten und Provenienz überein. | erfüllt | 1 |
 
-| Eigenschaft | Lauf 01: Transkription | Lauf 02: offene Baseline | Lauf 03: Schema-Lauf | Lauf 04: Evidenzannotation |
-|---|---|---|---|---|
-| Primärer Input | zwei Faksimiles | vollständiger Output 01 | vollständiger Output 01 + generisches Schema | vollständiger Output 01 + Schema + Codebuch + Forschungsfrage + Segmentgrenze |
-| Ausgabeformat | Markdown | Text | JSON | JSON |
-| Dokumentierter Scope | vollständige Seiten p003–p004 | vollständige Seiten; drei Beitragsbereiche sichtbar | vollständige Seiten; drei Beitragsbereiche sichtbar | Hersch-Überschrift inklusive bis Illich-Überschrift exklusiv |
-| Forschungsfrage im Lauf | nicht vorhanden | nicht vorhanden | `unspecified in this run` | exakte Forschungsfrage |
-| Kontrollierte Codes | nicht vorhanden | nicht vorhanden | nicht vorhanden | fünf Codebuch-IDs |
-| Exakte Belege mit korrekter Page-ID | nicht als Annotation anwendbar | 29/29 | 26/26 | 13/13 |
-| Schema-Validierung | nicht anwendbar | nicht anwendbar | PASS | PASS |
-| Scope-Kontamination | nicht anwendbar; vollständige Seiten sind beabsichtigt | Bandelier, Hersch und Illich nachgewiesen | Bandelier, Hersch und Illich nachgewiesen | 0 Bandelier-/Illich-Belege |
-| Initialer Quellenprüfstatus | `unchecked` im Metadatenkopf | kein Statusschema | alle Annotationen `unchecked` | alle Annotationen `unchecked` |
-| Initialer fachlicher Review | `unreviewed` im Metadatenkopf | `unreviewed`; keine fachliche Abnahme dokumentiert | alle Annotationen `unreviewed` | alle Annotationen `unreviewed` |
+**Summe Lauf 03: 6/6**
 
-Die Tabelle bewertet technische Konsistenz und Quellenrückbindung. Themenauswahl, Claim-Formulierung und Evidenzstatus bleiben fachlich `unreviewed`.
+## Lauf 04: forschungsfragengeleitete Evidenzannotation
 
-## Critical-Expert-Gate
+| ID | Maschinenprüfbares Kriterium | Befund | Wert |
+|---|---|---|---:|
+| 04-A | Prompt enthält exakte Forschungsfrage, Hersch-Start, Illich-Endanker, Schema und Codebuch. | erfüllt | 1 |
+| 04-B | JSON validiert gegen das aktuelle Schema. | erfüllt | 1 |
+| 04-C | Forschungsfrage und Hersch-Dataset-Identifier entsprechen dem Vertrag. | erfüllt | 1 |
+| 04-D | Output enthält genau die fünf im Codebuch benannten Topic-IDs. | 5/5 | 1 |
+| 04-E | Alle Entity- und Themenbelege sind im agentisch verifizierten Hersch-Referenztext auf der angegebenen Seite auffindbar. | 13/13 | 1 |
+| 04-F | Bandelier-, Oury-, Illich-, Verne- und `Orientations`-Belege fehlen im Output. | 0 Kontaminationen | 1 |
+| 04-G | Alle Annotationen starten mit `unchecked` und `unreviewed`. | erfüllt | 1 |
+| 04-H | Prompt- und Output-SHA-256 stimmen mit Metadaten und Provenienz überein. | erfüllt | 1 |
 
-Für `political_neutrality` liegt der Vorschlag vor, `evidence_status: direct` als `indirect` zu klassifizieren. Der Rohoutput bleibt unverändert. Die Entscheidung wird erst nach fachlicher Prüfung in einem abgeleiteten Review-Artefakt dokumentiert.
+**Summe Lauf 04: 8/8**
 
-## Ausschlussfehler
+## Nicht bewertete fachliche Kriterien
 
-Eine Ausgabe wird unabhängig von der Punktzahl revidiert, wenn mindestens ein Befund vorliegt:
+| Gegenstand | Status | Gate |
+|---|---|---|
+| Formulierung und analytischer Scope der Forschungsfrage | `unreviewed` | `research_question` |
+| Definitionen, Ein- und Ausschlussregeln sowie Anker der fünf Codes | `unreviewed` | `codebook` |
+| Quellenstatus und fachliche Annahme der Musterannotation | `unreviewed` | `sample_annotation` |
+| Didaktische Funktion der vollständigen Seiten in Lauf 02/03 und der Hersch-Grenze in Lauf 04 | `unreviewed` | `didactic_scope_boundary` |
+| Evidenzstatus von `political_neutrality`; Vorschlag `indirect`, Rohwert `direct` | `unreviewed` | `political_neutrality_evidence_status` |
+| Angemessenheit der übrigen Themen, Claims und Evidenzstatus | `unreviewed` | fachliche Prüfung erforderlich |
 
-- Bandelier- oder Illich-Evidenz in Lauf 04
-- falsche Seite oder nicht auffindbares Zitat
-- ein Feld namens `confidence` oder eine abgeleitete Sicherheitsskala
-- `source_checked` ohne dokumentierte Prüfung am Faksimile oder Kontrolltext
-- `source_mismatch` zusammen mit `review_status: accepted`
-- `accepted` oder `rejected` ohne fachliche Entscheidung
-- strukturierter Modelloutput startet mit einem anderen Wert als `unchecked` und `unreviewed`
-- Gemini wird als Modellquelle genannt, obwohl der Run eine lokale `gpt-5.6-sol`-Probe ist
-- syntaktisch ungültiges oder schemawidriges JSON
+Die fünf benannten Gates sind maschinenlesbar in [critical-expert-gates.json](critical-expert-gates.json) serialisiert. Fachliche Kriterien erhalten vor ihrer Abnahme keine Punkte.
 
-## Prüfsequenz
+## Fail-closed-Regeln
 
-1. Primärbilder, vollständige Seitengrenzen und Hersch-Segmentgrenzen getrennt prüfen.
-2. Den Hersch-Abschnitt der Transkription zeilenweise gegen p003 und p004 lesen; Passagen außerhalb bleiben als unverifiziert kennzeichnen.
-3. Jedes Entity-Zitat und jedes `exact_quote` aus Lauf 04 im source-checked Hersch-Kontrolltext suchen.
-4. Seiten-IDs gegen das Manifest prüfen.
-5. Statusdimensionen unabhängig beurteilen.
-6. Baseline auf Beitragsscope, Forschungsfrage, Schema und versteckte Codebuchvorgaben prüfen; Lauf 03 getrennt auf fachliche Vorgaben prüfen.
-7. JSON gegen das Schema validieren.
-8. Negative Schemafälle für Confidence-Feld, alte Statuswerte, Zusatzfelder, falsche Seiten-ID, ungültiges Datum und die verbotene Kombination `source_mismatch`/`accepted` ausführen.
+Eine strukturierte Annotation ist schemawidrig, wenn mindestens eine der folgenden Bedingungen vorliegt:
+
+- falsche Page-ID oder nicht erlaubtes Zusatzfeld;
+- `confidence` oder eine abgeleitete Sicherheitsskala;
+- nicht erlaubter Evidenz-, Quellenprüf- oder Reviewstatus;
+- `accepted` oder `rejected` bei einem anderen Quellenprüfstatus als `source_checked`;
+- ungültiges Kalenderdatum;
+- ein nicht-Boolean-Wert in `local_probe` oder `gemini_output`.
+
+Ein Artefakt bleibt fachlich `unreviewed`, bis das zugehörige Gate durch einen Critical Expert entschieden wurde. Die agentische visuelle und automatisierte Prüfung begründet keinen menschlichen `source_checked`-Status.
+
+## Reproduzierbare Prüfung
+
+```powershell
+python workshops/clariah-at-2026/validate.py
+```
+
+Die im Dokument eingetragenen Einzelwerte und Summen sind nur gültig, wenn der Validator mit `ALL CHECKS PASS` endet.

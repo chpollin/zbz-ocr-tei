@@ -3,7 +3,7 @@
   "dataset_id": "clariah-at-2026-doc1000-p003-p004-hersch",
   "research_question": "How does Jeanne Hersch define the institutional conditions under which schools can foster critical judgement?",
   "run_metadata": {
-    "run_id": "gpt-5.6-sol-local-probe-example-source-check",
+    "run_id": "gpt-5.6-sol-local-probe-example-agent-verified",
     "model": "gpt-5.6-sol",
     "date": "2026-08-17",
     "prompt_file": "workshops/clariah-at-2026/prompts/04-evidence-annotation.txt",
@@ -20,7 +20,7 @@
       "identifier": null,
       "identifier_source": null,
       "evidence_status": "direct",
-      "source_check_status": "source_checked",
+      "source_check_status": "unchecked",
       "review_status": "unreviewed"
     },
     {
@@ -32,7 +32,7 @@
       "identifier": null,
       "identifier_source": null,
       "evidence_status": "direct",
-      "source_check_status": "source_checked",
+      "source_check_status": "unchecked",
       "review_status": "unreviewed"
     }
   ],
@@ -53,7 +53,7 @@
         }
       ],
       "evidence_status": "indirect",
-      "source_check_status": "source_checked",
+      "source_check_status": "unchecked",
       "review_status": "unreviewed"
     },
     {
@@ -72,7 +72,7 @@
         }
       ],
       "evidence_status": "direct",
-      "source_check_status": "source_checked",
+      "source_check_status": "unchecked",
       "review_status": "unreviewed"
     },
     {
@@ -87,7 +87,7 @@
         }
       ],
       "evidence_status": "direct",
-      "source_check_status": "source_checked",
+      "source_check_status": "unchecked",
       "review_status": "unreviewed"
     }
   ]

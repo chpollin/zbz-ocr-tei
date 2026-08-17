@@ -29,14 +29,16 @@ TRANSKRIPTIONSREGELN
 8. Ordne mehrspaltigen Text in seiner dokumentarischen Lesereihenfolge und bewahre Fußnoten bei ihrem zugehörigen Seitenabschnitt.
 
 METADATENKOPF
+Setze `model` auf die tatsächlich verwendete Modellbezeichnung. Setze `local_probe` nur bei einer lokalen Probe auf `true`. Setze `gemini_output` nur bei einem tatsächlich mit Gemini erzeugten Output auf `true`. Die beiden Boolean-Felder beschreiben voneinander unabhängige Provenienzeigenschaften und dürfen nicht aus diesem Prompt vorbelegt werden.
+
 Beginne die Markdown-Ausgabe mit:
 
 ---
 model: <Modellname>
 date: <YYYY-MM-DD>
 prompt_file: workshops/clariah-at-2026/prompts/01-transcription.txt
-local_probe: true
-gemini_output: false
+local_probe: <true|false>
+gemini_output: <true|false>
 source_check_status: unchecked
 review_status: unreviewed
 ---

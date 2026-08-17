@@ -1,0 +1,106 @@
+{
+  "gates_version": "1.0",
+  "dataset_id": "clariah-at-2026-doc1000-p003-p004-hersch",
+  "status_vocabulary": [
+    "unreviewed",
+    "accepted",
+    "rejected"
+  ],
+  "gates": [
+    {
+      "gate_id": "research_question",
+      "subject": "Wording and analytical scope of the research question",
+      "current_value": "How does Jeanne Hersch define the institutional conditions under which schools can foster critical judgement?",
+      "critical_issue": "The contribution is introduced as an exposé by Jeanne Hersch but ends with the visible signature Jean Fluck. The author, speaker and redaction relationship must be clarified before the research question and claim attribution are accepted.",
+      "source_signals": [
+        {
+          "page_id": "1000_p003",
+          "text": "Exposé de Madame Jeanne HERSCH, professeur de philosophie à l'Université de Genève :"
+        },
+        {
+          "page_id": "1000_p004",
+          "text": "Jean Fluck."
+        }
+      ],
+      "proposed_value": null,
+      "status": "unreviewed",
+      "required_role": "critical_expert",
+      "operational_change_applied": false,
+      "artifact_paths": [
+        "workshops/clariah-at-2026/README.md",
+        "workshops/clariah-at-2026/codebook.md",
+        "workshops/clariah-at-2026/prompts/04-evidence-annotation.txt"
+      ]
+    },
+    {
+      "gate_id": "codebook",
+      "subject": "Definitions, inclusion rules, exclusion rules and anchors of the five controlled topics",
+      "current_value": {
+        "topic_ids": [
+          "school_as_encounter",
+          "memory_for_judgement",
+          "pedagogical_invention",
+          "social_compensation",
+          "political_neutrality"
+        ]
+      },
+      "proposed_value": null,
+      "status": "unreviewed",
+      "required_role": "critical_expert",
+      "operational_change_applied": false,
+      "artifact_paths": [
+        "workshops/clariah-at-2026/codebook.md"
+      ]
+    },
+    {
+      "gate_id": "sample_annotation",
+      "subject": "Source anchoring and scholarly acceptance of the sample annotation",
+      "current_value": {
+        "path": "workshops/clariah-at-2026/examples/annotation-example.json",
+        "source_check_status": "unchecked",
+        "review_status": "unreviewed",
+        "verification_status": "agent_verified"
+      },
+      "proposed_value": null,
+      "status": "unreviewed",
+      "required_role": "critical_expert",
+      "operational_change_applied": false,
+      "artifact_paths": [
+        "workshops/clariah-at-2026/examples/annotation-example.json",
+        "workshops/clariah-at-2026/examples/transcription-agent-verified.md"
+      ]
+    },
+    {
+      "gate_id": "didactic_scope_boundary",
+      "subject": "Use of adjacent Bandelier and Illich passages in runs 02 and 03 and the exclusive Hersch boundary in run 04",
+      "current_value": {
+        "run_02_scope": "full pages 1000_p003 and 1000_p004",
+        "run_03_scope": "full pages 1000_p003 and 1000_p004",
+        "run_04_start_inclusive": "L'ÉCOLE, LIEU DE RENCONTRE DE MÉMOIRE ET D'INVENTION",
+        "run_04_end_exclusive": "POURQUOI IVAN ILLICH VEUT-IL DÉSCOLARISER LA SOCIÉTÉ ?"
+      },
+      "proposed_value": null,
+      "status": "unreviewed",
+      "required_role": "critical_expert",
+      "operational_change_applied": false,
+      "artifact_paths": [
+        "workshops/clariah-at-2026/README.md",
+        "workshops/clariah-at-2026/prompts/02-baseline-topics.txt",
+        "workshops/clariah-at-2026/prompts/03-schema-topics.txt",
+        "workshops/clariah-at-2026/prompts/04-evidence-annotation.txt"
+      ]
+    },
+    {
+      "gate_id": "political_neutrality_evidence_status",
+      "subject": "Evidence-status classification of the political_neutrality claim",
+      "current_value": "direct",
+      "proposed_value": "indirect",
+      "status": "unreviewed",
+      "required_role": "critical_expert",
+      "operational_change_applied": false,
+      "artifact_paths": [
+        "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/04-evidence-annotation-output.json"
+      ]
+    }
+  ]
+}

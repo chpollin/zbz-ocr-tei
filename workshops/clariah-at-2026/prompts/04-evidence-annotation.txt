@@ -24,4 +24,4 @@ STATUS CONTRACT
 Every model output starts with source_check_status unchecked and review_status unreviewed. A human may later set source_checked after checking quote and page, or source_mismatch when the anchor fails. accepted and rejected record later scholarly decisions. These dimensions must remain separate. Do not emit a confidence field, probability or verbal certainty scale.
 
 OUTPUT
-Return only JSON valid against workshops/clariah-at-2026/schema/annotation.schema.json. Set run_metadata.prompt_file to workshops/clariah-at-2026/prompts/04-evidence-annotation.txt, local_probe to true and gemini_output to false.
+Return only JSON valid against workshops/clariah-at-2026/schema/annotation.schema.json. Set run_metadata.prompt_file to workshops/clariah-at-2026/prompts/04-evidence-annotation.txt and record the actual model name. Set local_probe to true only for a local probe. Set gemini_output to true only when Gemini actually produced the output.

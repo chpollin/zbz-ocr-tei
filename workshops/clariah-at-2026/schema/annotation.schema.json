@@ -200,18 +200,27 @@
           }
         },
         {
-          "not": {
+          "if": {
             "properties": {
-              "source_check_status": {
-                "const": "source_mismatch"
-              },
               "review_status": {
-                "const": "accepted"
+                "enum": [
+                  "accepted",
+                  "rejected"
+                ]
               }
             },
             "required": [
-              "source_check_status",
               "review_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_check_status": {
+                "const": "source_checked"
+              }
+            },
+            "required": [
+              "source_check_status"
             ]
           }
         }
@@ -283,18 +292,27 @@
       },
       "allOf": [
         {
-          "not": {
+          "if": {
             "properties": {
-              "source_check_status": {
-                "const": "source_mismatch"
-              },
               "review_status": {
-                "const": "accepted"
+                "enum": [
+                  "accepted",
+                  "rejected"
+                ]
               }
             },
             "required": [
-              "source_check_status",
               "review_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_check_status": {
+                "const": "source_checked"
+              }
+            },
+            "required": [
+              "source_check_status"
             ]
           }
         }

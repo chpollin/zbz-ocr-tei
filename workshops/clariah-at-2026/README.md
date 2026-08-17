@@ -16,7 +16,7 @@ Der Pilot beginnt mit zwei vollständigen Seiten aus Dokument `1000`:
 - Analytischer Start des Hersch-Segments: `L'ÉCOLE, LIEU DE RENCONTRE DE MÉMOIRE ET D'INVENTION`
 - Analytisches Ende exklusiv: `POURQUOI IVAN ILLICH VEUT-IL DÉSCOLARISER LA SOCIÉTÉ ?`
 
-Die Transkription sowie die Läufe 02 und 03 verwenden beide Seiten vollständig. Damit bleiben der vorangehende Bandelier-Text und der auf p004 beginnende Illich-Text zunächst im Input. Erst Lauf 04 setzt die Hersch-Grenze als explizite Forschungsentscheidung. [source-manifest.csv](source-manifest.csv) dokumentiert Bilder, Kontrolltexte, Seiten, Commit, Prüfsummen, Projektstatus und Rechtehinweis. Der Hersch-Kontrolltext ist source-checked; die außerhalb dieses Segments liegenden Passagen bleiben im Projektstatus `unverifiziert`.
+Die Transkription sowie die Läufe 02 und 03 verwenden beide Seiten vollständig. Damit bleiben der vorangehende Bandelier-Text und der auf p004 beginnende Illich-Text zunächst im Input. Erst Lauf 04 setzt die Hersch-Grenze als explizite Forschungsentscheidung. [source-manifest.csv](source-manifest.csv) dokumentiert Bilder, Kontrolltexte, Seiten, Commit, Prüfsummen, Projektstatus und Rechtehinweis. Der Hersch-Referenztext wurde agentisch visuell und automatisiert geprüft, bleibt ohne menschlichen Source-Review jedoch `unchecked`. Die außerhalb dieses Segments liegenden Passagen bleiben im Projektstatus `unverifiziert`.
 
 ## Ausführungsfolge
 
@@ -46,7 +46,7 @@ Ausgabe: claim-orientierte Entitäten und Themen in demselben JSON-Schema.
 
 ### 5. Quellenprüfung und Vergleich
 
-Die Rubrik in [evaluation-rubric.md](evaluation-rubric.md) prüft Scope-Kontamination, Segmentgrenzen, Entity-Felder, Themenpassung, exakte Zitate und Statusdisziplin. Sie enthält außerdem den ausgefüllten Vergleich aller vier Läufe. [examples/transcription-source-checked.md](examples/transcription-source-checked.md) ist der visuell geprüfte Hersch-Kontrolltext. [examples/annotation-example.json](examples/annotation-example.json) zeigt einen nachgelagerten Source-Check; es ist kein unveränderter Modelloutput. Pfad, SHA-256, Prüfaktivität und verantwortliche Rolle beider Referenzartefakte stehen in [source-manifest.csv](source-manifest.csv) und `provenance.json`.
+Die Rubrik in [evaluation-rubric.md](evaluation-rubric.md) vergibt Einzelwerte ausschließlich für maschinenprüfbare Kriterien und lässt fachliche Kriterien unbewertet. [examples/transcription-agent-verified.md](examples/transcription-agent-verified.md) dokumentiert die agentische visuelle und automatisierte Prüfung des Hersch-Abschnitts. [examples/annotation-example.json](examples/annotation-example.json) überträgt diese Anker in ein strukturiertes Muster; seine Quellenprüf- und Reviewstatus bleiben `unchecked` und `unreviewed`. Pfad, SHA-256, Prüfaktivität und tatsächliche Agentenrolle beider Referenzartefakte stehen in [source-manifest.csv](source-manifest.csv) und `provenance.json`.
 
 ## Gemeinsamer JSON-Vertrag
 
@@ -68,7 +68,7 @@ Jede Entity und Themenannotation trennt drei Dimensionen:
 
 `direct` bezeichnet einen expliziten Beleg. `indirect` bezeichnet eine nachvollziehbare Synthese oder Interpretation. `ambiguous` bezeichnet konkurrierende oder noch unzureichende Zuordnungen.
 
-`source_checked` bestätigt ausschließlich Textanker, exaktes Zitat und Seite. `source_mismatch` dokumentiert eine nicht auflösbare Abweichung zur Quelle. `accepted` und `rejected` sind fachliche Entscheidungen.
+`source_checked` bestätigt ausschließlich Textanker, exaktes Zitat und Seite nach dokumentierter menschlicher Prüfung. `source_mismatch` dokumentiert eine nicht auflösbare Abweichung zur Quelle. `accepted` und `rejected` sind fachliche Entscheidungen und nur zusammen mit `source_checked` zulässig.
 
 Eine Annotation mit `source_check_status: source_mismatch` darf nicht zugleich `review_status: accepted` tragen. Das Schema weist diese Kombination zurück.
 
@@ -93,8 +93,8 @@ Die strukturierten Rohoutputs 03 und 04 beginnen mit den ungeprüften Statuswert
 3. Prompt 02 ausschließlich mit dem vollständigen Lauf-01-Output ausführen. Keine Forschungsfrage, Segmentgrenze, kein Schema und kein Codebuch ergänzen. Die Textantwort unverändert speichern.
 4. Prompt 03 mit demselben vollständigen Lauf-01-Output und `schema/annotation.schema.json` ausführen. Weder eine fachliche Forschungsfrage oder Segmentgrenze noch ein Codebuch ergänzen. Die JSON-Antwort unverändert speichern.
 5. Prompt 04 mit demselben vollständigen Lauf-01-Output, Schema und Codebuch ausführen. Forschungsfrage und Hersch-Segmentgrenze stammen aus dem Prompt. Die JSON-Antwort unverändert speichern.
-6. Modellname, Datum, verfügbare Modellparameter sowie SHA-256 der Prompts und Outputs in `input/metadata.json` und `provenance.json` eintragen. Nicht exponierte Parameter und Request-/Response-Protokolle als nicht verfügbar dokumentieren; keine Werte rekonstruieren.
-7. Den Hersch-Abschnitt gegen beide Faksimiles prüfen. Source-Check und fachlichen Review getrennt dokumentieren. Referenzartefakte mit Pfad, SHA-256, Aktivität und Prüfrolle an Manifest und Provenienz binden.
+6. Modellname, Datum und die Boolean-Felder `local_probe` und `gemini_output` entsprechend der tatsächlichen Ausführung setzen. Verfügbare Modellparameter sowie SHA-256 der Prompts und Outputs in `input/metadata.json` und `provenance.json` eintragen. Nicht exponierte Parameter und Request-/Response-Protokolle als nicht verfügbar dokumentieren; keine Werte rekonstruieren.
+7. Den Hersch-Abschnitt agentisch gegen beide Faksimiles prüfen und die automatisierten Zeichenfolgen- und Page-ID-Tests ausführen. Diese Vorprüfung als `agent_verified` dokumentieren; `source_check_status` bleibt bis zu einer menschlichen Prüfung `unchecked`. Referenzartefakte mit Pfad, SHA-256, Aktivität und tatsächlicher Agentenrolle an Manifest und Provenienz binden.
 8. Die Gesamtsuite vom Repository-Root ausführen und den Bericht nur bei `ALL CHECKS PASS` aktualisieren.
 
 ## Validierung
@@ -107,10 +107,10 @@ python workshops/clariah-at-2026/validate.py
 
 Erwartete Schlusszeile: `ALL CHECKS PASS`. Die Validierung verwendet einen Format-Checker für echte Kalenderdaten. Sie prüft zusätzlich, dass Lauf 03 den Platzhalter und Lauf 04 die exakte Forschungsfrage enthält. Negative Tests erfassen alte Statuswerte, falsche Seiten-IDs, zusätzliche Confidence-Felder, unzulässige Zusatzfelder, ungültige Datumswerte und widersprüchliche Source-/Reviewstatus.
 
-## Offene fachliche Entscheidung
+## Offene fachliche Entscheidungen
 
-Der Vorschlag, den Evidenzstatus von `political_neutrality` von `direct` auf `indirect` zu ändern, bleibt ein Critical-Expert-Gate. Der bytegetreue Rohoutput wird operativ nicht verändert.
+[critical-expert-gates.json](critical-expert-gates.json) serialisiert die fünf offenen Entscheidungen zu Forschungsfrage, Codebuch, Musterannotation, didaktischer Scopegrenze und `political_neutrality`. Das Forschungsfragen-Gate umfasst die ungeklärte Beziehung zwischen der Einleitung als Exposé von Jeanne Hersch und der sichtbaren Schlusssignatur `Jean Fluck.`. Der Vorschlag, den Evidenzstatus von `political_neutrality` von `direct` auf `indirect` zu ändern, bleibt ebenfalls fachlich `unreviewed`. Die bytegetreuen Rohoutputs werden operativ nicht verändert.
 
 ## Rechte
 
-Der Rechtestatus lautet `zu prüfen`. Öffentliche Erreichbarkeit im Projektviewer belegt keine freie Nachnutzung. Die Faksimiles und daraus abgeleitete Datensätze dürfen erst nach institutioneller Rechteklärung weitergegeben oder neu veröffentlicht werden.
+Der Rechtestatus lautet `zu prüfen`. Öffentliche Erreichbarkeit im Projektviewer belegt keine freie Nachnutzung. Die Faksimiles und daraus abgeleitete Datensätze dürfen erst nach institutioneller Rechteklärung weitergegeben oder neu veröffentlicht werden. [rights-clearance.md](rights-clearance.md) benennt Objekte, vorgesehene Nutzungen, Klärungsfragen, aufzubewahrende Nachweise und den sicheren Zwischenzustand.

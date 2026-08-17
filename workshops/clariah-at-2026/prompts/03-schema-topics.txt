@@ -16,4 +16,4 @@ STATUS CONTRACT
 Every model-produced entity and topic starts with source_check_status unchecked and review_status unreviewed. source_checked and source_mismatch require a later human source check. accepted and rejected require a later scholarly decision. Do not emit a confidence field.
 
 OUTPUT
-Return only JSON valid against workshops/clariah-at-2026/schema/annotation.schema.json. Set run_metadata.prompt_file to workshops/clariah-at-2026/prompts/03-schema-topics.txt, local_probe to true and gemini_output to false.
+Return only JSON valid against workshops/clariah-at-2026/schema/annotation.schema.json. Set run_metadata.prompt_file to workshops/clariah-at-2026/prompts/03-schema-topics.txt and record the actual model name. Set local_probe to true only for a local probe. Set gemini_output to true only when Gemini actually produced the output.

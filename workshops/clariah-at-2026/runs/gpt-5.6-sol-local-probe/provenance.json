@@ -1,5 +1,5 @@
 {
-  "provenance_version": "1.1",
+  "provenance_version": "1.2",
   "run_id": "gpt-5.6-sol-local-probe",
   "model": "gpt-5.6-sol",
   "date": "2026-08-17",
@@ -34,14 +34,14 @@
   "validation_contracts": {
     "annotation_schema": {
       "path": "workshops/clariah-at-2026/schema/annotation.schema.json",
-      "current_sha256": "E98964582D1C7367A2E6CD30986452F4636184C145AAD11EA3513DCD32778EB9",
+      "current_sha256": "F05540CE9B2D59D1B33CE3544CFB0FF5D15BCD0231C01E6C0BAD07D323C99C12",
       "role": "current workshop and post-run validation contract",
       "generation_snapshot_sha256": null,
       "generation_snapshot_status": "not captured separately from the local request envelope"
     },
     "codebook": {
       "path": "workshops/clariah-at-2026/codebook.md",
-      "current_sha256": "E3BA06C6B59178C318F315F7F18795963D5D67E6BE21A7CA4842008024396941",
+      "current_sha256": "405AE1B47ED18B9BBAF395A544039CBFFE00FC60B80813F0FFC0B652EAC57E9E",
       "role": "current controlled vocabulary for run 04",
       "generation_snapshot_sha256": null,
       "generation_snapshot_status": "not captured separately from the local request envelope"
@@ -49,7 +49,7 @@
   },
   "transcription": {
     "prompt_file": "workshops/clariah-at-2026/prompts/01-transcription.txt",
-    "prompt_sha256": "48980ED6384B932F7DD004C24A9C1C690DD0B14E4B70D3D1DDA214E5110A8799",
+    "prompt_sha256": "F63A5A1D48C6DC508E9DA0F2DB2A962FE132D612254CEF273CE7356C4ECD0A21",
     "primary_inputs": [
       {
         "page_id": "1000_p003",
@@ -64,12 +64,14 @@
     ],
     "raw_output": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/01-transcription-output.md",
     "raw_output_sha256": "D51E52883EEE78457D2343D6F205C13EF8A33ED6BDB6B815AB1276D0B5497A0C",
-    "source_checked_output": "workshops/clariah-at-2026/examples/transcription-source-checked.md",
-    "source_checked_output_sha256": "8E4BD547D81241A2B636488C73BDA1542C76C09C624D31CE1194C93F43A403E0",
-    "source_check_activity": "visual_facsimile_quote_page_and_segment_check",
-    "source_check_responsible_role": "human_source_reviewer",
-    "source_check_scope": "Hersch contribution from the Hersch heading through Jean Fluck; Bandelier and Illich passages remain unverified",
-    "source_check_method": "visual inspection of the Hersch contribution on both repository facsimiles followed by comparison with repository Markdown",
+    "agent_verified_reference": "workshops/clariah-at-2026/examples/transcription-agent-verified.md",
+    "agent_verified_reference_sha256": "3609EDE679C1C7D957521EA08C602E60A3796C6C1A818C31C0BB197EA2470A7E",
+    "verification_activity": "agentic_visual_and_automated_quote_page_and_segment_check",
+    "verification_responsible_role": "gpt-5.6-sol_agentic_checker",
+    "human_source_review_status": "not_performed",
+    "source_check_status": "unchecked",
+    "verification_scope": "Hersch contribution from the Hersch heading through Jean Fluck; Bandelier and Illich passages remain unverified",
+    "verification_method": "agentic visual inspection of both repository facsimiles followed by automated exact-string and page-ID checks against the repository Markdown",
     "reference_texts": [
       "docs/data/pages/1000/1000_p3.md",
       "docs/data/pages/1000/1000_p4.md"
@@ -91,7 +93,7 @@
     {
       "mode": "inductive_schema_topics",
       "prompt_file": "workshops/clariah-at-2026/prompts/03-schema-topics.txt",
-      "prompt_sha256": "1CC306B092E222E072188527EADD517C5D05D88C1F188D1587E1CC081E2A0CD6",
+      "prompt_sha256": "694AE4335EBAB4CCA79F7F831E0744485B3771ECDFAC9EFB741EB5F2165B05A7",
       "input": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/01-transcription-output.md (full pages)",
       "additional_input": "workshops/clariah-at-2026/schema/annotation.schema.json",
       "research_question": "not supplied; output placeholder is unspecified in this run",
@@ -103,7 +105,7 @@
     {
       "mode": "claim_level_evidence_annotation",
       "prompt_file": "workshops/clariah-at-2026/prompts/04-evidence-annotation.txt",
-      "prompt_sha256": "2518DA03A4C495F83423A23307812787CF5BA14D9F490D1404C99683E28082A0",
+      "prompt_sha256": "1F2B98B2622402E121DC1122129589936F7903C21F7B81889A5D89E954CF6FBE",
       "input": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/01-transcription-output.md (full pages)",
       "additional_inputs": [
         "workshops/clariah-at-2026/schema/annotation.schema.json",
@@ -120,36 +122,36 @@
     "source_check_status": "unchecked",
     "review_status": "unreviewed"
   },
-  "source_checked_artifacts": [
+  "agent_verified_reference_artifacts": [
     {
-      "path": "workshops/clariah-at-2026/examples/transcription-source-checked.md",
-      "sha256": "8E4BD547D81241A2B636488C73BDA1542C76C09C624D31CE1194C93F43A403E0",
-      "activity": "visual_facsimile_quote_page_and_segment_check",
-      "responsible_role": "human_source_reviewer",
-      "review_scope": "source anchors, page assignment and Hersch segment boundary"
+      "path": "workshops/clariah-at-2026/examples/transcription-agent-verified.md",
+      "sha256": "3609EDE679C1C7D957521EA08C602E60A3796C6C1A818C31C0BB197EA2470A7E",
+      "activity": "agentic_visual_and_automated_quote_page_and_segment_check",
+      "responsible_role": "gpt-5.6-sol_agentic_checker",
+      "source_check_status": "unchecked",
+      "human_source_review_status": "not_performed",
+      "review_scope": "agentic verification of source anchors, page assignment and Hersch segment boundary"
     },
     {
       "path": "workshops/clariah-at-2026/examples/annotation-example.json",
-      "sha256": "DF507307CE965A0DF015183985294FF0A9D2A4BF7566BE246DEBACF4948926CD",
-      "activity": "source_anchor_transfer_and_schema_validation",
-      "responsible_role": "human_source_reviewer",
-      "review_scope": "source-check example; scholarly claim review remains unreviewed"
+      "sha256": "58AA5B80B42B09B53F384DBBD527CE2642CB733D909BC9B26483967805ADA5E3",
+      "activity": "agentic_source_anchor_and_schema_check",
+      "responsible_role": "gpt-5.6-sol_agentic_checker",
+      "source_check_status": "unchecked",
+      "human_source_review_status": "not_performed",
+      "review_scope": "agent-verified sample; human source review and scholarly claim review remain unreviewed"
     }
   ],
   "provenance_narrative": {
     "path": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/provenance-narrative.md",
-    "sha256": "F10399D96F9B6D1C9688BB17685DC5BE09B07F9E845DB1F8F3BBEB8BA18D7B5F"
+    "sha256": "D5E4DFD3AB037B3939FF59385B9917420EDD033E6C0077695DC6A806CCC551D8"
   },
-  "critical_expert_gates": [
-    {
-      "annotation": "political_neutrality",
-      "field": "evidence_status",
-      "current_raw_value": "direct",
-      "proposed_value": "indirect",
-      "status": "unreviewed",
-      "operational_change_applied": false
-    }
-  ],
+  "critical_expert_gate_registry": {
+    "path": "workshops/clariah-at-2026/critical-expert-gates.json",
+    "sha256": "DF0B1DF35DFC9BC72C1B02B14717E4E51F5ADC448083AED06DBE9A59D303EED3",
+    "gate_count": 5,
+    "status": "unreviewed"
+  },
   "comparison_log": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/comparison-and-corrections.md",
   "validation_report": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/validation-report.md"
 }

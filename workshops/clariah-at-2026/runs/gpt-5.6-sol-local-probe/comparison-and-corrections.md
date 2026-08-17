@@ -22,7 +22,7 @@ Die Annotationsläufe 02, 03 und 04 erhalten dieselbe vollständige Transkriptio
 
 ## Getrennte Prüfstatus
 
-`examples/transcription-source-checked.md` enthält ausschließlich den visuell geprüften Hersch-Abschnitt. Die Textanker, Seitenzuordnung und Segmentgrenzen dieses Referenzobjekts tragen `source_checked`.
+`examples/transcription-agent-verified.md` enthält ausschließlich den agentisch visuell und automatisiert geprüften Hersch-Abschnitt. Die Prüfung umfasste Faksimile-Sichtung, Zeichenfolgenabgleich, Page-IDs und Segmentgrenzen. Ein personengebundener menschlicher Source-Review wurde nicht ausgeführt; das Referenzobjekt trägt deshalb `source_check_status: unchecked`.
 
 Der rohe vollständige Seitenoutput aus Prompt 01 trägt `unchecked`. Die Bandelier- und Illich-Passagen außerhalb des Hersch-Kontrolltexts bleiben entsprechend dem Projektstatus `unverifiziert`. Ihre Präsenz ist für den didaktischen Scope-Vergleich erforderlich; sie wird nicht als abgeschlossene Quellenprüfung ausgegeben.
 
@@ -30,9 +30,9 @@ Im Hersch-Abschnitt bleibt die dokumentierte Abweichung zwischen Repo-Markdown u
 
 | Stelle | Repo-Markdown | Bildlesung im Hersch-Kontrolltext | Entscheidung |
 |---|---|---|---|
-| p004, Vielfalt der Lehrpersonen | `contrebalancé` | `contrebalance` | Bildlesung im source-checked Hersch-Referenztext übernommen. |
+| p004, Vielfalt der Lehrpersonen | `contrebalancé` | `contrebalance` | agentische Bildlesung im Hersch-Referenztext dokumentiert; menschlicher Source-Review offen. |
 
-Im außerhalb des Hersch-Segments liegenden Bandelier-Text enthält der bytegetreue Rohoutput `inadaption scolaire`. Der Faksimilebefund deutet auf `inadaptation scolaire`. Die Stelle bleibt im Rohoutput unverändert und wird erst bei einer Erweiterung des menschlichen Source-Checks auf den Bandelier-Bereich korrigiert.
+Im außerhalb des Hersch-Segments liegenden Bandelier-Text enthält der bytegetreue Rohoutput `inadaption scolaire`. Der agentische Faksimilebefund deutet auf `inadaptation scolaire`. Die Stelle bleibt im Rohoutput unverändert; eine menschliche Prüfung ist offen.
 
 ## Vergleich der Extraktionsläufe
 
@@ -54,7 +54,7 @@ Prompt 04 ergänzt erstmals die exakte Forschungsfrage, die Hersch-Segmentgrenze
 
 ## Modell- und Reviewstatus
 
-Die JSON-Rohoutputs 03 und 04 beginnen vollständig mit `source_check_status: unchecked` und `review_status: unreviewed`. Lauf 02 ist eine offene Textbaseline und besitzt diese Schemafelder nicht. `examples/annotation-example.json` ist ein nachgelagertes Source-Check-Beispiel; dort ändert sich ausschließlich die Quellenprüfdimension. Eine fachliche Annahme oder Ablehnung der Claims ist in keinem Rohoutput vorweggenommen.
+Die JSON-Rohoutputs 03 und 04 beginnen vollständig mit `source_check_status: unchecked` und `review_status: unreviewed`. Lauf 02 ist eine offene Textbaseline und besitzt diese Schemafelder nicht. `examples/annotation-example.json` ist ein agentisch geprüftes Muster und bleibt ebenfalls `unchecked` und `unreviewed`. Eine fachliche Annahme oder Ablehnung der Claims ist in keinem Rohoutput vorweggenommen.
 
 ## Neu ausgeführte Antworten
 
@@ -62,6 +62,6 @@ Die Antworten 02, 03 und 04 wurden nach der Korrektur ihrer jeweiligen Prompts e
 
 Request-ID, Response-ID, Transportmetadaten und vollständige Request-/Response-Envelopes wurden von der Laufzeit nicht exponiert. Sie werden nicht rekonstruiert. `provenance-narrative.md` dokumentiert die Aktivitätskette und diese Nachweisgrenze, ohne die Rohoutputs zu duplizieren.
 
-## Fachliches Gate
+## Fachliche Gates
 
-Für `political_neutrality` wurde vorgeschlagen, den Evidenzstatus `direct` als `indirect` zu klassifizieren. Diese Wertung betrifft die Interpretation des Claims und bleibt `unreviewed`. Der operative Korrekturlauf verändert den Rohoutput nicht.
+`critical-expert-gates.json` serialisiert die offenen Entscheidungen zu Forschungsfrage, Codebuch, Musterannotation, didaktischer Scopegrenze und `political_neutrality`. Für die letzte Annotation wurde vorgeschlagen, den Evidenzstatus `direct` als `indirect` zu klassifizieren. Alle fünf Gates bleiben `unreviewed`; der operative Korrekturlauf verändert den Rohoutput nicht.

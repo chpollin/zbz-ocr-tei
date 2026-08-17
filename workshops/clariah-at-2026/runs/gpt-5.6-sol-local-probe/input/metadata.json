@@ -43,7 +43,7 @@
   "run_sequence": [
     {
       "prompt_file": "workshops/clariah-at-2026/prompts/01-transcription.txt",
-      "prompt_sha256": "48980ED6384B932F7DD004C24A9C1C690DD0B14E4B70D3D1DDA214E5110A8799",
+      "prompt_sha256": "F63A5A1D48C6DC508E9DA0F2DB2A962FE132D612254CEF273CE7356C4ECD0A21",
       "output_file": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/01-transcription-output.md",
       "output_sha256": "D51E52883EEE78457D2343D6F205C13EF8A33ED6BDB6B815AB1276D0B5497A0C",
       "input": "primary_image_inputs_full_pages"
@@ -61,7 +61,7 @@
     },
     {
       "prompt_file": "workshops/clariah-at-2026/prompts/03-schema-topics.txt",
-      "prompt_sha256": "1CC306B092E222E072188527EADD517C5D05D88C1F188D1587E1CC081E2A0CD6",
+      "prompt_sha256": "694AE4335EBAB4CCA79F7F831E0744485B3771ECDFAC9EFB741EB5F2165B05A7",
       "output_file": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/03-schema-topics-output.json",
       "output_sha256": "2304750CD4DB15E47F4AB417D0D6A63DA0C211F8F7D570BE0F22F084C85E3D2A",
       "input": "01-transcription-output.md full pages plus annotation.schema.json",
@@ -71,7 +71,7 @@
     },
     {
       "prompt_file": "workshops/clariah-at-2026/prompts/04-evidence-annotation.txt",
-      "prompt_sha256": "2518DA03A4C495F83423A23307812787CF5BA14D9F490D1404C99683E28082A0",
+      "prompt_sha256": "1F2B98B2622402E121DC1122129589936F7903C21F7B81889A5D89E954CF6FBE",
       "output_file": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/04-evidence-annotation-output.json",
       "output_sha256": "46576FF0AE20BEB7DD6FDC59E68C56568669EEBC3DD7FD6C94098CA3B7D0D189",
       "input": "01-transcription-output.md full pages plus annotation.schema.json and codebook.md",

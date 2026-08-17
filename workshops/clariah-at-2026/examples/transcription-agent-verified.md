@@ -1,15 +1,20 @@
 ---
 document_id: "1000"
 page_ids: ["1000_p003", "1000_p004"]
-source_check_status: source_checked
+verification_status: agent_verified
+source_check_status: unchecked
 review_status: unreviewed
-checked_against:
+verification_activity: agentic_visual_and_automated_quote_page_and_segment_check
+verification_role: gpt-5.6-sol_agentic_checker
+human_source_review: not_performed
+critical_expert_gate: human_source_review_required
+verified_against:
   - docs/images/1000/1000_p003.png
   - docs/images/1000/1000_p004.png
 reference_texts:
   - docs/data/pages/1000/1000_p3.md
   - docs/data/pages/1000/1000_p4.md
-checked_on: 2026-08-17
+verified_on: 2026-08-17
 apostrophe_normalization: straight
 line_end_hyphenation: resolved_when_visually_unambiguous
 ---

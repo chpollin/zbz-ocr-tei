@@ -78,17 +78,33 @@ def main() -> None:
     boolean_variant["run_metadata"]["gemini_output"] = True
     validator.validate(boolean_variant)
     print("PASS boolean provenance fields accept both Boolean values")
+    accepted_variant = copy.deepcopy(run03)
+    accepted_variant["entities"][0]["source_check_status"] = "source_checked"
+    accepted_variant["entities"][0]["review_status"] = "accepted"
+    validator.validate(accepted_variant)
+    rejected_variant = copy.deepcopy(run03)
+    rejected_variant["topic_annotations"][0]["source_check_status"] = "source_checked"
+    rejected_variant["topic_annotations"][0]["review_status"] = "rejected"
+    validator.validate(rejected_variant)
+    print("PASS accepted/rejected require and accept source_checked")
+    for item in example["entities"] + example["topic_annotations"]:
+        require(item["source_check_status"] == "unchecked", "sample annotation claims unsupported source_checked status")
+        require(item["review_status"] == "unreviewed", "sample annotation claims unsupported scholarly review")
+    print("PASS sample annotation remains unchecked and unreviewed")
 
     full_text = (RUN / "01-transcription-output.md").read_text(encoding="utf-8")
-    checked_text = (ROOT / "examples" / "transcription-source-checked.md").read_text(encoding="utf-8")
+    verified_text = (ROOT / "examples" / "transcription-agent-verified.md").read_text(encoding="utf-8")
     full_pages = page_sections(full_text)
-    checked_pages = page_sections(checked_text)
+    verified_pages = page_sections(verified_text)
     require("M. Bandelier." in full_pages["1000_p003"], "Bandelier passage missing from full transcription")
     require(HERSCH_START in full_pages["1000_p003"], "Hersch start missing from full transcription")
     require(ILLICH_START in full_pages["1000_p004"], "Illich start missing from full transcription")
-    require(ILLICH_START not in checked_text, "Illich passage leaked into source-checked Hersch reference")
-    require("M. Bandelier." not in checked_text, "Bandelier passage leaked into source-checked Hersch reference")
-    print("PASS transcription scope and Hersch reference boundary")
+    require(ILLICH_START not in verified_text, "Illich passage leaked into agent-verified Hersch reference")
+    require("M. Bandelier." not in verified_text, "Bandelier passage leaked into agent-verified Hersch reference")
+    require("verification_status: agent_verified" in verified_text, "agent verification status missing")
+    require("source_check_status: unchecked" in verified_text, "agent-verified reference must remain unchecked")
+    require("human_source_review: not_performed" in verified_text, "human-review limit missing")
+    print("PASS transcription scope and fail-closed agent-verified Hersch reference")
 
     baseline = (RUN / "02-baseline-topics-output.txt").read_text(encoding="utf-8")
     baseline_pairs = re.findall(r'(1000_p00[34])(?:\. Evidence:|,) "([^"]+)"', baseline)
@@ -101,7 +117,7 @@ def main() -> None:
     print(f"PASS baseline exact quotes and scope contamination: {baseline_quote_count} quotes")
 
     run03_quote_count = check_structured_quotes(run03, full_pages, "run03")
-    run04_quote_count = check_structured_quotes(run04, checked_pages, "run04")
+    run04_quote_count = check_structured_quotes(run04, verified_pages, "run04")
     require(run03["research_question"] == "unspecified in this run", "run03 research-question placeholder mismatch")
     require(run03["dataset_id"].endswith("full-pages"), "run03 dataset does not identify full-page scope")
     require(run04["research_question"] == EXACT_RQ, "run04 exact research question mismatch")
@@ -165,8 +181,14 @@ def main() -> None:
     negative_cases.append(("source-mismatched accepted entity", mutated))
     mutated = copy.deepcopy(run03)
     mutated["topic_annotations"][0]["source_check_status"] = "source_mismatch"
-    mutated["topic_annotations"][0]["review_status"] = "accepted"
-    negative_cases.append(("source-mismatched accepted topic", mutated))
+    mutated["topic_annotations"][0]["review_status"] = "rejected"
+    negative_cases.append(("source-mismatched rejected topic", mutated))
+    mutated = copy.deepcopy(run03)
+    mutated["entities"][0]["review_status"] = "accepted"
+    negative_cases.append(("unchecked accepted entity", mutated))
+    mutated = copy.deepcopy(run03)
+    mutated["topic_annotations"][0]["review_status"] = "rejected"
+    negative_cases.append(("unchecked rejected topic", mutated))
     mutated = copy.deepcopy(run03)
     mutated["run_metadata"]["date"] = "2026-02-30"
     negative_cases.append(("invalid calendar date", mutated))
@@ -185,12 +207,17 @@ def main() -> None:
     prompt03 = (ROOT / "prompts" / "03-schema-topics.txt").read_text(encoding="utf-8")
     prompt04 = (ROOT / "prompts" / "04-evidence-annotation.txt").read_text(encoding="utf-8")
     require("gesamten sichtbaren Text" in prompt01 and "keinen Beitrag analytisch" in prompt01, "prompt01 full-page contract missing")
+    require("local_probe: <true|false>" in prompt01 and "gemini_output: <true|false>" in prompt01, "prompt01 provenance fields are not variable")
+    require("local_probe: true" not in prompt01 and "gemini_output: false" not in prompt01, "prompt01 fixes local-run provenance")
     require(EXACT_RQ not in prompt02 and "annotation.schema.json" not in prompt02 and "codebook.md" not in prompt02, "prompt02 context leakage")
     require(EXACT_RQ not in prompt03 and "codebook.md" not in prompt03 and "annotation.schema.json" in prompt03, "prompt03 context contract mismatch")
     require(HERSCH_START not in prompt02 and ILLICH_START not in prompt02, "prompt02 segment leakage")
     require(HERSCH_START not in prompt03 and ILLICH_START not in prompt03, "prompt03 segment leakage")
     for required in (EXACT_RQ, HERSCH_START, ILLICH_START, "codebook.md", "annotation.schema.json", "source_check_status", "review_status"):
         require(required in prompt04, f"prompt04 contract missing: {required}")
+    for label, prompt in (("prompt03", prompt03), ("prompt04", prompt04)):
+        require("Set local_probe to true only for a local probe." in prompt, f"{label} local_probe is not run-specific")
+        require("Set gemini_output to true only when Gemini actually produced the output." in prompt, f"{label} Gemini provenance is not run-specific")
     require("const" not in schema["properties"]["research_question"], "schema leaks exact research question")
     require("const" not in schema["properties"]["dataset_id"], "schema fixes analytic dataset")
     require(schema["$id"] == "urn:dhcraft:clariah-at-2026:annotation-schema:2.0", "schema identifier is not stable")
@@ -237,18 +264,24 @@ def main() -> None:
         require(contract["generation_snapshot_status"].startswith("not captured"), f"generation-snapshot limit missing: {contract_name}")
     narrative = provenance["provenance_narrative"]
     require(sha256(REPO / narrative["path"]) == narrative["sha256"], "provenance-narrative hash mismatch")
-    gate = provenance["critical_expert_gates"][0]
-    require(gate == {
-        "annotation": "political_neutrality",
-        "field": "evidence_status",
-        "current_raw_value": "direct",
-        "proposed_value": "indirect",
-        "status": "unreviewed",
-        "operational_change_applied": False,
-    }, "critical-expert gate mismatch")
+    gate_registry = load_json(ROOT / "critical-expert-gates.json")
+    registry_ref = provenance["critical_expert_gate_registry"]
+    require(sha256(REPO / registry_ref["path"]) == registry_ref["sha256"], "critical-expert gate registry hash mismatch")
+    require(registry_ref["gate_count"] == len(gate_registry["gates"]) == 5, "critical-expert gate count mismatch")
+    require({gate["gate_id"] for gate in gate_registry["gates"]} == {
+        "research_question",
+        "codebook",
+        "sample_annotation",
+        "didactic_scope_boundary",
+        "political_neutrality_evidence_status",
+    }, "critical-expert gate set mismatch")
+    for gate in gate_registry["gates"]:
+        require(gate["status"] == "unreviewed", f"gate status changed without review: {gate['gate_id']}")
+        require(gate["required_role"] == "critical_expert", f"gate authority mismatch: {gate['gate_id']}")
+        require(gate["operational_change_applied"] is False, f"gate changed operationally: {gate['gate_id']}")
     political = next(topic for topic in run04["topic_annotations"] if topic["topic_id"] == "political_neutrality")
     require(political["evidence_status"] == "direct", "raw political_neutrality status changed operationally")
-    print("PASS protocol limitation, provenance narrative and critical-expert gate")
+    print("PASS protocol limitation, provenance narrative and five critical-expert gates")
 
     with (ROOT / "source-manifest.csv").open(encoding="utf-8", newline="") as handle:
         rows = list(csv.DictReader(handle))
@@ -262,36 +295,54 @@ def main() -> None:
         )
         require(commit_check.returncode == 0, "manifest source commit does not exist")
         require(row["annotation_input_scope"] == "full-page", "manifest full-page scope missing")
-        require(row["hersch_reference_status"] == "source_checked", "manifest Hersch status")
+        require(row["hersch_reference_status"] == "agent_verified_unchecked", "manifest Hersch status")
         require(row["outside_hersch_status"] == "unverifiziert", "manifest outside-scope status")
-        require(sha256(REPO / row["source_checked_transcription_path"]) == row["source_checked_transcription_sha256"], "manifest source-checked transcription hash mismatch")
-        require(row["source_check_activity"] == "visual_facsimile_quote_page_and_segment_check", "manifest source-check activity")
-        require(row["source_check_responsible_role"] == "human_source_reviewer", "manifest source-check role")
+        require(sha256(REPO / row["agent_verified_transcription_path"]) == row["agent_verified_transcription_sha256"], "manifest agent-verified transcription hash mismatch")
+        require(row["verification_activity"] == "agentic_visual_and_automated_quote_page_and_segment_check", "manifest verification activity")
+        require(row["verification_responsible_role"] == "gpt-5.6-sol_agentic_checker", "manifest verification role")
+        require(row["human_source_review_status"] == "not_performed", "manifest human-review limit")
         require(sha256(REPO / row["sample_annotation_path"]) == row["sample_annotation_sha256"], "manifest sample annotation hash mismatch")
-        require(row["sample_annotation_activity"] == "source_anchor_transfer_and_schema_validation", "manifest sample activity")
-        require(row["sample_annotation_responsible_role"] == "human_source_reviewer", "manifest sample role")
+        require(row["sample_annotation_activity"] == "agentic_source_anchor_and_schema_check", "manifest sample activity")
+        require(row["sample_annotation_verification_role"] == "gpt-5.6-sol_agentic_checker", "manifest sample role")
+        require(row["sample_annotation_source_check_status"] == "unchecked", "manifest sample source-check status")
         require(sha256(REPO / row["local_image_path"]) == row["sha256_image"], "manifest image hash mismatch")
         require(sha256(REPO / row["local_reference_text_path"]) == row["sha256_reference_text"], "manifest reference hash mismatch")
         require(row["rights_status"] == "zu prüfen" and row["rights_note"], "manifest rights note")
-    artifact_map = {item["path"]: item for item in provenance["source_checked_artifacts"]}
+    artifact_map = {item["path"]: item for item in provenance["agent_verified_reference_artifacts"]}
     for rel_path, expected_activity in (
-        ("workshops/clariah-at-2026/examples/transcription-source-checked.md", "visual_facsimile_quote_page_and_segment_check"),
-        ("workshops/clariah-at-2026/examples/annotation-example.json", "source_anchor_transfer_and_schema_validation"),
+        ("workshops/clariah-at-2026/examples/transcription-agent-verified.md", "agentic_visual_and_automated_quote_page_and_segment_check"),
+        ("workshops/clariah-at-2026/examples/annotation-example.json", "agentic_source_anchor_and_schema_check"),
     ):
         item = artifact_map[rel_path]
         require(sha256(REPO / rel_path) == item["sha256"], f"provenance reference hash mismatch: {rel_path}")
         require(item["activity"] == expected_activity, f"provenance reference activity mismatch: {rel_path}")
-        require(item["responsible_role"] == "human_source_reviewer", f"provenance reference role mismatch: {rel_path}")
+        require(item["responsible_role"] == "gpt-5.6-sol_agentic_checker", f"provenance reference role mismatch: {rel_path}")
+        require(item["source_check_status"] == "unchecked", f"provenance source-check overclaim: {rel_path}")
+        require(item["human_source_review_status"] == "not_performed", f"provenance human-review overclaim: {rel_path}")
     print("PASS manifest and provenance reference paths, hashes, activities and roles")
     print("PASS manifest source paths, statuses and rights note")
+
+    rights = (ROOT / "rights-clearance.md").read_text(encoding="utf-8")
+    for phrase in (
+        "status:: pending institutional clarification",
+        "Display the two facsimile pages",
+        "registered participants",
+        "public teaching repository",
+        "Operational rule while pending",
+        "decision status | pending",
+    ):
+        require(phrase in rights, f"rights-clearance contract missing: {phrase}")
+    print("PASS rights-clearance dossier and pending-use contract")
 
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     for rel_path in prompt_paths + output_paths + [
         "codebook.md",
+        "critical-expert-gates.json",
         "evaluation-rubric.md",
+        "rights-clearance.md",
         "source-manifest.csv",
         "schema/annotation.schema.json",
-        "examples/transcription-source-checked.md",
+        "examples/transcription-agent-verified.md",
         "examples/annotation-example.json",
         "runs/gpt-5.6-sol-local-probe/comparison-and-corrections.md",
         "runs/gpt-5.6-sol-local-probe/provenance.json",
@@ -299,7 +350,7 @@ def main() -> None:
         "runs/gpt-5.6-sol-local-probe/validation-report.md",
     ]:
         require((ROOT / rel_path).exists(), f"referenced artifact missing: {rel_path}")
-    for phrase in ("vollständigen Seiten", "Scope-Kontamination", "unverifiziert", "unspecified in this run", "python workshops/clariah-at-2026/validate.py", "Vollständiger Wiederholungsablauf"):
+    for phrase in ("vollständigen Seiten", "Bandelier-Text", "Illich-Text", "unverifiziert", "unspecified in this run", "python workshops/clariah-at-2026/validate.py", "Vollständiger Wiederholungsablauf"):
         require(phrase in readme, f"README contract missing: {phrase}")
     print("PASS README artifact and status contract")
     print("ALL CHECKS PASS")
