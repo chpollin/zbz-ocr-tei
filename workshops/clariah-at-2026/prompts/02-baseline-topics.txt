@@ -1,0 +1,14 @@
+INPUT
+Only the provided full-page transcription of document 1000, pages 1000_p003 and 1000_p004. The transcription contains several adjacent contributions.
+
+TASK
+Read the segment and identify:
+1. named entities explicitly mentioned in the text;
+2. recurrent or analytically important topics that you infer from the segment itself.
+
+For each entity, give the surface form, a short type label, the page ID and an exact supporting quotation. For each topic, give a concise label, explain what the topic covers and cite one or more exact supporting quotations with page IDs.
+
+Use only the supplied page transcription. Do not add identifiers or contextual information from external sources. Keep interpretation close to the supplied pages and mark genuinely uncertain assignments in prose.
+
+OUTPUT
+Return a compact, readable text with the headings `Named entities` and `Inductive topics`. Do not return JSON.

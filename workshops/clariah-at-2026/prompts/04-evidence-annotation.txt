@@ -1,0 +1,27 @@
+RESEARCH QUESTION
+How does Jeanne Hersch define the institutional conditions under which schools can foster critical judgement?
+
+INPUTS
+- The same full-page transcription of document 1000, pages 1000_p003 and 1000_p004, used in runs 02 and 03
+- workshops/clariah-at-2026/codebook.md
+- workshops/clariah-at-2026/schema/annotation.schema.json
+
+HARD SEGMENT BOUNDARY
+The Jeanne Hersch contribution begins on 1000_p003 with L'ÉCOLE, LIEU DE RENCONTRE DE MÉMOIRE ET D'INVENTION. It ends on 1000_p004 immediately before POURQUOI IVAN ILLICH VEUT-IL DÉSCOLARISER LA SOCIÉTÉ ?. The start heading is included. The Illich heading and everything after it are excluded. Text before the Hersch heading on p003 is excluded even when it appears relevant.
+
+TASK
+1. Extract named entities with surface, normalized_label, entity_type, page_id and an exact evidence_quote. Use identifier and identifier_source only for identifiers established in controlled material; otherwise use null.
+2. Build claim-level topic annotations that answer the research question. Use the controlled topic IDs and definitions from the codebook.
+3. Each annotation contains one precise claim. It may contain several evidence items when the claim depends on synthesis.
+4. Copy exact_quote character for character from the supplied transcription and assign the correct page_id.
+5. Set evidence_status:
+   - direct when the cited wording explicitly states the claim;
+   - indirect when the claim is a transparent synthesis or interpretation of several textual signals;
+   - ambiguous when competing readings or insufficient evidence prevent a stable assignment.
+6. Do not force all codes. Omit unsupported annotations.
+
+STATUS CONTRACT
+Every model output starts with source_check_status unchecked and review_status unreviewed. A human may later set source_checked after checking quote and page, or source_mismatch when the anchor fails. accepted and rejected record later scholarly decisions. These dimensions must remain separate. Do not emit a confidence field, probability or verbal certainty scale.
+
+OUTPUT
+Return only JSON valid against workshops/clariah-at-2026/schema/annotation.schema.json. Set run_metadata.prompt_file to workshops/clariah-at-2026/prompts/04-evidence-annotation.txt, local_probe to true and gemini_output to false.

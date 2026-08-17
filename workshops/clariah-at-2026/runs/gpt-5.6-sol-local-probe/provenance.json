@@ -1,0 +1,139 @@
+{
+  "provenance_version": "1.1",
+  "run_id": "gpt-5.6-sol-local-probe",
+  "model": "gpt-5.6-sol",
+  "date": "2026-08-17",
+  "execution_context": "local_codex_probe",
+  "local_probe": true,
+  "gemini_output": false,
+  "repo_commit": "1115ed24cbaf97a64093d9b0e839271b60a2d950",
+  "research_question": "How does Jeanne Hersch define the institutional conditions under which schools can foster critical judgement?",
+  "research_question_available_to_runs": {
+    "01": false,
+    "02": false,
+    "03": false,
+    "04": true
+  },
+  "model_parameters": {
+    "availability": "not exposed by the local Codex subagent runtime",
+    "temperature": null,
+    "top_p": null,
+    "seed": null,
+    "reasoning_effort": null
+  },
+  "response_capture": "The response body of each run is stored byte-for-byte without code fences or editorial normalization.",
+  "request_response_protocol_capture": {
+    "availability": "not exposed by the local Codex subagent runtime",
+    "request_id": null,
+    "response_id": null,
+    "transport_metadata": null,
+    "request_envelope": null,
+    "response_envelope": null,
+    "reconstruction": "not attempted"
+  },
+  "transcription": {
+    "prompt_file": "workshops/clariah-at-2026/prompts/01-transcription.txt",
+    "prompt_sha256": "48980ED6384B932F7DD004C24A9C1C690DD0B14E4B70D3D1DDA214E5110A8799",
+    "primary_inputs": [
+      {
+        "page_id": "1000_p003",
+        "path": "docs/images/1000/1000_p003.png",
+        "sha256": "B79C3C80D559D5B54608BE0E22BB3F7A54AB710950C16DB3D2433B1456112A52"
+      },
+      {
+        "page_id": "1000_p004",
+        "path": "docs/images/1000/1000_p004.png",
+        "sha256": "AB2E3F5CEC28BC080E49F8754E40C1E2B669F64C282FF463ECBA909C32C4B8C0"
+      }
+    ],
+    "raw_output": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/01-transcription-output.md",
+    "raw_output_sha256": "D51E52883EEE78457D2343D6F205C13EF8A33ED6BDB6B815AB1276D0B5497A0C",
+    "source_checked_output": "workshops/clariah-at-2026/examples/transcription-source-checked.md",
+    "source_checked_output_sha256": "8E4BD547D81241A2B636488C73BDA1542C76C09C624D31CE1194C93F43A403E0",
+    "source_check_activity": "visual_facsimile_quote_page_and_segment_check",
+    "source_check_responsible_role": "human_source_reviewer",
+    "source_check_scope": "Hersch contribution from the Hersch heading through Jean Fluck; Bandelier and Illich passages remain unverified",
+    "source_check_method": "visual inspection of the Hersch contribution on both repository facsimiles followed by comparison with repository Markdown",
+    "reference_texts": [
+      "docs/data/pages/1000/1000_p3.md",
+      "docs/data/pages/1000/1000_p4.md"
+    ]
+  },
+  "extraction_runs": [
+    {
+      "mode": "open_baseline",
+      "prompt_file": "workshops/clariah-at-2026/prompts/02-baseline-topics.txt",
+      "prompt_sha256": "74B2FED7551487BB6307B34678B3AEA2AE066562F3236AB01FCC3160F07D6FB4",
+      "input": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/01-transcription-output.md (full pages)",
+      "research_question": "not supplied",
+      "schema": "not supplied",
+      "codebook": "not supplied",
+      "contribution_boundary": "not supplied",
+      "output": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/02-baseline-topics-output.txt",
+      "output_sha256": "6927452138F0E4B328009D8633AD19412426993E0C19FBBD1E15BA31804CF87D"
+    },
+    {
+      "mode": "inductive_schema_topics",
+      "prompt_file": "workshops/clariah-at-2026/prompts/03-schema-topics.txt",
+      "prompt_sha256": "1CC306B092E222E072188527EADD517C5D05D88C1F188D1587E1CC081E2A0CD6",
+      "input": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/01-transcription-output.md (full pages)",
+      "additional_input": "workshops/clariah-at-2026/schema/annotation.schema.json",
+      "research_question": "not supplied; output placeholder is unspecified in this run",
+      "codebook": "not supplied",
+      "contribution_boundary": "not supplied",
+      "output": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/03-schema-topics-output.json",
+      "output_sha256": "2304750CD4DB15E47F4AB417D0D6A63DA0C211F8F7D570BE0F22F084C85E3D2A"
+    },
+    {
+      "mode": "claim_level_evidence_annotation",
+      "prompt_file": "workshops/clariah-at-2026/prompts/04-evidence-annotation.txt",
+      "prompt_sha256": "2518DA03A4C495F83423A23307812787CF5BA14D9F490D1404C99683E28082A0",
+      "input": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/01-transcription-output.md (full pages)",
+      "additional_inputs": [
+        "workshops/clariah-at-2026/schema/annotation.schema.json",
+        "workshops/clariah-at-2026/codebook.md"
+      ],
+      "research_question": "supplied exactly",
+      "contribution_boundary": "Hersch heading inclusive; Illich heading and following text excluded",
+      "output": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/04-evidence-annotation-output.json",
+      "output_sha256": "46576FF0AE20BEB7DD6FDC59E68C56568669EEBC3DD7FD6C94098CA3B7D0D189"
+    }
+  ],
+  "status_initialization": {
+    "applies_to": "structured runs 03 and 04",
+    "source_check_status": "unchecked",
+    "review_status": "unreviewed"
+  },
+  "source_checked_artifacts": [
+    {
+      "path": "workshops/clariah-at-2026/examples/transcription-source-checked.md",
+      "sha256": "8E4BD547D81241A2B636488C73BDA1542C76C09C624D31CE1194C93F43A403E0",
+      "activity": "visual_facsimile_quote_page_and_segment_check",
+      "responsible_role": "human_source_reviewer",
+      "review_scope": "source anchors, page assignment and Hersch segment boundary"
+    },
+    {
+      "path": "workshops/clariah-at-2026/examples/annotation-example.json",
+      "sha256": "DF507307CE965A0DF015183985294FF0A9D2A4BF7566BE246DEBACF4948926CD",
+      "activity": "source_anchor_transfer_and_schema_validation",
+      "responsible_role": "human_source_reviewer",
+      "review_scope": "source-check example; scholarly claim review remains unreviewed"
+    }
+  ],
+  "provenance_narrative": {
+    "path": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/provenance-narrative.md",
+    "sha256": "5FC1480DFDEB9651764B6F8FB92C240ABE654F3E06D4972BAAB8718BE8618BDC"
+  },
+  "critical_expert_gates": [
+    {
+      "annotation": "political_neutrality",
+      "field": "evidence_status",
+      "current_raw_value": "direct",
+      "proposed_value": "indirect",
+      "status": "unreviewed",
+      "operational_change_applied": false
+    }
+  ],
+  "comparison_log": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/comparison-and-corrections.md",
+  "validation_report": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/validation-report.md"
+}

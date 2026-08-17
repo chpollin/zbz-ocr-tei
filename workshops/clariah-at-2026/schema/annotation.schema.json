@@ -1,0 +1,304 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dhcraft:clariah-at-2026:annotation-schema:2.0",
+  "title": "CLARIAH-AT 2026 extraction result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "research_question",
+    "run_metadata",
+    "entities",
+    "topic_annotations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "dataset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "research_question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_metadata": {
+      "$ref": "#/$defs/run_metadata"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entity"
+      }
+    },
+    "topic_annotations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/topic_annotation"
+      }
+    }
+  },
+  "$defs": {
+    "run_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "model",
+        "date",
+        "prompt_file",
+        "local_probe",
+        "gemini_output"
+      ],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "prompt_file": {
+          "type": "string",
+          "enum": [
+            "workshops/clariah-at-2026/prompts/02-baseline-topics.txt",
+            "workshops/clariah-at-2026/prompts/03-schema-topics.txt",
+            "workshops/clariah-at-2026/prompts/04-evidence-annotation.txt"
+          ]
+        },
+        "local_probe": {
+          "type": "boolean"
+        },
+        "gemini_output": {
+          "type": "boolean"
+        }
+      }
+    },
+    "page_id": {
+      "type": "string",
+      "enum": [
+        "1000_p003",
+        "1000_p004"
+      ]
+    },
+    "evidence_status": {
+      "type": "string",
+      "enum": [
+        "direct",
+        "indirect",
+        "ambiguous"
+      ]
+    },
+    "source_check_status": {
+      "type": "string",
+      "enum": [
+        "unchecked",
+        "source_checked",
+        "source_mismatch"
+      ]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "unreviewed",
+        "accepted",
+        "rejected"
+      ]
+    },
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface",
+        "normalized_label",
+        "entity_type",
+        "page_id",
+        "evidence_quote",
+        "identifier",
+        "identifier_source",
+        "evidence_status",
+        "source_check_status",
+        "review_status"
+      ],
+      "properties": {
+        "surface": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity_type": {
+          "type": "string",
+          "enum": [
+            "person",
+            "organization",
+            "place",
+            "work",
+            "event",
+            "other"
+          ]
+        },
+        "page_id": {
+          "$ref": "#/$defs/page_id"
+        },
+        "evidence_quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identifier": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "identifier_source": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/evidence_status"
+        },
+        "source_check_status": {
+          "$ref": "#/$defs/source_check_status"
+        },
+        "review_status": {
+          "$ref": "#/$defs/review_status"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "identifier": {"type": "null"}
+            },
+            "required": ["identifier"]
+          },
+          "then": {
+            "properties": {
+              "identifier_source": {"type": "null"}
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "identifier": {"type": "string"}
+            },
+            "required": ["identifier"]
+          },
+          "then": {
+            "properties": {
+              "identifier_source": {"type": "string"}
+            }
+          }
+        },
+        {
+          "not": {
+            "properties": {
+              "source_check_status": {
+                "const": "source_mismatch"
+              },
+              "review_status": {
+                "const": "accepted"
+              }
+            },
+            "required": [
+              "source_check_status",
+              "review_status"
+            ]
+          }
+        }
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "page_id",
+        "exact_quote"
+      ],
+      "properties": {
+        "page_id": {
+          "$ref": "#/$defs/page_id"
+        },
+        "exact_quote": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "topic_annotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topic_id",
+        "label",
+        "definition",
+        "claim",
+        "evidence",
+        "evidence_status",
+        "source_check_status",
+        "review_status"
+      ],
+      "properties": {
+        "topic_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "definition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/evidence_status"
+        },
+        "source_check_status": {
+          "$ref": "#/$defs/source_check_status"
+        },
+        "review_status": {
+          "$ref": "#/$defs/review_status"
+        }
+      },
+      "allOf": [
+        {
+          "not": {
+            "properties": {
+              "source_check_status": {
+                "const": "source_mismatch"
+              },
+              "review_status": {
+                "const": "accepted"
+              }
+            },
+            "required": [
+              "source_check_status",
+              "review_status"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

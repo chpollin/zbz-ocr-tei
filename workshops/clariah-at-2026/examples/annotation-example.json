@@ -1,0 +1,94 @@
+{
+  "schema_version": "2.0",
+  "dataset_id": "clariah-at-2026-doc1000-p003-p004-hersch",
+  "research_question": "How does Jeanne Hersch define the institutional conditions under which schools can foster critical judgement?",
+  "run_metadata": {
+    "run_id": "gpt-5.6-sol-local-probe-example-source-check",
+    "model": "gpt-5.6-sol",
+    "date": "2026-08-17",
+    "prompt_file": "workshops/clariah-at-2026/prompts/04-evidence-annotation.txt",
+    "local_probe": true,
+    "gemini_output": false
+  },
+  "entities": [
+    {
+      "surface": "Jeanne HERSCH",
+      "normalized_label": "Jeanne Hersch",
+      "entity_type": "person",
+      "page_id": "1000_p003",
+      "evidence_quote": "Exposé de Madame Jeanne HERSCH, professeur de philosophie à l'Université de Genève :",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "source_checked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Université de Genève",
+      "normalized_label": "Université de Genève",
+      "entity_type": "organization",
+      "page_id": "1000_p003",
+      "evidence_quote": "Exposé de Madame Jeanne HERSCH, professeur de philosophie à l'Université de Genève :",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "source_checked",
+      "review_status": "unreviewed"
+    }
+  ],
+  "topic_annotations": [
+    {
+      "topic_id": "school_as_encounter",
+      "label": "School as encounter",
+      "definition": "School and class provide an institutional encounter space with multiple relationships and shared objects of attention.",
+      "claim": "Critical judgement develops through plural belonging, encounters with difference and respectful listening.",
+      "evidence": [
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Et il est bon que l'enfant appartienne à plusieurs unités, lieu d'apprentissage du vrai sens critique, qui est sympathie pour des choses différentes et non soupçon, dénigrement."
+        },
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Mais cette mise en question doit se faire dans le respect, en apprenant à écouter l'autre."
+        }
+      ],
+      "evidence_status": "indirect",
+      "source_check_status": "source_checked",
+      "review_status": "unreviewed"
+    },
+    {
+      "topic_id": "memory_for_judgement",
+      "label": "Memory for judgement",
+      "definition": "Remembered content and extended experience supply the material for comparison, criticism and judgement.",
+      "claim": "Critical judgement requires remembered content and comparison across experience.",
+      "evidence": [
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "On ne peut critiquer qu'avec des contenus de mémoire."
+        },
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Ainsi le sens critique naît de la comparaison et non d'appétits insatisfaits."
+        }
+      ],
+      "evidence_status": "direct",
+      "source_check_status": "source_checked",
+      "review_status": "unreviewed"
+    },
+    {
+      "topic_id": "political_neutrality",
+      "label": "Political neutrality",
+      "definition": "Institutional neutrality protects inquiry from propaganda while permitting discussion of political questions.",
+      "claim": "The state must protect the school's political neutrality so that it does not become an instrument of propaganda.",
+      "evidence": [
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Dans ce sens, la situation est saine si l'État se porte garant de la neutralité politique de l'école, n'en fait pas un objet ou un moyen de propagande."
+        }
+      ],
+      "evidence_status": "direct",
+      "source_check_status": "source_checked",
+      "review_status": "unreviewed"
+    }
+  ]
+}

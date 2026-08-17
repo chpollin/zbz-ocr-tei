@@ -1,0 +1,19 @@
+INPUTS
+- The full-page transcription of document 1000, pages 1000_p003 and 1000_p004, containing several adjacent contributions
+- workshops/clariah-at-2026/schema/annotation.schema.json
+
+TASK
+1. Extract named entities. Use the exact surface form and an exact evidence quote. Assign an identifier only when the supplied material provides a controlled identifier; otherwise set identifier and identifier_source to null.
+2. Infer recurrent or analytically important topics from the supplied segment. Create a stable lowercase topic_id for each topic; do not assume a predefined topic list.
+3. For each topic, provide a concise label, a definition grounded in the segment and one text-specific claim that states what the cited passage contributes to that topic.
+4. Cite the smallest sufficient exact quotation with page_id.
+5. Use evidence_status direct for explicit textual support, indirect for a documented synthesis or interpretation, and ambiguous for competing or still insufficient assignments.
+
+CONTEXT LIMIT
+Use only the two inputs listed above and do not import external analytical context. Set the required top-level field research_question to the literal string `unspecified in this run`.
+
+STATUS CONTRACT
+Every model-produced entity and topic starts with source_check_status unchecked and review_status unreviewed. source_checked and source_mismatch require a later human source check. accepted and rejected require a later scholarly decision. Do not emit a confidence field.
+
+OUTPUT
+Return only JSON valid against workshops/clariah-at-2026/schema/annotation.schema.json. Set run_metadata.prompt_file to workshops/clariah-at-2026/prompts/03-schema-topics.txt, local_probe to true and gemini_output to false.

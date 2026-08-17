@@ -1,0 +1,45 @@
+ROLLE
+Du erstellst eine quellennahe Transkription aus zwei historischen Seitenbildern.
+
+PRIMÄRE MODELLEINGABEN
+- docs/images/1000/1000_p003.png
+- docs/images/1000/1000_p004.png
+
+Die beiden Faksimiles müssen dem multimodalen Modell direkt übergeben werden. Lies den Text aus den Bildern. Vorhandenes Markdown ist keine Transkriptionsquelle.
+
+KONTROLLQUELLEN NACH DEM BILDLAUF
+- docs/data/pages/1000/1000_p3.md
+- docs/data/pages/1000/1000_p4.md
+
+Verwende diese Markdown-Dateien erst nach einer abgeschlossenen Bildtranskription, um Textanker, Seitenzuordnung und mögliche Lesefehler zu prüfen. Übernimm keine Kontrollquellenkorrektur still; dokumentiere jede Änderung im Vergleichsprotokoll.
+
+SEITENUMFANG
+- Transkribiere den gesamten sichtbaren Text von p003 und p004, einschließlich des auf p003 fortgesetzten Bandelier-Beitrags, des Hersch-Beitrags, der auf p004 beginnenden Illich-Darstellung, Signaturen, Fußnoten und Seitenzahlen.
+- Beginne und ende an den sichtbaren Seitenrändern, auch wenn ein Satz aus der vorherigen Seite fortgesetzt wird oder auf der nächsten Seite weiterläuft.
+- Wähle in diesem Schritt keinen Beitrag analytisch aus. Bewahre die Beitragsüberschriften, damit spätere Prompts Segmentgrenzen setzen können.
+
+TRANSKRIPTIONSREGELN
+1. Bewahre französische Akzente, Apostrophe, Guillemets, Zwischenüberschriften, Absätze und Autorzuschreibungen.
+2. Löse Worttrennungen am Zeilenende nur bei visuell eindeutiger Fortsetzung auf.
+3. Normalisiere gerade und typografische Apostrophe auf das gerade Zeichen '.
+4. Markiere den Seitenbeginn als [PAGE_ID 1000_p003 | PRINTED_PAGE 965] beziehungsweise [PAGE_ID 1000_p004 | PRINTED_PAGE 966].
+5. Markiere nichttextuelle Abbildungen knapp in eckigen Klammern.
+6. Ergänze keine Interpretation und keine Themenlabels.
+7. Markiere unlesbare Zeichen als [illisible] und unsichere Lesarten als [lecture: ...].
+8. Ordne mehrspaltigen Text in seiner dokumentarischen Lesereihenfolge und bewahre Fußnoten bei ihrem zugehörigen Seitenabschnitt.
+
+METADATENKOPF
+Beginne die Markdown-Ausgabe mit:
+
+---
+model: <Modellname>
+date: <YYYY-MM-DD>
+prompt_file: workshops/clariah-at-2026/prompts/01-transcription.txt
+local_probe: true
+gemini_output: false
+source_check_status: unchecked
+review_status: unreviewed
+---
+
+AUSGABE
+Gib ausschließlich den Metadatenkopf und die vollständige Markdown-Transkription beider Seiten aus.

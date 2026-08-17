@@ -1,0 +1,148 @@
+{
+  "schema_version": "2.0",
+  "dataset_id": "clariah-at-2026-doc1000-p003-p004-hersch",
+  "research_question": "How does Jeanne Hersch define the institutional conditions under which schools can foster critical judgement?",
+  "run_metadata": {
+    "run_id": "gpt-5.6-sol-local-probe-evidence-full-pages-rerun",
+    "model": "gpt-5.6-sol",
+    "date": "2026-08-17",
+    "prompt_file": "workshops/clariah-at-2026/prompts/04-evidence-annotation.txt",
+    "local_probe": true,
+    "gemini_output": false
+  },
+  "entities": [
+    {
+      "surface": "Jeanne HERSCH",
+      "normalized_label": "Jeanne Hersch",
+      "entity_type": "person",
+      "page_id": "1000_p003",
+      "evidence_quote": "Exposé de Madame Jeanne HERSCH, professeur de philosophie à l'Université de Genève :",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Université de Genève",
+      "normalized_label": "Université de Genève",
+      "entity_type": "organization",
+      "page_id": "1000_p003",
+      "evidence_quote": "Exposé de Madame Jeanne HERSCH, professeur de philosophie à l'Université de Genève :",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Jean Fluck",
+      "normalized_label": "Jean Fluck",
+      "entity_type": "person",
+      "page_id": "1000_p004",
+      "evidence_quote": "Jean Fluck.",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    }
+  ],
+  "topic_annotations": [
+    {
+      "topic_id": "school_as_encounter",
+      "label": "School as encounter",
+      "definition": "School and class are institutionally protected encounter spaces in which plural affiliations, personal diversity and common attention enable distance, listening and critical questioning.",
+      "claim": "Hersch treats plural belonging and respectful encounters with difference as social conditions for critical judgement.",
+      "evidence": [
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Et il est bon que l'enfant appartienne à plusieurs unités, lieu d'apprentissage du vrai sens critique, qui est sympathie pour des choses différentes et non soupçon, dénigrement."
+        },
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Mais cette mise en question doit se faire dans le respect, en apprenant à écouter l'autre."
+        }
+      ],
+      "evidence_status": "indirect",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "topic_id": "memory_for_judgement",
+      "label": "Memory for judgement",
+      "definition": "Memory, content and historical-cultural experience provide the comparative material required for thought, distance and critical judgement.",
+      "claim": "Hersch explicitly makes remembered content and comparison epistemic conditions of criticism.",
+      "evidence": [
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "On ne peut critiquer qu'avec des contenus de mémoire."
+        },
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Ainsi le sens critique naît de la comparaison et non d'appétits insatisfaits."
+        }
+      ],
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "topic_id": "pedagogical_invention",
+      "label": "Pedagogical invention",
+      "definition": "Pedagogical practice is an institutionally designed activity in which forms of class life, perception, discussion and engagement with major problems are deliberately created.",
+      "claim": "Schools foster judgement by designing classroom forms in which public problems are encountered before children face them outside school.",
+      "evidence": [
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Il s'agit d'inventer les formes de la vie en classe, de trouver les procédés qui l'améliorent dans le cadre de ce qui est compatible."
+        },
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Les enfants doivent affronter en classe les grands problèmes : paix, justice, liberté, avant de s'y confronter au dehors ; ils doivent apprendre ce qui lie la paix et le droit."
+        }
+      ],
+      "evidence_status": "indirect",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "topic_id": "social_compensation",
+      "label": "Social compensation",
+      "definition": "School partially compensates for unequal social origins, opens additional relationships and secures equal respect across unequal capacities.",
+      "claim": "The institution must compensate for social inequality while retaining an account of unequal capacities and equal respect.",
+      "evidence": [
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "L'enfant rencontre à l'école l'inégalité des capacités, et malgré cela, le respect d'autrui dû à chacun."
+        },
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Et l'école a pour mission d'essayer de compenser les inégalités sociales — et non biologiques."
+        }
+      ],
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "topic_id": "political_neutrality",
+      "label": "Political neutrality",
+      "definition": "Political neutrality protects the school as a site of critical engagement from propaganda while allowing political questions to be discussed.",
+      "claim": "State-guaranteed political neutrality protects critical education by preventing institutional capture for propaganda.",
+      "evidence": [
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Un grand danger réside dans la politisation de l'école."
+        },
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Dans ce sens, la situation est saine si l'État se porte garant de la neutralité politique de l'école, n'en fait pas un objet ou un moyen de propagande."
+        }
+      ],
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    }
+  ]
+}

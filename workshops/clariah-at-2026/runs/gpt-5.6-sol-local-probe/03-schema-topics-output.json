@@ -1,0 +1,310 @@
+{
+  "schema_version": "2.0",
+  "dataset_id": "clariah-at-2026-doc1000-p003-p004-full-pages",
+  "research_question": "unspecified in this run",
+  "run_metadata": {
+    "run_id": "gpt-5.6-sol-local-probe-schema-full-pages-rerun",
+    "model": "gpt-5.6-sol",
+    "date": "2026-08-17",
+    "prompt_file": "workshops/clariah-at-2026/prompts/03-schema-topics.txt",
+    "local_probe": true,
+    "gemini_output": false
+  },
+  "entities": [
+    {
+      "surface": "M. Oury",
+      "normalized_label": "Oury",
+      "entity_type": "person",
+      "page_id": "1000_p003",
+      "evidence_quote": "En particulier, M. Oury revendique le droit d'appliquer les instructions officielles de 1923, qui préconisent un enseignement plus actif (type Freinet) *.",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Freinet",
+      "normalized_label": "Freinet",
+      "entity_type": "person",
+      "page_id": "1000_p003",
+      "evidence_quote": "En particulier, M. Oury revendique le droit d'appliquer les instructions officielles de 1923, qui préconisent un enseignement plus actif (type Freinet) *.",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "ambiguous",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Prof. Heuyer",
+      "normalized_label": "Heuyer",
+      "entity_type": "person",
+      "page_id": "1000_p003",
+      "evidence_quote": "Prof. Heuyer : à 7 ans, le nombre des déficients mentaux était de 2 à 3 % de la population scolaire ; à 11 ans, il est de 15 %.",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Prof. Mauco",
+      "normalized_label": "Mauco",
+      "entity_type": "person",
+      "page_id": "1000_p003",
+      "evidence_quote": "Prof. Mauco : la moitié des enfants que nous traitons dans les centres n'auraient jamais été inadaptés s'ils avaient eu, en temps utile, la possibilité d'établir avec un maître des relations véritablement humaines",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "GET",
+      "normalized_label": "GET",
+      "entity_type": "organization",
+      "page_id": "1000_p003",
+      "evidence_quote": "il développe l'activité des GET (« Surtout, ne pas rester seul ! »).",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "ambiguous",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "M. Bandelier",
+      "normalized_label": "Bandelier",
+      "entity_type": "person",
+      "page_id": "1000_p003",
+      "evidence_quote": "M. Bandelier.",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Jeanne HERSCH",
+      "normalized_label": "Jeanne Hersch",
+      "entity_type": "person",
+      "page_id": "1000_p003",
+      "evidence_quote": "Exposé de Madame Jeanne HERSCH, professeur de philosophie à l'Université de Genève :",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Université de Genève",
+      "normalized_label": "Université de Genève",
+      "entity_type": "organization",
+      "page_id": "1000_p003",
+      "evidence_quote": "Exposé de Madame Jeanne HERSCH, professeur de philosophie à l'Université de Genève :",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Jean Fluck",
+      "normalized_label": "Jean Fluck",
+      "entity_type": "person",
+      "page_id": "1000_p004",
+      "evidence_quote": "Jean Fluck.",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "IVAN ILLICH",
+      "normalized_label": "Ivan Illich",
+      "entity_type": "person",
+      "page_id": "1000_p004",
+      "evidence_quote": "POURQUOI IVAN ILLICH VEUT-IL DÉSCOLARISER LA SOCIÉTÉ ?",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Etienne VERNE",
+      "normalized_label": "Etienne Verne",
+      "entity_type": "person",
+      "page_id": "1000_p004",
+      "evidence_quote": "Exposé de Monsieur Etienne VERNE, directeur de la revue « Orientations ».",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Orientations",
+      "normalized_label": "Orientations",
+      "entity_type": "work",
+      "page_id": "1000_p004",
+      "evidence_quote": "Exposé de Monsieur Etienne VERNE, directeur de la revue « Orientations ».",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Institut supérieur de pédagogie",
+      "normalized_label": "Institut supérieur de pédagogie",
+      "entity_type": "organization",
+      "page_id": "1000_p004",
+      "evidence_quote": "Monsieur Verne enseigne à l'Institut supérieur de pédagogie à Paris.",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "surface": "Paris",
+      "normalized_label": "Paris",
+      "entity_type": "place",
+      "page_id": "1000_p004",
+      "evidence_quote": "Monsieur Verne enseigne à l'Institut supérieur de pédagogie à Paris.",
+      "identifier": null,
+      "identifier_source": null,
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    }
+  ],
+  "topic_annotations": [
+    {
+      "topic_id": "school_as_disciplinary_mass_institution",
+      "label": "School as a disciplinary mass institution",
+      "definition": "Schooling is described through mass architecture, order, constraint and participation in a wider institutional system.",
+      "claim": "The pages connect the organization of mass schooling with discipline and systemic control.",
+      "evidence": [
+        {
+          "page_id": "1000_p003",
+          "exact_quote": "la concentration urbaine a favorisé une « architecture scolaire de masse » qui expliquerait l'obsession de l'ordre et l'ensemble des contraintes qui en découlent."
+        },
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Illich s'en prend à un système, et s'il s'en prend également à l'école ce n'est qu'en tant que celle-ci participe d'un système."
+        }
+      ],
+      "evidence_status": "indirect",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "topic_id": "institutional_pressure_and_pathologization",
+      "label": "Institutional pressure and pathologization",
+      "definition": "The first contribution links school constraints to teacher fatigue, pupil maladaptation, therapeutic specialization and lost time.",
+      "claim": "Institutional organization is presented as producing harms that are subsequently managed as individual problems.",
+      "evidence": [
+        {
+          "page_id": "1000_p003",
+          "exact_quote": "Au lieu de traiter le mal à la racine, on se contente d'affiner le mode de recensement des troubles mentaux ** et de multiplier les spécialisations du personnel thérapeutique, sans grands égards pour le niveau des compétences."
+        }
+      ],
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "topic_id": "classroom_autonomy_and_common_inquiry",
+      "label": "Classroom autonomy and common inquiry",
+      "definition": "The classroom is presented as a bounded joint activity whose rules arise through shared inquiry.",
+      "claim": "Shared inquiry gives classroom interaction its internal order and relative independence from outside interference.",
+      "evidence": [
+        {
+          "page_id": "1000_p003",
+          "exact_quote": "La classe est le terrain d'un jeu : le face à face des élèves et du maître, jeu qui crée lui-même ses propres règles et qui ne souffre pas de corps étrangers, entend rester libre vis-à-vis de l'extérieur."
+        }
+      ],
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "topic_id": "plural_belonging_memory_and_judgement",
+      "label": "Plural belonging, memory and judgement",
+      "definition": "Several affiliations, remembered content and comparison are described as resources for critical judgement.",
+      "claim": "The Hersch contribution links criticism to encounters with difference and to contents of memory that make comparison possible.",
+      "evidence": [
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Et il est bon que l'enfant appartienne à plusieurs unités, lieu d'apprentissage du vrai sens critique, qui est sympathie pour des choses différentes et non soupçon, dénigrement."
+        },
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "On ne peut critiquer qu'avec des contenus de mémoire."
+        }
+      ],
+      "evidence_status": "indirect",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "topic_id": "pedagogical_invention_and_neutrality",
+      "label": "Pedagogical invention and neutrality",
+      "definition": "Classroom forms and discussion are treated as designed practices, while political neutrality protects school from propaganda.",
+      "claim": "The school is presented as an institution that must invent pedagogical forms and preserve political neutrality.",
+      "evidence": [
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Il s'agit d'inventer les formes de la vie en classe, de trouver les procédés qui l'améliorent dans le cadre de ce qui est compatible."
+        },
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Dans ce sens, la situation est saine si l'État se porte garant de la neutralité politique de l'école, n'en fait pas un objet ou un moyen de propagande."
+        }
+      ],
+      "evidence_status": "indirect",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "topic_id": "deschooling_and_social_reproduction",
+      "label": "Deschooling and social reproduction",
+      "definition": "The Illich discussion distinguishes deschooling from eliminating schools and describes schooling as reproducing elite power and dependence.",
+      "claim": "School is criticized as one institutional component of a system that reproduces social hierarchy.",
+      "evidence": [
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Une société déscolarisée n'est pas une société sans école !"
+        },
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "L'école est un instrument de reproduction de la société telle quelle : elle assure la perpétuation d'une petite élite, elle entretient des systèmes de dépendance, elle sert le conservatisme."
+        }
+      ],
+      "evidence_status": "direct",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    },
+    {
+      "topic_id": "schooling_and_global_inequality",
+      "label": "Schooling and global inequality",
+      "definition": "Exported school systems are linked to industrialization, consumption and widening inequality between rich and poor countries.",
+      "claim": "The Illich discussion presents transferred school systems as mechanisms that integrate poor countries into unequal industrial and consumer relations.",
+      "evidence": [
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "Notre système scolaire, déplacé dans ces pays, a pour but d'en faire des consommateurs de nos produits."
+        },
+        {
+          "page_id": "1000_p004",
+          "exact_quote": "L'écart entre pays riches et pays pauvres ne fait que s'accroître, et on ne sait comment le réduire."
+        }
+      ],
+      "evidence_status": "indirect",
+      "source_check_status": "unchecked",
+      "review_status": "unreviewed"
+    }
+  ]
+}
