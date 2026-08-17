@@ -29,6 +29,6 @@ Für die Annotation `political_neutrality` liegt der Vorschlag vor, `evidence_st
 
 ## Nachweisgrenzen
 
-Die lokale Laufzeit stellte Temperatur, `top_p`, Seed und Reasoning-Effort nicht bereit. Request-ID, Response-ID, API-Protokoll, Transportmetadaten und vollständige Request-/Response-Envelopes wurden ebenfalls nicht exponiert und werden nicht rekonstruiert. Nachgewiesen sind die gespeicherten Prompt- und Outputdateien über SHA-256, die angegebenen lokalen Inputs, der Repository-Anker sowie die reproduzierbaren Schema-, Zitat-, Segment- und Statustests.
+Die lokale Laufzeit stellte Temperatur, `top_p`, Seed und Reasoning-Effort nicht bereit. Request-ID, Response-ID, API-Protokoll, Transportmetadaten und vollständige Request-/Response-Envelopes wurden ebenfalls nicht exponiert und werden nicht rekonstruiert. Für Schema und Codebuch existiert kein separat archivierter Byte-Snapshot der ursprünglichen Request-Envelopes; `provenance.json` bindet deshalb den aktuellen validierten Vertragsstand über SHA-256 und kennzeichnet die fehlenden Generation-Snapshots ausdrücklich. Nachgewiesen sind die gespeicherten Prompt- und Outputdateien über SHA-256, die angegebenen lokalen Inputs, der Repository-Anker sowie die reproduzierbaren Schema-, Zitat-, Segment- und Statustests.
 
 Die Bandelier- und Illich-Passagen bleiben `unverifiziert`. Die institutionelle Rechteklärung und der fachliche Review der Claims sind offen.

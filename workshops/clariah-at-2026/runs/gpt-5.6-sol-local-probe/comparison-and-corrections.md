@@ -6,7 +6,7 @@
 - Datum: 2026-08-17
 - Kontext: lokale Codex-Subagent-Probe
 - Gemini-Output: nein
-- Repository-Anker: `1115ed24cbaf97a64093d9b0e839271b60a2d950`
+- Quellen-Repository-Anker: `1115ed24cbaf97a64093d9b0e839271b60a2d950`
 - Modellparameter: von der lokalen Laufzeit nicht offengelegt
 - Speicherung: Antwortkörper ohne Code-Fences oder redaktionelle Normalisierung bytegetreu in den Outputdateien
 
@@ -31,6 +31,8 @@ Im Hersch-Abschnitt bleibt die dokumentierte Abweichung zwischen Repo-Markdown u
 | Stelle | Repo-Markdown | Bildlesung im Hersch-Kontrolltext | Entscheidung |
 |---|---|---|---|
 | p004, Vielfalt der Lehrpersonen | `contrebalancé` | `contrebalance` | Bildlesung im source-checked Hersch-Referenztext übernommen. |
+
+Im außerhalb des Hersch-Segments liegenden Bandelier-Text enthält der bytegetreue Rohoutput `inadaption scolaire`. Der Faksimilebefund deutet auf `inadaptation scolaire`. Die Stelle bleibt im Rohoutput unverändert und wird erst bei einer Erweiterung des menschlichen Source-Checks auf den Bandelier-Bereich korrigiert.
 
 ## Vergleich der Extraktionsläufe
 
@@ -57,3 +59,9 @@ Die JSON-Rohoutputs 03 und 04 beginnen vollständig mit `source_check_status: un
 ## Neu ausgeführte Antworten
 
 Die Antworten 02, 03 und 04 wurden nach der Korrektur ihrer jeweiligen Prompts erneut mit `gpt-5.6-sol` erzeugt. Die Prompt-Prüfsummen und Output-Prüfsummen stehen in `input/metadata.json` und `provenance.json`. Temperatur, `top_p`, Seed und Reasoning-Effort waren in der lokalen Subagent-Laufzeit nicht verfügbar und sind deshalb als `null` dokumentiert.
+
+Request-ID, Response-ID, Transportmetadaten und vollständige Request-/Response-Envelopes wurden von der Laufzeit nicht exponiert. Sie werden nicht rekonstruiert. `provenance-narrative.md` dokumentiert die Aktivitätskette und diese Nachweisgrenze, ohne die Rohoutputs zu duplizieren.
+
+## Fachliches Gate
+
+Für `political_neutrality` wurde vorgeschlagen, den Evidenzstatus `direct` als `indirect` zu klassifizieren. Diese Wertung betrifft die Interpretation des Claims und bleibt `unreviewed`. Der operative Korrekturlauf verändert den Rohoutput nicht.

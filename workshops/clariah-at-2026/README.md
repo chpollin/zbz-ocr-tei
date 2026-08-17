@@ -46,7 +46,7 @@ Ausgabe: claim-orientierte Entitäten und Themen in demselben JSON-Schema.
 
 ### 5. Quellenprüfung und Vergleich
 
-Die Rubrik in [evaluation-rubric.md](evaluation-rubric.md) prüft Scope-Kontamination, Segmentgrenzen, Entity-Felder, Themenpassung, exakte Zitate und Statusdisziplin. [examples/transcription-source-checked.md](examples/transcription-source-checked.md) ist der visuell geprüfte Hersch-Kontrolltext. [examples/annotation-example.json](examples/annotation-example.json) zeigt einen nachgelagerten Source-Check; es ist kein unveränderter Modelloutput.
+Die Rubrik in [evaluation-rubric.md](evaluation-rubric.md) prüft Scope-Kontamination, Segmentgrenzen, Entity-Felder, Themenpassung, exakte Zitate und Statusdisziplin. Sie enthält außerdem den ausgefüllten Vergleich aller vier Läufe. [examples/transcription-source-checked.md](examples/transcription-source-checked.md) ist der visuell geprüfte Hersch-Kontrolltext. [examples/annotation-example.json](examples/annotation-example.json) zeigt einen nachgelagerten Source-Check; es ist kein unveränderter Modelloutput. Pfad, SHA-256, Prüfaktivität und verantwortliche Rolle beider Referenzartefakte stehen in [source-manifest.csv](source-manifest.csv) und `provenance.json`.
 
 ## Gemeinsamer JSON-Vertrag
 
@@ -55,6 +55,8 @@ Die Rubrik in [evaluation-rubric.md](evaluation-rubric.md) prüft Scope-Kontamin
 - `run_metadata`: Modell, Datum, Promptdatei und Ausführungskontext
 - `entities`: benannte Entitäten mit Surface, normalisiertem Label, Typ, Seite, Beleg und optionaler Kennung
 - `topic_annotations`: Themen oder Claims mit Definition, Aussage und Evidenz
+
+Das Schema trägt den stabilen lokalen Identifier `urn:dhcraft:clariah-at-2026:annotation-schema:2.0`. `local_probe` und `gemini_output` sind reguläre Boolean-Provenienzfelder; ihre Werte beschreiben den jeweiligen Lauf und werden nicht durch das Schema vorgegeben.
 
 Jede Entity und Themenannotation trennt drei Dimensionen:
 
@@ -68,7 +70,9 @@ Jede Entity und Themenannotation trennt drei Dimensionen:
 
 `source_checked` bestätigt ausschließlich Textanker, exaktes Zitat und Seite. `source_mismatch` dokumentiert eine nicht auflösbare Abweichung zur Quelle. `accepted` und `rejected` sind fachliche Entscheidungen.
 
-Alle Modelloutputs beginnen mit `unchecked` und `unreviewed`. Das Schema enthält kein Confidence-Feld und weist zusätzliche Felder zurück.
+Eine Annotation mit `source_check_status: source_mismatch` darf nicht zugleich `review_status: accepted` tragen. Das Schema weist diese Kombination zurück.
+
+Der Transkriptionsoutput sowie die strukturierten Modelloutputs 03 und 04 beginnen mit `unchecked` und `unreviewed`. Lauf 02 besitzt als offene Textbaseline keine Statusfelder. Das Schema enthält kein Confidence-Feld und weist zusätzliche Felder zurück.
 
 ## Dokumentierte lokale Modellprobe
 
@@ -80,19 +84,32 @@ Alle Modelloutputs beginnen mit `unchecked` und `unreviewed`. Das Schema enthäl
 - Primäre Transkriptionsinputs: die echten Faksimiles p003 und p004
 - Abfolge: Transkription, offene Textbaseline, induktiver Schema-Lauf, forschungsfragengeleitete Evidenzannotation
 
-Die strukturierten Rohoutputs 03 und 04 beginnen mit den ungeprüften Statuswerten. Lauf 02 besitzt als offene Textbaseline keine Statusfelder. `comparison-and-corrections.md` dokumentiert die visuelle Prüfung und den Vergleich der drei Extraktionsmodi. `validation-report.md` hält maschinelle und manuelle Prüfungen fest. `provenance.json` dokumentiert Modell, Promptdateien, Prüfsummen, Inputs und Abhängigkeiten.
+Die strukturierten Rohoutputs 03 und 04 beginnen mit den ungeprüften Statuswerten. Lauf 02 besitzt als offene Textbaseline keine Statusfelder. `comparison-and-corrections.md` dokumentiert die visuelle Prüfung und den Vergleich der drei Extraktionsmodi. `validation-report.md` hält maschinelle und manuelle Prüfungen fest. `provenance.json` dokumentiert Modell, Promptdateien, Prüfsummen, Inputs und Abhängigkeiten. `provenance-narrative.md` erklärt die Aktivitätskette, Verantwortungsgrenzen und Nachweislücken, ohne Rohoutputs zu wiederholen.
+
+## Vollständiger Wiederholungsablauf
+
+1. Repository-Anker und SHA-256 der beiden Bilder in `source-manifest.csv` prüfen.
+2. Prompt 01 zusammen mit `docs/images/1000/1000_p003.png` und `docs/images/1000/1000_p004.png` an ein multimodales Modell übergeben. Den vollständigen Antwortkörper unverändert als Lauf-01-Output speichern.
+3. Prompt 02 ausschließlich mit dem vollständigen Lauf-01-Output ausführen. Keine Forschungsfrage, Segmentgrenze, kein Schema und kein Codebuch ergänzen. Die Textantwort unverändert speichern.
+4. Prompt 03 mit demselben vollständigen Lauf-01-Output und `schema/annotation.schema.json` ausführen. Weder eine fachliche Forschungsfrage oder Segmentgrenze noch ein Codebuch ergänzen. Die JSON-Antwort unverändert speichern.
+5. Prompt 04 mit demselben vollständigen Lauf-01-Output, Schema und Codebuch ausführen. Forschungsfrage und Hersch-Segmentgrenze stammen aus dem Prompt. Die JSON-Antwort unverändert speichern.
+6. Modellname, Datum, verfügbare Modellparameter sowie SHA-256 der Prompts und Outputs in `input/metadata.json` und `provenance.json` eintragen. Nicht exponierte Parameter und Request-/Response-Protokolle als nicht verfügbar dokumentieren; keine Werte rekonstruieren.
+7. Den Hersch-Abschnitt gegen beide Faksimiles prüfen. Source-Check und fachlichen Review getrennt dokumentieren. Referenzartefakte mit Pfad, SHA-256, Aktivität und Prüfrolle an Manifest und Provenienz binden.
+8. Die Gesamtsuite vom Repository-Root ausführen und den Bericht nur bei `ALL CHECKS PASS` aktualisieren.
 
 ## Validierung
 
-Vom Repository-Root:
+Voraussetzung ist Python mit dem Paket `jsonschema`. Vom Repository-Root führt ein Befehl die JSON-, Schema-, Datums-, Zitat-, Segment-, Status-, Provenienz-, Manifest- und Negativtests aus:
 
 ```powershell
-python -m json.tool workshops/clariah-at-2026/schema/annotation.schema.json > $null
-python -m json.tool workshops/clariah-at-2026/examples/annotation-example.json > $null
-python -c "import json; from jsonschema import Draft202012Validator; s=json.load(open('workshops/clariah-at-2026/schema/annotation.schema.json', encoding='utf-8')); d=json.load(open('workshops/clariah-at-2026/examples/annotation-example.json', encoding='utf-8')); Draft202012Validator.check_schema(s); Draft202012Validator(s).validate(d); print('schema and example valid')"
+python workshops/clariah-at-2026/validate.py
 ```
 
-Dasselbe Schema validiert die beiden JSON-Rohoutputs 03 und 04 im Run-Ordner. Die Validierung prüft zusätzlich, dass Lauf 03 den Platzhalter und Lauf 04 die exakte Forschungsfrage enthält. Negative Tests müssen alte Statuswerte, falsche Seiten-IDs, zusätzliche Confidence-Felder und unzulässige Zusatzfelder zurückweisen.
+Erwartete Schlusszeile: `ALL CHECKS PASS`. Die Validierung verwendet einen Format-Checker für echte Kalenderdaten. Sie prüft zusätzlich, dass Lauf 03 den Platzhalter und Lauf 04 die exakte Forschungsfrage enthält. Negative Tests erfassen alte Statuswerte, falsche Seiten-IDs, zusätzliche Confidence-Felder, unzulässige Zusatzfelder, ungültige Datumswerte und widersprüchliche Source-/Reviewstatus.
+
+## Offene fachliche Entscheidung
+
+Der Vorschlag, den Evidenzstatus von `political_neutrality` von `direct` auf `indirect` zu ändern, bleibt ein Critical-Expert-Gate. Der bytegetreue Rohoutput wird operativ nicht verändert.
 
 ## Rechte
 

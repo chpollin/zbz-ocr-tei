@@ -8,7 +8,7 @@ import re
 import subprocess
 from pathlib import Path
 
-from jsonschema import Draft202012Validator, ValidationError
+from jsonschema import Draft202012Validator, FormatChecker, ValidationError
 
 
 ROOT = Path(__file__).resolve().parent
@@ -64,7 +64,7 @@ def check_structured_quotes(data: dict, pages: dict[str, str], label: str) -> in
 def main() -> None:
     schema = load_json(ROOT / "schema" / "annotation.schema.json")
     Draft202012Validator.check_schema(schema)
-    validator = Draft202012Validator(schema)
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
     example = load_json(ROOT / "examples" / "annotation-example.json")
     run03 = load_json(RUN / "03-schema-topics-output.json")
     run04 = load_json(RUN / "04-evidence-annotation-output.json")
@@ -73,6 +73,11 @@ def main() -> None:
     for label, data in (("example", example), ("run03", run03), ("run04", run04)):
         validator.validate(data)
         print(f"PASS schema: {label}")
+    boolean_variant = copy.deepcopy(run03)
+    boolean_variant["run_metadata"]["local_probe"] = False
+    boolean_variant["run_metadata"]["gemini_output"] = True
+    validator.validate(boolean_variant)
+    print("PASS boolean provenance fields accept both Boolean values")
 
     full_text = (RUN / "01-transcription-output.md").read_text(encoding="utf-8")
     checked_text = (ROOT / "examples" / "transcription-source-checked.md").read_text(encoding="utf-8")
@@ -154,6 +159,23 @@ def main() -> None:
     mutated = copy.deepcopy(run03)
     mutated["dataset_id"] = ""
     negative_cases.append(("empty dataset field", mutated))
+    mutated = copy.deepcopy(run03)
+    mutated["entities"][0]["source_check_status"] = "source_mismatch"
+    mutated["entities"][0]["review_status"] = "accepted"
+    negative_cases.append(("source-mismatched accepted entity", mutated))
+    mutated = copy.deepcopy(run03)
+    mutated["topic_annotations"][0]["source_check_status"] = "source_mismatch"
+    mutated["topic_annotations"][0]["review_status"] = "accepted"
+    negative_cases.append(("source-mismatched accepted topic", mutated))
+    mutated = copy.deepcopy(run03)
+    mutated["run_metadata"]["date"] = "2026-02-30"
+    negative_cases.append(("invalid calendar date", mutated))
+    mutated = copy.deepcopy(run03)
+    mutated["run_metadata"]["local_probe"] = "true"
+    negative_cases.append(("non-Boolean local_probe", mutated))
+    mutated = copy.deepcopy(run03)
+    mutated["run_metadata"]["gemini_output"] = 0
+    negative_cases.append(("non-Boolean gemini_output", mutated))
     for label, data in negative_cases:
         expect_invalid(validator, data, label)
     print(f"PASS negative schema cases: {len(negative_cases)}")
@@ -171,6 +193,9 @@ def main() -> None:
         require(required in prompt04, f"prompt04 contract missing: {required}")
     require("const" not in schema["properties"]["research_question"], "schema leaks exact research question")
     require("const" not in schema["properties"]["dataset_id"], "schema fixes analytic dataset")
+    require(schema["$id"] == "urn:dhcraft:clariah-at-2026:annotation-schema:2.0", "schema identifier is not stable")
+    require(schema["$defs"]["run_metadata"]["properties"]["local_probe"] == {"type": "boolean"}, "local_probe is not a regular Boolean")
+    require(schema["$defs"]["run_metadata"]["properties"]["gemini_output"] == {"type": "boolean"}, "gemini_output is not a regular Boolean")
     print("PASS four-prompt context-isolation contract")
 
     prompt_paths = [
@@ -201,19 +226,64 @@ def main() -> None:
         require(all(params[key] is None for key in ("temperature", "top_p", "seed", "reasoning_effort")), "undocumented model parameter")
     print("PASS prompt/output hashes and parameter provenance")
 
+    protocol = provenance["request_response_protocol_capture"]
+    require(protocol["availability"].startswith("not exposed"), "protocol-capture limitation missing")
+    require(all(protocol[key] is None for key in ("request_id", "response_id", "transport_metadata", "request_envelope", "response_envelope")), "invented request/response protocol data")
+    require(protocol["reconstruction"] == "not attempted", "protocol reconstruction must remain absent")
+    for contract_name in ("annotation_schema", "codebook"):
+        contract = provenance["validation_contracts"][contract_name]
+        require(sha256(REPO / contract["path"]) == contract["current_sha256"], f"validation-contract hash mismatch: {contract_name}")
+        require(contract["generation_snapshot_sha256"] is None, f"invented generation snapshot: {contract_name}")
+        require(contract["generation_snapshot_status"].startswith("not captured"), f"generation-snapshot limit missing: {contract_name}")
+    narrative = provenance["provenance_narrative"]
+    require(sha256(REPO / narrative["path"]) == narrative["sha256"], "provenance-narrative hash mismatch")
+    gate = provenance["critical_expert_gates"][0]
+    require(gate == {
+        "annotation": "political_neutrality",
+        "field": "evidence_status",
+        "current_raw_value": "direct",
+        "proposed_value": "indirect",
+        "status": "unreviewed",
+        "operational_change_applied": False,
+    }, "critical-expert gate mismatch")
+    political = next(topic for topic in run04["topic_annotations"] if topic["topic_id"] == "political_neutrality")
+    require(political["evidence_status"] == "direct", "raw political_neutrality status changed operationally")
+    print("PASS protocol limitation, provenance narrative and critical-expert gate")
+
     with (ROOT / "source-manifest.csv").open(encoding="utf-8", newline="") as handle:
         rows = list(csv.DictReader(handle))
     require(len(rows) == 2, "manifest row count")
-    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, text=True).strip()
     for row in rows:
-        require(row["repo_commit"] == head, "manifest commit mismatch")
+        commit_check = subprocess.run(
+            ["git", "cat-file", "-e", f'{row["repo_commit"]}^{{commit}}'],
+            cwd=REPO,
+            capture_output=True,
+            text=True,
+        )
+        require(commit_check.returncode == 0, "manifest source commit does not exist")
         require(row["annotation_input_scope"] == "full-page", "manifest full-page scope missing")
         require(row["hersch_reference_status"] == "source_checked", "manifest Hersch status")
         require(row["outside_hersch_status"] == "unverifiziert", "manifest outside-scope status")
+        require(sha256(REPO / row["source_checked_transcription_path"]) == row["source_checked_transcription_sha256"], "manifest source-checked transcription hash mismatch")
+        require(row["source_check_activity"] == "visual_facsimile_quote_page_and_segment_check", "manifest source-check activity")
+        require(row["source_check_responsible_role"] == "human_source_reviewer", "manifest source-check role")
+        require(sha256(REPO / row["sample_annotation_path"]) == row["sample_annotation_sha256"], "manifest sample annotation hash mismatch")
+        require(row["sample_annotation_activity"] == "source_anchor_transfer_and_schema_validation", "manifest sample activity")
+        require(row["sample_annotation_responsible_role"] == "human_source_reviewer", "manifest sample role")
         require(sha256(REPO / row["local_image_path"]) == row["sha256_image"], "manifest image hash mismatch")
         require(sha256(REPO / row["local_reference_text_path"]) == row["sha256_reference_text"], "manifest reference hash mismatch")
         require(row["rights_status"] == "zu prüfen" and row["rights_note"], "manifest rights note")
-    print("PASS manifest paths, hashes, statuses and rights note")
+    artifact_map = {item["path"]: item for item in provenance["source_checked_artifacts"]}
+    for rel_path, expected_activity in (
+        ("workshops/clariah-at-2026/examples/transcription-source-checked.md", "visual_facsimile_quote_page_and_segment_check"),
+        ("workshops/clariah-at-2026/examples/annotation-example.json", "source_anchor_transfer_and_schema_validation"),
+    ):
+        item = artifact_map[rel_path]
+        require(sha256(REPO / rel_path) == item["sha256"], f"provenance reference hash mismatch: {rel_path}")
+        require(item["activity"] == expected_activity, f"provenance reference activity mismatch: {rel_path}")
+        require(item["responsible_role"] == "human_source_reviewer", f"provenance reference role mismatch: {rel_path}")
+    print("PASS manifest and provenance reference paths, hashes, activities and roles")
+    print("PASS manifest source paths, statuses and rights note")
 
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     for rel_path in prompt_paths + output_paths + [
@@ -225,10 +295,11 @@ def main() -> None:
         "examples/annotation-example.json",
         "runs/gpt-5.6-sol-local-probe/comparison-and-corrections.md",
         "runs/gpt-5.6-sol-local-probe/provenance.json",
+        "runs/gpt-5.6-sol-local-probe/provenance-narrative.md",
         "runs/gpt-5.6-sol-local-probe/validation-report.md",
     ]:
         require((ROOT / rel_path).exists(), f"referenced artifact missing: {rel_path}")
-    for phrase in ("vollständigen Seiten", "Scope-Kontamination", "unverifiziert", "unspecified in this run"):
+    for phrase in ("vollständigen Seiten", "Scope-Kontamination", "unverifiziert", "unspecified in this run", "python workshops/clariah-at-2026/validate.py", "Vollständiger Wiederholungsablauf"):
         require(phrase in readme, f"README contract missing: {phrase}")
     print("PASS README artifact and status contract")
     print("ALL CHECKS PASS")

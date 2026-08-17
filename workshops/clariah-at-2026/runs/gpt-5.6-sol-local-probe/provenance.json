@@ -31,6 +31,22 @@
     "response_envelope": null,
     "reconstruction": "not attempted"
   },
+  "validation_contracts": {
+    "annotation_schema": {
+      "path": "workshops/clariah-at-2026/schema/annotation.schema.json",
+      "current_sha256": "E98964582D1C7367A2E6CD30986452F4636184C145AAD11EA3513DCD32778EB9",
+      "role": "current workshop and post-run validation contract",
+      "generation_snapshot_sha256": null,
+      "generation_snapshot_status": "not captured separately from the local request envelope"
+    },
+    "codebook": {
+      "path": "workshops/clariah-at-2026/codebook.md",
+      "current_sha256": "E3BA06C6B59178C318F315F7F18795963D5D67E6BE21A7CA4842008024396941",
+      "role": "current controlled vocabulary for run 04",
+      "generation_snapshot_sha256": null,
+      "generation_snapshot_status": "not captured separately from the local request envelope"
+    }
+  },
   "transcription": {
     "prompt_file": "workshops/clariah-at-2026/prompts/01-transcription.txt",
     "prompt_sha256": "48980ED6384B932F7DD004C24A9C1C690DD0B14E4B70D3D1DDA214E5110A8799",
@@ -122,7 +138,7 @@
   ],
   "provenance_narrative": {
     "path": "workshops/clariah-at-2026/runs/gpt-5.6-sol-local-probe/provenance-narrative.md",
-    "sha256": "5FC1480DFDEB9651764B6F8FB92C240ABE654F3E06D4972BAAB8718BE8618BDC"
+    "sha256": "F10399D96F9B6D1C9688BB17685DC5BE09B07F9E845DB1F8F3BBEB8BA18D7B5F"
   },
   "critical_expert_gates": [
     {
