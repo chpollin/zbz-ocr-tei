@@ -388,6 +388,8 @@ def main() -> None:
         require((ROOT / rel_path).exists(), f"referenced artifact missing: {rel_path}")
     for phrase in ("vollständigen Seiten", "Bandelier-Text", "Illich-Text", "unverifiziert", "unspecified in this run", "python workshops/clariah-at-2026/validate.py", "Vollständiger Wiederholungsablauf"):
         require(phrase in readme, f"README contract missing: {phrase}")
+    require("maschinelle und agentische visuelle Prüfungen" in readme, "README overstates the verification activity")
+    require("maschinelle und manuelle Prüfungen" not in readme, "README retains an ambiguous manual-review claim")
     print("PASS README artifact and status contract")
 
     validation_report = (RUN / "validation-report.md").read_text(encoding="utf-8")

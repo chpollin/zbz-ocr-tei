@@ -84,7 +84,7 @@ Der Transkriptionsoutput sowie die strukturierten Modelloutputs 03 und 04 beginn
 - Primäre Transkriptionsinputs: die echten Faksimiles p003 und p004
 - Abfolge: Transkription, offene Textbaseline, induktiver Schema-Lauf, forschungsfragengeleitete Evidenzannotation
 
-Die strukturierten Rohoutputs 03 und 04 beginnen mit den ungeprüften Statuswerten. Lauf 02 besitzt als offene Textbaseline keine Statusfelder. `comparison-and-corrections.md` dokumentiert die visuelle Prüfung und den Vergleich der drei Extraktionsmodi. `validation-report.md` hält maschinelle und manuelle Prüfungen fest. `provenance.json` dokumentiert Modell, Promptdateien, Prüfsummen, Inputs und Abhängigkeiten. `provenance-narrative.md` erklärt die Aktivitätskette, Verantwortungsgrenzen und Nachweislücken, ohne Rohoutputs zu wiederholen.
+Die strukturierten Rohoutputs 03 und 04 beginnen mit den ungeprüften Statuswerten. Lauf 02 besitzt als offene Textbaseline keine Statusfelder. `comparison-and-corrections.md` dokumentiert die visuelle Prüfung und den Vergleich der drei Extraktionsmodi. `validation-report.md` hält maschinelle und agentische visuelle Prüfungen fest. `provenance.json` dokumentiert Modell, Promptdateien, Prüfsummen, Inputs und Abhängigkeiten. `provenance-narrative.md` erklärt die Aktivitätskette, Verantwortungsgrenzen und Nachweislücken, ohne Rohoutputs zu wiederholen.
 
 ## Vollständiger Wiederholungsablauf
 
