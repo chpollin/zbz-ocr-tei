@@ -96,6 +96,8 @@ def main() -> None:
     verified_text = (ROOT / "examples" / "transcription-agent-verified.md").read_text(encoding="utf-8")
     full_pages = page_sections(full_text)
     verified_pages = page_sections(verified_text)
+    require("source_check_status: unchecked" in full_text.split("---", 2)[1], "run01 source-check initialization missing")
+    require("review_status: unreviewed" in full_text.split("---", 2)[1], "run01 review initialization missing")
     require("M. Bandelier." in full_pages["1000_p003"], "Bandelier passage missing from full transcription")
     require(HERSCH_START in full_pages["1000_p003"], "Hersch start missing from full transcription")
     require(ILLICH_START in full_pages["1000_p004"], "Illich start missing from full transcription")
@@ -107,6 +109,12 @@ def main() -> None:
     print("PASS transcription scope and fail-closed agent-verified Hersch reference")
 
     baseline = (RUN / "02-baseline-topics-output.txt").read_text(encoding="utf-8")
+    try:
+        json.loads(baseline)
+    except json.JSONDecodeError:
+        pass
+    else:
+        raise AssertionError("run02 baseline is unexpectedly JSON")
     baseline_pairs = re.findall(r'(1000_p00[34])(?:\. Evidence:|,) "([^"]+)"', baseline)
     require(len(baseline_pairs) >= 12, "baseline evidence extraction unexpectedly small")
     for page_id, quote in baseline_pairs:
@@ -253,6 +261,13 @@ def main() -> None:
         require(all(params[key] is None for key in ("temperature", "top_p", "seed", "reasoning_effort")), "undocumented model parameter")
     print("PASS prompt/output hashes and parameter provenance")
 
+    rubric = (ROOT / "evaluation-rubric.md").read_text(encoding="utf-8")
+    objective_scores = {"01": (5, 5), "02": (5, 5), "03": (6, 6), "04": (8, 8)}
+    for run_id, (score, maximum) in objective_scores.items():
+        require(f"Summe Lauf {run_id}: {score}/{maximum}" in rubric, f"rubric total mismatch: run {run_id}")
+    require("Fachliche Kriterien erhalten vor ihrer Abnahme keine Punkte." in rubric, "rubric scores unreviewed scholarly criteria")
+    print("PASS objective rubric scores: 01=5/5, 02=5/5, 03=6/6, 04=8/8; scholarly criteria unreviewed")
+
     protocol = provenance["request_response_protocol_capture"]
     require(protocol["availability"].startswith("not exposed"), "protocol-capture limitation missing")
     require(all(protocol[key] is None for key in ("request_id", "response_id", "transport_metadata", "request_envelope", "response_envelope")), "invented request/response protocol data")
@@ -268,7 +283,8 @@ def main() -> None:
     registry_ref = provenance["critical_expert_gate_registry"]
     require(sha256(REPO / registry_ref["path"]) == registry_ref["sha256"], "critical-expert gate registry hash mismatch")
     require(registry_ref["gate_count"] == len(gate_registry["gates"]) == 5, "critical-expert gate count mismatch")
-    require({gate["gate_id"] for gate in gate_registry["gates"]} == {
+    gates = {gate["gate_id"]: gate for gate in gate_registry["gates"]}
+    require(set(gates) == {
         "research_question",
         "codebook",
         "sample_annotation",
@@ -279,6 +295,25 @@ def main() -> None:
         require(gate["status"] == "unreviewed", f"gate status changed without review: {gate['gate_id']}")
         require(gate["required_role"] == "critical_expert", f"gate authority mismatch: {gate['gate_id']}")
         require(gate["operational_change_applied"] is False, f"gate changed operationally: {gate['gate_id']}")
+        for rel_path in gate["artifact_paths"]:
+            require((REPO / rel_path).exists(), f"gate artifact missing: {rel_path}")
+    require(gates["research_question"]["current_value"] == EXACT_RQ, "research-question gate value mismatch")
+    require({signal["text"] for signal in gates["research_question"]["source_signals"]} == {
+        "Exposé de Madame Jeanne HERSCH, professeur de philosophie à l'Université de Genève :",
+        "Jean Fluck.",
+    }, "research-question attribution signals missing")
+    require(gates["codebook"]["current_value"]["topic_ids"] == [
+        "school_as_encounter",
+        "memory_for_judgement",
+        "pedagogical_invention",
+        "social_compensation",
+        "political_neutrality",
+    ], "codebook gate mismatch")
+    require(gates["sample_annotation"]["current_value"]["source_check_status"] == "unchecked", "sample-annotation gate is not fail-closed")
+    require(gates["didactic_scope_boundary"]["current_value"]["run_04_start_inclusive"] == HERSCH_START, "scope start gate mismatch")
+    require(gates["didactic_scope_boundary"]["current_value"]["run_04_end_exclusive"] == ILLICH_START, "scope end gate mismatch")
+    political_gate = gates["political_neutrality_evidence_status"]
+    require(political_gate["current_value"] == "direct" and political_gate["proposed_value"] == "indirect", "political-neutrality gate mismatch")
     political = next(topic for topic in run04["topic_annotations"] if topic["topic_id"] == "political_neutrality")
     require(political["evidence_status"] == "direct", "raw political_neutrality status changed operationally")
     print("PASS protocol limitation, provenance narrative and five critical-expert gates")
@@ -319,6 +354,7 @@ def main() -> None:
         require(item["responsible_role"] == "gpt-5.6-sol_agentic_checker", f"provenance reference role mismatch: {rel_path}")
         require(item["source_check_status"] == "unchecked", f"provenance source-check overclaim: {rel_path}")
         require(item["human_source_review_status"] == "not_performed", f"provenance human-review overclaim: {rel_path}")
+    require("human_source_reviewer" not in json.dumps(provenance), "unsupported person-bound source-review role remains")
     print("PASS manifest and provenance reference paths, hashes, activities and roles")
     print("PASS manifest source paths, statuses and rights note")
 
@@ -353,6 +389,30 @@ def main() -> None:
     for phrase in ("vollständigen Seiten", "Bandelier-Text", "Illich-Text", "unverifiziert", "unspecified in this run", "python workshops/clariah-at-2026/validate.py", "Vollständiger Wiederholungsablauf"):
         require(phrase in readme, f"README contract missing: {phrase}")
     print("PASS README artifact and status contract")
+
+    validation_report = (RUN / "validation-report.md").read_text(encoding="utf-8")
+    for forbidden in (
+        "source-checked Hersch-Kontrolltext",
+        "Der source-checked Kontrolltext",
+        "hersch_reference_status: source_checked",
+        "source-checked Transkription",
+    ):
+        require(forbidden not in validation_report, f"validation report retains unsupported source-check claim: {forbidden}")
+    for phrase in (
+        "agentisch verifizierten Hersch-Referenztext",
+        "source_check_status: unchecked",
+        "hersch_reference_status: agent_verified_unchecked",
+        "human_source_review_status: not_performed",
+        "16/16 PASS",
+        "fünf Critical-Expert-Gates",
+        "Hersch-/Fluck-Attributionssignale",
+        "01=5/5",
+        "02=5/5",
+        "03=6/6",
+        "04=8/8",
+    ):
+        require(phrase in validation_report, f"validation report fail-closed contract missing: {phrase}")
+    print("PASS validation-report fail-closed status and score contract")
     print("ALL CHECKS PASS")
 
 
