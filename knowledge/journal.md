@@ -61,6 +61,20 @@ Sessions 1 to 68 remain in the compact archive below (one line per session); fro
 session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
+### 2026-08-21 Session 97: repository refactoring, diagnosis and wave 0 (E120)
+
+**Occasion** Operator question whether documentation and code of the repository are clean. Six read-only audits by Opus agents (README and CLAUDE.md inventory, knowledge overlap and staleness, reports and static pages, scripts layout and coupling, frontend, code hygiene and tests) answered it with a catalogue of stale statements, duplicated facts, stale published figures, layout coupling and half-introduced tooling.
+
+**Goal** Record the diagnosis as an executable plan and carry out the corrections that need no structural decision.
+
+**Course** The plan [refactoring-plan.md](refactoring-plan.md) holds the findings digest D1 to D10, the work packages WP0 to WP7 with exclusive file sets, the waves, the verification protocol and the open operator decisions. Wave 0 ran as two parallel build agents with disjoint file sets. WP0a corrected stale statements in README, CLAUDE.md, scripts/README.md, twelve knowledge documents and the two static pages; on methode.html eight CER figures and the regeneration date were reset from `docs/data/cer_statistics.json`, and the interval label now follows the JSON's `ci_method` (percentile). WP0b declared the 37 deliberate ruff findings (character tables of the normalization, warning filters before SDK imports) as per-file ignores, applied the safe auto-fix (368 to 147 findings), fixed the CWD-relative scan path in `generate_entity_overview`, declared `openpyxl`, unified `.env` loading on `scripts.config`, removed the dead `compute_proxy_quality` together with the `--proxy` flag, and deleted `tei_add_revision.py`, the screening-era writer of the abolished `revisionDesc` certification (E66) that `tei_status_marker` strips. Verification by the orchestrator on disk: 2149 tests passed and 1 skipped (the two missing cases are the deleted script's health cases), ruff 147, all 77 `python -m` commands in CLAUDE.md resolve with their flags, `docs/data` diff empty, benchmark JSON identical under a masked timestamp.
+
+**Decisions** E120 (wave 0, deletions and the plan). Operator decisions of the session: full scope (documentation, code hygiene, scripts layout, frontend); obsolete artifacts are deleted and git retains them; knowledge keeps its thematic split and is streamlined; the journal is condensed for sessions 69 to 96 with an archive document.
+
+**Status** Wave 0 committed in three commits (documentation, code, plan and register). One finding stays open for WP1a: the generator `cer_statistics_full` emits percentile confidence intervals throughout and never calls `bca_ci`, while CLAUDE.md, index.md, specification.md, methodology.md and the JSON field `meta.bootstrap_method` claim BCa; the documents and the generator label are to be aligned with the computed method.
+
+**Next steps** 1. Operator review of the plan. 2. Wave 1 (WP1a, WP1b, WP2, WP3) with two verification agents. 3. Wave 2 (WP4, WP5, WP6). 4. Wave 3 (WP7).
+
 ### 2026-08-13 Session 96 (continued): marking policy in force, corpus-wide preview run (E119)
 
 **Occasion** The operator decided the two pending marking questions on the evidence tables and released a full run; during the wave the operator also ruled out further subagent use, so the half-finished delegation was stopped and finished by the orchestrator.

@@ -9,7 +9,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-02-18
-updated: 2026-08-12
+updated: 2026-08-21
 tags: [zbz-ocr-tei, decisions, open, decided]
 authors: [Christopher Pollin]
 ---
@@ -71,7 +71,7 @@ Consolidated register of all decisions and open questions. Cross-cutting, collec
 | E48 | Project-specific schema `zbz_hersch.rng` | generic `tei_all.rng` replaced by a project schema (from ODD, 551 definitions) | 2026-03-26 | [pipeline.md](pipeline.md) |
 | E49 | ZBZ editorial guidelines as binding reference | full guidelines as `data/source/guidelines/Editionsrichtlinien_ZBZ.md` | 2026-03-26 | [pipeline.md](pipeline.md) |
 | E50 | Dual-attribute strategy for entity references | `ref="GND:..."` (primary) plus `corresp="#zbz-p.N"` (internal) | 2026-03-26 | removed by E71 |
-| E51 | End-to-end CER benchmark (TEI versus TEI) | 25 ZBZ reference TEIs as ground truth, `benchmark_cer.py` with stratified analysis | 2026-03-26 | [quality: see specification.md and arbeitsbericht-v3.md] |
+| E51 | End-to-end CER benchmark (TEI versus TEI) | 25 ZBZ reference TEIs as ground truth, `benchmark_cer.py` with stratified analysis | 2026-03-26 | [specification.md](specification.md), [arbeitsbericht-v3.md](arbeitsbericht-v3.md) |
 | E54 | Scientific CER re-evaluation | BCa bootstrap (B=10000, seed 42), paired bootstrap E2E versus OCR-only, HCPR, multi-norm, content-aligned eval. Headline then n=19: mean 4.10 % [2.01, 6.75], median 1.83 % [0.84, 5.14] (historical state 2026-04-27; current headline see E98/E99: mean 2.08 % / median 1.28 %, n=25) | 2026-04-27 | [arbeitsbericht-v3.md](arbeitsbericht-v3.md) |
 | E55 | Interactive CER dashboard | 12 sections, vanilla SVG. Abolished with E56; data remains as `docs/data/cer_statistics.json` | 2026-04-27 | superseded |
 | E56 | Frontend reduction to the pipeline viewer | edition site, curation editor (FastAPI), diagnostics, and CER dashboard abolished without replacement. New single-page app `docs/viewer.html` (sidebar, facsimile plus layout overlay plus OCR/TEI panel; layout editor with bbox drag, resize, add, delete, reading-order drag; persistence via file download at that time). Volume 9 to 1 HTML, 23 to 6 JS (minus 81 %), CSS minus 84 %. E33/E36 superseded | 2026-04-27 | [workflow.md](workflow.md) |
@@ -85,7 +85,7 @@ Consolidated register of all decisions and open questions. Cross-cutting, collec
 
 ---
 
-## Decided (E64-E107, detail)
+## Decided (E64-E120, detail)
 
 More recent decisions with full rationale as dedicated sections.
 
@@ -653,6 +653,18 @@ Follow-up, binding: the released marks exist in no earlier draw, so the publishe
 
 Documents: [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 96
 
+### E120 Repository refactoring: diagnosis, plan and wave 0 (2026-08-21)
+
+Occasion: six read-only audits (inventory, knowledge overlap, reports and static pages, scripts layout, frontend, code hygiene and tests) found stale statements in durable documents, duplicated facts against the single-source rule, published CER figures on methode.html that contradicted `docs/data/cer_statistics.json`, a screening-era script contradicting E66, a dead proxy function, generic libraries filed under `tei/`, the entity layer spread over three folders, 368 ruff findings outside the entity layer, 26 untested scripts and missing tooling gates.
+
+Decision: the refactoring runs by the plan [refactoring-plan.md](refactoring-plan.md) in waves of parallel Opus build agents with exclusive file sets, each wave followed by independent code and document verification and one coherent commit per package. Operator decisions: full scope (documentation, code hygiene, scripts layout, frontend); obsolete artifacts are deleted and git history retains them, the register names the last carrying commit; `knowledge/` keeps its thematic split and is streamlined to one owner per fact; the journal is condensed for sessions 69 to 96 and gets an archive document. Rejected alternatives: an archive folder for obsolete artifacts (keeps dead weight in the tree), a strongly condensed knowledge base of few large documents (changes every cross-reference for little gain).
+
+Wave 0 executed: documentation freshness corrections (D1, D3, D5 of the plan) and code quick fixes (per-file ruff ignores for the 37 deliberate findings, safe auto-fix 368 to 147, absolute scan path in `generate_entity_overview`, `openpyxl` declared, one `.env` mechanism via `scripts.config`, `compute_proxy_quality` and `--proxy` removed). Deleted: `scripts/tei/tei_add_revision.py` (last carried by commit 03c478d1). Verified: 2149 tests passed and 1 skipped, ruff 147, all CLAUDE.md commands resolve, mirror diff empty, benchmark output identical.
+
+Open, assigned to WP1a: the published confidence intervals are percentile bootstrap (generator `ci_method` throughout, `bca_ci` never called in `cer_statistics_full`) while CLAUDE.md, index.md, specification.md, methodology.md and `meta.bootstrap_method` say BCa.
+
+Documents: [refactoring-plan.md](refactoring-plan.md), [journal.md](journal.md) session 97
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |
@@ -669,7 +681,7 @@ Documents: [entity-integration.md](entity-integration.md), [entity-evaluation.md
 
 ### Stability (LLM non-determinism, released 2026-07-07, execution at the workstation)
 
-- (a) Stability pilot: 5 documents x 3 pipeline re-runs, standard deviation of per-document CER. Currently `stability.status: open` in the JSON.
+- (a) Stability pilot: 5 documents x 3 pipeline re-runs, standard deviation of per-document CER. Executed on 2026-07-07 (E100); the `stability` block of `docs/data/cer_statistics.json` now reads `status: measured` and carries a per-document standard deviation for the five pilot documents.
 - (b) Inter-engine CER: a second OCR run with a different engine as cross-validation. Medium effort.
 
 ### Closed questions
