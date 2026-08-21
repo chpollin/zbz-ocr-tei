@@ -9,7 +9,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-02-18
-updated: 2026-07-07
+updated: 2026-08-21
 tags: [zbz-ocr-tei, project, corpus, zbz, workflow]
 template:
   name: Vorlage Projekt-Wissensdokument
@@ -165,11 +165,12 @@ the report `arbeitsbericht-v3.md`, and the canonical values in `docs/data/cer_st
 | PAGE-XML generator | Done | `page_xml_generator.py` + METS |
 | Document classification | Done | `classify_docs.py` (E27) |
 | NER + entity linking | Removed (E71) | removed from pipeline + output; linking was not deliverable |
+| Entity layer (deterministic, preview-only) | M0-M3 reached | closed-world matcher against the curated ZBZ entity list, read-only per-page previews in the viewer plus the corpus overview `docs/entities.html`; `output/tei_final/` stays entity-free. M4 built as the gold-benchmark instrument, M5-M7 open, see [entity-integration.md](entity-integration.md) |
 | Unified TEI pipeline | Done | schema-valid across the corpus (E32) |
 | TEI validator | Done | RelaxNG + 7 project rules (R1-R7) + 16 active warning rules (W1-W7, W11-W19; W15-W18 since E84, W19 reading order since E90) |
 | Workflow status per stream (E66/E67) | Done (data model) | replaces agent screening; streams start `unverifiziert`, settable in the viewer, provenance in the manifest |
 | Pipeline viewer (E56) | Done | `docs/viewer.html` single page with layout + transcription editor; persistence directly into repo + mirror (E72/E78/E79), download as fallback |
-| Viewer edition uplift (May 2026) | largely implemented | Delivered: E58 (OSD facsimile), E60 (edit toggle per panel), E62 (method page), E63/E65 (blank-page manifest + TEI marker), E66/E67 (workflow status + traffic-light reframing + catalog refactor). Open: E61 (export module, JSZip; planned, not yet wired into the code), complete TEI (`<facsimile>`/`<zone>`) + provenance drawer (planned, separate pipeline wave), OSD layout editor integration, viewer.js module split. Open frontend findings: [specification.md](specification.md), frontend requirements |
+| Viewer edition uplift (May 2026) | largely implemented | Delivered: E58 (OSD facsimile), E60 (edit toggle per panel), E62 (method page), E63/E65 (blank-page manifest + TEI marker), E66/E67 (workflow status + traffic-light reframing + catalog refactor), E107 (2026-08-12: one document bar, View and Edit dropdowns, three views with the annotated reading view as default). Open: E61 (export module, JSZip; planned, not yet wired into the code), complete TEI (`<facsimile>`/`<zone>`) + provenance drawer (planned, separate pipeline wave), OSD layout editor integration, viewer.js module split. Open frontend findings: [specification.md](specification.md), frontend requirements |
 | Workflow + provenance | Concept documented | [workflow.md](workflow.md) describes data flow, save mechanism, round trip, the `_complete.xml` and `provenance.json` concept |
 | Containerization | Pending | Dockerfile/Podman |
 | CI/CD | Partial | GitHub Actions active (pytest on push/PR, 2026-06-10); GitLab Uni Zuerich pending |

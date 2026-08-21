@@ -69,7 +69,7 @@ The token catalog lives in `docs/assets/css/tokens.css`, base components in `doc
 
 ### Directories (orientation)
 
-- `data/`: input and reference data. `source/` = ZB delivery (immutable input, mostly gitignored) with `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, and `guidelines/` (editorial guidelines, Editionsrichtlinien). Project authority (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (reserved for hand-verified TEI, currently empty) and `entities/` (curated entity list, GND variant cache, variant review, mention verdict store, operator marking policy). Generated: `doc_metadata.json` (Gemini cache)
+- `data/`: input and reference data. `source/` = ZB delivery (immutable input, mostly gitignored) with `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, and `guidelines/` (editorial guidelines, Editionsrichtlinien). Project authority (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (reserved for hand-verified TEI, currently empty) and `entities/` (curated entity list, GND variant cache, variant review, mention verdict store, legacy mention index `legacy_mentions.json`, operator marking policy). Generated: `doc_metadata.json` (Gemini cache)
 - `scripts/`: pipeline + tools, grouped by domain into `ocr/`, `layout/`, `tei/`, `eval/`, `edition/`, `core/` (only `config.py` + `utils.py` top-level). Inventory: [scripts/README.md](scripts/README.md)
 - `output/`: all generated data streams (gitignored, NOT versioned)
 - `docs/`: static inspection/demo site (GitHub-Pages-ready) with HTML, `assets/` (`css/` + `js/`), `data/` (generated mirror), `images/`
@@ -161,6 +161,7 @@ The output `docs/data/cer_statistics.json` is versioned as evidence of the publi
 python scripts/ocr/ocr_pipeline.py -i data/source/pdf/{DOC_ID}.pdf -e mistral    # base OCR
 python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --variant B          # Gemini correction
 python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --dry-run            # preview
+python -m scripts.ocr.classify_docs                                          # one-shot Gemini document classification -> data/doc_metadata.json (committed cache; rerun only to rebuild it)
 ```
 
 ## Layout
@@ -213,8 +214,9 @@ The demotion run consumes the facsimile-verified verdicts in
 
 The operator marking decisions live in `data/entities/marking_policy.json`, apart from the
 curated list because that list is an external export. It is validated on load and reaches
-the matcher through `build_lexicon(..., policy_path=...)`; every entity script takes
-`--policy` and defaults to the file (E119).
+the matcher through `build_lexicon(..., policy_path=...)`; the matcher-driving entity scripts
+(`entity_lint`, `tei_entity_preview`, `entity_corpus_scan`, `entity_gold_benchmark`,
+`entity_unlisted_scan`) take `--policy` and default to that file (E119).
 
 ```bash
 python -m scripts.tei.fetch_gnd_variants                         # build/refresh the GND variant cache (lobid)

@@ -10,7 +10,7 @@ method:
 status: reviewed
 language: en
 created: 2026-07-07
-updated: 2026-07-09
+updated: 2026-08-21
 tags: [zbz-ocr-tei, cer, literature, benchmark]
 related: [cer-methodology, specification, decisions]
 authors: [Christopher Pollin]
@@ -27,12 +27,12 @@ in [cer-methodology.md](cer-methodology.md).
 
 ## Where the Pipeline Sits
 
-The fidelity median of 1.28% (n = 25, canonical value from
+The pipeline's fidelity median (n = 25, canonical value in
 `docs/data/cer_statistics.json`) lies between the best specialized print stack
 (Transkribus with LLM post-correction, 0.84%; Greif et al. 2025) and
 Transkribus alone (3.67%). That is solid for historical print but not at the top;
-the technical optimum is reached only by the best individual documents (0.3 to
-0.8%). The comparison reads print-calibrated, since the Transkribus quality bands
+only the strongest individual documents of the corpus reach the range of the best
+literature values. The comparison reads print-calibrated, since the Transkribus quality bands
 (under 2% publication-ready, 2 to 5% research-usable) stem primarily from
 handwriting recognition practice and set the bar lower than a pure print OCR task
 warrants.

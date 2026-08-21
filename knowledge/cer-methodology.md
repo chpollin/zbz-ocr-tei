@@ -10,7 +10,7 @@ method:
 status: reviewed
 language: en
 created: 2026-07-07
-updated: 2026-07-08
+updated: 2026-08-21
 tags: [zbz-ocr-tei, cer, methodology, evaluation]
 related: [specification, ground-truth-map, literature-comparison, decisions]
 authors: [Christopher Pollin]
@@ -153,7 +153,7 @@ accents is checked separately via its own metric (HCPR).
 This verification concerns the correctness of the CER measurement and is to be
 distinguished from the TEI schema validation. It rests on four layers.
 
-First, 18 hand-computed regression tests (`tests/test_cer_extraction.py`) that pin
+First, the hand-computed regression tests in `tests/test_cer_extraction.py`, which pin
 the behavior independently of the corpus result, among them the canonical formula,
 case sensitivity, the absence of trimming, the `<choice>` resolution, the
 normalization, and the decomposition into fidelity and scope including the

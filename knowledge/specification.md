@@ -10,7 +10,7 @@ method:
 status: draft
 language: en
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-08-21
 tags: [zbz-ocr-tei, specification, requirements, epics]
 related: [decisions, project, pipeline, workflow, cer-methodology]
 template:
@@ -54,8 +54,9 @@ newest ratified register entry wins and this document is updated to match.
   become sharp only on curated inline-GND output (E88; lesson L14).
 - R-READING-ORDER: generated block order follows the canonical column- and band-aware
   reading order (E90). Validator warning W19 scopes legacy deviations in the delivered
-  corpus; rewriting that corpus is operator-gated (M3), and the residual pages that
-  resist automatic correction go to facsimile review.
+  corpus; machine reordering of that corpus was tested against the 25 references and
+  refuted (E99, no page improved and nine degraded), so flagged pages are corrected
+  page-wise and facsimile-verified through `tei_reading_order_fix`.
 - R-STATUS: every document carries a per-stream workflow status
   (`unverifiziert` | `in_arbeit` | `verifiziert`; E66/E67/E77) whose transitions are
   human-only, with provenance history in the per-object manifest and deterministic
@@ -64,7 +65,7 @@ newest ratified register entry wins and this document is updated to match.
 - R-PBN: `pb@n` carries the printed page number in square brackets where footer
   detection, interpolation, or a stable scan-to-print offset supports it; pages
   without a reliable signal keep the unbracketed scan number (E94, ratified
-  2026-07-07; corpus application via `tei_pb_folio`, run operator-gated).
+  2026-07-07; applied corpus-wide by `tei_pb_folio`, executed with E94/E95, backup in `output/_backup_pre_pb_folio/`).
 - R-PERSISTENCE: every viewer save writes the payload canonically to `output/` and
   mirrors it to `docs/data/`, so both the pipeline and the server-less viewer see the
   same state (E72/E78/E79).
@@ -102,8 +103,9 @@ HTR quality bands (E80). The method is binding since the correctness wave
   estimator does not generalize (negative LOOCV R^2) and is labeled as an
   estimate wherever shown.
 - LLM stability (run-to-run variance of the non-deterministic Mistral and
-  Gemini stages) is released for measurement and executes at the workstation
-  (5 docs x 3 runs; see [decisions.md](decisions.md)).
+  Gemini stages) is measured (5 docs x 3 runs, E100); the `stability` block of
+  `docs/data/cer_statistics.json` carries the per-document spread and reads
+  `status: measured`.
 
 No figure is published without its method. The detailed measurement method is in
 [cer-methodology.md](cer-methodology.md). The measured values live,
@@ -153,7 +155,7 @@ markup inside captions) is an open ZBZ question (O27).
 | ZBZ conformity | `pytest tests/test_zbz_conformity.py`, `tei_validator --conformity` | R-CONFORMITY |
 | Validator warnings | `tei_validator --all` (non-blocking curation signals W1-W19) | R-TEI, R-READING-ORDER |
 | Corpus audit | `python -m scripts.eval.corpus_audit` (funnel + drift check) | corpus claims |
-| Reading-order evidence | `reading_order_audit` (triage), `tei_reassemble_preview` (reversible dry run, report in `reports/m3-reassemble-preview.md`) | M3 decision basis |
+| Reading-order evidence | `reading_order_audit` (triage), `tei_reading_order_fix` (page-wise instrument, dry-run default); the historical `tei_reassemble_preview` and its report `reports/m3-reassemble-preview.md` document the refuted machine rollout (E99) | W19 curation basis |
 | Full suite | `python -m pytest` (CI gate on every push) | all of the above |
 
 ## Epics and user stories
@@ -166,9 +168,10 @@ markup inside captions) is an open ZBZ question (O27).
   pill records my verification step with provenance. Stories: correct reading order on
   flagged pages (W19 worklist); resolve empty speaker slots (W17); confirm blank pages;
   review the M3 residual pages at the facsimile.
-- Epic C, reading-order rollout (M3, operator-gated): as the operator, I approve the
-  corpus regeneration after accepting the dry run, so the delivered TEI carries the
-  canonical reading order; the gates of the table above must stay green.
+- Epic C, reading-order curation (E99): the corpus-wide machine rollout was tested and
+  refuted, so as a ZBZ curator I work the W19 worklist page by page at the facsimile and
+  release each verified fix through `tei_reading_order_fix`; the gates of the table above
+  must stay green.
 - Epic D, teiCrafter handover: as an annotator, I receive TEI stable enough for control
   and inline-GND annotation in teiCrafter; the entity gate Z1-Z4 turns sharp on that
   output. Cross-lane, awaits the teiCrafter output-model switch.
@@ -184,7 +187,7 @@ markup inside captions) is an open ZBZ question (O27).
   the verified demotion E85 (documents 290, 1910, 90, 40, 1520). The reference-less
   remainder was quantified by `body_note_audit` and facsimile-verified case by case
   (verdicts persisted in `output/audits/body_note_verdicts.json`); the correction runs
-  via `tei_body_note_demote` (E94, operator-gated). Below-threshold notes and genuine
+  corpus-wide via `tei_body_note_demote` (executed with E94/E95, backup in `output/_backup_pre_body_note_demote/`). Below-threshold notes and genuine
   footnotes lost to the role swap outside the candidate set remain a curation risk.
 
 ### Frontend requirements (deferred until after ZBZ acceptance)
@@ -205,8 +208,9 @@ findings were fixed 2026-06-10, provenance in `arbeitsbericht-v3.md`, section 5)
 - Provenance panel in the viewer, built on the planned `provenance.json`
   (see [workflow.md](workflow.md), provenance section).
 
-A fresh corpus-wide frontend gap analysis is planned at the workstation
-after the push; new findings land here.
+A fresh corpus-wide frontend gap analysis ran on 2026-08-12 and fed the viewer
+reduction (E107); its inventory and the quick wins still open are in
+`reports/2026-08-12_viewer-ui-analyse.md`.
 
 ## Non-requirements
 
@@ -214,3 +218,8 @@ Explicitly out of scope: NER and entity linking in pipeline output (removed, E71
 automatic `front`/`back`/`anchor`/`unclear` markup (E83); MMSID projection into headers
 (E76); monetary figures and third-party personal names anywhere in the documentation
 (constitution).
+
+The E71 removal concerns free, LLM-driven entity recognition. Since 2026-08 a
+deterministic closed-world entity layer runs against the curated ZBZ entity list and
+writes read-only previews ([entity-integration.md](entity-integration.md)); the delivered
+TEI in `output/tei_final/` stays entity-free until an operator releases a stock run.

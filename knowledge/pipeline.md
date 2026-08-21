@@ -9,7 +9,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-01-29
-updated: 2026-07-07
+updated: 2026-08-21
 tags: [zbz-ocr-tei, pipeline, ocr, layout, tei, engines]
 template:
   name: Vorlage Architecture
@@ -23,7 +23,7 @@ authors: [Christopher Pollin]
 Data flow from PDF to TEI-XML: stages, scripts, engines, TEI mapping. Since the scope
 expansion (25.02.2026, E21) zbz-ocr-tei covers the entire path.
 
-CLI reference and operational tools: [methodology.md §Commands](methodology.md).
+CLI reference and operational tools: [CLAUDE.md](../CLAUDE.md), Commands section.
 Status per stage: [project.md](project.md).
 Complete end-to-end workflow with round-trip logic, save mechanism, and
 provenance concept: [workflow.md](workflow.md).
@@ -378,7 +378,7 @@ as its first child (the schema requires graphic before zone). Address scheme: re
 directly in `build_facsimile` ([tei_step3.py](../scripts/tei/tei_step3.py)); the already
 delivered stock is brought to the same state without an OCR re-run by the post step
 [tei_surface_graphic.py](../scripts/tei/tei_surface_graphic.py).
-Resolves [[O25]] and replaces the faulty blank-page placeholder `{seite}.png` (it pointed to
+Resolves [decisions.md O25](decisions.md) and replaces the faulty blank-page placeholder `{seite}.png` (it pointed to
 a non-existent file). ZBZ prescribes the `<pb facs>` form for page images, not
 necessarily a surface `<graphic>`; the `<graphic>` makes the reference resolvable and
 supersedes teiCrafter's hard-coded demo path.
@@ -403,8 +403,8 @@ Cross-cutting (parallel to phases 3-6): pipeline viewer with edit mode, see [wor
 
 Systematic OCR quality improvement through iterative experimentation and benchmarking.
 Method: see [specification.md](specification.md) and [cer-methodology.md](cer-methodology.md); measured values: `docs/data/cer_statistics.json`. Tools: `scripts/eval/benchmark_cer.py`,
-`scripts/eval/cer_statistics.py`, `scripts/eval/cer_statistics_full.py`. Phases 0-4 with success metrics
-(phase 1 target median <5%, phase 2 target median <4%).
+`scripts/eval/cer_statistics.py`, `scripts/eval/cer_statistics_full.py`. Phases 0-4 each carry a
+CER success metric; the measured values live in `docs/data/cer_statistics.json`.
 
 ---
 

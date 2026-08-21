@@ -85,7 +85,7 @@
       <p>
         Character Error Rate (CER) in the end-to-end comparison against the ZBZ reference TEIs.
         <strong>Fidelity CER</strong> (real OCR and transcription errors): <strong>mean 2.08&nbsp;%</strong>,
-        <strong>median 1.28&nbsp;%</strong> (n&nbsp;=&nbsp;25, BCa bootstrap, B&nbsp;=&nbsp;10,000, seed&nbsp;42). The
+        <strong>median 1.28&nbsp;%</strong> (n&nbsp;=&nbsp;25, percentile bootstrap, B&nbsp;=&nbsp;10,000, seed&nbsp;42). The
         full-text CER including pipeline surplus text sits clearly higher; why, plus all
         stratified values, limitations, and the literature comparison: see <a href="methode.html">Method</a>.
       </p>
@@ -95,7 +95,8 @@
       <h2>Architecture</h2>
       <p>
         Static single-page apps: the <a href="index.html">corpus overview</a> as entry point,
-        the <a href="viewer.html">viewer</a> for the detail view of one document. Data is
+        the <a href="viewer.html">viewer</a> for the detail view of one document, and the
+        <a href="entities.html">entity overview</a> for the corpus-wide entity picture. Data is
         loaded exclusively from static JSON/XML/MD files, no backend. Editor changes are
         saved directly into the local repo clone via the File System Access API (Chromium),
         with file download as the fallback.
@@ -104,7 +105,9 @@
         Data: catalog.json plus a per-page mirror under
         <code>data/pages/</code> (all 285 docs), thumbnails under <code>data/thumbs/</code>,
         per-document manifests under <code>data/manifests/</code>, the entity lookup
-        <code>data/entities.json</code>, and the CER statistics <code>data/cer_statistics.json</code>.
+        <code>data/entities.json</code>, the entity overview aggregate
+        <code>data/entity_overview.json</code>, and the CER statistics
+        <code>data/cer_statistics.json</code>.
       </p>
     </section>
 

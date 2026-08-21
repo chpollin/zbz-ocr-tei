@@ -10,7 +10,7 @@ method:
 status: reviewed
 language: en
 created: 2026-07-07
-updated: 2026-07-08
+updated: 2026-08-21
 tags: [zbz-ocr-tei, ground-truth, reference, tei]
 related: [cer-methodology, specification, decisions]
 authors: [Christopher Pollin]
@@ -104,8 +104,10 @@ Reference 1520 is not well-formed: three structurally identical crossed
 one at a time). The repair swaps the closing-tag order to `</p></item>` at each
 spot, leaving the text content unchanged; the corrected copy
 `output/1520_reference_fixed.xml` parses cleanly. The original stays untouched as
-the ZBZ source datum; the correction goes to ZBZ as a proposal, and after adoption
-the document returns to the 25-document benchmark.
+the ZBZ source datum, and the correction goes to ZBZ as a proposal. The document is
+measured inside the 25-document benchmark either way, because the text extraction
+falls back to the regex rule E12 on a parse error; pending is only the ZBZ-side
+repair of the reference file.
 
 ## Consequences
 

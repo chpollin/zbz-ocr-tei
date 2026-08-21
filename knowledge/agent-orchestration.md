@@ -1,3 +1,21 @@
+---
+title: Agent Orchestration Workflow
+type: knowledge
+project:
+  name: zbz-ocr-tei
+  repository: https://github.com/chpollin/zbz-ocr-tei.git
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: active
+language: en
+created: 2026-08-12
+updated: 2026-08-21
+tags: [zbz-ocr-tei, agents, orchestration, verification, methodology]
+related: [methodology, entity-evaluation, entity-integration]
+authors: [Christopher Pollin]
+---
+
 # Agent Orchestration Workflow
 
 How this project runs multi-agent work so that results are verifiable and the pattern

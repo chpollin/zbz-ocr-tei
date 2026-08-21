@@ -9,7 +9,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-05-25
-updated: 2026-08-12
+updated: 2026-08-21
 tags: [zbz-ocr-tei, workflow, dataflow, viewer, persistence, provenance, complete-tei, round-trip, entities]
 template:
   name: Vorlage Architecture
@@ -92,7 +92,7 @@ coOCR / Transkribus (`scripts/layout/page_xml_generator.py`).
 | TEI scaffold (Step 1) | XML, rule-based | `output/tei_unified/{doc}_step1.xml` | `scripts/tei/tei_step1.py` |
 | TEI Gemini (Step 2) | XML, LLM-refined | `output/tei_unified/{doc}_step2.xml` | `scripts/tei/tei_step2.py` |
 | TEI assembly (Step 3) | XML, post-processed | `output/tei_unified/{doc}.xml` | `scripts/tei/tei_step3.py` |
-| TEI final | XML with `<revisionDesc>` | `output/tei_final/{doc}_final.xml` | `scripts/tei/tei_add_revision.py` + `tei_status_marker.py` (E42, E43, E66) |
+| TEI final | XML with `<revisionDesc>` | `output/tei_final/{doc}_final.xml` | `scripts/tei/tei_status_marker.py` (E42, E43, E66) |
 | Per-object manifest | JSON (workflow status + history per stream) | `output/tei_final/{doc}_manifest.json` | `scripts/edition/page_manifest.py` (E65/E66) |
 | Review JSON (legacy) | JSON (abolished 7-layer screening, diagnostic trace only) | `output/tei_final/{doc}_screening_legacy.json` | agent screening, deprecated E66 |
 | TEI final (frontend) | XML | `docs/data/pages/{doc}/{doc}_final.xml` | `scripts/edition/generate_edition_data.py` |
@@ -116,28 +116,39 @@ public edition or reading frontend; ZBZ covers that via Oxygen/Alma.
 
 ### 3.1 Pages and Modes
 
-Five pages:
+Six pages:
 
 | Page | Content |
 |---|---|
 | `index.html` | corpus overview: filterable and sortable document list with workflow status per stream (E66), status legend, search |
-| `viewer.html` | document detail: facsimile + layout overlay left, transcription/TEI right, three modes |
+| `viewer.html` | document detail: facsimile + layout overlay left, transcription/TEI right, three views |
+| `entities.html` | corpus-wide entity overview per listed entity and per document (section 3.7) |
 | `methode.html` | CER method page: headline, stratified values, limitations, literature comparison (E62, static) |
 | `about.html` | project page, points to the method page for quality detail |
 | `impressum.html` | legal notice |
 
-The viewer knows three modes:
+Since E107 the text panel header carries two dropdowns instead of scattered
+panel controls. The View menu (`#view-menu`) selects what the panel shows and
+holds the markup toggle:
 
-| Mode | Editable | Purpose | Persistence |
-|---|---|---|---|
-| View | nothing | pure inspection (read-only) | none |
-| Edit layout | layout overlay | correct regions (bbox, type, order) | "Save" (all streams at once, section 4) |
-| Edit text | text panel | correct OCR text or TEI text/XML | "Save" (all streams at once, section 4) |
+| View | Content |
+|---|---|
+| Text (default) | annotated reading view: rendered TEI with GND entity marks and review candidates |
+| OCR | raw OCR text of the page (Mistral) |
+| XML | TEI-XML source, the current page by default, the whole document on request |
+| Markup highlights | menu toggle that highlights foreign text, footnotes and editorial interventions and shows the legend |
 
-One edit toggle per panel header (E60): the facsimile panel carries the
-layout toggle, the text panel the text toggle (E78); the active toggle is
-filled anthracite (E64). In layout mode a second toolbar appears with region
-tools (add region, delete, type dropdown). Page navigation (prev / page info
+The Edit menu (`#edit-menu`) switches the editing modes:
+
+| Mode | Editable | Persistence |
+|---|---|---|
+| Layout | regions on the facsimile (bbox, type, order) | "Save" (all streams at once, section 4) |
+| OCR | raw OCR text of the page | "Save" (all streams at once, section 4) |
+| XML | TEI-XML source of the whole document | "Save" (all streams at once, section 4) |
+
+The two menus replace the per-panel edit toggles of E60/E78; a checked menu
+item carries the active state. In layout editing a second toolbar appears with
+region tools (add region, delete, type dropdown). Page navigation (prev / page info
 / next, plus a go-to-page field and Home/End keys) sits in the facsimile
 panel header next to the region count (E78). The facsimile renderer in view
 mode is OpenSeadragon (E58, pan + zoom + rotate); polygon support is
@@ -150,7 +161,8 @@ the editor to OSD coordinates is open.
 ```
 docs/
 ├── index.html                   # corpus overview
-├── viewer.html                  # document detail, 3 modes
+├── viewer.html                  # document detail, 3 views (E107)
+├── entities.html                # corpus-wide entity overview
 ├── methode.html                 # CER method page (static)
 ├── about.html                   # project page
 ├── impressum.html               # legal notice
@@ -159,7 +171,8 @@ docs/
 │   │   ├── tokens.css               # Hersch design tokens (--h-*)
 │   │   ├── base.css                 # reset, typography, buttons, badges, tabs
 │   │   ├── viewer.css               # viewer shell, facsimile overlay, TEI render, editor UI
-│   │   └── catalog.css              # corpus overview: status bar, filters, doc table
+│   │   ├── catalog.css              # corpus overview: status bar, filters, doc table
+│   │   └── entity-overview.css      # entity overview page
 │   └── js/
 │       ├── core.js                  # DOM, URL, fetch, format, cache, toast, event bus, markdown renderer
 │       ├── viewer.js                # viewer orchestrator: doc selection + mode switching
@@ -168,7 +181,8 @@ docs/
 │       ├── layout-editor.js         # bbox drag/resize/add/delete + reading order
 │       ├── transcription-editor.js  # OCR/TEI/XML with contenteditable
 │       ├── fs-access.js             # direct write into the working tree (File System Access API, E72)
-│       └── download.js              # file download (JSON/MD/XML)
+│       ├── download.js              # file download (JSON/MD/XML)
+│       └── entity-overview.js       # entity overview page
 └── data/                        # generated via scripts/edition/generate_edition_data.py
     ├── catalog.json             # doc list with streams.{ocr,layout,tei}.{status,last_at,last_by}
     ├── manifests/{doc}.json     # mirror of the per-object manifests (workflow + history + blank pages, E66)
@@ -214,14 +228,16 @@ pipeline `zbz_tag`:
 
 ### 3.4 Transcription Editor
 
-Edits the active text panel via `contenteditable` (with textbox ARIA roles).
-Three selectable sources:
+Edits the text panel via `contenteditable` (with textbox ARIA roles). Since
+E107 the Edit menu offers two text targets beside layout:
 
-| Source | Format | What is edited |
+| Target | Format | What is edited |
 |---|---|---|
-| OCR | Markdown | raw OCR text |
-| TEI | rendered TEI (per page) | text content only (no structure; use XML mode for tags) |
+| OCR | Markdown | raw OCR text of the page |
 | XML | TEI-XML with syntax highlighting, whole document | raw XML including tags and attributes; saving replaces `{doc}_final.xml` as a whole (E72), a guard refuses incomplete TEI content |
+
+The annotated reading view stays read-only; wording and structure changes run
+through XML mode.
 
 Changes are collected debounced and marked unsaved; the shared "Save" button
 persists them together with layout and status (section 4). Per-stream single
@@ -258,8 +274,8 @@ translates only the display labels:
 Red stays reserved for a future explicit problem/reject status. The default
 is neutral because the pipeline produces OCR/layout/TEI deterministically
 for every document; "present, unverified" is not an alarm (E67). Status is
-set in the viewer via three pills (OCR / Layout / TEI) in the doc subbar;
-a click cycles forward. The editor identity (initials) sits as a chip next
+set in the viewer via the status pills in the document bar (OCR, Layout,
+TEI, and Entities wherever an entity preview exists); a click cycles forward. The editor identity (initials) sits as a chip next
 to the Save button and goes into the manifest history (`{at, by, from,
 to}`). The first activation of an edit toggle auto-transitions the matching
 stream from `unverifiziert` to `in_arbeit`; deliberate transitions (for
@@ -272,8 +288,9 @@ manifest section; decisions E66/E77.
 ### 3.7 Entity Layer (read-only)
 
 The viewer shows the GND entity markup of a document as a read-only inspection
-layer, reachable from the viewer's view selection or directly via
-`viewer.html?doc={DOC_ID}&entities=1`. The layer sits outside every edit and
+layer. Since E107 the annotated reading view is the default for every document;
+`viewer.html?doc={DOC_ID}&entities=0` opts out (`viewer.js`, state default and
+URL read). The layer sits outside every edit and
 save path; the preview path leaves `output/tei_final/` untouched, and in entity
 mode the text editors stay locked (layout editing remains available).
 
@@ -430,9 +447,9 @@ Complete procedure when a user has corrected a layout region:
    The `--reassemble` flag redoes Step 1 (scaffold from curated OCR/layout) and Step 3 (assembly) and uses the Gemini Step 2 cache. Pages without new curation stay free of charge; pages with newer curated OCR/layout are selectively re-refined by Gemini (1 call each), so that the correction reaches the final TEI (otherwise Step 3 assembles from the stale cache, bypassing the curation). Important: Gemini re-derives the text in the process; an OCR correction is a suggestion, not a verbatim pass-through. For word-exact text changes use the TEI-XML mode; it writes `output/tei_final/{doc}_final.xml` directly, bypassing the pipeline (verbatim, deterministic).
 5. revisionDesc update:
    ```bash
-   python -m scripts.tei.tei_add_revision --doc {ID}
+   python -m scripts.tei.tei_status_marker --doc {ID}
    ```
-   Rewrites `<revisionDesc>` with the current pipeline run. The human-set workflow status per stream is projected from the manifest into the `<revisionDesc>` at ZBZ handover via `tei_status_marker.py` (E66).
+   Projects the human-set workflow status per stream from the manifest into the `<revisionDesc>` (E66); this is the step run at ZBZ handover.
 6. Validation:
    ```bash
    python -m scripts.tei.tei_validator --doc {ID}
@@ -456,7 +473,7 @@ Current gap: steps 4-7 are not automated. There is no
 | Store | Content | Where |
 |---|---|---|
 | `<revisionDesc>` in the TEI header (E42) | `<change>` elements: pipeline stages + versions + projected workflow status (E66) + date | every final TEI in `output/tei_final/` |
-| `{doc}_manifest.json` (E65/E66) | workflow status per stream (`ocr`/`layout`/`tei`) + history `[{at, by, from, to, note}]` + exception pages (blank pages) | `output/tei_final/` |
+| `{doc}_manifest.json` (E65/E66) | workflow status per stream (`ocr`/`layout`/`tei`, plus `entities` wherever an entity preview exists) + history `[{at, by, from, to, note}]` + exception pages (blank pages) | `output/tei_final/` |
 | `{doc}_screening_legacy.json` (legacy) | finding of the abolished 7-layer screening, diagnostic trace only (deprecated E66) | `output/tei_final/` (gitignored) |
 | Git log | file and code change history | repo |
 
@@ -498,7 +515,7 @@ A central editing log per document. Schema proposal:
     },
     {
       "ts": "2026-05-26T10:23:00Z",
-      "actor": "human:ek",
+      "actor": "human:{initials}",
       "kind": "workflow_status",
       "scope": "layout",
       "details": "unverifiziert -> in_arbeit",
@@ -599,7 +616,7 @@ package of their own, separate from the UI wave.
 
 ---
 
-## 7. Roadmap (as of 2026-06-10)
+## 7. Roadmap (as of 2026-08-21)
 
 ### Done
 
@@ -607,11 +624,14 @@ package of their own, separate from the UI wave.
 - Viewer condensed (E64): doc subbar and toolbar merged, OCR source switcher removed (the viewer shows the delivered Mistral layer), edit toggles for layout and text.
 - Save loop closed (E72/E78/E79): one save button secures all streams, writes canonically to `output/` and to the `docs/data/` mirror; individual downloads in the export dropdown.
 - Workflow status extended to three levels (E77) and the frontend findings of the gap analysis (H1 through H5, M series) fixed (2026-06-10).
+- Viewer UI reduction (E107, 2026-08-12): one document bar, the View and Edit dropdowns, the annotated reading view as default.
+- Read-only entity layer built to M3 (E105-E119): deterministic closed-world matcher, per-page previews in the viewer, corpus overview `docs/entities.html`.
 
 ### Open
 
 - ZIP export per document (E61): all pipeline artifacts of an object as one download (JSZip), optionally collected from the corpus overview.
 - Provenance extension of the pipeline: tie body elements to the layout zones via `@facs` and produce a machine-readable `provenance.json` (implementation state in section 6.4). A provenance panel in the viewer builds on this.
+- Entity layer beyond M3: the gold benchmark exists as the M4 instrument; judge calibration (M5), the corpus dry run (M6) and the operator-released stock run into `tei_final` (M7) are open, see [entity-integration.md](entity-integration.md).
 - Further expansion ideas for the corpus overview and about page (hero section, charts, print CSS) as well as the remaining frontend findings N1/N3/N6/N7 are deliberately deferred until after ZBZ acceptance.
 
 The decisions of the uplift wave are documented as E58-E67 in [decisions.md](decisions.md);

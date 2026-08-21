@@ -48,8 +48,9 @@ Notes:
 - PAGE-XML is generated in parallel as an export format (for coOCR / Transkribus compatibility,
   E13). TEI is produced directly from layout JSON plus OCR markdown via
   `scripts/tei/tei_unified.py` (E22).
-- The delivered TEI already embeds `<facsimile>` with `<zone>` coordinates per page. Planned
-  extensions are `@facs` cross-linking on the text and a provenance drawer in the viewer (see
+- The delivered TEI embeds `<facsimile>` with `<zone>` coordinates per page and carries `@facs`
+  on `pb`, `p`, `lb` and `note`; the generated mirror ships a per-document facsimile map
+  `{doc}_facs.json` (E114). Still planned is the provenance drawer in the viewer (see
   [knowledge/workflow.md](knowledge/workflow.md)).
 
 Component status per stage: [knowledge/project.md §Component Status](knowledge/project.md).

@@ -9,7 +9,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-03-15
-updated: 2026-07-07
+updated: 2026-08-21
 dependencies: [pipeline, workflow]
 source: "papers/Paper.md (workshop contribution DHd/DH, DHCraft & ZBZ)"
 authors: [Christopher Pollin]
@@ -110,8 +110,8 @@ The epistemic infrastructure grows reactively on quality signals.
 
 ## Quality Assurance: from Agent Screening to Workflow Status (E66)
 
-Originally an agent-based 7-layer screening lived here (285 docs, 242 APPROVED / 43
-WITH_NOTES). It was abolished with E66; no human had granted the "APPROVED" labels, the
+Originally an agent-based 7-layer screening lived here; its per-document tallies survive
+only as diagnostic traces in the `_screening_legacy.json` files. It was abolished with E66; no human had granted the "APPROVED" labels, the
 agent certified itself with a built-in ignore list, and the label was misleading toward ZBZ.
 
 The replacement is a human-set workflow status per stream (`unverifiziert | in_arbeit |
@@ -192,7 +192,6 @@ validation and status projection:
 ```bash
 python -m scripts.tei.tei_validator --doc {DOC_ID}                      # RelaxNG + project rules
 python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID}        # against ZBZ reference
-python -m scripts.tei.tei_add_revision --all                            # write revisionDesc
 python -m scripts.tei.tei_status_marker                                 # workflow history -> revisionDesc (ZBZ handover)
 ```
 

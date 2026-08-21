@@ -1,3 +1,21 @@
+---
+title: Entity Evaluation Workflow
+type: knowledge
+project:
+  name: zbz-ocr-tei
+  repository: https://github.com/chpollin/zbz-ocr-tei.git
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: active
+language: en
+created: 2026-08-12
+updated: 2026-08-21
+tags: [zbz-ocr-tei, entities, evaluation, sampling, methodology]
+related: [entity-integration, decisions, journal, specification]
+authors: [Christopher Pollin]
+---
+
 # Entity Evaluation Workflow
 
 Sampling-based measurement of the entity layer: is what we mark correct (precision),
@@ -5,7 +23,9 @@ and do we miss what should be marked (recall). Both are adjudicated at the facsi
 independent of the 25 ZBZ reference TEIs. The references stay in use as a trend
 indicator through `entity_gold_benchmark`, but they are partial and internally
 inconsistent, so they cannot serve as the truth standard; the FP classification of
-2026-08-12 showed that of 51 measured deviations only 2 were real pipeline errors.
+2026-08-12 showed that only a small minority of the measured deviations were real
+pipeline errors (figures in `reports/2026-08-12_entity-eval-ergebnis.md`, raw evidence
+under `output/audits/`).
 
 Related documents: [entity-integration.md](entity-integration.md) (annotation spec,
 rule catalog, instruments), [specification.md](specification.md) (quality method),
@@ -113,6 +133,12 @@ Where the results live:
   files and the frozen scan the offsets index into
 - `reports/2026-08-12_adjudication-protokoll.md`, the versioned copy of the protocol the
   wave was bound to
+
+A second draw is frozen and waiting. `output/audits/eval_sample_2026-08-13/` holds the
+frozen corpus scan `entity_corpus_scan_frozen_2026-08-13.json`, the precision cases, the
+recall pages and the sample manifest of a redraw cut after the repair wave; it has not
+been adjudicated, so every measured figure in this document still belongs to the
+2026-08-12 snapshot.
 
 The verdict store `data/entities/mention_verdicts.json` is the durable sink of these
 judgments. `scripts/eval/build_mention_verdicts.py` folds the loose case and verdict

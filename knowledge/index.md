@@ -9,7 +9,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-01-29
-updated: 2026-08-12
+updated: 2026-08-21
 tags: [zbz-ocr-tei, index, navigation]
 template:
   name: Vorlage Index
@@ -38,12 +38,12 @@ principle is a single source of truth per domain, one file per topic.
 | [project.md](project.md) | What is the project? Commission, corpus funnel + page balance (generated via corpus_audit), ZBZ workflow, status |
 | [specification.md](specification.md) | What must the system do? Requirements, quality measurement method, validation rule catalog (R/W/Z), gates, epics + user stories, open frontend requirements |
 | [pipeline.md](pipeline.md) | How is the pipeline built? Stages PDF -> TEI, engines (Mistral, Docling, Gemini), TEI mapping (ZBZ Hersch schema), round-trip section |
-| [workflow.md](workflow.md) | How does the end-to-end data flow run? Data-flow diagram, data formats per stage, the viewer (pages, modes, editors, blank pages, workflow status, design system), save mechanism, round trip from edit to regenerated TEI, provenance concept, planned `_complete.xml` variant, roadmap |
+| [workflow.md](workflow.md) | How does the end-to-end data flow run? Data-flow diagram, data formats per stage, the viewer (pages, views, editors, blank pages, workflow status, read-only entity layer, design system), the corpus entity overview `docs/entities.html`, save mechanism, round trip from edit to regenerated TEI, provenance concept, planned `_complete.xml` variant, roadmap |
 | [ecosystem-synthesis.md](ecosystem-synthesis.md) | Overall picture of the three projects (zbz / szd-htr / teiCrafter): setup + gates + critical path, per-project pipeline/status, ALL user stories, integration + image gap, methodology, frontend gap survey, open points, SSoT assignment |
 | [infrastructure.md](infrastructure.md) | How is it deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD, viewer deployment (GitHub Pages) |
 | [methodology.md](methodology.md) | How do we work? Epistemic infrastructure, verification cascade, Critical Expert in the Loop, three-layer model, operational CLI |
-| [decisions.md](decisions.md) | What has been decided? Decision register (E entries up to E106), open points (O8/O13/O27 with ZBZ, O18 DHCraft; O25/O26 closed), risks |
-| [cer-methodology.md](cer-methodology.md) | How is the CER measured? Definition, choice of reference, fidelity/scope decomposition, extraction rules E1-E12, normalization N1-N21, verification of the measurement |
+| [decisions.md](decisions.md) | What has been decided? Decision register (E entries), open points (O8/O13/O27 with ZBZ, O18 DHCraft; O25/O26 closed), risks |
+| [cer-methodology.md](cer-methodology.md) | How is the CER measured? Definition, choice of reference, fidelity/scope decomposition, CER extraction rules E1-E12 (cer-methodology namespace, distinct from the decision ids), normalization N1-N21, verification of the measurement |
 | [literature-comparison.md](literature-comparison.md) | How good is it against the state of research? Print-OCR comparison table and comparability caveats |
 | [ground-truth-map.md](ground-truth-map.md) | What do the 25 reference TEIs contain and where do they deviate? Phenomenon map and exception catalog (former Appendix B) |
 | [entity-integration.md](entity-integration.md) | How do GND entities get into the delivered TEI? Design plan: input data, target-model rules, three-tier matching, milestones M0-M7, verification |
@@ -127,7 +127,9 @@ journal: chronological, compact overview
 | CER statistics (E54) | BCa bootstrap CIs, paired E2E vs OCR-only, HCPR | [specification.md](specification.md) |
 | Quality proxy | dictionary hit rate for docs without ground truth; plausibility bound, not a measurement | [specification.md](specification.md) |
 | Validation rule catalog | blocking R1-R7, warnings W1-W19, ZBZ conformity Z1-Z8 (inline GND) | [specification.md](specification.md) |
-| Reading order / W19 / M3 (E90) | column- and band-aware canonical order; W19 scopes legacy deviations; reversible preview built, corpus rollout operator-gated | [decisions.md §E90](decisions.md), [arbeitsbericht-v3.md](arbeitsbericht-v3.md) |
+| Entity layer (closed world, E105-E119) | deterministic matcher against the curated ZBZ entity list, preview-only; `output/tei_final/` stays entity-free; M0-M3 reached, M4 built as the gold-benchmark instrument, M5-M7 open | [entity-integration.md](entity-integration.md) |
+| Mark provenance and marking policy (E118/E119) | every preview mark carries `@resp`, `@cert` and `@source`; operator marking decisions live in `data/entities/marking_policy.json`, facsimile-adjudicated judgments in the mention verdict store | [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md) |
+| Reading order / W19 (E90/E99) | column- and band-aware canonical order; W19 scopes the legacy deviations of the delivered corpus. Machine reordering was tested against the 25 references and refuted (E99), so correction runs page-wise and facsimile-verified through `tei_reading_order_fix`; `tei_reassemble_preview` is obsolete and kept as evidence only | [decisions.md §E90](decisions.md), [decisions.md §E99](decisions.md) |
 | revisionDesc (E42) | pipeline + workflow status in the TEI header, travels with the document | [pipeline.md](pipeline.md) |
 | `output/tei_final/` (E43) | single source of truth of the delivered TEI data | [pipeline.md](pipeline.md) |
 | Verification cascade | 4 levels: automatic / contextual / visual / domain-expert | [methodology.md](methodology.md) |
