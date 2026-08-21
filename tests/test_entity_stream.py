@@ -17,8 +17,7 @@ from __future__ import annotations
 
 import json
 
-from scripts.edition import generate_edition_data as ged
-from scripts.edition import page_manifest as pm
+from scripts.edition import generate_edition_data as ged, page_manifest as pm
 
 
 def _doc(doc_id: str = "100") -> dict:

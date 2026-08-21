@@ -4,8 +4,8 @@ is operator-gated; here the aggregation math and the artifact wiring are pinned.
 
 import json
 
-from scripts.eval.stability_pilot import aggregate
 from scripts.eval.cer_statistics_full import _load_stability_block
+from scripts.eval.stability_pilot import aggregate
 
 
 def test_aggregate_mean_std_range():

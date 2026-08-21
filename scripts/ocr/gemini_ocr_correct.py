@@ -38,8 +38,6 @@ from pathlib import Path
 # Suppress Gemini SDK thought_signature warnings
 warnings.filterwarnings("ignore", message=".*non-text parts.*thought_signature.*")
 
-from dotenv import load_dotenv
-
 from scripts.config import (
     DOC_METADATA_PATH,
     GEMINI_API_KEY,
@@ -52,8 +50,6 @@ from scripts.config import (
 )
 from scripts.utils import get_phase_doc_ids, load_json, write_json
 
-# .env laden
-load_dotenv()
 _api_key = os.environ.get("GEMINI_API_KEY", "") or GEMINI_API_KEY
 
 # --- Sample-Docs (5 Pilot-Docs mit Referenz-TEI, alle 4 Typen) ---
@@ -176,13 +172,13 @@ def build_analysis_prompt(variant, metadata):
         "scanned 20th-century academic documents (Jeanne Hersch archive, "
         "Zentralbibliothek Zurich, primarily French and German).\n\n"
         "Document context:\n"
-        "- Language: {lang}\n"
-        "- Document type: {doc_type} ({type_desc})\n"
-        "- Publication form: {pub_form}\n"
-        "- Author: {author}\n"
-        "- Era: {date}\n"
-        "- Description: {description}\n\n"
-        "{lang_hint}\n\n"
+        f"- Language: {lang}\n"
+        f"- Document type: {doc_type} ({type_desc})\n"
+        f"- Publication form: {pub_form}\n"
+        f"- Author: {author}\n"
+        f"- Era: {date}\n"
+        f"- Description: {description}\n\n"
+        f"{_lang_hint(lang)}\n\n"
         "TASK: Identify ONLY genuine OCR scanning errors in the text below. "
         "The OCR was produced by Mistral Document AI and is generally high quality.\n\n"
         "RULES:\n"
@@ -216,15 +212,6 @@ def build_analysis_prompt(variant, metadata):
         "Example 4 (Platform artifact):\n"
         "  original: \"This content downloaded from 130.60.149.195...\", "
         "corrected: \"\", category: ocr_artifact, confidence: high"
-    ).format(
-        lang=lang,
-        doc_type=doc_type,
-        type_desc=type_desc,
-        pub_form=pub_form,
-        author=author,
-        date=date,
-        description=description,
-        lang_hint=_lang_hint(lang),
     )
 
     if variant == "B":
@@ -260,8 +247,8 @@ def build_correction_prompt(metadata):
         "11. Output ONLY the corrected text, nothing else\n\n"
         "The output must be character-for-character identical to the input, "
         "except at the exact positions listed in the corrections.\n\n"
-        "Document language: {lang}\n"
-    ).format(lang=lang)
+        f"Document language: {lang}\n"
+    )
 
 
 def format_corrections_for_prompt(corrections):
@@ -351,7 +338,7 @@ def get_client():
 
 def find_page_files(doc_id, ocr_dir):
     """Findet alle Seitendateien fuer ein Dokument, sortiert."""
-    pattern = "{}_p*.md".format(doc_id)
+    pattern = f"{doc_id}_p*.md"
     return sorted(Path(ocr_dir).glob(pattern))
 
 
@@ -368,28 +355,26 @@ def analyze_page(client, doc_id, page_str, variant, metadata, output_dir, force=
     """Schritt 1: OCR-Text analysieren und Fehler identifizieren."""
     from google.genai import types
 
-    analysis_path = output_dir / "{}_p{}.analysis.json".format(doc_id, page_str)
+    analysis_path = output_dir / f"{doc_id}_p{page_str}.analysis.json"
     if analysis_path.exists() and not force:
         cached = load_json(analysis_path)
         if cached:
             return cached
 
     # OCR-Text laden
-    ocr_path = MISTRAL_RESULTS_DIR / "{}_p{}.md".format(doc_id, page_str)
+    ocr_path = MISTRAL_RESULTS_DIR / f"{doc_id}_p{page_str}.md"
     if not ocr_path.exists():
-        print("    WARN: OCR nicht gefunden: {}".format(ocr_path.name))
+        print(f"    WARN: OCR nicht gefunden: {ocr_path.name}")
         return None
 
     ocr_text = ocr_path.read_text(encoding="utf-8")
     if not ocr_text.strip():
-        print("    SKIP: Leere Seite {}".format(ocr_path.name))
+        print(f"    SKIP: Leere Seite {ocr_path.name}")
         return None
 
     # Prompt bauen
     prompt = build_analysis_prompt(variant, metadata)
-    user_content = "OCR Text (page {page}):\n\n{text}".format(
-        page=page_str, text=ocr_text
-    )
+    user_content = f"OCR Text (page {page_str}):\n\n{ocr_text}"
 
     # Content-Parts
     contents = []
@@ -398,11 +383,11 @@ def analyze_page(client, doc_id, page_str, variant, metadata, output_dir, force=
             from PIL import Image
 
             padded = page_str.zfill(3)
-            img_path = IMAGES_DIR / doc_id / "{}_p{}.png".format(doc_id, padded)
+            img_path = IMAGES_DIR / doc_id / f"{doc_id}_p{padded}.png"
             if img_path.exists():
                 contents.append(Image.open(img_path))
             else:
-                print("    WARN: Bild nicht gefunden: {}".format(img_path.name))
+                print(f"    WARN: Bild nicht gefunden: {img_path.name}")
         except ImportError:
             print("    WARN: PIL nicht installiert, Variante B ohne Bild")
 
@@ -423,7 +408,7 @@ def analyze_page(client, doc_id, page_str, variant, metadata, output_dir, force=
         result = json.loads(response.text)
     except Exception as e:
         elapsed = time.time() - t0
-        print("    FEHLER Analyse: {} ({:.1f}s)".format(e, elapsed))
+        print(f"    FEHLER Analyse: {e} ({elapsed:.1f}s)")
         return None
 
     # Metadaten ergaenzen
@@ -440,9 +425,7 @@ def analyze_page(client, doc_id, page_str, variant, metadata, output_dir, force=
     n_corr = result.get("num_corrections", len(result.get("corrections", [])))
     quality = result.get("overall_quality", "?")
     print(
-        "    Analyse p{}: {} Korrekturen, Qualitaet {}/100 ({:.1f}s)".format(
-            page_str, n_corr, quality, elapsed
-        )
+        f"    Analyse p{page_str}: {n_corr} Korrekturen, Qualitaet {quality}/100 ({elapsed:.1f}s)"
     )
 
     return result
@@ -455,14 +438,13 @@ def correct_page(
     client, doc_id, page_str, variant, metadata, output_dir, analysis, force=False
 ):
     """Schritt 2: OCR-Text korrigieren basierend auf Analyse."""
-    from google.genai import types
 
-    corrected_path = output_dir / "{}_p{}.md".format(doc_id, page_str)
+    corrected_path = output_dir / f"{doc_id}_p{page_str}.md"
     if corrected_path.exists() and not force:
         return {"skipped": True}
 
     # OCR-Text laden
-    ocr_path = MISTRAL_RESULTS_DIR / "{}_p{}.md".format(doc_id, page_str)
+    ocr_path = MISTRAL_RESULTS_DIR / f"{doc_id}_p{page_str}.md"
     if not ocr_path.exists():
         return None
 
@@ -475,7 +457,7 @@ def correct_page(
     if not actionable:
         output_dir.mkdir(parents=True, exist_ok=True)
         corrected_path.write_text(ocr_text, encoding="utf-8")
-        print("    Korrektur p{}: keine Korrekturen, Original kopiert".format(page_str))
+        print(f"    Korrektur p{page_str}: keine Korrekturen, Original kopiert")
         return {"copied": True, "elapsed_seconds": 0}
 
     # Prompt bauen
@@ -483,9 +465,9 @@ def correct_page(
     corrections_text = format_corrections_for_prompt(corrections)
 
     user_content = (
-        "Original OCR text:\n\n{ocr}\n\n"
-        "Analysis (corrections to apply):\n\n{corr}"
-    ).format(ocr=ocr_text, corr=corrections_text)
+        f"Original OCR text:\n\n{ocr_text}\n\n"
+        f"Analysis (corrections to apply):\n\n{corrections_text}"
+    )
 
     # Content-Parts
     contents = []
@@ -494,7 +476,7 @@ def correct_page(
             from PIL import Image
 
             padded = page_str.zfill(3)
-            img_path = IMAGES_DIR / doc_id / "{}_p{}.png".format(doc_id, padded)
+            img_path = IMAGES_DIR / doc_id / f"{doc_id}_p{padded}.png"
             if img_path.exists():
                 contents.append(Image.open(img_path))
         except ImportError:
@@ -511,12 +493,12 @@ def correct_page(
         )
         elapsed = time.time() - t0
         if not response or not response.text:
-            print("    FEHLER Korrektur: Leere Antwort von Gemini ({:.1f}s)".format(elapsed))
+            print(f"    FEHLER Korrektur: Leere Antwort von Gemini ({elapsed:.1f}s)")
             return None
         corrected_text = response.text.strip()
     except Exception as e:
         elapsed = time.time() - t0
-        print("    FEHLER Korrektur: {} ({:.1f}s)".format(e, elapsed))
+        print(f"    FEHLER Korrektur: {e} ({elapsed:.1f}s)")
         return None
 
     # Speichern
@@ -524,9 +506,7 @@ def correct_page(
     corrected_path.write_text(corrected_text, encoding="utf-8")
 
     print(
-        "    Korrektur p{}: {} Korrekturen angewandt ({:.1f}s)".format(
-            page_str, len(actionable), elapsed
-        )
+        f"    Korrektur p{page_str}: {len(actionable)} Korrekturen angewandt ({elapsed:.1f}s)"
     )
 
     return {"elapsed_seconds": round(elapsed, 2), "corrections_applied": len(actionable)}
@@ -539,7 +519,7 @@ def process_document(client, doc_id, output_dir, variant, step, force=False, dry
     """Verarbeitet ein Dokument: Analyse + Korrektur aller Seiten."""
     page_files = find_page_files(doc_id, MISTRAL_RESULTS_DIR)
     if not page_files:
-        print("  Keine OCR-Dateien fuer {} in {}".format(doc_id, MISTRAL_RESULTS_DIR))
+        print(f"  Keine OCR-Dateien fuer {doc_id} in {MISTRAL_RESULTS_DIR}")
         return {"doc_id": doc_id, "pages": 0, "error": "no_files"}
 
     metadata = get_doc_metadata(doc_id)
@@ -566,17 +546,17 @@ def process_document(client, doc_id, output_dir, variant, step, force=False, dry
             prompt = build_analysis_prompt(variant, metadata)
             ocr_text = page_file.read_text(encoding="utf-8")
             print("\n{}".format("=" * 60))
-            print("  DRY RUN: {}_p{}".format(doc_id, page_str))
+            print(f"  DRY RUN: {doc_id}_p{page_str}")
             print("{}".format("=" * 60))
-            print("  Variante: {}".format(variant))
+            print(f"  Variante: {variant}")
             print("  Metadaten: lang={}, type={}, pub_form={}".format(
                 metadata.get("language"), metadata.get("doc_type"),
                 metadata.get("pub_form"),
             ))
-            print("  Analyse-Prompt ({} Zeichen):".format(len(prompt)))
-            print("  {}...".format(prompt[:300]))
-            print("\n  OCR-Text ({} Zeichen):".format(len(ocr_text)))
-            print("  {}...".format(ocr_text[:200]))
+            print(f"  Analyse-Prompt ({len(prompt)} Zeichen):")
+            print(f"  {prompt[:300]}...")
+            print(f"\n  OCR-Text ({len(ocr_text)} Zeichen):")
+            print(f"  {ocr_text[:200]}...")
             stats["skipped"] += 1
             continue
 
@@ -609,12 +589,10 @@ def process_document(client, doc_id, output_dir, variant, step, force=False, dry
         if step in ("correct", "both"):
             # Wenn nur Korrektur: Analyse aus Cache laden
             if analysis is None and step == "correct":
-                analysis_path = output_dir / "{}_p{}.analysis.json".format(
-                    doc_id, page_str
-                )
+                analysis_path = output_dir / f"{doc_id}_p{page_str}.analysis.json"
                 analysis = load_json(analysis_path)
                 if not analysis:
-                    print("    SKIP p{}: keine Analyse vorhanden".format(page_str))
+                    print(f"    SKIP p{page_str}: keine Analyse vorhanden")
                     stats["skipped"] += 1
                     continue
 
@@ -712,13 +690,13 @@ def main():
     mode = "DRY RUN" if args.dry_run else "Gemini OCR-Korrektur"
 
     print("\n{}".format("=" * 60))
-    print("  {} mit {}".format(mode, GEMINI_MODEL))
-    print("  Variante: {} ({})".format(args.variant, variant_names.get(args.variant)))
-    print("  Schritt: {}".format(step_names.get(args.step)))
-    print("  Ausgabe: {}".format(output_dir))
+    print(f"  {mode} mit {GEMINI_MODEL}")
+    print(f"  Variante: {args.variant} ({variant_names.get(args.variant)})")
+    print(f"  Schritt: {step_names.get(args.step)}")
+    print(f"  Ausgabe: {output_dir}")
     print("  Dokumente: {} ({})".format(len(doc_ids), ", ".join(doc_ids[:10])))
     if len(doc_ids) > 10:
-        print("    ... und {} weitere".format(len(doc_ids) - 10))
+        print(f"    ... und {len(doc_ids) - 10} weitere")
     print("{}".format("=" * 60))
 
     # Verarbeitung
@@ -726,7 +704,7 @@ def main():
     total_start = time.time()
 
     for i, doc_id in enumerate(doc_ids, 1):
-        print("\n  [{}/{}] Doc {}".format(i, len(doc_ids), doc_id))
+        print(f"\n  [{i}/{len(doc_ids)}] Doc {doc_id}")
         stats = process_document(
             client=client,
             doc_id=doc_id,
@@ -763,21 +741,19 @@ def main():
     print("\n{}".format("=" * 60))
     print("  Zusammenfassung")
     print("{}".format("=" * 60))
-    print("  Analysiert: {} Seiten".format(total_analyzed))
-    print("  Korrigiert: {} Seiten ({} Original kopiert)".format(
-        total_corrected, total_copied
-    ))
-    print("  Uebersprungen: {}".format(total_skipped))
-    print("  Fehler: {}".format(total_errors))
-    print("  Korrekturen gesamt: {}".format(total_corrections))
+    print(f"  Analysiert: {total_analyzed} Seiten")
+    print(f"  Korrigiert: {total_corrected} Seiten ({total_copied} Original kopiert)")
+    print(f"  Uebersprungen: {total_skipped}")
+    print(f"  Fehler: {total_errors}")
+    print(f"  Korrekturen gesamt: {total_corrections}")
     if avg_quality is not None:
-        print("  Durchschn. OCR-Qualitaet: {}/100".format(avg_quality))
+        print(f"  Durchschn. OCR-Qualitaet: {avg_quality}/100")
     if all_categories:
         print("  Kategorien: {}".format(
-            ", ".join("{}={}".format(k, v) for k, v in
+            ", ".join(f"{k}={v}" for k, v in
                       sorted(all_categories.items(), key=lambda x: -x[1]))
         ))
-    print("  Dauer: {:.1f}s".format(total_elapsed))
+    print(f"  Dauer: {total_elapsed:.1f}s")
 
     # Manifest schreiben
     if not args.dry_run and (total_analyzed > 0 or total_corrected > 0):
@@ -804,7 +780,7 @@ def main():
         output_dir.mkdir(parents=True, exist_ok=True)
         manifest_path = output_dir / "manifest.json"
         write_json(manifest_path, manifest)
-        print("\n  Manifest: {}".format(manifest_path))
+        print(f"\n  Manifest: {manifest_path}")
 
 
 if __name__ == "__main__":

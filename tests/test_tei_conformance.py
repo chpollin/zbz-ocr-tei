@@ -18,13 +18,13 @@ from __future__ import annotations
 
 import xml.etree.ElementTree as ET
 
+from scripts.tei.tei_step1 import _build_tei_body
 from scripts.tei.tei_step3 import (
     _assign_figure_ids,
     _fix_div_n_type_exclusive,
     _normalize_foreign_lang,
     _wrap_first_title,
 )
-from scripts.tei.tei_step1 import _build_tei_body
 from scripts.tei.tei_xml_utils import normalize_lang_code
 
 TEI = "{http://www.tei-c.org/ns/1.0}"

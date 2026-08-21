@@ -23,16 +23,14 @@ from datetime import datetime
 from pathlib import Path
 
 from scripts.config import (
-    MISTRAL_RESULTS_DIR,
-    LLM_CORRECTED_DIR,
-    TESTPLAN,
-    ANTHROPIC_MODEL,
     ANTHROPIC_MAX_RETRIES,
+    ANTHROPIC_MODEL,
     ANTHROPIC_TIMEOUT_SECONDS,
+    LLM_CORRECTED_DIR,
+    MISTRAL_RESULTS_DIR,
     get_test_metadata,
 )
-from scripts.utils import extract_page_num, get_phase_doc_ids, load_env
-
+from scripts.utils import extract_page_num, get_phase_doc_ids
 
 # --- Dokumenttyp-Beschreibungen ---
 
@@ -395,8 +393,6 @@ def main():
 
     args = parser.parse_args()
 
-    # .env laden
-    load_env()
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
 
     if not api_key and not args.dry_run:
@@ -469,7 +465,7 @@ def main():
     total_output = sum(s.get("output_tokens", 0) for s in all_stats)
 
     print(f"\n{'='*60}")
-    print(f"  Zusammenfassung")
+    print("  Zusammenfassung")
     print(f"{'='*60}")
     print(f"  Verarbeitet: {total_processed} Seiten")
     print(f"  Uebersprungen: {total_skipped}")

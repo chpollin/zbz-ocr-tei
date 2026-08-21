@@ -43,12 +43,11 @@ import json
 import random
 import sys
 from collections import Counter, defaultdict
-from pathlib import Path
 
-from scripts.config import DATA_DIR, DOCS_DIR
+from scripts.config import DATA_DIR, DOCS_DIR, OUTPUT_DIR
 from scripts.tei.entity_matcher import base_rule
 
-SCAN_PATH = Path("output/audits/entity_corpus_scan.json")
+SCAN_PATH = OUTPUT_DIR / "audits" / "entity_corpus_scan.json"
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 VERDICTS_PATH = DATA_DIR / "entities" / "mention_verdicts.json"
 OUT_PATH = DOCS_DIR / "data" / "entity_overview.json"

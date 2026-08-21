@@ -6,7 +6,7 @@ sequenzielle pb-Position, NICHT das n-Attribut; Chunk-Grenzen liegen an den
 pb-Matches. Drift hier wuerde Leerseiten-Marker auf der falschen Seite platzieren.
 """
 
-from scripts.tei.pb_split import PB_RE, BODY_INNER_RE, iter_page_spans
+from scripts.tei.pb_split import BODY_INNER_RE, PB_RE, iter_page_spans
 
 
 def test_no_pb_returns_empty():

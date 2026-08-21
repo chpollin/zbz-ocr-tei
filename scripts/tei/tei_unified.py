@@ -39,11 +39,12 @@ from scripts.core.loaders import (
     discover_pages,
     skip_jstor_cover,
 )
-from scripts.utils import page_layout_name, page_md_name
 from scripts.tei.tei_generator import get_document_metadata
 from scripts.tei.tei_step1 import process_page_step1
 from scripts.tei.tei_step2 import process_page_step2
 from scripts.tei.tei_step3 import assemble_document
+from scripts.utils import page_layout_name, page_md_name
+
 
 # Lazy import fuer build_doc_hints / infer_genre (vermeidet zirkulaere Imports)
 @functools.lru_cache(maxsize=1)
@@ -343,7 +344,7 @@ def main():
     total_elapsed = time.time() - total_start
 
     # Zusammenfassung
-    print(f"\n=== Zusammenfassung ===")
+    print("\n=== Zusammenfassung ===")
     print(f"  Dokumente: {len(results)}")
     ok = sum(1 for r in results if r.get("has_final"))
     print(f"  Erfolgreich: {ok}")
@@ -358,7 +359,7 @@ def main():
     # Nach Batch-Run: Validierungsbericht erzeugen
     if validate and args.all:
         try:
-            from scripts.tei.tei_validator import validate_all, generate_html_report
+            from scripts.tei.tei_validator import generate_html_report, validate_all
             print("\n=== Validierungsbericht ===")
             summary = validate_all(TEI_UNIFIED_DIR)
             print(f"  Valid: {summary['valid']}/{summary['total']}"

@@ -20,7 +20,6 @@ from pathlib import Path
 
 import pytest
 
-from scripts.tei.tei_generator import split_paragraphs
 from scripts.tei.tei_step1 import (
     detect_page_number,
     drop_filter_echoes,

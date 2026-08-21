@@ -29,13 +29,11 @@ Worklist + Methodik: knowledge/decisions.md (E85); Ergebnis in knowledge/arbeits
 import argparse
 import re
 import shutil
-import sys
 import xml.etree.ElementTree as ET
-from pathlib import Path
 
 from scripts.config import REFERENCE_TEI_DIR, TEI_FINAL_DIR
+from scripts.edition.generate_edition_data import PAGES_DIR, _extract_pages_from_final
 from scripts.eval.evaluate_ocr import extract_text_for_comparison
-from scripts.edition.generate_edition_data import _extract_pages_from_final, PAGES_DIR
 
 MIN_MATCH = 150          # zusammenhaengender Referenz-Treffer = Beweis fuer Fliesstext
 HOLD = {"40", "1520"}    # referenz-verifiziert, aber ZBZ-Editorentscheid noetig

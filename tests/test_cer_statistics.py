@@ -19,9 +19,11 @@ import numpy as np
 import pytest
 
 from scripts.eval.cer_statistics import (
-    DIACRITICS,
     NORM_REGIMES,
     DocCERRecord,
+    _erf_inv,
+    _norm_cdf,
+    _norm_ppf,
     aggregate_overall,
     bca_ci,
     block_bootstrap_resample,
@@ -33,11 +35,7 @@ from scripts.eval.cer_statistics import (
     levenshtein,
     normalize_text,
     paired_bootstrap_diff,
-    _erf_inv,
-    _norm_cdf,
-    _norm_ppf,
 )
-
 
 # ---------------- Levenshtein / CER ---------------- #
 

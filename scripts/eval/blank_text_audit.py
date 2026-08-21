@@ -35,7 +35,10 @@ import re
 from pathlib import Path
 
 from scripts.config import DOCS_DIR, TEI_FINAL_DIR
-from scripts.eval.audit_common import doc_id_from_path, iter_final_tei, write_audit_report
+from scripts.eval.audit_common import (
+    iter_final_tei,
+    write_audit_report,
+)
 from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
 
 MIRROR_PAGES_DIR = DOCS_DIR / "data" / "pages"
@@ -331,7 +334,7 @@ def _print_summary(summary, payload):
     print(f"    davon marginal:                    {t['by_class']['marginal']}")
     print(f"    davon substanziell (Befund):       {t['by_class']['substantial']}")
     print(f"    ohne pb-Abschnitt im TEI:          {t['blank_pages_missing_in_tei']}")
-    print(f"  Zweitkanal Layout (Docling 0 Regionen, nicht manifest-blank):")
+    print("  Zweitkanal Layout (Docling 0 Regionen, nicht manifest-blank):")
     print(f"    Seiten mit Text (Befund):          {t['layout_findings']}")
     print(f"  Befunde gesamt / substanziell:       "
           f"{t['manifest_findings'] + t['layout_findings']} / {t['substantial_findings']}"

@@ -20,7 +20,6 @@ import base64
 import json
 import os
 import sys
-import tempfile
 import time
 from pathlib import Path
 
@@ -29,12 +28,15 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from scripts.config import (
-    PROJECT_ROOT, SCANS_DIR, MISTRAL_RESULTS_DIR,
+    GEMINI_API_KEY,
+    GEMINI_OCR_MODEL,
+    MISTRAL_MAX_PAGES_PER_REQUEST,
     MISTRAL_MODEL,
-    MISTRAL_MAX_PAGES_PER_REQUEST, MISTRAL_TIMEOUT_SECONDS,
-    GEMINI_API_KEY, GEMINI_OCR_MODEL,
+    MISTRAL_RESULTS_DIR,
+    MISTRAL_TIMEOUT_SECONDS,
+    SCANS_DIR,
 )
-from scripts.utils import check_gpu, load_env, pdf_to_images
+from scripts.utils import check_gpu, pdf_to_images
 
 # Windows: Symlink-Warnung unterdruecken
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
@@ -341,9 +343,6 @@ def main():
         else:
             print("Keine GPU verfuegbar")
         return 0
-
-    # .env laden
-    load_env()
 
     # Alle Engines (auto/mistral/gemini) schreiben die Basis-Textschicht nach
     # mistral_results/, wo load_ocr_text() sie als Basis findet. (Gemini-OCR ist der

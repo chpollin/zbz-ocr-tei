@@ -12,7 +12,7 @@ Aufruf (standalone):
 import argparse
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from lxml import etree
@@ -41,7 +41,7 @@ def generate_mets(doc_id, page_xml_files):
     root.set("PROFILE", "zbz-ocr-tei")
 
     # metsHdr
-    now = datetime.now(timezone.utc).isoformat()
+    now = datetime.now(UTC).isoformat()
     hdr = etree.SubElement(root, "{%s}metsHdr" % METS_NS)
     hdr.set("CREATEDATE", now)
     hdr.set("LASTMODDATE", now)

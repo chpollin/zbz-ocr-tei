@@ -2,23 +2,27 @@
 End-to-End CER Benchmark: Vergleicht Pipeline-TEIs mit ZBZ-Referenz-TEIs.
 
 Stratifizierte Analyse nach Dokumenttyp, Sprache und Publikationsform.
-Fehlermuster-Kategorisierung und optionale Proxy-Metriken.
+Fehlermuster-Kategorisierung.
 
 Usage:
-    python -m scripts.eval.benchmark_cer [--all] [--docs 2310 290] [--proxy] [--html]
+    python -m scripts.eval.benchmark_cer [--all] [--docs 2310 290] [--html]
 """
 
-import json
 import argparse
+import json
 import statistics
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
 from scripts.config import (
-    REFERENCE_TEI_DIR, TEI_FINAL_DIR, EVALUATION_DIR, DOC_METADATA_PATH,
+    DOC_METADATA_PATH,
+    EVALUATION_DIR,
+    REFERENCE_TEI_DIR,
+    TEI_FINAL_DIR,
 )
 from scripts.eval.evaluate_ocr import (
-    evaluate_tei_vs_tei, categorize_errors, evaluate_tei_vs_tei_pagewise,
+    evaluate_tei_vs_tei,
+    evaluate_tei_vs_tei_pagewise,
 )
 
 
@@ -26,7 +30,7 @@ def load_metadata() -> dict:
     """Laedt doc_metadata.json und gibt Dict {doc_id: metadata} zurueck."""
     if not DOC_METADATA_PATH.exists():
         return {}
-    with open(DOC_METADATA_PATH, 'r', encoding='utf-8') as f:
+    with open(DOC_METADATA_PATH, encoding='utf-8') as f:
         data = json.load(f)
     docs = data.get('documents', data)
     result = {}
@@ -360,8 +364,6 @@ def main():
     parser.add_argument("--docs", nargs='+', help="Spezifische Dokument-IDs")
     parser.add_argument("--all", action="store_true", default=True,
                         help="Alle Ground-Truth-Docs evaluieren (Default)")
-    parser.add_argument("--proxy", action="store_true",
-                        help="Proxy-Metriken fuer Docs ohne Ground Truth berechnen")
     parser.add_argument("--html", action="store_true", default=True,
                         help="HTML-Report generieren (Default)")
     parser.add_argument("--json-output", default="benchmark_tei_vs_tei.json",
@@ -387,8 +389,8 @@ def main():
     # Metadaten laden
     metadata = load_metadata()
 
-    print(f"CER Benchmark: TEI vs. TEI")
-    print(f"==========================")
+    print("CER Benchmark: TEI vs. TEI")
+    print("==========================")
     print(f"Referenz: {ref_dir}")
     print(f"Pipeline: {pipe_dir}")
     print(f"Dokumente: {len(doc_ids)}")
@@ -502,37 +504,6 @@ def main():
         }
         output['outlier_report'] = outlier_report
 
-    # Proxy-Metriken
-    if args.proxy:
-        from scripts.eval.evaluate_ocr import compute_proxy_quality
-        proxy_data = {}
-        pipe_files = sorted(pipe_dir.glob('*_final.xml'))
-        gt_set = set(doc_ids)
-        proxy_doc_ids = [p.stem.replace('_final', '') for p in pipe_files
-                         if p.stem.replace('_final', '') not in gt_set]
-
-        print(f"Proxy-Metriken fuer {len(proxy_doc_ids)} Docs ohne Ground Truth...")
-        for did in proxy_doc_ids:
-            proxy_data[did] = compute_proxy_quality(did)
-
-        # Kalibrierung: Korrelation Proxy-Score vs. echte CER
-        calibration_pairs = []
-        for r in results:
-            proxy = compute_proxy_quality(r['doc_id'])
-            if proxy.get('proxy_score') is not None:
-                calibration_pairs.append((proxy['proxy_score'], r['cer']))
-
-        output['proxy_metrics'] = {
-            'calibration_pairs': len(calibration_pairs),
-            'documents': proxy_data,
-            'corpus_quality_estimate': {
-                bucket: sum(1 for p in proxy_data.values()
-                            if p.get('estimated_cer_bucket') == bucket)
-                for bucket in ['excellent', 'good', 'fair', 'poor', 'unknown']
-            },
-        }
-        print(f"  Kalibrierung: {len(calibration_pairs)} Paare")
-
     # JSON speichern
     json_path = EVALUATION_DIR / args.json_output
     # Nicht-serialisierbare Werte bereinigen
@@ -548,40 +519,40 @@ def main():
 
     # Zusammenfassung
     print(f"\n{'='*50}")
-    print(f"ZUSAMMENFASSUNG")
+    print("ZUSAMMENFASSUNG")
     print(f"{'='*50}")
     print(f"Dokumente:       {summary['total_documents']}")
-    print(f"--- OCR-/Transkriptionstreue (Fidelity: echte Fehler, ohne Pipeline-Mehrtext) ---")
+    print("--- OCR-/Transkriptionstreue (Fidelity: echte Fehler, ohne Pipeline-Mehrtext) ---")
     print(f"Mittlere CER:    {summary['avg_cer_fidelity']*100:.2f}%")
     print(f"Median CER:      {summary['median_cer_fidelity']*100:.2f}%")
-    print(f"--- Volle Divergenz von der Referenz (scope-inklusiv) ---")
+    print("--- Volle Divergenz von der Referenz (scope-inklusiv) ---")
     print(f"Mittlere CER:    {summary['avg_cer']*100:.2f}%")
     print(f"Median CER:      {summary['median_cer']*100:.2f}%")
     print(f"Std CER:         {summary['std_cer']*100:.2f}%")
     print(f"Min/Max CER:     {summary['min_cer']*100:.2f}% / {summary['max_cer']*100:.2f}%")
-    print(f"--- Scope (Pipeline-Mehrtext ggue. Referenz, KEIN Fehler) ---")
+    print("--- Scope (Pipeline-Mehrtext ggue. Referenz, KEIN Fehler) ---")
     print(f"Mittlere Rate:   {summary['avg_scope_insertion_rate']*100:.2f}%")
     print(f"Median Rate:     {summary['median_scope_insertion_rate']*100:.2f}%")
     print(f"Mittlere WER:    {summary['avg_wer']*100:.2f}%")
 
     # Stratifizierte Zusammenfassung
-    print(f"\nNach Layout-Typ:")
+    print("\nNach Layout-Typ:")
     for t, s in sorted(stratified['by_type'].items()):
         print(f"  {t}: n={s['count']}, CER={s['avg_cer']*100:.1f}% "
               f"(median={s['median_cer']*100:.1f}%)")
 
-    print(f"\nNach Sprache:")
+    print("\nNach Sprache:")
     for l, s in sorted(stratified['by_language'].items()):
         print(f"  {l}: n={s['count']}, CER={s['avg_cer']*100:.1f}%")
 
     if pagewise_results:
         outlier_report = output.get('outlier_report', {})
-        print(f"\nSeitenweise Analyse:")
+        print("\nSeitenweise Analyse:")
         print(f"  Seiten evaluiert: {outlier_report.get('total_pages_evaluated', 0)}")
         print(f"  Outlier (>10%):   {outlier_report.get('total_outlier_pages', 0)} "
               f"({outlier_report.get('outlier_rate', 0)*100:.1f}%)")
         if outlier_report.get('outliers'):
-            print(f"  Top-5 Outlier:")
+            print("  Top-5 Outlier:")
             for o in outlier_report['outliers'][:5]:
                 print(f"    Doc {o['doc_id']} S.{o['page']}: "
                       f"CER={o['cer']*100:.1f}%")

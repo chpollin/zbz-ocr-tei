@@ -9,7 +9,6 @@ Wird aufgerufen von: tei_unified.py (Orchestrierung).
 
 import html
 import re
-
 from xml.sax.saxutils import escape as xml_escape
 
 from scripts.core.loaders import load_layout_gemini, load_ocr_text

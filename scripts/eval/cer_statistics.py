@@ -30,14 +30,13 @@ import argparse
 import json
 import math
 import re
-import statistics
 import subprocess
 import sys
 import unicodedata
+from collections.abc import Callable, Iterable, Sequence
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
-from typing import Callable, Iterable, Sequence
 
 import numpy as np
 
@@ -686,7 +685,7 @@ def build_statistics(
         "meta": {
             "tool_version": __version__,
             "git_sha": _git_sha(),
-            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
             "seed": seed,
             "bootstrap_n": n_resamples,
             "ci_method": "BCa blockwise (block=doc)",
@@ -775,7 +774,7 @@ def _drift_check_against_diagnostik(records: Sequence[DocCERRecord]) -> dict:
         return {"status": "no_snapshot",
                 "reason": "docs/data/diagnostik_ocr.json nicht gefunden."}
     try:
-        with open(snapshot_path, "r", encoding="utf-8") as f:
+        with open(snapshot_path, encoding="utf-8") as f:
             snap = json.load(f)
     except Exception as e:
         return {"status": "snapshot_read_error", "reason": str(e)}

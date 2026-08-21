@@ -30,7 +30,6 @@ from scripts.eval.corpus_audit import (
     reconcile,
 )
 
-
 # ---------------- reine Hilfsfunktionen ---------------- #
 
 class TestNormId:

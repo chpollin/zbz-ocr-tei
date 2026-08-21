@@ -49,7 +49,7 @@ def draw_overlay_from_json(img_path: Path, layout_json: dict, output_path: Path)
     # Font laden (Fallback auf Default)
     try:
         font = ImageFont.truetype("arial.ttf", 14)
-    except (OSError, IOError):
+    except OSError:
         font = ImageFont.load_default()
 
     for region in layout_json.get("regions", []):

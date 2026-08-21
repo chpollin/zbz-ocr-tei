@@ -16,7 +16,7 @@ from pathlib import Path
 # das scripts-Paket findet -- nicht nur die Modul-Form (python -m scripts.edition.extract_pages).
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
-from scripts.config import SCANS_DIR, IMAGES_DIR, WEB_DPI
+from scripts.config import IMAGES_DIR, SCANS_DIR, WEB_DPI
 from scripts.utils import page_image_name
 
 

@@ -141,7 +141,7 @@ def check_text_per_page(tei_path: Path) -> list[dict]:
 def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
     """Fuehrt Vollstaendigkeits-Check durch."""
 
-    with open(DOC_METADATA_PATH, "r", encoding="utf-8") as f:
+    with open(DOC_METADATA_PATH, encoding="utf-8") as f:
         metadata = json.load(f)
     docs_meta = metadata.get("documents", {})
 
@@ -263,7 +263,7 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
     }
 
     print()
-    print(f"=== Zusammenfassung ===")
+    print("=== Zusammenfassung ===")
     print(f"  OK:       {summary['ok']}")
     print(f"  Minor:    {summary['minor']}")
     print(f"  Warning:  {summary['warning']}")

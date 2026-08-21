@@ -32,9 +32,8 @@ import argparse
 import contextlib
 import os
 import sys
-import time
-from pathlib import Path
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 import requests
 

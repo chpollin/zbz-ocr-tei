@@ -97,6 +97,7 @@ def test_payload_shape_is_the_cache_contract():
 def test_real_cache_file_keeps_the_contract():
     """The committed cache must keep the shape a refetch could silently change."""
     import pytest
+
     from scripts.config import DATA_DIR
 
     cache_file = DATA_DIR / "entities" / "gnd_cache.json"

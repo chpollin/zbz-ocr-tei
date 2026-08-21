@@ -9,9 +9,12 @@ auf eine Laengen-Approximation zurueck.
 
 from lxml import etree
 
-from scripts.tei.tei_validator import _compute_cer, _collect_finals, _check_project_rules
 from scripts.eval.evaluate_ocr import calculate_cer
-
+from scripts.tei.tei_validator import (
+    _check_project_rules,
+    _collect_finals,
+    _compute_cer,
+)
 
 # --- W19: Lesereihenfolge-Anomalie (Spalten-/Band-Ordnung, Defekt 30/760) ---
 

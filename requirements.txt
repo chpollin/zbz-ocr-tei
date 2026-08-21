@@ -20,6 +20,7 @@ rapidfuzz>=3.0.0          # Levenshtein opcodes (CER decomposition)
 numpy>=1.26.0             # CER statistics (bootstrap)
 scipy>=1.11.0             # CER statistics (tests/distributions)
 pyspellchecker>=0.7.0     # quality proxy (dictionary hit rate)
+openpyxl>=3.1            # Masterfile.xlsx read in scripts/eval/corpus_audit.py
 
 # LLM post-correction (optional, stage 2a; lazy import)
 anthropic>=0.39.0

@@ -13,21 +13,20 @@ import os
 import sys
 import time
 import warnings
-from datetime import datetime, timezone
-from pathlib import Path
-
-from dotenv import load_dotenv
+from datetime import UTC, datetime
 
 from scripts.config import (
-    CLASSIFICATION_DIR, DOC_METADATA_PATH, GEMINI_API_KEY,
-    GEMINI_MODEL, IMAGES_DIR,
+    CLASSIFICATION_DIR,
+    DOC_METADATA_PATH,
+    GEMINI_API_KEY,
+    GEMINI_MODEL,
+    IMAGES_DIR,
 )
 from scripts.utils import discover_doc_ids, load_json, write_json
 
 # Gemini SDK warnings unterdruecken
 warnings.filterwarnings("ignore", message=".*non-text parts.*thought_signature.*")
 
-load_dotenv()
 _api_key = os.environ.get("GEMINI_API_KEY", "") or GEMINI_API_KEY
 
 MAX_PAGES = 5
@@ -180,7 +179,7 @@ def classify_document(client, doc_id, force=False):
 def aggregate_metadata(results):
     """Aggregiert Ergebnisse in data/doc_metadata.json."""
     metadata = {
-        "generated": datetime.now(timezone.utc).isoformat(),
+        "generated": datetime.now(UTC).isoformat(),
         "model": GEMINI_MODEL,
         "total_docs": len(results),
         "documents": {},

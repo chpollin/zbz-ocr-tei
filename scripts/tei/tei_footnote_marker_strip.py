@@ -29,10 +29,9 @@ import argparse
 import re
 import shutil
 import xml.etree.ElementTree as ET
-from pathlib import Path
 
 from scripts.config import TEI_FINAL_DIR
-from scripts.edition.generate_edition_data import _extract_pages_from_final, PAGES_DIR
+from scripts.edition.generate_edition_data import PAGES_DIR, _extract_pages_from_final
 
 MAX_MARK = 3             # nur kurze Druckmarken (Ziffer/Symbol), keine ganzen Saetze
 BACKUP_DIR = TEI_FINAL_DIR.parent / "_backup_pre_marker_strip"

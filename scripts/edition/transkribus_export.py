@@ -35,10 +35,10 @@ import json
 import shutil
 import struct
 import sys
+import xml.etree.ElementTree as ET
 import zipfile
 from collections import defaultdict
 from pathlib import Path
-import xml.etree.ElementTree as ET
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")  # Katalog-Titel enthalten Unicode
@@ -291,8 +291,8 @@ def main():
     print(f"Auswahl ({len(selection)} Objekte):")
     for doc_id in selection:
         meta = catalog.get(doc_id, {})
-        print(f"  {doc_id:>5}  {str(meta.get('page_count','?')):>3} S.  "
-              f"{str(meta.get('lang','?')):<14} {(meta.get('title') or '')[:54]}")
+        print(f"  {doc_id:>5}  {meta.get('page_count','?')!s:>3} S.  "
+              f"{meta.get('lang','?')!s:<14} {(meta.get('title') or '')[:54]}")
 
     if args.dry_run:
         print("\n[dry-run] nichts geschrieben.")

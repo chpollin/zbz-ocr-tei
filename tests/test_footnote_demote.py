@@ -4,7 +4,7 @@ Sichert die EINE kritische Entscheidung ab: WANN gilt eine <note place="foot"> a
 verifizierter Fliesstext (-> demote nach <p>)? Regel: ein zusammenhaengender
 >= MIN_MATCH Zeichen langer Ausschnitt des Notentextes steht im Body der Referenz.
 """
-from scripts.tei.tei_footnote_demote import _verified, _norm, MIN_MATCH, HOLD
+from scripts.tei.tei_footnote_demote import HOLD, MIN_MATCH, _norm, _verified
 
 # realistische >150-Zeichen-Passage (frei nach Jaspers/Hersch-Stil, keine echten Daten)
 PASSAGE = (
@@ -50,5 +50,5 @@ def test_leerer_oder_fehlender_ref_body():
 
 def test_hold_set_und_min_match_konstanten():
     # editorisch zurueckgehaltene Docs + Schwelle sind explizit fixiert
-    assert HOLD == {"40", "1520"}
+    assert {"40", "1520"} == HOLD
     assert MIN_MATCH == 150

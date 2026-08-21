@@ -31,25 +31,27 @@ EINE kanonische Funktion -- extract_text_for_comparison() + calculate_cer() --
 wird von benchmark_cer, cer_statistics_runner UND tei_validator verwendet.
 """
 
-import re
 import json
+import re
 import unicodedata
-from pathlib import Path
+import xml.etree.ElementTree as ET
 from datetime import datetime
 from difflib import SequenceMatcher
-import xml.etree.ElementTree as ET
+from pathlib import Path
 
 from scripts.config import (
-    REFERENCE_TEI_DIR, OCR_RESULTS_DIR, EVALUATION_DIR, TESTPLAN,
-    TEI_FINAL_DIR,
+    EVALUATION_DIR,
+    OCR_RESULTS_DIR,
+    REFERENCE_TEI_DIR,
+    TESTPLAN,
 )
-from scripts.utils import get_phase_doc_ids
 from scripts.eval.eval_report import generate_html_report
+from scripts.utils import get_phase_doc_ids
 
 
 def extract_text_from_tei(tei_path: Path) -> str:
     """Extrahiert reinen Text aus TEI-XML (ohne Tags)."""
-    with open(tei_path, 'r', encoding='utf-8') as f:
+    with open(tei_path, encoding='utf-8') as f:
         content = f.read()
 
     # XML parsen
@@ -101,7 +103,7 @@ def extract_pages_from_tei(tei_path: Path) -> dict[int, str]:
     Gibt ein Dict {page_num: normalized_text} zurueck.
     page_num entspricht der physischen PDF-Seite (= OCR-Datei {doc}_p{page_num}.md).
     """
-    with open(tei_path, 'r', encoding='utf-8') as f:
+    with open(tei_path, encoding='utf-8') as f:
         content = f.read()
 
     try:
@@ -233,7 +235,7 @@ def extract_text_for_comparison(tei_path: Path, include_footnotes: bool = False,
 
     casefold=True liefert den case-insensitiven Text (Sekundaer-Metrik).
     """
-    with open(tei_path, 'r', encoding='utf-8') as f:
+    with open(tei_path, encoding='utf-8') as f:
         content = f.read()
 
     try:
@@ -303,7 +305,7 @@ def extract_pages_for_comparison(tei_path: Path,
     extract_pages_from_tei() liefert Rohtext, diese Funktion liefert
     benchmark-normalisierten Text pro Seite.
     """
-    with open(tei_path, 'r', encoding='utf-8') as f:
+    with open(tei_path, encoding='utf-8') as f:
         content = f.read()
 
     try:
@@ -580,17 +582,11 @@ def categorize_errors(differences: list, ref_length: int) -> dict:
         edit_dist = max(len(ref), len(hyp))
 
         # Klassifikation (erste zutreffende Regel gewinnt)
-        if ref.strip() == '' and hyp.strip() == '':
-            cat = 'whitespace'
-        elif ref.strip() == hyp.strip():
+        if (ref.strip() == '' and hyp.strip() == '') or ref.strip() == hyp.strip():
             cat = 'whitespace'
         elif _has_diacritic_diff(ref, hyp):
             cat = 'diacritics'
-        elif _is_punctuation_only(ref) and _is_punctuation_only(hyp):
-            cat = 'punctuation'
-        elif _is_punctuation_only(ref) and hyp == '':
-            cat = 'punctuation'
-        elif ref == '' and _is_punctuation_only(hyp):
+        elif (_is_punctuation_only(ref) and _is_punctuation_only(hyp)) or (_is_punctuation_only(ref) and hyp == '') or (ref == '' and _is_punctuation_only(hyp)):
             cat = 'punctuation'
         elif any(c in ref + hyp for c in ['-', '\u00AD', '\u2010', '\u2011']):
             # Bindestrich/Trennstrich involviert
@@ -600,9 +596,7 @@ def categorize_errors(differences: list, ref_length: int) -> dict:
                 cat = 'other'
         elif diff_type == 'insert' and len(hyp) > 50 and _has_repeated_ngrams(hyp):
             cat = 'ocr_artifact'
-        elif diff_type == 'insert' and len(hyp) > 80:
-            cat = 'layout'
-        elif diff_type == 'delete' and len(ref) > 80:
+        elif (diff_type == 'insert' and len(hyp) > 80) or (diff_type == 'delete' and len(ref) > 80):
             cat = 'layout'
         elif diff_type in ('insert', 'delete') and len(ref) + len(hyp) > 40:
             # Groessere Inserts/Deletes: eher Layout/Struktur
@@ -1114,121 +1108,6 @@ def evaluate_document_pagewise(doc_id: str, tei_dir: Path, ocr_dir: Path) -> dic
     return result
 
 
-def compute_proxy_quality(doc_id: str) -> dict:
-    """Berechnet Proxy-Qualitaetsmetriken fuer Docs ohne Ground Truth.
-
-    Basiert auf Screening-Daten (Review-JSONs) und strukturellen Signalen.
-    """
-    result = {
-        'doc_id': doc_id,
-        'proxy_score': None,
-        'confidence': 'low',
-        'signals': {},
-        'estimated_cer_bucket': 'unknown',
-    }
-
-    # Review-JSON laden
-    review_path = TEI_FINAL_DIR / f"{doc_id}_review.json"
-    if not review_path.exists():
-        return result
-
-    review = json.loads(review_path.read_text(encoding='utf-8'))
-    layers = review.get('layers', {})
-
-    # Signal-Extraktion
-    score_map = {'ok': 1.0, 'warning': 0.5, 'n/a': None}
-
-    # v2-Format (mit layers)
-    l2_score = score_map.get(layers.get('L2_ocr', {}).get('score'), None)
-    l7_score = score_map.get(layers.get('L7_coherence', {}).get('score'), None)
-    l4_score = score_map.get(layers.get('L4_tei', {}).get('score'), None)
-
-    # v1-Fallback (ohne layers): aus Findings und Validator-Status ableiten
-    if not layers:
-        status = review.get('status', '')
-        if status in ('APPROVED', 'APPROVED_WITH_NOTES'):
-            # v1 APPROVED: moderate Vertrauenswuerdigkeit
-            validator_str = review.get('validator', '')
-            if 'VALID' in validator_str and '0 errors' in validator_str:
-                l4_score = 1.0
-            elif 'VALID' in validator_str:
-                l4_score = 0.8
-            # Aus Findings OCR-Probleme erkennen
-            findings_v1 = review.get('findings', [])
-            ocr_findings = [f for f in findings_v1 if f.get('code', '').startswith(('E', 'L2'))]
-            if not ocr_findings:
-                l2_score = 0.85  # Kein OCR-Problem gemeldet
-            else:
-                l2_score = 0.5
-
-    # Validator-Warnungen zaehlen
-    raw_warnings = layers.get('L4_tei', {}).get('validator_warnings', [])
-    l4_warnings = len(raw_warnings) if isinstance(raw_warnings, list) else int(raw_warnings or 0)
-    if l4_score == 1.0 and l4_warnings > 0:
-        l4_score = 0.8
-
-    # Findings zaehlen
-    findings = review.get('findings', [])
-    warning_count = len([f for f in findings
-                         if isinstance(f, dict) and
-                         f.get('severity') in ('warning', 'error')])
-
-    # OCR-Keywords in Notes (v2: L2-Notes, v1: alle findings)
-    ocr_keywords = ['Halluzination', 'halluzin', 'repetitiv', 'OCR-Fehler',
-                    'Artefakt', 'unleserlich', 'verstummelt', 'Zeichensalat']
-    notes_text = layers.get('L2_ocr', {}).get('notes', '')
-    if not notes_text:
-        notes_text = ' '.join(f.get('msg', '') for f in findings)
-    found_keywords = [kw for kw in ocr_keywords if kw.lower() in notes_text.lower()]
-
-    result['signals'] = {
-        'l2_ocr': layers.get('L2_ocr', {}).get('score', '?'),
-        'l7_coherence': layers.get('L7_coherence', {}).get('score', '?'),
-        'l4_tei': layers.get('L4_tei', {}).get('score', '?'),
-        'l4_warning_count': l4_warnings,
-        'finding_count': warning_count,
-        'ocr_keywords_found': found_keywords,
-        'review_status': review.get('status', '?'),
-        'review_version': 'v2' if layers else 'v1',
-    }
-
-    # Proxy-Score berechnen (gewichteter Durchschnitt der verfuegbaren Signale)
-    scores = []
-    weights = []
-    if l2_score is not None:
-        scores.append(l2_score)
-        weights.append(3.0)  # OCR-Score am wichtigsten
-    if l7_score is not None:
-        scores.append(l7_score)
-        weights.append(2.0)
-    if l4_score is not None:
-        scores.append(l4_score)
-        weights.append(1.0)
-
-    # Malus fuer OCR-Keywords
-    keyword_penalty = min(len(found_keywords) * 0.15, 0.5)
-    # Malus fuer Findings
-    finding_penalty = min(warning_count * 0.05, 0.3)
-
-    if scores:
-        weighted_avg = sum(s * w for s, w in zip(scores, weights)) / sum(weights)
-        result['proxy_score'] = max(0.0, weighted_avg - keyword_penalty - finding_penalty)
-        result['confidence'] = 'high' if len(scores) >= 2 else 'medium'
-
-        # CER-Bucket schaetzen
-        ps = result['proxy_score']
-        if ps >= 0.9:
-            result['estimated_cer_bucket'] = 'excellent'
-        elif ps >= 0.7:
-            result['estimated_cer_bucket'] = 'good'
-        elif ps >= 0.4:
-            result['estimated_cer_bucket'] = 'fair'
-        else:
-            result['estimated_cer_bucket'] = 'poor'
-
-    return result
-
-
 def evaluate_tei_vs_tei(doc_id: str, ref_dir: Path, pipeline_dir: Path) -> dict:
     """End-to-End CER/WER: Vergleicht Referenz-TEI mit Pipeline-TEI.
 
@@ -1494,7 +1373,7 @@ def main():
 
     engine_label = args.engine.capitalize()
     print(f"OCR-Evaluation ({engine_label})")
-    print(f"==============")
+    print("==============")
     print(f"OCR-Verzeichnis: {ocr_dir}")
     print(f"Dokumente: {', '.join(doc_ids)}")
     print()

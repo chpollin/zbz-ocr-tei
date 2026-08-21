@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import pytest
 
-from scripts.tei.tei_step3 import build_tei_header, _language_idents
+from scripts.tei.tei_step3 import _language_idents, build_tei_header
 
 REPO_SCHEMA = "data/schema/zbz_hersch.rng"
 

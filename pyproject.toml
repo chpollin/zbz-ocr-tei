@@ -19,6 +19,29 @@ ignore = ["E501"]  # line length is the formatter's business
 # word lists into hundreds of quoted items.
 "scripts/eval/entity_unlisted_scan.py" = ["SIM905"]
 
+# RUF001: the ambiguous characters are the domain data of the character
+# normalization (hyphen and dash classes, no-break space variants, the apostrophe
+# target U+2019) and their test fixtures. Replacing them would delete the subject.
+"scripts/eval/cer_statistics.py" = ["RUF001"]
+"scripts/eval/char_lint_audit.py" = ["RUF001"]
+"scripts/tei/tei_char_normalize.py" = ["RUF001"]
+"tests/test_cer_extraction.py" = ["RUF001"]
+"tests/test_cer_statistics.py" = ["RUF001"]
+"tests/test_char_lint_audit.py" = ["RUF001"]
+"tests/test_char_normalize.py" = ["RUF001"]
+"tests/test_reading_order_fix.py" = ["RUF001"]
+"tests/test_running_head_audit.py" = ["RUF001"]
+
+# RUF003: the comments name the characters the mapping table maps.
+"scripts/eval/evaluate_ocr.py" = ["RUF003"]
+"scripts/tei/tei_xml_utils.py" = ["RUF003"]
+
+# E402: a warning filter or an environment variable has to be set before the
+# heavy SDK import that reads it.
+"scripts/ocr/gemini_ocr_correct.py" = ["E402"]
+"scripts/layout/layout_qa_gemini.py" = ["E402"]
+"scripts/layout/run_layout_analysis.py" = ["E402"]
+
 [tool.ruff.lint.isort]
 # Keeps re-exports (`X as X`) inside their parenthesized block instead of one
 # import statement per aliased name.

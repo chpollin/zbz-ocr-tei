@@ -8,7 +8,6 @@ des Schreibpfads. Zuletzt: ein demotetes reales Dokument bleibt gegen
 data/schema/zbz_hersch.rng valide.
 """
 import re
-from pathlib import Path
 
 import pytest
 
@@ -20,7 +19,6 @@ from scripts.tei.tei_body_note_demote import (
     process_document,
     schema_validator,
     transform_document,
-    visible_text,
 )
 
 # --- synthetic fixture: one HAUPTTEXT note + following marker <p>, one ECHTE note ---

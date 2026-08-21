@@ -207,8 +207,8 @@ def audit_corpus(tei_dir) -> dict:
 
 
 def _corpus_totals(docs) -> dict:
-    totals = {cat: 0 for cat in _CATEGORIES}
-    doc_hits = {cat: 0 for cat in _CATEGORIES}
+    totals = dict.fromkeys(_CATEGORIES, 0)
+    doc_hits = dict.fromkeys(_CATEGORIES, 0)
     for findings in docs.values():
         for cat in _CATEGORIES:
             c = findings[cat]["count"]

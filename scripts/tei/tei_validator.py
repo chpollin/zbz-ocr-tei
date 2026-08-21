@@ -26,7 +26,6 @@ from scripts.config import (
     REFERENCE_TEI_DIR,
     TEI_FINAL_DIR,
     TEI_NS,
-    TEI_SCHEMA_DIR,
     TEI_SCHEMA_PATH,
     TEI_UNIFIED_DIR,
     VALID_DIV_TYPES,
@@ -622,7 +621,9 @@ def compare_with_reference(tei_dir: Path = None, ref_dir: Path = None) -> dict:
         # CER: canonical extraction (extract_text_for_comparison), identical to the
         # benchmark/statistics path; any other extraction yields a diverging figure.
         try:
-            from scripts.eval.evaluate_ocr import extract_text_for_comparison as _extract
+            from scripts.eval.evaluate_ocr import (
+                extract_text_for_comparison as _extract,
+            )
             ref_text = _extract(ref_file)
             our_text = _extract(our_file)
         except ImportError:

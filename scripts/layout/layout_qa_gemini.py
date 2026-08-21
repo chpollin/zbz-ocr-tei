@@ -23,25 +23,24 @@ import os
 import sys
 import time
 import warnings
-from pathlib import Path
 
 # Suppress Gemini SDK thought_signature warnings
 warnings.filterwarnings("ignore", message=".*non-text parts.*thought_signature.*")
 
-from dotenv import load_dotenv
 from PIL import Image
 
 from scripts.config import (
-    DOCLING_TO_ZBZ, DOC_METADATA_PATH, GEMINI_API_KEY,
-    GEMINI_DETECT_MODEL, GEMINI_MODEL, IMAGES_DIR, LAYOUT_DIR,
+    DOC_METADATA_PATH,
+    DOCLING_TO_ZBZ,
+    GEMINI_API_KEY,
+    GEMINI_DETECT_MODEL,
+    GEMINI_MODEL,
+    IMAGES_DIR,
+    LAYOUT_DIR,
 )
 from scripts.layout import draw_overlay_from_json
 from scripts.utils import discover_doc_ids
 
-# .env laden
-load_dotenv()
-
-# API Key aus .env (Reload nach dotenv)
 _api_key = os.environ.get("GEMINI_API_KEY", "") or GEMINI_API_KEY
 
 # ---- Dokumenttypspezifische Prompt-Hints (4 Ebenen) ----

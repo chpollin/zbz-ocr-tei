@@ -24,8 +24,8 @@ Quelle der Wahrheit fuer Pfade: scripts/config.py (REFERENCE_TEI_DIR, TEI_FINAL_
 import argparse
 import json
 import re
-from collections import Counter
 import xml.etree.ElementTree as ET
+from collections import Counter
 
 from scripts.config import REFERENCE_TEI_DIR, TEI_FINAL_DIR
 
@@ -100,13 +100,13 @@ def run(single=None, json_path=None):
         fin_path = TEI_FINAL_DIR / ("%d_final.xml" % did)
         if not fin_path.exists():
             skipped.append((did, "kein tei_final"))
-            print("{:>6} | kein tei_final".format(did))
+            print(f"{did:>6} | kein tei_final")
             continue
         ref, ref_err = analyze(ref_path)
         fin, fin_err = analyze(fin_path)
         if ref_err or fin_err:
             skipped.append((did, "parse: ref=%s fin=%s" % (ref_err, fin_err)))
-            print("{:>6} | parse-error ref={} fin={}".format(did, ref_err, fin_err))
+            print(f"{did:>6} | parse-error ref={ref_err} fin={fin_err}")
             continue
         rk, fk = _key(ref["elements"]), _key(fin["elements"])
         rows.append({"doc": did, "ref": ref, "fin": fin})

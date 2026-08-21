@@ -11,7 +11,6 @@ import pytest
 
 from scripts.eval import blank_text_audit as bta
 
-
 # --- Fixture-Bau ---------------------------------------------------------------
 
 def _tei(pages):

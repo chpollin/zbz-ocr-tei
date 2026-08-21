@@ -11,9 +11,7 @@ import json
 import pytest
 
 from scripts.eval.reading_order_audit import audit_document
-from scripts.tei import marker_common
-from scripts.tei import tei_reading_order_fix as rof
-
+from scripts.tei import marker_common, tei_reading_order_fix as rof
 
 # --- synthetic TEI builder -------------------------------------------------
 # Surface is 1000x1000, so zone pixel coords equal pct*10. Canonical order for

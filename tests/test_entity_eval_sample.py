@@ -22,8 +22,8 @@ from scripts.eval.entity_eval_sample import (
     allocate,
     facsimile_path,
     main,
-    page_starts,
     page_of_offset,
+    page_starts,
     run,
 )
 

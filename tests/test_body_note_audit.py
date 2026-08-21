@@ -10,7 +10,6 @@ import pytest
 
 from scripts.eval import body_note_audit as bna
 
-
 # --- pure signal functions -------------------------------------------------
 
 def test_length_signal_gate_and_saturation():

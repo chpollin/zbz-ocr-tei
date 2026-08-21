@@ -18,11 +18,10 @@ import argparse
 import base64
 import json
 import time
-from pathlib import Path
 
 import requests
 
-from scripts.config import DOCLING_TO_ZBZ, IMAGES_DIR, LAYOUT_DIR, DOCLING_SERVE_URL
+from scripts.config import DOCLING_SERVE_URL, DOCLING_TO_ZBZ, IMAGES_DIR, LAYOUT_DIR
 from scripts.layout import to_pixel_pct
 from scripts.utils import discover_doc_ids, extract_page_num
 

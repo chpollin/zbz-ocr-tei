@@ -242,7 +242,7 @@ def rewrite_body(body_inner, detected_str, interp, offset, offset_ok, printed_fo
     """
     spans = iter_page_spans(body_inner)
     report = {
-        "source_counts": {s: 0 for s in SOURCES},
+        "source_counts": dict.fromkeys(SOURCES, 0),
         "content_pages": 0,
         "content_folio": 0,
         "blank_pages": 0,

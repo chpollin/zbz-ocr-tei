@@ -198,9 +198,7 @@ def classify_document(pb_ns, layout_page_numbers=None):
         else:
             klass = "scan_sequence"
     else:
-        if footer_ratio >= _FOOTER_MATCH_MIN:
-            klass = "printed_folio"
-        elif asc_ratio >= _ASC_MIN:
+        if footer_ratio >= _FOOTER_MATCH_MIN or asc_ratio >= _ASC_MIN:
             klass = "printed_folio"
         else:
             klass = "undetermined"

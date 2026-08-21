@@ -17,7 +17,7 @@ import argparse
 import json
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from lxml import etree
@@ -186,9 +186,9 @@ def generate_page_xml(doc_id, page_num, matched_regions, img_w, img_h,
     creator = etree.SubElement(metadata, "{%s}Creator" % PAGE_NS)
     creator.text = f"zbz-ocr-tei:page_xml_generator:layout={layout_source}"
     created = etree.SubElement(metadata, "{%s}Created" % PAGE_NS)
-    created.text = datetime.now(timezone.utc).isoformat()
+    created.text = datetime.now(UTC).isoformat()
     last_change = etree.SubElement(metadata, "{%s}LastChange" % PAGE_NS)
-    last_change.text = datetime.now(timezone.utc).isoformat()
+    last_change.text = datetime.now(UTC).isoformat()
 
     # Page
     page = etree.SubElement(root, "{%s}Page" % PAGE_NS)

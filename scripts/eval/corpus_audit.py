@@ -26,7 +26,7 @@ import re
 import statistics
 import subprocess
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from scripts.config import (
@@ -401,7 +401,7 @@ def build_report():
     return {
         "meta": {
             "tool_version": TOOL_VERSION,
-            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "generated_at": datetime.now(UTC).isoformat(),
             "git_sha": _git_sha(),
         },
         "tier0_masterfile": t0,

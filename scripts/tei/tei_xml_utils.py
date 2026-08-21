@@ -10,7 +10,6 @@ import xml.etree.ElementTree as ET
 
 from scripts.config import TEI_NS
 
-
 # ISO-639 Sprachcode-Normalisierung auf 639-2/T 3-Letter (Projektkonvention: fra/deu/nld/ell
 # statt der B-Varianten fre/ger/dut/gre). EINZIGE Quelle der Wahrheit fuer die <foreign>-
 # Normalisierung (tei_step3._normalize_foreign_lang) UND die Validator-Warnung W18 -- beide

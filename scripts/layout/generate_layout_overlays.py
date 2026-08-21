@@ -18,7 +18,6 @@ Usage:
 import argparse
 import json
 import sys
-from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -34,12 +33,12 @@ def draw_overlay_with_changes(img_path, layout_json, output_path):
 
     try:
         font = ImageFont.truetype("arial.ttf", 14)
-    except (OSError, IOError):
+    except OSError:
         font = ImageFont.load_default()
 
     try:
         font_small = ImageFont.truetype("arial.ttf", 11)
-    except (OSError, IOError):
+    except OSError:
         font_small = font
 
     for region in layout_json.get("regions", []):
@@ -108,7 +107,7 @@ def create_compare_image(img_path, docling_json, gemini_json, output_path):
     try:
         font = ImageFont.truetype("arial.ttf", 14)
         font_title = ImageFont.truetype("arial.ttf", 20)
-    except (OSError, IOError):
+    except OSError:
         font = ImageFont.load_default()
         font_title = font
 

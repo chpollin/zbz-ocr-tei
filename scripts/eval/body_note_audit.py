@@ -316,7 +316,7 @@ def _print_summary(summary):
             ref = "ref " if d["has_reference"] else "    "
             for c in d["candidates"][:3]:
                 y = "??" if c["y_pct"] is None else f"{c['y_pct']:.0f}"
-                print(f"    {ref}{d['doc']:>5}  S{str(c['page']):<4} len={c['length']:>4}"
+                print(f"    {ref}{d['doc']:>5}  S{c['page']!s:<4} len={c['length']:>4}"
                       f"  y={y:>3}%  score={c['score']:.2f}  {_ascii(c['snippet'][:48])}")
 
 

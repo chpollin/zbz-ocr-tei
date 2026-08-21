@@ -16,7 +16,6 @@ eigene, abweichende Segmentierung wuerde Marker auf der falschen Seite platziere
 
 import re
 from dataclasses import dataclass
-from typing import List
 
 # <pb ... /> oder <pb ...> -- verlangt ein Whitespace nach "pb" (schliesst z. B.
 # <pba> aus). Identische Regex fuer beide Konsumenten.
@@ -38,7 +37,7 @@ class PageSpan:
     content_end: int    # Offset des naechsten pb-Tags bzw. len(body_inner)
 
 
-def iter_page_spans(body_inner: str) -> List[PageSpan]:
+def iter_page_spans(body_inner: str) -> list[PageSpan]:
     """Seiten-Spans eines <body>-Inhalts in Dokumentreihenfolge.
 
     Gibt eine leere Liste zurueck, wenn kein <pb> vorhanden ist -- der

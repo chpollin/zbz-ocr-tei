@@ -10,6 +10,7 @@ tei_final-Dokumente 570/110/2330/30.
 
 import pytest
 
+from scripts.config import TEI_FINAL_DIR
 from scripts.tei.tei_pb_folio import (
     OFFSET_CONSISTENCY_MIN,
     OFFSET_MIN_FOOTER_PAGES,
@@ -25,8 +26,6 @@ from scripts.tei.tei_pb_folio import (
     set_pb_n,
     strip_echo_paragraphs,
 )
-from scripts.config import TEI_FINAL_DIR
-
 
 # ---------------------------------------------------------------------------
 # folio_content / bracket / set_pb_n / is_blank_pb / n_value

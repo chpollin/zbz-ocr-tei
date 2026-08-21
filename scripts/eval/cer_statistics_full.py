@@ -31,7 +31,7 @@ import platform
 import subprocess
 import sys
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import numpy as np
@@ -45,6 +45,13 @@ from scripts.config import (
     REFERENCE_TEI_DIR,
     TEI_FINAL_DIR,
 )
+from scripts.eval import cer_statistics as base
+from scripts.eval.cer_statistics import (
+    NORM_REGIMES,
+    DocCERRecord,
+    paired_bootstrap_diff,
+)
+from scripts.eval.cer_statistics_runner import collect_records
 from scripts.eval.evaluate_ocr import (
     classify_edit_operations,
     evaluate_document,
@@ -52,15 +59,6 @@ from scripts.eval.evaluate_ocr import (
     extract_text_for_comparison,
     find_best_alignment,
 )
-from scripts.eval import cer_statistics as base
-from scripts.eval.cer_statistics import (
-    DocCERRecord,
-    NORM_REGIMES,
-    bca_ci,
-    paired_bootstrap_diff,
-)
-from scripts.eval.cer_statistics_runner import collect_records
-
 
 # ---------------------------------------------------------------------------
 # Konstanten
@@ -823,7 +821,7 @@ def build_proxies(records: list[DocCERRecord], all_doc_ids: list[str],
     if not cache_path.exists():
         return {"status": "deferred", "reason": "quality_proxy.json not present"}
 
-    with open(cache_path, "r", encoding="utf-8") as f:
+    with open(cache_path, encoding="utf-8") as f:
         cache = json.load(f)
     cache_docs = cache.get("documents", {})
 
@@ -1092,7 +1090,7 @@ def main(argv: list[str] | None = None) -> int:
             "tool_version": TOOL_VERSION,
             "git_sha": git_sha,
             "git_dirty": git_dirty,
-            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "generated_at": datetime.now(UTC).isoformat(),
             "python_version": platform.python_version(),
             "numpy_version": np.__version__,
             "scipy_version": scipy.__version__,

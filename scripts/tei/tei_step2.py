@@ -29,7 +29,6 @@ from scripts.tei.tei_xml_utils import (
     wrap_orphan_groups,
 )
 
-
 # ---------------------------------------------------------------------------
 # Overlay-Pfad
 # ---------------------------------------------------------------------------
@@ -253,7 +252,6 @@ def process_page_step2(
     overlay_path = get_overlay_path(doc_id, page)
 
     try:
-        from google import genai
         from google.genai import types
 
         contents = []

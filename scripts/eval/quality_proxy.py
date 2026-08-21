@@ -31,11 +31,9 @@ from spellchecker import SpellChecker
 from scripts.config import (
     DOC_METADATA_PATH,
     EVALUATION_DIR,
-    REFERENCE_TEI_DIR,
     TEI_FINAL_DIR,
 )
 from scripts.eval.evaluate_ocr import extract_text_for_comparison
-
 
 # ---------------------------------------------------------------------------
 # Woerterbuecher laden (einmalig)
@@ -194,7 +192,7 @@ def load_ground_truth_cer() -> dict[str, float]:
     benchmark_path = EVALUATION_DIR / "benchmark_tei_vs_tei.json"
     if not benchmark_path.exists():
         return {}
-    with open(benchmark_path, "r", encoding="utf-8") as f:
+    with open(benchmark_path, encoding="utf-8") as f:
         data = json.load(f)
     return {
         doc_id: doc["cer"]
@@ -352,7 +350,7 @@ def run(doc_ids: list[str] | None = None, all_docs: bool = False,
     """Fuehrt Quality-Proxy-Analyse durch."""
 
     # Metadaten laden
-    with open(DOC_METADATA_PATH, "r", encoding="utf-8") as f:
+    with open(DOC_METADATA_PATH, encoding="utf-8") as f:
         metadata = json.load(f)
 
     # Ground-Truth CER (fuer Validierung)

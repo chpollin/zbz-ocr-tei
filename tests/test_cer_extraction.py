@@ -15,14 +15,13 @@ from __future__ import annotations
 import pytest
 
 from scripts.eval.evaluate_ocr import (
-    extract_text_for_comparison,
     calculate_cer,
-    evaluate_tei_vs_tei,
-    find_differences,
     categorize_errors,
     classify_edit_operations,
+    evaluate_tei_vs_tei,
+    extract_text_for_comparison,
+    find_differences,
 )
-
 
 # --------------------------------------------------------------------- #
 # Helpers

@@ -38,7 +38,7 @@ FINAL_IDS = [p.name for p in FINAL_DOCS]
 _NS = 'xmlns="http://www.tei-c.org/ns/1.0"'
 
 
-def _root(body_inner: str, prefix: str = "") -> "_etree._Element":
+def _root(body_inner: str, prefix: str = "") -> _etree._Element:
     xml = f'<TEI {_NS} type="naegeli">{prefix}<text><body><div type="text">{body_inner}</div></body></text></TEI>'
     return _etree.fromstring(xml.encode("utf-8"))
 

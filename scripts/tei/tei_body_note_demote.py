@@ -40,7 +40,6 @@ import json
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import List, Optional
 
 from scripts.tei.marker_common import backup_and_write
 
@@ -82,7 +81,7 @@ def visible_text(fragment: str) -> str:
     return _norm(_TAG_RE.sub("", fragment or ""))
 
 
-def facs_page(ref: Optional[str]) -> Optional[int]:
+def facs_page(ref: str | None) -> int | None:
     m = re.match(r"facs_(\d+)", (ref or "").lstrip("#"))
     return int(m.group(1)) if m else None
 
@@ -103,7 +102,7 @@ class Block:
     end: int
     attrs: str          # raw attribute string incl. leading whitespace
     inner: str          # raw inner content (tags preserved)
-    page: Optional[int]
+    page: int | None
     length: int
 
 
@@ -116,7 +115,7 @@ def _pb_pages(raw: str):
     return out
 
 
-def _page_hint(pb_pages, pos: int) -> Optional[int]:
+def _page_hint(pb_pages, pos: int) -> int | None:
     page = None
     for off, pg in pb_pages:
         if off < pos:
@@ -126,7 +125,7 @@ def _page_hint(pb_pages, pos: int) -> Optional[int]:
     return page
 
 
-def iter_foot_notes(raw: str) -> List[Block]:
+def iter_foot_notes(raw: str) -> list[Block]:
     """Every <note place="foot"> block with its computed (page, length)."""
     pb_pages = _pb_pages(raw)
     blocks = []
@@ -143,7 +142,7 @@ def iter_foot_notes(raw: str) -> List[Block]:
     return blocks
 
 
-def _iter_blocks(raw: str, tag: str) -> List[Block]:
+def _iter_blocks(raw: str, tag: str) -> list[Block]:
     """Every <tag>...</tag> block with computed (page, length). Non-nesting tags only."""
     pb_pages = _pb_pages(raw)
     rx = re.compile(r"<" + tag + r"\b([^>]*)>(.*?)</" + tag + r">", re.DOTALL)
@@ -410,7 +409,7 @@ def main():
             print(f"  {r['doc']:>5}  [FEHLER] {r['error']}")
             continue
         for n in r["notes"]:
-            line = (f"  {r['doc']:>5}  S{str(n['page']):<4} len={n['len']:>4}  "
+            line = (f"  {r['doc']:>5}  S{n['page']!s:<4} len={n['len']:>4}  "
                     f"{n['verdict']:<14} -> {n['operation']}")
             if n.get("reason"):
                 line += f"  ({n['reason']})"

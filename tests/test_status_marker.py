@@ -6,7 +6,6 @@ werden bei jedem Lauf vollstaendig ersetzt; Fremdeintraege (z.B. who="pipeline",
 Pipeline-Status E42) ueberleben unangetastet.
 """
 
-import json
 
 from scripts.tei import tei_status_marker as tsm
 

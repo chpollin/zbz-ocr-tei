@@ -9,12 +9,14 @@ Wird aufgerufen von: tei_unified.py (Orchestrierung).
 
 import re
 import xml.etree.ElementTree as ET
-
 from xml.sax.saxutils import escape as xml_escape
 
 from scripts.config import TEI_NS
-from scripts.tei.tei_xml_utils import make_element, normalize_lang_code, wrap_orphan_groups
-
+from scripts.tei.tei_xml_utils import (
+    make_element,
+    normalize_lang_code,
+    wrap_orphan_groups,
+)
 
 # ---------------------------------------------------------------------------
 # Language Parsing
@@ -60,8 +62,8 @@ def build_tei_header(doc_id: str, metadata: dict) -> str:
       + <monogr>/<imprint>/<date>
     - <profileDesc>/<langUsage> mit je einem <language ident=...> pro Sprachcode
 
-    Das <revisionDesc> wird hier NICHT erzeugt -- tei_add_revision.py (Pipeline-Zeile)
-    und tei_status_marker.py (Strom-Status, E66) projizieren es nachgelagert.
+    Das <revisionDesc> wird hier NICHT erzeugt -- tei_status_marker.py
+    (Strom-Status, E66) projiziert es nachgelagert.
 
     Vorher liess diese Funktion idno/biblStruct/langUsage weg ("docID als Kommentar",
     "immer <bibl>"), war damit aermer als das ausgelieferte tei_final -- ein

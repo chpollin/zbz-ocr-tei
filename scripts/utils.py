@@ -1,28 +1,14 @@
 """
 Gemeinsame Hilfsfunktionen fuer das zbz-ocr-tei Projekt.
 
-Konsolidiert: pdf_to_images, check_gpu, load_env.
+Konsolidiert: pdf_to_images, check_gpu.
 """
 
 import json
-import os
 import re
 from pathlib import Path
 
-from scripts.config import PROJECT_ROOT, DEFAULT_DPI
-
-
-def load_env():
-    """Laedt .env-Datei ins Environment (falls vorhanden)."""
-    env_file = PROJECT_ROOT / ".env"
-    if not env_file.exists():
-        return
-
-    for line in env_file.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if line and not line.startswith("#") and "=" in line:
-            key, _, value = line.partition("=")
-            os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+from scripts.config import DEFAULT_DPI
 
 
 def check_gpu() -> dict:
