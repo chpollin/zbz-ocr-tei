@@ -580,6 +580,33 @@ Wave 4c, closure (three agents plus orchestrator):
 - orchestrator: `git rm` of the five dissolved documents, register entry E124, journal
   session entry, deletion of this plan and of its pointers in index.md and CLAUDE.md
 
+### Revision of 2026-08-21: ten-document cap (operator decision)
+
+After wave 4a and 4b the operator set a cap of ten documents in `knowledge/`, with no loss of
+information. The eight extracted documents therefore become sections of ten carriers, merged
+with their duplicates removed:
+
+| Carrier | Absorbs | Functions carried |
+|---|---|---|
+| index.md | | Navigation, glossary, function map per section |
+| project.md | data.md, integration.md | Charter, Material, Integration |
+| specification.md | | Specification |
+| tei-mapping.md | | Domain Knowledge (b) |
+| pipeline.md | infrastructure.md | Architecture (stages, engines, entity stage, deployment, CI) |
+| workflow.md | design.md | Architecture (data flow, viewer, persistence, provenance), Design |
+| methodology.md | cer-methodology.md, governance.md | Domain Knowledge (a), Governance |
+| verification.md | testing.md | Quality Assurance, Verification |
+| decisions.md | plan.md | Decision record, Planning |
+| journal.md | | Provenance |
+
+journal-archive.md and arbeitsbericht-v3.md move to `reports/` as dated holdings (the report
+only once its foreign diff is committed). Wave 4c becomes the consolidation wave: six merge
+agents with exclusive carrier files, then the pointer, frontmatter, deletion and register work
+as planned, with the index rebuilt to the ten carriers and the function-per-section map.
+Each carrier keeps one H1 and one purpose paragraph; an absorbed document enters as an H2
+block with its template sections as H3, its frontmatter merged (the carrier's template is
+the dominant function's; absorbed template names are listed in the index function map).
+
 ### Verification per wave
 
 After 4a one document verifier: every new document against its template block (H2

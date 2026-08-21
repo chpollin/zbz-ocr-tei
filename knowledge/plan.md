@@ -313,9 +313,10 @@ Done when `uv lock` has produced a committed lock file and CI installs from it.
 #### Configuration file
 
 Engines are configured in `scripts/config.py` and `scripts/ocr/ocr_pipeline.py`. A YAML
-configuration would move engine name, model and environment-variable names out of the code. The
-draft in [infrastructure.md](infrastructure.md) still names Mistral as the default engine, which
-the code resolves to Gemini, so the draft is rewritten before it is built.
+configuration would move engine name, model and environment-variable names out of the code. An
+earlier draft named Mistral as the default engine, which the code resolves to Gemini; the draft
+was removed with the 2026-08 refactoring (git holds it at f5261ae5) and a new one starts from the
+current engine picture.
 
 Done when engine selection reads from one configuration file and every pipeline command behaves
 unchanged.
@@ -324,7 +325,8 @@ unchanged.
 
 The production repository at the University of Zurich is a fork of the development repository, and
 three pieces belong to it. An OCI image built from a Containerfile, configured through environment
-variables and carrying no secrets. A `.gitlab-ci.yml` that runs the same two gates as the GitHub
+variables and carrying no secrets (an earlier draft was removed with the 2026-08 refactoring; git
+holds it at f5261ae5). A `.gitlab-ci.yml` that runs the same two gates as the GitHub
 Actions workflow and additionally builds the image and pushes it to the GitLab registry. A defined
 merge strategy for upstream changes from the development repository into the fork, which is the
 mitigation of the fork-divergence risk recorded in [integration.md](integration.md).
@@ -358,7 +360,7 @@ outstanding), open, and blocked-by with the named party.
 
 | Milestone | State | Evidence |
 |---|---|---|
-| Pilot, layout scaling, PAGE-XML and METS | done | [project.md](project.md), delivered scope |
+| Pilot, layout scaling, PAGE-XML and METS | done | [project.md](project.md), scope of functions |
 | TEI generation schema-valid | done | E102, `tests/test_tei_schema.py` |
 | CER evaluation | done | `docs/data/cer_statistics.json`, [cer-methodology.md](cer-methodology.md) |
 | Corpus handover to ZBZ | done | E66/E67, every stream `unverifiziert` as handover default |
@@ -383,7 +385,7 @@ outstanding), open, and blocked-by with the named party.
 | Tail documents 760 and 1440 | open | E91 classification, E99 refutation |
 | Ratio heuristic residue | open | `scripts/eval/evaluate_ocr.py` |
 | Dependency lock | blocked-by toolchain (uv not installed) | E123 |
-| Configuration file | open | [infrastructure.md](infrastructure.md), planned configuration |
+| Configuration file | open | `scripts/config.py`, `scripts/ocr/ocr_pipeline.py` (current engine configuration) |
 | Container image, GitLab CI, merge strategy | blocked-by the production fork | [integration.md](integration.md) |
 | Foreign-namespace serialization defect | open | `serialize_tei_fragment` |
 | BCa aggregation as library code | open, decision pending | E122 (label), E123 (code kept) |

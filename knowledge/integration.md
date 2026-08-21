@@ -250,6 +250,13 @@ against.
 
 ## Corrections and pitfalls
 
+The export runs over the PAGE-XML rather than over the images, so pages without layout (blank
+pages among them) stay out of the bundle. Selection is by `--sample` (stratified over page count
+and language), `--all`, `--reference` (the objects ZBZ already holds in its own Transkribus
+collection) or `--doc`; for each page the exporter verifies that the PNG pixel dimensions match
+the declared `imageWidth`/`imageHeight` and reports pages without an image or with dimension
+drift instead of copying them silently.
+
 Uploading the reference objects again creates duplicates. Every upload run creates new
 documents and the API performs no deduplication, which is why `--reference` exists as a
 separate selection and why a full run is preceded by a single test object.

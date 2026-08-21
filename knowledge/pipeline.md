@@ -1,34 +1,33 @@
 ---
 title: Pipeline
-type: knowledge
 project:
   name: zbz-ocr-tei
   repository: https://github.com/chpollin/zbz-ocr-tei.git
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
-status: complete
-created: 2026-01-29
-updated: 2026-08-21
-tags: [zbz-ocr-tei, pipeline, ocr, layout, tei, engines]
 template:
   name: Vorlage Architecture
   version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/architecture
+status: complete
+language: en
+version: 1.0
+created: 2026-01-29
+updated: 2026-08-21
 authors: [Christopher Pollin]
+related: [project, data, specification, tei-mapping, workflow, infrastructure, integration, testing, plan]
 ---
 
 # Pipeline
 
-Data flow from PDF to TEI-XML: stages, scripts, engines, TEI mapping. Since the scope
+Data flow from PDF to TEI-XML with its stages, scripts and engines. Since the scope
 expansion (25.02.2026, E21) zbz-ocr-tei covers the entire path.
 
-CLI reference and operational tools: [CLAUDE.md](../CLAUDE.md), Commands section.
-Status per stage: [project.md](project.md).
-Complete end-to-end workflow with round-trip logic, save mechanism, and
-provenance concept: [workflow.md](workflow.md).
-
----
+CLI reference and operational tools are in [CLAUDE.md](../CLAUDE.md), Commands section.
+The markup rules the generator applies are in [tei-mapping.md](tei-mapping.md). The
+end-to-end workflow with viewer, save mechanism and provenance is in
+[workflow.md](workflow.md), the delivery status per milestone in [plan.md](plan.md).
 
 ## Overview
 
@@ -40,7 +39,7 @@ Images (extract_pages.py)
  |
  +------------------------------+
  v                              v
-OCR (Mistral)                  Layout (Docling + Gemini QA)
+OCR (base text layer)          Layout (Docling + Gemini QA)
  |                              |
  |                              +--> PAGE-XML (page_xml_generator.py)
  |                              |    = parallel export for coOCR
@@ -55,16 +54,16 @@ OCR (Mistral)                  Layout (Docling + Gemini QA)
                                      Evaluation + Viewer
 ```
 
-Important (E22, often misunderstood): PAGE-XML is NOT an intermediate step
-toward TEI. TEI is generated DIRECTLY from layout JSON + OCR Markdown via
-`scripts/tei/tei_unified.py`. PAGE-XML is produced in parallel as an export for
-coOCR / Transkribus (E13). Both derive independently from layout JSON + OCR.
+PAGE-XML is an export that runs beside the TEI path rather than a station on it (E22, a
+recurring misreading). TEI is generated DIRECTLY from layout JSON plus OCR Markdown
+via `scripts/tei/tei_unified.py`, and PAGE-XML is produced in parallel for coOCR and
+Transkribus (E13). Both derive independently from layout JSON plus OCR.
 
 | Stage | Task | Script | Output | Status |
 |---|---|---|---|---|
 | 1 | PDF -> PNG | `scripts/edition/extract_pages.py` | PNG (`docs/images/`) | Production |
 | 1a | Document classification (Gemini) | `scripts/ocr/classify_docs.py` | `data/doc_metadata.json` + `output/classification/` | Production (full corpus, E27) |
-| 2 | OCR | `scripts/ocr/ocr_pipeline.py` (`-e mistral` base, `-e gemini` opt-in vision OCR) | page Markdown (`output/mistral_results/`) | Production |
+| 2 | OCR | `scripts/ocr/ocr_pipeline.py` (`--engine auto` resolves to Gemini, `-e mistral` reproduces the delivered corpus) | page Markdown (`output/mistral_results/`) | Production |
 | 2a | LLM post-correction (optional) | `scripts/ocr/llm_postprocess.py` | `output/llm_corrected_c/` | Production, E17: optional |
 | 2b | Gemini OCR correction (optional) | `scripts/ocr/gemini_ocr_correct.py` | `output/gemini_corrected_a/` / `_b/` | Sample (E29) |
 | 3 | Layout analysis | `scripts/layout/run_layout_analysis.py` (local GPU) or `run_layout_cloud.py` (docling-serve) | regions + bbox (`output/layout/`) | Production |
@@ -77,40 +76,64 @@ coOCR / Transkribus (E13). Both derive independently from layout JSON + OCR.
 | 5c | TEI validation | `scripts/tei/tei_validator.py` | JSON + HTML report | schema-valid across the delivered corpus (gate: `tests/test_tei_schema.py`); warnings informative (rule catalog in [specification.md](specification.md), current tallies via `python -m scripts.tei.tei_validator --all --report`) |
 | 6 | Evaluation | `scripts/eval/evaluate_ocr.py` + `benchmark_cer.py` + `cer_statistics_full.py` | `output/evaluation/` + `docs/data/cer_statistics.json` | Production |
 
-Manual curation (E56): takes place in the pipeline viewer (`docs/viewer.html`) with
-layout and transcription editor. A single save writes canonically to `output/` and to
-the `docs/data/` mirror (File System Access API, download fallback, E72/E78/E79).
-Details: [workflow.md](workflow.md), viewer and persistence sections.
-Previously (E36) a FastAPI curation server ran at localhost:8000; it has been retired.
+Manual curation (E56) takes place in the pipeline viewer (`docs/viewer.html`) with layout
+and transcription editor. A single save writes canonically to `output/` and to the
+`docs/data/` mirror (File System Access API, download fallback, E72/E78/E79). The curated
+files return into the pipeline through `tei_unified --reassemble`, which selectively
+re-refines the changed pages; the round trip with its step sequence, the save mechanism
+and the editors are described in [workflow.md](workflow.md), round-trip section.
 
 Quality assurance (E66): the pipeline asserts no verification state of its own. A human
 sets the workflow status per stream in the viewer; `tei_status_marker.py` projects that
-status deterministically into the `<revisionDesc>` of the final TEI (XML shape in the
-revisionDesc section below). Status values, traffic-light mapping, history semantics and
-the streams they cover are described in [workflow.md](workflow.md), workflow status section.
+status deterministically into the `<revisionDesc>` of the final TEI (XML shape in
+[tei-mapping.md](tei-mapping.md), revision description section). Status values,
+traffic-light mapping, history semantics and the streams they cover are described in
+[workflow.md](workflow.md), workflow status section.
 
----
+OCR quality is measured rather than asserted. The measurement method is in
+[cer-methodology.md](cer-methodology.md), the requirement in
+[specification.md](specification.md), the verification of the published claim in
+[verification.md](verification.md), and the measured values in
+`docs/data/cer_statistics.json`. The measuring instruments are
+`scripts/eval/benchmark_cer.py`, `scripts/eval/cer_statistics.py` and
+`scripts/eval/cer_statistics_full.py`.
+
+Where the pipeline output is published and which facsimiles the online demo carries is
+described in [infrastructure.md](infrastructure.md), GitHub Pages section.
 
 ## Engines
 
-Active engines in two roles. Model choice matters less than pipeline design:
-pipeline investments pay off (chunking,
-page matching, quality routing). API costs are negligible.
-LLM post-correction hurts at CER <5% (E17).
+Active engines in two roles. Pipeline design carries more weight than model choice, since
+the investments that pay off are chunking, page matching and quality routing. LLM
+post-correction hurts at CER below five per cent (E17).
 
-### Mistral Document AI: OCR Production
+`ocr_pipeline --engine auto` resolves to Gemini
+([ocr_pipeline.py](../scripts/ocr/ocr_pipeline.py), lines 295 to 298), which makes Gemini
+the default text engine, while Mistral stays selectable as the reproducibility record of the
+delivered corpus; the engine roles, endpoints and credentials are owned by
+[infrastructure.md](infrastructure.md), engine roles section. The loader priority in
+[scripts/core/loaders.py](../scripts/core/loaders.py) reads the base text layer
+`output/mistral_results/` last, behind curated text, the two Gemini correction variants and
+the LLM-corrected variant.
+
+The layout hybrid was decided on 25.02.2026 after a comparative engine evaluation, with Docling as the
+bbox engine and Gemini as validator and detect fallback; the rationale is registered as
+E19 and E20 in [decisions.md](decisions.md).
+
+### Mistral Document AI: the delivered text layer
 
 | Aspect | Details |
 |---|---|
 | Model | `mistral-document-ai-2512` on Azure AI Foundry (serverless API) |
-| Role | primary OCR engine for ZBZ production |
+| Role | produced the delivered text layer of the corpus and stays selectable as its reproducibility record |
 | Speed | ~1.3 s/page |
 | Output | per-page Markdown (`output/mistral_results/{doc_id}_p{N}.md`) |
 | Languages | 36 (de, fr, en, es, it, ...) |
-| Endpoint | `https://<deployment>.<region>.models.ai.azure.com/v1/ocr` |
+| Endpoint | `https://<deployment>.<region>.models.ai.azure.com/v1/ocr` (answers 401) |
 | Limit | 30 pages/request, 30 MB max (pipeline splits automatically) |
 
-Setup notes and error diagnosis: [infrastructure.md](infrastructure.md) §Azure.
+Setup notes and error diagnosis are in [infrastructure.md](infrastructure.md), section
+Mistral Document AI on Azure.
 
 ### Docling 2.75: Layout Primary
 
@@ -123,14 +146,14 @@ Setup notes and error diagnosis: [infrastructure.md](infrastructure.md) §Azure.
 | API | `scripts/layout/run_layout_cloud.py` -> docling-serve (Docker, IBM official) |
 
 Coverage-based quality scoring is a strong proxy for layout quality; no ML needed.
-Landscape/multi-column pages are the hard cases (~64% bad vs. ~14% portrait).
+Landscape and multi-column pages are the hard cases (~64% bad vs. ~14% portrait).
 
 ### Gemini 3.1 Flash Lite: Layout QA + Detect + Refinement
 
 | Aspect | Details |
 |---|---|
 | Model | `gemini-3.1-flash-lite-preview` |
-| Roles | layout correction, layout detect (fallback for Docling failures, ~15%), document classification, OCR correction, vision OCR (opt-in `-e gemini`, exception replacement for Mistral, writes to `output/mistral_results/`), TEI refinement |
+| Roles | layout correction, layout detect (fallback for Docling failures, ~15%), document classification, OCR correction, vision OCR (`-e gemini`, writes to `output/mistral_results/`), TEI refinement |
 | SDK | `google-genai` |
 
 3 modes in `layout_qa_gemini.py`:
@@ -138,284 +161,93 @@ Landscape/multi-column pages are the hard cases (~64% bad vs. ~14% portrait).
 - `--mode detect`: full re-detection with `box_2d` coordinates (0-1000 scale -> x_pct/y_pct/w_pct/h_pct)
 - `--mode auto`: routes per page via `compute_page_quality()` (detect for bad/empty, qa for good/warning)
 
-Structured outputs via `response_schema`. Both versions are kept (`_layout.json` + `_layout_gemini.json`); in DH, provenance is as important as quality.
+The routing value is an area coverage. `compute_page_quality`
+([layout_qa_gemini.py](../scripts/layout/layout_qa_gemini.py), lines 319 to 344) returns a
+quality class, an area-coverage value and the region count per page; its single call site
+(line 691) sends a page below the threshold into re-detection and prints the coverage. The
+quality figure that reaches a layout JSON is the Gemini `score` (line 239), so the coverage
+steers the run while the score is what later stages read.
 
-### Architecture Decision (E19/E20)
+Structured outputs via `response_schema`. Both versions are kept (`_layout.json` +
+`_layout_gemini.json`); in DH, provenance is as important as quality.
 
-Requirements: structural detection, bbox, FR/DE, PAGE-XML 2013-07-15.
-Evaluated (25.02.2026): Gemini, Claude, Mistral (for layout), Docling, Surya, Kraken, Azure Document Intelligence.
+## TEI mapping
 
-Decision: Docling + Gemini hybrid. Docling is the best open-source bbox engine (mAP 0.699, 17 classes, free, CPU-capable).
-Gemini serves as QA validator and detect fallback. Claude is not used for layout (no bbox) but valuable for TEI. Mistral remains the text engine.
+The generator follows the markup rulebook in [tei-mapping.md](tei-mapping.md), which holds
+the document structure, page breaks, character normalization, highlighting, special
+structures, figures, omissions, the entity target model, the facsimile binding, the
+revision description and the element inventory of the delivered corpus. The three stages
+of `tei_unified.py` divide the work between them. Step 1
+([tei_step1.py](../scripts/tei/tei_step1.py)) builds the rule-based scaffold from layout
+JSON and OCR Markdown and produces one body fragment plus its facsimile zones per page.
+Step 2 ([tei_step2.py](../scripts/tei/tei_step2.py)) refines each page fragment through
+Gemini inside the schema subset and repairs the recurring model errors. Step 3
+([tei_step3.py](../scripts/tei/tei_step3.py)) assembles the document, writes the header
+and the facsimile block and applies the post-assembly fixes. Since the generator sees one
+page at a time, document-level and cross-page structures stay with curation; the rulebook
+states which phenomena those are.
 
-Fallback: Kraken (native PAGE-XML, historical FR). `ocr-fileformat` (UB Mannheim) converts
-between 30+ formats (hOCR, PAGE-XML, ALTO, TEI).
+## Entity stage (preview layer)
 
----
+A controlled entity layer sits beside the TEI stages and writes read-only previews. It
+binds mentions to the curated ZBZ entity list with a deterministic matcher, marks sure
+hits, and parks ambiguous candidates on a review worklist. The markup rules and the
+provenance vocabulary are in [tei-mapping.md](tei-mapping.md), the measured precision and
+recall in [verification.md](verification.md), the gates in [testing.md](testing.md), and
+the open milestones together with the instruments still to be built in [plan.md](plan.md).
+The curated list, the GND variant cache, the legacy mention index, the variant review and
+the marking policy are described as input data in [data.md](data.md).
 
-## TEI Mapping (ZBZ Hersch Schema)
+One rule binds the whole stage, nothing writes into `output/tei_final/`.
+`tei_entity_preview.py` refuses that directory outright, and the operator-gated stock tool
+`scripts/entity/tei_entity_marker.py` remains to be built ([plan.md](plan.md), phase A).
 
-Transformation rules from the source text to TEI-XML following the project schema
-`zbz_hersch.rng` and the binding ZBZ editorial guidelines. Binding since E48/E49
-(2026-03-26). The earlier DTA-Basisformat conformity claim was tested against the
-official DTA schema and dropped (E102); the guidelines' own DTA reference stays
-documented in [data/source/guidelines/README.md](../data/source/guidelines/README.md).
-
-Sources:
-- `data/source/guidelines/Editionsrichtlinien_ZBZ.md`: the binding editorial guidelines (Editionsrichtlinien)
-- `data/schema/zbz_hersch.rng`: project-specific RelaxNG schema (TEI P5 v4.10.2), the single format authority
-
-### Core Principles
-
-1. Reading-text transcription true to the original, with index annotation
-2. The project schema `zbz_hersch.rng` (TEI P5 subset) as the single format authority
-3. Defined normalizations (no diplomatic transcription)
-4. Transcription faithful to the source
-
-### Document Structure
-
-```xml
-<?xml version='1.0' encoding='UTF-8'?>
-<TEI xmlns='http://www.tei-c.org/ns/1.0' type="naegeli">
-  <teiHeader><!-- from doc_metadata.json via build_tei_header; Alma metadata (MMSID) = ZBZ domain, O8 --></teiHeader>
-  <text>
-    <front><!-- optional: prefaces, dedications --></front>
-    <body>
-      <pb facs="#f0001" n="1"/>  <!-- first pb BEFORE div n="1" -->
-      <div n="1"><!-- main structure --></div>
-    </body>
-    <back><!-- optional: translations, reprints --></back>
-  </text>
-</TEI>
-```
-
-| Level | Element | Use |
+| Instrument | Reads | Writes |
 |---|---|---|
-| 1 | `<div n="1">` | main chapter |
-| 2 | `<div n="2">` | subchapter |
-| 3 | `<div n="3">` | section |
+| `scripts/entity/fetch_gnd_variants.py` | `data/entities/all_entities.json`, lobid | `data/entities/gnd_cache.json` |
+| `scripts/entity/entity_lint.py` | entity list, GND cache, legacy mention index, marking policy | `output/audits/entity_lint.json` |
+| `scripts/entity/entity_lexicon.py` | entity list, GND cache, variant review, legacy mentions, marking policy | the in-memory lexicon (headwords, inverted forms, cache variants, legacy surfaces, derived-form channels) |
+| `scripts/entity/entity_matcher.py` | the lexicon plus a TEI document | candidates with exact offsets, tier and rule; re-exports the lexicon API, so both read as one module from outside |
+| `scripts/entity/running_heads.py` | the page-head lines of a document | the running-head zones the matcher demotes into tier 2 |
+| `scripts/entity/running_head_audit.py` | scan snapshot, adjudicated verdicts | running-head validation report under `output/audits/` |
+| `scripts/entity/tei_entity_preview.py` | `output/tei_final/` read-only, entity data, verdict store | `output/entity_preview/` plus a JSON report |
+| `scripts/entity/entity_corpus_scan.py` | `output/tei_final/` read-only, entity data | `output/audits/entity_corpus_scan.json` |
+| `scripts/entity/entity_corpus_digest.py` | scan snapshot, entity list | `output/audits/entity_corpus_digest.md` |
+| `scripts/entity/entity_unlisted_scan.py` | `output/tei_final/`, entity data, viewer catalog | `output/audits/entity_unlisted_report.json` plus a CSV |
+| `scripts/entity/entity_gold_benchmark.py` | the 25 reference TEIs, entity data | `output/audits/entity_gold_benchmark.json` |
+| `scripts/entity/entity_eval_sample.py` | scan snapshot, catalog, delivered TEI | `output/audits/eval_sample/` with precision cases, recall pages and the sample manifest |
+| `scripts/entity/build_mention_verdicts.py` | frozen scan snapshot, adjudication files under `output/audits/eval_sample/verdicts/` | `data/entities/mention_verdicts.json` |
+| `scripts/entity/entity_verdict_guard.py` | verdict store, current scan snapshot | `output/audits/verdict_guard_report.json`, exit 1 on a violation |
+| `scripts/entity/entity_risk_ranking.py` | scan snapshot, entity list | `output/audits/fp_hunt/risk_ranking.json` beside its wave protocol |
+| `scripts/entity/generate_entity_preview_data.py` | `output/entity_preview/` read-only | `docs/data/pages/{doc}/{doc}_entity_p{N}.xml`, `{doc}_entity_worklist.json`, `docs/data/entities.json` |
+| `scripts/entity/generate_entity_overview.py` | scan snapshot, entity list, verdict store | `docs/data/entity_overview.json` for `docs/entities.html` |
+| `scripts/tei/tei_cover_strip.py` | `output/tei_final/` | operator-gated cover-sheet removal with backup, report under `output/audits/` |
 
-`<pb>` sits inside `<div>`.
+The variant review is an operator-gated channel rather than a script.
+`data/entities/variant_review.json` carries one verdict per cache-derived name form
+(approve, suspect, reject, each with a reason), and `build_lexicon` consumes it
+deterministically. A rejected form stays out of the lexicon, a suspect form yields tier-2
+candidates only, and a cache form the review does not know counts as suspect until the
+next review pass. Headwords of the curated list and legacy forms stay outside its reach.
+The operator worklist of all suspect and reject forms lands in
+`output/audits/variant_review_report.md`.
 
-### Character Normalization (E49, binding)
+Four contracts hold the stage together. The matcher returns candidates that are
+offset-verified, non-overlapping and embed at most `lb` tags, and it excludes everything
+outside `text` as well as figures, bibliography divs and already marked elements. The
+preview run proves per document that the result is RelaxNG-valid against `zbz_hersch.rng`,
+that the text of the `text` subtree is character-identical, and that the bytes outside the
+insertions are unchanged, so stripping the wrappers and the header declarations restores
+the original. The corpus scan is a diffable snapshot, which lets a rule change show its
+exact corpus effect before it binds, and a frozen copy of that snapshot is what an
+adjudication wave draws from. The verdict store keys a judgment by document, page, surface,
+identifier and occurrence index over the frozen snapshot and carries a sha256 fingerprint
+of the TEI it was judged on, so a later text change marks the affected records stale for
+re-adjudication.
 
-| Source characters | Target character | Unicode | Rule |
-|---|---|---|---|
-| dashes and list dashes, ranges | en dash `–` | U+2013 | all horizontal strokes except hyphenation/compound hyphens |
-| hyphenation/compound hyphens | hyphen `‐` | U+2010 | word breaks, compounds |
-| quotation marks | `“`/`”` | U+201C / U+201D | typographic |
-| single quotation marks | `‘`/`’` | U+2018 / U+2019 | typographic |
-| apostrophes | `’` | U+2019 | `l'homme` |
-| non-representable characters | `~` (tilde) | U+007E | placeholder |
-
-Whitespace: delete spaces before `:`, `;`, `?`, `!` and quotation marks. Normalize
-enumerations with dashes to `/` (Zuerich/Bern/Basel). Retained: `ß` (U+00DF),
-brackets as in the original, accents, ligatures.
-
-### Page Structure
-
-```xml
-<pb facs="#f0001" n="1"/>
-<pb facs="#f0002" n="2"/>
-<pb facs="#f0003" n="[3]"/>  <!-- page number not printed -->
-```
-
-- `facs` = reference to the digitized image (`#f` + digitization number)
-- `n` = printed page number, `[number]` when the number is missing
-- pb stands at the start of the page; the first pb comes BEFORE `<div n="1">`
-
-Line breaks (`<lb>`) are preserved at the data level (not shown in the frontend).
-Heuristic lb injection (Fix-002, Session 34): ~60 characters at word boundaries.
-
-### Highlighting
-
-| Rendering | TEI | Example |
-|---|---|---|
-| Bold | `<hi rendition="#b">` | `<hi rendition="#b">wichtig</hi>` |
-| Italic | `<hi rendition="#i">` | `<hi rendition="#i">Philosophie</hi>` |
-| Underline | `<hi rendition="#u">` | |
-| Spaced | `<hi rendition="#g">` | |
-| Small caps | `<hi rendition="#k">` | |
-| Superscript | `<hi rendition="#sup">` | |
-| Subscript | `<hi rendition="#sub">` | |
-
-Only semantically relevant highlighting is encoded.
-
-### Special Structures
-
-- Language switch: `<foreign xml:lang="deu">...</foreign>` (ISO 639-3: `fra`, `deu`, `eng`, `ita`, `lat`)
-- Footnotes: `<note place="foot" n="1" xml:id="fn{Seite}-{Nr}">...</note>` with `next`/`prev` when spanning pages
-- Printing errors: `<choice><sic>Eclairement</sic><corr>Eclairement</corr></choice>`
-- Illegible passages: `<unclear cert="high\|low">...</unclear>`
-- Marginal notes: `<note place="left\|right">...</note>`
-- Blank pages: `<pb .../><p>[Leer]</p>`
-
-### Entities
-
-The free NER of the early pipeline was removed with E71 (2026-05-27) because its linking was
-not functional in the delivered TEI. Since 2026-08 a controlled two-tier entity layer exists
-instead: a deterministic matcher binds mentions to the curated ZBZ entity list (ids never
-assigned by an LLM, E62), sure matches are marked in read-only previews, uncertain candidates
-feed a review worklist, and the layer is measured by facsimile-adjudicated sampling (E105/E106).
-Every mark the preview writes carries its provenance and verification state, `@resp` for the
-asserting agency, `@cert` with the tokens `high` or `medium`, and `@source` for the producing
-rule (E118); which surnames and generic titles the matcher may mark at all is an operator
-decision in `data/entities/marking_policy.json` (E119). The delivered TEI under
-`output/tei_final/` carries no entity markup yet; the stock run is operator-gated. Design,
-attribute model and built state: [entity-integration.md](entity-integration.md), method
-and execution record: [entity-evaluation.md](entity-evaluation.md). In the delivered TEI
-`<bibl>` remains a bibliographic structure without `ref`/`corresp`.
-
-### Curation instead of Automation: front/back/anchor/unclear (as of 2026-06-08)
-
-The pipeline produces one `<div>` body fragment per page (Step 2, OUTPUT FORMAT in
-`tei_mapping_prompt.py`). Document-level and cross-page structures therefore do
-NOT emerge automatically; they are set during curation (viewer). How often each phenomenon
-is attested in the 25 reference TEIs is recorded in
-[ground-truth-map.md](ground-truth-map.md), phenomenon map. Rationale per case:
-
-- `<front>`/`<back>` (dedication, editorial notes; translation/reprint/otherEdition):
-  document level. The end-matter source in the Masterfile (column
-  "Anmerkungen") is free text ("deutsche Uebersetzung: ID 320", partly only internal
-  references), not a reliable citation, hence deliberately no auto-build (it would produce wrong TEI).
-  End-matter citation per MLA 9 plus Swisscovery link remains with ZBZ/curation.
-- Cross-page `<anchor>` (double-page figure): needs both pages,
-  too rare and too error-prone for automation.
-- `<unclear>`: a per-character judgment against the scan image; curation only.
-- `<epigraph>`: adopted when the AI places it at the div start; a
-  misplaced motto is unpacked by `tei_step2._fix_structural_issues`.
-
-### Special Document Types
-
-- `<div type="review">` with `<bibl>` in the `<head>`
-- `<div type="interview">` with `<sp>/<speaker>` (E47: `essay` -> `text`)
-- `<div type="conversation">` for panel discussions
-- `<div type="entry">` for encyclopedia entries, with `<div type="bibliography">/<listBibl>`
-- `<ab type="redactional" hand="xy">` for redactional texts (not by Hersch)
-
-Paratexts: `<front>` (`editorial`, `dedication`), `<back>` (`translation`, `reprint`, `otherEdition`).
-Citation in `<back>` per MLA 9, with Swisscovery permalink as `<ref target="...">`.
-
-### Figures
-
-```xml
-<figure xml:id="fig1">
-  <graphic url="..\..\images\fig1.tif"/>
-  <head>[optional]</head>
-  <p>[optional explanation]</p>
-</figure>
-```
-
-- `xml:id` on `<figure>` (not `<graphic>`), sequential
-- `<figure>` is always a standalone block, never inside `<p>`
-- double-page figures: `<anchor xml:id="figN-start/end"/>` marks the span
-
-### Omissions
-
-| Omission | Note |
-|---|---|
-| Title pages | except for monographs |
-| Curriculum vitae | even when placed in front |
-| Running heads | - |
-| Blurbs | - |
-| Author attribution | "von Jeanne Hersch" only in the header |
-| Initials | not annotated |
-| Multi-column layout | not reproduced as such |
-
-### revisionDesc (Workflow Status, E66/E77)
-
-Every final TEI in `output/tei_final/` contains `<revisionDesc>` directly before `</teiHeader>`.
-The first `<change>` records the pipeline generation. After it, `tei_status_marker.py` projects
-the manifest into the header (E66), writing one `<change n="{stream}">` per history entry and
-then one summary `<change n="{stream}-summary">` per stream with the current status. Projected are
-the three pipeline streams `ocr`, `layout` and `tei`; the entities stream stays out, because it
-describes the preview layer rather than the delivered TEI (`STREAMS` in
-[tei_status_marker.py](../scripts/tei/tei_status_marker.py)).
-
-```xml
-<revisionDesc>
-  <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-  <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
-  <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
-  <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
-</revisionDesc>
-```
-
-The `@status` attribute carries the manifest value verbatim; the same run removes the
-`<change>` entries of the abolished agent screening. What the values mean, how the viewer
-displays them and where the history comes from is in [workflow.md](workflow.md), workflow
-status section.
-
-### Element Inventory
-
-| Element | Attributes | Use |
-|---|---|---|
-| `<TEI>` | `xmlns`, `type="naegeli"` | root |
-| `<teiHeader>` | - | metadata |
-| `<text>`, `<front>`, `<body>`, `<back>` | - | containers |
-| `<div>` | `n`, `type` | structural |
-| `<pb>` | `facs`, `n` | page break |
-| `<lb>` | `facs`, `n`, `break` | line break |
-| `<head>` | `type` | heading |
-| `<title>` | `type` (main/sub) | title |
-| `<p>` | `facs` | paragraph |
-| `<hi>` | `rendition` | highlighting |
-| `<bibl>` | - | bibliographic entries (`<listBibl>`, review `<head>`); no entity refs since E71 |
-| `<note>` | `place`, `n`, `xml:id`, `next`, `prev` | footnote/marginal note |
-| `<foreign>` | `xml:lang` | language switch |
-| `<space>` | `dim` | spacing |
-| `<list>`, `<item>`, `<table>`, `<row>`, `<cell>` | - | lists + tables |
-| `<figure>` | `xml:id` | figure |
-| `<graphic>` | `xml:id`, `url` | image reference |
-| `<choice>`, `<sic>`, `<corr>` | - | printing errors |
-| `<sp>`, `<speaker>` | `type` | speech act |
-| `<listBibl>` | - | bibliography |
-| `<ab>` | `type`, `hand` | redactional block |
-| `<unclear>` | `cert` | illegible passage |
-| `<anchor>` | `xml:id` | double-page images |
-| `<ref>` | `target` | external reference |
-| `<revisionDesc>`, `<change>` | `who`, `when`, `status` | revision status |
-
-### Facsimile Binding (E89, 2026-06-21, ZBZ-conformant)
-
-The generator itself produces `<facsimile>`, `<surface ulx uly lrx lry>`, `<zone>` with
-pixel coordinates and the complete `@facs` binding line<->zone. The page break carries
-`<pb facs="#facs_N" n="Seitenzahl"/>` (ZBZ editorial guidelines, whole corpus). So that this
-reference resolves to the image in a self-contained way, every `<surface>` carries a `<graphic url>`
-as its first child (the schema requires graphic before zone). Address scheme: relative filename
-`{doc_id}_p{NNN}.png` (physically in `docs/images/{doc_id}/`, sequential to `facs_N`). Produced
-directly in `build_facsimile` ([tei_step3.py](../scripts/tei/tei_step3.py)); the already
-delivered stock is brought to the same state without an OCR re-run by the post step
-[tei_surface_graphic.py](../scripts/tei/tei_surface_graphic.py).
-Resolves [decisions.md O25](decisions.md) and replaces the faulty blank-page placeholder `{seite}.png` (it pointed to
-a non-existent file). ZBZ prescribes the `<pb facs>` form for page images, not
-necessarily a surface `<graphic>`; the `<graphic>` makes the reference resolvable and
-supersedes teiCrafter's hard-coded demo path.
-
----
-
-## Implementation Phases
-
-| Phase | Content | Status |
-|---|---|---|
-| 0 | Pilot: layout eval + OCR + TEI on 15 docs | Done |
-| 1 | Scale layout: Docling + Gemini QA on the full corpus | Done |
-| 2 | PAGE-XML generator + METS | Done (full corpus) |
-| 3 | NER + Wikidata linking | Removed (E71, 2026-05-27) |
-| 4 | TEI-XML with PAGE-XML | Done (schema-valid, gate-tested) |
-| 5 | Extended evaluation (CER benchmark) | Done, see `arbeitsbericht-v3.md` and [cer-methodology.md](cer-methodology.md) |
-| 6 | Production run + scholarly curation | In progress: full corpus generated, workflow status `unverifiziert` (E66), curation open |
-
-Cross-cutting (parallel to phases 3-6): pipeline viewer with edit mode, see [workflow.md](workflow.md). The earlier public reading edition (E33) and the curation editor (E36) were retired with E56.
-
-### Sub-Project: CER Improvement
-
-Systematic OCR quality improvement through iterative experimentation and benchmarking.
-Method: see [specification.md](specification.md) and [cer-methodology.md](cer-methodology.md); measured values: `docs/data/cer_statistics.json`. Tools: `scripts/eval/benchmark_cer.py`,
-`scripts/eval/cer_statistics.py`, `scripts/eval/cer_statistics_full.py`. Phases 0-4 each carry a
-CER success metric; the measured values live in `docs/data/cer_statistics.json`.
-
----
+The viewer shows the previews read-only under `viewer.html?doc={DOC_ID}&entities=1` with
+category colours, a popover per mention and a per-page worklist panel; the rendering is
+described in [workflow.md](workflow.md), entity layer section.
 
 ## ZBZ Structural Tags (Docling -> ZBZ -> PAGE-XML)
 
@@ -428,99 +260,19 @@ CER success metric; the measured values live in `docs/data/cer_statistics.json`.
 | Page-header, Page-footer | `_filter` | (removed) |
 | Picture, Figure | `_skip` | - |
 
----
-
-## Online Demo (E28)
-
-The full pipeline output (`output/`) is gitignored and only available locally. For the online
-demo (GitHub Pages) the facsimiles of representative documents are committed under
-`docs/images/`; the same ids are the `featured` set in `docs/data/catalog.json`:
-
-| Doc | Type | Language | Pages | Note |
-|---|---|---|---|---|
-| 2310 | A | FR | 3 | journal article, JSTOR cover |
-| 1000 | B | FR | 4 | two-column |
-| 1330 | D | DE/FR | 6 | bilingual anthology |
-| 1540 | C | DE | 8 | German monograph |
-| 1620 | B | DE | 5 | two-column brochure |
-
-With E57 (per-page mirror), layout, OCR, and TEI data for the whole corpus additionally
-live in `docs/data/pages/`; the viewer therefore works on GitHub Pages for the entire
-corpus, only facsimile images are missing outside these demo documents (image delivery
-local-only).
-
----
-
-## Manual Edits Back into the Pipeline (Round Trip)
-
-The viewer writes curation (layout, OCR text, workflow status) directly into the
-working tree (File System Access API, E72/E78) and mirrors it to `docs/data/`
-(E79); `tei_unified --reassemble` actually consumes the curated files and
-selectively re-refines the changed pages (1 Gemini call each). Complete procedure
-including save mechanism, step sequence, provenance concept, and the planned
-`_complete.xml` variant: [workflow.md §Round Trip](workflow.md).
-
-Data: scan images in `docs/images/{doc_id}/`, OCR/layout/TEI in `docs/data/pages/{doc_id}/`.
-The `core.js` path resolver tries the mirror `data/pages/` first and falls back to
-`../output/...`, which resolves only under a local server rooted at the repository (E57).
-
----
-
-## Transkribus Export
-
-PAGE-XML round trip (E81). The PAGE-XML produced in stage 4 (`output/page_xml/{doc}/page/`)
-is standard PAGE 2013-07-15 and can be played back to Transkribus losslessly, as layout
-plus transcription, for manual post-correction or HTR model training. This is the reverse
-direction of the viewer round trip above: there, edits come in; here, pipeline layout goes out.
-
-### Folder Convention
-
-Transkribus reads, for each image, a PAGE-XML of the same name from a
-`page/` subfolder; one folder = one document:
-
-```
-{doc}/
-  {doc}_p001.png          # image at top level
-  page/{doc}_p001.xml     # PAGE-XML with matching name
-```
-
-`scripts/edition/transkribus_export.py` builds this structure from `output/page_xml/` +
-`docs/images/{doc}/` into `output/transkribus_upload/` (gitignored). Selection: `--sample`
-(stratified over page count x language), `--all`, `--reference` (the 24 objects that
-ZBZ already has in its own Transkribus collection), `--doc`. For each page it verifies
-that the PNG pixel dimensions match the declared `imageWidth`/`imageHeight`
-(coordinates aligned); pages without an image or with dimension drift are reported instead
-of silently copied. The export runs over the PAGE-XML, not over the images; pages without
-layout (e.g. blank pages) stay out.
-
-### Dialect
-
-Compatible out of the box (TextRegion/Coords/TextLine/TextEquiv/
-ReadingOrder + `custom` structure types). Limitation: the pipeline PAGE carries
-line polygons but no baselines; for import, display, and structure that is sufficient,
-only HTR training in Transkribus needs baselines (the ZBZ originals have them). The
-pipeline images are 1240x1754 (150 dpi), the ZBZ originals 2479x3508 (300 dpi); each
-state is internally consistent.
-
-### Upload via API
-
-`scripts/edition/transkribus_upload.py` uploads the built bundles
-via the legacy TrpServer REST API (`transkribus.eu/TrpServer/rest`): `POST /auth/login`
--> `POST /uploads?collId=` (JSON manifest with `md.title` + `pageList`) -> `PUT
-/uploads/{id}` (image + XML per page). Verified 2026-06-08: the legacy API writes
-correctly into a collection on the new platform (app.transkribus.org); login and
-collection share the readcoop account. Auth exclusively via environment variables
-(`TRANSKRIBUS_USER`/`TRANSKRIBUS_PASSWORD`/`TRANSKRIBUS_COLLECTION`), never in code/repo/.env.
-Every run creates new documents (no dedup); before a full upload run `--dry-run`
-(checks login + access) and `--doc {ID}` (one test object). CLI:
-[CLAUDE.md §Transkribus Export / Upload](../CLAUDE.md).
-
----
+The PAGE-XML of stage 4 also travels outbound as a Transkribus bundle; folder convention,
+dialect and upload are in [integration.md](integration.md), Transkribus section.
 
 ## References
 
-- [methodology.md](methodology.md): operational tools, CLI reference, work cycle
-- [specification.md](specification.md): quality method + validation rule catalog
-- [workflow.md](workflow.md): viewer with layout and transcription editor, persistence
-- [infrastructure.md](infrastructure.md): Azure, Podman, CI/CD
+- [tei-mapping.md](tei-mapping.md): the markup rulebook the generator applies
+- [workflow.md](workflow.md): data flow, viewer with layout and transcription editor, persistence, round trip
+- [data.md](data.md): corpus, delivery tree, entity input data, reference corpus
+- [specification.md](specification.md): requirements, quality method, validation rule catalog
+- [testing.md](testing.md): test strategy and the gates that hold the pipeline contracts
+- [verification.md](verification.md): the verified quality claims and their finding register
+- [integration.md](integration.md): ZBZ, Transkribus and teiCrafter contracts
+- [infrastructure.md](infrastructure.md): Azure, containers, CI, GitHub Pages delivery
+- [plan.md](plan.md): open milestones and deferred work
 - [decisions.md](decisions.md): decision register
+- [methodology.md](methodology.md): Promptotyping, verification cascade, work cycle

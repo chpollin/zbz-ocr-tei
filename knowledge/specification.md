@@ -1,23 +1,22 @@
 ---
 title: Specification
-type: knowledge
 project:
   name: zbz-ocr-tei
   repository: https://github.com/chpollin/zbz-ocr-tei.git
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
-status: draft
-language: en
-created: 2026-07-07
-updated: 2026-08-21
-tags: [zbz-ocr-tei, specification, requirements, epics]
-related: [decisions, project, pipeline, workflow, cer-methodology]
 template:
   name: Vorlage Specification
   version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/specification
+status: complete
+language: en
+version: 1.0
+created: 2026-07-07
+updated: 2026-08-21
 authors: [Christopher Pollin]
+related: [project, data, tei-mapping, pipeline, workflow, testing, verification, plan, decisions]
 ---
 
 # Specification
@@ -40,8 +39,9 @@ newest ratified register entry wins and this document is updated to match.
 
 ## System requirements
 
-- R-OCR: every delivered PDF page receives OCR text from the production engine
-  (Mistral Document AI); alternative engines are benchmark-only (E64).
+- R-OCR: every delivered PDF page receives OCR text from the base text layer engine;
+  alternative engines are benchmark-only (E64). Which engine holds that role, and how the
+  delivered corpus is reproducible, is in [infrastructure.md](infrastructure.md).
 - R-LAYOUT: every page receives a layout analysis (regions with bounding boxes) from
   Docling with Gemini QA (E19/E20, E25/E26/E31).
 - R-PAGE-XML: PAGE-XML plus METS is generated as a parallel export for the Transkribus
@@ -69,14 +69,19 @@ newest ratified register entry wins and this document is updated to match.
 - R-PERSISTENCE: every viewer save writes the payload canonically to `output/` and
   mirrors it to `docs/data/`, so both the pipeline and the server-less viewer see the
   same state (E72/E78/E79).
-- R-HEADER: header enrichment from Alma is ZBZ domain (E76, O8); the pipeline does not
-  fabricate catalog metadata.
+- R-HEADER: header enrichment from Alma is ZBZ domain (E76, O8); the pipeline states in
+  the header only what its own sources support.
 - R-ENTITY: entity markup comes from a deterministic closed-world matcher against the
   curated ZBZ entity list and is written read-only to `output/entity_preview/`;
   `output/tei_final/` stays entity-free until an operator releases the stock run (M7).
-  Every preview mark carries `@resp`, `@cert` and `@source`, so the asserting
-  responsibility, the human verification state and the producing rule travel with the
-  mark (E105-E119; design in [entity-integration.md](entity-integration.md)).
+  The world is closed by decision, so only identifiers present in the curated list can
+  reach a mark, and an unlisted name travels through the proposal channel instead of
+  becoming markup. Which surfaces are eligible for a mark, which tier a hit belongs to and
+  which zones are excluded is the marking scope defined in
+  [tei-mapping.md](tei-mapping.md), which owns the entity target model together with the
+  `ref` pattern and the attribute vocabulary. Every preview mark carries `@resp`, `@cert`
+  and `@source`, so the asserting responsibility, the human verification state and the
+  producing rule travel with the mark (E105-E119).
 
 ## Quality measurement
 
@@ -106,15 +111,16 @@ The requirements this document holds are the following.
   al. 2022) is a plausibility bound, not a measurement; its composite
   estimator does not generalize (negative LOOCV R^2) and is labeled as an
   estimate wherever shown.
-- LLM stability (run-to-run variance of the non-deterministic Mistral and
-  Gemini stages) is measured (5 docs x 3 runs, E100); the `stability` block of
+- LLM stability (run-to-run variance of the non-deterministic OCR and
+  refinement stages) is measured (5 docs x 3 runs, E100); the `stability` block of
   `docs/data/cer_statistics.json` carries the per-document spread and reads
   `status: measured`.
 
 No figure is published without its method. The measured values live,
 deterministically regenerable with seed 42, in `docs/data/cer_statistics.json`
-(rendered by `docs/methode.html`) and are reported in
-`arbeitsbericht-v3.md`, section 6.3.
+(rendered by `docs/methode.html`) and are reported in `arbeitsbericht-v3.md`. How every
+published claim was verified, and which findings stayed open, is in
+[verification.md](verification.md).
 
 ## Validation rule catalog
 
@@ -123,15 +129,14 @@ deterministically regenerable with seed 42, in `docs/data/cer_statistics.json`
 1. Blocking errors R1-R7 (RelaxNG plus project rules): R1 `type="naegeli"`,
    R2 teiHeader present, R3 body present, R4 at least one div, R5 valid div
    types, R6 note place, R7 entity ref format.
-2. Warnings W1-W19 (informative curation signals, never blocking): W1
-   language code "und", W2 empty title/author, W3 facsimile/pb mismatch, W4
-   empty div, W5 text volume below 50 chars/page, W6 missing lb, W7 graphic
-   without url, W11 too many identical top-level divs, W12 footnote n, W13
-   footnote xml:id pattern, W14 back/div types, W15 div with type AND n
-   (exclusive), W16 figure without xml:id, W17 empty speaker (curation slot,
-   E71), W18 foreign xml:lang not normalized, W19 page reading order not
-   canonical (E90). W8-W10 are retired since E71, the delivered TEI is
-   entity-free.
+2. Warnings (informative curation signals, never blocking), numbered W1 to W7
+   and W11 to W19: W1 language code "und", W2 empty title/author, W3
+   facsimile/pb mismatch, W4 empty div, W5 text volume below 50 chars/page, W6
+   missing lb, W7 graphic without url, W11 too many identical top-level divs,
+   W12 footnote n, W13 footnote xml:id pattern, W14 back/div types, W15 div
+   with type AND n (exclusive), W16 figure without xml:id, W17 empty speaker
+   (curation slot), W18 foreign xml:lang not normalized, W19 page reading order
+   not canonical (E90).
 3. ZBZ conformity (`zbz_conformity.py`, inline-GND model, E88), guideline
    rules a RelaxNG cannot express:
 
@@ -146,9 +151,14 @@ deterministically regenerable with seed 42, in `docs/data/cer_statistics.json`
 | Z8 | entity without GND reference = curation gap | advisory |
 
 The entity rules Z1-Z4 and Z8 turn sharp only on curated inline-GND output,
-because the delivered corpus is entity-free since E71 (lesson L14); Z5 and Z6
-bind on the real corpus today. One guideline self-contradiction (entity
-markup inside captions) is an open ZBZ question (O27).
+because the delivered corpus is entity-free (lesson L14); Z5 and Z6 bind on the
+real corpus today. One guideline self-contradiction (entity markup inside
+captions) is an open ZBZ question (O27).
+
+One class of defect stays below this catalog. Footnotes that the generator turned into body
+text outside the verified candidate set, and body text demoted to a note below the
+verification threshold, are a standing curation risk that no rule flags; the evidence and
+the verification history of the demotion runs are in [verification.md](verification.md).
 
 ## Gates
 
@@ -156,10 +166,14 @@ markup inside captions) is an open ZBZ question (O27).
 |---|---|---|
 | Schema | `pytest tests/test_tei_schema.py` | R-SCHEMA |
 | ZBZ conformity | `pytest tests/test_zbz_conformity.py`, `tei_validator --conformity` | R-CONFORMITY |
-| Validator warnings | `tei_validator --all` (non-blocking curation signals W1-W19) | R-TEI, R-READING-ORDER |
+| Validator warnings | `tei_validator --all` (non-blocking curation signals) | R-TEI, R-READING-ORDER |
 | Corpus audit | `python -m scripts.eval.corpus_audit` (funnel + drift check) | corpus claims |
 | Reading-order evidence | `reading_order_audit` (triage), `tei_reading_order_fix` (page-wise instrument, dry-run default); the machine rollout was refuted and its preview instrument removed in the 2026-08 refactoring, evidence in [decisions.md](decisions.md) E99 | W19 curation basis |
 | Full suite | `python -m pytest` (CI gate on every push) | all of the above |
+
+The suite that fulfils this requirement, what it guarantees, which part of it survives a
+fresh clone and which classes of defect it deliberately leaves uncovered, is described in
+[testing.md](testing.md); the invocations stay in [CLAUDE.md](../CLAUDE.md).
 
 ## Epics and user stories
 
@@ -170,58 +184,35 @@ markup inside captions) is an open ZBZ question (O27).
   layout, text, and TEI side by side, correct layout or text, save once, and the status
   pill records my verification step with provenance. Stories: correct reading order on
   flagged pages (W19 worklist); resolve empty speaker slots (W17); confirm blank pages;
-  review the M3 residual pages at the facsimile.
+  review the residual reading-order pages at the facsimile.
 - Epic C, reading-order curation (E99): the corpus-wide machine rollout was tested and
   refuted, so as a ZBZ curator I work the W19 worklist page by page at the facsimile and
   release each verified fix through `tei_reading_order_fix`; the gates of the table above
   must stay green.
 - Epic D, teiCrafter handover: as an annotator, I receive TEI stable enough for control
   and inline-GND annotation in teiCrafter; the entity gate Z1-Z4 turns sharp on that
-  output. Cross-lane, awaits the teiCrafter output-model switch.
+  output. Cross-lane, awaits the teiCrafter output-model switch; the handover contract and
+  its open points are in [integration.md](integration.md).
 - Epic E, measurement: as the project lead, I can cite the fidelity CER with a variance
-  band (stability measurement, gated by API cost) and reproduce every published figure
+  band (stability measurement, gated by the paid API calls it needs) and reproduce every published figure
   from a command.
 
-## Open requirements
+## Scope
 
-- O8 header metadata from Alma, O13 subject headings, O27 caption contradiction: with
-  ZBZ (see [decisions.md](decisions.md)).
-- Footnote overdetection (E82 defect a): resolved for the reference-covered blocks by
-  the verified demotion E85 (documents 290, 1910, 90, 40, 1520). The reference-less
-  remainder was quantified by `body_note_audit` and facsimile-verified case by case
-  (verdicts persisted in `output/audits/body_note_verdicts.json`); the correction runs
-  corpus-wide via `tei_body_note_demote` (executed with E94/E95, backup in `output/_backup_pre_body_note_demote/`). Below-threshold notes and genuine
-  footnotes lost to the role swap outside the candidate set remain a curation risk.
+The pipeline delivers four streams per object, the OCR text layer, the layout analysis with
+its PAGE-XML export, the final TEI in `output/tei_final/`, and the read-only entity preview.
+Everything the delivered TEI asserts is derived from those streams and answers to the schema
+and the rule catalog above. Three decisions bound that scope and assign the remainder.
 
-### Frontend requirements (deferred until after ZBZ acceptance)
+- Header enrichment from Alma, including the MMSID (O8), and editorial subject headings
+  (O13) belong to ZBZ (E76). The contract is in [integration.md](integration.md), the
+  decision state in [plan.md](plan.md).
+- Entity markup lives in the preview layer. Writing marks into the delivered TEI is the
+  operator-gated stock run, planned as M7 in [plan.md](plan.md).
+- `front`, `back`, cross-page `anchor` and `unclear` are set during curation in the viewer
+  against the facsimile (E83), because their source signals are either document-level or
+  per-character judgments the page-wise generator cannot make. The markup rule and the
+  reason per case are in [tei-mapping.md](tei-mapping.md).
 
-Finding IDs from the dated gap analysis (surveyed 2026-06-07; the H and M
-findings were fixed 2026-06-10, provenance in `arbeitsbericht-v3.md`, section 5):
-
-- N1: no multi-select/bulk export in the catalog; the ZIP bundle (JSZip) of
-  roadmap E61 is not yet integrated, only per-stream single export exists.
-- N3: OpenSeadragon loads an untiled full PNG and re-instantiates on every
-  page switch; fix via tiling/DZI or neighbor preload.
-- N6: the mobile catalog (below 1000px) hides date/language/type/form/pages
-  entirely; keep at least date and type.
-- N7: the contrast of `--h-text-muted` sits below WCAG AA for small text;
-  restrict the token to auxiliary text.
-- Page strip with per-page status markers as QA navigation (follow-up idea
-  from the go-to-page fix).
-- Provenance panel in the viewer, built on the planned `provenance.json`
-  (see [workflow.md](workflow.md), provenance section).
-
-A fresh corpus-wide frontend gap analysis ran on 2026-08-12 and fed the viewer
-reduction (E107); its inventory and the quick wins still open are in
-`reports/2026-08-12_viewer-ui-analyse.md`.
-
-## Non-requirements
-
-Explicitly out of scope: NER and entity linking in pipeline output (removed, E71);
-automatic `front`/`back`/`anchor`/`unclear` markup (E83); MMSID projection into headers
-(E76); monetary figures and third-party personal names anywhere in the documentation
-(constitution).
-
-The E71 removal concerns free, LLM-driven entity recognition. The deterministic
-closed-world entity layer that has run since 2026-08 is the requirement R-ENTITY above and
-is not affected by it.
+Forward-looking requirements, the open frontend findings and the milestones behind them are
+in [plan.md](plan.md).

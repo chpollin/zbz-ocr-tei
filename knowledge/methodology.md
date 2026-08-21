@@ -1,26 +1,28 @@
 ---
 title: "Methodology: Epistemic Infrastructure and Promptotyping"
-type: knowledge
 project:
   name: zbz-ocr-tei
   repository: https://github.com/chpollin/zbz-ocr-tei.git
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
+template:
+  name: Vorlage Domänenwissen
+  version: 0.2
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/domain-knowledge
 status: complete
+language: en
+version: 1.0
 created: 2026-03-15
 updated: 2026-08-21
-dependencies: [pipeline, workflow]
-source: "papers/Paper.md (workshop contribution DHd/DH, DHCraft & ZBZ)"
 authors: [Christopher Pollin]
+related: [governance, verification, pipeline, workflow, specification]
 ---
 
 # Methodology
 
 Epistemic infrastructure, verification cascade, Critical Expert in the Loop, and the
-operative Promptotyping cycle. Unifies the former `METHODIK.md` and `PROMPTOTYPING.md`.
-
----
+operative Promptotyping cycle.
 
 ## Epistemic Infrastructure
 
@@ -38,8 +40,6 @@ properties must hold:
 - State transparency: the processing state of every object is machine-queryable (JSON
   reports, `<revisionDesc>` in the TEI header).
 
----
-
 ## Verification Cascade
 
 Four levels, ordered economically (cheap first, expensive last):
@@ -53,8 +53,6 @@ Four levels, ordered economically (cheap first, expensive last):
 
 The operative effect is that each level reduces the case set for the next. Domain expertise
 is focused on its highest-value area of application (asymmetric amplification).
-
----
 
 ## Operative Cycle (Promptotyping)
 
@@ -74,8 +72,6 @@ Five steps, iterative (aligned with ReAct's thought-action-observation loop):
 Termination conditions are a maximum of 2-3 cycles per document, a stagnation indicator, and
 error-pattern detection.
 
----
-
 ## Critical Expert in the Loop
 
 Several roles with separated competencies prevent circular validation (anchoring effect,
@@ -87,9 +83,9 @@ evidenced by Schroeder et al. 2025):
 - Project management: prioritization and acceptance.
 
 The core principle is that the person who produced a result (or whose agent produced it) is
-not the same person who reviews it scholarly.
-
----
+not the same person who reviews it scholarly. This section owns the scholarly role model,
+while the wave roles of the multi-agent process, the guardrails an agent receives verbatim
+and the authority to accept a self-report belong to [governance.md](governance.md).
 
 ## Three-Layer Model: Command / Artifact / Tool
 
@@ -106,18 +102,6 @@ cyclic, quality-assured work process.
 Artifacts are fed-back output, at once a result of the process and input for the next cycle.
 The epistemic infrastructure grows reactively on quality signals.
 
----
-
-## Quality Assurance: from Agent Screening to Workflow Status (E66)
-
-The agent-based screening that once lived here was abolished with E66 and replaced by a
-human-set workflow status per stream, so the verification cascade remains the principle
-while its domain level became explicitly human instead of agentic. The status model, its
-provenance history in the per-object manifest and its projection into the `<revisionDesc>`
-are described in [workflow.md](workflow.md), workflow status section.
-
----
-
 ## Operative Tools (CLI)
 
 The complete CLI reference lives in the project constitution [CLAUDE.md](../CLAUDE.md),
@@ -126,23 +110,19 @@ What belongs here is the order in which those commands are used, the operative c
 applied to the artifacts.
 
 Diagnosis opens every cycle. The state is read from a diagnostic artifact, in the standard
-case from the corpus validation report that
-`python -m scripts.tei.tei_validator --all --html-report` produces; an assumed state never
-starts a cycle. Exploration ranks the findings by expected quality gain, structural defects
-before reference deviations before formatting. Execution invokes one artifact against the selected case and runs with
-`--dry-run` first wherever API calls or writes into `output/tei_final/` are involved.
-Re-validation repeats the diagnostic command and compares the state before and after,
-because only that comparison shows whether the change improved anything. Escalation hands
-the case to the expert in the loop once the iteration cap or a stagnation indicator is
-reached, which for the delivered corpus means page-wise, facsimile-verified curation in the
-viewer.
+case from the corpus validation report of the TEI validator; an assumed state never starts
+a cycle. Exploration ranks the findings by expected quality gain, structural defects before
+reference deviations before formatting. Execution invokes one artifact against the selected
+case and runs as a dry run first wherever API calls or writes into `output/tei_final/` are
+involved. Re-validation repeats the diagnostic step and compares the state before and
+after, because only that comparison shows whether the change improved anything. Escalation
+hands the case to the expert in the loop once the iteration cap or a stagnation indicator
+is reached, which for the delivered corpus means page-wise, facsimile-verified curation in
+the viewer.
 
 Every step produces or transforms a knowledge artifact and emits machine-readable quality
 signals. The statistics artifact `docs/data/cer_statistics.json` is the deterministic
-example of such a signal; the HTML dashboard that formerly stood beside it was abolished
-with E56 and the data remain available as JSON.
-
----
+example of such a signal.
 
 ## Conventions
 
@@ -153,6 +133,8 @@ with E56 and the data remain available as JSON.
   before batch operations and before the stock corrections.
 - `--force` discards cached results and recomputes them, the paid stages included. It is
   sensible only after an actual upstream change.
+- A changed step-2 prompt requires invalidating the step-2 cache by hand, because `--force`
+  does not regenerate it (lesson L5 of [journal.md](journal.md)).
 - `--reassemble` redoes the rule-based stages of `tei_unified`, the step-1 scaffold built
   from the curated OCR and layout and the step-3 assembly, and reuses the Gemini step-2
   cache. Pages without newer curation need no API call. Pages whose curated OCR or layout is
@@ -161,8 +143,6 @@ with E56 and the data remain available as JSON.
   TEI. That refinement re-derives the text, so a corrected OCR line reaches the final TEI as a
   suggestion and may be reworded. A word-exact change is made in the viewer's TEI-XML mode,
   which writes `output/tei_final/{DOC_ID}_final.xml` directly and deterministically. `--force` re-refines the whole document instead of selected pages.
-
----
 
 ## Literature
 
@@ -173,11 +153,11 @@ with E56 and the data remain available as JSON.
 - He et al. (2026). *Speed at the Cost of Quality.* MSR 2026. Speed without infrastructure creates technical debt.
 - Zhang et al. (2025/2026). *Agentic Context Engineering (ACE).* arXiv. Accumulated context knowledge compensates model capability.
 
----
-
 ## References
 
 - [pipeline.md](pipeline.md): technical pipeline architecture
-- [workflow.md](workflow.md): the viewer as verification environment
+- [workflow.md](workflow.md): the viewer as verification environment, the workflow status per stream
+- [governance.md](governance.md): the multi-agent wave pattern, guardrails and role authority
+- [verification.md](verification.md): the verification chain behind the published claims
 - [specification.md](specification.md): quality method and validation rules
 - [CLAUDE.md](../CLAUDE.md): project rules, complete CLI reference

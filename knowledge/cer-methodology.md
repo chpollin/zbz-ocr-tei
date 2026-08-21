@@ -1,19 +1,22 @@
 ---
 title: CER Measurement Methodology
-type: knowledge
 project:
   name: zbz-ocr-tei
   repository: https://github.com/chpollin/zbz-ocr-tei.git
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
+template:
+  name: Vorlage Domänenwissen
+  version: 0.2
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/domain-knowledge
 status: reviewed
 language: en
+version: 1.0
 created: 2026-07-07
 updated: 2026-08-21
-tags: [zbz-ocr-tei, cer, methodology, evaluation]
-related: [specification, ground-truth-map, literature-comparison, decisions]
 authors: [Christopher Pollin]
+related: [specification, data, verification, decisions, testing]
 ---
 
 # CER Measurement Methodology
@@ -22,11 +25,14 @@ Reference document for the character error rate (CER) measurement of the pipelin
 against the 25 manually created reference TEIs. It fixes the definition of the
 measure, the choice of reference, the fidelity/scope decomposition, and the
 extraction and normalization rules that turn structured TEI into comparison text.
-The consolidated requirement view is in [specification.md](specification.md),
-quality-measurement section; the measured values live in
-`docs/data/cer_statistics.json` (deterministically regenerable, seed 42) and are
-reported in `arbeitsbericht-v3.md`, section 6.3. This document carries the
-detailed method behind those values.
+It also places the resulting values in the print-OCR state of
+research. The consolidated requirement view is in
+[specification.md](specification.md), quality-measurement section; the measured
+values live in `docs/data/cer_statistics.json` (deterministically regenerable,
+seed 42) and are reported in `arbeitsbericht-v3.md`, section 6.3. This document
+carries the detailed method behind those values. The verification chain behind
+the published values, from the hand-computed regression tests to the independent
+counter-check, is in [verification.md](verification.md).
 
 ## What the CER Measures and How It Is Defined Here
 
@@ -42,10 +48,13 @@ throughout, so the naming of operation types stays consistent across all
 examples; the distance itself is direction-independent. It is implemented via
 `rapidfuzz.distance.Levenshtein`.
 
-The aggregation unit is the document, not the page. The corpus bootstrap
-procedure (n = 25 reference TEIs, B = 10,000, seed 42, document-level percentile
-bootstrap) derives mean and 95% confidence range from it; the interval method is
-stated exactly in the verification section below. For orientation the Transkribus
+The aggregation unit is the document. A pagewise CER breaks as soon as the page
+numbering of reference and pipeline drifts apart, so the evaluation aligns on
+content and stays immune to that drift (lesson L7 of [journal.md](journal.md)).
+The corpus bootstrap procedure (n = 25 reference TEIs, B = 10,000, seed 42,
+document-level percentile bootstrap) derives mean and 95% confidence range from
+it; the interval method is stated exactly in
+[verification.md](verification.md). For orientation the Transkribus
 convention grades below 2% as publication-ready, 2 to 5% as research-usable, and
 5 to 10% as usable for full-text search. A high CER does not necessarily mean
 poor text recognition; it can equally follow from faulty reading order on complex
@@ -79,7 +88,7 @@ This choice has a measurable consequence: where the reference itself contains a
 transcription error, a more correct recognition counts as a difference. Such
 cases raise the measured CER, are no pipeline error, and bound what this
 methodology can reach. The known reference defects are catalogued in
-[ground-truth-map.md](ground-truth-map.md).
+[data.md](data.md), exception catalog of the reference corpus.
 
 ## Decomposing Errors into Fidelity and Scope
 
@@ -116,11 +125,21 @@ exclusively from text content and not from unequal treatment of the sides.
 | E5 | `<note place="foot">...</note>` excluded (default) | separately edited footnotes would distort the running-text comparison; switchable via `include_footnotes=True` |
 | E6 | `<lb/>` without `break="no"` yields one space | a print line break is a word boundary |
 | E7 | `<lb break="no"/>` yields no character | a hyphenated word is joined (Hu + manismus becomes Humanismus) |
-| E8 | `<pb/>` yields two line breaks `\n\n` | the page boundary stays recognizable |
+| E8 | `<pb/>` yields two line breaks `\n\n`, which rule N15 collapses to one space | the page boundary leaves no marker in the comparison text |
 | E9 | all remaining elements (`<hi>`, `<persName>`, `<bibl>`, `<title>`, `<head>`, `<p>`, `<div>` ...) yield inner text recursively | markup becomes transparent: `<hi>Wort</hi>` becomes Wort |
 | E10 | attribute values are not taken over | page numbers from `<pb n="223"/>` and GND IDs from `ref` attributes do not appear in the comparison |
 | E11 | XML tails are appended at the parent element | correct order for `<p>Wort1<hi>Wort2</hi>Wort3</p>` |
 | E12 | on XML parse error, regex fallback `re.sub(r'<[^>]+>', '', content)` | secures the evaluation against single non-well-formed TEIs so one faulty file does not abort the corpus run |
+
+Two entries of this catalog are read wrongly if taken on their own. Rule E8 emits
+two line breaks at a page boundary and rule N15 of the normalization then pulls
+every whitespace run onto one space, so the comparison text carries no page
+marker; `tests/test_cer_extraction.py::TestExtractionRules::test_page_break_collapses_to_a_single_space`
+pins that behaviour. Running heads have no exclusion rule, so the text of `<fw>`
+falls under E9 and enters the comparison text like the text of any other element;
+`tests/test_cer_extraction.py::TestExtractionRules::test_forme_work_is_included_not_excluded`
+pins that. Rule E5 excludes footnotes, and it is the only content exclusion below
+`<body>`.
 
 ## Normalization
 
@@ -149,62 +168,71 @@ dinglehopper and jiwer, which carry lowercasing as opt-in; an optional
 case-insensitive secondary metric exists (`casefold=True`). The preservation of
 accents is checked separately via its own metric (HCPR).
 
-## Verification of the Measurement Methodology
+## State of research (print OCR)
 
-This verification concerns the correctness of the CER measurement and is to be
-distinguished from the TEI schema validation. It rests on four layers.
+This section places the pipeline's fidelity CER in the research on OCR of printed
+historical documents. The pipeline's own headline values stay in
+`docs/data/cer_statistics.json`.
 
-First, the hand-computed regression tests in `tests/test_cer_extraction.py`, which pin
-the behavior independently of the corpus result, among them the canonical formula,
-case sensitivity, the absence of trimming, the `<choice>` resolution, the
-normalization, and the decomposition into fidelity and scope including the
-character-exact sum check.
+### Where the pipeline sits
 
-Second, the unification of the previously three separate CER implementations
-(`benchmark_cer`, `cer_statistics_full`, `tei_validator --compare-ref`) onto
-shared canonical functions since decision E70, so all three paths yield the same
-number for the same document.
+The pipeline's fidelity median (n = 25, canonical value in
+`docs/data/cer_statistics.json`) lies between the best specialized print stack
+(Transkribus with LLM post-correction, 0.84%; Greif et al. 2025) and Transkribus
+alone (3.67%). That is solid for historical print without reaching the top of the
+field; only the strongest individual documents of the corpus reach the range of
+the best literature values. The comparison reads print-calibrated, since the
+Transkribus quality bands quoted above stem primarily from handwriting
+recognition practice and set the bar lower than a pure print OCR task warrants.
 
-Third, the alignment of the conventions with external standards: denominator as
-distance over reference length (Transkribus), NFC normalization as the
-grapheme-cluster definition (OCR-D), case-sensitive default (jiwer and general
-tool practice; OCR-D provides case-ignoring only in a dedicated letter-accuracy
-metric), full-text comparison without alignment trimming (dinglehopper), and the
-paired bootstrap with confidence interval for deltas (Du 2025).
+### Comparison table
 
-Fourth, an independent counter-check of 2026-07-03 that reproduced every headline
-and per-document value without importing any repo code (extraction re-implemented
-from the specification, python-Levenshtein as a second engine, own aggregation,
-secondary metrics, facsimile spot checks). Details in
-`reports/cer-gegenprobe-2026-07-03.md`; see E91 in [decisions.md](decisions.md).
+| Source | Method | Language | CER |
+| :---- | :---- | :---- | :---- |
+| Greif et al. 2025 | Transkribus Print M1 + Gemini 2.0 Flash post-correction | deu (mostly Fraktur) | 0.84% |
+| Greif et al. 2025 | Gemini 2.0 Flash zero-shot | deu (mostly Fraktur) | 1.27% |
+| Greif et al. 2025 | Transkribus Print M1 alone | deu (mostly Fraktur) | 3.67% |
+| Greif et al. 2025 | GPT-4o direct | deu (mostly Fraktur) | 6.31% |
+| Kanerva and Ledins 2025 | GPT-4o LLM-as-judge (no ground truth) | multilingual historical | 6.30% |
+| Levchenko 2025 | Gemini 2.5 Pro | rus (18th c.) | 3.36% |
+| Levchenko 2025 | Gemini 2.5 Flash | rus | 4.94% |
+| Levchenko 2025 | traditional OCR | rus | 21-45% |
+| Transkribus documentation | guide value | general | 0.5-2% |
 
-The interval method behind the published values is the document-level block percentile
-bootstrap. `cer_statistics_full.py` resamples documents with replacement, one value per
-document so the block is the document, with B = 10,000 and seed 42, and reads the 2.5th and
-97.5th percentile of the resampled means and medians (`doc_level_bootstrap`, `_agg_block`);
-every aggregate in `docs/data/cer_statistics.json` names this in its own `ci_method` field.
-The paired comparison of the end-to-end pipeline against OCR-only runs on the per-document
-differences of the fidelity CER, which keeps both sides scope-neutral, and reports the mean
-difference, a percentile interval and a two-sided bootstrap p-value taken as the share of
-resamples that change sign (`paired_bootstrap_diff` in `cer_statistics.py`,
-`build_paired_test` in `cer_statistics_full.py`). One label contradicts this. The library
-`cer_statistics.py` carries a BCa implementation `bca_ci` with its own tests and calls it in
-its own aggregation functions `aggregate_overall` and `aggregate_strata`, which the
-published pipeline does not use; the generator of the published statistics,
-`cer_statistics_full.py`, never calls it, so the computed intervals are percentile
-intervals throughout. The field `meta.bootstrap_method` of the published JSON still claims
-BCa; that label is stale, and whether the generator moves to BCa or the label moves to
-percentile is an open operator decision recorded in the register (E120).
+### Comparability caveats
 
-The comparability of CER values between different tools remains limited even under
-a nominally identical metric, among other reasons because already the
-transformation of structured ground truth into comparison text becomes an error
-source when reading order is not considered; the extraction and normalization
-rules documented here are the project-internal fixation of that transformation.
+No entry is a like-for-like benchmark; each differs from the Hersch corpus in at
+least one dimension. The machine-readable comparability flags in
+`docs/data/cer_statistics.json` (block `comparison_lit`) record these dimensions
+per entry.
+
+- Greif et al. 2025 (arXiv:2504.00414): German-language address books 1754-1870,
+  predominantly Fraktur with one Antiqua source, a different corpus, and in the
+  leading row a multimodal post-correction. This is the lower bound of the state
+  of research and the most demanding reference point; comparability partial
+  (script, corpus, method). These four rows are the print-OCR comparison values
+  of this document.
+- Kanerva and Ledins 2025 (arXiv:2502.01205): GPT-4o-class, no-ground-truth
+  evaluation. Methodologically related to the dictionary-hit-rate proxy but on
+  different corpora; comparability partial (method, corpus).
+- Levchenko 2025 (LM4DH 2025 workshop at RANLP 2025, Varna, pages 75-85, DOI
+  10.26615/978-954-452-106-6-007; preprint arXiv:2510.06743): Russian,
+  18th-century Civil Font, which is not like-for-like with French and German
+  Antiqua, so comparability is false on language, script and corpus. It is also
+  the source of the frequency-based HCPR adaption used for diacritic
+  preservation.
+- The Transkribus guide value is a general orientation band and no measured
+  corpus result.
+
+Why CER values stay of limited comparability between tools even under a nominally identical
+metric is stated in [verification.md](verification.md), novelty claims section; the extraction
+and normalization rules documented above are the project-internal fixation of the
+ground-truth-to-text transformation that section names as the error source.
 
 ## Related
 
 - [specification.md](specification.md): the consolidated quality-measurement requirement
-- [ground-truth-map.md](ground-truth-map.md): the reference defects that bound the measurement
-- [literature-comparison.md](literature-comparison.md): where the fidelity CER sits in the print-OCR state of research
-- [decisions.md](decisions.md): dated provenance (E70, E73, E80, E85, E91)
+- [data.md](data.md): the reference corpus, its exception catalog and the defects that bound the measurement
+- [verification.md](verification.md): the verification chain behind the published values
+- [testing.md](testing.md): the automated gates that pin the extraction and normalization rules
+- [decisions.md](decisions.md): dated provenance (E70, E73, E80, E85, E91, E103)

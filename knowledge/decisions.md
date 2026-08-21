@@ -1,24 +1,23 @@
 ---
 title: Decisions
-type: knowledge
 project:
   name: zbz-ocr-tei
   repository: https://github.com/chpollin/zbz-ocr-tei.git
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
-status: complete
+status: active
+language: en
+version: 1.0
 created: 2026-02-18
 updated: 2026-08-21
-tags: [zbz-ocr-tei, decisions, open, decided]
 authors: [Christopher Pollin]
+related: [plan, journal, journal-archive, index]
 ---
 
 # Decisions
 
-Consolidated register of all decisions and open questions. Cross-cutting, collected from all documents. Entries are dated records; later corrections are inline update annotations, never silent rewrites.
-
----
+Consolidated register of the decisions taken in the project, cross-cutting and collected from all documents. Entries are dated records; later corrections are inline update annotations, never silent rewrites. The register holds dated decision records; decisions still to be taken live in [plan.md](plan.md), and the chronological course of the work lives in [journal.md](journal.md).
 
 ## Decided (E1-E63)
 
@@ -82,8 +81,6 @@ Consolidated register of all decisions and open questions. Cross-cutting, collec
 | E61 | Export module with JSZip 3.10.1 | per-document export drawer plus multi-select bulk export; ZIP built in the browser, no server component; planned, not yet wired in | 2026-05-25 | [workflow.md](workflow.md) |
 | E62 | Method page `docs/methode.html` | lean static page with headline CER, stratified values, literature comparison, limitations, tool documentation; deliberately no interactive dashboard. Implicit methodology position: never LLMs for entity-id linking | 2026-05-26 | [specification.md](specification.md) |
 | E63 | Blank-page detection plus viewer handling (phase 1) | 79 blank pages corpus-wide; phantom regions from layout QA hallucination countered by the Docling zero signal; viewer fix interim/heuristic; phase 2 in E65 | 2026-05-26 | [workflow.md](workflow.md) |
-
----
 
 ## Decided (E64-E123, detail)
 
@@ -195,7 +192,7 @@ Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [methode.html](../docs/
 
 The stage-4 PAGE-XML (standard PAGE 2013-07-15) is losslessly playable back into Transkribus for manual post-correction or HTR training. Two scripts: `transkribus_export.py` builds the Transkribus folder convention from `page_xml/` plus `docs/images/` (selection `--sample` stratified, `--all`, `--reference`, `--doc`; verifies PNG size equals declared image size so coordinates align). `transkribus_upload.py` uploads bundles via the legacy TrpServer REST API; verified 2026-06-08 against a collection of the new platform (test object doc 1500 appeared with regions, text, and reading order). Auth exclusively via environment variables, never in code or repo. No dedup: every run creates new documents, hence dry run plus test object first. Dialect caveat: line polygons, no baselines (import fine, HTR training would need them).
 
-Documents: [pipeline.md §Transkribus Export](pipeline.md)
+Documents: [integration.md](integration.md), Transkribus section
 
 ### E82 Doc-30 dedup published, corpus mean 3.99 % (was 4.26), tail-cause register (2026-06-08)
 
@@ -355,8 +352,6 @@ The integration tests in `tests/test_pb_folio.py` now assert the delivered post-
 
 Documents: [journal.md](journal.md) session 85
 
----
-
 ### E96 Doc 1520 page 70: leaked refusal replaced by an honest partial transcription (2026-07-07)
 
 Occasion: E94 finding, Mistral OCR degenerated into a repetition loop on this page and the correction layer's refusal text leaked into the delivered TEI. The operator supplied a Gemini API key and authorized `gemini-3.5-flash` for the gated single-page re-OCR.
@@ -369,8 +364,6 @@ Execution: full backup to `output/_backup_pre_1520_p70_reocr/`; new base text wr
 
 Documents: [journal.md](journal.md) session 87
 
----
-
 ### E97 Doc 30 adjudicated: E91 text-loss reading confirmed, the calibration conflict was a sampling gap (2026-07-07)
 
 Occasion: E94 left open the contradiction between the counter-check (E91: the CER outlier is genuine text loss on double pages) and the facsimile calibration (complete text on the double pages it sampled, suggesting a pure alignment problem).
@@ -380,8 +373,6 @@ Adjudication (facsimile-verified): the three missing blocks of doc 30 (540/451/1
 Consequence: the fidelity outlier (11.59 percent) is genuine recognition loss of one double-page half; a reading-order correction cannot recover it. Repair path: targeted single-page re-OCR of scan page 1 following the E96 pattern (gated). The adjudication slot in `arbeitsbericht-v3.md` is filled.
 
 Documents: [journal.md](journal.md) session 88
-
----
 
 ### E98 Doc 30 double-page half restored (2026-07-07)
 
@@ -393,8 +384,6 @@ Result: doc-30 fidelity CER 11.59 to 0.90 percent (corpus maximum gone); corpus 
 
 Documents: [journal.md](journal.md) session 89
 
----
-
 ### E99 Machine reading-order rollout falsified: W19 pages carry corrupt zone assignments over correct text (2026-07-07)
 
 Occasion: the plan for the M3 rollout replaced the barred reassembly path (it would revert the E94-E96 stock state, which includes non-re-runnable hand patches E82/E96) with an in-place instrument: `scripts/tei/tei_reading_order_fix.py`, built test-first, permutes the region blocks of robust W19 pages as byte splices (marker idiom, dry-run default, idempotent, self-check on the identity permutation), reusing `classify_page`, `reading_order_permutation`, `pb_split`, and a new shared `build_zone_bbox` in `tei_xml_utils`.
@@ -405,8 +394,6 @@ Decision: NO machine reordering of the delivered corpus, on either path; rejecte
 
 Documents: [journal.md](journal.md) session 89
 
----
-
 ### E100 Run-to-run stability measured: the LLM refinement is practically deterministic in CER effect (2026-07-07)
 
 Occasion: the released stability pilot (5 documents x 3 runs, decisions "Stability" 2026-07-07) had neither tooling nor designated documents.
@@ -416,8 +403,6 @@ Execution: new harness `scripts/eval/stability_pilot.py` runs full `--force` reg
 Result: per-document standard deviation of fidelity CER across runs 0.000 to 0.129 percentage points (mean 0.040, doc 2310 exactly 0); the refinement stage is practically deterministic in its text effect. The `stability` block in `docs/data/cer_statistics.json` is closed (`status: measured`) via a loader in `cer_statistics_full` that consumes `output/audits/stability_pilot.json`. Side finding: the ABSOLUTE fidelity of fresh regenerations lies far above the delivered corpus values (the delivered tei_final embodies accumulated corrections the pipeline caches do not reproduce), which independently reinforces the E99 ban on regenerating the delivered corpus. The pilot's absolute values are therefore not comparable to the headline; only the within-pilot spread is the measurement.
 
 Documents: [journal.md](journal.md) session 89
-
----
 
 ### E101 Scan-versus-text mismatch resolved by the fidelity/scope decomposition, no document excluded (2026-07-08)
 
@@ -431,8 +416,6 @@ Decision (resolves W5.1): keep all 25 ground-truth documents in the CER measurem
 
 Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [journal.md](journal.md), [cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md)
 
----
-
 ### E102 DTA-Basisformat conformity claim empirically refuted and removed; `zbz_hersch.rng` is the single format authority (2026-07-09)
 
 Occasion: operator question whether the delivered TEI is actually valid against the DTA-Basisformat, as the report's opening sentence ("TEI-XML im DTA-Basisformat") claimed. The repository had never validated against the DTA schema; the validation authority has always been the project schema `zbz_hersch.rng` (E48, ODD-generated TEI P5 4.10.2 subset).
@@ -443,8 +426,6 @@ Decision (operator, 2026-07-09): the project's format claim is the project schem
 
 Documents: [pipeline.md](pipeline.md), [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [journal.md](journal.md) session 91
 
----
-
 ### E103 Print-OCR comparison values re-attributed from Crosilla to Greif et al.; Levchenko peer-reviewed version added (2026-07-09)
 
 Occasion: verification of the literature comparison table against the cited full texts (web search) revealed that the four printed-OCR reference values (0.84% Transkribus Print M1 + Gemini 2.0 Flash post-correction, 1.27% Gemini 2.0 Flash zero-shot, 3.67% Transkribus Print M1 alone, 6.31% GPT-4o) were attributed to the wrong paper.
@@ -454,8 +435,6 @@ Finding (2026-07-09): the four values stem from Greif, Griesshaber and Greif, "M
 Decision: the misattribution is corrected everywhere the four values appear (literature-comparison.md, docs/methode.html, the COMPARISON_LIT/LITERATURE_REFS blocks in scripts/eval/cer_statistics_full.py and cer_statistics.py, and the regenerated docs/data/cer_statistics.json). The "like-for-like" characterization tied to the old Crosilla reference was false (Greif is printed OCR, Crosilla is HTR) and was dropped. The Crosilla HTR paper is not retained as a separate reference in these documents because it served no independent function there. Regeneration of docs/data/cer_statistics.json changed only literature and meta fields; all measured CER values, confidence intervals and per_doc records stayed byte-identical.
 
 Documents: [literature-comparison.md](literature-comparison.md), [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
-
----
 
 ### E104 Knowledge base aligned post hoc with the Promptotyping convention Knowledge Documents; frontmatter only, no renames (2026-07-31)
 
@@ -469,8 +448,6 @@ Kept unchanged, with reason: all file names, the document order and the whole pr
 
 Documents: [index.md](index.md), [journal.md](journal.md) session 92
 
----
-
 ### E105 Page-apparatus convention for entity marks: running heads unmarked, title pages, bylines and captions marked (2026-08-12)
 
 Occasion: the entity evaluation of 2026-08-12 measured tier-1 precision at 0.952 over 293 decidable cases but had to leave the page apparatus open. By keyword heuristic, 56 of the 279 correct marks sit in running heads, title pages and bylines, document 330 alone carrying sixteen repetitions of the same running head, so a second reading of the precision figure was not computable before the convention was set (reports/2026-08-12_entity-eval-ergebnis.md, section "Beschrieben").
@@ -480,8 +457,6 @@ Finding from the facsimile-adjudicated cases: a running head repeats the identic
 Decision (operator, 2026-08-12): running heads are not marked, because repeated page furniture is redundant as annotation. Title pages, byline organisations and picture captions are marked, because they carry research value. Rejected alternatives: marking running heads and flagging them as apparatus, rejected because the flag would preserve redundant information and inflate the mark population without adding a queryable fact; and a blanket apparatus exclusion, rejected because title pages and captions carry genuine research value. Consequences: a deterministic running-head suppression instrument becomes the follow-up work item, keyed on the repetition of the identical normalized line at page start across several pages of one document; and because the adjudicated verdicts are persisted per mention (E106), the convention reading of the precision measurement can be computed from the existing sample without drawing again.
 
 Documents: [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 93
-
----
 
 ### E106 Entity consequence wave: derived matcher channels stay tier 2, adjudicated verdicts persisted snapshot-bound (2026-08-12)
 
@@ -493,17 +468,13 @@ Decision (b), persistence of the adjudicated judgments: `data/entities/mention_v
 
 Documents: [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md), [agent-orchestration.md](agent-orchestration.md), [journal.md](journal.md) session 93
 
----
-
 ### E107 Viewer UI reduction: one document bar, two dropdowns, annotated reading view as default (2026-08-12)
 
 Occasion: the operator judged the viewer over-structured (stacked border edges, redundant state labels, seven scattered panel controls) and decided the reduction step by step at screenshots; the chrome inventory in `reports/2026-08-12_viewer-ui-analyse.md` grounded the findings.
 
 Decision (operator, 2026-08-12): the subtitle and the panel state labels are removed; document metadata, workflow pills and actions share one bar with one bottom edge, status words move into pill tooltips (the dot color carries the traffic light); the seven panel controls become two dropdowns, View and Edit, with Edit gathering layout, OCR and XML editing in one place; the page number between the pager arrows is the jump input; the view set is condensed to three (Text, OCR, XML) with the annotated reading view (rendered TEI plus GND entities and review candidates) as the default for every document (`entities=0` opts out) and markup highlighting as a toggle inside the view menu. Rejected alternatives: a visible segmented source control (rejected because three equally pressed buttons from two semantic groups misread as one active group), and a dedicated Entities view (rejected because the annotated text is the primary reading need and specialized views should be the exception, per operator).
 
-Documents: [workflow.md](workflow.md) section 3.7, `reports/2026-08-12_viewer-ui-analyse.md`; commits e7f9dd6d, baecc433, d65854a3.
-
----
+Documents: [workflow.md](workflow.md), Entity Layer (read-only) section, `reports/2026-08-12_viewer-ui-analyse.md`; commits e7f9dd6d, baecc433, d65854a3.
 
 ### E108 Author mentions always marked; running-head suppression active in the matcher (2026-08-13)
 
@@ -515,8 +486,6 @@ Consequences: corpus scan, all 285 previews (schema-valid and text-invariant), v
 
 Documents: [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 94
 
----
-
 ### E109 Adjudicated error classes repaired by deterministic guards; verdict store rebound to the frozen scan (2026-08-13)
 
 Occasion: the operator directed the repair program toward capturing the work class and, beyond it, every listed entity. The facsimile adjudication of 2026-08-12 had confirmed nine wrong_entity and wrong_span cases (five of them naming a work or an institution where a person was marked), and corpus probes grounded each candidate rule before it was built: the scan invariant carried eleven hyphen-adjacent tier-1 marks, the citation frames matched twelve tier-1 full names, the eponymous container exactly one.
@@ -527,9 +496,7 @@ Root-cause fix in the same wave: `build_mention_verdicts` read the live corpus s
 
 Consequences: all nine adjudicated cases verified fixed at their corpus positions; the hyphen invariant of the scan reads zero violations; 285 previews schema-valid and text-invariant; the reference trend rose to tier-1 precision 0.67 with recall and coverage unchanged, which is the expected signature of pure false-positive removal; entity battery green.
 
-Documents: [entity-integration.md](entity-integration.md) section "Adjudicated precision guards", [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 94
-
----
+Documents: [tei-mapping.md](tei-mapping.md), adjudicated precision guards, [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 94
 
 ### E110 Verdict guard as standing regression gate over the adjudicated judgments (2026-08-13)
 
@@ -543,8 +510,6 @@ First run evidence (2026-08-13, scan of the E109 state): 279 correct marks all s
 
 Documents: [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 95
 
----
-
 ### E111 Apostrophe folding between corpus text and entity lexicon (2026-08-13)
 
 Occasion: the zero-mention classification wave (three Opus agents over the 42 list entries without a single match) isolated one root cause behind most missed work titles: the E94 stock correction normalized the corpus text to the typographic apostrophe U+2019, while the curated list and the GND cache carry ASCII U+0027, and the matcher compares literally. One French title alone was invisible in every document that cites it.
@@ -554,8 +519,6 @@ Decision: both sides fold U+2019 to ASCII at matching time, in exactly three pla
 Consequences: 53 additional marks corpus-wide, five list entries left the zero-mention set (37 remain), the recovered title surfaces in 15 documents; the verdict guard (E110) confirms the identical adjudicated state before and after, no judgment violated; previews, viewer mirror and overview regenerated; battery green, ruff clean.
 
 Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
-
----
 
 ### E112 Curated-variant channel and list hygiene (2026-08-13)
 
@@ -567,8 +530,6 @@ Consequences: lint green with the two hard-coded real-stock expectations updated
 
 Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
 
----
-
 ### E113 Pointwise text repairs of the three adjudicated OCR defects (2026-08-13)
 
 Occasion: the verdict guard held four adjudicated-wrong marks in tier 1, all of them text-side defects (E110). The operator released the repair.
@@ -578,8 +539,6 @@ Decision: three pointwise, facsimile-verified, backed-up repairs on `output/tei_
 Consequences: validator and corpus schema gate green; CER chain re-run, headline unchanged (fidelity mean 2.08, median 1.28, `docs/data/cer_statistics.json` regenerated), so the repairs lie outside the partial-transcription reference scope; the guard now classifies the three documents' records as text_changed instead of carrying violations.
 
 Documents: [cer-methodology.md](cer-methodology.md) unchanged, [journal.md](journal.md) session 95
-
----
 
 ### E114 Facsimile mapping via pb anchors in the delivery chain (2026-08-13)
 
@@ -591,8 +550,6 @@ Consequences: doc 1350 text pages 5 and 6 resolve to the correct third and fourt
 
 Documents: [workflow.md](workflow.md) persistence section to be extended on the next touch, [journal.md](journal.md) session 95
 
----
-
 ### E115 Figure zones scanned and demoted instead of excluded (2026-08-13)
 
 Occasion: the zero-mention classification proved that the blanket `<figure>` exclusion loses real content; the Chagall plate catalogue (doc 760) keeps its whole provenance apparatus (Fondation Maeght, Maeght editeur, Galerie d'Etat Tretiakov, Musee d'Art Moderne) in captions the matcher never read.
@@ -602,8 +559,6 @@ Decision (operator-released program, reversible middle path): `<figure>` zones t
 Consequences: corpus-wide the change adds worklist candidates only, the tier-1 population is unchanged; doc 760's provenance apparatus is fully visible; overview gains the class "figure"; the gold-benchmark miss fixture moved off figure captions. Downstream follow-up recorded: the layout-overlay stream of spread documents still resolves per text page (E114 note).
 
 Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
-
----
 
 ### E116 Dotted-abbreviation guard and hyphen reach of the surname index (2026-08-13)
 
@@ -615,8 +570,6 @@ Consequences: the worklist loses 442 candidates that were provably no mention, t
 
 Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
 
----
-
 ### E117 The entity overview carries ambiguity and adjudicated quality (2026-08-13)
 
 Occasion: the overview page counted a candidate only for its reported id, so an entity that occurs exclusively as the other possible bearer of an ambiguous surface was displayed as "not found". Three list entries were affected, one of them sixteen times. The page also showed volume only, never the measured quality, although the adjudicated judgments have been available since the evaluation wave.
@@ -627,8 +580,6 @@ Consequences: the completeness question the page exists for is answered without 
 
 Documents: [entity-evaluation.md](entity-evaluation.md), [journal.md](journal.md) session 95
 
----
-
 ### E118 Every mark carries its provenance and verification state (2026-08-13)
 
 Occasion: the operator asked that an annotation state in the data itself who asserted it and whether a human checked it, so a later pass can separate settled marks from open ones and so the annotation stays auditable outside this pipeline.
@@ -638,8 +589,6 @@ Decision: three things stay separate and never merge. Provenance names the asser
 Consequences: the preview panel wraps its marks with provenance, schema validity and text invariance unchanged, two runs byte-identical. A mark with an adjudicated-wrong judgment is deliberately not suppressed inside the writer, because the verdict guard exists to fail such a run loudly and a silent drop would mask the regression. The delivered TEI stays untouched; whether these attributes belong in the delivery is the library's decision, its guidelines require the inline reference and say nothing about certainty.
 
 Documents: [entity-integration.md](entity-integration.md), [journal.md](journal.md) session 95
-
----
 
 ### E119 Operator marking policy: anchor-free surnames and generic work titles (2026-08-13)
 
@@ -703,51 +652,10 @@ Recorded, not acted on: the CER catalog says a page break stays recognizable as 
 
 Documents: [refactoring-plan.md](refactoring-plan.md), [journal.md](journal.md) session 97
 
-## Open items
-
-| # | Question | Context | Blocks | Clarification |
-|---|---|---|---|---|
-| O8 | Metadata from Alma/MMSID | ID plus MMSID plus PubForm in the `teiHeader` (per the ZBZ editorial guidelines) | phase 3 TEI | Open, with ZBZ (state 2026-06-08, E76/E83 confirmed): header metadata from Alma including the MMSID is ZBZ domain and does not belong in the OCR/layout/TEI pipeline. A projection was introduced with E69, removed with E76, rejected again with E83. Spec conflict: the guidelines demand these fields; to be clarified with ZBZ (who pulls from Alma, which fields). Decider: ZBZ together with DHCraft. While open, most delivered headers carry an empty container title (intended, not a defect). |
-| O13 | TEI editorial details (subject headings) | who creates them, where in the header? Guidelines say "being clarified" | phase 3 TEI | Decider: ZBZ. Until settled, headers stay without subject headings; no pipeline blocker. |
-| O18 | Test multimodal LLM correction (scan image plus OCR text) | research reports sub-1 % CER (Greif et al. 2025); infrastructure exists | quality | Decider: DHCraft (project lead), own experiment; blocks nothing. |
-| ~~O25~~ | Surface `<graphic url>` produced pipeline-side. RESOLVED (2026-06-21, E89) | the surface-to-image pointer was missing; blank-page placeholder pointed to a non-existent file | makes the facsimile self-contained | Implemented in E89; all surfaces carry the graphic, committed gate. |
-| ~~O26~~ | teiCrafter annotation model versus ZBZ editorial guidelines. RESOLVED (2026-06-21, E88) | guidelines demand inline GND at the mention site; E87 had additionally schema-allowed a standOff register | none | Order: only the ZBZ rules apply; inline GND is the delivery model. Implemented in E88; teiCrafter output model to be aligned. |
-| O27 | ZBZ README contradicts itself on captions | the register section says entities in captions are not tagged; the figures example tags an `<orgName ref="GND:...">` inside a `<figure>`. Found during the conformity check (E88) | nothing (no effect on the entity-free corpus; concerns future teiCrafter output) | Decider: ZBZ. Deliberately not machine-enforced while the contradiction is open. Question: does the ban cover the caption (`<head>`) or the whole `<figure>` block including the explanation (`<p>`)? |
-| ~~O22~~ | 289 versus 286 PDF discrepancy. RESOLVED (2026-05-27) | Masterfile has 325 texts, 289 digitised, 286 delivered as PDF; the three undelivered: 1745, 1750, 1970; verified via corpus_audit | none | done |
-| ~~O23~~ | `tei_final` headers not schema-valid. RESOLVED (2026-05-27, E68) | diagnosis had named only `idno`; corpus-wide validation showed four causes, all omitted by the ODD subset; fixed by E68, gated by `tests/test_tei_schema.py` | none | done |
-| ~~O24~~ | `tei_validator --compare-ref` showed a wrong reference CER. RESOLVED (2026-05-27, E69) | a silent import failure fell back to a length approximation; fixed and gated | none | done |
-
-### Stability (LLM non-determinism, released 2026-07-07, execution at the workstation)
-
-- (a) Stability pilot: 5 documents x 3 pipeline re-runs, standard deviation of per-document CER. Executed on 2026-07-07 (E100); the `stability` block of `docs/data/cer_statistics.json` now reads `status: measured` and carries a per-document standard deviation for the five pilot documents.
-- (b) Inter-engine CER: a second OCR run with a different engine as cross-validation. Medium effort.
-
-### Closed questions
-
-- ~~O6~~ Normalisation versus source fidelity: E49 (source-faithful with defined normalisations)
-- ~~O9~~ `div type` values for front/back matter: E49 (front: editorial, dedication; back: translation, reprint, otherEdition)
-- ~~O11~~ Entities without GND entry: E38/E50 (internal ids as primary reference; removed with E71)
-- ~~O21~~ Layout region post-processing: E25/E26 (Gemini QA plus detect, no manual heuristic fix)
-
----
-
-## Risks
-
-| # | Risk | Impact | Mitigation | Status |
-|---|---|---|---|---|
-| R2 | TEI complexity plus schema incompatibility | high | E48 (`zbz_hersch.rng`) plus E49 (guidelines) | mitigated |
-| R3 | GND hallucinations | medium | none | obsolete (E71: NER removed) |
-| R5 | Fork divergence DHCraft versus ZBZ | medium | define merge strategy plus CI tests | open |
-| R7 | Transkribus incompatibility PAGE-XML | high | schema 2013-07-15, id scheme `{NNNN}_p{NNN}`, JPG; `@type`/`@custom` not verifiable (empty TextRegions) | partly resolved (E23, E81) |
-| R10 | NER quality on French (66 % of corpus) | medium | none | obsolete (E71: NER removed) |
-
----
-
 ## References
 
-- [project.md](project.md): milestones plus status
-- [pipeline.md](pipeline.md): pipeline decisions
-- [workflow.md](workflow.md): end-to-end workflow, viewer, round trip, save mechanism, provenance concept
-- [specification.md](specification.md): requirements, gates, epics
-- [arbeitsbericht-v3.md](arbeitsbericht-v3.md): measured quality state, delivery synthesis
-- [journal.md](journal.md): chronological session history
+- [plan.md](plan.md): the decisions still to be taken and the forward-looking programme
+- [journal.md](journal.md): the chronological course of the work
+- [index.md](index.md): navigation across the knowledge base
+- [verification.md](verification.md): the verification chain behind the measured claims
+- [integration.md](integration.md): the delivery contracts with ZBZ, Transkribus and teiCrafter

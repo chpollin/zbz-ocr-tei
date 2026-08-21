@@ -1,200 +1,135 @@
 ---
 title: Infrastructure
-type: knowledge
 project:
   name: zbz-ocr-tei
   repository: https://github.com/chpollin/zbz-ocr-tei.git
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
-status: complete
-created: 2026-02-18
-updated: 2026-08-21
-tags: [zbz-ocr-tei, infrastructure, azure, podman, cicd]
 template:
   name: Vorlage Architecture
   version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/architecture
+status: complete
+language: en
+version: 1.0
+created: 2026-02-18
+updated: 2026-08-21
 authors: [Christopher Pollin]
+related: [pipeline, workflow, testing, integration, plan, design]
 ---
 
 # Infrastructure
 
-Deployment, API access, containerization, and CI/CD for ZBZ production operation.
-
----
+Deployment, API access, continuous integration and the static delivery of the viewer.
 
 ## Overview
 
 | Aspect | Details |
 |---|---|
-| API access | Azure (Mistral Document AI 2512, key available), Anthropic + Google API |
-| Versioning | GitHub (development) + GitLab University of Zurich (production, fork) |
-| Containers | Podman (no Docker, OCI-compatible) |
-| Deployment | fork of the development repo on ZBZ infrastructure |
-| Registry | GitLab container registry, University of Zurich |
+| Model APIs | Google Gemini (resolved default OCR engine, layout QA, TEI refinement), Anthropic (optional post-correction), Azure AI Foundry (Mistral Document AI, reproducibility path) |
+| Credentials | environment variables, loaded from an uncommitted `.env` at the repository root |
+| Versioning | GitHub for development, GitLab University of Zurich for the production fork |
+| Continuous integration | GitHub Actions on the development repository |
+| Delivery | static GitHub Pages site served from `docs/`, no backend |
+| Pipeline execution | local clone or the production fork; no hosted runtime |
 
----
+The production fork, its container image and its own CI are planned rather than built; the
+items and their conditions are in [plan.md](plan.md), phase E, and the counterpart
+relationship is in [integration.md](integration.md).
 
-## Azure Integration
+## Model APIs and credentials
 
-### Mistral Document AI
+### Engine roles
 
-| Aspect | Details |
+`ocr_pipeline --engine auto` is the documented default and resolves to Gemini, so Gemini is
+the effective production OCR engine. The Mistral Document AI path on Azure stays selectable
+under `--engine mistral` as the reproducibility record of the delivered corpus, which was
+produced with it; the deployed endpoint answers 401 today, so a rerun through that path
+needs a new deployment first. Every engine writes its result into the base text layer
+directory `output/mistral_results/`, whose name is historical and independent of the engine
+that produced the text. Which source a downstream stage prefers is decided by the loader
+priority described in [pipeline.md](pipeline.md).
+
+| API | Access | Use |
+|---|---|---|
+| Gemini 3.1 Flash Lite | Google API | OCR, layout QA and detection, document classification, TEI refinement |
+| Claude Haiku | Anthropic API | optional LLM post-correction (E17) |
+| Mistral Document AI 2512 | Azure AI Foundry, serverless | reproducibility path for the delivered base text layer |
+| Docling Serve | self-hosted or local | layout analysis |
+| Transkribus REST | ZBZ account | PAGE-XML upload (E81) |
+
+### Environment variables
+
+Credentials live in a `.env` file at the repository root. The file is never committed, never
+read and never printed, and no example file is tracked, so the following list is the
+reference for the variable names. `scripts.config` is the single loader; other modules read
+the values from there.
+
+| Variable | Consumer |
 |---|---|
-| Provider | Azure AI Foundry (serverless API, pay-as-you-go) |
-| Model | `mistral-document-ai-2512` |
-| Endpoint format | `https://<deployment>.<region>.models.ai.azure.com/v1/ocr` |
-| Regions | East US, East US 2, West US, West US 3, South Central US, North Central US, Sweden Central |
-| Role | primary production engine for ZBZ |
-| Status | API key available, engine implemented |
-| Advantage | no GPU, server-based, scalable, 30 pages/request |
+| `GEMINI_API_KEY` | Gemini client (`scripts/core/gemini.py`, `scripts/config.py`) |
+| `ANTHROPIC_API_KEY` | LLM post-correction (`scripts/ocr/llm_postprocess.py`) |
+| `MISTRAL_DOC_AI_ENDPOINT`, `MISTRAL_DOC_AI_KEY` | Mistral path (`scripts/ocr/ocr_pipeline.py`) |
+| `DOCLING_SERVE_URL` | layout analysis (`scripts/config.py`) |
+| `TRANSKRIBUS_USER`, `TRANSKRIBUS_PASSWORD`, `TRANSKRIBUS_COLLECTION` | Transkribus upload (`scripts/edition/transkribus_upload.py`) |
 
-Setup:
+### Mistral Document AI on Azure
 
-- Deploy in Azure AI Foundry: Model Catalog > `mistral-document-ai-2512` > Serverless Endpoint
-- `.env`: `MISTRAL_DOC_AI_ENDPOINT`, `MISTRAL_DOC_AI_KEY` (see `.env.example`)
+The deployment sits in Azure AI Foundry as a serverless endpoint of
+`mistral-document-ai-2512`, available in East US, East US 2, West US, West US 3, South
+Central US, North Central US and Sweden Central. The call is `POST {endpoint}/v1/ocr` with a
+bearer token, the PDF travels base64-encoded in the `document.document_url` field, and the
+response returns `pages[]` with `index`, `markdown`, `images[]` and `dimensions`. A request
+carries at most 30 pages and 30 MB, which `MistralOCR._split_pdf()` handles by splitting.
+Bounding-box and document annotations are available for at most eight pages per request.
 
-API:
+Failure modes seen during setup, kept because they cost time to rediscover.
 
-- `POST {endpoint}/v1/ocr` with bearer token
-- Input: base64 PDF in the `document.document_url` field
-- Response: `pages[]` with `index`, `markdown`, `images[]`, `dimensions`
-- Limits: 30 pages/request, 30 MB max (the pipeline splits automatically via `MistralOCR._split_pdf()`)
-- Annotations: `bbox_annotation` + `document_annotation` (max 8 pages)
+- A 404 after deployment means the endpoint URL lacks `/v1/ocr`; the host must be
+  `*.models.ai.azure.com` and never `*.services.ai.azure.com`.
+- A 413 means the PDF is too large and needs compression or splitting.
+- Base64 errors come from line breaks inside the encoded string.
+- The catalog entry appears under "Mistral Document AI" rather than "Mistral OCR"
+  (`mistral-document-ai-2505` and `-2512`).
 
-Typical errors:
-
-- 404 after deployment: append `/v1/ocr` to the endpoint URL. The endpoint must be `*.models.ai.azure.com` (NOT `*.services.ai.azure.com`)
-- 413 / file too large: compress or split the PDF
-- Base64 errors: no line breaks in the base64 string
-- "Mistral OCR" not in the catalog: renamed to "Mistral Document AI" (`mistral-document-ai-2505` / `-2512`)
-
-### Other APIs
-
-| API | Access | Use | Status |
-|---|---|---|---|
-| Gemini 3.1 Flash Lite | Google API | layout QA/detect, classification, OCR correction, TEI refinement | active |
-| Claude Haiku 4.5 | Anthropic | LLM post-correction (optional, E17) | active |
-
-### Configuration (planned)
-
-A YAML-based configuration is planned; currently the engines are configured directly in
-`scripts/config.py` and `scripts/ocr/ocr_pipeline.py`.
-
-```yaml
-# example config.yaml (planned)
-ocr:
-  default_engine: mistral
-  engines:
-    mistral:
-      provider: azure-foundry
-      endpoint_env: MISTRAL_DOC_AI_ENDPOINT
-      model: mistral-document-ai-2512
-      api_key_env: MISTRAL_DOC_AI_KEY
-    gemini:
-      provider: google
-      model: gemini-3.1-flash-lite-preview
-      api_key_env: GEMINI_API_KEY
-```
-
----
-
-## Containerization (Podman)
-
-### Requirements
-
-- OCI-compatible image (Podman = daemonless Docker alternative)
-- multi-stage build: base (Python + dependencies) plus optional GPU
-- configuration via environment variables (API keys, endpoints)
-- no secrets in the image
-
-### Containerfile (draft, not yet implemented)
-
-```dockerfile
-FROM python:3.11-slim
-
-WORKDIR /app
-COPY pyproject.toml .
-RUN python -c "import tomllib; print(chr(10).join(tomllib.load(open('pyproject.toml','rb'))['project']['dependencies']))" > requirements.txt     && pip install --no-cache-dir -r requirements.txt
-
-COPY scripts/ scripts/
-
-ENV MISTRAL_DOC_AI_ENDPOINT=""
-ENV MISTRAL_DOC_AI_KEY=""
-ENV GEMINI_API_KEY=""
-
-ENTRYPOINT ["python", "-m", "scripts.ocr.ocr_pipeline"]
-```
-
-Not yet implemented.
-
----
+Engine configuration currently lives in `scripts/config.py` and
+`scripts/ocr/ocr_pipeline.py`. Moving it into one configuration file is a planned item in
+[plan.md](plan.md), phase E.
 
 ## CI/CD
 
-### Active: GitHub Actions (development repo)
+`.github/workflows/tests.yml` runs two gates on every push and pull request under Python
+3.11, `ruff check scripts tests` and the full pytest suite. Which part of the suite survives
+a fresh checkout, and which markers select it, is owned by [testing.md](testing.md).
 
-`.github/workflows/tests.yml` (since 2026-06-10) runs two gates on every push/PR under
-Python 3.11: `ruff check scripts tests` and the full pytest suite. Data-dependent tests
-(`output/`, `data/source/`) skip themselves on the fresh checkout; this covers the schema
-compilation, the statistics library, helpers, and script health.
+`pyproject.toml` is the only manifest. The repository declares no build backend, because it
+is a dependency set and a script pipeline rather than an installable package, so the workflow
+materializes the dependency list from `[project] dependencies` plus the `dev` extra and
+installs it with pip. The `dev` extra pins ruff to one version, which the local
+`.pre-commit-config.yaml` hook reuses, so hook and CI report the same findings. The heavy
+layout engines are the separate optional extra `layout` and stay uninstalled in CI.
 
-`pyproject.toml` is the only manifest since 2026-08-21; `requirements.txt` is gone. The repo
-declares no build backend, because it is a dependency set and script pipeline rather than an
-installable package, so the workflow materializes the dependency list from
-`[project] dependencies` plus the `dev` extra and installs it with pip. The `dev` extra pins
-ruff to one version, which the local `.pre-commit-config.yaml` hook reuses, so hook and CI
-report the same findings. The heavy layout engines (torch, Docling) are the separate
-optional extra `layout` and are not installed in CI.
+### Production fork
 
-### Planned: GitLab CI (University of Zurich, E10)
-
-- GitLab CI on the University of Zurich instance
-- container build plus push to the GitLab registry
-- automatic tests on push
-- merge strategy: upstream changes from the development repo into the fork
-
-### Fork model
-
-| Aspect | Details |
-|---|---|
-| Development repo | GitHub: `chpollin/zbz-ocr-tei` |
-| Production repo | GitLab University of Zurich (fork) |
-| Merge direction | GitHub -> GitLab (upstream updates) |
-| Fork adjustments | API keys, endpoints, ZBZ-specific config |
-
-Details of the merge strategy are still to be defined.
-
-`.gitlab-ci.yml` is not yet implemented.
-
----
+The production repository is a fork on the GitLab instance of the University of Zurich; the
+fork relationship, its merge direction and its adjustments are described in
+[integration.md](integration.md). The container image, the GitLab CI configuration and the
+merge strategy for upstream changes are planned and specified in [plan.md](plan.md), phase E.
 
 ## Local Development
 
-### Prerequisites
-
-| Tool | Version | Purpose |
-|---|---|---|
-| Python | 3.11+ | pipeline scripts |
-| CUDA | 12.4+ | Docling (local layout analysis, optional) |
-| GPU | 8+ GB VRAM | Docling (local layout analysis, optional) |
-| Git | 2.x | version control |
-
-### Setup
+Setup, dependency installation and the `.env` keys are in the README, section "Getting
+started". What the README does not carry is the optional local layout stack. Docling runs
+locally only with CUDA 12.4 or newer and a GPU with at least 8 GB VRAM; without it, layout
+analysis goes through a Docling Serve instance named by `DOCLING_SERVE_URL`. The hardware
+check is one command.
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # Linux/Mac
-# .venv\Scripts\activate   # Windows
-
-uv sync --extra dev   # pip fallback: see README, Getting started
-
-# GPU check (optional)
 python -m scripts.ocr.ocr_pipeline --check-gpu
 ```
 
----
+Python 3.11 or newer is required, matching the CI environment.
 
 ## Viewer Deployment
 
@@ -219,11 +154,29 @@ branch `main`, folder `/docs`. The `.nojekyll` file in the directory
 prevents Pages from interpreting the content as a Jekyll site.
 
 Constraint: `docs/images/` is gitignored (the facsimile PNGs are too large
-for Git) except for the committed demo documents, which
-[pipeline.md](pipeline.md) lists in its online demo section. On GitHub
+for Git) except for the committed demo documents listed below. On GitHub
 Pages every other document shows OCR/layout/TEI text but no facsimile. Full
 online inspection needs an external image host (IIIF server, S3, CDN) and a
 configurable `ZBZ.path.image()` with a base-URL variable.
+
+### Online demo (E28)
+
+The full pipeline output under `output/` is gitignored and available locally only. For the
+online demo the facsimiles of a few representative documents are committed under
+`docs/images/`, and the same ids form the `featured` set in `docs/data/catalog.json`. They
+were chosen to cover the layout classes, both main languages and the length range.
+
+| Doc | Type | Language | Pages | Note |
+|---|---|---|---|---|
+| 2310 | A | FR | 3 | journal article, JSTOR cover |
+| 1000 | B | FR | 4 | two-column |
+| 1330 | D | DE/FR | 6 | bilingual anthology |
+| 1540 | C | DE | 8 | German monograph |
+| 1620 | B | DE | 5 | two-column brochure |
+
+Since the per-page mirror (E57), layout, OCR and TEI data for the whole corpus live in
+`docs/data/pages/`, so the viewer works on GitHub Pages for every document and only the
+facsimile images stay local outside this demo set.
 
 ### No third-party resources
 
@@ -236,7 +189,8 @@ therefore issue no request to a CDN or a font host, the legal notice states that
 plainly, and the viewer keeps working in an environment without outbound
 internet access. A future runtime dependency is vendored the same way rather
 than linked; the token catalog keeps the font stacks, `fonts.css` only adds the
-`@font-face` rules.
+`@font-face` rules. The design rationale behind the token catalog is in
+[design.md](design.md).
 
 ### Regenerating viewer data
 
@@ -250,21 +204,20 @@ python -m scripts.edition.generate_edition_data --mirror-only
 
 The full run and the remaining flags are in [CLAUDE.md](../CLAUDE.md), viewer data
 section; where this step sits in the curation round trip is in
-[workflow.md](workflow.md), section 4.3.
+[workflow.md](workflow.md), round-trip section.
 
----
+## Security convention
 
-## Security Convention
-
-- the `.env` file is NEVER read or printed (it contains API keys)
-- no secrets in code or docs
-- API keys, tokens, and passwords exclusively in environment variables
-- see the top-level [CLAUDE.md](../CLAUDE.md) §Security
-
----
+Credentials live in environment variables only, never in code, documents or commits. The
+binding rules, including the prohibition on reading or printing `.env`, are in
+[CLAUDE.md](../CLAUDE.md), section Security.
 
 ## References
 
-- [pipeline.md §Engines](pipeline.md): engine details and setup notes
-- [project.md §ZBZ Workflow](project.md): manual workflow plus integration points
+- [pipeline.md](pipeline.md): stages, engines and the loader priority of the text layer
+- [workflow.md](workflow.md): data flow, viewer and round trip
+- [testing.md](testing.md): the suite the CI gates run and its clone-safe subset
+- [integration.md](integration.md): ZBZ, Transkribus and teiCrafter, including the fork model
+- [plan.md](plan.md): configuration file, container image, GitLab CI, merge strategy
+- [design.md](design.md): the design system behind the delivered pages
 - [decisions.md](decisions.md): E6, E8, E9, E10 (Mistral, endpoints, Podman, GitLab fork)

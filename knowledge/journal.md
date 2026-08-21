@@ -1,23 +1,22 @@
 ---
 title: Work Journal
-type: journal
 project:
   name: zbz-ocr-tei
   repository: https://github.com/chpollin/zbz-ocr-tei.git
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
-status: draft
-language: en
-created: 2026-01-29
-updated: 2026-08-21
-tags: [zbz-ocr-tei, journal]
 template:
   name: Vorlage Journal
-  version: 0.3
+  version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/journal
-related: [decisions, index, journal-archive]
+status: active
+language: en
+version: 1.0
+created: 2026-01-29
+updated: 2026-08-21
 authors: [Christopher Pollin]
+related: [decisions, journal-archive, plan, index]
 ---
 
 # Work Journal
@@ -88,8 +87,6 @@ Wave 2 ran in the same session as well (E122): scripts layout (`scripts/core/`, 
 Wave 3 closed the plan in the same session (E123): shared helpers and tooling gates, the test suite strengthened to 2344 tests of which 1447 run on a fresh clone, one data-loss defect in the step-2 repair path fixed, one incident recorded (a verification run overwrote the frozen evaluation draw under the gitignored audit folder; reconstructed, tracked data unchanged).
 
 **Next steps** 1. Operator decisions: the five homeless findings, the re-freeze of the evaluation draw, the CER catalog corrections. 2. `uv lock` once uv is installed. 3. Regular work resumes on the entity layer (M4 frozen-rules run, redraw and recall remeasurement).
-
----
 
 ## Compact Archive (Sessions 1 to 96)
 
@@ -222,28 +219,21 @@ details in the git history.
 
 Older detail entries preserved in the git history.
 
----
-
 ## Lessons
 
 Observations distilled from the sessions that stay relevant for future work:
 
 - L1: Validation must be actionable. A false-positive rate above 50 % makes reports useless; every warning needs a concrete action.
-- L2: Entity type must not get lost; annotation needs `(tag, id)` from the index, not just names.
-- L3: A stopword filter is essential; generic nouns produce ~30 % false positives without it.
 - L4: Merge page fragments into document structure; the ZBZ reference has one top-level div, and the post-assembly merge is deterministic and free.
 - L5: Invalidate the step-2 cache on prompt changes; `--force` does not regenerate it.
-- L6: LLM NER carries ~5-10 % inherent false positives; the answer is a curation editor, not a code fix.
 - L7: Page-numbering drift breaks pagewise CER; content-aligned evaluation is immune.
-- L8: Parse multilingual codes correctly ("fra/deu" otherwise decays to "und"); affects ~40 documents.
+- L8: Parse multilingual codes correctly ("fra/deu" otherwise decays to "und").
 - L9: Keep facsimile and pb in sync; empty surfaces for pages without layout zones.
-- L10: Internal ids as primary reference; GND in `ref`, internal in `corresp` (dual attribute, E50).
 - L11: Server-less persistence has two truths: the canonical consumption location (`output/`) and the frontend's read location (`docs/data/` mirror). Writing only to the first saves for real but invisibly for the curator.
 - L12: With parallel instances in the same tree, `git status` plus verification against the real file state is mandatory; a "file modified since read" conflict is the signal to step back, not to force.
 - L13: A prose figure ("285/285 valid") is no evidence; the delivered SSoT needs an automated gate, not a claim.
 - L14: A green conformity gate is only as sharp as the corpus it runs over; on the entity-free `tei_final`, "285/285 conformant" means "no violation", not "entities correctly GND-tagged". The entity rules Z1-Z4 bite only after inline-GND curation.
 - L15: Newspaper layouts fail systematically (>40 zones, OCR hallucinations); ~3 % of the corpus.
-- L16: Tier-2 documents (4-8 pages) reached 85 %+ APPROVED rate, tier-1 (1-3 pages) only 40 %.
 
 <!--
 Entry template (insert new entries directly under "## Entries"):
