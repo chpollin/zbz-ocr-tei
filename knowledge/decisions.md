@@ -83,7 +83,7 @@ Consolidated register of the decisions taken in the project, cross-cutting and c
 | E62 | Method page `docs/methode.html` | lean static page with headline CER, stratified values, literature comparison, limitations, tool documentation; deliberately no interactive dashboard. Implicit methodology position: never LLMs for entity-id linking | 2026-05-26 | [specification.md](specification.md) |
 | E63 | Blank-page detection plus viewer handling (phase 1) | 79 blank pages corpus-wide; phantom regions from layout QA hallucination countered by the Docling zero signal; viewer fix interim/heuristic; phase 2 in E65 | 2026-05-26 | [workflow.md](workflow.md) |
 
-## Decided (E64-E125, detail)
+## Decided (E64-E130, detail)
 
 More recent decisions with full rationale as dedicated sections.
 
@@ -713,6 +713,45 @@ Verified: entity suites and ruff green; corpus scan tier 1 5244 to 6090 and work
 
 Documents: [tei-mapping.md](tei-mapping.md) entities section, [verification.md](verification.md) open findings, [journal.md](journal.md) session 102
 
+### E129 Population redraw adjudicated, verdict store made multi-snapshot (2026-08-21)
+
+Occasion: every published entity figure belonged to the 2026-08-12 snapshot, while the marking policy of E119 and the speaker-initials rule of E128 had since widened the mark population, so the rate described a population the delivery no longer carries. The plan orders the redraw before further rule work, and the re-freeze question of the 2026-08-13 draw was still open.
+
+Decision: a fresh stratified draw over the post-E128 corpus scan, seed 42, under `output/audits/eval_sample_2026-08-21/`, with 300 tier-1 precision cases across 13 category-and-rule strata, 40 recall pages across 24 layout-and-language strata, and byte-identical frozen copies of the corpus scan and the catalog beside the draw. Nine independent agents adjudicated at the facsimile, one of them delivering the blind second judgment, under a wave-specific protocol stored with the draw as `ADJUDICATION.md`. That protocol differs from the 2026-08-12 one in two points. The facsimile of a case is resolved through the per-document sidecar `{doc}_facs.json` (E114) before the case path serves as fallback, and the page-apparatus convention of E105 and E108 is in force. The verdict store `data/entities/mention_verdicts.json` becomes multi-snapshot so both waves bind at once; `scripts/entity/build_mention_verdicts.py` takes `--sample-dir` and derives the frozen scan, the snapshot label and the wave names from it, rebuilding one wave replaces only that wave, and guard, entity overview, preview and running-head audit read the store per wave.
+
+Alternatives weighed: adjudicating the frozen 2026-08-13 draw as it stood (rejected, it predates E128, so the speaker-initials stratum would again be unmeasured and the re-freeze incident of E123 would carry into the published figure); a supplementary draw over the new strata alone (rejected, it measures the additions without giving the whole population one rate).
+
+Verified: all 300 drawn marks were decidable, because the sidecar resolved the page image in every case, the documents 120 and 1350 included that the earlier wave had to abandon. 296 marks are correct, 3 `wrong_entity` and 1 `not_in_source`, so precision is 0.9867 with a seeded percentile interval of 0.9733 to 0.9967 (seed 42, 10000 resamples, `_bootstrap_ci` in `scripts/entity/running_head_audit.py`); the same method recomputes the 2026-08-12 wave at 0.9522 with an interval of 0.9283 to 0.9761, so the intervals overlap and the point estimate rose. Raw agreement on the 50 doubly judged cases is 50 of 50. Recall over the 40 pages covers 63 mentions of listed entities, 38 marked, 22 on the worklist and 3 missed, a coverage of 0.952 and an auto hit-rate of 0.603 against 0.552 and 0.299 on the earlier wave. The store now holds 600 marks and 130 recall mentions over two waves, the 2026-08-12 records byte-identical to their committed state; the guard reports zero violations for both 2026-08-12 waves and for the 2026-08-21 recall wave, and four violations of class `still_tier1` for the 2026-08-21 precision wave, exactly the four adjudicated errors, and exits 1, which is its correct behaviour while known-wrong marks stand in tier 1. One recording artifact was corrected before the store was built. Two recall records carried transliterated umlauts in their `surface`, which made the guard report them as lost; the surfaces were corrected to the corpus spelling, the judgments and gids stayed untouched, and a note in the affected records holds the correction.
+
+Open after the wave: four defects that all arise in the text layer the matcher reads. Three are page apparatus the pipeline moved into the body, a running foot appended as an ordinary paragraph (document 3190), a running head standing as the page's own first paragraph (2880) and a running head the reading order spliced into the middle of a sentence (3070); the fourth is a `<speaker>` label the generator synthesised on a page that prints none (1440). The running-head detector fails in both directions, since all three apparatus errors lie outside every detected zone and two of their documents have no detected zone at all, while two recall agents independently found opening-page bylines demoted as running heads although E105 and E108 place them in scope, one of them on page 4 of a collective volume, so a page-one heuristic would not bound the class. The three recall misses are one rule class, twice the German genitive of a listed organisation and once an article-stripped short form of a listed newspaper, all in document 1540.
+
+Documents: [verification.md](verification.md) finding register, open findings and appendix, [journal.md](journal.md) session 103
+
+### E130 Running-head detection rebuilt on repetition, audit ground truth corrected (2026-08-21)
+
+Occasion: the adjudication wave of E129 left four defects standing in tier 1. Three of them came from the running-head detector, which failed in both directions at once, missing genuine page apparatus and catching genuine bylines, so neither its zones nor a page-one heuristic bounded the class.
+
+Decision: the detection principle is pure repetition, with no assumption about position. `scripts/entity/running_heads.py` segments the whole page instead of only its first two segments, which is what makes a running foot at the page end and a head that the reading order spliced into a sentence visible at all. A form is accepted when it stands alone on at least three pages and covers at least a floor share of the document's pages, the share floor keeping the front matter of long books out of the pattern. The former companion rule gives way to an alternation rule, where two forms of pure opposite page parity that together cover at least half the document count as a verso and recto pair. Four exemptions at the occurrence level solve the byline direction, each recording its reason:
+
+- `title-block`, the leading block of a page that carries a `<head>`, where the pipeline puts the title of a division together with its byline
+- `off-slot`, an occurrence following another apparatus form although its form otherwise stands alone
+- `repeated-on-page`, a form occurring twice on one page, which leaves that page without a zone
+- `inner-variant`, a merged variant below the page start
+
+An ablation shows that each of the four carries weight. `scripts/entity/entity_matcher.py` needed no change, because the contract of `head_spans` is unchanged; the two test modules of the detector and of its audit were rewritten with it.
+
+The second half of the decision concerns the ground-truth criterion of `scripts/entity/running_head_audit.py`, where a measurement defect was found. The audit read a mark as page apparatus when the words "running head" appeared anywhere in the adjudication reason, while the 2026-08-21 wave names the running head in ten reasons precisely to say that the mark stands outside it. Those ten negatives counted as positives and distorted recall and the false-alarm rate alike. A wave that tags its apparatus cases with a `running head:` prefix is now read through the tag alone (`is_running_head_mark`, `tagged_waves`), and an untagged wave keeps the substring reading. The corrected ground truth holds 28 apparatus marks instead of the apparent 35, and every figure below stands on the corrected measure.
+
+Alternatives weighed: a rule bound to the page position (rejected, it reads the apparatus only where the reading order happened to leave it, so a running foot and a head inside a sentence stay invisible); a page-one exception for bylines (rejected, one of the demoted bylines sits on page 4 of a collective volume); keeping the keyword reading of the verdict reason and excluding the ten cases by hand (rejected, the criterion would be wrong again for the next wave).
+
+Verified: `ruff check scripts tests` clean, `python -m pytest -q` at 2440 passed. The verdict guard falls from four violations of class `still_tier1` to exactly one, document 1440 page 1; the three repaired cases, documents 3190 page 18, 2880 page 2 and 3070 page 3, now report as `demoted`, and the wave `adjudication-2026-08-12` together with both recall waves stays at zero violations. The audit moves recall on adjudicated apparatus marks from 24 of 28 to 27 of 28 and false alarms on the other correct marks from 2 of 550 to 1 of 550; zones go from 1751 on 1649 pages to 1815 on 1497 pages, documents carrying a zone from 91 to 120, and convention precision from 0.9867 with an interval of 0.9733 to 0.9967 to 0.9966 with an interval of 0.9899 to 1.0. The exemptions apply 296 times as a leading title block, 204 times as repeated on page, 33 times as an inner variant and 28 times off slot. In the corpus scan tier 1 moves from 6090 to 6084 and tier 2 from 3125 to 3131 at an unchanged 9215 candidates, running-head demotions from 634 across 61 documents to 677 across 69 documents, of those on page one from 21 to 15; 76 marks moved from tier 1 to tier 2 and 70 the other way, across 59 documents. Eight cases were confirmed at the facsimile, the three repaired apparatus cases suppressed and the bylines of documents 600 page 1, 1830 page 4, 20 page 1, 2840 page 1 and 2030 page 1 still in tier 1.
+
+Public names changed with the rewrite, and no other module imports them. `MAX_HEAD_SEGMENTS` and `MIN_COMPANION_RECURRENCE` are gone; `MIN_RECURRENCE_SHARE`, `MIN_ALTERNATION_PAGES`, `ALTERNATION_COVERAGE`, `TITLE_BLOCK_SEGMENTS`, `EDGE_SEGMENTS`, `is_running_head_mark` and `tagged_waves` are new.
+
+Open after the repair: two residues of the detector and one defect left out of scope on purpose. One apparatus mark stays missed, "Heidegger" on page 4 of document 2510, which the detector missed before the repair as well. One false alarm stays, document 1780 page 3, the signature at the end of a three-page contribution whose three pages all carry the form, so repetition cannot separate it there. The fourth E129 defect, the `<speaker>` label the generator synthesised on page 1 of document 1440, was deliberately left out of scope, because removing a synthesised speaker label changes the delivered text and is therefore an operator repair; the verdict guard keeps its exit 1 while that mark stands.
+
+Documents: [verification.md](verification.md) finding register, open findings and appendix, [pipeline.md](pipeline.md) entity instruments table, [journal.md](journal.md) session 104
+
 ## Plan
 
 This block orders the work still outstanding into phases and milestones, each carrying the
@@ -791,18 +830,19 @@ Done when a frozen-rules precision and recall measurement is versioned under `do
 
 ##### Population redraw and recall remeasurement
 
-The adjudicated sample belongs to a mark population that the marking policy of E119 has since
-widened, and the released marks appear in no earlier draw. The recall side has stood unmeasured
-since several of its named rule gaps were closed. A fresh stratified draw over the current
-population, the E119 stratum included, and a recall remeasurement on newly read pages come before
-any further rule work. Rules built on a population whose rate is unknown widen the gap between
-what is measured and what is delivered. A second draw already lies frozen and unadjudicated
-under `output/audits/eval_sample_2026-08-13/`; whether it is adjudicated as it stands or re-cut is
-the re-freeze decision.
-
-Done when the fresh draw is adjudicated, the judgments are folded into
-`data/entities/mention_verdicts.json`, the verdict guard runs clean, and
-[verification.md](verification.md) reports precision and recall for the current population.
+Done with E129. The fresh stratified draw over the post-E128 population lies under
+`output/audits/eval_sample_2026-08-21/`, seed 42, with the frozen corpus scan and the frozen
+catalog beside it, 300 tier-1 cases across 13 category-and-rule strata and 40 recall pages across
+24 layout-and-language strata. Nine agents adjudicated at the facsimile under the wave protocol
+stored with the draw, one of them blind on a subsample spanning all six ranges. Precision over the
+300 decidable cases is 0.9867 with a percentile interval of 0.9733 to 0.9967, recall coverage over
+the 40 pages is 0.952, and the judgments are folded into `data/entities/mention_verdicts.json`,
+which carries both waves since the store became multi-snapshot.
+[verification.md](verification.md) reports the figures in its finding register and the breakdown in
+its appendix. The verdict guard ran clean on every wave except the new precision wave, where it
+reported the four adjudicated defects as `still_tier1`. E130 repaired three of them in the
+detector; the fourth, the synthesised speaker label of document 1440, changes the delivered text
+and is an operator repair, so the guard stays at exit 1 until it is made.
 
 ##### Admission dossier for unlisted entities
 
@@ -1067,7 +1107,7 @@ outstanding), open, and blocked-by with the named party.
 | Schema hardening | done | E127, `tests/test_tei_schema.py` (`test_schema_rejects_non_gnd_ref`) |
 | Lexicon shape audit | open | `entity_lexicon_audit.py` does not exist |
 | Gold benchmark (M4) | built | `entity_gold_benchmark` writes `output/audits/entity_gold_benchmark.json`; no evidence under `docs/data/` |
-| Population redraw and recall remeasurement | blocked-by operator (re-freeze decision) | `output/audits/eval_sample_2026-08-13/` frozen and unadjudicated |
+| Population redraw and recall remeasurement | done | E129, `output/audits/eval_sample_2026-08-21/`, [verification.md](verification.md) finding register |
 | Admission dossier for unlisted entities | open | `entity_unlisted_scan` supplies the candidates |
 | Judge calibration (M5) | open | no calibration run recorded |
 | Corpus dry run (M6) | open | `entity_audit.py` does not exist |

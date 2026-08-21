@@ -113,12 +113,14 @@ hook and CI report the same findings. Deployment and repository topology are in
 The guarantee above is bounded. The following classes lie outside it, and a green suite
 says nothing about them.
 
-Stamps, shelf marks and catalogue notes that land in running text have no check, since no
-validator rule and no audit detects that class. Neighbouring classes do have deterministic
-instruments, E-Periodica cover sheets through `tei_cover_strip`, running heads through
-`running_head_audit` and the shared detection core, folio echoes through
-`pb_number_audit`, and the entity matcher excludes apparatus zones; none of these reaches
-library apparatus inside the body text.
+Stamps, shelf marks and catalogue notes that land in running text are checked only where
+they repeat. Since E130 the detection core rests on repetition alone, so a stamp that
+recurs across the pages of a document enters an apparatus zone like a running head and the
+entity matcher demotes what sits inside it. A single occurrence stays unreached, and no
+validator rule addresses the class as such. The neighbouring classes keep their own
+deterministic instruments, E-Periodica cover sheets through `tei_cover_strip`, the repeated
+page apparatus through `running_head_audit` and the shared detection core, and folio echoes
+through `pb_number_audit`.
 
 Two latent defects are recorded and left unfixed; in both cases the suite pins the state
 as it stands instead of the correct behaviour. `serialize_tei_fragment` drops the
@@ -274,7 +276,7 @@ material itself is described in [project.md](project.md), data section.
 
 ## Verification problems
 
-Six conditions make a naive check wrong in this project, and each one shaped a design
+Seven conditions make a naive check wrong in this project, and each one shaped a design
 decision of the chain below.
 
 The reference TEIs are partial transcriptions. They omit page apparatus, neighbouring
@@ -298,6 +300,13 @@ effect (E100); the delivered corpus is never regenerated to obtain a measurement
 The abolished agent screening certified its own output through a built-in ignore list, so
 no human stood behind its approvals (E66); every verdict scheme since then names an
 adjudicating role outside the producing agent.
+
+Mark offsets index the delivered TEI as it is decoded from its bytes, with the CRLF line
+endings preserved, which is how the scan reads a document
+([entity_corpus_scan.py:175](../scripts/entity/entity_corpus_scan.py#L175)). A reader
+that opens the same file in text mode translates the line endings and lands on a
+silently shifted position, in one measured case by 549 characters. Every tool that
+resolves a stored offset back into the source has to read the bytes.
 
 Documented figures age the moment the data moves. Every figure in this document therefore
 carries its date and the file that regenerates it.
@@ -394,8 +403,8 @@ in the register below.
    the recall output holds one record per drawn page in `recall_pages.json`, with document,
    page, language, layout type and facsimile path.
 2. Adjudicate precision. Every drawn mark receives one of the five verdicts at the facsimile
-   with a one-sentence reason, recorded in the adjudicating agent's own file under
-   `output/audits/eval_sample/verdicts/`, so the sample stays re-checkable.
+   with a one-sentence reason, recorded in the adjudicating agent's own file under the
+   `verdicts/` folder of that wave's sample directory, so the sample stays re-checkable.
 3. Adjudicate recall. Every drawn page is read exhaustively against the curated list, each
    recorded mention is compared with the pipeline output of the same page, and every miss
    gets its cause label.
@@ -538,10 +547,14 @@ the page-apparatus convention, running heads left the marking scope and the seco
 became computable from the persisted verdicts without drawing again.
 `scripts/entity/running_head_audit.py` computes it at 0.9511 over 266 in-scope decidable
 cases, inside the interval of the protocol reading, so the running heads were not inflating
-the published figure. One ground-truth caveat is recorded, since a single adjudicated mark
-counts as a running head only through the keyword in its verdict reason while being body
-text (doc 2510), so the keyword criterion reads detector recall as 24 of 25 without a real
-head being missed.
+the published figure. The ground-truth caveat recorded with this reading is resolved with
+E130. The audit counted a mark as page apparatus whenever the words "running head" occurred
+anywhere in its verdict reason, and the wave of 2026-08-21 uses that wording in ten reasons
+to state the opposite, that the mark stands outside the apparatus, so the criterion misread
+ten negative cases as positive, where this holding records a single case. A wave that tags
+its apparatus cases with a `running head:` prefix is now read through the tag alone, while
+an untagged wave keeps the substring reading; the correction and its effect on the measured
+figures are in the finding of 2026-08-21 below.
 
 2026-08-13, gold benchmark read as a trend. `scripts/entity/entity_gold_benchmark.py` measures
 against the reference TEIs, scope-restricted to shared text. Facsimile classification of its
@@ -572,27 +585,78 @@ versioned verdict store, and the tracked verdict file was reverted, so the track
 unchanged. The current sample directory is a reconstruction that is derivable from two frozen
 inputs.
 
+2026-08-21, population redraw adjudicated (E129). A fresh stratified draw over the post-E128
+corpus scan, seed 42, took 300 tier-1 marks across 13 category-and-rule strata and 40 pages
+across 24 layout-and-language strata, with byte-identical frozen copies of the corpus scan and
+the catalog beside it under `output/audits/eval_sample_2026-08-21/`. Nine independent agents
+adjudicated at the facsimile under the wave protocol in the appendix, one of them delivering the
+blind second judgment. All 300 drawn marks were decidable, because the facsimile sidecar of E114
+resolved the page image in every case, the documents 120 and 1350 included that the earlier wave
+had to abandon. 296 marks are correct, 3 `wrong_entity` and 1 `not_in_source`, so precision is
+0.9867 with a seeded percentile interval of 0.9733 to 0.9967. Recomputed by the same method the
+2026-08-12 wave stands at 0.9522 with an interval of 0.9283 to 0.9761, so the two intervals
+overlap while the point estimate rose. Raw agreement on the 50 doubly judged cases is 50 of 50.
+Recall over the 40 drawn pages covers 63 mentions of listed entities, 38 marked and 22 on the
+worklist, giving a coverage of 0.952 and an auto hit-rate of 0.603 against 0.552 and 0.299 on the
+earlier wave; the three misses are one rule class, twice the German genitive "Bundes" of a listed
+organisation and once the article-stripped short form "Populaire" of a listed newspaper, all in
+document 1540. Both recall agents independently read the era formula "avant J.-C." as a
+chronological convention rather than a mention, which retires that entry from the earlier miss
+list without a rule change. Strata, the four errors, the running-head evidence and the guard state
+are in the evaluation result in the appendix, the raw evidence under
+`output/audits/eval_sample_2026-08-21/`.
+
+2026-08-21, running-head detection repaired and its ground truth corrected (E130). Three of
+the four defects the redraw left standing were page apparatus the detector had missed while it
+demoted opening-page bylines that E105 and E108 place in scope. Detection now rests on pure
+repetition without any assumption about position, segments the whole page, accepts a form that
+stands alone on at least three pages and covers a floor share of the document's pages, adds an
+alternation rule for a verso and recto pair, and releases individual occurrences through four
+exemptions for a leading title block, an off-slot occurrence, a form repeated on one page and a
+merged inner variant. The audit itself carried a measurement defect. Its ground-truth criterion
+read a mark as page apparatus whenever the words "running head" occurred in the adjudication
+reason, and the 2026-08-21 wave uses that wording in ten reasons to place the mark outside the
+apparatus, so ten negative cases counted as positive and both recall and the false-alarm rate were
+distorted. A wave tagging its apparatus cases with a `running head:` prefix is now read through the
+tag alone, an untagged wave keeps the substring reading, and the corrected ground truth holds 28
+apparatus marks against the apparent 35. Measured against it, recall on adjudicated apparatus marks
+moves from 24 of 28 to 27 of 28, false alarms among the other correct marks from 2 of 550 to 1 of
+550, and convention precision from 0.9867 with an interval of 0.9733 to 0.9967 to 0.9966 with an
+interval of 0.9899 to 1.0. Corpus-wide the zones cover 1815 occurrences on 1497 pages in 120
+documents against 1751 on 1649 pages in 91 documents, and they demote 677 marks across 69 documents
+with 15 of them on page one, against 634 across 61 documents with 21 on page one; tier 1 falls from
+6090 to 6084 and tier 2 rises from 3125 to 3131 at an unchanged 9215 candidates, 76 marks moving
+down and 70 up across 59 documents. The verdict guard falls from four violations of class
+`still_tier1` to one. Eight cases were confirmed at the facsimile, the three repaired apparatus
+cases suppressed and five opening-page bylines still in tier 1. Two residues remain, a missed
+apparatus mark in document 2510 that was missed before as well and a false alarm in document 1780,
+where the signature closes a contribution spanning exactly the three pages the form repeats on.
+Evidence in `output/audits/running_head_audit.json` and `output/audits/entity_corpus_scan.json`.
+
 ## Open findings and escalation
 
 The re-freeze of the reconstructed draw is an operator decision. Until it is taken, the
 sample directory stays a reconstruction and any statement about it says so.
 
 The second draw of 2026-08-13 under `output/audits/eval_sample_2026-08-13/` is frozen and has
-never been adjudicated. Every measured entity figure therefore belongs to the 2026-08-12
-snapshot.
+never been adjudicated. The redraw of 2026-08-21 (E129) went over the current population instead,
+so that directory is superseded material and stays unadjudicated.
 
-Population validity is broken for the current mark population. The anchor-free surname
-release (E119) lifts bare surnames of canonical authors into tier 1 without a document
-anchor, and those marks exist in no earlier draw, so the published rate no longer describes
-the whole auto-marked layer even though every sampled mark still holds. The speaker-initials
-rule (E128) adds a second uncovered stratum, the interview labels of three documents, which
-the guard binds through the adjudicated "G.D.K." and "J.H." cases of document 2330 without
-any drawn sample describing the whole stratum. Until a supplementary draw over the new
-strata is adjudicated, the rate is reported per stratum, the covered one and the new ones. A fresh draw over the current population together with a recall
-remeasurement on newly read pages comes before further rule work, and
-[decisions.md](decisions.md), plan section, carries it as a work item. The same reasoning
-applies in reverse to a change that removes marks from tier 1, with the difference that a
-shrinking population keeps its rate conservative.
+Population validity is established for the strata the redraw covered. The draw of 2026-08-21
+(E129) runs over the post-E128 population, so the anchor-free surnames released with E119 and the
+speaker initials of E128 carry strata of their own, both adjudicated without a single error, and
+the published rate again describes the auto-marked layer as it stands. The caveat is resolved for
+those two strata. It returns for any later rule change that adds marks to tier 1, since a rate
+measured before the change says nothing about the marks the change creates; a change that removes
+marks keeps its rate conservative, so the reasoning binds one direction only.
+
+One thing stays open from that measurement. E130 repaired the running-head detector and with it
+the three page-apparatus defects, which the verdict guard now reports as `demoted`. The fourth
+defect stands in tier 1, the `<speaker>` label the generator synthesised on page 1 of document
+1440, because removing it changes the delivered text and it is therefore an operator repair; the
+guard reports it as a violation and exits 1 for as long as it stands. Two residues of the repaired
+detector are carried in the finding register above, a missed apparatus mark in document 2510 and a
+false alarm in document 1780 that repetition cannot separate, and both are carried as diagnosis.
 
 Targeted re-OCR stays operator-gated. The doc-30 case was executed after adjudication (E98);
 any further single-page re-OCR of a tail document needs the same adjudication first and an
@@ -628,8 +692,8 @@ such decision enters the register with its rationale.
 
 ## Appendix: protocols and dated results
 
-Four dated holdings the finding register cites. They are snapshots and stay as written at their
-date; the operative copies of the two protocols live beside their evidence under `output/audits/`.
+Six dated holdings the finding register cites. They are snapshots and stay as written at their
+date; the operative copies of the protocols live beside their evidence under `output/audits/`.
 
 ### Adjudication protocol of the entity evaluation (2026-08-12)
 
@@ -768,6 +832,90 @@ Konventionsentscheid Seitenapparat, dann zweite Lesart der Praezision; Reparatur
 als Matcher-Wave; Generator-Defekte (sp/speaker, 3040-Bibliographie) in die Struktur-Spur;
 Seitenzuordnungs-Reparatur 120/1350/680/2300 operator-gated; danach neu ziehen und
 nachmessen.
+
+### Adjudication protocol of the entity evaluation (2026-08-21)
+
+The protocol of this wave is not copied here; it lives beside its evidence as
+`output/audits/eval_sample_2026-08-21/ADJUDICATION.md` and binds every agent of the wave. It
+follows the 2026-08-12 protocol above and differs from it in two points. The facsimile of a case is
+resolved through the per-document sidecar `{doc}_facs.json` (E114) before the case path serves as
+fallback, which is why the wave has no undecidable case. The page-apparatus convention of E105 and
+E108 is in force, so running heads lie outside the marking scope while title pages, byline
+organisations and picture captions stay inside it.
+
+One methodological observation belongs with the protocol. The draw groups its cases by stratum, so
+an adjudication range is homogeneous in category and rule and an agent sees the same case shape
+throughout its range, which is a standing anchoring risk. The blind second judgment mitigates it by
+spanning all six ranges, taking every sixth case, with 9, 8, 8, 9, 8 and 8 cases per range.
+
+### Entity evaluation, result of the 2026-08-21 snapshot
+
+Method as in the verification chain above, entity claim; protocol as referenced above; raw evidence
+under `output/audits/eval_sample_2026-08-21/` with the sample manifest, the frozen corpus scan, the
+frozen catalog, the case files and the verdict files.
+
+#### Precision per stratum
+
+300 drawn tier-1 marks, all decidable, 296 correct, counted as correct of drawn:
+
+- anchored-surname 67 of 68
+- anchor-free-surname 63 of 63
+- full-name 51 of 53
+- speaker-initials 40 of 40
+- work-variant 15 of 15
+- caps-full-name 12 of 12
+- org-variant 11 of 11
+- initial-surname 11 of 11
+- variant-full-name 8 of 8
+- work-title 8 of 8
+- org-token 6 of 6
+- speaker 3 of 4
+- org-name 1 of 1
+
+#### The four errors
+
+All four arise in the text layer the matcher reads. Three are page apparatus the pipeline moved
+into the body, the fourth is a label the generator invented.
+
+- p135, document 3190 page 18, "Jaspers", rule anchored-surname, a running foot that the OCR
+  appends as an ordinary paragraph.
+- p195, document 2880 page 2, "Jeanne Hersch", rule full-name, a running head standing as the
+  page's own first paragraph.
+- p199, document 3070 page 3, "Jeanne Hersch", rule full-name, a running head that the reading
+  order spliced into the middle of a sentence.
+- p226, document 1440 page 1, "Jeanne Hersch", rule speaker, a `<speaker>` label the generator
+  synthesised although the page prints none there.
+
+#### Running-head detection
+
+At the time of the wave the detector failed in both directions. All three page-apparatus errors lay
+outside every detected running-head zone, and two of their documents carried no detected zone at
+all. In the other direction, two recall agents independently found opening-page bylines demoted as
+running heads although E105 and E108 place them in scope, one of them on page 4 of a collective
+volume, so a page-one heuristic would not have bounded the class. Corpus-wide the zones demoted 634
+marks across 61 documents, 21 of them on page one.
+
+E130 rebuilt the detection on pure repetition without any assumption about position and corrected
+the ground-truth criterion of the audit, which had read ten reasons of this wave as apparatus
+although they name the running head in order to place the mark outside it. Against the corrected
+ground truth of 28 apparatus marks, recall moves from 24 of 28 to 27 of 28 and false alarms among
+the other correct marks from 2 of 550 to 1 of 550, while convention precision moves from 0.9867
+with an interval of 0.9733 to 0.9967 to 0.9966 with an interval of 0.9899 to 1.0. The zones now
+cover 1815 occurrences on 1497 pages in 120 documents and demote 677 marks across 69 documents, 15
+of them on page one. Three of the four errors above are suppressed as a consequence, and the
+remaining defect is the synthesised speaker label of document 1440.
+
+#### Verdict store and guard
+
+The store holds 600 marks and 130 recall mentions over the two waves, and the 2026-08-12 records
+are byte-identical to their committed state, verified against git HEAD. The guard reports zero
+violations for both 2026-08-12 waves and for the 2026-08-21 recall wave, and four violations for
+the 2026-08-21 precision wave, all of class `still_tier1` and exactly the four adjudicated errors.
+It exits 1, which is its correct behaviour while known-wrong marks stand in tier 1. One recording
+artifact was corrected before the store was built. Two recall records carried transliterated
+umlauts in their `surface`, "Universitat Basel" and "Genfer Universitaet", which made the guard
+report them as lost; the surfaces were corrected to the corpus spelling, the judgments and gids
+stayed untouched, and a note in the affected records holds the correction.
 
 ### Independent CER counter-check (2026-07-03, German)
 

@@ -65,9 +65,11 @@ The token catalog lives in `docs/assets/css/tokens.css`, base components in `doc
 - `data/`: input and reference data. `source/` = ZB delivery (immutable input, mostly gitignored) with `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, `guidelines/` (editorial guidelines, Editionsrichtlinien) and the tracked delivery folder `zbz-lieferung-2026-06-21/` (provenance record, guideline copy, ZBZ schema template). Project authority (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (reserved for hand-verified TEI, currently empty) and `entities/` (curated entity list, GND variant cache, variant review, mention verdict store, legacy mention index `legacy_mentions.json`, operator marking policy). Generated: `doc_metadata.json` (Gemini cache)
 - `scripts/`: pipeline + tools, grouped by domain into `ocr/`, `layout/`, `tei/`, `eval/`, `edition/`, `entity/` (the closed-world entity layer, from lexicon and matcher to previews, audits and mirror generators) and `core/`, the domain-free shared library (`loaders`, `gemini`, `pb_split`, `tei_xml_utils`); only `config.py` + `utils.py` stay top-level. Inventory: [scripts/README.md](scripts/README.md)
 - `output/`: all generated data streams (gitignored, NOT versioned)
-- `docs/`: static inspection/demo site (GitHub-Pages-ready) with HTML, `assets/` (`css/`, `js/`, `vendor/`, `fonts/`), `data/` (generated mirror), `images/`
+- `docs/`: static inspection/demo site (GitHub-Pages-ready) with HTML, `assets/` (`css/`, `js/`, `vendor/`, `fonts/`), `data/` (generated mirror), `images/` (page PNGs, gitignored apart from a five-document demo set; the published facsimiles live in the separate repository `chpollin/zbz-hersch-images`, E126)
 - `knowledge/`: knowledge base, entry point [knowledge/index.md](knowledge/index.md)
 - `tests/`: pytest suites
+- `workshops/`: teaching and workshop material, outside the pipeline
+- `.github/workflows/tests.yml`: the CI gate, `ruff check scripts tests` followed by `python -m pytest tests/ -q` on every push and pull request
 
 ### Object = bundle of parallel data streams
 
@@ -85,6 +87,7 @@ Detailed stages, scripts, and engines are in [knowledge/pipeline.md](knowledge/p
 - `output/tei_final/{doc}_final.xml` is the single source of truth of the delivered TEI data (E43). Only `tei_final/` is displayed. Every final TEI carries a `<revisionDesc>` with pipeline status (E42); at the ZBZ handover step the per-stream workflow status is projected from the manifest into the `<revisionDesc>` via `tei_status_marker.py` (E66).
 - `docs/data/pages/{doc}/` is a GENERATED mirror; never edit it directly. It is produced by `scripts/edition/generate_edition_data.py` from per-page TEI (split from `tei_final`) + Mistral `.md` + layout JSON. After changes to the source, regenerate the mirror.
 - `output/tei_unified/` is pipeline output (do not edit). Hand-verified TEIs are intended for `data/curated_tei/` (git-tracked); the folder is currently empty.
+- `data/schema/zbz_hersch.rng` is the format authority of the delivery (E102); no other schema validates it. It constrains `@ref` to the `GND:` pattern on `persName`, `orgName`, `bibl` and `rs` (E127), and `tests/test_tei_schema.py` is the gate.
 
 ## Methodology
 
@@ -133,7 +136,7 @@ python -m pytest tests/test_cer_statistics.py -q                # statistics lib
 python -m pytest tests/test_corpus_audit.py -q                  # corpus invariants + delivered distribution + completeness gate
 python -m pytest tests/test_scripts_health.py -q                # script health: syntax + internal imports (all scripts/)
 python -m pytest tests/test_knowledge_frontmatter.py -q         # knowledge base: ten carriers, frontmatter contract, resolvable links (E124)
-python -m pytest tests/test_tei_schema.py -q                    # schema gate: tei_final against zbz_hersch.rng (E68)
+python -m pytest tests/test_tei_schema.py -q                    # schema gate: tei_final against zbz_hersch.rng, E68 header elements, GND pattern on persName/orgName/bibl/rs (E68/E127)
 python -m pytest tests/test_tei_header.py -q                    # teiHeader delivery contract: idno + biblStruct + langUsage (E69)
 python -m pytest tests/test_tei_validator.py -q                 # validator: reference CER in percent (O24/E69)
 python -m pytest tests/test_pb_split.py -q                      # <pb> segmentation: pb_split.py byte-identical (E69)
@@ -152,22 +155,40 @@ The output `docs/data/cer_statistics.json` is versioned as evidence of the publi
 python -m scripts.ocr.ocr_pipeline -i data/source/pdf/{DOC_ID}.pdf -e mistral    # base OCR
 python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --variant B          # Gemini correction
 python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --dry-run            # preview
+python -m scripts.ocr.llm_postprocess --doc {DOC_ID} --variant C --dry-run   # optional Claude post-correction (stage 2a) -> output/llm_corrected_c/
 python -m scripts.ocr.classify_docs                                          # one-shot Gemini document classification -> data/doc_metadata.json (committed cache; rerun only to rebuild it)
 ```
+
+The base OCR engine of the delivered corpus is Mistral; `--engine auto` resolves to Gemini, so
+the reproduction of the delivered text layer always names `-e mistral` (engine table in
+[knowledge/pipeline.md](knowledge/pipeline.md)).
 
 ## Layout
 
 ```bash
-python -m scripts.layout.run_layout_analysis --doc {DOC_ID}                     # Docling
+python -m scripts.layout.run_layout_analysis --doc {DOC_ID}                     # Docling (local GPU)
+python -m scripts.layout.run_layout_cloud --doc {DOC_ID} --url {DOCLING_SERVE}  # Docling via docling-serve, same output contract
 python -m scripts.layout.layout_qa_gemini --doc {DOC_ID}                        # Gemini QA
 python -m scripts.layout.layout_qa_gemini --mode detect --doc {DOC_ID}          # re-detection
 python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      # overlay
+```
+
+## PAGE-XML and METS (stage 4, parallel export)
+
+PAGE-XML is a parallel export beside the TEI path and never feeds TEI generation (E13/E22).
+It is what the Transkribus round trip below consumes.
+
+```bash
+python -m scripts.layout.page_xml_generator --doc {DOC_ID}                      # layout JSON + OCR -> output/page_xml/
+python -m scripts.layout.page_xml_generator --sample                            # sample documents only
+python -m scripts.layout.mets_generator --doc {DOC_ID}                          # METS manifest for the PAGE-XML export
 ```
 
 ## Generate TEI
 
 ```bash
 python -m scripts.tei.tei_unified --doc {DOC_ID}                         # standard (3 stages)
+python -m scripts.tei.tei_unified --sample                               # the three pilot documents 2310, 2530, 1440
 python -m scripts.tei.tei_unified --doc {DOC_ID} --step 1                # scaffold only (free)
 python -m scripts.tei.tei_unified --doc {DOC_ID} --reassemble            # re-assembly (Gemini cache; curated pages 1 call each)
 python -m scripts.tei.tei_unified --doc {DOC_ID} --force                 # everything anew (incl. Gemini)
@@ -196,10 +217,19 @@ python -m scripts.tei.tei_pb_folio --dry-run --strip-folio-echo  # printed-folio
 python -m scripts.tei.tei_pb_folio --strip-folio-echo            # run (backup: output/_backup_pre_pb_folio/)
 python -m scripts.tei.tei_body_note_demote --dry-run --promote-footnotes  # verdict-driven demotion preview
 python -m scripts.tei.tei_body_note_demote --promote-footnotes   # run (backup: output/_backup_pre_body_note_demote/)
+python -m scripts.tei.tei_footnote_demote --dry-run              # reference-verified footnote demotion (note place=foot -> p), dry-run is the default
+python -m scripts.tei.tei_footnote_demote --apply                # run (backup: output/_backup_pre_footnote_demote/) + mirror regeneration; --include-hold adds the withheld docs 40 and 1520
+python -m scripts.tei.tei_footnote_marker_strip --dry-run        # leading #sup footnote marker inside the note text: preview
+python -m scripts.tei.tei_footnote_marker_strip --apply          # run (backup: output/_backup_pre_marker_strip/) + mirror regeneration
+python -m scripts.tei.tei_surface_graphic --dry-run              # page-image <graphic> into every <surface> of tei_final (ZBZ, O25): preview
+python -m scripts.tei.tei_surface_graphic                        # run (backup: output/_backup_pre_surface_graphic/)
 ```
 
 The demotion run consumes the facsimile-verified verdicts in
 `output/audits/body_note_verdicts.json` (E94) and never touches notes judged genuine.
+`tei_footnote_demote` and `tei_footnote_marker_strip` take `--dry-run` as their default and
+need `--apply` for a real run; both accept `--doc` repeatedly to narrow the run.
+`tei_surface_graphic` writes by default, so its preview needs an explicit `--dry-run`.
 
 ## Entity integration (rules: knowledge/tei-mapping.md; instruments: knowledge/pipeline.md; milestone state: knowledge/decisions.md, plan section)
 
@@ -221,12 +251,20 @@ python -m scripts.tei.tei_cover_strip --dry-run                      # E-Periodi
 python -m scripts.entity.entity_gold_benchmark                       # M4: precision/recall against the 25 reference TEIs
 python -m scripts.entity.entity_corpus_digest                        # tier-1 harvest as one context-window digest
 python -m scripts.entity.entity_unlisted_scan                        # id-free proposal channel: name-shaped surfaces outside the list
-python -m scripts.entity.entity_eval_sample --seed 42                # evaluation draw: 300 tier-1 marks + 40 pages, stratified, frozen (knowledge/verification.md)
-python -m scripts.entity.build_mention_verdicts                      # mention verdict store: adjudicated judgments -> data/entities/mention_verdicts.json (snapshot-bound, deterministic)
+python -m scripts.entity.entity_eval_sample --seed 42 --out output/audits/eval_sample_{DATE}  # evaluation draw: stratified tier-1 cases + recall pages, frozen scan and catalog beside the draw (knowledge/verification.md)
+python -m scripts.entity.build_mention_verdicts --sample-dir {DIR}   # mention verdict store: one wave per run from the sample directory -> data/entities/mention_verdicts.json (multi-snapshot, deterministic)
 python -m scripts.entity.entity_verdict_guard                        # regression gate: adjudicated verdicts vs current scan, exit 1 on violations (E110)
 python -m scripts.entity.entity_risk_ranking                         # rank tier-1 marks by FP risk -> output/audits/fp_hunt/ (wave protocol: PROTOCOL.md)
 python -m pytest tests/test_entity_matcher.py tests/test_entity_lint.py tests/test_entity_regressions.py tests/test_entity_preview.py tests/test_entity_corpus_scan.py tests/test_generate_entity_preview_data.py tests/test_cover_strip.py tests/test_fetch_gnd_variants.py tests/test_mention_verdicts.py tests/test_entity_verdict_guard.py tests/test_entity_ref_invariant.py tests/test_entity_risk_ranking.py tests/test_entity_corpus_digest.py tests/test_entity_eval_sample.py tests/test_entity_gold_benchmark.py tests/test_entity_stream.py tests/test_entity_unlisted_scan.py tests/test_variant_review.py tests/test_generate_entity_overview.py tests/test_running_heads.py tests/test_running_head_audit.py -q  # entity gates
 ```
+
+An evaluation wave runs in a directory of its own. `entity_eval_sample --out
+output/audits/eval_sample_{DATE}` draws it and freezes the corpus scan and the catalog beside the
+draw, the adjudicated verdict files land under `verdicts/` inside that directory, and
+`build_mention_verdicts --sample-dir` folds exactly that one wave into the store. The store is
+multi-snapshot since E129, so rebuilding a wave replaces only that wave, and guard, entity
+overview, preview and running-head audit read it per wave. The method and the results of the
+executed waves are in [knowledge/verification.md](knowledge/verification.md).
 
 The viewer shows the previews read-only; the annotated reading view is its default (E107), and `viewer.html?doc={DOC_ID}&entities=0` switches the entity layer off.
 
@@ -274,6 +312,9 @@ Details are in [knowledge/decisions.md](knowledge/decisions.md) E63/E65/E66.
 
 ```bash
 python -m scripts.edition.generate_edition_data                                  # catalog (docs/data/catalog.json) + per-page mirror
+python -m scripts.edition.generate_edition_data --mirror-only                    # per-page mirror only, catalog and index untouched
+python -m scripts.edition.generate_edition_data --doc {DOC_ID}                   # mirror one document (repeatable)
+python -m scripts.edition.generate_edition_data --facs-audit                     # read-only: pb -> facs sequences -> output/audits/facs_mapping_report.json
 ```
 
 The viewer (`docs/viewer.html`) is a static single-page app without a backend. A single "Save"

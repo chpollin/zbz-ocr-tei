@@ -84,6 +84,45 @@ Archive section; sessions 1 to 68 remain in that section as they are.
 
 ## Entries
 
+### 2026-08-21 Session 104: running-head detection rebuilt on repetition, audit ground truth corrected (E130)
+
+**Occasion** The adjudication wave of this day left four defects in tier 1, three of them from a running-head detector that missed genuine page apparatus and demoted genuine bylines at the same time.
+
+**Goal** The detector suppresses the three apparatus cases while the opening-page bylines that E105 and E108 keep in scope stay marked, its audit measures against a ground truth that reflects the adjudication reasons, and the open work of the session is closed and documented.
+
+**Course** Rebuilt `running_heads.py` on pure repetition without any assumption about position, segmenting the whole page, accepting a form that stands alone on at least three pages and covers a floor share of the document, adding an alternation rule for a verso and recto pair, and releasing occurrences through four exemptions whose weight an ablation confirmed; `entity_matcher.py` stayed untouched, since the `head_spans` contract holds. Found and corrected a measurement defect in `running_head_audit.py`, whose ground truth counted ten negative reasons as apparatus. Confirmed eight cases at the facsimile. Closed the session afterwards with a refactor pass over the E129 verdict-store changes, five simplifications applied, a duplicated digest helper consolidated into `scripts/eval/audit_common.py`, and README.md and CLAUDE.md brought to the code.
+
+**Decisions**
+- E130: detection by pure repetition with four occurrence-level exemptions, and the audit ground truth read through the `running head:` tag where a wave carries it; rejected a rule bound to the page position, which cannot see a running foot or a head the reading order spliced into a sentence, and rejected the keyword reading of the verdict reason, which counted ten negative cases as positive.
+- The `<speaker>` label the generator synthesised on page 1 of document 1440 stays out of scope, because removing it changes the delivered text and is therefore an operator repair; the verdict guard keeps its exit 1 while that mark stands (E130).
+- The digest helper duplicated across two audits lives in `scripts/eval/audit_common.py` as `text_digests`; the alternative of leaving both copies keeps two definitions of the same fingerprint in the evidence chain (no register entry).
+
+**Status** `ruff check scripts tests` clean and 2440 tests passed. The verdict guard fell from four violations of class `still_tier1` to one, document 1440 page 1, with documents 3190, 2880 and 3070 reported as `demoted` and zero violations on the 2026-08-12 wave and on both recall waves. Audit recall on adjudicated apparatus marks rose from 24 of 28 to 27 of 28, false alarms among the other correct marks fell from 2 of 550 to 1 of 550, and convention precision moved from 0.9867 with an interval of 0.9733 to 0.9967 to 0.9966 with an interval of 0.9899 to 1.0; in the corpus scan tier 1 fell from 6090 to 6084 and tier 2 rose from 3125 to 3131 at an unchanged 9215 candidates. Six false statements in README.md and CLAUDE.md were corrected. Code, tests, documentation and the two root documents stand in the working tree uncommitted, together with the E129 documentation of session 103.
+
+**Next steps**
+1. Repair the synthesised speaker label on page 1 of document 1440 in the text layer, operator-gated, then rerun the verdict guard.
+2. Lexicon shape audit (`entity_lexicon_audit.py`) as the next plan item before the frozen-rules gold benchmark.
+3. Operator decisions of the plan block in [decisions.md](decisions.md), namely the CLAUDE.md subtraction, `uv lock`, and O8, O13 and O27 with ZBZ.
+
+### 2026-08-21 Session 103: population redraw adjudicated, verdict store multi-snapshot (E129)
+
+**Occasion** Every published entity figure still belonged to the 2026-08-12 snapshot while E119 and E128 had widened the mark population, and the plan puts the redraw before further rule work.
+
+**Goal** A fresh stratified draw over the current population is adjudicated at the facsimile, the judgments bind in the verdict store beside the earlier wave, and precision and recall describe the population the delivery carries.
+
+**Course** Drew the sample with seed 42 over the post-E128 corpus scan, froze the scan and the catalog beside it, and wrote a wave-specific protocol that resolves the facsimile through the E114 sidecar and holds the page-apparatus convention of E105 and E108. Nine agents adjudicated six precision ranges and two recall page sets, one delivered the blind second judgment over every sixth case; every verdict file was verified against disk before aggregation. Two recall records with transliterated umlauts in their surface were corrected first. `build_mention_verdicts` gained `--sample-dir`, so the store carries both waves and a rebuild replaces one wave only; guard, overview, preview and running-head audit read it per wave.
+
+**Decisions**
+- E129: redraw over the post-E128 population adjudicated, verdict store made multi-snapshot; rejected adjudicating the frozen 2026-08-13 draw as it stood, which predates E128 and would leave the speaker-initials stratum unmeasured, and rejected a supplementary draw over the new strata alone, which gives no single rate for the whole population.
+- The four adjudicated defects are text-layer repairs and stay open as such, so the verdict guard keeps its exit 1; no matcher rule follows from them (no register entry).
+
+**Status** Precision 0.9867 over 300 decidable cases with a percentile interval of 0.9733 to 0.9967, against 0.9522 recomputed for the 2026-08-12 wave; agreement 50 of 50 on the doubly judged cases; recall coverage 0.952 and auto hit-rate 0.603 over 40 pages against 0.552 and 0.299; the store at 600 marks and 130 recall mentions over two waves with the earlier records byte-identical to their committed state; the guard at zero violations except the four `still_tier1` defects of the new precision wave; documentation in this commit.
+
+**Next steps**
+1. Repair the three page-apparatus defects (documents 3190, 2880, 3070) and the synthesised speaker label (1440) in the text layer, operator-gated, then rerun the guard.
+2. Decide whether the running-head detector is widened or replaced, since it misses the apparatus behind those defects and demotes opening-page bylines that E105 and E108 place in scope.
+3. Lexicon shape audit (`entity_lexicon_audit.py`) as the next plan item before the frozen-rules gold benchmark.
+
 ### 2026-08-21 Session 102: speaker initials in interviews resolved to tier 1 (E128)
 
 **Occasion** The operator asked how the recall of the entity layer can be raised and chose to close the speaker-initials gap first, the repair class the recall evaluation had ranked highest.
@@ -137,47 +176,7 @@ Archive section; sessions 1 to 68 remain in that section as they are.
 
 **Next steps** Remove the tracked demo PNGs and the `featured` set (operator go); entry in the vault's repo directory (vault session); ask the ZBZ about absolute facsimile URLs in the delivered TEI.
 
-### 2026-08-21 Session 99: knowledge base verified claim by claim, client report v3 on the site
-
-**Occasion** After the recut of session 98 the operator asked whether every statement in the ten documents was correct, precise and well formulated, and for the client report to be improved, given an English name and taken out of `knowledge/`.
-
-**Goal** Every verifiable claim in the ten carriers checked against code, schema, tests and data and corrected in place; the prose precise and in house style; the client report rewritten as v3 and moved to `docs/`; README.md and CLAUDE.md assessed.
-
-**Course** Ten Opus agents, one per document with an exclusive file and a report under `output/refactoring/wave5_*.md`, verified and polished the carriers (index last, against the edited siblings); a further agent reviewed README.md and CLAUDE.md read-only. The orchestrator settled the cross-document findings the agents reported, rewrote the client report from the operator's working state (export artefacts removed, facts aligned with the repository, entity preview layer added, literature attribution corrected, footnotes renumbered, Vorlage Report 0.2 frontmatter), moved it to `docs/project-report.md`, followed every pointer, removed the gate's tolerated set, and fixed the README and CLAUDE.md defects the review found. The working-tree edit of the report that another instance had left was the v3 base; its content is absorbed.
-
-**Decisions**
-- Verification wave recorded as E125; the agents' unverifiable claims and sibling findings are listed in the wave-5 reports rather than silently dropped.
-- The client report lives on the site as `docs/project-report.md` with `status: snapshot`; `knowledge/` holds exactly the ten carriers and the gate pins that set without exception.
-- CLAUDE.md keeps its duplicated passages for now; the subtraction the review proposes is an operator decision (E125).
-
-**Status** 2393 tests passed (2350 in the suite plus the 43 of the knowledge gate), ruff 0, frontmatter gate green; committed with this entry and pushed.
-
-**Next steps**
-1. Operator decision on the CLAUDE.md subtraction (manifest semantics, save mechanism, marking-policy rationale, per-document gloss) and on `uv lock`.
-2. The plan block of decisions.md: re-freeze of the evaluation draw, the four entity operator questions, O8/O13/O27 with ZBZ.
-3. Align the literature comparison tables with `comparison_lit` in `docs/data/cer_statistics.json` (Levchenko GPT-4o row, guide-value row), one source of truth for both.
-
-
-### 2026-08-21 Session 98: knowledge base recut by function, capped at ten, reports dissolved
-
-**Occasion** The wave 0 to 3 refactoring left a knowledge base cut by topic; the operator asked for a convention-conformant recut, then capped it at ten documents without loss of information and asked for the reports folder to go.
-
-**Goal** Ten documents in `knowledge/`, each function a section, frontmatter under one contract with a CI gate, every pointer inside and outside the base resolving, no reports folder.
-
-**Course** Three explorer agents produced the section ownership map, a fact check against code and data, and the inventory of external pointers. Wave 4a extracted eight function documents from the untouched sources; wave 4b pruned the sources with every removal confirmed in its owner; wave 4c merged the eight into ten carriers and absorbed the reports holdings into the verification appendix and the journal archive; index.md was rebuilt; the orchestrator rewrote the pointers in CLAUDE.md, README, scripts, tests, the site tooltip and the mirror string, deleted fourteen documents and the reports folder, moved the slide deck to `workshops/`, and added the frontmatter gate. Two verifier rounds (4a, 4b) found nine defects each, all fixed before the commits; the operator then asked for fewer agent rounds, and 4c was closed by the orchestrator's own sweeps.
-
-**Decisions**
-- Ten-document cap and function-per-section mapping, reports folder dissolved, evidence as verification appendix, archive back in the journal (E124).
-- Engine picture stated once from the code; CER catalog corrected to the extractor; percentile interval method stated for the entity statistics (E124, facts from the wave-4 fact check).
-
-**Status** Committed as wave 4a (f5261ae5), 4b (ec42a613) and the closure commit of this entry; 2344 tests, ruff 0, frontmatter gate green; working tree clean except the client report held by another instance.
-
-**Next steps**
-1. Move `arbeitsbericht-v3.md` to `docs/` once its pending edit is committed, and drop it from the gate's tolerated set.
-2. Operator decisions of the plan block in decisions.md: re-freeze of the reconstructed evaluation draw, the four entity operator questions, O8/O13/O27 with ZBZ.
-3. Regular work resumes on the entity layer (M4 frozen-rules run with evidence under `docs/data/`).
-
-## Compact Archive (Sessions 1 to 97)
+## Compact Archive (Sessions 1 to 99)
 
 One line per session, newest first; for the earliest sessions one line covers a range of
 several. Rationale in the [decision register](decisions.md), details in the git history.
@@ -186,6 +185,8 @@ several. Rationale in the [decision register](decisions.md), details in the git 
 
 | # | Date | Topic |
 |---|---|---|
+| 99 | 2026-08-21 | Knowledge base verified claim by claim, client report v3 on the site (E125): ten Opus agents, one per document with an exclusive file and a report under `output/refactoring/wave5_*.md`, checked every verifiable claim against code, schema, tests and data and corrected it in place, an eleventh reviewed README.md and CLAUDE.md read-only; the orchestrator settled the cross-document findings, rewrote the client report as v3 and moved it to `docs/project-report.md` with `status: snapshot`, followed every pointer and removed the gate's tolerated set, so `knowledge/` holds exactly the ten carriers; the CLAUDE.md subtraction the review proposed stays an operator decision; 2393 tests passed (2350 in the suite plus the 43 of the knowledge gate), ruff 0, frontmatter gate green, committed and pushed. Full entry in the archive section below. |
+| 98 | 2026-08-21 | Knowledge base recut by function, capped at ten documents, reports folder dissolved (E124): three explorer agents supplied the section ownership map, the fact check against code and data and the inventory of external pointers; eight function documents extracted from the untouched sources, the sources pruned with every removal confirmed in its owner, the eight merged into ten carriers with the reports holdings absorbed into the verification appendix and the journal archive, index.md rebuilt, fourteen documents and the reports folder deleted, pointers rewritten in CLAUDE.md, README, scripts, tests, the site tooltip and the mirror string, the slide deck moved to `workshops/` and the frontmatter gate added; engine picture stated once from the code, CER catalog corrected to the extractor, percentile interval method stated for the entity statistics; two verifier rounds found nine defects each, all fixed before the commits; commits `f5261ae5`, `ec42a613` and the closure commit; 2344 tests, ruff 0, frontmatter gate green. Full entry in the archive section below. |
 | 97 | 2026-08-21 | Repository refactoring, diagnosis and wave 0 (E120), waves 1 to 3 in the same session (E121-E123): six read-only audits, plan with work packages, stale statements corrected, ruff to zero, scripts layout `core/` and `entity/`, journal archive v0.3, viewer split and vendoring, shared helpers and tooling gates; 2344 tests, one evaluation-draw incident reconstructed. Full entry in the archive section below. |
 | 96 | 2026-08-13 | Matching repairs, overview as evidence surface, mark provenance, marking policy (E116-E119): dotted-abbreviation guard over 1113 initials candidates plus the hyphen reach of the surname index that the word-end cut could never produce for 210 hyphenated keys (E116); overview extended by ambiguity count, per-entity class breakdown, adjudicated quality block and provenance stamp (E117); `@resp`, `@cert` and `@source` on every wrapped mark in the preview TEI, with `@source` carrying the rule because it is the only attribute the delivery schema permits on all three wrapped elements (E118); operator marking policy in `data/entities/marking_policy.json`, 28 canonical surnames released from the anchor requirement, one held out, seven generic work titles dropped from scope and four bound to typographic corroboration, unlisted entities admitted by the project and marked as additions outside the curated list (E119); the person-versus-work dispute settled by the reference corpus, where 190 citations of the 25 reference TEIs carry no marked person name; corpus-wide preview run over every delivered document, each schema-valid and text-invariant, worklist volume down by about a third, guard at zero violations; commit `d59b94fd`. |
 | 95 | 2026-08-13 | Verdict guard, zero-mention classification, released work program executed (E110-E115): `entity_verdict_guard` built test-first as a standing regression gate over the adjudicated judgments, first run with all 279 correct marks surviving, 10 of 14 wrong marks repaired and 27 of 30 adjudicated misses surfacing again (E110); apostrophe folding at matching time after the E94 normalization left the corpus at U+2019 while list and cache stayed ASCII, diacritic folding deliberately excluded (E111); curated-variant channel with list hygiene (E112), pointwise facsimile-verified text repairs in documents 900, 1520 and 2330 with unchanged CER headline (E113), facsimile mapping via pb anchors with sequential fallback (E114), figure zones demoted to the worklist instead of excluded while keeping anchor power (E115); a planned footnote-digit repair was refuted by a corpus probe before any code, the zero-mention set fell from 42 through 37 to 17 entries, and the remeasurement material was frozen with a seed-42 draw into `output/audits/eval_sample_2026-08-13/` for the M4 close; guard at zero violations, entity battery green, the operator gates M6 and M7 untouched. |
@@ -328,15 +329,54 @@ with E66.
 - L14: A green conformity gate is only as sharp as the corpus it runs over; on the entity-free `tei_final`, "285/285 conformant" means "no violation", not "entities correctly GND-tagged". The entity rules Z1-Z4 bite only after inline-GND curation.
 - L15: Newspaper layouts fail systematically (>40 zones, OCR hallucinations); ~3 % of the corpus.
 
-## Archive: full entries of sessions 69 to 97
+## Archive: full entries of sessions 69 to 99
 
-The full entries of sessions 69 to 97, moved out of the Entries section under the five-entry
+The full entries of sessions 69 to 99, moved out of the Entries section under the five-entry
 cap and kept verbatim, newest first; the compact lines of the Compact Archive
 section above point here. Entries are never changed retroactively, so corrections are written
 as new entries and reference the entry they correct. Links inside the entries name the
 documents that carried the subject at the time; where those documents were dissolved in the
 knowledge-base recut of 2026-08 (E124) the link points at the carrier that holds the subject
 today.
+
+### 2026-08-21 Session 99: knowledge base verified claim by claim, client report v3 on the site
+
+**Occasion** After the recut of session 98 the operator asked whether every statement in the ten documents was correct, precise and well formulated, and for the client report to be improved, given an English name and taken out of `knowledge/`.
+
+**Goal** Every verifiable claim in the ten carriers checked against code, schema, tests and data and corrected in place; the prose precise and in house style; the client report rewritten as v3 and moved to `docs/`; README.md and CLAUDE.md assessed.
+
+**Course** Ten Opus agents, one per document with an exclusive file and a report under `output/refactoring/wave5_*.md`, verified and polished the carriers (index last, against the edited siblings); a further agent reviewed README.md and CLAUDE.md read-only. The orchestrator settled the cross-document findings the agents reported, rewrote the client report from the operator's working state (export artefacts removed, facts aligned with the repository, entity preview layer added, literature attribution corrected, footnotes renumbered, Vorlage Report 0.2 frontmatter), moved it to `docs/project-report.md`, followed every pointer, removed the gate's tolerated set, and fixed the README and CLAUDE.md defects the review found. The working-tree edit of the report that another instance had left was the v3 base; its content is absorbed.
+
+**Decisions**
+- Verification wave recorded as E125; the agents' unverifiable claims and sibling findings are listed in the wave-5 reports rather than silently dropped.
+- The client report lives on the site as `docs/project-report.md` with `status: snapshot`; `knowledge/` holds exactly the ten carriers and the gate pins that set without exception.
+- CLAUDE.md keeps its duplicated passages for now; the subtraction the review proposes is an operator decision (E125).
+
+**Status** 2393 tests passed (2350 in the suite plus the 43 of the knowledge gate), ruff 0, frontmatter gate green; committed with this entry and pushed.
+
+**Next steps**
+1. Operator decision on the CLAUDE.md subtraction (manifest semantics, save mechanism, marking-policy rationale, per-document gloss) and on `uv lock`.
+2. The plan block of decisions.md: re-freeze of the evaluation draw, the four entity operator questions, O8/O13/O27 with ZBZ.
+3. Align the literature comparison tables with `comparison_lit` in `docs/data/cer_statistics.json` (Levchenko GPT-4o row, guide-value row), one source of truth for both.
+
+### 2026-08-21 Session 98: knowledge base recut by function, capped at ten, reports dissolved
+
+**Occasion** The wave 0 to 3 refactoring left a knowledge base cut by topic; the operator asked for a convention-conformant recut, then capped it at ten documents without loss of information and asked for the reports folder to go.
+
+**Goal** Ten documents in `knowledge/`, each function a section, frontmatter under one contract with a CI gate, every pointer inside and outside the base resolving, no reports folder.
+
+**Course** Three explorer agents produced the section ownership map, a fact check against code and data, and the inventory of external pointers. Wave 4a extracted eight function documents from the untouched sources; wave 4b pruned the sources with every removal confirmed in its owner; wave 4c merged the eight into ten carriers and absorbed the reports holdings into the verification appendix and the journal archive; index.md was rebuilt; the orchestrator rewrote the pointers in CLAUDE.md, README, scripts, tests, the site tooltip and the mirror string, deleted fourteen documents and the reports folder, moved the slide deck to `workshops/`, and added the frontmatter gate. Two verifier rounds (4a, 4b) found nine defects each, all fixed before the commits; the operator then asked for fewer agent rounds, and 4c was closed by the orchestrator's own sweeps.
+
+**Decisions**
+- Ten-document cap and function-per-section mapping, reports folder dissolved, evidence as verification appendix, archive back in the journal (E124).
+- Engine picture stated once from the code; CER catalog corrected to the extractor; percentile interval method stated for the entity statistics (E124, facts from the wave-4 fact check).
+
+**Status** Committed as wave 4a (f5261ae5), 4b (ec42a613) and the closure commit of this entry; 2344 tests, ruff 0, frontmatter gate green; working tree clean except the client report held by another instance.
+
+**Next steps**
+1. Move `arbeitsbericht-v3.md` to `docs/` once its pending edit is committed, and drop it from the gate's tolerated set.
+2. Operator decisions of the plan block in decisions.md: re-freeze of the reconstructed evaluation draw, the four entity operator questions, O8/O13/O27 with ZBZ.
+3. Regular work resumes on the entity layer (M4 frozen-rules run with evidence under `docs/data/`).
 
 ### 2026-08-21 Session 97: repository refactoring, diagnosis and wave 0 (E120)
 

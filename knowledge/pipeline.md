@@ -218,15 +218,15 @@ built ([decisions.md](decisions.md), plan section, phase A).
 | `scripts/entity/entity_lint.py` | entity list, GND cache, legacy mention index, marking policy | `output/audits/entity_lint.json` |
 | `scripts/entity/entity_lexicon.py` | entity list, GND cache, variant review, legacy mentions, marking policy | the in-memory lexicon (headwords, inverted forms, cache variants, legacy surfaces, derived-form channels) |
 | `scripts/entity/entity_matcher.py` | the lexicon plus a TEI document | candidates with exact offsets, tier and rule; re-exports the lexicon API, so both read as one module from outside |
-| `scripts/entity/running_heads.py` | the page-head lines of a document | the running-head zones the matcher demotes into tier 2 |
+| `scripts/entity/running_heads.py` | every page segment of a document, since repetition alone identifies the apparatus wherever the reading order left it | the zones of the repeated page apparatus, running feet and repeated stamps included, which the matcher demotes into tier 2 |
 | `scripts/entity/running_head_audit.py` | scan snapshot, adjudicated verdicts | running-head validation report under `output/audits/` |
 | `scripts/entity/tei_entity_preview.py` | `output/tei_final/` read-only, entity data, verdict store | `output/entity_preview/` plus a JSON report |
 | `scripts/entity/entity_corpus_scan.py` | `output/tei_final/` read-only, entity data | `output/audits/entity_corpus_scan.json` |
 | `scripts/entity/entity_corpus_digest.py` | scan snapshot, entity list | `output/audits/entity_corpus_digest.md` |
 | `scripts/entity/entity_unlisted_scan.py` | `output/tei_final/`, entity data, viewer catalog | `output/audits/entity_unlisted_report.json` plus a CSV |
 | `scripts/entity/entity_gold_benchmark.py` | the 25 reference TEIs, entity data | `output/audits/entity_gold_benchmark.json` |
-| `scripts/entity/entity_eval_sample.py` | scan snapshot, catalog, delivered TEI | `output/audits/eval_sample/` with precision cases, recall pages and the sample manifest |
-| `scripts/entity/build_mention_verdicts.py` | frozen scan snapshot, adjudication files under `output/audits/eval_sample/verdicts/` | `data/entities/mention_verdicts.json` |
+| `scripts/entity/entity_eval_sample.py` | scan snapshot, catalog, delivered TEI | the wave's sample directory under `output/audits/`, dated per draw, with precision cases, recall pages and the sample manifest |
+| `scripts/entity/build_mention_verdicts.py` | one wave, named by `--sample-dir`, with its frozen scan snapshot and the adjudication files in that directory's `verdicts/` folder | `data/entities/mention_verdicts.json`, the named wave rebuilt and every other wave kept (E129) |
 | `scripts/entity/entity_verdict_guard.py` | verdict store, current scan snapshot | `output/audits/verdict_guard_report.json`, exit 1 on a violation |
 | `scripts/entity/entity_risk_ranking.py` | scan snapshot, entity list | `output/audits/fp_hunt/risk_ranking.json` beside its wave protocol |
 | `scripts/entity/generate_entity_preview_data.py` | `output/entity_preview/` read-only | `docs/data/pages/{doc}/{doc}_entity_p{N}.xml`, `{doc}_entity_worklist.json`, `docs/data/entities.json` |
