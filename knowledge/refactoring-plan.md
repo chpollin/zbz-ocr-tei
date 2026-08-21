@@ -566,7 +566,9 @@ Wave 4c, closure (three agents plus orchestrator):
 - WP11a index.md (rebuilt), CLAUDE.md (Knowledge Base list, Design pointer, entity
   heading, the two comment pointers, the OpenSeadragon dependency line), README.md
   (Documentation table and the eight pointers), scripts/README.md, the ecosystem report
-  pointers, the three reports pointers, the tei-quality-editor skill pointers
+  pointers, the three reports pointers, the tei-quality-editor skill pointers,
+  `data/README.md` (its funnel and reference-TEI pointers and its tree, which omits
+  `entities/` and the June 2026 delivery snapshot; found by WP9a)
 - WP11b the docstring and comment pointers in scripts/ and tests/, the tooltip string
   in `docs/assets/js/entity-overview.js` with the `?v=` bump, the `method` string in
   `generate_entity_overview.py`, then `python -m scripts.entity.generate_entity_overview`
