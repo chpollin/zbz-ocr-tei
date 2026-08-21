@@ -1,6 +1,6 @@
 """Verdict guard: holds the adjudicated mention verdicts against the current scan.
 
-The facsimile adjudication of 2026-08-12 (knowledge/entity-evaluation.md) left a store
+The facsimile adjudication of 2026-08-12 (knowledge/verification.md) left a store
 of mention-level judgments, data/entities/mention_verdicts.json. After any matcher or
 lexicon change this audit answers, per judgment, whether the current corpus scan still
 honors it: marks adjudicated correct must survive, marks adjudicated wrong must stay

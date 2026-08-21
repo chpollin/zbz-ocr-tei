@@ -60,7 +60,7 @@ Gates per domain:
 - `test_tei_conformance.py` / `test_zbz_conformity.py`: conformance fixes (E84) and the ZBZ conformity rules Z1-Z8 (E88)
 - `test_footnote_demote.py` / `test_footnote_marker_strip.py` / `test_tei_surface_graphic.py` / `test_blank_text_audit.py` / `test_facs_mapping.py`: TEI stock fixes and their diagnostics (E85, E89, E114)
 - `test_curated_loaders.py` / `test_page_names.py` / `test_workflow_status.py`: curated-input discovery, page-name conventions, workflow status model
-- entity layer (`test_entity_*.py`, `test_variant_review.py`, `test_mention_verdicts.py`, `test_fetch_gnd_variants.py`, `test_generate_entity_overview.py`, `test_generate_entity_preview_data.py`, `test_running_head_audit.py`, `test_cover_strip.py`): matcher, lint, previews, corpus scan, verdict store and guard, gold benchmark, risk ranking, digest, unlisted scan, sample draw, mirror and overview generators, running-head detector, cover-sheet strip. The full gate command is in [../CLAUDE.md](../CLAUDE.md), entity integration section
+- entity layer (`test_entity_*.py`, `test_variant_review.py`, `test_mention_verdicts.py`, `test_fetch_gnd_variants.py`, `test_generate_entity_overview.py`, `test_generate_entity_preview_data.py`, `test_running_head_audit.py`, `test_cover_strip.py`): matcher, lint, previews, corpus scan, verdict store and guard, gold benchmark, risk ranking, digest, unlisted scan, sample draw, mirror and overview generators, running-head detector, cover-sheet strip. The full gate command is in [../CLAUDE.md](../CLAUDE.md), entity integration section; the test strategy is in [../knowledge/verification.md](../knowledge/verification.md), quality assurance section
 
 ## Conventions
 

@@ -4,7 +4,7 @@ Runs ``scripts.entity.entity_matcher`` over the delivered TEI and writes every c
 with rule, tier, offsets, page and context into one deterministic JSON snapshot, plus the
 distribution views per document, per rule and per entity. The snapshot is diffable, so
 a rule change shows its exact corpus effect before it binds; the design plan is in
-knowledge/entity-integration.md (section "Instruments").
+knowledge/pipeline.md (entity stage section).
 
 The page is resolved here, once per document, and is the snapshot's answer for every
 consumer: a downstream tool reads ``page`` instead of reopening the TEI and rebuilding the

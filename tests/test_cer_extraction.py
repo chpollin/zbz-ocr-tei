@@ -246,7 +246,7 @@ class TestErrorCategoriesSumToDistance:
 
 
 # --------------------------------------------------------------------- #
-# 7. Extraktionsregeln E1-E12 (knowledge/cer-methodology.md, Tabelle)
+# 7. Extraktionsregeln E1-E12 (knowledge/methodology.md (CER measurement section), Tabelle)
 # --------------------------------------------------------------------- #
 
 class TestExtractionRules:

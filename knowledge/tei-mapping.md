@@ -16,7 +16,7 @@ version: 1.0
 created: 2026-08-21
 updated: 2026-08-21
 authors: [Christopher Pollin]
-related: [specification, pipeline, data, verification, plan, decisions]
+related: [specification, pipeline, project, verification, decisions]
 ---
 
 # TEI Mapping
@@ -69,7 +69,7 @@ curation in the viewer (rule of 2026-06-08). The scope statement belongs to
   misplaced motto is unpacked by `tei_step2._fix_structural_issues`.
 
 How often each phenomenon is attested in the reference corpus is recorded in
-[data.md](data.md), phenomenon map.
+[project.md](project.md), data section, phenomenon map.
 
 ## Phenomena and their treatment
 
@@ -121,7 +121,7 @@ fixed column width of sixty characters.
 
 These rules shape the delivered text at production time. The separate N-rules that make
 two texts comparable at measurement time live in
-[cer-methodology.md](cer-methodology.md) and never touch the data.
+[methodology.md](methodology.md), CER measurement section and never touch the data.
 
 | Source characters | Target character | Unicode | Rule |
 |---|---|---|---|
@@ -216,7 +216,7 @@ in that class.
 
 The delivered corpus under `output/tei_final/` carries no entity markup today. The
 controlled entity layer writes read-only previews, and the stock run into the delivery is
-operator-gated (see [plan.md](plan.md)). The rules below are the target model that the
+operator-gated (see [decisions.md](decisions.md), plan section). The rules below are the target model that the
 previews already realize.
 
 Detail rules of the inline model, settled against the reference corpus and by operator
@@ -353,7 +353,7 @@ subject. Library apparatus is out of scope entirely, and E-Periodica cover sheet
 photo-credit lines are never matched.
 
 Whether the provenance attributes belong in the delivered TEI is part of the stock run and
-a decision for the library ([plan.md](plan.md)).
+a decision for the library ([decisions.md](decisions.md), plan section).
 
 ### Facsimile binding
 
@@ -446,11 +446,11 @@ so a regeneration cannot regress an already delivered header. The contract deman
 `sourceDesc` carrying `<analytic>` with title and author plus `<monogr>` with `<imprint>`
 and `<date>`, and a `<profileDesc>/<langUsage>` with one `<language ident="...">` per
 language code. The requirement itself is owned by [specification.md](specification.md)
-(R-SCHEMA, R-TEI); the test gates that hold it are described in [testing.md](testing.md).
+(R-SCHEMA, R-TEI); the test gates that hold it are described in [verification.md](verification.md), quality assurance section.
 `build_tei_header` never emits `<revisionDesc>`; the status marker projects it afterwards.
 
 Catalogue metadata from Alma, in particular the MMSID, stays outside the pipeline header
-and remains ZBZ domain (O13 in [plan.md](plan.md)).
+and remains ZBZ domain (O13 in [decisions.md](decisions.md), plan section).
 
 The RelaxNG declarations that govern the entity attributes were read off
 `data/schema/zbz_hersch.rng` directly.
@@ -466,7 +466,7 @@ The RelaxNG declarations that govern the entity attributes were read off
 
 Tightening therefore means narrowing the inherited `@ref` on `bibl` the way `persName` and
 `orgName` already do, or removing `att.canonical` from `bibl`, with `rs` following through
-`att.naming`. That schema hardening is open and belongs to [plan.md](plan.md).
+`att.naming`. That schema hardening is open and belongs to [decisions.md](decisions.md), plan section.
 
 ## Unresolved phenomena
 
@@ -478,7 +478,7 @@ Image captions are unresolved at the guideline level, because the ZBZ guideline
 contradicts itself (O27). The operator convention of 2026-08-12 puts captions in scope,
 while the matcher still skips figure contexts and reports caption candidates separately, so
 the figure zone widens only once ZBZ confirms the reading. Both items are tracked in
-[plan.md](plan.md).
+[decisions.md](decisions.md), plan section.
 
 ## Conventions for the whole project
 

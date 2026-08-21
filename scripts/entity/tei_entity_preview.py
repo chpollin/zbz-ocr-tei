@@ -16,12 +16,12 @@ and the concatenated text of the ``<text>`` subtree is identical before and afte
 
 One placement rule beyond the plain span: a candidate that covers the complete content of an
 existing ``<hi>`` is wrapped around that ``hi`` instead of inside it, which is the ZBZ
-convention for work titles set in italics (knowledge/entity-integration.md, target model).
+convention for work titles set in italics (knowledge/tei-mapping.md, target model).
 
 Mark provenance
 ---------------
 Every wrapped mark carries its own provenance and verification state, so the annotation
-stays auditable outside this pipeline (vocabulary: knowledge/entity-integration.md, section
+stays auditable outside this pipeline (vocabulary: knowledge/tei-mapping.md, section
 "Mark provenance and verification state"). Three separate things:
 
 ``@resp``   who asserted the mark, as a pointer into the ``respStmt`` declarations this
@@ -85,7 +85,7 @@ VERDICTS_PATH = DATA_DIR / "entities" / "mention_verdicts.json"
 
 REPORT_STEM = "entity_pilot_report"
 
-# M3 pilot panel (knowledge/entity-integration.md): gold half, then transfer half.
+# M3 pilot panel (E105): gold half, then transfer half.
 PANEL_DOCS = ["1060", "100", "290", "1440", "890", "1350", "1360", "2030", "1220", "3090"]
 
 # ZBZ inline GND model (E88): one element per category, ref carries the GND id.

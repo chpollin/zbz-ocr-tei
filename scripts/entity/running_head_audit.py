@@ -61,7 +61,7 @@ TIER_1 = 1
 TOP_PRINTED = 12
 
 # Bootstrap parameters of the convention reading, matching the executed evaluation
-# (percentile interval, seed 42; reports/2026-08-12_entity-eval-ergebnis.md).
+# (percentile interval, seed 42; knowledge/verification.md, appendix).
 BOOTSTRAP_SEED = 42
 BOOTSTRAP_N = 10000
 
@@ -182,7 +182,7 @@ def convention_precision(verdicts: dict | None, lookup) -> dict:
     """Precision over the adjudicated marks the E105 convention keeps in scope.
 
     The executed evaluation measured precision over every decidable drawn mark
-    (reports/2026-08-12_entity-eval-ergebnis.md). The convention reading drops the
+    (knowledge/verification.md, appendix). The convention reading drops the
     marks inside a running-head zone from both numerator and denominator, because
     E105 puts them outside the marking scope; `undecidable` verdicts stay excluded
     exactly as in the protocol reading. The interval is a percentile bootstrap with

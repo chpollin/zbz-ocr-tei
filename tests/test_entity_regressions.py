@@ -5,7 +5,7 @@ to a synthetic mini TEI that carries the original sentence. The fixtures need no
 file under output/: the entity records are built here, and the GND ids are taken
 from the curated list data/entities/all_entities.json.
 
-Findings and their fix package: knowledge/entity-integration.md, section "Fix
+Findings and their fix package: knowledge/tei-mapping.md, section "Fix
 package". Counter-cases sit next to each finding, because a rule that silences the
 defect by silencing the correct mention as well is no fix.
 """

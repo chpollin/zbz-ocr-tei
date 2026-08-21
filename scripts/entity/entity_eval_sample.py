@@ -1,6 +1,6 @@
 """Draw the two evaluation samples of the entity layer (phase 1 of the workflow).
 
-Implements section "1. Draw" of knowledge/entity-evaluation.md: one precision sample of
+Implements section "1. Draw" of knowledge/verification.md: one precision sample of
 tier-1 marks out of the corpus scan, stratified by category and rule family, and one
 recall sample of pages out of the delivered corpus, stratified by layout type and
 language. Both draws are seeded (default 42) and reproducible; every cell of both

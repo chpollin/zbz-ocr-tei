@@ -31,7 +31,7 @@ End-to-end pipeline for the estate of Jeanne Hersch: the delivered PDFs are turn
 layout, and schema-valid TEI. The corpus funnel from catalogued texts to digitized to delivered
 as PDF to final TEI is generated and drift-checked by `python -m scripts.eval.corpus_audit`; the
 current figures and the four-unit page reconciliation live in
-[knowledge/project.md §Corpus](knowledge/project.md).
+[knowledge/project.md](knowledge/project.md), data section.
 
 ```
 PDF-Scans -> Images -> OCR (Mistral) ──┐
@@ -51,10 +51,10 @@ Notes:
 - The delivered TEI embeds `<facsimile>` with `<zone>` coordinates per page and carries `@facs`
   on `pb`, `p`, `lb` and `note`; the generated mirror ships a per-document facsimile map
   `{doc}_facs.json` (E114). Still planned is the provenance drawer in the viewer (see
-  [knowledge/workflow.md](knowledge/workflow.md)).
+  [knowledge/decisions.md](knowledge/decisions.md), plan section).
 
-Component status per stage: [knowledge/project.md §Component Status](knowledge/project.md).
-Engines and TEI mapping: [knowledge/pipeline.md](knowledge/pipeline.md).
+Delivered scope: [knowledge/project.md](knowledge/project.md), scope of functions; open milestones: [knowledge/decisions.md](knowledge/decisions.md), plan section.
+Engines: [knowledge/pipeline.md](knowledge/pipeline.md); TEI mapping: [knowledge/tei-mapping.md](knowledge/tei-mapping.md).
 
 ## Quality
 
@@ -82,10 +82,10 @@ free NER was removed (E71). A deterministic matcher binds mentions to the curate
 list (persons, organisations, works; ids are never assigned by an LLM, E62); sure matches are
 auto-marked in read-only previews, everything uncertain lands on a review worklist. The layer
 is measured by facsimile-adjudicated sampling
-([reports/2026-08-12_entity-eval-ergebnis.md](reports/2026-08-12_entity-eval-ergebnis.md));
+([knowledge/verification.md](knowledge/verification.md), finding register and appendix);
 the delivered TEI under `output/tei_final/` carries no entity markup yet, the stock run is
-operator-gated. Design and method: [knowledge/entity-integration.md](knowledge/entity-integration.md),
-[knowledge/entity-evaluation.md](knowledge/entity-evaluation.md).
+operator-gated. Rules: [knowledge/tei-mapping.md](knowledge/tei-mapping.md); instruments: [knowledge/pipeline.md](knowledge/pipeline.md), entity stage;
+measurement: [knowledge/verification.md](knowledge/verification.md).
 
 ZBZ domain (not produced here): TEI header metadata from Alma (project id / MMSID / PubForm, as
 required by the editorial guidelines). An earlier MMSID projection was removed (E76); header
@@ -122,7 +122,7 @@ JSON/XML/MD files under `docs/data/`. The viewer (`docs/viewer.html`) is a singl
 per-panel edit toggle) with a single
 "Save" button that persists all unsaved streams at once, written directly into the working
 tree via the File System Access API (Chromium) or exported as downloads. Architecture, save
-mechanism, CDN dependencies, and design system: [knowledge/workflow.md](knowledge/workflow.md).
+mechanism, vendored assets and design system: [knowledge/workflow.md](knowledge/workflow.md).
 
 ```bash
 python -m http.server 8000 -d docs    # http://localhost:8000/
@@ -168,25 +168,21 @@ The commit hook is optional and self-contained: install `pre-commit` and run
 
 ## Documentation
 
+The knowledge base holds ten documents; [knowledge/index.md](knowledge/index.md) is the entry point with reading paths and the function map.
+
 | Topic | File |
 |---|---|
-| Navigation (start here) | [knowledge/index.md](knowledge/index.md) |
-| Project + milestones + corpus | [knowledge/project.md](knowledge/project.md) |
-| Pipeline + engines + TEI mapping | [knowledge/pipeline.md](knowledge/pipeline.md) |
-| End-to-end workflow + viewer + save mechanism + round-trip + provenance concept | [knowledge/workflow.md](knowledge/workflow.md) |
-| Requirements, quality method, validation rules, epics + user stories | [knowledge/specification.md](knowledge/specification.md) |
-| Ecosystem synthesis (zbz / szd-htr / teiCrafter), dated snapshot | [reports/2026-06-07_ecosystem-synthesis.md](reports/2026-06-07_ecosystem-synthesis.md) |
-| Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastructure.md](knowledge/infrastructure.md) |
-| Methodology + Promptotyping | [knowledge/methodology.md](knowledge/methodology.md) |
-| CER measurement method | [knowledge/cer-methodology.md](knowledge/cer-methodology.md) |
-| Print-OCR state of research | [knowledge/literature-comparison.md](knowledge/literature-comparison.md) |
-| Reference TEIs, phenomenon map | [knowledge/ground-truth-map.md](knowledge/ground-truth-map.md) |
-| Entity integration (design + built state) | [knowledge/entity-integration.md](knowledge/entity-integration.md) |
-| Entity evaluation (method + execution record) | [knowledge/entity-evaluation.md](knowledge/entity-evaluation.md) |
-| Multi-agent wave pattern | [knowledge/agent-orchestration.md](knowledge/agent-orchestration.md) |
+| Navigation, reading paths, glossary | [knowledge/index.md](knowledge/index.md) |
+| Charter, corpus and data, integration with ZBZ, Transkribus and teiCrafter | [knowledge/project.md](knowledge/project.md) |
+| Requirements, quality method, validation rules, gates, epics, scope | [knowledge/specification.md](knowledge/specification.md) |
+| TEI markup rulebook and entity target model | [knowledge/tei-mapping.md](knowledge/tei-mapping.md) |
+| Pipeline stages, engines, entity stage, deployment, CI, viewer delivery | [knowledge/pipeline.md](knowledge/pipeline.md) |
+| End-to-end workflow, viewer, save mechanism, round trip, provenance, design system | [knowledge/workflow.md](knowledge/workflow.md) |
+| Methodology, CER measurement method, state of research, governance | [knowledge/methodology.md](knowledge/methodology.md) |
+| Quality assurance (test suite), verification of claims, dated protocols and results | [knowledge/verification.md](knowledge/verification.md) |
+| Decision register and plan (milestones, open decisions) | [knowledge/decisions.md](knowledge/decisions.md) |
+| Session journal with archive | [knowledge/journal.md](knowledge/journal.md) |
 | Final work report (delivery synthesis, German) | [knowledge/arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md) |
-| Decisions + open items | [knowledge/decisions.md](knowledge/decisions.md) |
-| Session journal | [knowledge/journal.md](knowledge/journal.md) |
 
 ## Team
 

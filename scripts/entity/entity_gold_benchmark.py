@@ -1,8 +1,8 @@
 """M4 gold benchmark of the entity integration: matcher against the ZBZ reference TEIs.
 
-Design plan: knowledge/entity-integration.md (sections "Target model", "Instruments",
+Design plan: knowledge/tei-mapping.md (sections "Target model", "Instruments",
 "Verification"). The measurement follows the principle of the CER benchmark
-(knowledge/cer-methodology.md): the references are partial transcriptions, so the
+(knowledge/methodology.md (CER measurement section)): the references are partial transcriptions, so the
 comparison runs only in the text both sides share; everything outside that scope counts
 neutral, is counted and reported, and never becomes a hit or an error.
 
@@ -11,7 +11,7 @@ writes one report to output/audits/, changes no TEI, and is no pass/fail gate (e
 always 0).
 
 What is scored, per reference mention (persName/orgName/bibl carrying a GND reference in
-@ref or @corresp, with or without the "GND:" prefix, see ground-truth-map.md exception 7):
+@ref or @corresp, with or without the "GND:" prefix, see knowledge/project.md, data section, exception 7):
 
   hit                    a tier-1 candidate carries the same id at the same place
   worklist_available     only a tier-2 candidate knows it; the mention is on the worklist,
@@ -229,7 +229,7 @@ def normalize_reference_gid(value: str) -> str | None:
     """GND id of a reference attribute value, or None when it carries no id.
 
     Whitespace inside the value is real in the corpus (1520), and the "GND:" prefix is
-    missing in four references (ground-truth-map.md, exception 7).
+    missing in four references (knowledge/project.md, data section, exception 7).
     """
     cleaned = "".join(value.split())
     if cleaned[:4].upper() == "GND:":

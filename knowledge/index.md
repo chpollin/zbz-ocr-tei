@@ -1,180 +1,133 @@
 ---
 title: Knowledge Base zbz-ocr-tei
-type: moc
 project:
   name: zbz-ocr-tei
   repository: https://github.com/chpollin/zbz-ocr-tei.git
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
-status: complete
-created: 2026-01-29
-updated: 2026-08-21
-tags: [zbz-ocr-tei, index, navigation]
 template:
   name: Vorlage Index
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
+status: complete
+language: en
+version: 1.0
+created: 2026-01-29
+updated: 2026-08-21
 authors: [Christopher Pollin]
+related: [project, specification, tei-mapping, pipeline, workflow, methodology, verification, decisions, journal]
 ---
 
 # Knowledge Base zbz-ocr-tei
 
-Documentation of the LLM-supported OCR and TEI pipeline for the Jeanne Hersch edition (Zentralbibliothek Zuerich).
-
-This knowledge base was consolidated on 2026-04-27 and restructured on
-2026-07-07: quality.md, viewer.md, and frontend-gaps.md were dissolved into
-specification.md (normative method, rules, open requirements), workflow.md
-(viewer, editors, persistence), and the final report (measured values; today
-[arbeitsbericht-v3.md](arbeitsbericht-v3.md)). The
-principle is a single source of truth per domain, one file per topic.
-
----
+Entry point of the knowledge base. It names the ten documents, assigns each its functions of
+the Promptotyping convention, gives reading paths by task and holds the glossary of the terms
+the documents use. The project constitution with the operative rules and the full CLI
+reference is [CLAUDE.md](../CLAUDE.md) in the repository root.
 
 ## Documents
 
-| Document | Answers |
-|---|---|
-| [project.md](project.md) | What is the project? Commission, corpus funnel + page balance (generated via corpus_audit), ZBZ workflow, status |
-| [specification.md](specification.md) | What must the system do? Requirements, quality measurement method, validation rule catalog (R/W/Z), gates, epics + user stories, open frontend requirements |
-| [pipeline.md](pipeline.md) | How is the pipeline built? Stages PDF -> TEI, engines (Mistral, Docling, Gemini), TEI mapping (ZBZ Hersch schema), round-trip section |
-| [workflow.md](workflow.md) | How does the end-to-end data flow run? Data-flow diagram, data formats per stage, the viewer (pages, views, editors, blank pages, workflow status, read-only entity layer, design system), the corpus entity overview `docs/entities.html`, save mechanism, round trip from edit to regenerated TEI, provenance concept, planned `_complete.xml` variant, roadmap |
-| [infrastructure.md](infrastructure.md) | How is it deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD, viewer deployment (GitHub Pages) |
-| [methodology.md](methodology.md) | How do we work? Epistemic infrastructure, verification cascade, Critical Expert in the Loop, three-layer model, operational CLI |
-| [decisions.md](decisions.md) | What has been decided? Decision register (E entries), open points (O8/O13/O27 with ZBZ, O18 DHCraft; O25/O26 closed), risks |
-| [cer-methodology.md](cer-methodology.md) | How is the CER measured? Definition, choice of reference, fidelity/scope decomposition, CER extraction rules E1-E12 (cer-methodology namespace, distinct from the decision ids), normalization N1-N21, verification of the measurement |
-| [literature-comparison.md](literature-comparison.md) | How good is it against the state of research? Print-OCR comparison table and comparability caveats |
-| [ground-truth-map.md](ground-truth-map.md) | What do the 25 reference TEIs contain and where do they deviate? Phenomenon map and exception catalog (former Appendix B) |
-| [entity-integration.md](entity-integration.md) | How do GND entities get into the delivered TEI? Design plan: input data, target-model rules, three-tier matching, milestones M0-M7, verification |
-| [entity-evaluation.md](entity-evaluation.md) | How do we know the entity layer is right? Sampling workflow: facsimile-adjudicated precision and recall, agreement check, consequences |
-| [agent-orchestration.md](agent-orchestration.md) | How multi-agent waves are run verifiably: wave contract, verbatim guardrails, verification of self-reports, roles, transferable core |
-| [arbeitsbericht-v3.md](arbeitsbericht-v3.md) | The project report (German, client-facing): headline CER, per-document breakdown, corpus proxy, stock corrections, limits, outlook; canonical values in `docs/data/cer_statistics.json` |
-| [journal.md](journal.md) | What was done when? Compact session overview (since Jan 2026), recurring patterns |
-| [journal-archive.md](journal-archive.md) | Full journal entries of sessions 69 to 96, moved 2026-08-21; the journal keeps one line per session |
-| [refactoring-plan.md](refactoring-plan.md) | Temporary working plan of the 2026-08 repository refactoring: findings, work packages, waves, verification per wave. Deleted at closure; the outcome stays in [decisions.md](decisions.md) |
-
-Historical snapshots live in `reports/`. The cross-project picture of zbz, szd-htr and
-teiCrafter as of June 2026 moved there as
-[2026-06-07_ecosystem-synthesis.md](../reports/2026-06-07_ecosystem-synthesis.md); it
-predates the entity layer and the viewer reduction and is read as a dated snapshot.
-
-Constitution + commands: [CLAUDE.md](../CLAUDE.md) (top level, project-wide rules).
-
----
-
-## Convention Functions
-
-Each document carries one function of the [Convention Knowledge Documents](https://dhcraft.org/Promptotyping/_content/konvention.md) of the Promptotyping method. Where a catalogue template carries the function, the document names it in its `template` frontmatter field and the table gives it here; where the catalogue holds no template, the document is freehand and the reason stands in the last column. A reasoned gap is a design decision, not an omission.
-
-| Document | Function | Template or reason for freehand |
+| Document | Answers | Functions carried (templates) |
 |---|---|---|
-| [index.md](index.md) | Navigation | Vorlage Index |
-| [project.md](project.md) | Charter (with Material: corpus funnel and page balance) | Vorlage Projekt-Wissensdokument |
-| [specification.md](specification.md) | Specification (requirements, rule catalog, epics and user stories) | Vorlage Specification |
-| [pipeline.md](pipeline.md) | Architecture (stages, engines, TEI mapping) | Vorlage Architecture |
-| [workflow.md](workflow.md) | Architecture (end-to-end data flow, viewer, persistence, provenance) | Vorlage Architecture |
-| [infrastructure.md](infrastructure.md) | Architecture (deployment, CI/CD) | Vorlage Architecture |
-| [journal.md](journal.md) | Provenance | Vorlage Journal |
-| [arbeitsbericht-v3.md](arbeitsbericht-v3.md) | Reporting (client-facing) | Vorlage Report |
-| [decisions.md](decisions.md) | Decision record, split out of Specification | freehand: the catalogue carries decisions as a section of the specification and holds no template for a standing register |
-| [cer-methodology.md](cer-methodology.md) | Domain Knowledge (CER measurement method) | freehand: the convention names this function in OCR projects as one without a template |
-| [ground-truth-map.md](ground-truth-map.md) | Material (specialisation: reference corpus and deviation catalog) | freehand: a deviation catalog, not the corpus description the Datengrundlage template structures |
-| [literature-comparison.md](literature-comparison.md) | Domain Knowledge (print-OCR state of research) | freehand: no function in the catalogue |
-| [entity-integration.md](entity-integration.md) | Specification (design plan for the entity-integration epic) | freehand: a forward-looking design plan, the catalogue holds no plan template |
-| [entity-evaluation.md](entity-evaluation.md) | Method (sampling evaluation of the entity layer) | freehand: a measurement workflow, follows the CER methodology discipline |
-| [methodology.md](methodology.md) | Working method of the project | freehand: describes the way of working, not the scholarly domain, so Domänenwissen does not carry |
-| [agent-orchestration.md](agent-orchestration.md) | Working method for multi-agent waves, layered above methodology.md | freehand: an orchestration layer the catalogue holds no function for |
-| [refactoring-plan.md](refactoring-plan.md) | Temporary working plan (2026-08 refactoring) | freehand: a dated working plan, the catalogue holds no plan template; the document is deleted at closure |
+| [project.md](project.md) | What is the project, what material does it work on, and what are the contracts at its borders? Commission, context, standards, scope of functions, delimitations; the corpus funnel (generator-bound), genres and languages, document types A to D, the pilot sample, the delivery structure under `data/`, the entity input data, the reference corpus with its phenomenon map and exception catalog, known problem cases; the integration with ZBZ, Transkribus and teiCrafter (data flow, exchange formats, responsibilities, acceptance criteria, open points) | Charter (Vorlage Projekt-Wissensdokument 0.2); Material (Vorlage Datengrundlage 0.2); Integration (Vorlage Integration 0.1) |
+| [specification.md](specification.md) | What must the system do and how is it checked? Sources of authority, system requirements, quality measurement, validation rule catalog (R/W/Z), gates, epics and user stories, scope | Specification (Vorlage Specification 0.3) |
+| [tei-mapping.md](tei-mapping.md) | How is the delivered TEI encoded? The markup rulebook (structure, character normalization, page structure, highlighting, special structures, figures, omissions, revisionDesc, element inventory, facsimile binding) and the entity target model (ref pattern, `@resp`/`@cert`/`@source` vocabulary, three tiers and anchor rule, derived forms, precision guards, marking policy), header and schema declarations, conventions for the whole project | Domain Knowledge, rulebook (Vorlage Domänenwissen 0.2) |
+| [pipeline.md](pipeline.md) | How is it built and run? Stages PDF to TEI, engines, the TEI mapping stage, the entity preview stage with its instruments, ZBZ structural tags, model APIs and credentials, CI, production fork, local development, viewer deployment with the online demo, third-party-free delivery | Architecture, stages and deployment (Vorlage Architecture 0.3, twice) |
+| [workflow.md](workflow.md) | How does the data flow end to end and how does a curator work? Data flow diagram, data formats per stage, the viewer (pages and modes, architecture, layout editor, transcription editor, blank pages, workflow status per stream, entity layer), persistence (read path, save mechanism, round trip), provenance as built, the Hersch design system (stance, system, interaction patterns, visualization logic, action-layer coupling) | Architecture, data flow and viewer (Vorlage Architecture 0.3); Design (Vorlage Design 0.2) |
+| [methodology.md](methodology.md) | How do we work, how do we measure, who decides? Epistemic infrastructure, verification cascade, operative cycle, Critical Expert in the Loop, three-layer model, conventions; the CER measurement method (definition, reference, fidelity and scope, extraction rules E1 to E12, normalization N1 to N21, print-OCR state of research); governance (authority and decisions, sources and their status, wave pattern, guardrails, verification of agent results, roles, parallel instances) | Domain Knowledge, method layer (Vorlage Domänenwissen 0.2, twice); Governance (no catalogue template) |
+| [verification.md](verification.md) | What is guaranteed, and do the outward claims hold? Quality assurance (test strategy, guarantees, acceptance, deliberately unchecked classes, how to run, anchor strategy, components, state), the verification of the CER headline, the entity precision and recall and the corpus completeness (problems, verdict vocabulary, chains, anti-anchoring, finding register, open findings, limits), and the appendix with the adjudication protocol, the evaluation result, the CER counter-check and the false-positive hunt protocol | Quality Assurance (Vorlage Testing 0.2); Verification (Vorlage Verification 0.1) |
+| [decisions.md](decisions.md) | What is decided, and what comes next? The register E1 onward (table for E1 to E63, detail entries from E64) and the plan (target state, phases and milestones with done-when criteria, status tracker, open decisions and dependencies, deviations) | Decision record; Planning (Vorlage Plan 0.2) |
+| [journal.md](journal.md) | What was done when? Format contract, the current entries, the compact archive of sessions 1 to 96, the lessons, and the archive of the full entries of sessions 69 to 96 | Provenance (Vorlage Journal 0.2) |
+| [index.md](index.md) | This document | Navigation (Vorlage Index 0.2) |
 
-The action layer lies in the repository root as [CLAUDE.md](../CLAUDE.md), per convention outside `knowledge/`.
+The client report [arbeitsbericht-v3.md](arbeitsbericht-v3.md) (Reporting, Vorlage Report,
+German) is a dated snapshot kept beside the ten until its pending edit is committed; it then
+moves to the static site under `docs/`. Its measured values come from
+`docs/data/cer_statistics.json`.
 
----
+## Reading paths
 
-## Dependencies
+First contact: project.md (charter and delimitations), then specification.md, then the
+scope-of-functions section of project.md and the plan section of decisions.md for what is
+delivered and what is open.
 
-```
-project (vision, corpus, ZBZ context)
-   |
-   +-- specification (requirements, quality method, rule catalog, epics)
-   |      +-- cer-methodology (CER measurement method in detail)
-   |      +-- literature-comparison (print-OCR state of research)
-   |      +-- ground-truth-map (the 25 references + exception catalog)
-   |      `-- entity-integration (GND entity integration design plan)
-   |             `-- entity-evaluation (sampling evaluation of the entity layer)
-   |
-   +-- pipeline (stages: PDF -> TEI)
-   |      `-- infrastructure (Azure, Podman, CI/CD, viewer deployment)
-   |
-   +-- workflow (end-to-end data flow + viewer + save + round trip + provenance)
-   |
-   `-- methodology (Promptotyping + verification cascade)
-          `-- agent-orchestration (multi-agent wave pattern, verification of agent results)
+Working on the pipeline or a script: pipeline.md for the stage and its engines, tei-mapping.md
+for the markup the generator must produce, methodology.md (conventions) for `--dry-run`,
+`--force` and `--reassemble`, the CLI reference in CLAUDE.md for the exact command,
+verification.md (quality assurance) for the gate that must stay green.
 
-decisions: cross-cutting, decision register
-journal: chronological, compact overview
-refactoring-plan: temporary, working plan of the 2026-08 refactoring
-```
+Working on the viewer or the site: workflow.md (viewer, persistence, design), the design
+imperatives in CLAUDE.md, pipeline.md (viewer deployment, third-party-free delivery),
+decisions.md plan section for the deferred frontend findings.
 
----
+Measuring or reporting quality: methodology.md (CER measurement method), verification.md
+(finding register, appendix), `docs/data/cer_statistics.json` for the values,
+project.md (data section) for the reference corpus and its exception catalog.
 
-## Key Concepts
+Working on the entity layer: tei-mapping.md (target model and rules), pipeline.md (entity stage
+instruments), verification.md (sampling method, adjudication protocol, results), decisions.md
+plan section (milestones M4 to M7 and the open operator questions), project.md (entity input
+data).
+
+Deciding or planning: decisions.md (register and plan), journal.md (what happened last),
+methodology.md (governance: who decides what, how agents are run and verified).
+
+Running agents: methodology.md governance section (wave pattern, verbatim guardrails,
+verification of self-reports), verification.md appendix (the binding adjudication and
+false-positive hunt protocols), CLAUDE.md (security and the scripts allowlist rule).
+
+## Convention
+
+The base follows the Promptotyping convention for knowledge folders. Ten documents carry all
+functions the project triggers; where a document carries more than one function, each function
+is a top-level section, the document's `template` names the dominant function and its
+`absorbed` field lists the others. Every document carries the core frontmatter (`title`,
+`project`, `method`, `status`, `language`, `version`, `created`, `updated`, `authors`,
+`related`), the repo-wide schema version, and a `template` block where a catalogue template
+exists. `tests/test_knowledge_frontmatter.py` pins the document set, the frontmatter contract,
+the equal schema version, resolvable links and the absence of horizontal rules, so the
+convention runs as a gate in CI.
+
+Single source of truth: every fact lives in exactly one section and is referenced elsewhere;
+on overlap, one section keeps the definition and the other points to it. New facts go into the
+section that owns the function; new decisions go into the register of decisions.md, open ones
+into its plan section; each session ends with a journal entry, and entries older than the five
+most recent move verbatim into the journal's archive section, leaving one compact line.
+Durable sections carry no volatile quantities and name no third-party persons; dated holdings
+(register entries, journal entries and archive, the verification appendix, the corpus funnel
+table bound to its generator) are exempt because there the figure is the point. Generated
+mirrors under `docs/data/` are never edited by hand.
+
+## Terms
 
 | Term | Definition | Source |
 |---|---|---|
-| 6-Stage Pipeline | images -> OCR -> layout -> PAGE-XML -> TEI-XML -> evaluation | [pipeline.md](pipeline.md) |
-| Document types A-D | single-column / two-column / monograph / special | [project.md](project.md) |
-| `zbz_hersch.rng` (E48/E49, extended E68) | project-specific RelaxNG schema for the delivered TEI, the single format authority (E102); active state = ZBZ review template (`data/source/zbz-lieferung-2026-06-21/`) + E68 header elements. Markup model inline GND (E88): `persName`/`orgName`/`bibl` with `ref="GND:..."` at the point of mention, no standOff register | [pipeline.md](pipeline.md), [decisions.md §E88](decisions.md) |
-| Hybrid pipeline | Docling layout + LLM-OCR text | [pipeline.md](pipeline.md) |
-| Unified TEI Pipeline (E32) | scaffold + Gemini refinement + assembly + validation | [pipeline.md](pipeline.md) |
-| Agent-based quality screening (E41, deprecated E66) | 7-layer pre-curation, review JSON per doc; abolished as a quality signal because no human was involved; legacy retained as `_screening_legacy.json` | [decisions.md §E66](decisions.md) |
-| Workflow status per stream (E66/E67/E77) | unverifiziert \| in_arbeit \| verifiziert per OCR/layout/TEI (three levels since E77), in the manifest with provenance history, projectable into `<revisionDesc>`. Traffic light: grey=unverifiziert, yellow=in_arbeit, green=verifiziert, red reserved | [workflow.md](workflow.md) |
-| Traffic-light reframing (E67) + three-level collapse (E77) | "Pipeline output EXISTS, it is merely unverified"; hence status `offen` renamed to `unverifiziert` and the red default reading abandoned (E67); E77 merges `bearbeitet`+`fertig` into `verifiziert`, one colour per level | [decisions.md §E77](decisions.md) |
-| Fidelity CER (E70/E73/E80/E85) | headline quality measure across the 25 reference docs: full-text Levenshtein, edit operations decomposed into fidelity and scope, print-calibrated | [cer-methodology.md](cer-methodology.md) (method), `docs/data/cer_statistics.json` + [arbeitsbericht-v3.md](arbeitsbericht-v3.md) (values) |
-| CER statistics (E54) | percentile bootstrap CIs with the document as resampling block, paired E2E vs OCR-only, HCPR | [cer-methodology.md](cer-methodology.md) (method), [specification.md](specification.md) (requirement) |
-| Quality proxy | dictionary hit rate for docs without ground truth; plausibility bound, not a measurement | [specification.md](specification.md) |
-| Validation rule catalog | blocking R1-R7, warnings W1-W19, ZBZ conformity Z1-Z8 (inline GND) | [specification.md](specification.md) |
-| Entity layer (closed world, E105-E119) | deterministic matcher against the curated ZBZ entity list, preview-only; `output/tei_final/` stays entity-free; M0-M3 reached, M4 built as the gold-benchmark instrument, M5-M7 open | [entity-integration.md](entity-integration.md) |
-| Mark provenance and marking policy (E118/E119) | every preview mark carries `@resp`, `@cert` and `@source`; operator marking decisions live in `data/entities/marking_policy.json`, facsimile-adjudicated judgments in the mention verdict store | [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md) |
-| Reading order / W19 (E90/E99) | column- and band-aware canonical order; W19 scopes the legacy deviations of the delivered corpus. Machine reordering was tested against the 25 references and refuted (E99), so correction runs page-wise and facsimile-verified through `tei_reading_order_fix`; the preview instrument `tei_reassemble_preview` was deleted in the 2026-08 refactoring, its evidence is the register entry E99 | [decisions.md §E90](decisions.md), [decisions.md §E99](decisions.md) |
-| revisionDesc (E42) | pipeline + workflow status in the TEI header, travels with the document | [pipeline.md](pipeline.md) |
-| `output/tei_final/` (E43) | single source of truth of the delivered TEI data | [pipeline.md](pipeline.md) |
-| Verification cascade | 4 levels: automatic / contextual / visual / domain-expert | [methodology.md](methodology.md) |
-| Three-layer model | Command (rule) / Artifact (tool) / Tool (invocation) | [methodology.md](methodology.md) |
-| Pipeline viewer (E56) | single-page app with facsimile + OCR + TEI + layout/transcription editor; one "Save" -> directly into repo + mirror (E78/E79) | [workflow.md](workflow.md) |
-| Hersch Design System | anthracite + brick red + EB Garamond + Jost, `--h-*` tokens | [workflow.md](workflow.md), `docs/assets/css/tokens.css` |
-| OpenSeadragon facsimile (E58) | facsimile renderer in view mode with pan/zoom/rotate, loaded via CDN | [workflow.md](workflow.md) |
-| Mode edit toggle per panel (E60) | one edit toggle each on the facsimile and text panel (E78), active = anthracite; no global mode bar; page navigation in the facsimile header | [workflow.md](workflow.md) |
-| Viewer = Mistral data state (E64) | no OCR source switcher in the viewer; alternative engines (Gemini/LLM) are benchmark-only; doc subbar + toolbar merged | [workflow.md](workflow.md) |
-| Export dropdown (E78) | single download per stream (layout/text/TEI/manifest) implemented as a dropdown; JSZip complete/bulk export (E61) still planned, not yet wired into the code | [workflow.md](workflow.md) |
-| Method page (E62) | `docs/methode.html` with headline CER, stratified values, limitations, literature comparison (static) | [workflow.md](workflow.md) |
-| End-to-end workflow | data flow + save mechanism + round trip + provenance concept + planned `_complete.xml` variant | [workflow.md](workflow.md) |
-| Round trip | user edit -> "Save" (directly into repo + mirror, E78/E79) -> `tei_unified --reassemble` -> regenerated TEI | [workflow.md](workflow.md), [pipeline.md §Round-Trip](pipeline.md) |
-| Transkribus export (E81) | pipeline PAGE-XML -> bundle (`transkribus_export`) -> REST upload into a collection (`transkribus_upload`); reverse direction of the round trip, auth via env vars | [pipeline.md §Transkribus Export](pipeline.md) |
-| Provenance per object (planned) | `{doc}_provenance.json` with full edit history (AI + human), shown in the viewer as a drawer | [workflow.md](workflow.md) |
-| `_complete.xml` (planned) | self-contained TEI with `<facsimile>` + `<zone>` + `@facs` + extended `<revisionDesc>` | [workflow.md](workflow.md) |
-
----
-
-## Quick Start
-
-1. Understand the project: [project.md](project.md), commission, corpus, participants
-2. Understand the requirements: [specification.md](specification.md), what the system must do and how it is checked
-3. Understand the pipeline: [pipeline.md](pipeline.md), 6 stages + engines + TEI mapping
-4. Quality state: [arbeitsbericht-v3.md](arbeitsbericht-v3.md) (the report) and `docs/data/cer_statistics.json` (canonical values); method in [cer-methodology.md](cer-methodology.md)
-5. Corpus overview: `docs/index.html`, per-document status + catalog
-6. Status: [decisions.md](decisions.md), what is decided, what is blocking
-7. Latest session: [journal.md](journal.md), compact session overview
-
----
-
-## Maintenance
-
-- New fact? Insert it into exactly one document, reference it from the others.
-- New decision? Record it in [decisions.md](decisions.md).
-- End of session? Add a line to [journal.md](journal.md).
-- Duplication found? Remove it immediately, insert a cross-reference.
-- Content lives in exactly one document; on overlap, one document keeps the definition and the other links to it.
-
----
-
-*Consolidated on 2026-04-27; restructured on 2026-07-07 (specification + final report added; quality/viewer/frontend-gaps dissolved)*
+| 6-stage pipeline | images, OCR, layout, PAGE-XML, TEI-XML, evaluation | [pipeline.md](pipeline.md) |
+| Document types A to D | single-column, two-column, monograph, special | [project.md](project.md), data section |
+| `zbz_hersch.rng` (E48/E49, extended E68) | project-specific RelaxNG schema for the delivered TEI, the single format authority (E102); active state is the ZBZ review template plus the E68 header elements; markup model inline GND (E88) with `persName`/`orgName` `ref="GND:..."` at the point of mention and no standOff register | [tei-mapping.md](tei-mapping.md), [specification.md](specification.md) |
+| Hybrid pipeline | Docling layout plus LLM-OCR text | [pipeline.md](pipeline.md) |
+| Unified TEI pipeline (E32) | scaffold, Gemini refinement, assembly, validation | [pipeline.md](pipeline.md) |
+| Workflow status per stream (E66/E67/E77) | `unverifiziert`, `in_arbeit`, `verifiziert` per OCR, layout, TEI (and entities in the preview layer), in the per-object manifest with provenance history, projected into `<revisionDesc>`; traffic light grey, yellow, green, red reserved | [workflow.md](workflow.md), workflow status section |
+| Traffic-light reframing (E67) and three-level collapse (E77) | pipeline output exists for every document and its unverified state is the handover default; `offen` became `unverifiziert`, `bearbeitet` and `fertig` merged into `verifiziert` | [decisions.md](decisions.md) E67, E77 |
+| Fidelity CER (E70/E73/E80/E85) | headline quality measure over the 25 reference documents: full-text Levenshtein, edit operations decomposed into fidelity and scope, print-calibrated | [methodology.md](methodology.md), CER measurement section; values in `docs/data/cer_statistics.json` |
+| CER statistics (E54) | document-level percentile bootstrap intervals, paired end-to-end versus OCR-only, HCPR | [methodology.md](methodology.md), CER measurement section; [specification.md](specification.md) |
+| Quality proxy | dictionary hit rate for documents without ground truth; a plausibility bound | [specification.md](specification.md) |
+| Validation rule catalog | blocking R1 to R7, warnings W1 to W7 and W11 to W19, ZBZ conformity Z1 to Z8 | [specification.md](specification.md) |
+| Entity layer (closed world, E105 onward) | deterministic matcher against the curated ZBZ entity list, preview-only; `output/tei_final/` stays entity-free until the operator-released stock run | [tei-mapping.md](tei-mapping.md) (rules), [pipeline.md](pipeline.md) (instruments), [decisions.md](decisions.md) plan section (milestones) |
+| Mark provenance and marking policy (E118/E119) | every preview mark carries `@resp`, `@cert` and `@source`; operator marking decisions live in `data/entities/marking_policy.json`, facsimile-adjudicated judgments in the mention verdict store | [tei-mapping.md](tei-mapping.md), [verification.md](verification.md) |
+| Reading order and W19 (E90/E99) | column- and band-aware canonical order; W19 scopes the legacy deviations; machine reordering was refuted against the references (E99), so correction is page-wise and facsimile-verified | [decisions.md](decisions.md) E90, E99; [specification.md](specification.md) |
+| revisionDesc (E42) | pipeline and workflow status in the TEI header, travels with the document | [tei-mapping.md](tei-mapping.md) |
+| `output/tei_final/` (E43) | single source of truth of the delivered TEI data; `docs/data/` is its generated mirror | [specification.md](specification.md), [workflow.md](workflow.md) |
+| Verification cascade | automatic, contextual, visual, domain-expert | [methodology.md](methodology.md) |
+| Three-layer model | Command (rule), Artifact (tool), Tool (invocation) | [methodology.md](methodology.md) |
+| Wave pattern | parallel build agents on exclusive file sets, verbatim guardrails, independent verifiers, self-reports verified against disk before a commit | [methodology.md](methodology.md), governance section |
+| Pipeline viewer (E56, reduced E107) | single-page app with facsimile, OCR, TEI, layout and transcription editors; one document bar with View and Edit menus; one Save writes into the repository and the mirror (E78/E79) | [workflow.md](workflow.md) |
+| Hersch design system | warm paper and ink, accents for status and emphasis, `--h-*` tokens as the only values, vendored fonts | [workflow.md](workflow.md), design section; `docs/assets/css/tokens.css` |
+| OpenSeadragon facsimile (E58) | facsimile renderer in view mode with pan, zoom and rotate, vendored since E122 | [workflow.md](workflow.md) |
+| Export dropdown (E78) | single download per stream; the JSZip bundle export (E61) is planned | [workflow.md](workflow.md), [decisions.md](decisions.md) plan section |
+| Method page (E62) | `docs/methode.html` with headline CER, stratified values, limitations and the literature comparison | [workflow.md](workflow.md) |
+| Round trip | user edit, Save into repository and mirror, `tei_unified --reassemble`, regenerated TEI | [workflow.md](workflow.md), round-trip section |
+| Transkribus export (E81) | pipeline PAGE-XML as a bundle and REST upload into a collection, the reverse direction of the round trip | [project.md](project.md), integration section |
+| Provenance log and `_complete.xml` (planned) | `{doc}_provenance.json` with the full edit history and a self-contained TEI with extended `<revisionDesc>`; the facsimile side is delivered (E89) | [decisions.md](decisions.md) plan section; [tei-mapping.md](tei-mapping.md) |
+| Adjudication protocol | the binding instructions of the entity evaluation wave, kept verbatim as a dated holding | [verification.md](verification.md), appendix |

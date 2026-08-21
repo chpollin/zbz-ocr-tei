@@ -16,7 +16,7 @@ version: 1.0
 created: 2026-07-07
 updated: 2026-08-21
 authors: [Christopher Pollin]
-related: [project, data, tei-mapping, pipeline, workflow, testing, verification, plan, decisions]
+related: [project, tei-mapping, pipeline, workflow, verification, decisions]
 ---
 
 # Specification
@@ -41,7 +41,7 @@ newest ratified register entry wins and this document is updated to match.
 
 - R-OCR: every delivered PDF page receives OCR text from the base text layer engine;
   alternative engines are benchmark-only (E64). Which engine holds that role, and how the
-  delivered corpus is reproducible, is in [infrastructure.md](infrastructure.md).
+  delivered corpus is reproducible, is in [pipeline.md](pipeline.md), deployment section.
 - R-LAYOUT: every page receives a layout analysis (regions with bounding boxes) from
   Docling with Gemini QA (E19/E20, E25/E26/E31).
 - R-PAGE-XML: PAGE-XML plus METS is generated as a parallel export for the Transkribus
@@ -88,7 +88,7 @@ newest ratified register entry wins and this document is updated to match.
 The quality measure for the delivered text is the fidelity CER against the 25
 ground-truth reference TEIs, calibrated against print-OCR literature rather than
 HTR quality bands (E80). The method is binding since the correctness wave
-(E70/E73) and is defined in full in [cer-methodology.md](cer-methodology.md),
+(E70/E73) and is defined in full in [methodology.md](methodology.md), CER measurement section,
 which owns the CER formula, the decomposition of edit operations into fidelity and
 scope with its threshold, the TEI extraction rules and the normalization regimes.
 The requirements this document holds are the following.
@@ -173,7 +173,7 @@ the verification history of the demotion runs are in [verification.md](verificat
 
 The suite that fulfils this requirement, what it guarantees, which part of it survives a
 fresh clone and which classes of defect it deliberately leaves uncovered, is described in
-[testing.md](testing.md); the invocations stay in [CLAUDE.md](../CLAUDE.md).
+[verification.md](verification.md), quality assurance section; the invocations stay in [CLAUDE.md](../CLAUDE.md).
 
 ## Epics and user stories
 
@@ -192,7 +192,7 @@ fresh clone and which classes of defect it deliberately leaves uncovered, is des
 - Epic D, teiCrafter handover: as an annotator, I receive TEI stable enough for control
   and inline-GND annotation in teiCrafter; the entity gate Z1-Z4 turns sharp on that
   output. Cross-lane, awaits the teiCrafter output-model switch; the handover contract and
-  its open points are in [integration.md](integration.md).
+  its open points are in [project.md](project.md), integration section.
 - Epic E, measurement: as the project lead, I can cite the fidelity CER with a variance
   band (stability measurement, gated by the paid API calls it needs) and reproduce every published figure
   from a command.
@@ -205,14 +205,14 @@ Everything the delivered TEI asserts is derived from those streams and answers t
 and the rule catalog above. Three decisions bound that scope and assign the remainder.
 
 - Header enrichment from Alma, including the MMSID (O8), and editorial subject headings
-  (O13) belong to ZBZ (E76). The contract is in [integration.md](integration.md), the
-  decision state in [plan.md](plan.md).
+  (O13) belong to ZBZ (E76). The contract is in [project.md](project.md), integration section, the
+  decision state in [decisions.md](decisions.md), plan section.
 - Entity markup lives in the preview layer. Writing marks into the delivered TEI is the
-  operator-gated stock run, planned as M7 in [plan.md](plan.md).
+  operator-gated stock run, planned as M7 in [decisions.md](decisions.md), plan section.
 - `front`, `back`, cross-page `anchor` and `unclear` are set during curation in the viewer
   against the facsimile (E83), because their source signals are either document-level or
   per-character judgments the page-wise generator cannot make. The markup rule and the
   reason per case are in [tei-mapping.md](tei-mapping.md).
 
 Forward-looking requirements, the open frontend findings and the milestones behind them are
-in [plan.md](plan.md).
+in [decisions.md](decisions.md), plan section.

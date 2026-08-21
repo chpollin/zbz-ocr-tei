@@ -13,7 +13,7 @@ read only) and projects them into ``docs/data/``:
   list ``data/entities/all_entities.json``.
 
 Nothing under ``output/`` is written and ``output/tei_final`` is not even read. Design plan:
-knowledge/entity-integration.md, section Instruments ("Viewer entity stream").
+knowledge/pipeline.md, entity stage section ("Viewer entity stream").
 
 Page assignment. The candidate offsets of the report index the SOURCE document, the preview
 carries the tier-1 wrappers on top of it. Both files hold the same ``<pb>`` elements in the

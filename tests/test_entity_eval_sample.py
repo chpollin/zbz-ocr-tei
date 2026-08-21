@@ -1,7 +1,7 @@
 """Tests for the evaluation sampler (scripts/entity/entity_eval_sample).
 
 The sampler draws the two reproducible samples of the entity evaluation workflow
-(knowledge/entity-evaluation.md, section "1. Draw"): 300 tier-1 marks stratified by
+(knowledge/verification.md, section "1. Draw"): 300 tier-1 marks stratified by
 category and rule family, and 40 pages stratified by layout type and language.
 
 All fixtures are synthetic: a mini scan, a mini catalog and two mini TEIs in tmp_path.

@@ -1,6 +1,6 @@
 """Mention-level verdict store: the facsimile-adjudicated entity judgments, persisted.
 
-The entity evaluation of knowledge/entity-evaluation.md produced two bodies of evidence:
+The entity evaluation of knowledge/verification.md produced two bodies of evidence:
 300 adjudicated tier-1 marks (precision) and the exhaustive reading of 40 drawn pages
 (recall). Both live as loose case files under output/audits/eval_sample/, which is
 evidence rather than a lookup. This script folds them into one store under

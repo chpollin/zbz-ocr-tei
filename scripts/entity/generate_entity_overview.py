@@ -9,7 +9,7 @@ corpus scan snapshot (output/audits/entity_corpus_scan.json), the same stream th
 previews are cut from.
 
 Certainty model, aligned with the tier architecture of the matcher
-(knowledge/entity-integration.md): tier 1 counts as "auto" (auto-marked, the layer the
+(knowledge/tei-mapping.md): tier 1 counts as "auto" (auto-marked, the layer the
 measured precision covers), tier 2 as "review" (held on the worklist), broken down into
 the classes of CLASSES. Classification is by rule string only, so the overview follows
 every matcher change through a plain regeneration.
@@ -24,7 +24,7 @@ earlier runs.
 
 Quality is the adjudicated evidence of data/entities/mention_verdicts.json, mirrored
 into the page so the static site carries its own measurement (method:
-knowledge/entity-evaluation.md). Precision is the protocol reading, correct over the
+knowledge/verification.md). Precision is the protocol reading, correct over the
 decidable verdicts, with the seeded percentile interval of the executed evaluation.
 Recall has no single defined rate there, so the status counts travel raw next to the
 coverage share the executed evaluation reports.
@@ -62,7 +62,7 @@ CORRECT_VERDICT = "correct"
 DECIDABLE_VERDICTS = frozenset({"correct", "wrong_entity", "wrong_span",
                                 "not_in_source"})
 # Interval procedure of the executed evaluation: percentile bootstrap, seed 42,
-# 10000 resamples (reports/2026-08-12_entity-eval-ergebnis.md). Reproducing its
+# 10000 resamples (knowledge/verification.md, appendix). Reproducing its
 # published bounds requires this resampler, so the block keeps its own.
 BOOTSTRAP_SEED = 42
 BOOTSTRAP_N = 10000
@@ -254,7 +254,7 @@ def build_overview(candidates: list[dict], entries: dict[str, dict], *,
 
 
 def quality_block(verdicts: dict) -> dict:
-    """Mirror of the facsimile-adjudicated sample (knowledge/entity-evaluation.md).
+    """Mirror of the facsimile-adjudicated sample (knowledge/verification.md).
 
     Precision follows the protocol reading, correct over the decidable verdicts, with
     `undecidable` outside numerator and denominator. Recall carries no defined single
@@ -271,7 +271,7 @@ def quality_block(verdicts: dict) -> dict:
     covered = status["hit"] + status["on_worklist"]
     return {
         "source": VERDICTS_LABEL,
-        "method": "knowledge/entity-evaluation.md",
+        "method": "knowledge/verification.md",
         "snapshot": verdicts.get("snapshot") or "",
         "precision": {
             "n": len(marks),

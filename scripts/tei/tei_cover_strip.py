@@ -1,6 +1,6 @@
 """Bestandskorrektur: entfernt E-Periodica-Deckblaetter aus dem Lieferbestand
 output/tei_final (Operator-Entscheidung 2026-08-12, Bibliotheksapparat gehoert nicht in
-die ausgelieferte TEI; siehe knowledge/entity-integration.md, Fix-Paket Punkt 5).
+die ausgelieferte TEI; siehe knowledge/tei-mapping.md, cover sheets).
 
 Erkennung (deterministisch, ohne LLM): ein Dokument traegt ein Deckblatt, wenn der
 sichtbare Text zwischen dem ERSTEN und dem ZWEITEN <pb> mindestens drei der vier

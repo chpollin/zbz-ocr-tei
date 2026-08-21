@@ -4,7 +4,7 @@ Project constitution. Operative rules and conventions that apply at every pipeli
 
 ## Workflow
 
-1. Keep the journal: document each session as an entry following journal template v0.3 in [knowledge/journal.md](knowledge/journal.md); newest entry at the very top of the entries section, with the fields Occasion / Goal / Course / Decisions / Status / Next steps (the format contract and a copyable entry template live in the journal itself). The entries section holds at most five full entries; older entries move verbatim into [knowledge/journal-archive.md](knowledge/journal-archive.md) and leave one compact line in the journal's archive block, where sessions 1-68 stay as one line each.
+1. Keep the journal: document each session as an entry following journal template v0.3 in [knowledge/journal.md](knowledge/journal.md); newest entry at the very top of the entries section, with the fields Occasion / Goal / Course / Decisions / Status / Next steps (the format contract and a copyable entry template live in the journal itself). The entries section holds at most five full entries; older entries move verbatim into the journal's archive section and leave one compact line in its compact archive block, where sessions 1-68 stay as one line each.
 2. Knowledge lives in `knowledge/`: do not duplicate it in CLAUDE.md. Single source of truth per fact.
 3. Do not version output: generated files belong in `output/` (gitignored). Exceptions: `data/curated_tei/` (reserved for hand-verified TEI, currently empty) and the generated mirror `docs/data/`, versioned because it carries the GitHub Pages delivery.
 4. Test before changing: run the evaluation, compare metrics.
@@ -12,28 +12,20 @@ Project constitution. Operative rules and conventions that apply at every pipeli
 
 ## Knowledge Base
 
-The entry point is [knowledge/index.md](knowledge/index.md), covering navigation, dependencies, and key concepts.
+The entry point is [knowledge/index.md](knowledge/index.md), covering navigation, reading paths, the function map and the glossary. The base holds ten documents, each carrying one or more functions of the Promptotyping convention:
 
-Thematically separated documents:
+- [index.md](knowledge/index.md): navigation, reading paths, function map, glossary
+- [project.md](knowledge/project.md): charter (commission, context, standards, scope of functions), the material (corpus funnel, document types, delivery structure, entity input data, reference corpus with its exception catalog, known problem cases) and the integration contracts with ZBZ, Transkribus and teiCrafter
+- [specification.md](knowledge/specification.md): requirements, quality measurement, validation rule catalog, gates, epics and user stories, scope
+- [tei-mapping.md](knowledge/tei-mapping.md): the markup rulebook of the delivered TEI (structure, normalization, page breaks, highlighting, figures, omissions, revisionDesc, facsimile binding, element inventory) and the entity target model (ref pattern, @resp/@cert/@source vocabulary, tiers, anchor rule, marking policy)
+- [pipeline.md](knowledge/pipeline.md): stages, engines, the entity preview stage and its instruments, deployment, credentials, CI, viewer delivery and the online demo
+- [workflow.md](knowledge/workflow.md): end-to-end data flow, the viewer and its editors, persistence and round trip, provenance as built, the Hersch design system
+- [methodology.md](knowledge/methodology.md): epistemic infrastructure, verification cascade, operative cycle, conventions, the CER measurement method with extraction and normalization rules and the print-OCR state of research, governance of agents and operator decisions
+- [verification.md](knowledge/verification.md): quality assurance (test strategy, guarantees, clone-safe subset, deliberately unchecked classes), the verification of claims (CER headline, entity precision and recall, corpus completeness) with the finding register, and the dated protocols and results as appendix
+- [decisions.md](knowledge/decisions.md): decision register E1 onward plus the plan (milestones, status tracker, open decisions, deviations)
+- [journal.md](knowledge/journal.md): chronological session overview with the archive of the full entries of sessions 69 to 96
 
-- [project.md](knowledge/project.md): mission, corpus, ZBZ workflow, status
-- [specification.md](knowledge/specification.md): requirements, quality method, validation rule catalog, epics + user stories
-- [pipeline.md](knowledge/pipeline.md): 6-stage pipeline, engines, TEI mapping
-- [workflow.md](knowledge/workflow.md): end-to-end data flow, viewer + editors, save/round-trip, provenance
-- [reports/2026-06-07_ecosystem-synthesis.md](reports/2026-06-07_ecosystem-synthesis.md): historical snapshot, overall picture of the three projects (zbz / szd-htr / teiCrafter) + frontend gap survey
-- [infrastructure.md](knowledge/infrastructure.md): Azure, Podman, CI/CD, viewer deployment
-- [methodology.md](knowledge/methodology.md): Promptotyping + epistemic infrastructure
-- [decisions.md](knowledge/decisions.md): decision register
-- [cer-methodology.md](knowledge/cer-methodology.md): CER measurement method (definition, reference choice, fidelity/scope, extraction and normalization rules, verification)
-- [literature-comparison.md](knowledge/literature-comparison.md): print-OCR state of research and comparability caveats
-- [ground-truth-map.md](knowledge/ground-truth-map.md): the 25 reference TEIs, phenomenon map and exception catalog
-- [entity-integration.md](knowledge/entity-integration.md): design plan for the GND entity integration (input data, target model, three-tier matching, milestones, verification)
-- [entity-evaluation.md](knowledge/entity-evaluation.md): sampling workflow for the entity layer (facsimile-adjudicated precision and recall, agreement check, statistics, consequences)
-- [agent-orchestration.md](knowledge/agent-orchestration.md): multi-agent wave pattern (wave contract, protocol files, verdict schemes, verification of self-reports against disk)
-- [arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md): the project report (German, client-facing); measured values are in `docs/data/cer_statistics.json`
-- [journal.md](knowledge/journal.md): chronological session overview
-- [refactoring-plan.md](knowledge/refactoring-plan.md): temporary working plan of the 2026-08 repository refactoring, deleted at closure
-- [index.md](knowledge/index.md): navigation + key concepts
+The client report [arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md) is a dated snapshot and moves to `docs/` once its pending edit is committed.
 
 ## Security
 
@@ -43,21 +35,21 @@ Thematically separated documents:
 ## Code Conventions
 
 - Code comments: English only, compact, and only where genuinely needed, for constraints the code itself cannot show. No explanations of the obvious, no origin or change notes (no "added 2026-06-10", no "fixes H1") in code; decision provenance belongs in [knowledge/decisions.md](knowledge/decisions.md) or the journal.
-- No personal names in Markdown: in repo Markdown (knowledge/, README, reports/) use roles and organizations (ZBZ, DHCraft, project management). Jeanne Hersch as the subject of the corpus is exempt.
+- No personal names in Markdown: in repo Markdown (knowledge/, README, workshops/) use roles and organizations (ZBZ, DHCraft, project management). Jeanne Hersch as the subject of the corpus is exempt.
 - No cost figures: do not name monetary amounts or budgets (USD/$/CHF/EUR) in docs, reports, or code. Operational hints such as `free`/`paid` (= no/one API call) are allowed, since they steer calls rather than quantify costs.
 - Markdown style (prospective): in new repo Markdown no `**` bold as emphasis (a paragraph label becomes a heading of the appropriate level or running text) and no `&mdash;` or dash as a connector (use a comma, a semicolon, a colon before a list set on its own lines, or a separate sentence). This applies prospectively; existing text is not rewritten wholesale. Exception: the bold field labels of the journal template remain.
-- No volatile quantities in durable documents: document and page counts, percentages, and test counts do not belong in durable Markdown documents (README, permanent knowledge/ docs); phrase them qualitatively and point to the generating source (`corpus_audit` for corpus counts, validator/audit for tallies, `docs/data/cer_statistics.json` for CER values). Fixed defining quantities remain (the 25 ground-truth reference TEIs, pinned library versions, dates, decision/warning identifiers, document IDs). Dated snapshot documents (journal.md entries, the decisions.md register, reports/) and generator-bound tables (e.g. project.md §Corpus) are exempt; there the number is the point.
+- No volatile quantities in durable documents: document and page counts, percentages, and test counts do not belong in durable Markdown documents (README, permanent knowledge/ docs); phrase them qualitatively and point to the generating source (`corpus_audit` for corpus counts, validator/audit for tallies, `docs/data/cer_statistics.json` for CER values). Fixed defining quantities remain (the 25 ground-truth reference TEIs, pinned library versions, dates, decision/warning identifiers, document IDs). Dated snapshot documents (journal.md entries and archive, the decisions.md register, the verification.md appendix) and generator-bound tables (e.g. the corpus funnel in project.md, data section) are exempt; there the number is the point.
 - Windows encoding: no Unicode special characters in print statements
 - Paths: absolute paths or `pathlib`
 - Output: JSON for data, HTML for reports
 - Frontend: ES6+ JavaScript (`const`/`let`, arrow functions, template literals, IIFE wrappers), `ZBZ.*` namespaces (viewer code under `ZBZ.Viewer`)
-- Frontend dependencies: loaded at runtime via CDN, no npm/build pipeline:
-  - OpenSeadragon 5.0.1 (jsDelivr): facsimile renderer in view mode (E58)
+- Frontend dependencies: vendored under `docs/assets/vendor/` and `docs/assets/fonts/`, no CDN, no npm/build pipeline (E122):
+  - OpenSeadragon 5.0.1 (vendored): facsimile renderer in view mode (E58)
   - JSZip 3.10.1 (cdnjs): planned for the ZIP export module (E61), not yet included in the code
 
 ## Design
 
-For UI or frontend generation, the token catalog `docs/assets/css/tokens.css` is the authority for values; the design rationale is in [knowledge/workflow.md](knowledge/workflow.md), Hersch Design System section. Imperative design principles:
+For UI or frontend generation, the token catalog `docs/assets/css/tokens.css` is the authority for values; the design rationale is in [knowledge/workflow.md](knowledge/workflow.md), design section. Imperative design principles:
 
 - exclusively `--h-*` tokens, never hex values directly in component CSS
 - accent colors (brick red, Prussian blue, olive green) apply to accents and status indicators, not to surfaces
@@ -210,7 +202,7 @@ python -m scripts.tei.tei_body_note_demote --promote-footnotes   # run (backup: 
 The demotion run consumes the facsimile-verified verdicts in
 `output/audits/body_note_verdicts.json` (E94) and never touches notes judged genuine.
 
-## Entity integration (M0-M3 reached, M4 instrument built, M5-M7 open; plan: knowledge/entity-integration.md)
+## Entity integration (rules: knowledge/tei-mapping.md; instruments: knowledge/pipeline.md; milestone state: knowledge/decisions.md, plan section)
 
 The operator marking decisions live in `data/entities/marking_policy.json`, apart from the
 curated list because that list is an external export. It is validated on load and reaches
@@ -230,7 +222,7 @@ python -m scripts.tei.tei_cover_strip --dry-run                      # E-Periodi
 python -m scripts.entity.entity_gold_benchmark                       # M4: precision/recall against the 25 reference TEIs
 python -m scripts.entity.entity_corpus_digest                        # tier-1 harvest as one context-window digest
 python -m scripts.entity.entity_unlisted_scan                        # id-free proposal channel: name-shaped surfaces outside the list
-python -m scripts.entity.entity_eval_sample --seed 42                # evaluation draw: 300 tier-1 marks + 40 pages, stratified, frozen (knowledge/entity-evaluation.md)
+python -m scripts.entity.entity_eval_sample --seed 42                # evaluation draw: 300 tier-1 marks + 40 pages, stratified, frozen (knowledge/verification.md)
 python -m scripts.entity.build_mention_verdicts                      # mention verdict store: adjudicated judgments -> data/entities/mention_verdicts.json (snapshot-bound, deterministic)
 python -m scripts.entity.entity_verdict_guard                        # regression gate: adjudicated verdicts vs current scan, exit 1 on violations (E110)
 python -m scripts.entity.entity_risk_ranking                         # rank tier-1 marks by FP risk -> output/audits/fp_hunt/ (wave protocol: PROTOCOL.md)
@@ -304,7 +296,7 @@ python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      
 
 Pipeline PAGE-XML (`output/page_xml/`) goes back to Transkribus in two steps: first build the bundle,
 then upload via REST. Concept and dialect details are in
-[knowledge/pipeline.md §Transkribus Export](knowledge/pipeline.md).
+[knowledge/project.md](knowledge/project.md), integration section.
 
 ```bash
 python -m scripts.edition.transkribus_export --sample                            # stratified sample -> output/transkribus_upload/

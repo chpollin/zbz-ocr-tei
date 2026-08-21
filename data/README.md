@@ -41,7 +41,7 @@ languages, genres) live only in the generated audit artifact, bound to a
 python -m scripts.eval.corpus_audit
 ```
 
-See [knowledge/project.md](../knowledge/project.md) for the funnel and
+See [knowledge/project.md](../knowledge/project.md), data section, for the funnel, the delivery tree and the entity input data, and
 [knowledge/specification.md](../knowledge/specification.md) for the reference-TEI role
 in the quality measurement.
 

@@ -1,6 +1,6 @@
 """Lexicon construction for the deterministic entity search (analysis only).
 
-Design plan and rule catalogue: knowledge/entity-integration.md (sections "Target
+Design plan and rule catalogue: knowledge/tei-mapping.md (sections "Target
 model" and "Matching method"). The module reads the curated entity list, the lobid GND
 cache and the legacy mention index; it never calls a language model, and ids always
 come from the curated list. The scan that consumes the lexicon is

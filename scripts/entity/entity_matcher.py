@@ -1,6 +1,6 @@
 """Deterministic entity candidate search on delivered TEI-XML (analysis only).
 
-Design plan and rule catalogue: knowledge/entity-integration.md (sections "Target
+Design plan and rule catalogue: knowledge/tei-mapping.md (sections "Target
 model" and "Matching method"). This module has no write path and never calls a
 language model; ids always come from the curated list.
 

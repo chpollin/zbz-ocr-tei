@@ -6,7 +6,7 @@ Unified TEI Pipeline. Kein Few-Shot-Prompting -- stattdessen eine
 vollstaendige Tabelle aller Phaenomen-zu-TEI-Zuordnungen.
 
 Quellen: data/source/guidelines/Editionsrichtlinien_ZBZ.md (verbindlich)
-         + knowledge/pipeline.md, Abschnitt "TEI-Mapping" (ZBZ Hersch Schema)
+         + knowledge/tei-mapping.md (ZBZ Hersch Schema)
 """
 
 

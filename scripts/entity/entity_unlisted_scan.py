@@ -1,6 +1,6 @@
 """Corpus-wide report of name-shaped surfaces OUTSIDE the curated entity list.
 
-The closed-world principle (E71, knowledge/entity-integration.md) keeps mentions of
+The closed-world principle (E71, knowledge/tei-mapping.md) keeps mentions of
 unlisted entities out of the delivered markup. This instrument is the proposal channel
 that makes the excluded material visible: it collects capitalized word sequences that
 no lexicon form covers, with frequency, documents and contexts, so ZBZ can decide which

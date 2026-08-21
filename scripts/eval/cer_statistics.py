@@ -467,7 +467,7 @@ class DocCERRecord:
     gibt `weighted_cer` genau diesen Wert zurueck -- die page_cers/page_ref_chars
     dienen nur noch der Per-Seiten-Outlier-Visualisierung, nicht der Headline.
     Die frueher hier dokumentierte char-gewichtete Per-Page-Aggregation wurde
-    aufgegeben (Page-Numbering-Drift, siehe knowledge/cer-methodology.md). Aggregat-Statistik
+    aufgegeben (Page-Numbering-Drift, siehe knowledge/methodology.md (CER measurement section)). Aggregat-Statistik
     bootstraped ueber Per-Dok-Werte (n=Docs), nicht ueber Per-Page-Werte.
     """
     doc_id: str

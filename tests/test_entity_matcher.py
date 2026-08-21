@@ -1,7 +1,7 @@
 """Tests for scripts/entity/entity_matcher.py (entity integration, milestone M2).
 
 Synthetic mini TEI strings and mini lexicon fixtures only: no repo data files, no
-network. The hard cases named in knowledge/entity-integration.md (line breaks inside
+network. The hard cases named in knowledge/tei-mapping.md (line breaks inside
 names, genitive forms, particles, adjective forms, ambiguous surnames, excluded zones)
 drive the fixtures one by one.
 """

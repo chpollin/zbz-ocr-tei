@@ -40,7 +40,7 @@ ZBZ.EntityOverview = (() => {
     found: 'Curated list entries with at least one reported mention. The remainder '
       + 'is either absent from the corpus or hidden behind an ambiguous surface.',
     sample: 'Facsimile-adjudicated sample of the annotation layer, drawn seeded and '
-      + 'stratified (method in knowledge/entity-evaluation.md). It measures the drawn '
+      + 'stratified (method in knowledge/verification.md). It measures the drawn '
       + 'cases, it does not count the corpus.',
   };
 

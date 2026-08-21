@@ -16,17 +16,21 @@ version: 1.0
 created: 2026-05-25
 updated: 2026-08-21
 authors: [Christopher Pollin]
-related: [pipeline, design, tei-mapping, data, specification, plan, integration, infrastructure]
+related: [index, project, pipeline, tei-mapping, specification, verification, decisions]
+absorbed: [design (Vorlage Design 0.2)]
 ---
 
 # Workflow + Data Flow
 
 End to end from PDF to curated TEI. This document describes the data flow between the
 stages, the format each stage produces, the viewer with its editors, the persistence
-model and the provenance record as they are built today. Pipeline stages and engines are
-in [pipeline.md](pipeline.md), the markup rules in [tei-mapping.md](tei-mapping.md), the
-design rationale of the UI in [design.md](design.md), the architecture decisions in
-[decisions.md](decisions.md), and the planned extensions in [plan.md](plan.md).
+model, the provenance record, and the design rationale by which the UI turns that data
+into visual signal, all as they are built today. Pipeline stages and engines are in
+[pipeline.md](pipeline.md), the markup rules in [tei-mapping.md](tei-mapping.md), and the
+architecture decisions together with the planned extensions in
+[decisions.md](decisions.md), decision register and plan section. Token values live in
+`docs/assets/css/tokens.css`, which is their only authority; the design section names
+roles and rules.
 
 ## Data Flow Diagram
 
@@ -147,7 +151,15 @@ panel header next to the region count (E78). The facsimile renderer in view
 mode is OpenSeadragon (E58, pan + zoom + rotate); polygon support is
 deliberately excluded (E59), rectangles suffice for the Hersch print
 material. The layout editor works on the static `<img>` overlay; wiring it to the
-OpenSeadragon coordinate system is tracked in [plan.md](plan.md).
+OpenSeadragon coordinate system is tracked in [decisions.md](decisions.md), plan section.
+
+Both menus are keyboard operable. Opening a menu moves focus to its first item, arrow
+keys move focus within the roving tabindex, Home and End jump to the ends, and Escape
+closes the menu and returns focus to the trigger. The dialog that explains the
+working-tree connection is a native `<dialog>` opened with `showModal`. Every page
+carries a skip link that stays screen-reader-only until it takes focus and then becomes
+visible chrome. The reasoning behind these choices is in the design section, interaction
+patterns.
 
 ### Architecture
 
@@ -211,12 +223,13 @@ loads the manifest), `page:changed` (the entity module drops its popover),
 
 OpenSeadragon 5.0.1 for the facsimile in view mode (E58) and the three web font families
 are served from `docs/assets/` with their license texts, so every page loads from its own
-origin; [infrastructure.md](infrastructure.md) owns that decision and its reasoning.
+origin; [pipeline.md](pipeline.md), deployment section, owns that decision and its
+reasoning.
 
 The style layer is the Hersch design system. `tokens.css` is the authority for every
 value, `base.css` carries the component layer and `viewer.css` and `catalog.css` the
 app-specific code; the rationale behind the palette, typography and signal rules is in
-[design.md](design.md).
+the design section below.
 
 The corpus overview reads the workflow status of all documents from
 `docs/data/manifest_index.json`, which the mirror step of
@@ -225,7 +238,7 @@ its document id. A deploy without the file falls back to reading the manifests
 one by one, so an older mirror still shows correct traffic lights.
 
 Deployment of the viewer (GitHub Pages, local server, facsimile hosting limits) is
-described in [infrastructure.md](infrastructure.md), viewer deployment section.
+described in [pipeline.md](pipeline.md), deployment section.
 
 ### Layout Editor
 
@@ -246,7 +259,7 @@ image, compatible with the layout JSON format
 
 Region types map onto the pipeline `zbz_tag` vocabulary, and their colours come from the
 status colours of `docs/assets/css/tokens.css`; the reasoning behind the colour roles is
-in [design.md](design.md).
+in the design section, visualization logic.
 
 | `zbz_tag` | Label | Colour |
 |---|---|---|
@@ -366,7 +379,8 @@ and TEI in the doc subbar and carries the same three status values as the
 pipeline streams (workflow status section). The markup rules and the target model are
 in [tei-mapping.md](tei-mapping.md), the instrument inventory of the stage in
 [pipeline.md](pipeline.md), the measured precision and recall in
-[verification.md](verification.md), and the open milestones in [plan.md](plan.md).
+[verification.md](verification.md), and the open milestones in
+[decisions.md](decisions.md), plan section.
 
 The corpus-wide complement is the overview page `docs/entities.html`, built as
 a completeness instrument for the developer question "do we have every listed
@@ -442,7 +456,7 @@ splits in the mirror are produced by `--reassemble`, and a guard in `saveAll()` 
 content without a `teiHeader` or `TEI` root; a direct TEI-XML edit therefore replaces the
 source of truth as a whole and a later `--reassemble` regenerates the page splits from it.
 The wrapper that would run the pipeline steps after a save is planned in
-[plan.md](plan.md), round-trip wrapper.
+[decisions.md](decisions.md), plan section, round-trip wrapper.
 
 ### Round Trip from User Edit to Regenerated TEI
 
@@ -471,7 +485,141 @@ Complete procedure when a user has corrected a layout region:
    Updates `docs/data/pages/{doc}/` (incl. `{doc}_final.xml`).
 
 Steps 3 to 6 are run by hand today. A wrapper command that chains them is planned in
-[plan.md](plan.md), round-trip wrapper.
+[decisions.md](decisions.md), plan section, round-trip wrapper.
+
+## Design
+
+The rationale of the Hersch design system, the shape of its token and component layer,
+the interaction patterns of the inspection and curation UI, and the rules by which the UI
+turns data into visual signal. The viewer mechanics these rules apply to are in the
+viewer and persistence sections above.
+
+### Design stance
+
+The corpus is francophone philosophical print from the twentieth century, and the UI is a
+working surface for people who read that print at the facsimile. The design system takes
+its cue from the material rather than from a generic application palette. Surfaces are warm
+paper tones and text is a warm anthracite that reads as printer's ink, so no pure black and
+no pure white appear anywhere. The base font is a humanist serif from the francophone
+typographic tradition, headings sit in a geometric sans as a formal counterpoint, and the
+type scale is a minor third, which gives fine differentiation without loud size jumps.
+
+Colour is restrained and carries meaning rather than decoration. Three accents exist, a
+brick red as the primary, a Prussian blue as the secondary and an olive green as the
+tertiary, plus a warm ochre for the middle state of the workflow traffic light and for
+signals that ask for review. An accent marks an accent or a status indicator; it never
+fills a surface, because a filled accent surface competes with the facsimile and with the
+text panel, which are the two things the user is actually looking at. The theme is fixed to
+light through `color-scheme: light` in the token catalogue, so a system set to dark mode
+does not flip the surfaces; the working surface is paper-analogous and the scans are read
+against a light ground.
+
+Restraint extends to the information layer. Numbers ride in functional elements such as a
+bar, a status dot or a result line, and explanation arrives on demand through a tooltip or
+a folded legend. Stat cards and introductory explainer paragraphs stay out of the pages,
+which the entity overview page records for itself (entity layer section).
+
+### Design system
+
+Values live in `docs/assets/css/tokens.css` as custom properties under the `--h-*` prefix.
+Component CSS consumes those properties and never writes a colour, radius, spacing step or
+font stack literally. The catalogue is grouped into palette, text colours, borders and
+shadows, status colours for the layout region types, typography including the font stacks
+and the type scale, spacing steps, layout dimensions, and a small
+viewer-specific group. A block at the end forces the light theme even when the operating
+system asks for dark mode.
+
+The component layer sits in `docs/assets/css/base.css` and covers the reset, document and
+heading typography, links, inline code, the screen-reader and skip-link utilities, buttons
+with primary, ghost, icon and small variants, form inputs, badges with ok, warn and info
+variants, cards, toasts with ok, warn and error variants, the site header and footer chrome,
+the scrollbar styling, and the reduced-motion block. Page-specific CSS builds on top,
+`viewer.css` for the viewer shell, facsimile overlay, TEI rendering and editor UI,
+`catalog.css` for the corpus overview, `entity-overview.css` for the entity page. For a new
+component the first question is whether a token or a `base.css` component already covers it.
+
+Three web font families carry the system, each with a defined role. The humanist serif is
+the reading font of body text and of the rendered TEI. The geometric sans carries headings
+and UI chrome. A monospaced family carries code, XML source and identifier strings. All
+three are vendored under `docs/assets/fonts/` as WOFF2 in the latin and latin-ext subsets
+with their licence texts, declared in `docs/assets/css/fonts.css`, which contributes only
+the `@font-face` rules while the font stacks stay in the token catalogue. The reasoning for
+vendoring instead of linking a font host is in [pipeline.md](pipeline.md), deployment
+section, third-party resources.
+
+### Interaction patterns
+
+Every pattern below is plain DOM work against tokens, since the viewer carries no build
+pipeline and no backend (architecture section).
+
+One document bar carries the identity of the open document, the workflow status pills per
+data stream, the editor identity chip and the save control, and the text panel header
+carries two dropdown menus instead of scattered panel controls. Concentrating the controls
+this way replaced the earlier per-panel toggles, and a checked menu item now carries the
+active state. What the two menus offer is in the pages and modes section.
+
+The keyboard behaviour of the menus and of the working-tree dialog follows platform
+primitives wherever they exist, so modality, backdrop, focus containment and Escape come
+from the native `<dialog>` element rather than from hand-rolled code (pages and modes
+section). A viewer who asks the system for less motion gets no transitions and no
+animations while the states themselves stay, arriving without movement.
+
+A status pill states the workflow status of one stream and cycles forward through the
+status values on click (workflow status section). An entity mark acts as a button and
+opens a popover (entity layer section); the design job of that popover is to keep an
+undecided position visibly undecided, which is why a held-back candidate carries the
+reason for the reserve and the origin of the matched name form, and why a mark the matcher
+actually set closes with the provenance rows that name who asserted it, how certain the
+assertion is, and which rule produced the hit.
+
+Layout editing works by direct manipulation on the facsimile, and persistence is one
+shared Save button for all unsaved streams plus an Export dropdown for per-stream single
+files; the operations are in the layout editor section, the write paths in the persistence
+section.
+
+### Visualization logic
+
+The UI has four places where data becomes colour, and each uses the same token set.
+
+Layout regions are drawn on the facsimile as rectangles coloured by region type, which maps
+onto the pipeline tag vocabulary. The two non-content classes, filter and skip, take grey
+with a dashed and a dotted border, so a region marked for removal is distinguishable from a
+real zone without reading its label. The mapping table is in the layout editor section.
+
+Workflow status is a dot, in the catalog table as a small dot per stream and in the viewer
+as the dot inside the status pill. The unverified default is a muted grey, because pipeline
+output exists for every document and its unverified state is a handover default rather than
+an alarm; the in-progress state is the warm ochre and the verified state the olive green,
+and red stays unassigned for a future explicit problem state (workflow status section). The
+catalog additionally carries a hollow outlined dot for a UI-only fourth token that has no
+counterpart in the data model.
+
+Entity categories are distinguished by accent, persons in Prussian blue, organisations in
+olive green, works in brick red, while the review class of a mention rides on the ochre.
+Certainty on the entity overview page is carried by a two-colour stacked bar, auto-marked
+against review, with the corpus totals sitting on the same bar above the list, so a document
+row and the corpus aggregate are read with the same visual grammar.
+
+Inside the rendered TEI, signal is a border or a subtle background rather than a fill. The
+entity colouring hangs on the annotated reading view and is therefore independent of the
+markup toggle. The toggle adds the editorial layer, foreign-language spans in olive green
+with a dotted underline, editorial corrections in brick red with a dashed one, footnotes
+and bibliographic references in their own quiet marks, and it shows the legend that names
+them; unclear passages keep a faint ochre ground in every view and gain a dotted underline
+under the toggle. The method page presents its quality figures as tables rather than as
+chart components, which keeps the numbers copyable and avoids a chart that would have to be
+regenerated with every measurement.
+
+### Connection to the action layer
+
+CLAUDE.md, section Design, carries the imperative form of what this section argues, meaning
+the short rules an agent generating UI code has to follow. Those imperatives are the action
+layer and stay there; this section holds the reasoning behind them.
+
+`docs/assets/css/tokens.css` is the value authority. A concrete colour, radius, spacing
+step, font stack or type-scale step is read from that file; this section names roles and
+rules. A changed value is edited in the token catalogue and propagates through the
+component layer; a changed rationale is edited here.
 
 ## Provenance
 
@@ -485,22 +633,18 @@ Steps 3 to 6 are run by hand today. A wrapper command that chains them is planne
 
 The machine-readable editing log per object, the roll-back it would allow and the
 self-contained `_complete.xml` that would carry the log inside the TEI are planned in
-[plan.md](plan.md), phase B. The facsimile side of that plan is delivered already, since
+[decisions.md](decisions.md), plan section, phase B. The facsimile side of that plan is delivered already, since
 the generator writes `<facsimile>` with one surface per page and body elements carry
 `@facs` ([tei-mapping.md](tei-mapping.md), facsimile binding).
 
 ## References
 
-- [pipeline.md](pipeline.md): pipeline stages, engines, entity stage
+- [pipeline.md](pipeline.md): pipeline stages, engines, entity stage, viewer deployment, vendored assets, CI
 - [tei-mapping.md](tei-mapping.md): markup rulebook, revision description, entity target model
-- [design.md](design.md): rationale of the Hersch design system and the UI signal rules
-- [data.md](data.md): corpus, delivery tree, entity input data
+- [project.md](project.md): corpus, delivery tree, entity input data (data section); ZBZ, Transkribus and teiCrafter contracts (integration section)
 - [specification.md](specification.md): requirements, quality method, validation rule catalog
-- [plan.md](plan.md): planned provenance log, `_complete.xml`, export and viewer work
-- [integration.md](integration.md): ZBZ, Transkribus and teiCrafter contracts
-- [infrastructure.md](infrastructure.md): viewer deployment, vendored assets, CI
-- [cer-methodology.md](cer-methodology.md): CER measurement method
-- [decisions.md](decisions.md): decision register
-- [methodology.md](methodology.md): Promptotyping, verification cascade, `--reassemble` conventions
+- [verification.md](verification.md): measured entity precision and recall, quality assurance
+- [decisions.md](decisions.md): decision register; planned provenance log, `_complete.xml`, export and viewer work (plan section)
+- [methodology.md](methodology.md): Promptotyping, verification cascade, `--reassemble` conventions, CER measurement method
 - [journal.md](journal.md): chronological session history
 - [index.md](index.md): navigation + key concepts

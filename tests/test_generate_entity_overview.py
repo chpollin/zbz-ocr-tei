@@ -275,7 +275,7 @@ def test_quality_block_reproduces_the_published_snapshot_figures():
     """The committed verdict store must keep yielding the published evaluation figures.
 
     Interval procedure and values follow the executed evaluation
-    (reports/2026-08-12_entity-eval-ergebnis.md, output/audits/entity_eval_report.json).
+    (knowledge/verification.md, appendix, output/audits/entity_eval_report.json).
     """
     quality = quality_block(json.loads(VERDICTS_PATH.read_text(encoding="utf-8")))
     assert quality["snapshot"] == "2026-08-12"
