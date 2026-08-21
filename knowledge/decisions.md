@@ -85,7 +85,7 @@ Consolidated register of all decisions and open questions. Cross-cutting, collec
 
 ---
 
-## Decided (E64-E120, detail)
+## Decided (E64-E121, detail)
 
 More recent decisions with full rationale as dedicated sections.
 
@@ -662,6 +662,18 @@ Decision: the refactoring runs by the plan [refactoring-plan.md](refactoring-pla
 Wave 0 executed: documentation freshness corrections (D1, D3, D5 of the plan) and code quick fixes (per-file ruff ignores for the 37 deliberate findings, safe auto-fix 368 to 147, absolute scan path in `generate_entity_overview`, `openpyxl` declared, one `.env` mechanism via `scripts.config`, `compute_proxy_quality` and `--proxy` removed). Deleted: `scripts/tei/tei_add_revision.py` (last carried by commit 03c478d1). Verified: 2149 tests passed and 1 skipped, ruff 147, all CLAUDE.md commands resolve, mirror diff empty, benchmark output identical.
 
 Open, assigned to WP1a: the published confidence intervals are percentile bootstrap (generator `ci_method` throughout, `bca_ci` never called in `cer_statistics_full`) while CLAUDE.md, index.md, specification.md, methodology.md and `meta.bootstrap_method` say BCa.
+
+Documents: [refactoring-plan.md](refactoring-plan.md), [journal.md](journal.md) session 97
+
+### E121 Refactoring wave 1: knowledge ownership, reports consolidation, code hygiene to zero (2026-08-21)
+
+Occasion: wave 0 (E120) corrected stale statements; the duplicated facts, the accumulated reports and the remaining ruff findings outside the entity layer were still open.
+
+Decision: four parallel build agents with exclusive file sets, two independent verifiers, one commit per side. Knowledge ownership (WP1a, WP1b): each duplicated fact of the plan's D2 list now has one owner and cross-references elsewhere; methodology.md carries no command blocks and owns the `--dry-run`/`--force`/`--reassemble` conventions; workflow.md owns the status semantics; pipeline.md owns the E22 clarification and the `revisionDesc` shape; ground-truth-map.md owns the reference phenomenon attestations (verified by counting over the 25 reference files); cer-methodology.md states the computed interval method (document-level percentile bootstrap; `bca_ci` exists in the library and is called only by aggregation functions the published pipeline does not use); specification.md gains R-ENTITY. Reports (WP2): `2026-07-07_verifikation-berichtsfragen.md`, `2026-08-12_doku-frontend-audit.md`, `2026-08-12_workflow-entitaetsannotation.md` and `m3-reassemble-preview.md` deleted after their unique content was secured (three kinds of knowledge and the redraw ordering in entity-evaluation.md; the class-wise principle, the qualitative gold-benchmark reading, the M7 methode.html item and the shared-module requirement for the stock marker in entity-integration.md); `knowledge/ecosystem-synthesis.md` moved to `reports/2026-06-07_ecosystem-synthesis.md` as a dated snapshot; `docs/folien-entitaetsannotation.html` moved to `reports/2026-08-12_folien-entitaetsannotation.html` (off the Pages root, links rewritten). Five diagnosis findings of the deleted verification report have no owner yet and are recorded in the plan for the operator. Code (WP3): `tei_reassemble_preview.py` and its test deleted (E99; last carried by f6eba697); four new test modules for `page_xml_generator`, `mets_generator`, `audit_common`, `running_heads` written before their format strings changed; ruff 147 to 0 under the unchanged curated configuration (dead code, printf formatting, `Path.open`, explicit `T | None`, `zip(strict=True)` at eight guarded sites and `pairwise` at one, remainder); re-derived `output/` paths replaced by `scripts.config` constants; one Gemini client factory `scripts/core/gemini.py` (key resolved per call, same precedence and fail-fast); spell checkers cached behind an accessor; lxml skip guards turned into hard imports; the stale doc-530 skip rebuilt as a synthetic schema-valid case. Rejected: moving the Gemini error message to stderr inside this wave (house guideline, but a behaviour change; deferred).
+
+Verified on disk by two verifiers and the orchestrator: 2204 tests passed, 0 skipped (delta reconciled: minus six preview tests, plus sixty new, health cases swapped); ruff 0; all 77 CLAUDE.md commands and flags resolve; mirror regeneration leaves `docs/data` unchanged; benchmark JSON hash identical with the `generated` key dropped; `tei_validator --all` 285/285 valid; every relative link in README, CLAUDE.md, scripts/README.md, knowledge/ and reports/ resolves; no removed statement without an owner; entity-layer modules untouched apart from one docstring phrase.
+
+Latent findings recorded, not acted on: `tei_step3` Fix-D unwrap drops text standing directly inside `<epigraph>` before its first child (empirically inert on the corpus, guideline decision pending); `eval_report.py` lost a nested conditional whose two else branches were both empty, so a second CSS class for the middle CER band existed as intent only; `meta.bootstrap_method` in the generator still says BCa (operator decision, default is the percentile label); `reports/2026-08-12_viewer-ui-analyse.md` names the deleted 2026-08-12 paper in an inline code span and stays byte-unchanged by decision.
 
 Documents: [refactoring-plan.md](refactoring-plan.md), [journal.md](journal.md) session 97
 

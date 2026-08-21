@@ -279,6 +279,47 @@ CLAUDE.md documents only `-m`; `conftest.py` with the shared synthetic TEI build
 pinned and wired into CI; `requirements.txt` migrated into `pyproject.toml` with `uv.lock`
 and a pre-commit hook. Acceptance: suite green, ruff zero, CI runs both gates.
 
+### WP8 Test suite strengthening (one agent, wave 3, after WP4 and WP7)
+
+Findings of the test-quality audit of 2026-08-21: the suite is dominated by behaviour
+contracts on synthetic input and frozen corpus regressions, assertion density is healthy,
+tautological tests are marginal. Three weaknesses: about two fifths of the tests are
+parametrized over the gitignored delivered corpus and vanish on a fresh clone, so the CI
+signal is far weaker than the local one and the validator rules R1 to R7 and W1 to W18
+are covered only through that vanishing layer; the TEI generator itself (`tei_step1` end
+to end, `tei_step2`, most of `tei_step3` including `assemble_document` and
+`_fix_post_assembly_schema`) is the least-tested part while it produces the deliverable;
+two guards are pinned on one side only (`COVER_FIELD_MIN` upward, the two-sided p-value
+doubling in `paired_bootstrap_diff`). Package content, in value order:
+
+1. Synthetic end-to-end contract for step 1 plus assembly: a two-page fixture (OCR
+   markdown and layout JSON under `tmp_path`, loader dirs monkeypatched, no Gemini)
+   asserting `pb` numbering, region-to-paragraph mapping, facsimile zones and RelaxNG
+   validity of the assembled document.
+2. Direct unit tests for `tei_validator` rules R1 to R7 and W1 to W18, one firing fixture
+   and one silent counter-fixture each, in the parametrized style of
+   `test_zbz_conformity.py`.
+3. `page_manifest.detect_blanks` and `tei_blank_marker` contract and idempotence test (the
+   only `marker_common` consumer without one).
+4. Mutation-revealed pins: `COVER_FIELD_MIN` upper side, two-sided p-value doubling.
+5. Fix the weakest tests: `test_cer_statistics.py` block-concatenation test asserts whole
+   blocks; `test_reassemble_preview.py` is deleted with the script (WP3); the
+   `zfill` re-implementation in `test_page_names.py` is deleted; the constant pins in
+   `test_workflow_status.py` become one test that the status tokens agree between
+   `page_manifest`, `tei_status_marker` and `docs/assets/js/*.js`.
+6. `conftest.py` with the shared builders (TEI skeleton, delivery header, bbox, entity
+   lexicon and record builders, session `final_docs`) replacing the thirteen `_tei`
+   builders and the near-verbatim lexicon fixtures; `requires_corpus` and
+   `requires_mirror` as named markers so the clone blind spot is visible via `-m`.
+7. Catalog document-field contract pinned against the keys `catalog.js` reads; CER
+   extraction rules indexed to the E1 to E12 catalog with the missing direct tests
+   (whitespace collapsing, markup stripping, `lb break="no"` de-hyphenation, `fw`
+   exclusion, blank pages).
+8. `tei_step2.fix_gemini_tei` repair path on synthetic malformed Gemini output.
+
+Acceptance: suite green, the clone-safe subset (`-m "not requires_corpus"`) covers the
+validator rules and the generator contract, no test writes outside `tmp_path`.
+
 ## Waves and parallelism
 
 | Wave | Packages | Agents | Precondition |
@@ -286,7 +327,7 @@ and a pre-commit hook. Acceptance: suite green, ruff zero, CI runs both gates.
 | 0 | WP0a, WP0b | 2 | none |
 | 1 | WP1a, WP1b, WP2, WP3 | 4 | wave 0 committed |
 | 2 | WP4, WP5, WP6 | 3 | wave 1 committed |
-| 3 | WP7 | 1 | wave 2 committed |
+| 3 | WP7, WP8 | 2 | wave 2 committed |
 
 Every build agent runs on Opus with its file set and the guardrails passed verbatim (no
 commits, no pushes, no subagents, no `.env`, no `arbeitsbericht-v3.md`, no writes outside
@@ -336,6 +377,35 @@ the disk, and only then commits.
 Wave 0 executed and verified on 2026-08-21 (E120): tests 2149 passed and 1 skipped,
 ruff 147, all commands resolve, mirror diff empty. Deleted: `scripts/tei/tei_add_revision.py`
 (last carried by 03c478d1).
+
+Wave 1 executed and verified on 2026-08-21 (E121): tests 2204 passed and 0 skipped, ruff
+0, all commands resolve, mirror diff empty, benchmark hash identical, 285/285 valid, all
+links resolve. Deleted: `scripts/tei/tei_reassemble_preview.py`, `tests/test_reassemble_preview.py`,
+four reports (last carried by f6eba697). Moved: ecosystem synthesis and slide deck to
+`reports/`. WP1a, WP1b, WP2, WP3 closed.
+
+## Homeless findings from the deleted 2026-07-07 verification report (operator decision)
+
+WP2 deleted `reports/2026-07-07_verifikation-berichtsfragen.md` after tracing every finding;
+five diagnosis findings have no owner document yet and are recorded here until the operator
+assigns or drops them.
+
+- B4: of the five content error classes, class 3 (title-page and library-apparatus text
+  landing in running text) has no corpus-wide check, and classes 3 and 4 are invisible to
+  the schema plus W-rule layer. Candidate owner: specification.md quality method.
+- C8: double-page signals are the aspect ratio from the layout JSON and the two-half
+  instruction of the type-D prompt; the removed `page_ratio >= 1.5` heuristic (E73) is
+  documented as ineffective; the Masterfile was never checked for a double-page field.
+  Candidate owner: pipeline.md.
+- D9: Transkribus PAGE-XML is usable as layout ground truth after normalization (absolute
+  pixel polygons versus percent bboxes; PAGE structure types versus project labels), so a
+  geometric IoU comparison is feasible and a type check needs a mapping table. Candidate
+  owner: pipeline.md.
+- D11: `compute_page_quality` derives an area-coverage value per page and the auto mode
+  re-detects below a threshold, but only the Gemini score is persisted. Candidate owner:
+  pipeline.md (routing paragraph).
+- F15: the teiCrafter handover is a manual file open without an export or import bridge.
+  Candidate owner: workflow.md.
 
 ## Register and closure
 
