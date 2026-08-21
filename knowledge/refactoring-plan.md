@@ -7,7 +7,7 @@ project:
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
-status: active  # all packages closed 2026-08-21; kept until the open items above are decided
+status: active  # WP0-WP8 closed 2026-08-21; wave 4 (knowledge base by function) planned, plan deleted at its closure
 language: en
 created: 2026-08-21
 updated: 2026-08-21
@@ -419,6 +419,191 @@ assigns or drops them.
   pipeline.md (routing paragraph).
 - F15: the teiCrafter handover is a manual file open without an export or import bridge.
   Candidate owner: workflow.md.
+
+## Wave 4: the knowledge base by function (planned 2026-08-21)
+
+Waves 0 to 3 made every fact single-sourced and every document current. Wave 4 changes the
+cut of the folder: today it is cut by topic (entities, CER, pipeline, viewer), the
+Promptotyping convention cuts by function (Navigation, Charter, Material, Specification,
+Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance,
+Planning, Reporting, Integration, Governance), so that one fault image leads into exactly
+one document. Three explorer reports carry the evidence and are the working files of the
+wave, under the gitignored `output/refactoring/`: `wave4_ownership-map.md` (every H2/H3 of
+the redistributed documents with line range, target, move type and doubt notes),
+`wave4_fact-check.md` (code and data facts that correct the documents), and
+`wave4_external-refs.md` (every pointer from outside `knowledge/`). Build agents receive
+the three files by path and read them before they read a source.
+
+### Findings (digest, evidence in the working files)
+
+- Functions without a carrier although the trigger holds: Quality Assurance (the suite,
+  its gates, the clone-safe subset and the deliberately untested classes are scattered
+  over CLAUDE.md, specification.md and E123), Verification (four places, no finding
+  register), Planning (seven documents carry forward-looking sections), Design (section
+  3.8 of a 706-line architecture document, named by CLAUDE.md as value source),
+  Integration (ZBZ, Transkribus and teiCrafter contracts over four documents), Material
+  (corpus funnel, delivery tree, entity inputs and reference corpus in four documents).
+- Mixed documents: workflow.md (Architecture, Design, Planning), entity-integration.md
+  (Domain Knowledge rules, Architecture instruments, Provenance pilot record, Planning
+  milestones, Governance decisions), project.md (Charter, Material, status tables,
+  problem cases), pipeline.md (Architecture plus the 240-line markup rulebook),
+  decisions.md (register plus open items plus risks).
+- Stale or historical residue in durable documents: the removed NER phase in two
+  milestone tables, the abolished screening as a key concept and as a methodology
+  section, roadmap "Done" lists, fixed-drift lists, five journal lessons about removed
+  mechanisms, infrastructure.md still naming Azure Mistral as production engine while the
+  code resolves `--engine auto` to Gemini and the Mistral endpoint answers 401, an
+  OpenSeadragon CDN statement after vendoring, the BCa claim in the entity statistics
+  phase, and a "planned" embedded-layout section that pipeline.md describes as realized
+  (E89).
+- Negative self-description that the convention excludes: Non-requirements, "What is
+  missing", "Known limitations", the freehand-because-not column of index.md.
+- Frontmatter: no `version:` anywhere, vault `type:` leaked into the repo core,
+  `language` on half the files, `template:` missing where a catalogue template exists,
+  status vocabulary off on journal (draft), decisions (complete) and the report
+  (complete), stray fields in methodology.md.
+
+### Target structure
+
+| Function | Document | Content and its origin |
+|---|---|---|
+| Navigation | index.md | rebuilt to Vorlage Index (Dokumente, Lesepfade, Konvention, Begriffe); Dependencies tree replaced by reading paths; Begriffe without abolished concepts; no reason-for-freehand negations |
+| Charter | project.md | Commission, context, standards, Funktionsumfang (the delivered half of Component Status), Abgrenzungen; loses Corpus, Milestones, Component Status, ZBZ Workflow, Known Problem Cases, the Fee row and the February 2026 delivery snapshot |
+| Material | data.md (new) | corpus funnel and page balance (generator-bound, exempt), genres and languages, document types A to D, pilot files as sample description, delivery structure under `data/`, entity input data (curated list, GND cache, legacy index, marking policy, intake rule), the reference corpus with phenomenon map and exception catalog (exception numbering preserved, scripts cite "exception 7"), known problem cases (documents only, the reading-order rule stays in specification.md), lesson L15 |
+| Specification | specification.md | stays; Non-requirements restated as bounded scope; Open requirements and frontend requirements leave; Gates keep the requirement and point to testing.md; W8-W10 and E71 history deleted; the front/back/anchor/unclear scope sentence stays, its rule moves to tei-mapping.md |
+| Architecture | pipeline.md | stages, engines (Mistral role corrected to the fact check, E19/E20 comparison compressed to a sentence), entity stage with the instrument inventory from entity-integration.md §Instruments, D11 coverage note in the routing paragraph, ZBZ Structural Tags, Overview; loses TEI Mapping, Implementation Phases, Online Demo, the duplicated round trip and Transkribus Export |
+| Architecture | workflow.md | data flow, data formats, viewer, persistence, provenance as built; section numbers dropped, references by name; loses 3.8, 5.2, 6, 7, 8 and the negation lists; the viewer entity rendering stays, mark semantics go to tei-mapping.md |
+| Architecture | infrastructure.md | Azure section corrected, planned config, Containerfile and GitLab CI to plan.md, fork model to integration.md, Online Demo arrives under GitHub Pages, Local Development reduced to what README lacks, Security a pointer to CLAUDE.md |
+| Domain Knowledge (b) | tei-mapping.md (new) | the TEI Mapping section of pipeline.md with all subsections including character normalization (production side, distinct from the N-rules of cer-methodology.md), revisionDesc shape, element inventory, facsimile binding (E89, realized), the front/back/anchor/unclear rule; the entity target model (ref pattern, @resp/@cert/@source vocabulary, three tiers and anchor rule, derived form channels, adjudicated precision guards, marking policy, cover sheets out of the delivered TEI); lessons L8 (without the quantity) and L9 |
+| Domain Knowledge (a) | methodology.md | stays; QA-history section deleted, Operative Tools reduced to the ordering narrative, merge history in the lead deleted, L5 joins Conventions |
+| Domain Knowledge (a) | cer-methodology.md | stays; absorbs literature-comparison.md as the state-of-research section (correction history deleted, correct attribution kept); Verification section leaves; catalog corrections E8 (page break collapses to one space) and running heads (`fw` text included) written to what the code does and the tests pin; L7 |
+| Design | design.md (new) | Hersch Design System rationale from workflow.md 3.8; tokens.css as value authority, CLAUDE.md keeps the imperatives; vendored fonts pointer to infrastructure.md |
+| Quality Assurance | testing.md (new) | test strategy, what is guaranteed (the gates of specification.md, the closed-world and schema gates of the entity layer), the clone-safe subset and markers, how to run (pointer to CLAUDE.md Diagnosis), what is deliberately not checked (B4 as corrected by the fact check, the E123 residue: foreign-namespace serialization, the fourth UI status token), L1 |
+| Verification | verification.md (new) | Vorlage Verification: Prüfgegenstand (CER headline, entity precision and recall, corpus completeness), Prüfprobleme, Verdikt-Vokabular, Prüfkette (the CER verification layers from cer-methodology.md; the six-phase sampling method of entity-evaluation.md with the computed interval method stated from the code), Befundregister (the 2026-08-12 execution record, the concordance finding, the gegenprobe of 2026-07-03 by pointer, population validity), offene Befunde (re-freeze of the reconstructed draw, the second unadjudicated draw), Grenzen; L13 in the lead; one sentence points to workflow.md for the standing status layer |
+| Provenance | journal.md, journal-archive.md, decisions.md | journal Lessons pruned of L2, L3, L6, L10, L16; decisions.md keeps the register only, header sentence added, internal section pointers rewritten, O rows and Risks and References leave |
+| Planning | plan.md (new) | Vorlage Plan: Zielbild (handover state), Phasen und Milestones (entity M4 to M7 with the fact-checked state: M4 evidence not yet under `docs/data/`, `tei_entity_marker` does not exist; schema hardening with the precise bibl/rs statement; provenance wave `_complete.xml` and `provenance.json` reconciled with E89; E61 ZIP export; frontend N findings; round-trip wrapper; stability item (b)), Status-Tracker, Offene Entscheidungen (O8, O13, O27 with ZBZ; O18; the four entity operator questions; open modelling points; attributes in delivered TEI; BCa aggregation kept as library), Abweichungen (E99 refuted reorder, E71 removal, D9 dropped as unrequested, C8 dropped after the Masterfile check with the residue note on evaluate_ocr.py), Deferred (config file, Containerfile, GitLab CI, fork merge strategy, `uv lock`, `aria-current`) |
+| Reporting | arbeitsbericht-v3.md | untouched while the other instance holds it; `status: snapshot` later |
+| Integration | integration.md (new) | Vorlage Integration, three counterparts: ZBZ (three parallel tracks, systems, observations, pipeline integration, ZBZ-owned steps, fork model, Alma boundary O8, the 1520 reference repair, R5), Transkribus (folder convention, dialect, upload, R7), teiCrafter (manual file open, F15; GND prefix drift of the references; Epic D cross-reference) |
+| Governance | governance.md (renamed from agent-orchestration.md) | wave pattern, verbatim guardrails, verification of self-reports, roles (absorbing the evaluation roles), what made it work, known limits, the E123 allowlist rule, parallel-instance rule L12, operator decides convention questions while ZBZ feedback is absent |
+
+Deleted after their content has an owner: entity-integration.md, entity-evaluation.md,
+ground-truth-map.md, literature-comparison.md, agent-orchestration.md (renamed) and, at
+closure, this plan. Deleted as history with the register as carrier: the pilot and fix
+package records of entity-integration.md (E105 to E108 hold the outcome), the E19/E20
+comparison table, the roadmap "Done" lists, the February 2026 delivery snapshot, struck
+O rows, closed questions, obsolete risks.
+
+### Decisions on the doubtful rows of the ownership map
+
+- Lessons stay a section of journal.md (the template allows aggregation sections); only
+  the stale ones are deleted.
+- Data Formats per Stage and ZBZ Structural Tags stay where they are (workflow.md,
+  pipeline.md); both are architecture.
+- Risks as a section disappear (house rule against risk planning); R5 and R7 are
+  contract points and live in integration.md.
+- The Instruments section is split four ways (pipeline inventory, verification finding,
+  plan items, testing gates).
+- The curation rule for front/back/anchor/unclear is markup scope and lives in
+  tei-mapping.md; specification.md keeps one scope sentence.
+- Online Demo lives in infrastructure.md under GitHub Pages.
+- The Fee row of project.md is deleted (cost-adjacent).
+- Section numbers in workflow.md are dropped; the few register entries that cite them
+  are rewritten to section names.
+- The vault template version is what `template.version` carries (journal.md currently
+  says 0.3, the catalogue says 0.2; the repo's own entry template keeps its v0.3 label
+  inside the Format Contract).
+
+### Frontmatter after wave 4
+
+Every knowledge document carries the core `title`, `project`, `method`, `status`,
+`created`, `updated`, plus `language: en` (de for the report), `version: 1.0` (the
+repo-wide schema version marking this state), `authors`, `related`, and `template:` with
+`name`, `version`, `url` wherever a catalogue template exists (Index 0.2, Projekt-
+Wissensdokument 0.2, Datengrundlage 0.2, Specification 0.3, Architecture 0.3,
+Domänenwissen 0.2, Design 0.2, Testing 0.2, Verification 0.1, Journal 0.2, Plan 0.2,
+Integration 0.1, Report 0.2; URL pattern
+`https://dhcraft.org/Promptotyping/promptotyping-document/{slug}`). Removed: `type`,
+`tags`, `dependencies`, `source`. Status vocabulary: `active` for journal, journal-archive,
+decisions, plan; `snapshot` for the report; `reviewed` where a verifier confirmed;
+`complete` otherwise. A new gate `tests/test_knowledge_frontmatter.py` pins the core
+fields, the status vocabulary, the equal `version`, the `template` shape, and that every
+relative Markdown link in `knowledge/` resolves; the convention's refactoring checklist
+thereby runs in CI instead of once in an audit.
+
+### Work packages and waves
+
+Wave 4a, extraction (six agents, sources read-only, each writes only its new files):
+
+- WP9a data.md
+- WP9b tei-mapping.md
+- WP9c verification.md
+- WP9d plan.md
+- WP9e testing.md and design.md
+- WP9f integration.md and governance.md (governance.md is written as a new file; the
+  deletion of agent-orchestration.md is the orchestrator's in 4c)
+
+Every extraction agent reads the three working files first, then the sources at the
+cited line ranges, writes the new document to the template skeleton of its Vorlage (H2
+structure of the template block, lifecycle paragraph honoured, no "what is not here"
+section), cites no volatile quantity outside generator-bound tables, names no third
+party, and returns a list of every source line range it consumed and every range it
+judged history. Links to sections that move in 4b may point at their future owner;
+the verifier checks that every link target exists as a file.
+
+Wave 4b, pruning (three agents, exclusive file sets; a sibling's file is read from
+`git show HEAD:knowledge/<file>` so that reading never races with editing):
+
+- WP10a pipeline.md, workflow.md
+- WP10b project.md, infrastructure.md, specification.md
+- WP10c cer-methodology.md, methodology.md, decisions.md, journal.md
+
+Each agent removes the moved ranges, deletes the history and negation items of the
+ownership map, rewrites every internal pointer of the cross-reference list to the new
+owner, and keeps a one-line pointer where the map says copy-then-point.
+
+Wave 4c, closure (three agents plus orchestrator):
+
+- WP11a index.md (rebuilt), CLAUDE.md (Knowledge Base list, Design pointer, entity
+  heading, the two comment pointers, the OpenSeadragon dependency line), README.md
+  (Documentation table and the eight pointers), scripts/README.md, the ecosystem report
+  pointers, the three reports pointers, the tei-quality-editor skill pointers
+- WP11b the docstring and comment pointers in scripts/ and tests/, the tooltip string
+  in `docs/assets/js/entity-overview.js` with the `?v=` bump, the `method` string in
+  `generate_entity_overview.py`, then `python -m scripts.entity.generate_entity_overview`
+  and `python -m scripts.edition.generate_edition_data --mirror-only` (the only two
+  scripts on the allowlist of this wave; the diff under `docs/data/` must be the
+  method string and nothing else)
+- WP11c frontmatter normalization of every knowledge document except index.md (WP11a
+  does index.md to the same specification), `tests/test_knowledge_frontmatter.py`
+- orchestrator: `git rm` of the five dissolved documents, register entry E124, journal
+  session entry, deletion of this plan and of its pointers in index.md and CLAUDE.md
+
+### Verification per wave
+
+After 4a one document verifier: every new document against its template block (H2
+set), the core frontmatter, the four writing prohibitions, no negation sections, no
+volatile quantities outside generator-bound tables, no third-party names, every
+consumed source range really present in the target (spot check at least five ranges per
+document against the source text), every link target an existing file. After 4b one
+verifier: every H2 and H3 of the dissolved and pruned documents has an owner named in
+the ownership map and findable in the target by a distinctive phrase (the no-removal-
+without-owner rule of wave 1), no internal pointer to a vanished section, the D2 single-
+source list still holds. After 4c two verifiers, documents and code: every relative
+link in README, CLAUDE.md, scripts/README.md, knowledge/, reports/ resolves; index.md
+matches the folder; CLAUDE.md commands resolve; full pytest green including the new
+frontmatter gate; ruff 0; `docs/data` diff limited to the method string; the headless
+browser check of the entities page shows the new tooltip. The orchestrator spot-checks
+three claims per report against disk before each commit. Commits per wave, staged by
+explicit path: 4a one commit (new documents), 4b one commit, 4c one commit plus the
+register commit.
+
+### Guardrails passed verbatim to every wave 4 agent
+
+No commits, no pushes, no git state changes, no subagents, never read `.env`, never
+open or edit `knowledge/arbeitsbericht-v3.md`, no writes outside the named file set,
+Grokipedia never, no script runs except the two named for WP11b, nothing that writes
+under `output/audits/eval_sample*` or `data/`, no volatile quantities, no third-party
+personal names, no cost figures, the four writing prohibitions, code comments English.
 
 ## Register and closure
 
