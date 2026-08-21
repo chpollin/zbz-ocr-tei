@@ -4,6 +4,29 @@
 name = "zbz-ocr-tei"
 version = "0"
 requires-python = ">=3.11"
+dependencies = [
+    "python-dotenv>=1.0.0",     # .env -> env vars (scripts/config.py)
+    "pypdfium2>=4.0.0",         # PDF rendering
+    "Pillow>=10.0.0",           # page images
+    "PyMuPDF>=1.23.0",          # PDF splitting for Mistral (max 30 pages/request)
+    "requests>=2.31.0",         # OCR APIs, Transkribus upload
+    "lxml>=4.9.0",              # TEI/XML, RelaxNG
+    "rapidfuzz>=3.0.0",         # Levenshtein opcodes (CER decomposition)
+    "numpy>=1.26.0",            # CER statistics (bootstrap)
+    "scipy>=1.11.0",            # CER statistics (tests/distributions)
+    "pyspellchecker>=0.7.0",    # quality proxy (dictionary hit rate)
+    "openpyxl>=3.1",            # Masterfile.xlsx (scripts/eval/corpus_audit.py)
+    "anthropic>=0.39.0",        # LLM post-correction (stage 2a, lazy import)
+    "google-genai>=1.0.0",      # Gemini (layout QA, classification, OCR correction, TEI step 2)
+]
+
+[project.optional-dependencies]
+# Heavy engines, lazily imported and not needed by the pipeline gates: torch for the
+# local GPU experiments in scripts/utils.py, Docling for the local layout engine
+# (needs Windows Developer Mode for symlinks).
+layout = ["torch", "docling", "docling[easyocr]"]
+# Quality gate. Ruff is pinned so the pre-commit hook and CI report the same findings.
+dev = ["pytest>=7.0.0", "ruff==0.16.2"]
 
 [tool.ruff]
 target-version = "py311"

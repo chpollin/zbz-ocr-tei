@@ -33,6 +33,7 @@ from scripts.entity.entity_unlisted_scan import (
     single_words_allowed,
     write_csv,
 )
+from tests.conftest import tei_doc, tei_header
 
 # --- fixtures ---------------------------------------------------------------
 
@@ -49,12 +50,8 @@ _ENTITIES = {
 
 def _tei(body: str) -> str:
     """Mini TEI; the header carries a name that must never reach the report."""
-    return (
-        '<TEI xmlns="http://www.tei-c.org/ns/1.0">'
-        "<teiHeader><fileDesc><titleStmt><title>Yehuda Amichai</title>"
-        "</titleStmt></fileDesc></teiHeader>"
-        '<text><body><div type="text">' + body + "</div></body></text></TEI>"
-    )
+    return tei_doc(f'<div type="text">{body}</div>',
+                   header=tei_header("Yehuda Amichai"))
 
 
 def _lexicon(tmp_path):

@@ -25,17 +25,14 @@ from scripts.entity.running_head_audit import (
     normalize_head,
     zone_lookup,
 )
-
-TEI_NS = "http://www.tei-c.org/ns/1.0"
+from tests.conftest import tei_doc, tei_header
 
 
 def _tei(pages: list[str]) -> str:
     """A minimal final TEI whose body carries one <pb> per entry of `pages`."""
     body = "".join(f'<pb facs="#facs_{i}" n="{i}" />{content}'
                    for i, content in enumerate(pages, start=1))
-    return (f'<TEI xmlns="{TEI_NS}"><teiHeader><fileDesc><titleStmt>'
-            "<title>Fixture</title></titleStmt></fileDesc></teiHeader>"
-            f'<text><body><div n="1">{body}</div></body></text></TEI>')
+    return tei_doc(f'<div n="1">{body}</div>', header=tei_header())
 
 
 def _body(page: int) -> str:

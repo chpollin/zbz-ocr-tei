@@ -302,6 +302,7 @@ def _real_entities():
     return json.loads(ENTITIES_PATH.read_text(encoding="utf-8"))
 
 
+@pytest.mark.requires_mirror
 def test_real_stock_reports_the_known_defects():
     report = lint(_real_entities())
     by_id = {}
@@ -315,6 +316,7 @@ def test_real_stock_reports_the_known_defects():
     assert "dnb_link_mismatch" in by_id.get("1076202632", set())
 
 
+@pytest.mark.requires_mirror
 def test_real_stock_has_no_unexpected_error_ids():
     report = lint(_real_entities())
     known = {"11862974", "2026220-6", "1076202632", "1088014070", "1393920942", "4197012-3"}
@@ -389,6 +391,7 @@ def test_without_legacy_index_no_pairing_check_runs():
     assert report["counts"]["legacy"] is None
 
 
+@pytest.mark.requires_mirror
 def test_real_legacy_index_pins_the_poisoned_pairing():
     if not LEGACY_PATH.exists() or not CACHE_PATH.exists():
         pytest.skip("legacy mention index or GND cache not available")

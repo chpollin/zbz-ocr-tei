@@ -236,6 +236,7 @@ def test_demoted_document_stays_schema_valid():
     assert validator(new_raw), "Demotiertes Dokument muss valide bleiben"
 
 
+@pytest.mark.requires_corpus
 def test_blockzitat_quote_real_doc_valid():
     validator = schema_validator()
     assert validator is not None, "lxml und data/schema/zbz_hersch.rng sind Pflicht"

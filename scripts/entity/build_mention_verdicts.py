@@ -51,8 +51,9 @@ from scripts.config import DATA_DIR, PROJECT_ROOT, TEI_FINAL_DIR
 
 # Page assignment via the pb rule of the sample draw (same helpers as
 # scripts/entity/entity_eval_sample.py); a second implementation would drift.
-from scripts.entity.generate_entity_preview_data import page_of, pb_offsets
+from scripts.core.pb_split import page_of, pb_offsets
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
+from scripts.utils import read_json_strict
 
 SAMPLE_DIR = AUDIT_OUTPUT_DIR / "eval_sample"
 VERDICTS_DIR = SAMPLE_DIR / "verdicts"
@@ -85,10 +86,6 @@ CASE_COPY_FIELDS = ("category", "rule", "matched_form", "form_source", "start", 
 # Loading
 # ---------------------------------------------------------------------------
 
-def _read_json(path: Path):
-    return json.loads(Path(path).read_text(encoding="utf-8"))
-
-
 def repo_path(path) -> str:
     """Repo-relative posix path where possible, so the store diffs across machines."""
     try:
@@ -108,7 +105,7 @@ def load_precision_verdicts(paths) -> dict[str, dict]:
     """case_id -> {verdict, reason} over the batch files; a case may be judged once."""
     verdicts: dict[str, dict] = {}
     for path in paths:
-        for entry in _read_json(path):
+        for entry in read_json_strict(path):
             case_id = entry["case_id"]
             if case_id in verdicts:
                 raise ValueError(f"case {case_id} judged twice ({repo_path(path)})")
@@ -119,14 +116,14 @@ def load_precision_verdicts(paths) -> dict[str, dict]:
 def load_iaa(path: Path) -> dict[str, dict]:
     """case_id -> the blind second judgment."""
     return {entry["case_id"]: {"verdict": entry["verdict"], "reason": entry.get("reason")}
-            for entry in _read_json(path)}
+            for entry in read_json_strict(path)}
 
 
 def load_recall_pages(paths) -> dict[str, dict]:
     """page_ref -> {doc, page, mentions} merged over the recall batches."""
     pages: dict[str, dict] = {}
     for path in paths:
-        for page_ref, payload in _read_json(path).items():
+        for page_ref, payload in read_json_strict(path).items():
             if page_ref in pages:
                 raise ValueError(f"page {page_ref} read twice ({repo_path(path)})")
             pages[page_ref] = payload
@@ -334,10 +331,10 @@ def load_inputs(*, sample_dir: Path = SAMPLE_DIR, entities_path: Path = ENTITIES
     pages_path = sample_dir / "recall_pages.json"
     manifest_path = sample_dir / "sample_manifest.json"
 
-    cases = _read_json(cases_path)
-    manifest = _read_json(manifest_path)
+    cases = read_json_strict(cases_path)
+    manifest = read_json_strict(manifest_path)
     docs = [case["doc"] for case in cases]
-    scan = _read_json(scan_path)
+    scan = read_json_strict(scan_path)
 
     sources = [repo_path(p) for p in [cases_path, pages_path, manifest_path, iaa_path,
                                       Path(entities_path), Path(scan_path),
@@ -350,8 +347,8 @@ def load_inputs(*, sample_dir: Path = SAMPLE_DIR, entities_path: Path = ENTITIES
         "iaa": load_iaa(iaa_path),
         "recall_pages": load_recall_pages(recall_paths),
         "drawn_pages": {page["case_id"]: (page["doc"], page["page"])
-                        for page in _read_json(pages_path)},
-        "gids": entity_gids(_read_json(entities_path)),
+                        for page in read_json_strict(pages_path)},
+        "gids": entity_gids(read_json_strict(entities_path)),
         "placement": occurrence_map(scan.get("candidates", []), pb_index(docs, Path(tei_dir))),
         "digests": text_digests(docs, Path(tei_dir)),
         "sources": sorted(set(sources)),

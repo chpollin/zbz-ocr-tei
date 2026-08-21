@@ -37,6 +37,8 @@ from pathlib import Path
 from scripts.config import DOCS_DIR, TEI_FINAL_DIR
 from scripts.core.pb_split import BODY_INNER_RE, iter_page_spans
 from scripts.eval.audit_common import (
+    ascii_only,
+    facsimile_path,
     iter_final_tei,
     write_audit_report,
 )
@@ -81,11 +83,6 @@ def classify(n_chars: int) -> str:
     if n_chars >= SUBSTANTIAL_MIN_CHARS:
         return "substantial"
     return "marginal"
-
-
-def facsimile_path(doc_id: str, page: int) -> str:
-    """Repo-relativer Pfad des Seitenbildes, damit der Operator den Befund ansehen kann."""
-    return f"docs/images/{doc_id}/{doc_id}_p{page:03d}.png"
 
 
 def page_texts(tei_text: str) -> dict:
@@ -322,10 +319,6 @@ def build_payload(summary: dict, ground_cases=GROUND_CASES, tei_dir=None, mirror
     }
 
 
-def _ascii(text: str) -> str:
-    return text.encode("ascii", "replace").decode("ascii")
-
-
 def _print_summary(summary, payload):
     t = summary["totals"]
     print(f"Leerseiten-Text-Audit ueber {summary['total_docs']} Dokumente\n")
@@ -352,7 +345,7 @@ def _print_summary(summary, payload):
         print(f"    Dok {c['doc_id']} S. {c['page']}: {state}, Docling-Regionen "
               f"{c['docling_regions']}, TEI-Text {c['chars']} Zeichen ({c['class']})")
         if c["snippet"]:
-            print(f"      {_ascii(c['snippet'][:100])}")
+            print(f"      {ascii_only(c['snippet'][:100])}")
 
     top = payload["top_findings"][:5]
     if top:
@@ -360,7 +353,7 @@ def _print_summary(summary, payload):
         for f in top:
             print(f"    Dok {f['doc_id']:>5} S. {f['page']:>3}  {f['chars']:>6} Zeichen  "
                   f"[{f['signal']}]  {f['facsimile']}")
-            print(f"      {_ascii(f['snippet'][:100])}")
+            print(f"      {ascii_only(f['snippet'][:100])}")
 
 
 def _parse_page_arg(value):
@@ -385,7 +378,7 @@ def main():
         for key in ("doc_id", "page", "manifest_found", "manifest_blank", "docling_regions",
                     "in_tei", "chars", "class", "facsimile"):
             print(f"  {key:<16} {info[key]}")
-        print(f"  snippet          {_ascii(info['snippet'])}")
+        print(f"  snippet          {ascii_only(info['snippet'])}")
         return
 
     summary = audit_corpus(tei_dir)

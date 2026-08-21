@@ -67,7 +67,8 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from scripts.config import DATA_DIR, REFERENCE_TEI_DIR, TEI_FINAL_DIR
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
+from scripts.entity.entity_matcher import _find_open, _parse_attrs
+from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, ascii_only, parse_doc_ids
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
@@ -119,7 +120,6 @@ _WORD_RE = re.compile(r"\w+")
 _ENTITY_RE = re.compile(r"&(?:#[0-9]+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);")
 _TEXT_OPEN_RE = re.compile(r"<text\b[^>]*>", re.DOTALL)
 _NAME_RE = re.compile(r"</?([A-Za-z][\w.:-]*)")
-_ATTR_RE = re.compile(r"([\w.:-]+)\s*=\s*(\"([^\"]*)\"|'([^']*)')")
 
 
 @dataclass(frozen=True)
@@ -237,13 +237,6 @@ def normalize_reference_gid(value: str) -> str | None:
     return cleaned if _GID_RE.fullmatch(cleaned) else None
 
 
-def _parse_attrs(token: str) -> dict[str, str]:
-    return {
-        m.group(1): (m.group(3) if m.group(3) is not None else m.group(4))
-        for m in _ATTR_RE.finditer(token)
-    }
-
-
 def _gid_of(token: str) -> str | None:
     attrs = _parse_attrs(token)
     for key in ("ref", "corresp"):
@@ -287,13 +280,6 @@ def reference_mentions(xml: str) -> list[dict]:
     for order, mention in enumerate(found):
         mention["order"] = order
     return found
-
-
-def _find_open(stack: list[tuple[str, str | None, int]], name: str) -> int | None:
-    for index in range(len(stack) - 1, -1, -1):
-        if stack[index][0] == name:
-            return index
-    return None
 
 
 def _mention(name: str, gid: str, xml: str, start: int, end: int) -> dict:
@@ -840,17 +826,12 @@ def run_benchmark(doc_ids: list[str], ref_dir: Path, pipe_dir: Path,
 
 def _doc_line(result: dict) -> str:
     if result["status"] != "ok":
-        return f"{result['status'].upper()} ({_ascii(result['error'] or '')[:60]})"
+        return f"{result['status'].upper()} ({ascii_only(result['error'] or '')[:60]})"
     counts = result["counts"]
     neutral = sum(counts[v] for v in VERDICTS if v.startswith("neutral"))
     return (f"hit {counts['hit']}, miss {counts['miss']}, "
             f"worklist {counts['worklist_available']}, fp {counts['false_positive']}, "
             f"author-fp {counts['fp_author']}, neutral {neutral}")
-
-
-def _ascii(text) -> str:
-    """Fold to ASCII for the Windows console (the JSON report keeps full Unicode)."""
-    return str(text).encode("ascii", "replace").decode("ascii")
 
 
 def _pct(value: float | None) -> str:
@@ -866,7 +847,7 @@ def _print_summary(report: dict) -> None:
 
     print("\n  Split                 mentions  precision  recall  coverage(T1+T2)  author-fp")
     for name, split in report["splits"].items():
-        print(f"    {_ascii(name):20} {split['scoreable_reference_mentions']:8}  "
+        print(f"    {ascii_only(name):20} {split['scoreable_reference_mentions']:8}  "
               f"{_pct(split['precision_tier1']):>9}  {_pct(split['recall_tier1']):>6}  "
               f"{_pct(split['coverage_tier12']):>15}  {split['author_false_positives']:9}")
 
@@ -881,17 +862,12 @@ def _print_summary(report: dict) -> None:
             lambda r: r["category"])
         for name, count in sorted(Counter(key(r) for r in items).items(),
                                   key=lambda kv: (-kv[1], kv[0]))[:MAX_PRINTED]:
-            print(f"    {_ascii(name):32} {count}")
+            print(f"    {ascii_only(name):32} {count}")
 
 
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
-
-def _parse_doc_ids(values: list[str]) -> list[str]:
-    """Accept both comma-separated and space-separated document ids."""
-    return [d.strip() for value in values for d in value.split(",") if d.strip()]
-
 
 def main() -> int:
     parser = argparse.ArgumentParser(
@@ -920,7 +896,7 @@ def main() -> int:
     policy = args.policy if args.policy.exists() else None
     lexicon = build_lexicon(args.entities, args.cache, legacy_path=legacy,
                             review_path=review, policy_path=policy)
-    doc_ids = _parse_doc_ids(args.docs) if args.docs else reference_doc_ids(args.ref_dir)
+    doc_ids = parse_doc_ids(args.docs) if args.docs else reference_doc_ids(args.ref_dir)
 
     def find(xml_string):
         return find_candidates(xml_string, lexicon)

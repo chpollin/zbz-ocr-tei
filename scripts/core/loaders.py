@@ -2,7 +2,7 @@
 Shared Data Loaders: OCR-Text, Layout, Dokument-Discovery.
 
 Kanonische Implementierung fuer load_ocr_text, discover_pages,
-discover_documents, load_layout_gemini, skip_jstor_cover.
+discover_documents, load_layout_gemini, skip_jstor_cover, split_paragraphs.
 Wird importiert von: tei_generator, tei_unified u.a.
 """
 
@@ -58,6 +58,12 @@ def load_ocr_text_with_source(doc_id: str, page: int) -> tuple:
         if path.exists():
             return path.read_text(encoding="utf-8"), label
     return None, None
+
+
+def split_paragraphs(ocr_text: str) -> list[str]:
+    """Teilt OCR-Markdown in Absaetze (getrennt durch Leerzeilen)."""
+    blocks = re.split(r'\n\s*\n', ocr_text.strip())
+    return [b.strip() for b in blocks if b.strip()]
 
 
 def discover_pages(doc_id: str) -> list[int]:

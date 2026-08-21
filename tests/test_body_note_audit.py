@@ -9,6 +9,7 @@ import xml.etree.ElementTree as ET
 import pytest
 
 from scripts.eval import body_note_audit as bna
+from tests.conftest import tei_doc
 
 # --- pure signal functions -------------------------------------------------
 
@@ -67,7 +68,6 @@ def _tei(surfaces_zones, body_inner):
 
     surfaces_zones: list of (page, lry, [(zone_suffix, uly), ...]).
     """
-    ns = 'xmlns="http://www.tei-c.org/ns/1.0"'
     surf = []
     for page, lry, zones in surfaces_zones:
         z = "".join(
@@ -78,11 +78,7 @@ def _tei(surfaces_zones, body_inner):
             f'<surface xml:id="facs_{page}" ulx="0" uly="0" lrx="100" lry="{lry}">'
             f'<graphic url="p{page}.png"/>{z}</surface>'
         )
-    return (
-        '<?xml version="1.0" encoding="UTF-8"?>'
-        f'<TEI {ns}><facsimile>{"".join(surf)}</facsimile>'
-        f'<text><body><div>{body_inner}</div></body></text></TEI>'
-    )
+    return tei_doc(f"<div>{body_inner}</div>", facsimile="".join(surf), xml_decl=True)
 
 
 def _score_map(findings):

@@ -17,6 +17,7 @@ import re
 import pytest
 
 from scripts.tei import tei_cover_strip as cs
+from tests.conftest import tei_doc
 
 WHEN = "2026-08-12"
 
@@ -49,24 +50,16 @@ def _tei(body_inner, revision=None):
     revision = revision or (
         '<change when="2026-03-15" who="pipeline">TEI generated</change>'
     )
-    return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<TEI xmlns="http://www.tei-c.org/ns/1.0">\n'
-        "  <teiHeader>\n"
-        "    <fileDesc>\n"
-        "      <titleStmt><title>Testdokument</title></titleStmt>\n"
-        "      <publicationStmt><p>ZBZ</p></publicationStmt>\n"
-        "      <sourceDesc><p>Testquelle</p></sourceDesc>\n"
-        "    </fileDesc>\n"
-        f"    <revisionDesc>\n    {revision}\n  </revisionDesc>\n"
-        "  </teiHeader>\n"
-        "  <text>\n"
-        "    <body>\n"
-        f"{body_inner}\n"
-        "    </body>\n"
-        "  </text>\n"
-        "</TEI>\n"
+    header = (
+        "<teiHeader><fileDesc>"
+        "<titleStmt><title>Testdokument</title></titleStmt>"
+        "<publicationStmt><p>ZBZ</p></publicationStmt>"
+        "<sourceDesc><p>Testquelle</p></sourceDesc>"
+        "</fileDesc>"
+        f"<revisionDesc>{revision}</revisionDesc>"
+        "</teiHeader>"
     )
+    return tei_doc(f"\n{body_inner}\n", header=header, xml_decl=True)
 
 
 def _flat_doc(cover, pages=2):

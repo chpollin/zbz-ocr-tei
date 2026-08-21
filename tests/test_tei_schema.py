@@ -29,70 +29,26 @@ from pathlib import Path
 import pytest
 from lxml import etree as _etree
 
+from tests.conftest import FINAL_DOCS, FINAL_IDS, delivery_doc
+
 REPO = Path(__file__).resolve().parent.parent
 SCHEMA = REPO / "data" / "schema" / "zbz_hersch.rng"
-FINAL_DIR = REPO / "output" / "tei_final"
-
-FINAL_DOCS = sorted(FINAL_DIR.glob("*_final.xml")) if FINAL_DIR.exists() else []
-FINAL_IDS = [p.name for p in FINAL_DOCS]
 
 # Synthetischer Header mit genau den E68-Elementen (kein echtes Dokument noetig).
-_PIPELINE_HEADER = """<?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt><title type="main">Test</title><author>Hersch, Jeanne</author></titleStmt>
-      <publicationStmt><publisher>ZBZ / DHCraft</publisher><idno type="docID">9999</idno></publicationStmt>
-      <sourceDesc>
-        <biblStruct type="journalArticle">
-          <analytic><title>Test</title><author>Hersch, Jeanne</author></analytic>
-          <monogr><title>Zeitschrift</title><imprint><date>1975</date></imprint></monogr>
-        </biblStruct>
-      </sourceDesc>
-    </fileDesc>
-    <profileDesc><langUsage><language ident="fra"/></langUsage></profileDesc>
-    <revisionDesc>
-      <change when="2026-03-15" who="pipeline">TEI generated</change>
-      <change status="unverifiziert" n="ocr-summary">OCR-Strom: unverifiziert</change>
-    </revisionDesc>
-  </teiHeader>
-  <text><body><div type="text"><p>Text.</p></div></body></text>
-</TEI>
-"""
+_PIPELINE_HEADER = delivery_doc('<div type="text"><p>Text.</p></div>')
 
 # Synthetischer Korpus mit Inline-GND-Auszeichnung (ZBZ-Editionsrichtlinie, order
 # 2026-06-21): Person/Organisation/Werk werden an der Erwaehnungsstelle ausgezeichnet,
 # jede mit ref="GND:..." auf die GND, kein separates Register. persName/orgName/bibl
 # entsprechen den Beispielen aus der ZBZ-README. Git-getrackt, datenunabhaengig --
 # haelt das Inline-GND-Modell fest, damit es nicht versehentlich aufweicht.
-_INLINE_GND_DOC = """<?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt><title type="main">Test</title><author>Hersch, Jeanne</author></titleStmt>
-      <publicationStmt><publisher>ZBZ / DHCraft</publisher><idno type="docID">9999</idno></publicationStmt>
-      <sourceDesc>
-        <biblStruct type="journalArticle">
-          <analytic><title>Test</title><author>Hersch, Jeanne</author></analytic>
-          <monogr><title>Zeitschrift</title><imprint><date>1975</date></imprint></monogr>
-        </biblStruct>
-      </sourceDesc>
-    </fileDesc>
-    <profileDesc><langUsage><language ident="fra"/></langUsage></profileDesc>
-    <revisionDesc><change when="2026-06-21" who="pipeline">init</change></revisionDesc>
-  </teiHeader>
-  <text type="naegeli">
-    <body>
-      <div type="article">
-        <pb facs="#facs_1" n="1"/>
-        <p><persName ref="GND:118815679">Hersch</persName> lehrte an der
-           <orgName ref="GND:1010450-1">Universitaet Genf</orgName> und schrieb
-           <bibl ref="GND:1088036961">L'etre et la forme</bibl>.</p>
-      </div>
-    </body>
-  </text>
-</TEI>
-"""
+_INLINE_GND_DOC = delivery_doc(
+    '<div type="article"><pb facs="#facs_1" n="1"/>'
+    '<p><persName ref="GND:118815679">Hersch</persName> lehrte an der '
+    '<orgName ref="GND:1010450-1">Universitaet Genf</orgName> und schrieb '
+    '<bibl ref="GND:1088036961">L\'etre et la forme</bibl>.</p></div>',
+    text_attrs='type="naegeli"',
+)
 
 # Negativ-Fixture: das verworfene standOff-Register (E87, durch das ZBZ-Material
 # ueberholt) plus eine In-Text-Mention <name ref="#id">. Muss vom Schema abgelehnt
@@ -168,6 +124,7 @@ def test_schema_rejects_standoff_register():
 
 @pytest.mark.skipif(not FINAL_DOCS, reason="output/tei_final leer (gitignored, kein lokaler Korpus)")
 @pytest.mark.parametrize("doc", FINAL_DOCS, ids=FINAL_IDS)
+@pytest.mark.requires_corpus
 def test_final_doc_valid(doc: Path):
     """Jedes ausgelieferte TEI ist gegen Schema + Projektregeln valide."""
     from scripts.tei.tei_validator import validate_tei_file

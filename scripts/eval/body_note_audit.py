@@ -34,6 +34,7 @@ from pathlib import Path
 
 from scripts.config import REFERENCE_TEI_DIR, TEI_NS
 from scripts.eval.audit_common import (
+    ascii_only,
     doc_id_from_path,
     iter_final_tei,
     parse_tei,
@@ -58,11 +59,6 @@ W_POSITION = 0.2
 _LEADING_ASTERISK_RE = re.compile(r"^\s*[*†‡]+")
 _LEADING_DIGIT_RE = re.compile(r"^\s*\d{1,3}[.)]?\s")
 _SUPERSCRIPT_RE = re.compile(r"[¹²³⁰-⁹]")
-
-
-def _ascii(s: str) -> str:
-    """Fold to ASCII for the Windows console (JSON report keeps full Unicode)."""
-    return s.encode("ascii", "replace").decode("ascii")
 
 
 def _norm(text: str) -> str:
@@ -317,7 +313,7 @@ def _print_summary(summary):
             for c in d["candidates"][:3]:
                 y = "??" if c["y_pct"] is None else f"{c['y_pct']:.0f}"
                 print(f"    {ref}{d['doc']:>5}  S{c['page']!s:<4} len={c['length']:>4}"
-                      f"  y={y:>3}%  score={c['score']:.2f}  {_ascii(c['snippet'][:48])}")
+                      f"  y={y:>3}%  score={c['score']:.2f}  {ascii_only(c['snippet'][:48])}")
 
 
 def _write_report(summary, tei_dir):

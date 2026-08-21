@@ -13,6 +13,7 @@ import pytest
 from lxml import etree as _etree
 
 from scripts.tei.tei_step3 import _language_idents, build_tei_header
+from tests.conftest import tei_doc
 
 REPO_SCHEMA = "data/schema/zbz_hersch.rng"
 
@@ -26,10 +27,8 @@ _META_FULL = {
 
 
 def _wrap(header: str) -> str:
-    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
-            '<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">\n'
-            + header +
-            '\n  <text><body><div type="text"><p>x</p></div></body></text>\n</TEI>')
+    return tei_doc('<div type="text"><p>x</p></div>', header=header,
+                   root_attrs='type="naegeli"', xml_decl=True)
 
 
 # --- Inhaltsvertrag --------------------------------------------------------

@@ -22,6 +22,7 @@ from scripts.eval.evaluate_ocr import (
     extract_text_for_comparison,
     find_differences,
 )
+from tests.conftest import tei_doc, tei_header
 
 # --------------------------------------------------------------------- #
 # Helpers
@@ -32,10 +33,7 @@ TEI_NS = "http://www.tei-c.org/ns/1.0"
 
 def _tei(body_inner: str) -> str:
     """Minimales, valide-genug TEI mit dem gegebenen body-Inhalt."""
-    return (
-        f'<?xml version="1.0" encoding="UTF-8"?>\n'
-        f'<TEI xmlns="{TEI_NS}"><teiHeader/><text><body>{body_inner}</body></text></TEI>'
-    )
+    return tei_doc(body_inner, header="<teiHeader/>", xml_decl=True)
 
 
 def _write(tmp_path, name: str, body_inner: str):
@@ -245,3 +243,103 @@ class TestErrorCategoriesSumToDistance:
         # editops-basierte Blockdistanzen (max(len_ref,len_hyp) je Block) summieren
         # exakt zur Levenshtein-Distanz.
         assert summed == true_dist
+
+
+# --------------------------------------------------------------------- #
+# 7. Extraktionsregeln E1-E12 (knowledge/cer-methodology.md, Tabelle)
+# --------------------------------------------------------------------- #
+
+class TestExtractionRules:
+    """Je eine direkte Pruefung pro Regel der Extraktionstabelle."""
+
+    def test_namespace_prefix_is_stripped(self, tmp_path):
+        """E1: der TEI-Namespace verschwindet, die Elementinhalte bleiben."""
+        f = _write(tmp_path, "ns.xml", "<p>alpha</p>")
+        assert extract_text_for_comparison(f) == "alpha"
+
+    def test_only_body_is_read(self, tmp_path):
+        """E2: teiHeader, front und back liefern keinen Vergleichstext."""
+        path = tmp_path / "b.xml"
+        path.write_text(
+            tei_doc(
+                "<p>Haupttext.</p>",
+                header=tei_header("HEADERTITEL"),
+            ).replace("<body>", "<front><p>FRONTTEXT</p></front><body>")
+            .replace("</body>", "</body><back><p>BACKTEXT</p></back>"),
+            encoding="utf-8",
+        )
+        text = extract_text_for_comparison(path)
+        assert text == "Haupttext."
+
+    def test_choice_without_corr_falls_back_to_sic(self, tmp_path):
+        """E4: fehlt <corr>, liefert <choice> die ueberlieferte Form <sic>."""
+        f = _write(tmp_path, "sic.xml",
+                   "<p>Das <choice><sic>falsh</sic></choice> hier.</p>")
+        assert extract_text_for_comparison(f) == "Das falsh hier."
+
+    def test_line_break_becomes_one_space(self, tmp_path):
+        """E6: <lb/> ohne break-Attribut ist eine Wortgrenze."""
+        f = _write(tmp_path, "lb.xml", "<p>eins<lb/>zwei</p>")
+        assert extract_text_for_comparison(f) == "eins zwei"
+
+    def test_hyphenation_break_joins_the_word(self, tmp_path):
+        """E7: <lb break="no"/> liefert kein Zeichen, das Wort wird zusammengesetzt."""
+        f = _write(tmp_path, "lbno.xml", '<p>Hu<lb break="no"/>manismus</p>')
+        assert extract_text_for_comparison(f) == "Humanismus"
+
+    def test_page_break_collapses_to_a_single_space(self, tmp_path):
+        """E8 + N15: <pb/> setzt zwei Umbrueche, die Normalisierung macht ein Leerzeichen daraus.
+
+        Die Regeltabelle nennt als Wirkung von E8 "die Seitengrenze bleibt erkennbar";
+        im Vergleichstext ist sie es nicht mehr, weil N15 jede Whitespace-Folge auf ein
+        Leerzeichen zieht. Der Test haelt das tatsaechliche Verhalten fest.
+        """
+        f = _write(tmp_path, "pb.xml", '<p>a</p><pb n="2"/><p>b</p>')
+        assert extract_text_for_comparison(f) == "a b"
+
+    def test_markup_is_transparent(self, tmp_path):
+        """E9: <hi> und die uebrigen Elemente liefern ihren Innentext ohne Markup."""
+        f = _write(tmp_path, "hi.xml", '<p>ein <hi rend="i">Wort</hi> hier</p>')
+        assert extract_text_for_comparison(f) == "ein Wort hier"
+
+    def test_forme_work_is_included_not_excluded(self, tmp_path):
+        """E9 auch fuer <fw>: der Kolumnentitel steht im Vergleichstext.
+
+        Es gibt keine fw-Ausnahmeregel; <fw> faellt unter E9 wie jedes andere Element.
+        """
+        f = _write(tmp_path, "fw.xml", '<p>Text.</p><fw type="head">KOLUMNENTITEL</fw>')
+        assert extract_text_for_comparison(f) == "Text.KOLUMNENTITEL"
+
+    def test_attribute_values_never_appear(self, tmp_path):
+        """E10: pb@n und ref-Attribute liefern keinen Vergleichstext."""
+        f = _write(tmp_path, "attr.xml",
+                   '<p rend="italic">a</p><pb n="223"/>'
+                   '<p><persName ref="GND:118815679">N</persName></p>')
+        text = extract_text_for_comparison(f)
+        assert "223" not in text and "GND" not in text and "italic" not in text
+        assert text == "a N"
+
+    def test_tail_text_keeps_the_order(self, tmp_path):
+        """E11: der Tail eines Kindelements steht hinter dessen Inhalt."""
+        f = _write(tmp_path, "tail.xml", "<p>Wort1<hi>Wort2</hi>Wort3</p>")
+        assert extract_text_for_comparison(f) == "Wort1Wort2Wort3"
+
+    def test_parse_error_falls_back_to_tag_stripping(self, tmp_path):
+        """E12: ein nicht wohlgeformtes TEI liefert den tag-befreiten Rohtext."""
+        f = tmp_path / "broken.xml"
+        f.write_text('<TEI xmlns="' + TEI_NS + '"><text><body><p>kaputt<p>'
+                     "</body></text></TEI>", encoding="utf-8")
+        assert extract_text_for_comparison(f) == "kaputt"
+
+    def test_whitespace_runs_collapse(self, tmp_path):
+        """N15: Mehrfach-Whitespace und Zeilenumbrueche werden zu einem Leerzeichen."""
+        f = _write(tmp_path, "ws.xml", "<p>a   b\n\n  c</p>")
+        assert extract_text_for_comparison(f) == "a b c"
+
+    def test_blank_page_contributes_no_text(self, tmp_path):
+        """Leerseite: ein <pb type="blank"/> ohne Inhalt bringt kein Zeichen ein."""
+        with_blank = _write(tmp_path, "blank.xml",
+                            '<p>a</p><pb n="2" type="blank"/><pb n="3"/><p>c</p>')
+        without = _write(tmp_path, "noblank.xml", '<p>a</p><pb n="3"/><p>c</p>')
+        assert extract_text_for_comparison(with_blank) == extract_text_for_comparison(without)
+        assert extract_text_for_comparison(with_blank) == "a c"

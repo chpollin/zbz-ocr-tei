@@ -32,14 +32,19 @@ from __future__ import annotations
 
 import argparse
 import json
-from bisect import bisect_right
 from collections import Counter
 from pathlib import Path
 
 from scripts.config import DATA_DIR, TEI_FINAL_DIR
-from scripts.core.pb_split import BODY_INNER_RE, PB_RE
+from scripts.core.pb_split import page_of, pb_offsets
 from scripts.entity.entity_matcher import FUNCTION_WORDS as _MATCHER_FUNCTION_WORDS
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, iter_final_tei
+from scripts.eval.audit_common import (
+    AUDIT_OUTPUT_DIR,
+    ascii_only,
+    iter_final_tei,
+    parse_doc_ids,
+    sorted_counts,
+)
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
@@ -69,20 +74,6 @@ HYPHENS = frozenset("-\u2010\u2011")
 # ---------------------------------------------------------------------------
 # Page assignment
 # ---------------------------------------------------------------------------
-
-def pb_offsets(xml_string: str) -> list[int]:
-    """Offsets of the `<pb>` tags inside `<body>`, in document order."""
-    match = BODY_INNER_RE.search(xml_string)
-    if not match:
-        return []
-    base = match.start(1)
-    return [base + pb.start() for pb in PB_RE.finditer(match.group(1))]
-
-
-def page_of(pb_starts: list[int], offset: int) -> int:
-    """1-based page of a TEI offset; anything before the first `<pb>` counts as page 1."""
-    return max(1, bisect_right(pb_starts, offset))
-
 
 # ---------------------------------------------------------------------------
 # Scan
@@ -199,11 +190,6 @@ def run_scan(doc_paths: list[tuple[str, Path]], lexicon: dict, find_candidates,
 # Report
 # ---------------------------------------------------------------------------
 
-def _sorted_counts(counter: Counter) -> dict:
-    """Counts as a plain dict, most frequent first, ties by key (deterministic output)."""
-    return dict(sorted(counter.items(), key=lambda kv: (-kv[1], kv[0])))
-
-
 def build_scan_report(records: list[dict], by_doc: dict, violations: dict,
                       labels: dict, sources: dict) -> dict:
     """The full snapshot; candidates ordered by (doc, start), every view deterministic."""
@@ -219,8 +205,8 @@ def build_scan_report(records: list[dict], by_doc: dict, violations: dict,
             "candidates": len(ordered),
             "ambiguous": sum(1 for r in ordered if r.get("alternatives")),
         },
-        "by_rule": _sorted_counts(Counter(r["rule"] for r in ordered)),
-        "by_evidence": _sorted_counts(
+        "by_rule": sorted_counts(Counter(r["rule"] for r in ordered)),
+        "by_evidence": sorted_counts(
             Counter(r["evidence"] for r in ordered if r.get("evidence"))
         ),
         "by_doc": {doc: by_doc[doc] for doc in sorted(by_doc)},
@@ -228,11 +214,6 @@ def build_scan_report(records: list[dict], by_doc: dict, violations: dict,
         "candidates": ordered,
         "invariants": {name: {"violations": violations[name]} for name in INVARIANTS},
     }
-
-
-def _ascii(text) -> str:
-    """Fold to ASCII for the Windows console (the JSON report keeps full Unicode)."""
-    return str(text).encode("ascii", "replace").decode("ascii")
 
 
 def _print_summary(report: dict) -> None:
@@ -243,23 +224,23 @@ def _print_summary(report: dict) -> None:
 
     print("\n  By rule:")
     for rule, count in report["by_rule"].items():
-        print(f"    {_ascii(rule):30} {count}")
+        print(f"    {ascii_only(rule):30} {count}")
 
     print("\n  One-word titles by typographic evidence:")
     for evidence, count in (report["by_evidence"] or {"(none reported)": 0}).items():
-        print(f"    {_ascii(evidence):30} {count}")
+        print(f"    {ascii_only(evidence):30} {count}")
 
     print("\n  Top entities (tier 1):")
     for gid, label, count in report["by_entity_top"]:
-        print(f"    {count:6}  {_ascii(gid):14} {_ascii(label)}")
+        print(f"    {count:6}  {ascii_only(gid):14} {ascii_only(label)}")
 
     print("\n  Invariants (diagnosis, no gate):")
     for name, payload in report["invariants"].items():
         found = payload["violations"]
         print(f"    {name:24} {len(found)} violation(s)")
         for item in found[:MAX_PRINTED_VIOLATIONS]:
-            print(f"      {item['doc']} @{item['start']}: {_ascii(item['surface'])} "
-                  f"({_ascii(item['rule'])})")
+            print(f"      {item['doc']} @{item['start']}: {ascii_only(item['surface'])} "
+                  f"({ascii_only(item['rule'])})")
         if len(found) > MAX_PRINTED_VIOLATIONS:
             print(f"      ... {len(found) - MAX_PRINTED_VIOLATIONS} more, see the report")
 
@@ -267,11 +248,6 @@ def _print_summary(report: dict) -> None:
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
-
-def _parse_doc_ids(values: list[str]) -> list[str]:
-    """Accept both comma-separated and space-separated document ids."""
-    return [d.strip() for value in values for d in value.split(",") if d.strip()]
-
 
 def main() -> None:
     parser = argparse.ArgumentParser(
@@ -295,7 +271,7 @@ def main() -> None:
 
     from scripts.entity.entity_matcher import build_lexicon, find_candidates
 
-    doc_paths = resolve_docs(args.src_dir, _parse_doc_ids(args.docs) if args.docs else None)
+    doc_paths = resolve_docs(args.src_dir, parse_doc_ids(args.docs) if args.docs else None)
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
     review = args.review if args.review.exists() else None
     policy = args.policy if args.policy.exists() else None

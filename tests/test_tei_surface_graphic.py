@@ -20,12 +20,10 @@ from lxml import etree as _etree
 
 from scripts.tei.tei_step3 import build_facsimile, page_image_url
 from scripts.tei.tei_surface_graphic import project_graphics
+from tests.conftest import FINAL_DOCS, FINAL_IDS
 
 REPO = Path(__file__).resolve().parent.parent
-FINAL_DIR = REPO / "output" / "tei_final"
 SCHEMA = REPO / "data" / "schema" / "zbz_hersch.rng"
-FINAL_DOCS = sorted(FINAL_DIR.glob("*_final.xml")) if FINAL_DIR.exists() else []
-FINAL_IDS = [p.name for p in FINAL_DOCS]
 TEI_NS = "http://www.tei-c.org/ns/1.0"
 
 
@@ -95,6 +93,7 @@ def test_project_graphics_inserts_and_is_idempotent():
 
 @pytest.mark.skipif(not FINAL_DOCS, reason="output/tei_final leer (gitignored)")
 @pytest.mark.parametrize("doc", FINAL_DOCS, ids=FINAL_IDS)
+@pytest.mark.requires_corpus
 def test_final_doc_every_surface_has_graphic(doc: Path):
     """Jede Surface des ausgelieferten TEI traegt ein <graphic> als erstes Kind, URL nach Schema."""
     doc_id = doc.name[: -len("_final.xml")]

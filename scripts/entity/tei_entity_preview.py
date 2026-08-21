@@ -73,6 +73,7 @@ from scripts.entity.entity_verdict_guard import (
     classify_mark,
     text_digests,
 )
+from scripts.eval.audit_common import parse_doc_ids, sorted_counts
 
 ENTITY_PREVIEW_DIR = OUTPUT_DIR / "entity_preview"
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
@@ -349,13 +350,13 @@ def preview_document(doc_id: str, xml_string: str, candidates: list[dict],
             # candidates whose form has more than one bearer; the report must never
             # show one of them as the decided id
             "ambiguous": sum(1 for c in candidates if c.get("alternatives")),
-            "by_rule": _sorted_counts(Counter(c.get("rule", "?") for c in candidates)),
-            "by_category": _sorted_counts(Counter(c.get("category", "?") for c in candidates)),
-            "by_evidence": _sorted_counts(
+            "by_rule": sorted_counts(Counter(c.get("rule", "?") for c in candidates)),
+            "by_category": sorted_counts(Counter(c.get("category", "?") for c in candidates)),
+            "by_evidence": sorted_counts(
                 Counter(c["evidence"] for c in candidates if c.get("evidence"))
             ),
             # certainty of the written marks; tier 2 is not wrapped and carries none
-            "by_certainty": _sorted_counts(
+            "by_certainty": sorted_counts(
                 Counter(mark_attributes(c)["cert"] for c in tier1)
             ),
         },
@@ -366,11 +367,11 @@ def preview_document(doc_id: str, xml_string: str, candidates: list[dict],
     }
 
 
-def discover_doc_ids(src_dir: Path) -> list[str]:
+def discover_final_doc_ids(src_dir: Path) -> list[str]:
     """Doc ids of every ``{doc}_final.xml`` in src_dir, numeric ones first and in numeric order.
 
-    Kept local rather than imported from the eval audits: scripts/tei must not depend on
-    scripts/eval. A non-numeric id keeps its filename order and follows the numeric block.
+    Distinct from ``utils.discover_doc_ids``, which lists image subdirectories in filename
+    order. A non-numeric id keeps its filename order and follows the numeric block.
     """
     doc_ids = [path.stem.removesuffix("_final")
                for path in sorted(Path(src_dir).glob("*_final.xml"))]
@@ -417,11 +418,6 @@ def run_preview(doc_ids: list[str], find_candidates, lexicon: dict,
 # Report
 # ---------------------------------------------------------------------------
 
-def _sorted_counts(counter) -> dict:
-    """Counts as a plain dict, most frequent first, ties by key (deterministic output)."""
-    return dict(sorted(counter.items(), key=lambda kv: (-kv[1], kv[0])))
-
-
 def build_report(results: list[dict]) -> dict:
     """Per-document results plus corpus totals."""
     by_rule, by_category, by_evidence, by_certainty = Counter(), Counter(), Counter(), Counter()
@@ -437,10 +433,10 @@ def build_report(results: list[dict]) -> dict:
             "wrapped": sum(r["counts"]["wrapped"] for r in results),
             "worklist": sum(r["counts"]["worklist"] for r in results),
             "ambiguous": sum(r["counts"].get("ambiguous", 0) for r in results),
-            "by_rule": _sorted_counts(by_rule),
-            "by_category": _sorted_counts(by_category),
-            "by_evidence": _sorted_counts(by_evidence),
-            "by_certainty": _sorted_counts(by_certainty),
+            "by_rule": sorted_counts(by_rule),
+            "by_category": sorted_counts(by_category),
+            "by_evidence": sorted_counts(by_evidence),
+            "by_certainty": sorted_counts(by_certainty),
             "rng_valid": sum(1 for r in results if r["rng_valid"]),
             "text_invariant": sum(1 for r in results if r["text_invariant"]),
         },
@@ -458,11 +454,6 @@ def write_report(report: dict, out_dir: Path) -> Path:
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
-
-def _parse_doc_ids(values: list[str]) -> list[str]:
-    """Accept both comma-separated and space-separated document ids."""
-    return [d for value in values for d in value.split(",") if d.strip()]
-
 
 def main():
     ap = argparse.ArgumentParser(
@@ -488,9 +479,9 @@ def main():
     from scripts.entity.entity_matcher import build_lexicon, find_candidates
 
     if args.all:
-        doc_ids = discover_doc_ids(args.src_dir)
+        doc_ids = discover_final_doc_ids(args.src_dir)
     else:
-        doc_ids = PANEL_DOCS if args.panel else _parse_doc_ids(args.docs)
+        doc_ids = PANEL_DOCS if args.panel else parse_doc_ids(args.docs)
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
     review = args.review if args.review.exists() else None
     policy = args.policy if args.policy.exists() else None

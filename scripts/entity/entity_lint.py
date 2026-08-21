@@ -56,7 +56,7 @@ from scripts.entity.entity_matcher import (
     legacy_names,
     normalize_gid,
 )
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
+from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, ascii_only
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
@@ -442,11 +442,6 @@ def build_report(entities: dict, cache, entities_path, cache_path,
     }
 
 
-def _ascii(text: str) -> str:
-    """Fold to ASCII for the Windows console (the JSON report keeps full Unicode)."""
-    return str(text).encode("ascii", "replace").decode("ascii")
-
-
 def _print_summary(report: dict) -> None:
     counts = report["counts"]
     entities = counts["entities"]
@@ -478,7 +473,7 @@ def _print_summary(report: dict) -> None:
         print(f"    {kind:20} {number}")
     for error in report["errors"]:
         print(f"    - [{error['category']}] {error['gnd_id']}: "
-              f"{error['type']} -- {_ascii(error['message'])}")
+              f"{error['type']} -- {ascii_only(error['message'])}")
 
     print(f"\n  Warnungen: {counts['warnings']}")
     for kind, number in sorted(counts["warnings_by_type"].items()):

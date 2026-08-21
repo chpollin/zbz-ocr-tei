@@ -158,7 +158,7 @@ The output `docs/data/cer_statistics.json` is versioned as evidence of the publi
 ## Text layer
 
 ```bash
-python scripts/ocr/ocr_pipeline.py -i data/source/pdf/{DOC_ID}.pdf -e mistral    # base OCR
+python -m scripts.ocr.ocr_pipeline -i data/source/pdf/{DOC_ID}.pdf -e mistral    # base OCR
 python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --variant B          # Gemini correction
 python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --dry-run            # preview
 python -m scripts.ocr.classify_docs                                          # one-shot Gemini document classification -> data/doc_metadata.json (committed cache; rerun only to rebuild it)
@@ -296,7 +296,7 @@ dropdown. See [knowledge/workflow.md](knowledge/workflow.md), persistence sectio
 ## Visual artifacts
 
 ```bash
-python scripts/edition/extract_pages.py --pdf {DOC_ID}.pdf --dpi 300             # page images
+python -m scripts.edition.extract_pages --pdf {DOC_ID}.pdf --dpi 300             # page images
 python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      # layout overlay
 ```
 

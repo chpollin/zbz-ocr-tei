@@ -15,20 +15,24 @@ from scripts.tei.tei_validator import (
     _collect_finals,
     _compute_cer,
 )
+from tests.conftest import tei_doc
 
 # --- W19: Lesereihenfolge-Anomalie (Spalten-/Band-Ordnung, Defekt 30/760) ---
 
+# Header of the validator fixtures: the minimum the project rules expect (title,
+# author, publisher in both publicationStmt and sourceDesc).
+_HEADER = (
+    '<teiHeader><fileDesc><titleStmt><title>T</title><author>A</author></titleStmt>'
+    '<publicationStmt><publisher>p</publisher></publicationStmt>'
+    '<sourceDesc><bibl><publisher>p</publisher></bibl></sourceDesc></fileDesc></teiHeader>'
+)
+
+
 def _tei(zones, blocks):
-    return (
-        '<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">'
-        '<teiHeader><fileDesc><titleStmt><title>T</title><author>A</author></titleStmt>'
-        '<publicationStmt><publisher>p</publisher></publicationStmt>'
-        '<sourceDesc><bibl><publisher>p</publisher></bibl></sourceDesc></fileDesc></teiHeader>'
-        '<facsimile><surface xml:id="facs_1" ulx="0" uly="0" lrx="1000" lry="1000">'
-        f'{zones}</surface></facsimile>'
-        '<text><body><div n="1"><pb facs="#facs_1" n="1"/>'
-        f'{blocks}</div></body></text></TEI>'
-    )
+    surface = ('<surface xml:id="facs_1" ulx="0" uly="0" lrx="1000" lry="1000">'
+               f'{zones}</surface>')
+    return tei_doc(f'<div n="1"><pb facs="#facs_1" n="1"/>{blocks}</div>',
+                   header=_HEADER, facsimile=surface, root_attrs='type="naegeli"')
 
 
 def _w19(zones, blocks):

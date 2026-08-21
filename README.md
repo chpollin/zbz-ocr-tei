@@ -133,11 +133,20 @@ python -m http.server 8000 -d docs    # http://localhost:8000/
 Re-running any stage requires valid API keys in `.env`. The existing pipeline output lives under
 `output/` (gitignored, regenerable).
 
+`pyproject.toml` is the only manifest; the repo declares no build backend, because it is a
+dependency set and script pipeline rather than an installable package. The heavy layout
+engines are the optional extra `layout`, the quality gate is the extra `dev` (pytest plus the
+pinned ruff that the pre-commit hook and CI both use).
+
 ```bash
-# Set up environment
+# Set up environment (uv)
+uv sync --extra dev
+
+# or with pip
 python -m venv .venv
 .venv\Scripts\activate  # Windows
-pip install -r requirements.txt
+python -c "import tomllib; p = tomllib.load(open('pyproject.toml', 'rb'))['project']; print('\n'.join(p['dependencies'] + p['optional-dependencies']['dev']))" > /tmp/zbz-requirements.txt
+pip install -r /tmp/zbz-requirements.txt
 
 # Configure API keys: create .env in the repo root (never committed) with
 #   MISTRAL_DOC_AI_ENDPOINT / MISTRAL_DOC_AI_KEY   (OCR, Azure)
@@ -153,6 +162,9 @@ python -m scripts.eval.corpus_audit                                          # c
 ```
 
 Complete CLI reference: [CLAUDE.md §Commands](CLAUDE.md).
+
+The commit hook is optional and self-contained: install `pre-commit` and run
+`pre-commit install`; it runs the same pinned `ruff check` that CI runs.
 
 ## Documentation
 

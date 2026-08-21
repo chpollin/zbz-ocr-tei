@@ -6,13 +6,13 @@ Unterstuetzt mehrere OCR-Engines fuer verschiedene Dokumenttypen.
 
 Usage:
     # Einzelnes PDF
-    python scripts/ocr/ocr_pipeline.py --input data/source/pdf/2310.pdf
+    python -m scripts.ocr.ocr_pipeline --input data/source/pdf/2310.pdf
 
     # Alle PDFs
-    python scripts/ocr/ocr_pipeline.py --all
+    python -m scripts.ocr.ocr_pipeline --all
 
     # Bestimmte Engine
-    python scripts/ocr/ocr_pipeline.py --input data/source/pdf/2310.pdf --engine mistral
+    python -m scripts.ocr.ocr_pipeline --input data/source/pdf/2310.pdf --engine mistral
 """
 
 import argparse
@@ -22,10 +22,6 @@ import os
 import sys
 import time
 from pathlib import Path
-
-# Repo-Root auf sys.path, damit der Direktaufruf (python scripts/ocr/ocr_pipeline.py)
-# das scripts-Paket findet -- nicht nur die Modul-Form (python -m scripts.ocr.ocr_pipeline).
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from scripts.config import (
     GEMINI_API_KEY,

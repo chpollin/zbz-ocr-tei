@@ -20,12 +20,9 @@ Aufruf:
 import argparse
 import functools
 import json
-import sys
 import time
 import traceback
 from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from scripts.config import (
     DOC_METADATA_PATH,

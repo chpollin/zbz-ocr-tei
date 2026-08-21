@@ -202,15 +202,20 @@ class TestNormalApprox:
 
 class TestBlockResample:
     def test_returns_concatenated_blocks(self):
+        """Das Resample zerfaellt in VOLLSTAENDIGE Eingangs-Bloecke, Grenzen erhalten."""
         rng = np.random.default_rng(0)
         blocks = [[1.0, 2.0], [3.0], [4.0, 5.0, 6.0]]
-        sample = block_bootstrap_resample(blocks, rng)
-        # Resample muss aus einer Konkatenation **vollstaendiger** Bloecke bestehen.
-        # Total-Length = Summe der gezogenen Block-Laengen.
-        assert sample.size > 0
-        # Pruefen: jede Wert ist aus einem der Bloecke (kein "Mischen")
-        all_vals = {v for b in blocks for v in b}
-        assert all(v in all_vals for v in sample)
+        sample = list(block_bootstrap_resample(blocks, rng))
+        # Zerlegung ist eindeutig, weil die Bloecke an unterschiedlichen Werten beginnen.
+        drawn = []
+        pos = 0
+        while pos < len(sample):
+            match = next((b for b in blocks if sample[pos:pos + len(b)] == b), None)
+            assert match is not None, f"kein vollstaendiger Block ab Position {pos}"
+            drawn.append(match)
+            pos += len(match)
+        assert len(drawn) == len(blocks)  # je Iteration werden n Bloecke gezogen
+        assert len(sample) == sum(len(b) for b in drawn)
 
     def test_empty_blocks(self):
         rng = np.random.default_rng(0)

@@ -12,10 +12,6 @@ import json
 import sys
 from pathlib import Path
 
-# Repo-Root auf sys.path, damit der Direktaufruf (python scripts/edition/extract_pages.py)
-# das scripts-Paket findet -- nicht nur die Modul-Form (python -m scripts.edition.extract_pages).
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
-
 from scripts.config import IMAGES_DIR, SCANS_DIR, WEB_DPI
 from scripts.utils import page_image_name
 

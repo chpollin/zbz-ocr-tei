@@ -24,7 +24,7 @@ Pipeline stages and data flow are in [../knowledge/pipeline.md](../knowledge/pip
 ## Common entry points
 
 ```bash
-python scripts/ocr/ocr_pipeline.py -i data/source/pdf/{ID}.pdf -e mistral   # OCR
+python -m scripts.ocr.ocr_pipeline -i data/source/pdf/{ID}.pdf -e mistral   # OCR
 python -m scripts.layout.run_layout_analysis --doc {ID}                # layout
 python -m scripts.tei.tei_unified --doc {ID}                           # TEI (3 stages: scaffold/Gemini/assembly)
 python -m scripts.tei.tei_validator --all --html-report                # validation

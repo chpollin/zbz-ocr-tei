@@ -16,21 +16,21 @@ Aufruf:
 import argparse
 import json
 import re
-import sys
 from datetime import UTC, datetime
-from pathlib import Path
 
 from lxml import etree
 
-# Projekt-Imports
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from scripts.config import (
     IMAGES_DIR,
     LAYOUT_DIR,
     PAGE_XML_DIR,
     ZBZ_TO_PAGE_TYPE,
 )
-from scripts.core.loaders import discover_layout_documents, discover_layout_pages
+from scripts.core.loaders import (
+    discover_layout_documents,
+    discover_layout_pages,
+    split_paragraphs,
+)
 
 # PAGE-XML Namespace (2013-07-15)
 PAGE_NS = "http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15"
@@ -104,12 +104,6 @@ def load_ocr_text_for_page(doc_id, page_num):
 # ---------------------------------------------------------------------------
 # OCR-Text <-> Region Matching
 # ---------------------------------------------------------------------------
-
-def split_paragraphs(ocr_text):
-    """Teilt OCR-Markdown in Absaetze (getrennt durch Leerzeilen)."""
-    blocks = re.split(r'\n\s*\n', ocr_text.strip())
-    return [b.strip() for b in blocks if b.strip()]
-
 
 def match_ocr_to_regions(ocr_text, regions):
     """Matched OCR-Absaetze zu Layout-Regionen nach Position.

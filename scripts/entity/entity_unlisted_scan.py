@@ -70,7 +70,7 @@ from scripts.entity.entity_matcher import (
     _scan_zones,
     _starts_sentence,
 )
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
+from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, ascii_only
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
@@ -449,11 +449,6 @@ def run_scan(doc_paths, lexicon: dict, find_candidates, languages: dict,
 # CLI
 # ---------------------------------------------------------------------------
 
-def _ascii(text) -> str:
-    """Fold to ASCII for the Windows console (the report keeps full Unicode)."""
-    return str(text).encode("ascii", "replace").decode("ascii")
-
-
 def _print_summary(report: dict) -> None:
     totals = report["totals"]
     print(f"\n  Documents: {totals['documents']}  entries: {totals['entries']}  "
@@ -467,8 +462,8 @@ def _print_summary(report: dict) -> None:
         docs = ",".join(entry["docs"][:4])
         more = "..." if len(entry["docs"]) > 4 else ""
         flag = " [known surname]" if entry["known_surname_overlap"] else ""
-        print(f"    {entry['count']:5}  {_ascii(entry['surface']):40} "
-              f"{entry['class']:12} {_ascii(docs)}{more}{flag}")
+        print(f"    {entry['count']:5}  {ascii_only(entry['surface']):40} "
+              f"{entry['class']:12} {ascii_only(docs)}{more}{flag}")
 
 
 def main() -> None:

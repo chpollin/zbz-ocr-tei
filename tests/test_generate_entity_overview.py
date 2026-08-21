@@ -270,6 +270,7 @@ def test_quality_block_without_decidable_marks_reports_no_rate():
 
 
 @pytest.mark.skipif(not VERDICTS_PATH.exists(), reason="verdict store not available")
+@pytest.mark.requires_mirror
 def test_quality_block_reproduces_the_published_snapshot_figures():
     """The committed verdict store must keep yielding the published evaluation figures.
 

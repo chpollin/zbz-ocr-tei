@@ -7,16 +7,12 @@ from scripts.core.tei_xml_utils import (
     reading_order_permutation,
 )
 from scripts.eval.reading_order_audit import audit_document, classify_page
-
-
-def bb(x, y, w, h=8.0):
-    return {"x_pct": x, "y_pct": y, "w_pct": w, "h_pct": h}
-
+from tests.conftest import bbox
 
 # --- reading_order_permutation: Override-Parameter sind verhaltenswahrend ---
 
 def test_default_kwargs_equal_module_constants():
-    page = [bb(8, 5, 84), bb(55, 20, 30), bb(10, 20, 30), bb(55, 40, 30), bb(10, 40, 30)]
+    page = [bbox(8, 5, 84), bbox(55, 20, 30), bbox(10, 20, 30), bbox(55, 40, 30), bbox(10, 40, 30)]
     assert reading_order_permutation(page) == reading_order_permutation(
         page, wide_w_pct=WIDE_REGION_W_PCT, column_gap_pct=COLUMN_GAP_PCT
     )
@@ -24,7 +20,7 @@ def test_default_kwargs_equal_module_constants():
 
 def test_wide_threshold_override_changes_banding():
     # Ein Block mit w=61 ist bei WIDE=60 vollbreit, bei WIDE=65 eine Spalte -> andere Ordnung.
-    page = [bb(7, 6, 82), bb(68, 12, 20), bb(14, 14, 13), bb(7, 24, 61), bb(64, 50, 24)]
+    page = [bbox(7, 6, 82), bbox(68, 12, 20), bbox(14, 14, 13), bbox(7, 24, 61), bbox(64, 50, 24)]
     at60 = reading_order_permutation(page, wide_w_pct=60.0)
     at65 = reading_order_permutation(page, wide_w_pct=65.0)
     assert at60 != at65
@@ -34,32 +30,32 @@ def test_wide_threshold_override_changes_banding():
 
 def test_single_column_is_unaffected():
     # Eine Spalte, bereits oben-nach-unten: der Fix laesst die Seite unveraendert.
-    page = [bb(10, 10, 40), bb(10, 30, 40), bb(10, 50, 40)]
+    page = [bbox(10, 10, 40), bbox(10, 30, 40), bbox(10, 50, 40)]
     assert classify_page(page) is None
 
 
 def test_canonical_two_column_is_unaffected():
     # Schon links-vor-rechts geliefert -> keine Umsortierung.
-    page = [bb(8, 5, 84), bb(10, 20, 30), bb(10, 40, 30), bb(55, 20, 30), bb(55, 40, 30)]
+    page = [bbox(8, 5, 84), bbox(10, 20, 30), bbox(10, 40, 30), bbox(55, 20, 30), bbox(55, 40, 30)]
     assert classify_page(page) is None
 
 
 def test_clean_two_column_swap_is_robust():
     # Rechte Spalte vor linker geliefert; Breiten/Abstaende weit von den Schwellen -> robust.
-    page = [bb(8, 5, 84), bb(55, 20, 30), bb(10, 20, 30), bb(55, 40, 30), bb(10, 40, 30)]
+    page = [bbox(8, 5, 84), bbox(55, 20, 30), bbox(10, 20, 30), bbox(55, 40, 30), bbox(10, 40, 30)]
     assert classify_page(page) == "robust"
 
 
 def test_width_borderline_is_fragile():
     # 760-artig: Block w=61 knapp ueber der 60%-Schwelle -> Umsortierung kippt unter Perturbation.
-    page = [bb(7, 6, 82), bb(68, 12, 20), bb(14, 14, 13), bb(7, 24, 61), bb(64, 50, 24)]
+    page = [bbox(7, 6, 82), bbox(68, 12, 20), bbox(14, 14, 13), bbox(7, 24, 61), bbox(64, 50, 24)]
     assert classify_page(page) == "fragil"
 
 
 def test_gap_borderline_is_fragile():
     # Zwei schmale Bloecke mit Mitten-Abstand ~14, nahe der 12%-Gutter-Schwelle; bei GAP+3
     # verschmelzen sie zu einer Spalte und kippen die Ordnung.
-    page = [bb(8, 5, 84), bb(24, 20, 20), bb(10, 40, 20)]
+    page = [bbox(8, 5, 84), bbox(24, 20, 20), bbox(10, 40, 20)]
     assert classify_page(page) == "fragil"
 
 

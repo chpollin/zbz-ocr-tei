@@ -14,6 +14,13 @@ import json
 import pytest
 
 from scripts.entity import entity_matcher as em
+from tests.conftest import (
+    build_lexicon_dir,
+    gnd_cache_entry,
+    org_record,
+    person_record,
+    work_record,
+)
 
 TEI_HEAD = (
     '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -27,62 +34,6 @@ TEI_HEAD = (
 def _tei(body: str) -> str:
     """Minimal TEI skeleton; the teiHeader carries a name so header exclusion is testable."""
     return TEI_HEAD + f"<text><body>{body}</body></text>\n</TEI>\n"
-
-
-def _person(gid: str, name: str) -> dict:
-    return {"GND_id": gid, "name": name, "listBibl": [], "editor_reviewed": False}
-
-
-def _org(gid: str, org_name: str) -> dict:
-    return {"GND_id": gid, "orgName": org_name, "listBibl": [], "editor_reviewed": False}
-
-
-def _work(gid: str, title: str, author: str = "") -> dict:
-    return {"GND_id": gid, "title": title, "author_gnd_id": author, "listBibl": []}
-
-
-def _cache_entry(preferred: str | None = None, variants: tuple[str, ...] = ()) -> dict:
-    return {
-        "http_status": 200,
-        "preferred_name": preferred,
-        "variant_names": list(variants),
-        "types": ["Person"],
-        "date_of_birth": None,
-        "date_of_death": None,
-        "wikidata": None,
-    }
-
-
-def _build(tmp_path, persons=(), orgs=(), works=(), cache=None, legacy=None, review=None,
-           policy=None):
-    """Write the mini fixtures to tmp_path and build the lexicon from them."""
-    entities_path = tmp_path / "all_entities.json"
-    entities_path.write_text(
-        json.dumps(
-            {"persons": list(persons), "organisations": list(orgs), "works": list(works)},
-            ensure_ascii=False,
-        ),
-        encoding="utf-8",
-    )
-    cache_path = tmp_path / "gnd_cache.json"
-    if cache is not None:
-        cache_path.write_text(
-            json.dumps(
-                {"retrieved": "2026-08-12", "source_pattern": "test", "entries": cache},
-                ensure_ascii=False,
-            ),
-            encoding="utf-8",
-        )
-    legacy_path = None
-    if legacy is not None:
-        legacy_path = tmp_path / "gnd_entities.json"
-        legacy_path.write_text(json.dumps(legacy, ensure_ascii=False), encoding="utf-8")
-    review_path = None
-    if review is not None:
-        review_path = tmp_path / "variant_review.json"
-        review_path.write_text(json.dumps(review, ensure_ascii=False), encoding="utf-8")
-    return em.build_lexicon(entities_path, cache_path, legacy_path, review_path=review_path,
-                            policy_path=policy)
 
 
 def _review(persons=None, orgs=None, works=None):
@@ -112,33 +63,33 @@ def _verdicts(gid, headword, forms):
 
 
 PERSONS = [
-    _person("118557106", "Jaspers, Karl"),
-    _person("118557107", "Jaspers, Gertrud"),
-    _person("118708422", "Hersch, Jeanne"),
-    _person("118577190", "Marcel, Gabriel"),
-    _person("118628828", "Wahl, Jean"),
-    _person("118535749", "Freud, Sigmund"),
-    _person("118647962", "Alembert, Jean"),
-    _person("118594893", "Platon"),
+    person_record("118557106", "Jaspers, Karl"),
+    person_record("118557107", "Jaspers, Gertrud"),
+    person_record("118708422", "Hersch, Jeanne"),
+    person_record("118577190", "Marcel, Gabriel"),
+    person_record("118628828", "Wahl, Jean"),
+    person_record("118535749", "Freud, Sigmund"),
+    person_record("118647962", "Alembert, Jean"),
+    person_record("118594893", "Platon"),
 ]
 ORGS = [
-    _org("5157117-3", "UNESCO"),
-    _org("2008287-3", "Deutscher Gewerkschaftsbund"),
-    _org("1000-1", "UNO"),
+    org_record("5157117-3", "UNESCO"),
+    org_record("2008287-3", "Deutscher Gewerkschaftsbund"),
+    org_record("1000-1", "UNO"),
 ]
 WORKS = [
-    _work("4558181-2", "Allgemeine Psychopathologie", "118557106"),
-    _work("4006406-2", "Bibel"),
+    work_record("4558181-2", "Allgemeine Psychopathologie", "118557106"),
+    work_record("4006406-2", "Bibel"),
 ]
 CACHE = {
-    "118557106": _cache_entry("Jaspers, Karl", ("Jaspers, Karl Theodor", "Karl Jaspers")),
-    "118708422": _cache_entry("Hersch, Jeanne", ()),
+    "118557106": gnd_cache_entry("Jaspers, Karl", ("Jaspers, Karl Theodor", "Karl Jaspers")),
+    "118708422": gnd_cache_entry("Hersch, Jeanne", ()),
 }
 
 
 @pytest.fixture
 def lex(tmp_path):
-    return _build(tmp_path, persons=PERSONS, orgs=ORGS, works=WORKS, cache=CACHE)
+    return build_lexicon_dir(tmp_path, persons=PERSONS, orgs=ORGS, works=WORKS, cache=CACHE)
 
 
 def _by_surface(cands: list[dict]) -> dict[str, dict]:
@@ -167,12 +118,12 @@ def _write_entities(tmp_path, persons):
 
 def test_build_lexicon_skips_missing_label_and_404(tmp_path):
     persons = [
-        _person("118557106", "Jaspers, Karl"),
-        _person("999999999", ""),
-        _person("118708422", "Hersch, Jeanne"),
+        person_record("118557106", "Jaspers, Karl"),
+        person_record("999999999", ""),
+        person_record("118708422", "Hersch, Jeanne"),
     ]
     cache = {"118708422": {"http_status": 404}}
-    lexicon = _build(tmp_path, persons=persons, cache=cache)
+    lexicon = build_lexicon_dir(tmp_path, persons=persons, cache=cache)
     assert "118557106" in lexicon["entries"]
     assert "118708422" not in lexicon["entries"]
     assert "999999999" not in lexicon["entries"]
@@ -186,14 +137,14 @@ def test_build_lexicon_joins_legacy_index_over_normalized_ids(tmp_path):
         "organizations": {"5157117": {"names": ["Unesco"]}},
         "works": {"4558181": {"names": ["Psychopathologie"]}},
     }
-    lexicon = _build(tmp_path, persons=PERSONS, orgs=ORGS, works=WORKS, legacy=legacy)
+    lexicon = build_lexicon_dir(tmp_path, persons=PERSONS, orgs=ORGS, works=WORKS, legacy=legacy)
     assert "JASPERS Karl" in lexicon["forms"]
     assert "Unesco" in lexicon["forms"]
     assert lexicon["forms"]["Psychopathologie"][0][2] == "short-title"
 
 
 def test_forms_carry_their_provenance(tmp_path):
-    lexicon = _build(tmp_path, persons=PERSONS, orgs=ORGS, works=WORKS, cache=CACHE)
+    lexicon = build_lexicon_dir(tmp_path, persons=PERSONS, orgs=ORGS, works=WORKS, cache=CACHE)
     assert lexicon["forms"]["Karl Jaspers"][0] == ("118557106", "person", "full-name", "headword")
     assert lexicon["forms"]["Karl Theodor Jaspers"][0][3] == "cache-variant"
     assert lexicon["forms"]["UNESCO"][0][3] == "headword"
@@ -201,8 +152,8 @@ def test_forms_carry_their_provenance(tmp_path):
 
 def test_surname_index_carries_the_form_that_registered_it(tmp_path):
     # ids and variants from data/entities/all_entities.json plus its GND cache
-    cache = {"117085391": _cache_entry("Jaspers, Gertrud", ("Mayer, Gertrud",))}
-    lexicon = _build(tmp_path, persons=[_person("117085391", "Jaspers, Gertrud")], cache=cache)
+    cache = {"117085391": gnd_cache_entry("Jaspers, Gertrud", ("Mayer, Gertrud",))}
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("117085391", "Jaspers, Gertrud")], cache=cache)
     assert lexicon["surname_forms"]["Jaspers"]["117085391"] == ("Jaspers", "surname-index")
     assert lexicon["surname_forms"]["Mayer"]["117085391"] == ("Mayer, Gertrud", "cache-variant")
 
@@ -210,8 +161,8 @@ def test_surname_index_carries_the_form_that_registered_it(tmp_path):
 def test_build_lexicon_guards_variant_surnames(tmp_path):
     # lobid carries transliteration fragments; neither "Ma" nor "Ma, Kesi" may become
     # a surname, while the multiword variant form itself stays usable
-    cache = {"118578537": _cache_entry("Marx, Karl", ("Ma", "Ma, Kesi", "Marks"))}
-    lexicon = _build(tmp_path, persons=[_person("118578537", "Marx, Karl")], cache=cache)
+    cache = {"118578537": gnd_cache_entry("Marx, Karl", ("Ma", "Ma, Kesi", "Marks"))}
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("118578537", "Marx, Karl")], cache=cache)
     assert "Ma" not in lexicon["surnames"]
     assert "Marks" in lexicon["surnames"]
     assert lexicon["surnames"]["Marx"] == ("118578537",)
@@ -220,12 +171,12 @@ def test_build_lexicon_guards_variant_surnames(tmp_path):
 
 def test_curated_one_token_headword_stays_unguarded(tmp_path):
     # the curated headword is authority, the length guard applies to variants only
-    lexicon = _build(tmp_path, persons=[_person("118579555", "Mao")])
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("118579555", "Mao")])
     assert lexicon["surnames"]["Mao"] == ("118579555",)
 
 
 def test_build_lexicon_drops_short_org_token(tmp_path):
-    lexicon = _build(tmp_path, orgs=ORGS)
+    lexicon = build_lexicon_dir(tmp_path, orgs=ORGS)
     assert "UNESCO" in lexicon["forms"]
     assert "UNO" not in lexicon["forms"]
     assert lexicon["skipped"]["short_org_token"] == 1
@@ -588,14 +539,14 @@ def test_run_is_deterministic(lex):
 def test_initials_only_cache_variant_never_reaches_the_lexicon(tmp_path):
     # lobid lists bare initials as variants (Pestalozzi: "J. H."); as a tier-1
     # full-name form they mislabel every "J. H." in the corpus (doc-1220 defect).
-    persons = [_person("118592912", "Pestalozzi, Johann Heinrich")]
+    persons = [person_record("118592912", "Pestalozzi, Johann Heinrich")]
     cache = {
-        "118592912": _cache_entry(
+        "118592912": gnd_cache_entry(
             "Pestalozzi, Johann Heinrich",
             ("J. H.", "J.H.", "H., J.", "Pestalozzi, J. H."),
         )
     }
-    lexicon = _build(tmp_path, persons=persons, cache=cache)
+    lexicon = build_lexicon_dir(tmp_path, persons=persons, cache=cache)
     assert "J. H." not in lexicon["forms"]
     assert "J.H." not in lexicon["forms"]
     # initials next to a real name word keep working
@@ -606,9 +557,9 @@ def test_initials_only_cache_variant_never_reaches_the_lexicon(tmp_path):
 
 def test_transliteration_word_variants_are_not_initials(tmp_path):
     # two-letter words without dots ("Mo Ti" for Mozi) are real name forms
-    persons = [_person("118584553", "Mo, Di")]
-    cache = {"118584553": _cache_entry("Mo, Di", ("Mo Ti",))}
-    lexicon = _build(tmp_path, persons=persons, cache=cache)
+    persons = [person_record("118584553", "Mo, Di")]
+    cache = {"118584553": gnd_cache_entry("Mo, Di", ("Mo Ti",))}
+    lexicon = build_lexicon_dir(tmp_path, persons=persons, cache=cache)
     assert "Mo Ti" in lexicon["forms"]
 
 
@@ -618,20 +569,20 @@ LEGACY_JEREMIE = {"persons": {"118557106": {"names": ["Jérémie", "Karl Jaspers
 
 
 def test_legacy_only_form_is_demoted(tmp_path):
-    lexicon = _build(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
+    lexicon = build_lexicon_dir(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
     assert lexicon["forms"]["Jérémie"] == (("118557106", "person", "legacy-form", "legacy"),)
     assert "Jérémie" not in lexicon["surnames"]
     assert ("118557106", "Jérémie") in lexicon["legacy_demoted"]
 
 
 def test_legacy_form_corroborated_by_the_record_stays_a_full_name(tmp_path):
-    lexicon = _build(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
+    lexicon = build_lexicon_dir(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
     assert lexicon["forms"]["Karl Jaspers"][0][2] == "full-name"
     assert all(form != "Karl Jaspers" for _, form in lexicon["legacy_demoted"])
 
 
 def test_legacy_only_form_never_reaches_tier1(tmp_path):
-    lexicon = _build(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
+    lexicon = build_lexicon_dir(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
     xml = _tei("<p>Karl Jaspers citait souvent Jérémie.</p>")
     found = _by_surface(em.find_candidates(xml, lexicon))
     assert found["Karl Jaspers"]["tier"] == 1
@@ -721,10 +672,10 @@ def test_romance_adjective_forms_are_candidates(lex, word):
 
 
 def test_single_word_title_that_shadows_a_surname_is_ambiguous(tmp_path):
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118587943", "Nietzsche, Friedrich")],
-        works=[_work("1078795312", "Nietzsche")],
+        persons=[person_record("118587943", "Nietzsche, Friedrich")],
+        works=[work_record("1078795312", "Nietzsche")],
     )
     xml = _tei("<p>In Nietzsche steht es.</p>")
     cands = em.find_candidates(xml, lexicon)
@@ -957,9 +908,9 @@ def test_org_container_prefix_demotes_full_name(lex):
 def test_surname_before_undated_parenthesis_is_suspect(tmp_path):
     # doc 110 p83: "le roman, d'Augustin (de Malègue)" is the novel's title;
     # a dated parenthesis ("Jaspers (1883-1969)") corroborates the person instead
-    lexicon = _build(tmp_path, persons=[
-        _person("118505114", "Augustin, Aurelius"),
-        _person("118557106", "Jaspers, Karl"),
+    lexicon = build_lexicon_dir(tmp_path, persons=[
+        person_record("118505114", "Augustin, Aurelius"),
+        person_record("118557106", "Jaspers, Karl"),
     ])
     xml = _tei(
         "<p>Aurelius Augustin schrieb viel. Karl Jaspers auch.</p>\n"
@@ -975,7 +926,7 @@ def test_surname_before_undated_parenthesis_is_suspect(tmp_path):
 
 def test_lowercased_incipit_of_case_tolerant_title_is_suspect(tmp_path):
     # doc 1060 p8: "die Mauer der Angst" is a common noun, not the listed title
-    lexicon = _build(tmp_path, works=[_work("4099310-0", "Die Mauer")])
+    lexicon = build_lexicon_dir(tmp_path, works=[work_record("4099310-0", "Die Mauer")])
     cands = em.find_candidates(
         _tei("<p>dass sie die Mauer der Angst durchbrochen haben.</p>"), lexicon
     )
@@ -990,10 +941,10 @@ def test_lowercased_incipit_of_case_tolerant_title_is_suspect(tmp_path):
 def test_internal_particle_bridges_to_same_gid_surname(tmp_path):
     # doc 2330 p54: "Saint Ignace de Loyola" is one mention; the split into
     # "Saint Ignace" plus "Loyola" was the adjudicated wrong_span
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118555359", "Ignacio, de Loyola")],
-        cache={"118555359": _cache_entry("Ignacio, de Loyola",
+        persons=[person_record("118555359", "Ignacio, de Loyola")],
+        cache={"118555359": gnd_cache_entry("Ignacio, de Loyola",
                                          ("Ignace, Saint", "Loyola, Ignatius of"))},
     )
     xml = _tei("<p>les Exercices spirituels de Saint Ignace de Loyola sont connus.</p>")
@@ -1013,10 +964,10 @@ def test_particle_does_not_bridge_to_another_entity(lex):
 def test_subtitle_join_form_covers_the_full_printed_title(tmp_path):
     # doc 650 p9: "Nietzsche. Einfuehrung in das Verstaendnis seines Philosophierens";
     # wrapping the subtitle alone was the adjudicated wrong_span
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        works=[_work("1078795312", "Nietzsche")],
-        cache={"1078795312": _cache_entry(
+        works=[work_record("1078795312", "Nietzsche")],
+        cache={"1078795312": gnd_cache_entry(
             "Nietzsche",
             ("Einfuehrung in das Verstaendnis seines Philosophierens",),
         )},
@@ -1128,8 +1079,8 @@ def test_curated_surname_hit_reports_the_surname_index(lex):
 
 def test_surname_from_a_cache_variant_names_the_variant(tmp_path):
     # ids and variant forms from data/entities/all_entities.json and its GND cache
-    cache = {"117085391": _cache_entry("Jaspers, Gertrud", ("Mayer, Gertrud",))}
-    lexicon = _build(tmp_path, persons=[_person("117085391", "Jaspers, Gertrud")], cache=cache)
+    cache = {"117085391": gnd_cache_entry("Jaspers, Gertrud", ("Mayer, Gertrud",))}
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("117085391", "Jaspers, Gertrud")], cache=cache)
     cands = em.find_candidates(_tei("<p>Der Kritiker Hans Mayer schrieb.</p>"), lexicon)
     assert [c["surface"] for c in cands] == ["Mayer"]
     assert cands[0]["matched_form"] == "Mayer, Gertrud"
@@ -1137,7 +1088,7 @@ def test_surname_from_a_cache_variant_names_the_variant(tmp_path):
 
 
 def test_legacy_form_hit_reports_the_legacy_index(tmp_path):
-    lexicon = _build(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
+    lexicon = build_lexicon_dir(tmp_path, persons=PERSONS, cache=CACHE, legacy=LEGACY_JEREMIE)
     found = _by_surface(em.find_candidates(_tei("<p>Er zitierte Jérémie.</p>"), lexicon))
     assert found["Jérémie"]["form_source"] == "legacy"
     assert found["Jérémie"]["matched_form"] == "Jérémie"
@@ -1167,9 +1118,9 @@ def test_known_forename_neighbour_no_longer_suppresses_the_signal(lex):
 def test_a_known_word_pair_still_suppresses_the_signal(tmp_path):
     # the scan consumes "Jean Paul" as a full name, so "Sartre" reaches the surname
     # rule with a capitalized neighbour whose pair IS a listed form
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118591053", "Paul, Jean"), _person("118605690", "Sartre, Paul")],
+        persons=[person_record("118591053", "Paul, Jean"), person_record("118605690", "Sartre, Paul")],
     )
     cands = em.find_candidates(_tei("<p>Zitiert nach Jean Paul Sartre und mehr.</p>"), lexicon)
     assert [c["surface"] for c in cands] == ["Jean Paul", "Sartre"]
@@ -1223,9 +1174,9 @@ def test_multiword_work_title_matches_across_case(lex):
 
 def test_multiword_cache_variant_matches_across_case(tmp_path):
     # doc 2330: the cache carries "La foi philosophique", the text sets "La Foi philosophique"
-    cache = {"1088013937": _cache_entry("Der philosophische Glaube", ("La foi philosophique",))}
-    lexicon = _build(
-        tmp_path, works=[_work("1088013937", "Der philosophische Glaube")], cache=cache
+    cache = {"1088013937": gnd_cache_entry("Der philosophische Glaube", ("La foi philosophique",))}
+    lexicon = build_lexicon_dir(
+        tmp_path, works=[work_record("1088013937", "Der philosophische Glaube")], cache=cache
     )
     cands = em.find_candidates(_tei("<p>Sie uebersetzte La Foi philosophique.</p>"), lexicon)
     assert [c["surface"] for c in cands] == ["La Foi philosophique"]
@@ -1259,14 +1210,14 @@ def test_one_word_org_token_keeps_the_exact_rules(lex):
 
 
 def test_case_tolerance_does_not_reach_diacritics(tmp_path):
-    lexicon = _build(tmp_path, works=[_work("1088026605", "Idéologies et réalité")])
+    lexicon = build_lexicon_dir(tmp_path, works=[work_record("1088026605", "Idéologies et réalité")])
     assert em.find_candidates(_tei("<p>Er las Ideologies et realite.</p>"), lexicon) == []
     cands = em.find_candidates(_tei("<p>Er las idéologies et Réalité.</p>"), lexicon)
     assert [c["surface"] for c in cands] == ["idéologies et Réalité"]
 
 
 def test_case_tolerance_does_not_reach_punctuation_or_whitespace(tmp_path):
-    lexicon = _build(tmp_path, persons=[_person("118557106", "Jaspers, Karl")])
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("118557106", "Jaspers, Karl")])
     assert em.find_candidates(_tei("<p>Zitiert nach jaspers karl.</p>"), lexicon) == []
 
 
@@ -1277,7 +1228,7 @@ def test_case_tolerant_hit_stays_inside_the_word_boundary(lex):
 
 def test_all_lowercase_writing_of_a_title_is_suspect(tmp_path):
     # "le capital" is the ordinary noun phrase far more often than the listed work
-    lexicon = _build(tmp_path, works=[_work("4099309-7", "Le capital")])
+    lexicon = build_lexicon_dir(tmp_path, works=[work_record("4099309-7", "Le capital")])
     cands = em.find_candidates(_tei("<p>Der Zins auf le capital steigt.</p>"), lexicon)
     assert [c["surface"] for c in cands] == ["le capital"]
     assert cands[0]["rule"] == "work-title:suspect"
@@ -1335,10 +1286,10 @@ def test_evidence_stays_on_the_one_word_titles(lex):
 
 
 def test_evidence_survives_the_ambiguity_suffix(tmp_path):
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118587943", "Nietzsche, Friedrich")],
-        works=[_work("1078795312", "Nietzsche")],
+        persons=[person_record("118587943", "Nietzsche, Friedrich")],
+        works=[work_record("1078795312", "Nietzsche")],
     )
     xml = _tei('<p>In <hi rendition="#i">Nietzsche</hi> steht es.</p>')
     cands = em.find_candidates(xml, lexicon)
@@ -1350,10 +1301,10 @@ def test_evidence_survives_the_ambiguity_suffix(tmp_path):
 
 
 def _freud_fixture(tmp_path, review):
-    return _build(
+    return build_lexicon_dir(
         tmp_path,
-        persons=[_person("118535749", "Freud, Sigmund")],
-        cache={"118535749": _cache_entry("Freud, Sigmund", ("Freund, Sigmund",))},
+        persons=[person_record("118535749", "Freud, Sigmund")],
+        cache={"118535749": gnd_cache_entry("Freud, Sigmund", ("Freund, Sigmund",))},
         review=review,
     )
 
@@ -1381,10 +1332,10 @@ def test_review_suspect_demotes_variant_hit_to_tier2(tmp_path):
     review = _review(persons=_verdicts("118519778", "Voltaire",
                                        {"Voltaire": "approve",
                                         "Akakia, Docteur": "suspect"}))
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118519778", "Voltaire")],
-        cache={"118519778": _cache_entry("Voltaire", ("Akakia, Docteur",))},
+        persons=[person_record("118519778", "Voltaire")],
+        cache={"118519778": gnd_cache_entry("Voltaire", ("Akakia, Docteur",))},
         review=review,
     )
     cands = em.find_candidates(_tei("<p>Docteur Akakia schrieb den Brief.</p>"), lexicon)
@@ -1395,10 +1346,10 @@ def test_review_suspect_demotes_variant_hit_to_tier2(tmp_path):
 def test_review_unreviewed_cache_form_counts_as_suspect(tmp_path):
     review = _review(persons=_verdicts("118557106", "Jaspers, Karl",
                                        {"Jaspers, Karl": "approve"}))
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118557106", "Jaspers, Karl")],
-        cache={"118557106": _cache_entry("Jaspers, Karl", ("Jaspers, Karl Theodor",))},
+        persons=[person_record("118557106", "Jaspers, Karl")],
+        cache={"118557106": gnd_cache_entry("Jaspers, Karl", ("Jaspers, Karl Theodor",))},
         review=review,
     )
     cands = em.find_candidates(_tei("<p>Karl Theodor Jaspers sprach.</p>"), lexicon)
@@ -1409,10 +1360,10 @@ def test_review_unreviewed_cache_form_counts_as_suspect(tmp_path):
 def test_review_reject_leaves_the_headword_channel_untouched(tmp_path):
     review = _review(persons=_verdicts("118557106", "Jaspers, Karl",
                                        {"Jaspers, Karl": "reject"}))
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118557106", "Jaspers, Karl")],
-        cache={"118557106": _cache_entry("Jaspers, Karl", ())},
+        persons=[person_record("118557106", "Jaspers, Karl")],
+        cache={"118557106": gnd_cache_entry("Jaspers, Karl", ())},
         review=review,
     )
     cands = em.find_candidates(_tei("<p>Karl Jaspers sprach.</p>"), lexicon)
@@ -1424,10 +1375,10 @@ def test_review_suspect_covers_the_caps_projection(tmp_path):
     review = _review(persons=_verdicts("118519778", "Voltaire",
                                        {"Voltaire": "approve",
                                         "Akakia, Docteur": "suspect"}))
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118519778", "Voltaire")],
-        cache={"118519778": _cache_entry("Voltaire", ("Akakia, Docteur",))},
+        persons=[person_record("118519778", "Voltaire")],
+        cache={"118519778": gnd_cache_entry("Voltaire", ("Akakia, Docteur",))},
         review=review,
     )
     cands = em.find_candidates(_tei("<p>von DOCTEUR AKAKIA unterzeichnet.</p>"), lexicon)
@@ -1442,30 +1393,30 @@ def test_review_suspect_covers_the_caps_projection(tmp_path):
 # construction. Ids and name forms come from data/entities/all_entities.json and its
 # GND cache.
 
-UNESCO = _org("2023755-8", "UNESCO")
-POPULAIRE = _work("4676707-1", "Le populaire de Paris (Zeitung)")
+UNESCO = org_record("2023755-8", "UNESCO")
+POPULAIRE = work_record("4676707-1", "Le populaire de Paris (Zeitung)")
 POPULAIRE_CACHE = {
-    "4676707-1": _cache_entry(
+    "4676707-1": gnd_cache_entry(
         "Le populaire de Paris (Zeitung)",
         ("Le populaire (Zeitung, Paris, 1916-1940)",),
     )
 }
 BUND_LABEL = "Allgemeiner Jüdischer Arbeiterbund in Litauen, Polen und Rußland"
-BUND = _org("5005966-X", BUND_LABEL)
-BUND_CACHE = {"5005966-X": _cache_entry(BUND_LABEL, (f"Bund ({BUND_LABEL})",))}
-GENEVE = _org("1010450-1", "Université de Genève")
+BUND = org_record("5005966-X", BUND_LABEL)
+BUND_CACHE = {"5005966-X": gnd_cache_entry(BUND_LABEL, (f"Bund ({BUND_LABEL})",))}
+GENEVE = org_record("1010450-1", "Université de Genève")
 GENEVE_CACHE = {
-    "1010450-1": _cache_entry("Université de Genève", ("Universität Genf",))
+    "1010450-1": gnd_cache_entry("Université de Genève", ("Universität Genf",))
 }
-NIETZSCHE = _person("118587943", "Nietzsche, Friedrich")
-JASPERS = _person("118557106", "Jaspers, Karl")
+NIETZSCHE = person_record("118587943", "Nietzsche, Friedrich")
+JASPERS = person_record("118557106", "Jaspers, Karl")
 
 
 # --- acronym case tolerance -------------------------------------------------------
 
 
 def test_acronym_case_form_is_a_worklist_candidate(tmp_path):
-    lexicon = _build(tmp_path, orgs=[UNESCO])
+    lexicon = build_lexicon_dir(tmp_path, orgs=[UNESCO])
     cands = em.find_candidates(_tei("<p>Ein Bericht der l'Unesco aus Paris.</p>"), lexicon)
     assert [c["surface"] for c in cands] == ["Unesco"]
     assert cands[0]["rule"] == "org-token:acronym-case"
@@ -1475,14 +1426,14 @@ def test_acronym_case_form_is_a_worklist_candidate(tmp_path):
 
 
 def test_acronym_all_caps_writing_keeps_its_tier(tmp_path):
-    lexicon = _build(tmp_path, orgs=[UNESCO])
+    lexicon = build_lexicon_dir(tmp_path, orgs=[UNESCO])
     cands = em.find_candidates(_tei("<p>Ein Bericht der UNESCO aus Paris.</p>"), lexicon)
     assert cands[0]["rule"] == "org-token"
     assert cands[0]["tier"] == 1
 
 
 def test_acronym_case_does_not_reach_the_lowercase_writing(tmp_path):
-    lexicon = _build(tmp_path, orgs=[UNESCO])
+    lexicon = build_lexicon_dir(tmp_path, orgs=[UNESCO])
     assert em.find_candidates(_tei("<p>Ein Bericht der unesco.</p>"), lexicon) == []
 
 
@@ -1494,8 +1445,8 @@ def test_short_acronym_gets_no_case_form(lex):
 def test_dotted_acronym_gets_no_case_form(tmp_path):
     # "C.E.E." capitalizes to "C.e.e.", a spelling no text carries
     legacy = {"organizations": {"35433": {"names": ["C.E.E."]}}}
-    lexicon = _build(
-        tmp_path, orgs=[_org("35433-8", "Europäische Wirtschaftsgemeinschaft")],
+    lexicon = build_lexicon_dir(
+        tmp_path, orgs=[org_record("35433-8", "Europäische Wirtschaftsgemeinschaft")],
         legacy=legacy,
     )
     assert "C.E.E." in lexicon["forms"]
@@ -1506,7 +1457,7 @@ def test_dotted_acronym_gets_no_case_form(tmp_path):
 
 
 def test_qualifier_strip_registers_the_bare_title(tmp_path):
-    lexicon = _build(tmp_path, works=[POPULAIRE], cache=POPULAIRE_CACHE)
+    lexicon = build_lexicon_dir(tmp_path, works=[POPULAIRE], cache=POPULAIRE_CACHE)
     xml = _tei("<p>Er schrieb im Le populaire ueber Europa.</p>")
     cands = em.find_candidates(xml, lexicon)
     assert [c["surface"] for c in cands] == ["Le populaire"]
@@ -1517,7 +1468,7 @@ def test_qualifier_strip_registers_the_bare_title(tmp_path):
 
 def test_qualifier_strip_reaches_the_case_tolerant_channel(tmp_path):
     # the corpus sets "Le Populaire", the GND variant carries the lower-case spelling
-    lexicon = _build(tmp_path, works=[POPULAIRE], cache=POPULAIRE_CACHE)
+    lexicon = build_lexicon_dir(tmp_path, works=[POPULAIRE], cache=POPULAIRE_CACHE)
     cands = em.find_candidates(_tei("<p>Er schrieb im Le Populaire ueber Europa.</p>"), lexicon)
     assert [c["surface"] for c in cands] == ["Le Populaire"]
     assert cands[0]["matched_form"] == "Le populaire"
@@ -1527,7 +1478,7 @@ def test_qualifier_strip_reaches_the_case_tolerant_channel(tmp_path):
 def test_qualifier_strip_of_a_generic_word_stays_on_the_worklist(tmp_path):
     # "Bund" is an ordinary German word; the channel carries it because it is
     # worklist-only and never auto-marks
-    lexicon = _build(tmp_path, orgs=[BUND], cache=BUND_CACHE)
+    lexicon = build_lexicon_dir(tmp_path, orgs=[BUND], cache=BUND_CACHE)
     cands = em.find_candidates(_tei("<p>Der Bund berichtete darueber.</p>"), lexicon)
     assert [c["surface"] for c in cands] == ["Bund"]
     assert cands[0]["rule"] == "org-variant:qualifier-strip"
@@ -1539,11 +1490,11 @@ def test_qualifier_strip_needs_length_and_a_capital(tmp_path):
     # the head must carry the distinctiveness the org token rule asks for; the two
     # variant shapes are synthetic, the id is the listed one
     cache = {
-        "4676707-1": _cache_entry(
+        "4676707-1": gnd_cache_entry(
             "Le populaire de Paris (Zeitung)", ("Pop (Zeitung)", "populaire (Zeitung)")
         )
     }
-    lexicon = _build(tmp_path, works=[POPULAIRE], cache=cache)
+    lexicon = build_lexicon_dir(tmp_path, works=[POPULAIRE], cache=cache)
     assert "Pop" not in lexicon["forms"]
     assert "populaire" not in lexicon["forms"]
 
@@ -1555,7 +1506,7 @@ def test_a_rejected_cache_form_has_no_derived_form(tmp_path):
         {"Le populaire de Paris (Zeitung)": "approve",
          "Le populaire (Zeitung, Paris, 1916-1940)": "reject"},
     ))
-    lexicon = _build(tmp_path, works=[POPULAIRE], cache=POPULAIRE_CACHE, review=review)
+    lexicon = build_lexicon_dir(tmp_path, works=[POPULAIRE], cache=POPULAIRE_CACHE, review=review)
     assert "Le populaire" not in lexicon["forms"]
     assert "Le populaire de Paris" in lexicon["forms"]
 
@@ -1564,7 +1515,7 @@ def test_a_rejected_cache_form_has_no_derived_form(tmp_path):
 
 
 def test_place_adjective_inversion_is_a_worklist_candidate(tmp_path):
-    lexicon = _build(tmp_path, orgs=[GENEVE], cache=GENEVE_CACHE)
+    lexicon = build_lexicon_dir(tmp_path, orgs=[GENEVE], cache=GENEVE_CACHE)
     xml = _tei("<p>Sie lehrte an der Genfer Universität weiter.</p>")
     cands = em.find_candidates(xml, lexicon)
     assert [c["surface"] for c in cands] == ["Genfer Universität"]
@@ -1575,7 +1526,7 @@ def test_place_adjective_inversion_is_a_worklist_candidate(tmp_path):
 
 
 def test_place_adjective_leaves_the_listed_form_at_its_tier(tmp_path):
-    lexicon = _build(tmp_path, orgs=[GENEVE], cache=GENEVE_CACHE)
+    lexicon = build_lexicon_dir(tmp_path, orgs=[GENEVE], cache=GENEVE_CACHE)
     cands = em.find_candidates(_tei("<p>Die Universität Genf lud ein.</p>"), lexicon)
     assert cands[0]["rule"] == "org-variant"
     assert cands[0]["tier"] == 1
@@ -1585,7 +1536,7 @@ def test_place_adjective_table_stays_static(tmp_path):
     # no generative morphology: a place outside the table derives nothing, and
     # Lausanne has no German adjective at all
     assert "Lausanne" not in em.PLACE_ADJECTIVES
-    lexicon = _build(tmp_path, orgs=[_org("2024349-2", "Universität Heidelberg")])
+    lexicon = build_lexicon_dir(tmp_path, orgs=[org_record("2024349-2", "Universität Heidelberg")])
     assert not any(form.startswith("Heidelberger") for form in lexicon["forms"])
 
 
@@ -1594,7 +1545,7 @@ def test_place_adjective_table_stays_static(tmp_path):
 
 @pytest.mark.parametrize("mark", ["²", "³", "¹"])
 def test_superscript_footnote_digit_ends_the_word(tmp_path, mark):
-    lexicon = _build(tmp_path, persons=[NIETZSCHE])
+    lexicon = build_lexicon_dir(tmp_path, persons=[NIETZSCHE])
     xml = _tei(f"<p>So steht es bei Nietzsche{mark} nachzulesen.</p>")
     cands = em.find_candidates(xml, lexicon)
     assert [c["surface"] for c in cands] == ["Nietzsche"]
@@ -1604,7 +1555,7 @@ def test_superscript_footnote_digit_ends_the_word(tmp_path, mark):
 
 
 def test_superscript_marker_matches_like_a_comma(tmp_path):
-    lexicon = _build(tmp_path, persons=[NIETZSCHE])
+    lexicon = build_lexicon_dir(tmp_path, persons=[NIETZSCHE])
     with_comma = em.find_candidates(
         _tei("<p>So steht es bei Nietzsche, wie bekannt.</p>"), lexicon
     )
@@ -1618,7 +1569,7 @@ def test_superscript_marker_matches_like_a_comma(tmp_path):
 
 def test_an_ordinary_digit_still_binds_the_word(tmp_path):
     # the fix is a boundary fix for superscript markers, not a general digit rule
-    lexicon = _build(tmp_path, persons=[NIETZSCHE])
+    lexicon = build_lexicon_dir(tmp_path, persons=[NIETZSCHE])
     assert em.find_candidates(_tei("<p>Die Datei Nietzsche2 liegt bereit.</p>"), lexicon) == []
 
 
@@ -1626,7 +1577,7 @@ def test_an_ordinary_digit_still_binds_the_word(tmp_path):
 
 
 def test_person_initials_enter_the_lexicon_as_derived_forms(tmp_path):
-    lexicon = _build(tmp_path, persons=[JASPERS])
+    lexicon = build_lexicon_dir(tmp_path, persons=[JASPERS])
     assert lexicon["forms"]["K.J."] == (
         ("118557106", "person", "full-name:initials", "headword"),
     )
@@ -1636,7 +1587,7 @@ def test_person_initials_enter_the_lexicon_as_derived_forms(tmp_path):
 
 @pytest.mark.parametrize("surface", ["K.J.", "K. J."])
 def test_interview_initials_are_worklist_candidates(tmp_path, surface):
-    lexicon = _build(tmp_path, persons=[JASPERS])
+    lexicon = build_lexicon_dir(tmp_path, persons=[JASPERS])
     xml = _tei(f"<sp><speaker>{surface}</speaker><p>Ja, gewiss.</p></sp>")
     cands = em.find_candidates(xml, lexicon)
     assert [c["surface"] for c in cands] == [surface]
@@ -1647,15 +1598,15 @@ def test_interview_initials_are_worklist_candidates(tmp_path, surface):
 
 def test_initials_need_both_letters(tmp_path):
     # a mononym has no forename, so the channel produces nothing
-    lexicon = _build(tmp_path, persons=[_person("118594893", "Plato")])
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("118594893", "Plato")])
     assert all(":initials" not in owner[2]
                for owners in lexicon["forms"].values() for owner in owners)
 
 
 def test_shared_initials_produce_a_multi_owner_candidate(tmp_path):
-    lexicon = _build(tmp_path, persons=[
-        _person("118507184", "Baudelaire, Charles"),
-        _person("123159296", "Baudouin, Charles"),
+    lexicon = build_lexicon_dir(tmp_path, persons=[
+        person_record("118507184", "Baudelaire, Charles"),
+        person_record("123159296", "Baudouin, Charles"),
     ])
     cands = em.find_candidates(_tei("<p>C.B. antwortete darauf.</p>"), lexicon)
     assert cands[0]["rule"] == "full-name:initials:ambiguous"
@@ -1664,7 +1615,7 @@ def test_shared_initials_produce_a_multi_owner_candidate(tmp_path):
 
 
 def test_initials_hit_never_anchors_a_bare_surname(tmp_path):
-    lexicon = _build(tmp_path, persons=[JASPERS])
+    lexicon = build_lexicon_dir(tmp_path, persons=[JASPERS])
     xml = _tei("<p>K.J. sagte es.</p><p>Spaeter meinte Jaspers dazu nichts.</p>")
     cands = em.find_candidates(xml, lexicon)
     assert [c["rule"] for c in cands] == ["full-name:initials", "bare-surname"]
@@ -1677,10 +1628,10 @@ def test_initials_hit_never_anchors_a_bare_surname(tmp_path):
 def test_speaker_slot_never_promotes_a_derived_form(tmp_path):
     # the speaker rule is tier 1; a derived form must not reach it. "Eckhardus" comes
     # from the cache variant "Eckhardus (Magister)" and is no listed surname.
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118528823", "Eckhart, Meister")],
-        cache={"118528823": _cache_entry("Eckhart, Meister", ("Eckhardus (Magister)",))},
+        persons=[person_record("118528823", "Eckhart, Meister")],
+        cache={"118528823": gnd_cache_entry("Eckhart, Meister", ("Eckhardus (Magister)",))},
     )
     cands = em.find_candidates(_tei("<sp><speaker>Eckhardus:</speaker><p>Ja.</p></sp>"), lexicon)
     assert [c["surface"] for c in cands] == ["Eckhardus"]
@@ -1691,10 +1642,10 @@ def test_speaker_slot_never_promotes_a_derived_form(tmp_path):
 def test_a_derived_form_never_displaces_a_surname(tmp_path):
     # "Eckhart (Meister)" strips to the listed surname, which an anchor reads at
     # tier 1; the channel adds recall and must not cost that reading
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118528823", "Eckhart, Meister")],
-        cache={"118528823": _cache_entry("Eckhart, Meister", ("Eckhart (Meister)",))},
+        persons=[person_record("118528823", "Eckhart, Meister")],
+        cache={"118528823": gnd_cache_entry("Eckhart, Meister", ("Eckhart (Meister)",))},
     )
     assert lexicon["surnames"]["Eckhart"] == ("118528823",)
     assert "Eckhart" not in lexicon["forms"]
@@ -1705,7 +1656,7 @@ def test_a_derived_form_never_displaces_a_surname(tmp_path):
 
 
 def _derived_lexicon(tmp_path):
-    return _build(
+    return build_lexicon_dir(
         tmp_path,
         persons=[JASPERS, NIETZSCHE],
         orgs=[UNESCO, GENEVE, BUND],
@@ -1748,7 +1699,7 @@ def test_every_derived_candidate_is_tier2_and_span_exact(tmp_path):
 
 def test_typographic_apostrophe_in_text_matches_the_ascii_list_form(tmp_path):
     # E94 normalized the corpus to U+2019 while list and cache carry ASCII apostrophes
-    lexicon = _build(tmp_path, works=[_work("1389909646", "Le droit d'être un homme")])
+    lexicon = build_lexicon_dir(tmp_path, works=[work_record("1389909646", "Le droit d'être un homme")])
     xml = _tei("<p>Voir Le droit d\u2019être un homme, Paris 1968.</p>")
     cands = em.find_candidates(xml, lexicon)
     assert [c["surface"] for c in cands] == ["Le droit d\u2019être un homme"]
@@ -1756,8 +1707,8 @@ def test_typographic_apostrophe_in_text_matches_the_ascii_list_form(tmp_path):
 
 
 def test_typographic_apostrophe_in_a_cache_variant_matches_ascii_text(tmp_path):
-    cache = {"118647962": _cache_entry("Alembert, Jean", ("d\u2019Alembert, Jean",))}
-    lexicon = _build(tmp_path, persons=[_person("118647962", "Alembert, Jean")],
+    cache = {"118647962": gnd_cache_entry("Alembert, Jean", ("d\u2019Alembert, Jean",))}
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("118647962", "Alembert, Jean")],
                      cache=cache)
     xml = _tei("<p>Nach Jean d'Alembert bleibt dies bestehen.</p>")
     cands = em.find_candidates(xml, lexicon)
@@ -1768,8 +1719,8 @@ def test_typographic_apostrophe_in_a_cache_variant_matches_ascii_text(tmp_path):
 def test_review_verdict_keyed_with_typographic_apostrophe_still_applies(tmp_path):
     review = _review(persons=_verdicts("118647962", "Alembert, Jean",
                                        {"d\u2019Alembert, Jean": "reject"}))
-    cache = {"118647962": _cache_entry("Alembert, Jean", ("d\u2019Alembert, Jean",))}
-    lexicon = _build(tmp_path, persons=[_person("118647962", "Alembert, Jean")],
+    cache = {"118647962": gnd_cache_entry("Alembert, Jean", ("d\u2019Alembert, Jean",))}
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("118647962", "Alembert, Jean")],
                      cache=cache, review=review)
     assert "Jean d'Alembert" not in lexicon["forms"]
     assert lexicon["skipped"]["review_reject"] == 1
@@ -1784,8 +1735,8 @@ def test_review_verdict_keyed_with_typographic_apostrophe_still_applies(tmp_path
 # takes the tier its own shape earns. Operator authority reaches the verdict split of
 # the variant review, which governs the cache channel alone.
 
-COLOMBO = _person("118564994", "Colombo, Cristoforo")
-PSYCHOPATHOLOGIE = _work("4558181-2", "Allgemeine Psychopathologie", "118557106")
+COLOMBO = person_record("118564994", "Colombo, Cristoforo")
+PSYCHOPATHOLOGIE = work_record("4558181-2", "Allgemeine Psychopathologie", "118557106")
 
 
 def _curated(entry: dict, *variants: str) -> dict:
@@ -1799,7 +1750,7 @@ def test_curated_variant_is_a_declared_form_source():
 
 @pytest.mark.parametrize("text", ["Christoph Kolumbus", "Kolumbus, Christoph"])
 def test_curated_person_variant_matches_in_both_orders(tmp_path, text):
-    lexicon = _build(tmp_path, persons=[_curated(COLOMBO, "Kolumbus, Christoph")])
+    lexicon = build_lexicon_dir(tmp_path, persons=[_curated(COLOMBO, "Kolumbus, Christoph")])
     cands = em.find_candidates(_tei(f"<p>Hier spricht {text}.</p>"), lexicon)
     assert [c["surface"] for c in cands] == [text]
     assert cands[0]["gid"] == "118564994"
@@ -1810,7 +1761,7 @@ def test_curated_person_variant_matches_in_both_orders(tmp_path, text):
 
 
 def test_curated_single_token_variant_registers_the_surname(tmp_path):
-    lexicon = _build(tmp_path, persons=[_curated(COLOMBO, "Kolumbus")])
+    lexicon = build_lexicon_dir(tmp_path, persons=[_curated(COLOMBO, "Kolumbus")])
     assert lexicon["surnames"]["Kolumbus"] == ("118564994",)
     assert lexicon["surname_forms"]["Kolumbus"]["118564994"] == ("Kolumbus", "curated-variant")
     xml = _tei("<p>Cristoforo Colombo segelte los.</p><p>Danach kehrte Kolumbus zurueck.</p>")
@@ -1822,11 +1773,11 @@ def test_curated_single_token_variant_registers_the_surname(tmp_path):
 def test_curated_single_token_variant_skips_the_length_guard(tmp_path):
     # the guard filters the transliteration fragments of the cache channel; the same
     # string curated is operator authority and enters as unguarded as a headword
-    laozi = _person("118569720", "Laozi")
-    lexicon = _build(tmp_path, persons=[_curated(laozi, "Lao")])
+    laozi = person_record("118569720", "Laozi")
+    lexicon = build_lexicon_dir(tmp_path, persons=[_curated(laozi, "Lao")])
     assert lexicon["surnames"]["Lao"] == ("118569720",)
-    guarded = _build(
-        tmp_path, persons=[laozi], cache={"118569720": _cache_entry("Laozi", ("Lao",))}
+    guarded = build_lexicon_dir(
+        tmp_path, persons=[laozi], cache={"118569720": gnd_cache_entry("Laozi", ("Lao",))}
     )
     assert "Lao" not in guarded["surnames"]
 
@@ -1834,7 +1785,7 @@ def test_curated_single_token_variant_skips_the_length_guard(tmp_path):
 def test_curated_org_variant_matches_like_the_headword(tmp_path):
     # the corpus writes "l'Unesco"; the curated string lifts that spelling out of the
     # worklist-only acronym channel
-    lexicon = _build(tmp_path, orgs=[_curated(UNESCO, "Unesco")])
+    lexicon = build_lexicon_dir(tmp_path, orgs=[_curated(UNESCO, "Unesco")])
     cands = em.find_candidates(_tei("<p>Ein Bericht der l'Unesco aus Paris.</p>"), lexicon)
     assert [c["surface"] for c in cands] == ["Unesco"]
     assert cands[0]["rule"] == "org-token"
@@ -1844,9 +1795,9 @@ def test_curated_org_variant_matches_like_the_headword(tmp_path):
 
 
 def test_curated_multiword_org_variant_is_tier1(tmp_path):
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        orgs=[_curated(_org("2008287-3", "Deutscher Gewerkschaftsbund"),
+        orgs=[_curated(org_record("2008287-3", "Deutscher Gewerkschaftsbund"),
                        "Deutsche Gewerkschaften")],
     )
     cands = em.find_candidates(_tei("<p>Die Deutsche Gewerkschaften luden ein.</p>"), lexicon)
@@ -1857,7 +1808,7 @@ def test_curated_multiword_org_variant_is_tier1(tmp_path):
 
 
 def test_curated_work_variant_is_tier1(tmp_path):
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path, works=[_curated(PSYCHOPATHOLOGIE, "Psychopathologie generale")]
     )
     cands = em.find_candidates(_tei("<p>Er las Psychopathologie generale zuerst.</p>"), lexicon)
@@ -1868,7 +1819,7 @@ def test_curated_work_variant_is_tier1(tmp_path):
 
 
 def test_curated_one_word_work_variant_takes_the_short_title_path(tmp_path):
-    lexicon = _build(tmp_path, works=[_curated(PSYCHOPATHOLOGIE, "Psychopathologie")])
+    lexicon = build_lexicon_dir(tmp_path, works=[_curated(PSYCHOPATHOLOGIE, "Psychopathologie")])
     assert lexicon["forms"]["Psychopathologie"] == (
         ("4558181-2", "work", "short-title", "curated-variant"),
     )
@@ -1885,10 +1836,10 @@ def test_curated_variant_bypasses_a_reject_verdict_of_the_same_string(tmp_path):
     review = _review(persons=_verdicts("118535749", "Freud, Sigmund",
                                        {"Freud, Sigmund": "approve",
                                         "Freund, Sigmund": "reject"}))
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_curated(_person("118535749", "Freud, Sigmund"), "Freund, Sigmund")],
-        cache={"118535749": _cache_entry("Freud, Sigmund", ("Freund, Sigmund",))},
+        persons=[_curated(person_record("118535749", "Freud, Sigmund"), "Freund, Sigmund")],
+        cache={"118535749": gnd_cache_entry("Freud, Sigmund", ("Freund, Sigmund",))},
         review=review,
     )
     assert lexicon["forms"]["Sigmund Freund"][0][3] == "curated-variant"
@@ -1904,10 +1855,10 @@ def test_curated_variant_is_never_review_suspect(tmp_path):
     # stays tier 1
     review = _review(persons=_verdicts("118557106", "Jaspers, Karl",
                                        {"Jaspers, Karl": "approve"}))
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_curated(_person("118557106", "Jaspers, Karl"), "Jaspers, Karl Theodor")],
-        cache={"118557106": _cache_entry("Jaspers, Karl", ("Jaspers, Karl Theodor",))},
+        persons=[_curated(person_record("118557106", "Jaspers, Karl"), "Jaspers, Karl Theodor")],
+        cache={"118557106": gnd_cache_entry("Jaspers, Karl", ("Jaspers, Karl Theodor",))},
         review=review,
     )
     cands = em.find_candidates(_tei("<p>Karl Theodor Jaspers sprach.</p>"), lexicon)
@@ -1917,15 +1868,15 @@ def test_curated_variant_is_never_review_suspect(tmp_path):
 
 
 def test_absent_variants_field_changes_nothing(tmp_path):
-    plain = _build(tmp_path, persons=[COLOMBO])
-    empty = _build(tmp_path, persons=[_curated(COLOMBO)])
+    plain = build_lexicon_dir(tmp_path, persons=[COLOMBO])
+    empty = build_lexicon_dir(tmp_path, persons=[_curated(COLOMBO)])
     assert plain["forms"] == empty["forms"]
     assert plain["surnames"] == empty["surnames"]
 
 
 def test_malformed_variants_field_is_ignored_by_the_build(tmp_path):
     # the field is a trust boundary; entity_lint reports the defect, the build stays up
-    lexicon = _build(tmp_path, persons=[{**COLOMBO, "variants": "Kolumbus"}])
+    lexicon = build_lexicon_dir(tmp_path, persons=[{**COLOMBO, "variants": "Kolumbus"}])
     assert "Kolumbus" not in lexicon["surnames"]
     assert "Cristoforo Colombo" in lexicon["forms"]
 
@@ -1933,8 +1884,8 @@ def test_malformed_variants_field_is_ignored_by_the_build(tmp_path):
 # --- initials inside a longer dotted abbreviation ----------------------------------
 
 
-SCHMIDHEINY = _person("121587177", "Schmidheiny, Stephan")
-DUFOUR = _person("113248423", "Dufour-Kowalska, Gabrielle")
+SCHMIDHEINY = person_record("121587177", "Schmidheiny, Stephan")
+DUFOUR = person_record("113248423", "Dufour-Kowalska, Gabrielle")
 
 
 @pytest.mark.parametrize("abbreviation", ["U.R.S.S.", "U. R. S. S."])
@@ -1942,7 +1893,7 @@ def test_initials_as_the_tail_of_an_abbreviation_are_no_candidate(tmp_path, abbr
     # docs 330/1350: a dot is no word character, so the scan starts a match at the
     # third letter of the Soviet Union's abbreviation and reads it as the initials
     # "S.S." of a listed person
-    lexicon = _build(tmp_path, persons=[SCHMIDHEINY])
+    lexicon = build_lexicon_dir(tmp_path, persons=[SCHMIDHEINY])
     xml = _tei(f"<p>Die Lage in der {abbreviation} blieb offen.</p>")
     assert em.find_candidates(xml, lexicon) == []
 
@@ -1950,7 +1901,7 @@ def test_initials_as_the_tail_of_an_abbreviation_are_no_candidate(tmp_path, abbr
 def test_initials_before_a_dotted_continuation_are_no_candidate(tmp_path):
     # doc 2330: the interviewer's label "G.D.K." is three initials; reading its first
     # two as a listed person produced the document-level outlier
-    lexicon = _build(tmp_path, persons=[DUFOUR])
+    lexicon = build_lexicon_dir(tmp_path, persons=[DUFOUR])
     xml = _tei("<p>G.D.K. - Vous etes l'auteur d'une oeuvre diverse.</p>")
     assert em.find_candidates(xml, lexicon) == []
 
@@ -1959,7 +1910,7 @@ def test_initials_before_a_dotted_continuation_are_no_candidate(tmp_path):
 def test_adjacent_initials_labels_across_markup_stay_candidates(tmp_path, surface):
     # doc 1220: <speaker> label and the repeated label of its paragraph are two real
     # mentions; only the markup between them separates the two dotted groups
-    lexicon = _build(tmp_path, persons=[_person("118708422", "Hersch, Jeanne")])
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("118708422", "Hersch, Jeanne")])
     xml = _tei(f"<sp><speaker>{surface}</speaker><p>{surface}: Ja, gewiss.</p></sp>")
     cands = em.find_candidates(xml, lexicon)
     assert [c["surface"] for c in cands] == [surface, surface]
@@ -1968,7 +1919,7 @@ def test_adjacent_initials_labels_across_markup_stay_candidates(tmp_path, surfac
 
 def test_an_honorific_abbreviation_does_not_block_the_initials(tmp_path):
     # "Dr." is a word abbreviation, not an initial, so the initials behind it stay
-    lexicon = _build(tmp_path, persons=[_person("118557106", "Jaspers, Karl")])
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("118557106", "Jaspers, Karl")])
     cands = em.find_candidates(_tei("<p>Dr. K. J. sprach dazu.</p>"), lexicon)
     assert [c["surface"] for c in cands] == ["K. J."]
 
@@ -1976,14 +1927,14 @@ def test_an_honorific_abbreviation_does_not_block_the_initials(tmp_path):
 # --- hyphenated single-token surnames ----------------------------------------------
 
 
-LAOZI = _curated(_person("118569678", "Laozi"), "Lao-Tseu")
-SCHWARZ_BART = _person("119498014", "Schwarz-Bart, Andre")
+LAOZI = _curated(person_record("118569678", "Laozi"), "Lao-Tseu")
+SCHWARZ_BART = person_record("119498014", "Schwarz-Bart, Andre")
 
 
 def test_hyphenated_curated_variant_reaches_the_scan(tmp_path):
     # doc 1520: the surname index carries "Lao-Tseu", the scan reads words up to the
     # hyphen, so the key was unreachable
-    lexicon = _build(tmp_path, persons=[LAOZI])
+    lexicon = build_lexicon_dir(tmp_path, persons=[LAOZI])
     assert "Lao-Tseu" in lexicon["surnames"]
     cands = em.find_candidates(_tei("<p>Chez Lao-Tseu, la voie reste simple.</p>"), lexicon)
     assert [c["surface"] for c in cands] == ["Lao-Tseu"]
@@ -1992,7 +1943,7 @@ def test_hyphenated_curated_variant_reaches_the_scan(tmp_path):
 
 
 def test_hyphenated_headword_surname_is_anchored_as_one_span(tmp_path):
-    lexicon = _build(tmp_path, persons=[SCHWARZ_BART])
+    lexicon = build_lexicon_dir(tmp_path, persons=[SCHWARZ_BART])
     xml = _tei("<p>Andre Schwarz-Bart schrieb.</p><p>Der Roman von Schwarz-Bart erschien.</p>")
     cands = em.find_candidates(xml, lexicon)
     assert [c["surface"] for c in cands] == ["Andre Schwarz-Bart", "Schwarz-Bart"]
@@ -2003,7 +1954,7 @@ def test_hyphenated_headword_surname_is_anchored_as_one_span(tmp_path):
 def test_a_hyphen_extension_never_invents_a_surname(tmp_path):
     # "Jaspers-Kreis" is no listed surname, so the span stays on the listed part and
     # keeps the compound demotion
-    lexicon = _build(tmp_path, persons=[_person("118557106", "Jaspers, Karl")])
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("118557106", "Jaspers, Karl")])
     xml = _tei("<p>Karl Jaspers schrieb.</p><p>Der Jaspers-Kreis tagte.</p>")
     cands = em.find_candidates(xml, lexicon)
     assert [c["surface"] for c in cands] == ["Karl Jaspers", "Jaspers"]
@@ -2038,7 +1989,7 @@ def _policy(tmp_path, anchor_free=(), held_out=(), drop=(), corroborate=(), extr
 
 
 def _marcel_released(tmp_path, **kwargs):
-    return _build(tmp_path, persons=PERSONS, works=WORKS,
+    return build_lexicon_dir(tmp_path, persons=PERSONS, works=WORKS,
                   policy=_policy(tmp_path, anchor_free=[("118577190", ["Marcel"])]),
                   **kwargs)
 
@@ -2055,7 +2006,7 @@ def test_policy_reaches_the_lexicon(tmp_path):
 def test_policy_with_an_unknown_gid_fails_fast(tmp_path):
     path = _policy(tmp_path, anchor_free=[("999999999", ["Nobody"])])
     with pytest.raises(ValueError, match="999999999"):
-        _build(tmp_path, persons=PERSONS, policy=path)
+        build_lexicon_dir(tmp_path, persons=PERSONS, policy=path)
 
 
 def test_policy_with_a_malformed_entry_fails_fast(tmp_path):
@@ -2065,23 +2016,23 @@ def test_policy_with_a_malformed_entry_fails_fast(tmp_path):
         encoding="utf-8",
     )
     with pytest.raises(ValueError, match="keys"):
-        _build(tmp_path, persons=PERSONS, policy=path)
+        build_lexicon_dir(tmp_path, persons=PERSONS, policy=path)
 
 
 def test_policy_with_a_gid_in_two_buckets_fails_fast(tmp_path):
     path = _policy(tmp_path, anchor_free=[("118594893", ["Platon"])], held_out=["118594893"])
     with pytest.raises(ValueError, match="118594893"):
-        _build(tmp_path, persons=PERSONS, policy=path)
+        build_lexicon_dir(tmp_path, persons=PERSONS, policy=path)
 
 
 def test_policy_with_an_unknown_bucket_fails_fast(tmp_path):
     path = _policy(tmp_path, extra={"anchor_free_surname": []})
     with pytest.raises(ValueError, match="anchor_free_surname"):
-        _build(tmp_path, persons=PERSONS, policy=path)
+        build_lexicon_dir(tmp_path, persons=PERSONS, policy=path)
 
 
 def test_held_out_surname_is_validated_and_releases_nothing(tmp_path):
-    lexicon = _build(tmp_path, persons=PERSONS,
+    lexicon = build_lexicon_dir(tmp_path, persons=PERSONS,
                      policy=_policy(tmp_path, held_out=["118594893"]))
     assert lexicon["policy"]["held_out"] == frozenset({"118594893"})
     cands = em.find_candidates(_tei("<p>Schon Platon wusste es.</p>"), lexicon)
@@ -2117,9 +2068,9 @@ def test_document_anchor_outranks_the_release(tmp_path):
 def test_release_covers_only_the_listed_keys(tmp_path):
     # a second surname key of the same entity stays unreleased, and the released hit
     # is no document anchor for it
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_curated(_person("118577190", "Marcel, Gabriel"), "Marcellus")],
+        persons=[_curated(person_record("118577190", "Marcel, Gabriel"), "Marcellus")],
         policy=_policy(tmp_path, anchor_free=[("118577190", ["Marcel"])]),
     )
     assert "Marcellus" in lexicon["surnames"]
@@ -2169,7 +2120,7 @@ def test_released_surname_keeps_the_running_head_demotion(tmp_path):
 
 
 def test_dropped_work_title_produces_no_candidate(tmp_path):
-    lexicon = _build(tmp_path, persons=PERSONS, works=WORKS,
+    lexicon = build_lexicon_dir(tmp_path, persons=PERSONS, works=WORKS,
                      policy=_policy(tmp_path, drop=["4006406-2"]))
     assert "Bibel" not in lexicon["forms"]
     assert "4006406-2" in lexicon["entries"]
@@ -2179,10 +2130,10 @@ def test_dropped_work_title_produces_no_candidate(tmp_path):
 
 
 def test_dropping_a_work_leaves_the_other_bearer_of_its_surface(tmp_path):
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118587943", "Nietzsche, Friedrich")],
-        works=[_work("1078795312", "Nietzsche")],
+        persons=[person_record("118587943", "Nietzsche, Friedrich")],
+        works=[work_record("1078795312", "Nietzsche")],
         policy=_policy(tmp_path, drop=["1078795312"]),
     )
     cands = em.find_candidates(_tei("<p>Bei Nietzsche steht es anders.</p>"), lexicon)
@@ -2192,7 +2143,7 @@ def test_dropping_a_work_leaves_the_other_bearer_of_its_surface(tmp_path):
 
 
 def test_corroboration_drops_a_one_word_title_without_typography(tmp_path):
-    lexicon = _build(tmp_path, persons=PERSONS, works=WORKS,
+    lexicon = build_lexicon_dir(tmp_path, persons=PERSONS, works=WORKS,
                      policy=_policy(tmp_path, corroborate=["4006406-2"]))
     assert em.find_candidates(_tei("<p>In der Bibel steht es.</p>"), lexicon) == []
 
@@ -2203,7 +2154,7 @@ def test_corroboration_drops_a_one_word_title_without_typography(tmp_path):
     "<p>Er las seine Bibel laut.</p>",
 ])
 def test_corroboration_keeps_a_typographically_framed_one_word_title(tmp_path, body):
-    lexicon = _build(tmp_path, persons=PERSONS, works=WORKS,
+    lexicon = build_lexicon_dir(tmp_path, persons=PERSONS, works=WORKS,
                      policy=_policy(tmp_path, corroborate=["4006406-2"]))
     cands = em.find_candidates(_tei(body), lexicon)
     assert [(c["surface"], c["rule"], c["evidence"]) for c in cands] == [
@@ -2212,7 +2163,7 @@ def test_corroboration_keeps_a_typographically_framed_one_word_title(tmp_path, b
 
 
 def test_corroboration_binds_the_multi_word_title_of_the_same_entry(tmp_path):
-    lexicon = _build(tmp_path, persons=PERSONS, works=WORKS,
+    lexicon = build_lexicon_dir(tmp_path, persons=PERSONS, works=WORKS,
                      policy=_policy(tmp_path, corroborate=["4558181-2"]))
     plain = _tei("<p>Er las Allgemeine Psychopathologie erneut.</p>")
     assert em.find_candidates(plain, lexicon) == []
@@ -2224,7 +2175,7 @@ def test_corroboration_binds_the_multi_word_title_of_the_same_entry(tmp_path):
 
 
 def test_a_work_outside_the_policy_keeps_its_candidates(tmp_path):
-    lexicon = _build(tmp_path, persons=PERSONS, works=WORKS,
+    lexicon = build_lexicon_dir(tmp_path, persons=PERSONS, works=WORKS,
                      policy=_policy(tmp_path, corroborate=["4006406-2"]))
     cands = em.find_candidates(_tei("<p>Er las Allgemeine Psychopathologie erneut.</p>"),
                                lexicon)

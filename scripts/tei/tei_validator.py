@@ -15,13 +15,11 @@ Aufruf (Default-Verzeichnis ist die ausgelieferte SoT tei_final, --dir ueberschr
 import argparse
 import json
 import re
-import sys
 import time
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from scripts.config import (
     REFERENCE_TEI_DIR,
     TEI_FINAL_DIR,

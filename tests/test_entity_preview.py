@@ -25,7 +25,7 @@ from scripts.entity.tei_entity_preview import (
     apply_candidates,
     build_report,
     check_text_invariance,
-    discover_doc_ids,
+    discover_final_doc_ids,
     insert_resp_stmts,
     mark_attributes,
     matcher_fingerprint,
@@ -36,6 +36,7 @@ from scripts.entity.tei_entity_preview import (
     validate_rng,
     verified_spans,
 )
+from tests.conftest import delivery_doc
 
 # --- fixtures ---------------------------------------------------------------
 
@@ -96,32 +97,11 @@ _MINI_LB_LEAD = (
 
 # Minimal delivery-shaped TEI (same header contract as tests/test_tei_schema.py),
 # with the mentions still unmarked. Wrapping must leave it schema-valid.
-_VALID_DOC = """<?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt><title type="main">Test</title><author>Hersch, Jeanne</author></titleStmt>
-      <publicationStmt><publisher>ZBZ / DHCraft</publisher><idno type="docID">9999</idno></publicationStmt>
-      <sourceDesc>
-        <biblStruct type="journalArticle">
-          <analytic><title>Test</title><author>Hersch, Jeanne</author></analytic>
-          <monogr><title>Zeitschrift</title><imprint><date>1975</date></imprint></monogr>
-        </biblStruct>
-      </sourceDesc>
-    </fileDesc>
-    <profileDesc><langUsage><language ident="fra"/></langUsage></profileDesc>
-    <revisionDesc><change when="2026-08-12" who="pipeline">init</change></revisionDesc>
-  </teiHeader>
-  <text type="naegeli">
-    <body>
-      <div type="text">
-        <pb facs="#facs_1" n="1"/>
-        <p>Karl Jaspers lehrte an der Universitaet Basel.</p>
-      </div>
-    </body>
-  </text>
-</TEI>
-"""
+_VALID_DOC = delivery_doc(
+    '<div type="text"><pb facs="#facs_1" n="1"/>'
+    "<p>Karl Jaspers lehrte an der Universitaet Basel.</p></div>",
+    text_attrs='type="naegeli"',
+)
 
 
 _VALID_DOC_HI = _VALID_DOC.replace(
@@ -410,13 +390,13 @@ def test_panel_is_the_ten_pilot_documents():
 def test_discover_doc_ids_orders_numerically_and_skips_non_final_files(tmp_path):
     for name in ("100_final.xml", "20_final.xml", "1000_final.xml", "20_manifest.json"):
         (tmp_path / name).write_text("x", encoding="utf-8")
-    assert discover_doc_ids(tmp_path) == ["20", "100", "1000"]
+    assert discover_final_doc_ids(tmp_path) == ["20", "100", "1000"]
 
 
 def test_discover_doc_ids_puts_non_numeric_ids_after_the_numeric_ones(tmp_path):
     for name in ("100_final.xml", "20_final.xml", "beilage_final.xml", "anhang_final.xml"):
         (tmp_path / name).write_text("x", encoding="utf-8")
-    assert discover_doc_ids(tmp_path) == ["20", "100", "anhang", "beilage"]
+    assert discover_final_doc_ids(tmp_path) == ["20", "100", "anhang", "beilage"]
 
 
 # --- byte fidelity and round trips -------------------------------------------

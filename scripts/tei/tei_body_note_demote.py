@@ -42,6 +42,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from scripts.config import OUTPUT_DIR, TEI_FINAL_DIR, TEI_SCHEMA_PATH
+from scripts.eval.audit_common import ascii_only
 from scripts.tei.marker_common import backup_and_write
 
 FINAL_DIR = TEI_FINAL_DIR
@@ -88,10 +89,6 @@ def facs_page(ref: str | None) -> int | None:
 
 def is_footnote_id(value: str) -> bool:
     return bool(_FN_ID_RE.match(value or ""))
-
-
-def _ascii(s: str) -> str:
-    return (s or "").encode("ascii", "replace").decode("ascii")
 
 
 @dataclass(frozen=True)
@@ -416,7 +413,7 @@ def main():
             pr = n.get("promotion")
             if pr:
                 if pr.get("matched"):
-                    line += f"  [+note: {_ascii(pr['para_start'][:40])}]"
+                    line += f"  [+note: {ascii_only(pr['para_start'][:40])}]"
                 else:
                     line += f"  [no-promo: {pr.get('reason', '')}]"
             print(line)
@@ -437,7 +434,7 @@ def main():
     if promotions:
         print("  Promotions-Kandidaten (doc, seite, Absatzanfang):")
         for doc, pg, start in promotions:
-            print(f"    {doc} S{pg}: {_ascii(start)}")
+            print(f"    {doc} S{pg}: {ascii_only(start)}")
     if errors:
         print(f"FEHLER in {len(errors)} Docs: {[e[0] for e in errors]}")
 

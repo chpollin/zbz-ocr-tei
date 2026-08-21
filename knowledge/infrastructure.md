@@ -115,8 +115,8 @@ ocr:
 FROM python:3.11-slim
 
 WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY pyproject.toml .
+RUN python -c "import tomllib; print(chr(10).join(tomllib.load(open('pyproject.toml','rb'))['project']['dependencies']))" > requirements.txt     && pip install --no-cache-dir -r requirements.txt
 
 COPY scripts/ scripts/
 
@@ -135,10 +135,18 @@ Not yet implemented.
 
 ### Active: GitHub Actions (development repo)
 
-`.github/workflows/tests.yml` (since 2026-06-10) runs the full pytest suite on every push/PR
-(Python 3.11, `pip install -r requirements.txt`). Data-dependent tests (`output/`,
-`data/source/`) skip themselves on the fresh checkout; this covers the schema compilation,
-the statistics library, helpers, and script health.
+`.github/workflows/tests.yml` (since 2026-06-10) runs two gates on every push/PR under
+Python 3.11: `ruff check scripts tests` and the full pytest suite. Data-dependent tests
+(`output/`, `data/source/`) skip themselves on the fresh checkout; this covers the schema
+compilation, the statistics library, helpers, and script health.
+
+`pyproject.toml` is the only manifest since 2026-08-21; `requirements.txt` is gone. The repo
+declares no build backend, because it is a dependency set and script pipeline rather than an
+installable package, so the workflow materializes the dependency list from
+`[project] dependencies` plus the `dev` extra and installs it with pip. The `dev` extra pins
+ruff to one version, which the local `.pre-commit-config.yaml` hook reuses, so hook and CI
+report the same findings. The heavy layout engines (torch, Docling) are the separate
+optional extra `layout` and are not installed in CI.
 
 ### Planned: GitLab CI (University of Zurich, E10)
 
@@ -180,10 +188,10 @@ python -m venv .venv
 source .venv/bin/activate  # Linux/Mac
 # .venv\Scripts\activate   # Windows
 
-pip install -r requirements.txt
+uv sync --extra dev   # pip fallback: see README, Getting started
 
 # GPU check (optional)
-python scripts/ocr/ocr_pipeline.py --check-gpu
+python -m scripts.ocr.ocr_pipeline --check-gpu
 ```
 
 ---

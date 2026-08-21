@@ -3,13 +3,11 @@
 import xml.etree.ElementTree as ET
 
 from scripts.eval.relation_integrity_audit import audit_root
-
-TEI_NS = "http://www.tei-c.org/ns/1.0"
+from tests.conftest import tei_doc
 
 
 def _root(body_inner: str):
-    xml = f'<TEI xmlns="{TEI_NS}"><teiHeader/><text><body>{body_inner}</body></text></TEI>'
-    return ET.fromstring(xml)
+    return ET.fromstring(tei_doc(body_inner, header="<teiHeader/>"))
 
 
 def test_note_links_reciprocal_ok():

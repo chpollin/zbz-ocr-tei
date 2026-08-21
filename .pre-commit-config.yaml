@@ -1,0 +1,14 @@
+# Local ruff hook, pinned to the version of the dev dependency group in pyproject.toml
+# and of the CI gate, so hook and CI report the same findings. Formatting is not part
+# of the hook: the tree has never been ruff-format-clean and reformatting it would bury
+# real diffs. Tests run in CI, not on commit.
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: ruff check --force-exclude
+        language: python
+        additional_dependencies: ["ruff==0.16.2"]
+        types_or: [python, pyi]
+        require_serial: true

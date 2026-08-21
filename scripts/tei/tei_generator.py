@@ -14,12 +14,9 @@ Aufruf:
 import argparse
 import json
 import re
-import sys
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
 
-# Projekt-Imports
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from scripts.config import (
     DOC_METADATA_PATH,
     LAYOUT_DIR,
@@ -30,6 +27,7 @@ from scripts.core.loaders import (
     discover_documents,
     discover_pages,
     load_ocr_text,
+    split_paragraphs,
 )
 from scripts.core.tei_xml_utils import reading_order_permutation
 from scripts.utils import page_layout_name
@@ -109,12 +107,6 @@ def load_layout(doc_id: str, page: int) -> dict | None:
 # ---------------------------------------------------------------------------
 # OCR-Absaetze extrahieren
 # ---------------------------------------------------------------------------
-
-def split_paragraphs(ocr_text: str) -> list[str]:
-    """Teilt OCR-Markdown in Absaetze (getrennt durch Leerzeilen)."""
-    blocks = re.split(r'\n\s*\n', ocr_text.strip())
-    return [b.strip() for b in blocks if b.strip()]
-
 
 # ---------------------------------------------------------------------------
 # Absatz-Layout-Matching

@@ -1,8 +1,7 @@
 """Tests fuer den Zeichen-Lint (scripts.eval.char_lint_audit)."""
 
 from scripts.eval.char_lint_audit import find_issues, lint_text_nodes
-
-TEI_NS = "http://www.tei-c.org/ns/1.0"
+from tests.conftest import tei_doc, tei_header
 
 
 def _tei(body_inner: str, lang_ident: str | None = None) -> str:
@@ -11,15 +10,9 @@ def _tei(body_inner: str, lang_ident: str | None = None) -> str:
         if lang_ident
         else ""
     )
-    return (
-        f'<TEI xmlns="{TEI_NS}">'
-        "<teiHeader><fileDesc><titleStmt>"
-        # header carries all four signals; must NOT be counted
-        "<title>d'Alembert «quote» mot ! text¬</title>"
-        "</titleStmt></fileDesc>"
-        f"{lang_block}</teiHeader>"
-        f"<text><body>{body_inner}</body></text></TEI>"
-    )
+    # the header title carries all four signals; they must NOT be counted
+    header = tei_header("d'Alembert «quote» mot ! text¬", extra=lang_block)
+    return tei_doc(body_inner, header=header)
 
 
 def test_straight_apostrophe_between_letters():
@@ -141,12 +134,10 @@ def test_language_detected_from_langusage_german():
 
 def test_multilingual_document_with_french_counts_as_french():
     # a doc listing several languages including French is treated as French context
-    tei = (
-        f'<TEI xmlns="{TEI_NS}"><teiHeader><profileDesc><langUsage>'
-        '<language ident="deu" /><language ident="fra" />'
-        "</langUsage></profileDesc></teiHeader>"
-        "<text><body><p>mot : suite</p></body></text></TEI>"
-    )
+    header = ("<teiHeader><profileDesc><langUsage>"
+              '<language ident="deu" /><language ident="fra" />'
+              "</langUsage></profileDesc></teiHeader>")
+    tei = tei_doc("<p>mot : suite</p>", header=header)
     res = find_issues(tei)
     assert res["space_type"]["count"] == 1
 

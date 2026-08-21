@@ -292,6 +292,7 @@ def _require(doc_id):
     return path
 
 
+@pytest.mark.requires_corpus
 def test_dry_run_writes_nothing():
     path = _require("30")
     before = path.read_bytes()
@@ -307,6 +308,7 @@ def _final_text(doc_id):
     return (TEI_FINAL_DIR / f"{doc_id}_final.xml").read_text(encoding="utf-8")
 
 
+@pytest.mark.requires_corpus
 def test_570_footer_interpolation_fallback():
     _require("570")
     text = _final_text("570")
@@ -317,6 +319,7 @@ def test_570_footer_interpolation_fallback():
     assert r["changes"] == []
 
 
+@pytest.mark.requires_corpus
 def test_110_offset_two():
     _require("110")
     # Offset 2: Scanseite 5 traegt Druckseite [3]
@@ -325,6 +328,7 @@ def test_110_offset_two():
     assert r["changes"] == []
 
 
+@pytest.mark.requires_corpus
 def test_2330_printed_seven_on_scan_eleven():
     _require("2330")
     assert 'n="[7]"' in _final_text("2330")  # Druckseite 7 auf Scanseite 11
@@ -332,6 +336,7 @@ def test_2330_printed_seven_on_scan_eleven():
     assert r["changes"] == []
 
 
+@pytest.mark.requires_corpus
 def test_30_printed_folio_bracketed_not_recomputed():
     _require("30")
     r = process_doc("30", dry_run=True, strip_echo=True)

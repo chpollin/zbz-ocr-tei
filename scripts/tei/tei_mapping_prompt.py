@@ -9,10 +9,6 @@ Quellen: data/source/guidelines/Editionsrichtlinien_ZBZ.md (verbindlich)
          + knowledge/pipeline.md, Abschnitt "TEI-Mapping" (ZBZ Hersch Schema)
 """
 
-import sys
-from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 
 # ---------------------------------------------------------------------------

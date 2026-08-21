@@ -3,11 +3,14 @@
 Each audit reads output/tei_final/{doc}_final.xml (the delivered TEI source of truth),
 stays read-only w.r.t. those files, and writes a JSON report into output/audits/. This
 module holds only what several audits share literally: the audit output directory, TEI
-discovery + doc-id derivation, a tolerant parse, the report writer, and the --dir CLI.
+discovery + doc-id derivation, a tolerant parse, the report writer, the --dir CLI, and the
+small console/report helpers the entity and eval diagnoses repeat (ASCII folding for the
+Windows console, doc-id argument parsing, the facsimile path, deterministic count views).
 """
 import argparse
 import json
 import xml.etree.ElementTree as ET
+from collections import Counter
 from pathlib import Path
 
 from scripts.config import OUTPUT_DIR, TEI_FINAL_DIR
@@ -49,3 +52,23 @@ def resolve_tei_dir(description: str) -> Path:
     parser.add_argument("--dir", help="Alternatives TEI-Verzeichnis (Default tei_final)")
     args = parser.parse_args()
     return Path(args.dir) if args.dir else TEI_FINAL_DIR
+
+
+def ascii_only(value) -> str:
+    """Fold to ASCII for the Windows console (the JSON reports keep full Unicode)."""
+    return str(value).encode("ascii", "replace").decode("ascii")
+
+
+def parse_doc_ids(values: list[str]) -> list[str]:
+    """Accept both comma-separated and space-separated document ids."""
+    return [d.strip() for value in values for d in value.split(",") if d.strip()]
+
+
+def facsimile_path(doc_id: str, page: int) -> str:
+    """Repo-relative page image of a document page, so a finding can be looked at."""
+    return f"docs/images/{doc_id}/{doc_id}_p{page:03d}.png"
+
+
+def sorted_counts(counter: Counter) -> dict:
+    """Counts as a plain dict, most frequent first, ties by key (deterministic output)."""
+    return dict(sorted(counter.items(), key=lambda kv: (-kv[1], kv[0])))

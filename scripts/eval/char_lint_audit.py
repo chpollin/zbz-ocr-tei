@@ -30,6 +30,7 @@ import xml.etree.ElementTree as ET
 
 from scripts.config import TEI_NS
 from scripts.eval.audit_common import (
+    ascii_only,
     iter_final_tei,
     parse_tei,
     resolve_tei_dir,
@@ -94,11 +95,6 @@ def _classify_space(spaces: str, punct: str, french_context: bool):
     if punct == "»":
         return None
     return "space_before_punct"
-
-
-def _ascii(s: str) -> str:
-    """Fold to ASCII for the Windows console (JSON report keeps full Unicode)."""
-    return s.encode("ascii", "replace").decode("ascii")
 
 
 def _snippet(text: str, start: int, end: int, pad: int = 15) -> str:
@@ -242,7 +238,7 @@ def _print_summary(summary):
             print(f"\n  Top {cat} (doc: Vorkommen):")
             for d, c in top:
                 ex = docs[d][cat]["examples"][:1]
-                extra = f"  z.B. {_ascii(repr(ex[0]))}" if ex else ""
+                extra = f"  z.B. {ascii_only(repr(ex[0]))}" if ex else ""
                 print(f"    {d}: {c}{extra}")
 
 

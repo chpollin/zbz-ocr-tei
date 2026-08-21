@@ -150,6 +150,7 @@ def test_iter_gids_keeps_a_non_string_gid_visible():
 # --- the curated list ----------------------------------------------------
 
 
+@pytest.mark.requires_mirror
 def test_allowed_gids_cover_all_three_categories():
     """Pins the field name: a renamed GND_id would empty the set and flag everything."""
     data = json.loads(ENTITIES.read_text(encoding="utf-8")) if ENTITIES.exists() else {}
@@ -163,6 +164,7 @@ def test_allowed_gids_cover_all_three_categories():
 # --- the mirror ----------------------------------------------------------
 
 
+@pytest.mark.requires_mirror
 def test_preview_refs_point_into_the_curated_list():
     allowed = _allowed_gids()
     violations: list[tuple[Path, object, str]] = []
@@ -183,6 +185,7 @@ def test_preview_refs_point_into_the_curated_list():
     assert not violations, _message("preview ref value(s)", violations)
 
 
+@pytest.mark.requires_mirror
 def test_worklist_gids_point_into_the_curated_list():
     """Covers the tier-2 gid and every id of its alternatives set."""
     allowed = _allowed_gids()
@@ -200,6 +203,7 @@ def test_worklist_gids_point_into_the_curated_list():
     assert not violations, _message("worklist gid value(s)", violations)
 
 
+@pytest.mark.requires_mirror
 def test_overview_gids_point_into_the_curated_list():
     """Covers the entity section keys and every per-document gid of the overview."""
     overview_path = REPO / "docs" / "data" / "entity_overview.json"

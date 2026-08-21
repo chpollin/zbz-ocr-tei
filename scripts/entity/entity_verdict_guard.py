@@ -42,6 +42,7 @@ from pathlib import Path
 
 from scripts.config import DATA_DIR, PROJECT_ROOT, TEI_FINAL_DIR
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
+from scripts.utils import read_json_strict
 
 VERDICTS_PATH = DATA_DIR / "entities" / "mention_verdicts.json"
 SCAN_PATH = AUDIT_OUTPUT_DIR / "entity_corpus_scan.json"
@@ -50,10 +51,6 @@ OUT_PATH = AUDIT_OUTPUT_DIR / "verdict_guard_report.json"
 WRONG_VERDICTS = frozenset({"wrong_span", "wrong_entity", "not_in_source"})
 MARK_VIOLATIONS = frozenset({"missing", "still_tier1"})
 RECALL_VIOLATIONS = frozenset({"lost"})
-
-
-def _read_json(path: Path):
-    return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
 def _repo_path(path: Path) -> str:
@@ -222,8 +219,8 @@ def main() -> int:
             print(f"FEHLER missing input: {_repo_path(path)}", file=sys.stderr)
             return 2
 
-    store = _read_json(args.verdicts)
-    scan = _read_json(args.scan)
+    store = read_json_strict(args.verdicts)
+    scan = read_json_strict(args.scan)
     candidates = scan["candidates"]
     docs = {m["doc"] for m in store["marks"]}
     digests = text_digests(docs, args.tei_dir)

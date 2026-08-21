@@ -12,11 +12,10 @@ defect by silencing the correct mention as well is no fix.
 
 from __future__ import annotations
 
-import json
-
 import pytest
 
 from scripts.entity import entity_matcher as em
+from tests.conftest import build_lexicon_dir, gnd_cache_entry, org_record, person_record
 
 TEI_HEAD = (
     '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -30,48 +29,6 @@ def _tei(body: str) -> str:
     return TEI_HEAD + f"<text><body>{body}</body></text>\n</TEI>\n"
 
 
-def _person(gid: str, name: str) -> dict:
-    return {"GND_id": gid, "name": name, "listBibl": [], "editor_reviewed": False}
-
-
-def _org(gid: str, org_name: str) -> dict:
-    return {"GND_id": gid, "orgName": org_name, "listBibl": [], "editor_reviewed": False}
-
-
-def _cache_entry(preferred: str, variants: tuple[str, ...] = ()) -> dict:
-    return {
-        "http_status": 200,
-        "preferred_name": preferred,
-        "variant_names": list(variants),
-        "types": ["Person"],
-        "date_of_birth": None,
-        "date_of_death": None,
-        "wikidata": None,
-    }
-
-
-def _build(tmp_path, persons=(), orgs=(), works=(), cache=None, legacy=None):
-    entities_path = tmp_path / "all_entities.json"
-    entities_path.write_text(
-        json.dumps(
-            {"persons": list(persons), "organisations": list(orgs), "works": list(works)},
-            ensure_ascii=False,
-        ),
-        encoding="utf-8",
-    )
-    cache_path = tmp_path / "gnd_cache.json"
-    if cache is not None:
-        cache_path.write_text(
-            json.dumps({"retrieved": "2026-08-12", "entries": cache}, ensure_ascii=False),
-            encoding="utf-8",
-        )
-    legacy_path = None
-    if legacy is not None:
-        legacy_path = tmp_path / "gnd_entities.json"
-        legacy_path.write_text(json.dumps(legacy, ensure_ascii=False), encoding="utf-8")
-    return em.build_lexicon(entities_path, cache_path, legacy_path)
-
-
 def _by_surface(cands: list[dict]) -> dict[str, dict]:
     return {c["surface"]: c for c in cands}
 
@@ -81,10 +38,10 @@ def _by_surface(cands: list[dict]) -> dict[str, dict]:
 
 @pytest.fixture
 def weil_lexicon(tmp_path):
-    return _build(
+    return build_lexicon_dir(
         tmp_path,
-        persons=[_person("118630148", "Weil, Simone")],
-        cache={"118630148": _cache_entry("Weil, Simone", ("Weill, Simone",))},
+        persons=[person_record("118630148", "Weil, Simone")],
+        cache={"118630148": gnd_cache_entry("Weil, Simone", ("Weill, Simone",))},
     )
 
 
@@ -112,10 +69,10 @@ def test_the_full_name_of_the_same_document_stays_tier1(weil_lexicon):
 
 
 def test_forename_collision_is_tier2(tmp_path):
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118622110", "Thomas, von Aquin, Heiliger")],
-        cache={"118622110": _cache_entry("Thomas, von Aquin, Heiliger", ("Thomas, von Aquin",))},
+        persons=[person_record("118622110", "Thomas, von Aquin, Heiliger")],
+        cache={"118622110": gnd_cache_entry("Thomas, von Aquin, Heiliger", ("Thomas, von Aquin",))},
     )
     xml = _tei(
         "<p>Bei Thomas, von Aquin, heisst es anders.</p>"
@@ -132,10 +89,10 @@ def test_forename_collision_is_tier2(tmp_path):
 
 
 def test_hyphen_compound_is_tier2(tmp_path):
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
-        persons=[_person("118506803", "Barth, Karl")],
-        cache={"118506803": _cache_entry("Barth, Karl", ("Bart, Karl", "Barth"))},
+        persons=[person_record("118506803", "Barth, Karl")],
+        cache={"118506803": gnd_cache_entry("Barth, Karl", ("Bart, Karl", "Barth"))},
     )
     xml = _tei("<p>Karl Barth predigte.</p><p>Der Roman von Schwarz-Bart erschien.</p>")
     cands = em.find_candidates(xml, lexicon)
@@ -149,10 +106,10 @@ def test_hyphen_compound_is_tier2(tmp_path):
 
 @pytest.fixture
 def jaspers_lexicon(tmp_path):
-    return _build(
+    return build_lexicon_dir(
         tmp_path,
-        persons=[_person("118557106", "Jaspers, Karl")],
-        cache={"118557106": _cache_entry("Jaspers, Karl", ("Jaspers, Carl",))},
+        persons=[person_record("118557106", "Jaspers, Karl")],
+        cache={"118557106": gnd_cache_entry("Jaspers, Karl", ("Jaspers, Carl",))},
         legacy={"persons": {"118557106": {"names": ["Jérémie", "Jaspers"]}}},
     )
 
@@ -177,7 +134,7 @@ def test_the_plain_anchored_surname_stays_tier1(jaspers_lexicon):
 
 
 def test_caps_full_name_in_a_title_is_tier1(tmp_path):
-    lexicon = _build(tmp_path, persons=[_person("118557106", "Jaspers, Karl")])
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("118557106", "Jaspers, Karl")])
     xml = _tei("<head>UNE PHILOSOPHIE DE L'EXISTENCE: KARL JASPERS</head>")
     cands = em.find_candidates(xml, lexicon)
     assert [c["surface"] for c in cands] == ["KARL JASPERS"]
@@ -189,7 +146,7 @@ def test_caps_full_name_in_a_title_is_tier1(tmp_path):
 def test_caps_byline_of_the_document_author_is_marked(tmp_path):
     # the author is marked like every other listed entity (operator decision E108);
     # running heads are held back by the zone suppression, not by an author exception
-    lexicon = _build(tmp_path, persons=[_person("118815679", "Hersch, Jeanne")])
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("118815679", "Hersch, Jeanne")])
     xml = _tei("<p>JEANNE HERSCH</p>")
     cands = em.find_candidates(xml, lexicon)
     assert [c["rule"] for c in cands] == ["caps-full-name"]
@@ -211,7 +168,7 @@ COVER_DOC = _tei(
 
 
 def test_cover_sheet_mention_is_no_candidate(tmp_path):
-    lexicon = _build(tmp_path, orgs=[_org("2021817-5", "Schweizerischer Lehrerverein")])
+    lexicon = build_lexicon_dir(tmp_path, orgs=[org_record("2021817-5", "Schweizerischer Lehrerverein")])
     cands = em.find_candidates(COVER_DOC, lexicon)
     assert len(cands) == 1
     assert cands[0]["start"] > COVER_DOC.index('<pb n="2"/>')
@@ -225,11 +182,11 @@ def test_cover_sheet_mention_is_no_candidate(tmp_path):
 def test_case_divergent_work_title_is_a_candidate(tmp_path):
     # the GND cache carries "La foi philosophique", doc 2330 sets "La Foi philosophique";
     # the mention used to be lost on the capital F alone
-    lexicon = _build(
+    lexicon = build_lexicon_dir(
         tmp_path,
         works=[{"GND_id": "1088013937", "title": "Der philosophische Glaube",
                 "author_gnd_id": "118557106", "listBibl": []}],
-        cache={"1088013937": _cache_entry("Der philosophische Glaube",
+        cache={"1088013937": gnd_cache_entry("Der philosophische Glaube",
                                           ("La foi philosophique",))},
     )
     xml = _tei(
@@ -247,7 +204,7 @@ def test_case_divergent_work_title_is_a_candidate(tmp_path):
 def test_case_tolerance_leaves_the_all_caps_person_regime_alone(tmp_path):
     # the caps channel keeps its own rule; the case-tolerant channel must not take
     # an all-caps person name away from it
-    lexicon = _build(tmp_path, persons=[_person("118815679", "Hersch, Jeanne")])
+    lexicon = build_lexicon_dir(tmp_path, persons=[person_record("118815679", "Hersch, Jeanne")])
     xml = _tei("<p>JEANNE HERSCH</p>")
     assert [c["rule"] for c in em.find_candidates(xml, lexicon)] == ["caps-full-name"]
 
@@ -256,19 +213,19 @@ def test_case_tolerance_leaves_the_all_caps_person_regime_alone(tmp_path):
 
 # ids from data/entities/all_entities.json; the GND variants from its cache
 JASPERS_SPOUSES = [
-    _person("118557106", "Jaspers, Karl"),
-    _person("117085391", "Jaspers, Gertrud"),
+    person_record("118557106", "Jaspers, Karl"),
+    person_record("117085391", "Jaspers, Gertrud"),
 ]
 SPOUSE_CACHE = {
-    "118557106": _cache_entry("Jaspers, Karl", ("Jaspers, Carl",)),
-    "117085391": _cache_entry("Jaspers, Gertrud",
+    "118557106": gnd_cache_entry("Jaspers, Karl", ("Jaspers, Carl",)),
+    "117085391": gnd_cache_entry("Jaspers, Gertrud",
                               ("Jaspers-Mayer, Gertrud", "Mayer, Gertrud")),
 }
 
 
 @pytest.fixture
 def spouse_lexicon(tmp_path):
-    return _build(tmp_path, persons=JASPERS_SPOUSES, cache=SPOUSE_CACHE)
+    return build_lexicon_dir(tmp_path, persons=JASPERS_SPOUSES, cache=SPOUSE_CACHE)
 
 
 def test_bare_surname_names_both_spouses(spouse_lexicon):
@@ -296,8 +253,8 @@ def test_full_name_of_one_spouse_stays_unambiguous(spouse_lexicon):
 def mayer_lexicon(tmp_path):
     # "Bauer, Hans" puts a listed form under the first word "Hans", which used to
     # silence the neighbour signal all by itself
-    persons = [*JASPERS_SPOUSES, _person("13143568X", "Bauer, Hans")]
-    return _build(tmp_path, persons=persons, cache=SPOUSE_CACHE)
+    persons = [*JASPERS_SPOUSES, person_record("13143568X", "Bauer, Hans")]
+    return build_lexicon_dir(tmp_path, persons=persons, cache=SPOUSE_CACHE)
 
 
 MAYER_DOC = _tei("<p>Der Literaturwissenschaftler Hans Mayer schrieb dazu.</p>")

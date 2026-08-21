@@ -38,14 +38,13 @@ import json
 import re
 import sys
 import unicodedata
-from bisect import bisect_right
 from collections import Counter, defaultdict
 from pathlib import Path
 
 from scripts.config import DATA_DIR, TEI_FINAL_DIR
-from scripts.core.pb_split import BODY_INNER_RE, PB_RE
+from scripts.core.pb_split import page_of, pb_offsets
 from scripts.entity.entity_matcher import base_rule
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
+from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, ascii_only, facsimile_path
 
 SNAPSHOT = "2026-08-12"
 
@@ -192,25 +191,6 @@ def stratum(score: int) -> str:
 # Page assignment
 # ---------------------------------------------------------------------------
 
-def pb_offsets(xml_string: str) -> list[int]:
-    """Offsets of the `<pb>` tags inside `<body>`, in document order."""
-    match = BODY_INNER_RE.search(xml_string)
-    if not match:
-        return []
-    base = match.start(1)
-    return [base + pb.start() for pb in PB_RE.finditer(match.group(1))]
-
-
-def page_of(pb_starts: list[int], offset: int) -> int:
-    """1-based page of a TEI offset; anything before the first `<pb>` counts as page 1."""
-    return max(1, bisect_right(pb_starts, offset))
-
-
-def facsimile_path(doc: str, page: int) -> str:
-    """Repo-relative page image of a document page."""
-    return f"docs/images/{doc}/{doc}_p{page:03d}.png"
-
-
 def page_from(record: dict, page_fn) -> int | None:
     """Page of a scan record: its own field, or the pb fallback for an old snapshot."""
     if "page" in record:
@@ -334,11 +314,6 @@ def build_report(records: list[dict], entities: dict, sources: dict, page_fn) ->
 # CLI
 # ---------------------------------------------------------------------------
 
-def _ascii(text) -> str:
-    """Fold to ASCII for the Windows console (the JSON report keeps full Unicode)."""
-    return str(text).encode("ascii", "replace").decode("ascii")
-
-
 def _print_summary(report: dict) -> None:
     marks = report["marks"]
     counts = report["strata_counts"]
@@ -348,17 +323,17 @@ def _print_summary(report: dict) -> None:
     print(f"\n  Anomalies: {len(report['anomalies'])}")
     for item in report["anomalies"][:TOP_PRINTED]:
         print(f"    {item['case_id']} {item['doc']} p{item['page']}: "
-              f"{_ascii(item['surface'])} ({','.join(item['anomalies'])})")
+              f"{ascii_only(item['surface'])} ({','.join(item['anomalies'])})")
 
     print(f"\n  Riskiest {TOP_PRINTED}:")
     for mark in marks[:TOP_PRINTED]:
         print(f"    {mark['case_id']}  score {mark['score']:3}  {mark['doc']:>5} "
-              f"p{mark['page']}  {_ascii(mark['surface'])[:40]:40} {_ascii(mark['gid'])}")
+              f"p{mark['page']}  {ascii_only(mark['surface'])[:40]:40} {ascii_only(mark['gid'])}")
 
     print("\n  By rule (high stratum):")
     high = Counter(mark["rule"] for mark in marks if mark["stratum"] == "high")
     for rule, count in sorted(high.items(), key=lambda kv: (-kv[1], kv[0])):
-        print(f"    {_ascii(rule):24} {count}")
+        print(f"    {ascii_only(rule):24} {count}")
 
 
 def main() -> None:

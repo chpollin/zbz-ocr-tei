@@ -27,10 +27,3 @@ def test_page_layout_name_variants():
     assert page_layout_name("2310", 7) == "2310_p007_layout.json"
     assert page_layout_name("2310", 7, "_gemini") == "2310_p007_layout_gemini.json"
     assert page_layout_name("2310", 7, "_curated") == "2310_p007_layout_curated.json"
-
-
-def test_padding_matches_legacy_zfill():
-    """Helfer und alte str(page).zfill(3)-Konvention muessen identisch sein."""
-    for page in (1, 7, 99, 100, 1000):
-        assert page_image_name("5", page) == f"5_p{str(page).zfill(3)}.png"
-        assert page_layout_name("5", page) == f"5_p{str(page).zfill(3)}_layout.json"

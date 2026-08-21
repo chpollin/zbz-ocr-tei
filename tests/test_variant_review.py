@@ -18,6 +18,9 @@ CATEGORIES = ("persons", "organisations", "works")
 VERDICTS = ("approve", "suspect", "reject")
 CATEGORY_LABEL = {"persons": "name", "organisations": "orgName", "works": "title"}
 
+# The whole module runs against the committed review and cache files.
+pytestmark = pytest.mark.requires_mirror
+
 
 def _load(path):
     if not path.exists():

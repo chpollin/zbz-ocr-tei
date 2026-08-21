@@ -200,6 +200,7 @@ def _has_570_page(page: int) -> bool:
 
 
 @pytest.mark.skipif(not _has_570_page(2), reason="output/570 nicht vorhanden (gitignored)")
+@pytest.mark.requires_corpus
 def test_process_page_step1_570_p2_uses_printed_page_number():
     fragment, _ = process_page_step1("570", 2, metadata={}, genre="review")
     assert 'n="248"' in fragment
@@ -209,6 +210,7 @@ def test_process_page_step1_570_p2_uses_printed_page_number():
 
 
 @pytest.mark.skipif(not _has_570_page(3), reason="output/570 nicht vorhanden (gitignored)")
+@pytest.mark.requires_corpus
 def test_process_page_step1_570_p3_interpolates_printed_number():
     # p3 hat keine Fusszeilen-Region; der Wert wird aus p2 (248) forward-erschlossen.
     # Referenzkonvention: erschlossene Zahlen stehen in eckigen Klammern.
@@ -218,6 +220,7 @@ def test_process_page_step1_570_p3_interpolates_printed_number():
 
 
 @pytest.mark.skipif(not _has_570_page(1), reason="output/570 nicht vorhanden (gitignored)")
+@pytest.mark.requires_corpus
 def test_process_page_step1_570_p1_drops_cover_sheet():
     fragment, _ = process_page_step1("570", 1, metadata={}, genre="review")
     assert "Zeitschrift" not in fragment

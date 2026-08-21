@@ -11,14 +11,10 @@ Aufruf (standalone):
 
 import argparse
 import re
-import sys
 from datetime import UTC, datetime
-from pathlib import Path
 
 from lxml import etree
 
-# Projekt-Imports
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from scripts.config import PAGE_XML_DIR
 
 # METS Namespaces

@@ -23,11 +23,9 @@ import pytest
 from lxml import etree as _etree
 
 from scripts.tei.zbz_conformity import check_conformity
+from tests.conftest import FINAL_DOCS, FINAL_IDS
 
 REPO = Path(__file__).resolve().parent.parent
-FINAL_DIR = REPO / "output" / "tei_final"
-FINAL_DOCS = sorted(FINAL_DIR.glob("*_final.xml")) if FINAL_DIR.exists() else []
-FINAL_IDS = [p.name for p in FINAL_DOCS]
 
 _NS = 'xmlns="http://www.tei-c.org/ns/1.0"'
 
@@ -92,6 +90,7 @@ def test_unlinked_persname_is_advisory_not_violation():
 
 @pytest.mark.skipif(not FINAL_DOCS, reason="output/tei_final leer (gitignored, kein lokaler Korpus)")
 @pytest.mark.parametrize("doc", FINAL_DOCS, ids=FINAL_IDS)
+@pytest.mark.requires_corpus
 def test_final_doc_zbz_conformant(doc: Path):
     """Jedes ausgelieferte TEI ist gegen das ZBZ-Inline-GND-Modell konform (keine Verletzung)."""
     root = _etree.parse(str(doc)).getroot()

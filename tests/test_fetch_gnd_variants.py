@@ -5,6 +5,8 @@ Parser logic only: the fixtures stand in for lobid responses, no network is touc
 
 import json
 
+import pytest
+
 from scripts.entity.fetch_gnd_variants import (
     SOURCE_PATTERN,
     build_payload,
@@ -94,10 +96,9 @@ def test_payload_shape_is_the_cache_contract():
     json.dumps(payload, ensure_ascii=False)
 
 
+@pytest.mark.requires_mirror
 def test_real_cache_file_keeps_the_contract():
     """The committed cache must keep the shape a refetch could silently change."""
-    import pytest
-
     from scripts.config import DATA_DIR
 
     cache_file = DATA_DIR / "entities" / "gnd_cache.json"

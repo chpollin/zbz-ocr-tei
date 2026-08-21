@@ -280,6 +280,11 @@ def process_page_step2(
         if xml_match:
             result_text = xml_match.group(1)
 
+        # An empty answer would replace the page with nothing; keep the scaffold instead.
+        if not result_text:
+            print(f"  WARNUNG: Gemini-Antwort leer fuer {doc_id} p{page}, Geruest bleibt")
+            return fix_gemini_tei(scaffold_xml)
+
         # Well-formedness pruefen
         ET.fromstring(f"<root>{result_text}</root>")
 

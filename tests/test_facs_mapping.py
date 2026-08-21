@@ -23,17 +23,12 @@ from scripts.edition.generate_edition_data import (
     facs_anchors,
     write_facs_map,
 )
+from tests.conftest import tei_doc
 
 
 def _tei(surfaces: str, pbs: str) -> str:
     """Minimaler TEI-Bestand: facsimile-Block plus body mit <pb>-Folge."""
-    return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<TEI xmlns="http://www.tei-c.org/ns/1.0">\n'
-        f"  <facsimile>\n{surfaces}  </facsimile>\n"
-        f"  <text>\n    <body>\n{pbs}    </body>\n  </text>\n"
-        "</TEI>\n"
-    )
+    return tei_doc(pbs, facsimile=surfaces, xml_decl=True)
 
 
 def _surfaces(doc_id: str, indices) -> str:
@@ -123,6 +118,7 @@ _MIRROR_CASES = {
 
 
 @pytest.mark.parametrize("doc_id", sorted(_MIRROR_CASES))
+@pytest.mark.requires_mirror
 def test_mirror_sidecar_matches_the_adjudicated_pages(doc_id: str):
     sidecar = PAGES_DIR / doc_id / f"{doc_id}_facs.json"
     if not sidecar.exists():

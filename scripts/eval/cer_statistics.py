@@ -1,9 +1,10 @@
 """
 CER Statistik mit Konfidenzintervallen, Block-Bootstrap und Selektionsbias-Diagnostik.
 
-Produziert `docs/data/cer_statistics.json` als Single Source of Truth fuer das
-CER-Dashboard (`docs/infrastruktur/cer.html`) und die Knowledge-Doku
-(`knowledge/CER-METHODIK.md`, `knowledge/CER-BENCHMARK.md`).
+Bibliothek der statistischen Primitive (BCa, paired Bootstrap, HCPR, Strata).
+Die publizierte Datei `docs/data/cer_statistics.json` schreibt ausschliesslich
+`scripts/eval/cer_statistics_full.py`; die CLI hier ist ein Selbsttest der
+Bibliothek und schreibt nach `output/evaluation/` (gitignored).
 
 Methodik (alle Quellen 2025+):
 - BCa-Bootstrap (Bias-Corrected and Accelerated), B = 10 000, Seed konfigurierbar.
@@ -905,7 +906,9 @@ def _comparison_lit_2025_plus() -> list[dict]:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__.strip().splitlines()[0])
+    parser = argparse.ArgumentParser(
+        description="Selbsttest der CER-Statistik-Bibliothek; die publizierte "
+                    "docs/data/cer_statistics.json schreibt cer_statistics_full.py.")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--bootstrap-n", type=int, default=10_000)
     parser.add_argument("--include-proxies", action="store_true",
@@ -913,7 +916,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--stability-runs", type=int, default=0,
                         help="Anzahl Re-Runs fuer Stabilitaets-Pilot. 0 = nicht messen.")
     parser.add_argument("--out", type=Path,
-                        default=Path("docs/data/cer_statistics.json"))
+                        default=Path("output/evaluation/cer_statistics_library.json"),
+                        help="Ziel des Bibliotheks-Selbsttests (gitignored). Die "
+                             "publizierte docs/data/cer_statistics.json wird "
+                             "ausschliesslich von cer_statistics_full.py geschrieben.")
     parser.add_argument("--dry-run", action="store_true",
                         help="Lese alles, schreibe aber kein JSON (CI-Modus).")
     args = parser.parse_args(argv)

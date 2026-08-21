@@ -53,7 +53,7 @@ def _candidate(doc="100", surface="Jaspers", start=0, gid="TEST-0001", tier=1):
 
 
 def _pb_by_doc(xml=_XML):
-    from scripts.entity.generate_entity_preview_data import pb_offsets
+    from scripts.core.pb_split import pb_offsets
 
     return {"100": pb_offsets(xml)}
 
@@ -191,8 +191,11 @@ def test_serialize_is_stable_and_newline_terminated():
 # --- wave layer (real adjudication evidence) --------------------------------
 
 _HAVE_EVIDENCE = SAMPLE_DIR.exists() and SCAN_PATH.exists() and ENTITIES_PATH.exists()
-requires_evidence = pytest.mark.skipif(
-    not _HAVE_EVIDENCE, reason="adjudication evidence under output/ not present")
+def requires_evidence(fn):
+    """Wave-layer test: needs the adjudication evidence under the gitignored output/."""
+    skip = pytest.mark.skipif(
+        not _HAVE_EVIDENCE, reason="adjudication evidence under output/ not present")
+    return pytest.mark.requires_corpus(skip(fn))
 
 
 @pytest.fixture(scope="module")

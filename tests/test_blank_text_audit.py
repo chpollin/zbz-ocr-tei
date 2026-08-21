@@ -10,6 +10,7 @@ import json
 import pytest
 
 from scripts.eval import blank_text_audit as bta
+from tests.conftest import tei_doc
 
 # --- Fixture-Bau ---------------------------------------------------------------
 
@@ -18,12 +19,7 @@ def _tei(pages):
     body = "\n".join(
         f'<pb n="{i + 1}" facs="#f{i + 1}"/>\n{content}' for i, content in enumerate(pages)
     )
-    return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body>\n'
-        f"{body}\n"
-        "</body></text></TEI>\n"
-    )
+    return tei_doc(body, xml_decl=True)
 
 
 def _manifest(doc_id, blank_pages, page_count=None, with_pages_section=True):

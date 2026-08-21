@@ -43,9 +43,9 @@ from scripts.config import DATA_DIR, DOCS_DIR
 # Same splitter as the per-page TEI mirror: page number = sequential <pb> position. A second,
 # diverging implementation would place entity pages next to the wrong facsimile.
 from scripts.core.pb_split import (
-    BODY_INNER_RE,
-    PB_RE,
     extract_pages_from_final as split_pages,
+    page_of,
+    pb_offsets,
 )
 from scripts.entity.entity_matcher import build_lexicon
 from scripts.entity.tei_entity_preview import (
@@ -77,20 +77,6 @@ _TAG_RE = re.compile(r"<[^>]*>")
 # ---------------------------------------------------------------------------
 # Offsets: source document -> preview file -> page
 # ---------------------------------------------------------------------------
-
-
-def pb_offsets(preview_xml: str) -> list[int]:
-    """Offsets of the ``<pb>`` tags inside ``<body>``, in document order."""
-    match = BODY_INNER_RE.search(preview_xml)
-    if not match:
-        return []
-    base = match.start(1)
-    return [base + pb.start() for pb in PB_RE.finditer(match.group(1))]
-
-
-def page_of(pb_starts: list[int], offset: int) -> int:
-    """1-based page of a preview offset; anything before the first ``<pb>`` counts as page 1."""
-    return max(1, bisect_right(pb_starts, offset))
 
 
 def wrapper_shifts(wrapped: list[dict]) -> tuple[list[int], list[int]]:

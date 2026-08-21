@@ -31,15 +31,15 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from scripts.config import PROJECT_ROOT, TEI_FINAL_DIR
-from scripts.entity.entity_matcher import _base_rule
 
 # Page assignment uses the pb rule of the per-page mirror (page = sequential <pb>
 # position); a second implementation would place cases next to the wrong facsimile.
-from scripts.entity.generate_entity_preview_data import (
+from scripts.core.pb_split import (
     page_of as page_of_offset,
     pb_offsets as page_starts,
 )
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
+from scripts.entity.entity_matcher import _base_rule
+from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, facsimile_path
 
 SCAN_PATH = AUDIT_OUTPUT_DIR / "entity_corpus_scan.json"
 CATALOG_PATH = PROJECT_ROOT / "docs" / "data" / "catalog.json"
@@ -126,11 +126,6 @@ def _page_index(tei_dir: Path, doc: str, cache: dict) -> list[int] | None:
         path = Path(tei_dir) / f"{doc}_final.xml"
         cache[doc] = page_starts(path.read_bytes().decode("utf-8")) if path.exists() else None
     return cache[doc]
-
-
-def facsimile_path(doc: str, page: int) -> str:
-    """Repo-relative page image of a document page."""
-    return f"docs/images/{doc}/{doc}_p{page:03d}.png"
 
 
 def _precision_case(candidate: dict, case_id: str, page: int | None) -> dict:

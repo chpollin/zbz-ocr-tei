@@ -141,6 +141,15 @@ def load_json(path: Path) -> dict | None:
         return None
 
 
+def read_json_strict(path: Path):
+    """Laedt JSON-Datei und laesst Fehler durchschlagen.
+
+    Gegenstueck zu load_json: an einer Trust-Boundary, wo eine fehlende oder defekte
+    Eingabedatei den Lauf beenden soll, statt still None weiterzureichen.
+    """
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
 def write_json(path: Path, data) -> None:
     """Schreibt JSON mit indent=2, ensure_ascii=False, utf-8."""
     path = Path(path)

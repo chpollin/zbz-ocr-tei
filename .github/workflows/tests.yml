@@ -1,5 +1,7 @@
-# Full pytest suite on every push/PR. Data-dependent tests (output/, data/source/)
-# skip themselves on a fresh checkout.
+# Quality gates on every push/PR: ruff over scripts and tests, then the full pytest
+# suite. Data-dependent tests (output/, data/source/) skip themselves on a fresh
+# checkout. pyproject.toml is the only manifest; the repo declares no build backend
+# (dependency set, not a package), so the dependency list is materialized here.
 name: tests
 
 on:
@@ -7,7 +9,7 @@ on:
   pull_request:
 
 jobs:
-  pytest:
+  gates:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,5 +17,10 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
-      - run: pip install -r requirements.txt
+          cache-dependency-path: pyproject.toml
+      - name: Install dependencies from pyproject
+        run: |
+          python -c "import tomllib; p = tomllib.load(open('pyproject.toml', 'rb'))['project']; print('\n'.join(p['dependencies'] + p['optional-dependencies']['dev']))" > "$RUNNER_TEMP/requirements.txt"
+          pip install -r "$RUNNER_TEMP/requirements.txt"
+      - run: ruff check scripts tests
       - run: python -m pytest tests/ -q

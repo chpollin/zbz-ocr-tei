@@ -179,6 +179,7 @@ def report():
 
 
 @pytest.mark.skipif(not _data_available(), reason="Primaerdaten nicht vorhanden")
+@pytest.mark.requires_corpus
 class TestCorpusInvariants:
     def test_funnel_monotonic(self, report):
         ns = [s["n"] for s in report["reconciliation"]["funnel"]]

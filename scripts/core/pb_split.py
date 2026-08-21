@@ -17,6 +17,7 @@ eigene, abweichende Segmentierung wuerde Marker auf der falschen Seite platziere
 """
 
 import re
+from bisect import bisect_right
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -59,6 +60,24 @@ def iter_page_spans(body_inner: str) -> list[PageSpan]:
                               pb_start=m.start(), content_start=m.end(),
                               content_end=nxt))
     return spans
+
+
+def pb_offsets(xml_string: str) -> list[int]:
+    """Offsets of the `<pb>` tags inside `<body>`, in document order.
+
+    Offsets refer to the passed string, not to the body inner content, so a caller can
+    map a match position in the full document onto its page.
+    """
+    match = BODY_INNER_RE.search(xml_string)
+    if not match:
+        return []
+    base = match.start(1)
+    return [base + pb.start() for pb in PB_RE.finditer(match.group(1))]
+
+
+def page_of(pb_starts: list[int], offset: int) -> int:
+    """1-based page of an offset; anything before the first `<pb>` counts as page 1."""
+    return max(1, bisect_right(pb_starts, offset))
 
 
 def _balance_divs(chunk: str) -> str:

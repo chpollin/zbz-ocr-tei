@@ -40,7 +40,7 @@ from scripts.entity.running_heads import (
     normalize_head,
     zone_lookup,
 )
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, doc_id_from_path
+from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, ascii_only, doc_id_from_path
 
 __all__ = [
     "CONTAINS_LENGTH_FACTOR", "MAX_HEAD_CHARS", "MAX_HEAD_SEGMENTS",
@@ -293,11 +293,6 @@ def build_report(documents: list[dict], verdicts: dict | None, scan: dict | None
 # CLI
 # ---------------------------------------------------------------------------
 
-def _ascii(text) -> str:
-    """Fold to ASCII for the Windows console (the JSON report keeps full Unicode)."""
-    return str(text).encode("ascii", "replace").decode("ascii")
-
-
 def _load(path: Path) -> dict | None:
     """Tolerant read of a JSON snapshot a concurrent run may be rewriting."""
     try:
@@ -321,14 +316,14 @@ def _print_summary(report: dict) -> None:
           f"{heads['detected']}/{heads['total']} ({heads['recall']})")
     for miss in heads["misses"]:
         print(f"    MISS  {miss['doc']:>5} p{miss['page']} @{miss['start']} "
-              f"{_ascii(miss['surface'])}")
+              f"{ascii_only(miss['surface'])}")
     print(f"\n  False alarms on other correct marks: "
           f"{others['in_zone']}/{others['total']} ({others['false_alarm_rate']})")
     for case in others["cases"]:
         print(f"    ALARM {case['doc']:>5} p{case['page']} @{case['start']} "
-              f"{_ascii(case['surface'])} -> {case['zone']['kind']} "
-              f"'{_ascii(case['zone']['form'])[:40]}'")
-        print(f"          reason: {_ascii(case['reason'])[:110]}")
+              f"{ascii_only(case['surface'])} -> {case['zone']['kind']} "
+              f"'{ascii_only(case['zone']['form'])[:40]}'")
+        print(f"          reason: {ascii_only(case['reason'])[:110]}")
     if validation["tei_drift"]:
         print(f"\n  WARNING: TEI changed since adjudication in "
               f"{', '.join(validation['tei_drift'])}; offsets may be stale.")
