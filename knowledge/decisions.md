@@ -85,7 +85,7 @@ Consolidated register of all decisions and open questions. Cross-cutting, collec
 
 ---
 
-## Decided (E64-E122, detail)
+## Decided (E64-E123, detail)
 
 More recent decisions with full rationale as dedicated sections.
 
@@ -688,6 +688,20 @@ Verified on disk: 2212 tests, ruff 0, all CLAUDE.md commands resolve, corpus sca
 Latent and deferred: `scripts/eval/cer_statistics.py` still computes and labels BCa in its own aggregation and defaults its output to the published path, so a run of that second generator would overwrite the file with BCa labels (WP7, single source); the viewer page carries no `aria-current`; `reports/2026-08-12_viewer-ui-analyse.md` cites pre-split viewer line numbers; the preview fingerprint stays path-dependent until the digest normalizes import lines.
 
 Documents: [refactoring-plan.md](refactoring-plan.md), [workflow.md](workflow.md), [journal.md](journal.md) session 97
+
+### E123 Refactoring wave 3: shared helpers, tooling gates, test suite strengthening (2026-08-21)
+
+Occasion: after wave 2 the remaining items were the duplicated helpers across the audits, the hand-rolled path bootstraps, the second generator able to overwrite the published statistics with BCa labels, the half-migrated manifest without lock, pre-commit or linter gate, and the test-quality findings (generator and validator rules untested outside the vanishing corpus gate, no shared fixtures, the clone blind spot invisible).
+
+Decision and execution: WP7 centralized `ascii_only`, `parse_doc_ids`, `facsimile_path`, `sorted_counts` in `audit_common`, `pb_offsets`, `page_of`, `extract_pages_from_final` in `core/pb_split`, `split_paragraphs` in `core/loaders`, `read_json_strict` in `utils` (the lenient `load_json` swallows broken files, the trust-boundary readers must fail fast); the variant differences were resolved on the majority form and reported (a `None` input and whitespace inside comma lists, neither reachable from the callers); `discover_doc_ids` in the preview runner became `discover_final_doc_ids` because its semantics differ from the shared helper; all eight `sys.path` bootstraps removed and the two path-form commands documented as `python -m`; the statistics library CLI writes to `output/evaluation/` so `cer_statistics_full.py` is the only writer of `docs/data/cer_statistics.json`; `requirements.txt` migrated into `pyproject.toml` with a `layout` extra and a `dev` group pinning ruff, CI installs from the manifest and runs ruff before pytest, a pre-commit hook pins the same ruff; no `uv.lock` because uv is absent on the workstation (`uv lock` pending). WP8 added five contract files (step 1 plus assembly end to end without Gemini with RelaxNG validity, all 22 validator rules with firing and silent fixtures, blank-page rule and marker with idempotence, catalog field contract against the keys the frontend reads, the two one-sided guards), a `conftest.py` with shared builders replacing thirteen local ones and the near-verbatim lexicon fixtures, the markers `requires_corpus` and `requires_mirror` so the clone-safe subset is addressable, the weak tests repaired or deleted, thirteen direct CER extraction rule tests indexed to the catalog, and the step-2 repair path under test. The orchestrator closed the data-loss defect the repair tests exposed: an empty or whitespace-only model answer passed the well-formedness check and replaced the page scaffold with nothing; `process_page_step2` now keeps the repaired scaffold, the test pins it.
+
+Verified on disk: 2344 tests passed, 0 skipped, of which 1447 run on a fresh clone; ruff 0; all CLAUDE.md commands resolve; benchmark and corpus-scan hashes identical; mirror unchanged; 285/285 valid; manifest, workflow and hook files parse.
+
+Incident: WP7 ran `entity_eval_sample --seed 42` as a smoke test and overwrote the frozen evaluation draw under the gitignored `output/audits/eval_sample/`, which the adjudication protocol forbids. The agent reconstructed the draw from the frozen scan snapshot, froze the matching catalog state beside it, restored four page values from the versioned verdict store, and reverted the rewritten `data/entities/mention_verdicts.json` with a checkout; the tracked data is unchanged. The draw is now derivable from two frozen inputs and is a reconstruction rather than the original file set; a deliberate re-freeze decision is the operator's. The lesson, binding for every later wave: verification runs name an allowlist of scripts, and anything writing under `output/audits/eval_sample*` or `data/` is excluded by name.
+
+Recorded, not acted on: the CER catalog says a page break stays recognizable as a double newline and implies a running-head exclusion, while the code collapses the break to one space and includes `fw` text (tests pin the code; the catalog is to be corrected); `serialize_tei_fragment` drops the namespace declaration of a foreign-namespace element and returns an unparsable fragment (no corpus impact known); the catalog JS carries a fourth UI-only status token `ausstehend`.
+
+Documents: [refactoring-plan.md](refactoring-plan.md), [journal.md](journal.md) session 97
 
 ## Open items
 

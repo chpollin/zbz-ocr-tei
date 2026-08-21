@@ -7,7 +7,7 @@ project:
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
-status: active
+status: active  # all packages closed 2026-08-21; kept until the open items above are decided
 language: en
 created: 2026-08-21
 updated: 2026-08-21
@@ -388,6 +388,14 @@ Wave 2 executed and verified on 2026-08-21 (E122): WP4 (seventeen modules into `
 two into `scripts/core/`, basenames kept), WP5 (journal archive, template v0.3), WP6 (frontend,
 vendoring), bootstrap label percentile with regenerated statistics. 2212 tests, ruff 0, anchors
 identical, headless-browser check clean. WP4, WP5, WP6 closed.
+
+Wave 3 executed and verified on 2026-08-21 (E123): WP7 (helpers, bootstraps, single writer,
+manifest, CI and hook), WP8 (contracts, conftest, markers, CER rules, step-2 repair, empty-answer
+guard). 2344 tests of which 1447 clone-safe, ruff 0, anchors identical. WP7, WP8 closed. Open
+after wave 3: `uv lock` once uv is installed; the five homeless findings; the re-freeze decision
+for the evaluation draw; the CER catalog corrections (E8 page break, running heads); the
+foreign-namespace serialization defect; the viewer `aria-current`; `cer_statistics.py`'s own BCa
+aggregation kept as library code.
 
 ## Homeless findings from the deleted 2026-07-07 verification report (operator decision)
 

@@ -85,7 +85,9 @@ to 68 remain in that block as they are.
 
 Wave 2 ran in the same session as well (E122): scripts layout (`scripts/core/`, `scripts/entity/`), journal archive with template v0.3, frontend (asset versions, manifest index, viewer split into six modules, vendored OpenSeadragon and fonts, popover provenance, keyboard menus, native dialog), bootstrap label percentile with regenerated statistics; one split regression found by the verifier and fixed before commit.
 
-**Next steps** 1. Wave 3 (WP7 shared helpers and tooling including the single-writer rule for the statistics file, WP8 tests). 2. The five homeless findings and the remaining operator items of the plan.
+Wave 3 closed the plan in the same session (E123): shared helpers and tooling gates, the test suite strengthened to 2344 tests of which 1447 run on a fresh clone, one data-loss defect in the step-2 repair path fixed, one incident recorded (a verification run overwrote the frozen evaluation draw under the gitignored audit folder; reconstructed, tracked data unchanged).
+
+**Next steps** 1. Operator decisions: the five homeless findings, the re-freeze of the evaluation draw, the CER catalog corrections. 2. `uv lock` once uv is installed. 3. Regular work resumes on the entity layer (M4 frozen-rules run, redraw and recall remeasurement).
 
 ---
 
