@@ -53,8 +53,8 @@
  ],
  "provenance": {
   "scan": "output/audits/entity_corpus_scan.json",
-  "scan_sha256": "e1b2a139001f45c879c5b4421cdf6892484c5d273f6586b08559055a8793578f",
-  "scan_candidates": 8865,
+  "scan_sha256": "06084b1b2959eba6c86d3e26dfd7a12a8d302c2261f69be04013e69fed9e77ca",
+  "scan_candidates": 9215,
   "entity_list": "data/entities/all_entities.json",
   "listed_entities": 289
  },
@@ -63,9 +63,9 @@
   "listed_entities": 289,
   "entities_found": 267,
   "entities_alternative_only": 2,
-  "mentions": 8865,
-  "auto": 5244,
-  "review": 3621,
+  "mentions": 9215,
+  "auto": 6090,
+  "review": 3125,
   "ambiguous_mentions": 1921
  },
  "quality": {
@@ -2517,10 +2517,11 @@
   "113248423": {
    "label": "Dufour-Kowalska, Gabrielle",
    "category": "person",
-   "auto": 10,
-   "review": 8,
+   "auto": 357,
+   "review": 11,
    "alternative_only": 0,
    "classes": {
+    "derived": 3,
     "suspect": 8
    },
    "docs": {
@@ -2537,12 +2538,12 @@
      1
     ],
     "2330": [
-     1,
-     2
+     326,
+     4
     ],
     "2410": [
-     1,
-     1
+     23,
+     2
     ],
     "2550": [
      0,
@@ -3705,12 +3706,12 @@
   "118815679": {
    "label": "Hersch, Jeanne",
    "category": "person",
-   "auto": 1207,
-   "review": 1026,
+   "auto": 1706,
+   "review": 527,
    "alternative_only": 0,
    "classes": {
     "ambiguous": 80,
-    "derived": 528,
+    "derived": 29,
     "figure": 8,
     "markup": 1,
     "running_head": 310,
@@ -4130,8 +4131,8 @@
      0
     ],
     "1220": [
-     3,
-     38
+     24,
+     17
     ],
     "1230": [
      1,
@@ -4518,8 +4519,8 @@
      0
     ],
     "2330": [
-     25,
-     460
+     480,
+     5
     ],
     "2340": [
      2,
@@ -4546,8 +4547,8 @@
      26
     ],
     "2410": [
-     6,
-     26
+     29,
+     3
     ],
     "2420": [
      4,
@@ -20027,11 +20028,11 @@
    ]
   },
   "1220": {
-   "auto": 23,
-   "review": 60,
+   "auto": 44,
+   "review": 39,
    "classes": {
     "ambiguous": 2,
-    "derived": 41,
+    "derived": 20,
     "short_title": 1,
     "suspect": 3,
     "unanchored": 13
@@ -20039,10 +20040,10 @@
    "entities": [
     {
      "gid": "118815679",
-     "auto": 3,
-     "review": 38,
+     "auto": 24,
+     "review": 17,
      "classes": {
-      "derived": 38
+      "derived": 17
      }
     },
     {
@@ -25339,11 +25340,11 @@
    ]
   },
   "2330": {
-   "auto": 425,
-   "review": 617,
+   "auto": 1205,
+   "review": 164,
    "classes": {
     "ambiguous": 22,
-    "derived": 531,
+    "derived": 78,
     "short_title": 2,
     "suspect": 24,
     "unanchored": 38
@@ -25351,10 +25352,19 @@
    "entities": [
     {
      "gid": "118815679",
-     "auto": 25,
-     "review": 460,
+     "auto": 480,
+     "review": 5,
      "classes": {
-      "derived": 460
+      "derived": 5
+     }
+    },
+    {
+     "gid": "113248423",
+     "auto": 326,
+     "review": 4,
+     "classes": {
+      "derived": 2,
+      "suspect": 2
      }
     },
     {
@@ -25559,14 +25569,6 @@
      "auto": 3,
      "review": 0,
      "classes": {}
-    },
-    {
-     "gid": "113248423",
-     "auto": 1,
-     "review": 2,
-     "classes": {
-      "suspect": 2
-     }
     },
     {
      "gid": "118503340",
@@ -26352,10 +26354,10 @@
    ]
   },
   "2410": {
-   "auto": 11,
-   "review": 28,
+   "auto": 56,
+   "review": 6,
    "classes": {
-    "derived": 23,
+    "derived": 1,
     "running_head": 3,
     "short_title": 1,
     "suspect": 1
@@ -26363,18 +26365,18 @@
    "entities": [
     {
      "gid": "118815679",
-     "auto": 6,
-     "review": 26,
+     "auto": 29,
+     "review": 3,
      "classes": {
-      "derived": 23,
       "running_head": 3
      }
     },
     {
      "gid": "113248423",
-     "auto": 1,
-     "review": 1,
+     "auto": 23,
+     "review": 2,
      "classes": {
+      "derived": 1,
       "suspect": 1
      }
     },

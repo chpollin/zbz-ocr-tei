@@ -84,6 +84,25 @@ Archive section; sessions 1 to 68 remain in that section as they are.
 
 ## Entries
 
+### 2026-08-21 Session 102: speaker initials in interviews resolved to tier 1 (E128)
+
+**Occasion** The operator asked how the recall of the entity layer can be raised and chose to close the speaker-initials gap first, the repair class the recall evaluation had ranked highest.
+
+**Goal** Interview labels written as initials ("J.H.", "G.D.K.") reach tier 1 where the bearer is certain, the adjudicated judgments hold, and previews, mirror and overview carry the new state.
+
+**Course** Corpus check first: the labels sit at the head of `<p>` after an empty `<speaker/>` in 2330 and 2410, and inside `<speaker>` in 1220; the interviewer's full name appears nowhere in 2330 and 2410, so a document anchor cannot exist for her. Tests written for the hyphenated initials form, the paragraph-head and speaker-slot positions, the anchored and the list-unique resolution, and the negatives (prose position, unanchored two-letter label, shared initials). Lexicon and matcher implemented, one existing test updated because the full label "G.D.K." is now the mention. Corpus scan, verdict guard, preview run, mirror and overview regenerated.
+
+**Decisions**
+- E128: speaker-initials rule, document anchor or list-unique initials of at least three letters; rejected two-letter list-unique resolution and a per-document label key.
+- Deviation from the plan ordering "fresh draw precedes further rule work", operator decision of this session; the class was adjudicated, the guard binds it, and the new stratum is recorded in verification.md.
+
+**Status** Entity gates and ruff green; tier 1 5244 to 6090, worklist 3621 to 3125, 846 `speaker-initials` marks in 2330, 2410 and 1220; guard 0 violations, still-missing 9 to 3; previews 285/285 valid and text-invariant; documentation in this commit.
+
+**Next steps**
+1. Re-freeze decision, then the fresh draw over the current population including the E119 and E128 strata, with the recall remeasurement.
+2. Lexicon shape audit as the next plan item.
+3. The two remaining adjudicated misses ("avant J.-C." as a date formula, short title "Populaire") are operator questions, not rule gaps.
+
 ### 2026-08-21 Session 101: schema hardening for the entity attributes (E127)
 
 **Occasion** The operator asked how the quality of the entity annotation and its formal cleanliness in the TEI can be established, and whether the schema should be tightened first.
@@ -158,28 +177,7 @@ Archive section; sessions 1 to 68 remain in that section as they are.
 2. Operator decisions of the plan block in decisions.md: re-freeze of the reconstructed evaluation draw, the four entity operator questions, O8/O13/O27 with ZBZ.
 3. Regular work resumes on the entity layer (M4 frozen-rules run with evidence under `docs/data/`).
 
-### 2026-08-21 Session 97: repository refactoring, diagnosis and wave 0 (E120)
-
-**Occasion** Operator question whether documentation and code of the repository are clean. Six read-only audits by Opus agents (README and CLAUDE.md inventory, knowledge overlap and staleness, reports and static pages, scripts layout and coupling, frontend, code hygiene and tests) answered it with a catalogue of stale statements, duplicated facts, stale published figures, layout coupling and half-introduced tooling.
-
-**Goal** Record the diagnosis as an executable plan and carry out the corrections that need no structural decision.
-
-**Course** The refactoring plan (a working document deleted at closure; outcome in E120 to E124) held the findings digest D1 to D10, the work packages WP0 to WP7 with exclusive file sets, the waves, the verification protocol and the open operator decisions. Wave 0 ran as two parallel build agents with disjoint file sets. WP0a corrected stale statements in README, CLAUDE.md, scripts/README.md, twelve knowledge documents and the two static pages; on methode.html eight CER figures and the regeneration date were reset from `docs/data/cer_statistics.json`, and the interval label now follows the JSON's `ci_method` (percentile). WP0b declared the 37 deliberate ruff findings (character tables of the normalization, warning filters before SDK imports) as per-file ignores, applied the safe auto-fix (368 to 147 findings), fixed the CWD-relative scan path in `generate_entity_overview`, declared `openpyxl`, unified `.env` loading on `scripts.config`, removed the dead `compute_proxy_quality` together with the `--proxy` flag, and deleted `tei_add_revision.py`, the screening-era writer of the abolished `revisionDesc` certification (E66) that `tei_status_marker` strips. Verification by the orchestrator on disk: 2149 tests passed and 1 skipped (the two missing cases are the deleted script's health cases), ruff 147, all 77 `python -m` commands in CLAUDE.md resolve with their flags, `docs/data` diff empty, benchmark JSON identical under a masked timestamp.
-
-**Decisions** E120 (wave 0, deletions and the plan). Operator decisions of the session: full scope (documentation, code hygiene, scripts layout, frontend); obsolete artifacts are deleted and git retains them; knowledge keeps its thematic split and is streamlined; the journal is condensed for sessions 69 to 96 with an archive document.
-
-**Status** Wave 0 committed in three commits (documentation, code, plan and register). Wave 1 ran in the same session (E121): four build agents (knowledge ownership in two halves, reports consolidation, code hygiene), two verifiers, three defects found by the document verifier and fixed before commit (a frontmatter date, two sentences in cer-methodology.md that claimed a completed label fix and misnamed the `bca_ci` caller). Result: one owner per duplicated fact, four reports deleted after securing their unique content, the ecosystem snapshot and the slide deck moved to reports/, `tei_reassemble_preview` deleted, ruff 0 under the unchanged configuration, 2204 tests passed with zero skips, all gates green. A test-quality audit ran in parallel and became package WP8 in the plan (generator end-to-end contract without Gemini, direct validator rule tests, blank-page rule, one-sided guards, conftest and a `requires_corpus` marker, catalog field contract). The bootstrap-label item is documented; the generator field `meta.bootstrap_method` stays BCa until the operator decides (default: percentile label).
-
-Wave 2 ran in the same session as well (E122): scripts layout (`scripts/core/`, `scripts/entity/`), journal archive with template v0.3, frontend (asset versions, manifest index, viewer split into six modules, vendored OpenSeadragon and fonts, popover provenance, keyboard menus, native dialog), bootstrap label percentile with regenerated statistics; one split regression found by the verifier and fixed before commit.
-
-Wave 3 closed the plan in the same session (E123): shared helpers and tooling gates, the test suite strengthened to 2344 tests of which 1447 run on a fresh clone, one data-loss defect in the step-2 repair path fixed, one incident recorded (a verification run overwrote the frozen evaluation draw under the gitignored audit folder; reconstructed, tracked data unchanged).
-
-**Next steps**
-1. Operator decisions: the five homeless findings, the re-freeze of the evaluation draw, the CER catalog corrections.
-2. `uv lock` once uv is installed.
-3. Regular work resumes on the entity layer (M4 frozen-rules run, redraw and recall remeasurement).
-
-## Compact Archive (Sessions 1 to 96)
+## Compact Archive (Sessions 1 to 97)
 
 One line per session, newest first; for the earliest sessions one line covers a range of
 several. Rationale in the [decision register](decisions.md), details in the git history.
@@ -188,6 +186,7 @@ several. Rationale in the [decision register](decisions.md), details in the git 
 
 | # | Date | Topic |
 |---|---|---|
+| 97 | 2026-08-21 | Repository refactoring, diagnosis and wave 0 (E120), waves 1 to 3 in the same session (E121-E123): six read-only audits, plan with work packages, stale statements corrected, ruff to zero, scripts layout `core/` and `entity/`, journal archive v0.3, viewer split and vendoring, shared helpers and tooling gates; 2344 tests, one evaluation-draw incident reconstructed. Full entry in the archive section below. |
 | 96 | 2026-08-13 | Matching repairs, overview as evidence surface, mark provenance, marking policy (E116-E119): dotted-abbreviation guard over 1113 initials candidates plus the hyphen reach of the surname index that the word-end cut could never produce for 210 hyphenated keys (E116); overview extended by ambiguity count, per-entity class breakdown, adjudicated quality block and provenance stamp (E117); `@resp`, `@cert` and `@source` on every wrapped mark in the preview TEI, with `@source` carrying the rule because it is the only attribute the delivery schema permits on all three wrapped elements (E118); operator marking policy in `data/entities/marking_policy.json`, 28 canonical surnames released from the anchor requirement, one held out, seven generic work titles dropped from scope and four bound to typographic corroboration, unlisted entities admitted by the project and marked as additions outside the curated list (E119); the person-versus-work dispute settled by the reference corpus, where 190 citations of the 25 reference TEIs carry no marked person name; corpus-wide preview run over every delivered document, each schema-valid and text-invariant, worklist volume down by about a third, guard at zero violations; commit `d59b94fd`. |
 | 95 | 2026-08-13 | Verdict guard, zero-mention classification, released work program executed (E110-E115): `entity_verdict_guard` built test-first as a standing regression gate over the adjudicated judgments, first run with all 279 correct marks surviving, 10 of 14 wrong marks repaired and 27 of 30 adjudicated misses surfacing again (E110); apostrophe folding at matching time after the E94 normalization left the corpus at U+2019 while list and cache stayed ASCII, diacritic folding deliberately excluded (E111); curated-variant channel with list hygiene (E112), pointwise facsimile-verified text repairs in documents 900, 1520 and 2330 with unchanged CER headline (E113), facsimile mapping via pb anchors with sequential fallback (E114), figure zones demoted to the worklist instead of excluded while keeping anchor power (E115); a planned footnote-digit repair was refuted by a corpus probe before any code, the zero-mention set fell from 42 through 37 to 17 entries, and the remeasurement material was frozen with a seed-42 draw into `output/audits/eval_sample_2026-08-13/` for the M4 close; guard at zero violations, entity battery green, the operator gates M6 and M7 untouched. |
 | 94 | 2026-08-13 | Running-head suppression, adjudicated error classes repaired, entity overview page, entity-layer refactoring (E108/E109): operator convention that mentions of the corpus author are always marked and the byline exception drops, running heads suppressed in the matcher per E105 with anchor power preserved for demoted full names, 671 candidates demoted in head zones and 0 of 3925 tier-1 marks left in a zone, convention precision 0.9511 with interval 0.9248 to 0.9737 over 266 decidable cases against the protocol reading 0.952, and the session-93 recall claim corrected to 24 of 25 (E108); five worklist demotions and two span repairs derived from the nine facsimile-confirmed cases, the scan hyphen invariant from eleven violations to zero, the verdict store rebound to the frozen scan it was drawn from, tier-1 precision rising to 0.67 at unchanged recall and coverage (E109); `generate_entity_overview` and `docs/entities.html` built, then refocused on the completeness question with the unmatched list entries first and the adjudicated sample kept out as measurement evidence; the 1853-line matcher split into `entity_lexicon.py` and `entity_matcher.py` with the outside API re-exported, `pyproject.toml` introduced with a curated ruff configuration at zero findings over the entity layer, equivalence proven over all 285 documents and the corpus scan regenerated byte-identically; the M4 frozen-rules gold run and the M5 judge calibration stayed open. |
@@ -329,15 +328,36 @@ with E66.
 - L14: A green conformity gate is only as sharp as the corpus it runs over; on the entity-free `tei_final`, "285/285 conformant" means "no violation", not "entities correctly GND-tagged". The entity rules Z1-Z4 bite only after inline-GND curation.
 - L15: Newspaper layouts fail systematically (>40 zones, OCR hallucinations); ~3 % of the corpus.
 
-## Archive: full entries of sessions 69 to 96
+## Archive: full entries of sessions 69 to 97
 
-The full entries of sessions 69 to 96, moved out of the Entries section on 2026-08-21 by
-operator decision and kept verbatim, newest first; the compact lines of the Compact Archive
+The full entries of sessions 69 to 97, moved out of the Entries section under the five-entry
+cap and kept verbatim, newest first; the compact lines of the Compact Archive
 section above point here. Entries are never changed retroactively, so corrections are written
 as new entries and reference the entry they correct. Links inside the entries name the
 documents that carried the subject at the time; where those documents were dissolved in the
 knowledge-base recut of 2026-08 (E124) the link points at the carrier that holds the subject
 today.
+
+### 2026-08-21 Session 97: repository refactoring, diagnosis and wave 0 (E120)
+
+**Occasion** Operator question whether documentation and code of the repository are clean. Six read-only audits by Opus agents (README and CLAUDE.md inventory, knowledge overlap and staleness, reports and static pages, scripts layout and coupling, frontend, code hygiene and tests) answered it with a catalogue of stale statements, duplicated facts, stale published figures, layout coupling and half-introduced tooling.
+
+**Goal** Record the diagnosis as an executable plan and carry out the corrections that need no structural decision.
+
+**Course** The refactoring plan (a working document deleted at closure; outcome in E120 to E124) held the findings digest D1 to D10, the work packages WP0 to WP7 with exclusive file sets, the waves, the verification protocol and the open operator decisions. Wave 0 ran as two parallel build agents with disjoint file sets. WP0a corrected stale statements in README, CLAUDE.md, scripts/README.md, twelve knowledge documents and the two static pages; on methode.html eight CER figures and the regeneration date were reset from `docs/data/cer_statistics.json`, and the interval label now follows the JSON's `ci_method` (percentile). WP0b declared the 37 deliberate ruff findings (character tables of the normalization, warning filters before SDK imports) as per-file ignores, applied the safe auto-fix (368 to 147 findings), fixed the CWD-relative scan path in `generate_entity_overview`, declared `openpyxl`, unified `.env` loading on `scripts.config`, removed the dead `compute_proxy_quality` together with the `--proxy` flag, and deleted `tei_add_revision.py`, the screening-era writer of the abolished `revisionDesc` certification (E66) that `tei_status_marker` strips. Verification by the orchestrator on disk: 2149 tests passed and 1 skipped (the two missing cases are the deleted script's health cases), ruff 147, all 77 `python -m` commands in CLAUDE.md resolve with their flags, `docs/data` diff empty, benchmark JSON identical under a masked timestamp.
+
+**Decisions** E120 (wave 0, deletions and the plan). Operator decisions of the session: full scope (documentation, code hygiene, scripts layout, frontend); obsolete artifacts are deleted and git retains them; knowledge keeps its thematic split and is streamlined; the journal is condensed for sessions 69 to 96 with an archive document.
+
+**Status** Wave 0 committed in three commits (documentation, code, plan and register). Wave 1 ran in the same session (E121): four build agents (knowledge ownership in two halves, reports consolidation, code hygiene), two verifiers, three defects found by the document verifier and fixed before commit (a frontmatter date, two sentences in cer-methodology.md that claimed a completed label fix and misnamed the `bca_ci` caller). Result: one owner per duplicated fact, four reports deleted after securing their unique content, the ecosystem snapshot and the slide deck moved to reports/, `tei_reassemble_preview` deleted, ruff 0 under the unchanged configuration, 2204 tests passed with zero skips, all gates green. A test-quality audit ran in parallel and became package WP8 in the plan (generator end-to-end contract without Gemini, direct validator rule tests, blank-page rule, one-sided guards, conftest and a `requires_corpus` marker, catalog field contract). The bootstrap-label item is documented; the generator field `meta.bootstrap_method` stays BCa until the operator decides (default: percentile label).
+
+Wave 2 ran in the same session as well (E122): scripts layout (`scripts/core/`, `scripts/entity/`), journal archive with template v0.3, frontend (asset versions, manifest index, viewer split into six modules, vendored OpenSeadragon and fonts, popover provenance, keyboard menus, native dialog), bootstrap label percentile with regenerated statistics; one split regression found by the verifier and fixed before commit.
+
+Wave 3 closed the plan in the same session (E123): shared helpers and tooling gates, the test suite strengthened to 2344 tests of which 1447 run on a fresh clone, one data-loss defect in the step-2 repair path fixed, one incident recorded (a verification run overwrote the frozen evaluation draw under the gitignored audit folder; reconstructed, tracked data unchanged).
+
+**Next steps**
+1. Operator decisions: the five homeless findings, the re-freeze of the evaluation draw, the CER catalog corrections.
+2. `uv lock` once uv is installed.
+3. Regular work resumes on the entity layer (M4 frozen-rules run, redraw and recall remeasurement).
 
 ### 2026-08-13 Session 96 (continued): marking policy in force, corpus-wide preview run (E119)
 

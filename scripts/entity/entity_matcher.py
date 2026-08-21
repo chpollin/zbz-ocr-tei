@@ -294,6 +294,7 @@ class _Zones:
     emphasis: tuple[Span, ...]
     figures: tuple[Span, ...] = ()
     running_heads: tuple[Span, ...] = ()
+    paragraphs: tuple[Span, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -377,6 +378,7 @@ def _scan_zones(xml: str) -> _Zones:
         speakers=tuple(sorted(speakers)),
         emphasis=tuple(sorted(emphasis)),
         figures=_merge(figures),
+        paragraphs=tuple(sorted(paragraphs)),
     )
 
 
@@ -646,6 +648,8 @@ def _scan(
                            and _in_dotted_abbreviation(xml, norm, hit)):
             pos = _word_end(text, pos)
             continue
+        if INITIALS_SUFFIX in hit.rule:
+            hit = _speaker_initials(xml, norm, zones, hit, anchored)
         if hit.tier == 1:
             hit = _bridge_particle_surname(text, hit, lexicon)
         if base_rule(hit.rule) in _SUSPECT_RULES and _is_suspect(
@@ -703,6 +707,54 @@ def _in_dotted_abbreviation(xml: str, norm: _Norm, hit: _Hit) -> bool:
     if xml[end:end + 1] == " ":
         end += 1
     return xml[end:end + 1].isalpha() and xml[end + 1:end + 2] == "."
+
+
+# Separators that follow an interview label at the head of its paragraph: en dash
+# (doc 2330, "G.D.K. - Vous etes ..."), em dash, hyphen, colon.
+_SPEAKER_SEPARATORS = frozenset("–—-:")  # noqa: RUF001
+# Initials with this many letter groups are specific enough to identify a listed
+# person at the speaker position without a document anchor ("G.D.K.").
+SPEAKER_INITIALS_UNIQUE_MIN = 3
+
+
+def _speaker_initials(
+    xml: str, norm: _Norm, zones: _Zones, hit: _Hit, anchored: set[str]
+) -> _Hit:
+    """Lift an initials form at the speaker position to the tier-1 speaker rule.
+
+    The position is a `speaker` slot or the first word of a paragraph followed by a
+    separator. The bearer resolves either as the one owner anchored in the document
+    (full name elsewhere, document-wide) or, for initials of at least
+    SPEAKER_INITIALS_UNIQUE_MIN letters, as the single owner on the list. Anything
+    else keeps the worklist reading of the lexicon channel.
+    """
+    raw_start = norm.starts[hit.start]
+    if not (_in_spans(raw_start, zones.speakers) or _heads_paragraph(xml, norm, zones, hit)):
+        return hit
+    owners = hit.alternatives or (hit.gid,)
+    anchored_owners = [gid for gid in owners if gid in anchored]
+    if len(anchored_owners) == 1:
+        gid = anchored_owners[0]
+    elif (len(owners) == 1
+          and hit.matched_form.count(".") >= SPEAKER_INITIALS_UNIQUE_MIN):
+        gid = owners[0]
+    else:
+        return hit
+    return replace(hit, gid=gid, rule="speaker-initials", tier=TIER_BY_RULE["speaker-initials"])
+
+
+def _heads_paragraph(xml: str, norm: _Norm, zones: _Zones, hit: _Hit) -> bool:
+    """True when the hit opens its paragraph and a speaker separator follows it."""
+    raw_start = norm.starts[hit.start]
+    index = bisect_right(zones.paragraphs, (raw_start, len(xml))) - 1
+    if index < 0:
+        return False
+    p_start, p_end = zones.paragraphs[index]
+    if not (p_start <= raw_start < p_end) or xml[p_start:raw_start].strip():
+        return False
+    raw_end = norm.ends[hit.end - 1]
+    after = xml[raw_end:raw_end + 4].lstrip()
+    return after[:1] in _SPEAKER_SEPARATORS if after else False
 
 
 # --- homograph suspicion ----------------------------------------------------------

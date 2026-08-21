@@ -703,6 +703,16 @@ Verified: schema compiles; 285/285 `tei_final` valid through the schema gate; 28
 
 Documents: [tei-mapping.md](tei-mapping.md) header and schema declarations, [verification.md](verification.md) quality assurance section, [journal.md](journal.md) session 101
 
+### E128 Speaker initials: interview labels resolved to tier 1 by document anchor or list-unique initials (2026-08-21)
+
+Occasion: the recall evaluation named speaker initials in interviews as the repair class with the largest yield, and eight of the nine adjudicated misses still open after E109 to E116 were the interviewer label "G.D.K." in document 2330. The initials channel of the lexicon placed "J.H." on the worklist only and could not form "G.D.K." at all, since it abbreviated a hyphenated surname to its first letter. The operator chose to close this gap before the population redraw; the plan orders the redraw before further rule work, so the session records the deviation.
+
+Decision: two changes. The lexicon abbreviates a hyphenated surname part by part, so "Dufour-Kowalska, Gabrielle" yields "G.D.K." and "G. D. K." beside the two-letter forms it already had. The matcher lifts an initials form at the speaker position, a `speaker` slot or the first word of a paragraph followed by an en dash, em dash, hyphen or colon, to the tier-1 rule `speaker-initials` when exactly one of its bearers is anchored in the document (full-name tier-1 mention anywhere, document-wide), or when the initials carry at least three letters and a single bearer on the list. Everything else keeps the worklist reading, and initials in running prose stay tier 2 even when anchored, which preserves the doc-1220 finding. Rejected: resolving two-letter initials by list uniqueness (58 of 238 initials forms are shared, and the label of an unlisted interviewer would be linked to whoever shares the letters), and a per-document operator key for labels (deterministic as well, but plumbing through every matcher caller for a case the three-letter rule already covers).
+
+Verified: entity suites and ruff green; corpus scan tier 1 5244 to 6090 and worklist 3621 to 3125, all 846 `speaker-initials` marks in the three interview documents 2330, 2410 and 1220 and all for the corpus author or the interviewer of the Dufour volumes; verdict guard 0 violations, adjudicated still-missing 9 to 3, the remaining three being "avant J.-C." as a date formula in 1520 and the short title "Populaire" in 1540; previews 285/285 schema-valid and text-invariant, mirror and overview regenerated. The new marks belong to a stratum no draw has covered, so the population-validity caveat in [verification.md](verification.md) widens by this stratum.
+
+Documents: [tei-mapping.md](tei-mapping.md) entities section, [verification.md](verification.md) open findings, [journal.md](journal.md) session 102
+
 ## Plan
 
 This block orders the work still outstanding into phases and milestones, each carrying the

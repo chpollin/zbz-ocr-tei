@@ -306,8 +306,9 @@ answer that none of them fits (E62).
 
 1. Tier one, automatic. Full names including inverted and line-break-crossing forms,
    full-name variants from the GND cache, initial plus unambiguous surname, distinctive
-   organisation names, multi-word work titles, speaker slots, and bare surnames with a
-   document anchor.
+   organisation names, multi-word work titles, speaker slots, speaker initials at the
+   label position resolved by a document anchor or by list-unique initials of at least
+   three letters (E128), and bare surnames with a document anchor.
 2. Tier two, judge. Ambiguous hits such as bare surnames without anchor or colliding with
    common words, single-word titles, candidates inside plain `bibl`, and markup-crossing
    hits. A calibrated model is to choose among the deterministic candidates, with its
@@ -330,12 +331,17 @@ the cache already carry. An all-caps one-token organisation also matches its
 capitalized spelling; a form with a trailing parenthetical qualifier also matches its head;
 a two-token organisation whose second token stands in a static table of places also matches
 the inverted German adjective form; a person headword also matches its dotted initials, the
-form interview transcripts use in the speaker slot; and a one-token work title joins each of
-its own multi-word forms as "Title. Subtitle", so a full printed title reaches the worklist
-as one span. Word boundaries treat a superscript digit as a separator, so a name carrying a
-footnote marker keeps the boundary it has on the page. Every derived spelling enters as a
-tier-2 worklist candidate, so the channels raise what an operator gets to see while the
-automatic marks stay as the base rules set them. The channels read the forms that were
+form interview transcripts use in the speaker slot, with a hyphenated surname abbreviated
+part by part; and a one-token work title joins each of its own multi-word forms as "Title.
+Subtitle", so a full printed title reaches the worklist as one span. Word boundaries treat
+a superscript digit as a separator, so a name carrying a footnote marker keeps the boundary
+it has on the page. Every derived spelling enters as a tier-2 worklist candidate, so the
+channels raise what an operator gets to see while the automatic marks stay as the base
+rules set them. The one lift out of a derived channel is the speaker-initials rule (E128):
+an initials form in a `speaker` slot or as the first word of a paragraph followed by a dash
+or colon becomes tier 1 when exactly one bearer is anchored in the document, or when the
+initials carry at least three letters and one bearer on the list; the same initials in
+running prose keep the worklist reading. The channels read the forms that were
 actually registered, so every earlier gate binds them too, and a cache form the variant
 review rejected has no derived form.
 

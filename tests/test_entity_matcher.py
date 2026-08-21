@@ -1622,6 +1622,80 @@ def test_initials_hit_never_anchors_a_bare_surname(tmp_path):
     assert all(c["tier"] == 2 for c in cands)
 
 
+# --- speaker initials (interview labels) -------------------------------------------
+
+DUFOUR = person_record("113248423", "Dufour-Kowalska, Gabrielle")
+
+
+def test_hyphenated_surname_yields_full_initials(tmp_path):
+    lexicon = build_lexicon_dir(tmp_path, persons=[DUFOUR])
+    for form in ("G.D.", "G. D.", "G.D.K.", "G. D. K."):
+        assert lexicon["forms"][form][0][2] == "full-name:initials", form
+
+
+@pytest.mark.parametrize("sep", ["–", "—", "-", ":"])  # noqa: RUF001
+def test_anchored_initials_at_paragraph_start_are_speaker_tier1(tmp_path, sep):
+    lexicon = build_lexicon_dir(tmp_path, persons=[JASPERS])
+    xml = _tei(f"<sp><speaker/><p>K.J. {sep} Ja, gewiss.</p></sp>"
+               "<p>So sprach Karl Jaspers.</p>")
+    by = _by_surface(em.find_candidates(xml, lexicon))
+    assert by["K.J."]["rule"] == "speaker-initials"
+    assert by["K.J."]["tier"] == 1
+    assert by["K.J."]["gid"] == "118557106"
+
+
+def test_anchored_initials_inside_speaker_slot_are_speaker_tier1(tmp_path):
+    lexicon = build_lexicon_dir(tmp_path, persons=[JASPERS])
+    xml = _tei("<p>Karl Jaspers antwortet.</p><sp><speaker>K. J.</speaker><p>Ja.</p></sp>")
+    by = _by_surface(em.find_candidates(xml, lexicon))
+    assert (by["K. J."]["rule"], by["K. J."]["tier"]) == ("speaker-initials", 1)
+
+
+def test_unanchored_two_letter_initials_stay_on_the_worklist(tmp_path):
+    lexicon = build_lexicon_dir(tmp_path, persons=[JASPERS])
+    xml = _tei("<sp><speaker/><p>K.J. – Ja, gewiss.</p></sp>")  # noqa: RUF001
+    cands = em.find_candidates(xml, lexicon)
+    assert [(c["rule"], c["tier"]) for c in cands] == [("full-name:initials", 2)]
+
+
+def test_anchored_initials_in_running_prose_stay_on_the_worklist(tmp_path):
+    lexicon = build_lexicon_dir(tmp_path, persons=[JASPERS])
+    xml = _tei("<p>Karl Jaspers kam. Dann sagte K.J. nichts mehr.</p>")
+    by = _by_surface(em.find_candidates(xml, lexicon))
+    assert (by["K.J."]["rule"], by["K.J."]["tier"]) == ("full-name:initials", 2)
+
+
+def test_three_letter_initials_unique_on_the_list_are_speaker_tier1_without_anchor(tmp_path):
+    lexicon = build_lexicon_dir(tmp_path, persons=[DUFOUR, JASPERS])
+    xml = _tei("<sp><speaker/><p>G.D.K. – Vous etes l'auteur.</p></sp>")  # noqa: RUF001
+    by = _by_surface(em.find_candidates(xml, lexicon))
+    assert (by["G.D.K."]["rule"], by["G.D.K."]["tier"]) == ("speaker-initials", 1)
+    assert by["G.D.K."]["gid"] == "113248423"
+
+
+def test_shared_initials_resolve_to_the_anchored_owner(tmp_path):
+    lexicon = build_lexicon_dir(tmp_path, persons=[
+        person_record("118507184", "Baudelaire, Charles"),
+        person_record("123159296", "Baudouin, Charles"),
+    ])
+    xml = _tei("<sp><speaker/><p>C.B. – Oui.</p></sp><p>Charles Baudouin parle.</p>")  # noqa: RUF001
+    by = _by_surface(em.find_candidates(xml, lexicon))
+    assert (by["C.B."]["rule"], by["C.B."]["tier"]) == ("speaker-initials", 1)
+    assert by["C.B."]["gid"] == "123159296"
+    assert by["C.B."]["alternatives"] == ["118507184", "123159296"]
+
+
+def test_shared_initials_without_anchor_stay_ambiguous(tmp_path):
+    lexicon = build_lexicon_dir(tmp_path, persons=[
+        person_record("118507184", "Baudelaire, Charles"),
+        person_record("123159296", "Baudouin, Charles"),
+    ])
+    xml = _tei("<sp><speaker/><p>C.B. – Oui.</p></sp>")  # noqa: RUF001
+    cands = em.find_candidates(xml, lexicon)
+    assert cands[0]["rule"] == "full-name:initials:ambiguous"
+    assert cands[0]["tier"] == 2
+
+
 # --- tier guarantee of the derived channels ---------------------------------------
 
 
@@ -1885,7 +1959,6 @@ def test_malformed_variants_field_is_ignored_by_the_build(tmp_path):
 
 
 SCHMIDHEINY = person_record("121587177", "Schmidheiny, Stephan")
-DUFOUR = person_record("113248423", "Dufour-Kowalska, Gabrielle")
 
 
 @pytest.mark.parametrize("abbreviation", ["U.R.S.S.", "U. R. S. S."])
@@ -1900,10 +1973,13 @@ def test_initials_as_the_tail_of_an_abbreviation_are_no_candidate(tmp_path, abbr
 
 def test_initials_before_a_dotted_continuation_are_no_candidate(tmp_path):
     # doc 2330: the interviewer's label "G.D.K." is three initials; reading its first
-    # two as a listed person produced the document-level outlier
+    # two as a listed person produced the document-level outlier. The full label is
+    # the mention; the two-letter prefix never surfaces on its own.
     lexicon = build_lexicon_dir(tmp_path, persons=[DUFOUR])
     xml = _tei("<p>G.D.K. - Vous etes l'auteur d'une oeuvre diverse.</p>")
-    assert em.find_candidates(xml, lexicon) == []
+    assert [c["surface"] for c in em.find_candidates(xml, lexicon)] == ["G.D.K."]
+    xml = _tei("<p>Dann kam G.D.K. zu Wort.</p>")
+    assert [c["surface"] for c in em.find_candidates(xml, lexicon)] == ["G.D.K."]
 
 
 @pytest.mark.parametrize("surface", ["J.H.", "J. H."])

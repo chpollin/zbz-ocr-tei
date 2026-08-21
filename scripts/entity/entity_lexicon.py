@@ -111,6 +111,7 @@ TIER_BY_RULE = {
     "work-title": 1,
     "work-variant": 1,
     "speaker": 1,
+    "speaker-initials": 1,
     "bare-surname": 2,
     "ambiguous-surname": 2,
     "caps-surname": 2,
@@ -961,17 +962,23 @@ def _initials_forms(label: str, category: str) -> tuple[str, ...]:
     """Dotted initials of a person headword ("Jaspers, Karl" -> "K.J." and "K. J.").
 
     Interview transcripts label the speaker with initials, which is the mention class
-    this channel reaches. Both spellings stay tier 2: initials claim unrelated
-    positions document-wide far too easily (the doc-1220 finding), and a pair several
-    persons share simply becomes a multi-owner worklist candidate.
+    this channel reaches. Both spellings stay tier 2 in the lexicon: initials claim
+    unrelated positions document-wide far too easily (the doc-1220 finding), and a pair
+    several persons share simply becomes a multi-owner worklist candidate. Only the
+    matcher's speaker-position rule lifts them (entity_matcher._speaker_initials).
     """
     if category != "person":
         return ()
     surname, forenames = _split_person_label(label)
     if not (surname and forenames and surname[0].isalpha() and forenames[0].isalpha()):
         return ()
-    initials = f"{forenames[0].upper()}.{surname[0].upper()}."
-    return (initials, initials.replace(".", ". ", 1))
+    initial = forenames[0].upper()
+    forms = [f"{initial}.{surname[0].upper()}."]
+    # A hyphenated surname also abbreviates part by part ("G.D.K." for Dufour-Kowalska).
+    parts = [part for part in surname.split("-") if part[:1].isalpha()]
+    if len(parts) > 1:
+        forms.append("".join(f"{letter}." for letter in [initial, *(p[0].upper() for p in parts)]))
+    return tuple(form for compact in forms for form in (compact, compact.replace(".", ". ").rstrip()))
 
 
 # --- small text helpers -----------------------------------------------------------

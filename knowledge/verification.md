@@ -584,9 +584,11 @@ snapshot.
 Population validity is broken for the current mark population. The anchor-free surname
 release (E119) lifts bare surnames of canonical authors into tier 1 without a document
 anchor, and those marks exist in no earlier draw, so the published rate no longer describes
-the whole auto-marked layer even though every sampled mark still holds. Until a supplementary
-draw over the new stratum is adjudicated, the rate is reported per stratum, the covered
-one and the new one. A fresh draw over the current population together with a recall
+the whole auto-marked layer even though every sampled mark still holds. The speaker-initials
+rule (E128) adds a second uncovered stratum, the interview labels of three documents, which
+the guard binds through the adjudicated "G.D.K." and "J.H." cases of document 2330 without
+any drawn sample describing the whole stratum. Until a supplementary draw over the new
+strata is adjudicated, the rate is reported per stratum, the covered one and the new ones. A fresh draw over the current population together with a recall
 remeasurement on newly read pages comes before further rule work, and
 [decisions.md](decisions.md), plan section, carries it as a work item. The same reasoning
 applies in reverse to a change that removes marks from tier 1, with the difference that a
