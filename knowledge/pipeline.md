@@ -103,8 +103,8 @@ OCR quality is a measured value. The measurement method is in
 `scripts/eval/benchmark_cer.py`, `scripts/eval/cer_statistics.py` and
 `scripts/eval/cer_statistics_full.py`.
 
-The GitHub Pages and online demo section below states where the pipeline output is
-published and which facsimiles the online demo carries.
+The GitHub Pages and facsimile repository section below states where the pipeline output is
+published and where the online viewer takes its facsimiles from.
 
 ## Engines
 
