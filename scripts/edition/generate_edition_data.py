@@ -6,6 +6,7 @@ Generiert Edition-Daten fuer den statischen Viewer (docs/):
                           fragt nur Gelistetes an statt auf Verdacht)
 - entity_index.json     : Entity-Index fuer NER-Highlighting im TEI-Render
 - manifests/{doc}.json  : Spiegel der Pro-Objekt-Manifeste (Status + History + Leerseiten)
+- manifest_index.json   : Aggregat der Manifest-`streams`-Bloecke (eine Anfrage statt 285)
 - pages/{doc}/...       : Per-Seiten-Mirror (Layout, Mistral-OCR, TEI extrahiert aus _final.xml)
                           inkl. {doc}_facs.json (Textseite -> Scanbild aus pb@facs)
 - thumbs/{doc}.jpg      : Thumbnail der ersten Seite (140x200 JPEG)
@@ -49,6 +50,7 @@ MISTRAL_DIR = MISTRAL_RESULTS_DIR
 PAGES_DIR = DOCS_DIR / "data" / "pages"
 THUMBS_DIR = DOCS_DIR / "data" / "thumbs"
 MANIFESTS_DIR = DOCS_DIR / "data" / "manifests"
+MANIFEST_INDEX_PATH = DOCS_DIR / "data" / "manifest_index.json"
 IMAGES_DIR = DOCS_DIR / "images"
 THUMB_SIZE = (140, 200)
 THUMB_QUALITY = 70
@@ -300,7 +302,35 @@ def mirror_manifests(verbose: bool = False) -> int:
             n += 1
             if verbose:
                 print(f"  manifest {src.name}")
+    write_manifest_index()
     return n
+
+
+def write_manifest_index(manifests_dir: Path = MANIFESTS_DIR,
+                         out_path: Path = MANIFEST_INDEX_PATH) -> int:
+    """Writes docs/data/manifest_index.json: the `streams` block per document id.
+
+    The catalog page reads the workflow status of the whole corpus from it in one
+    request instead of one request per manifest. The block is taken over unchanged so
+    index and single manifests state the same thing; a manifest without a readable
+    `streams` block is left out rather than given an invented default.
+    """
+    if not manifests_dir.exists():
+        return 0
+    index = {}
+    for src in sorted(manifests_dir.glob("*_manifest.json")):
+        try:
+            m = json.loads(src.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        streams = m.get("streams") if isinstance(m, dict) else None
+        if not isinstance(streams, dict):
+            continue
+        doc_id = str(m.get("doc_id") or src.name[: -len("_manifest.json")])
+        index[doc_id] = streams
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(index, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    return len(index)
 
 
 def mirror_per_page_data(verbose: bool = False, only_docs=None) -> dict:

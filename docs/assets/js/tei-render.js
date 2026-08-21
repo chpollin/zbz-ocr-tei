@@ -15,6 +15,16 @@
         '#sup': 'tei__hi--sup', '#sub': 'tei__hi--sub'
     };
 
+    // Provenance of an entity mention (E118): who asserted it, how certain, by which
+    // rule. Carried into the DOM so the viewer popover can show it without re-parsing.
+    function provenanceAttrs(node, attrs) {
+        ['resp', 'cert', 'source'].forEach(name => {
+            const v = node.getAttribute(name);
+            if (v) attrs['data-' + name] = v;
+        });
+        return attrs;
+    }
+
     /**
      * Recursively render a TEI-XML element.
      * @param {Node} node
@@ -89,6 +99,7 @@
                 // against data/entities.json instead of showing the native tooltip.
                 const attrs = { title: tag + (ref ? ' · ' + ref : '') };
                 if (ref) attrs['data-ref'] = ref;
+                provenanceAttrs(node, attrs);
                 el = ZBZ.el('span', { cls: 'tei__entity tei__entity--' + tag.toLowerCase(), attrs });
                 renderChildren(node, el);
                 target.appendChild(el);
@@ -97,10 +108,9 @@
 
             case 'bibl': {
                 const ref = node.getAttribute('ref') || '';
-                el = ZBZ.el('span', {
-                    cls: 'tei__bibl',
-                    attrs: ref ? { title: 'bibl · ' + ref, 'data-ref': ref } : { title: 'bibl' }
-                });
+                const biblAttrs = ref ? { title: 'bibl · ' + ref, 'data-ref': ref } : { title: 'bibl' };
+                provenanceAttrs(node, biblAttrs);
+                el = ZBZ.el('span', { cls: 'tei__bibl', attrs: biblAttrs });
                 renderChildren(node, el);
                 target.appendChild(el);
                 break;

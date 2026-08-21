@@ -169,13 +169,22 @@ docs/
 ├── assets/
 │   ├── css/
 │   │   ├── tokens.css               # Hersch design tokens (--h-*)
-│   │   ├── base.css                 # reset, typography, buttons, badges, tabs
+│   │   ├── fonts.css                # @font-face of the three vendored families
+│   │   ├── base.css                 # reset, typography, buttons, badges, skip link, reduced motion
 │   │   ├── viewer.css               # viewer shell, facsimile overlay, TEI render, editor UI
 │   │   ├── catalog.css              # corpus overview: status bar, filters, doc table
 │   │   └── entity-overview.css      # entity overview page
+│   ├── fonts/                       # EB Garamond, Jost, JetBrains Mono as WOFF2 + OFL texts
+│   ├── vendor/
+│   │   └── openseadragon/           # OpenSeadragon 5.0.1 build + button sprites + BSD-3 license
 │   └── js/
-│       ├── core.js                  # DOM, URL, fetch, format, cache, toast, event bus, markdown renderer
-│       ├── viewer.js                # viewer orchestrator: doc selection + mode switching
+│       ├── core.js                  # DOM, URL, fetch, fold, cache, toast, event bus, markdown renderer
+│       ├── viewer-state.js          # shared ZBZ.Viewer.state, DOM refs, page cache, asset bookkeeping
+│       ├── viewer-entities.js       # entity preview, candidate marking, mention popover
+│       ├── viewer-status.js         # workflow status per stream, manifest history, identity chip
+│       ├── viewer-persist.js        # save, export, repo folder connection
+│       ├── viewer-page.js           # facsimile, layout overlay, text panel, view and edit modes
+│       ├── viewer.js                # viewer shell: init, doc selection, dropdowns, event wiring
 │       ├── catalog.js               # corpus overview: loading, filters (stream x status, E66), sorting
 │       ├── tei-render.js            # TEI-XML -> DOM
 │       ├── layout-editor.js         # bbox drag/resize/add/delete + reading order
@@ -183,18 +192,41 @@ docs/
 │       ├── fs-access.js             # direct write into the working tree (File System Access API, E72)
 │       ├── download.js              # file download (JSON/MD/XML)
 │       └── entity-overview.js       # entity overview page
-└── data/                        # generated via scripts/edition/generate_edition_data.py
-    ├── catalog.json             # doc list with streams.{ocr,layout,tei}.{status,last_at,last_by}
-    ├── manifests/{doc}_manifest.json  # mirror of the per-object manifests (workflow + history + blank pages, E66)
-    ├── search_index.json        # full text for doc search
-    ├── tei/                     # final TEIs (*_final.xml)
-    └── pages/                   # per-page mirror: layout JSONs + Mistral OCR + per-page TEI
+├── data/                        # generated via scripts/edition/generate_edition_data.py (and the entity generators)
+│   ├── catalog.json             # doc list with streams.{ocr,layout,tei,entities}.{status,last_at,last_by}
+│   ├── manifests/{doc}_manifest.json  # mirror of the per-object manifests (workflow + history + blank pages, E66)
+│   ├── manifest_index.json      # the `streams` block of every manifest in one file
+│   ├── cer_statistics.json      # published CER statistics (versioned evidence, seed 42)
+│   ├── entities.json            # entity lookup (gid -> label, category, dates, lobid link)
+│   ├── entity_overview.json     # per-document entity overview for entities.html
+│   ├── thumbs/{doc}.jpg         # catalog thumbnails
+│   └── pages/                   # per-page mirror: layout JSONs + Mistral OCR + per-page TEI + entity preview
+├── images/{doc}/{doc}_pNNN.png  # facsimiles (gitignored apart from the demo documents)
+└── .nojekyll                    # GitHub Pages serves the tree as is
 ```
 
-All JS modules are IIFEs in the `ZBZ.*` namespace; no npm/build pipeline.
-Runtime CDN dependency: OpenSeadragon 5.0.1 (jsDelivr) for the facsimile in
-view mode (E58). JSZip 3.10.1 (cdnjs) is planned for the ZIP export module
-(E61) but not yet included in the code.
+All JS modules are IIFEs in the `ZBZ.*` namespace; no npm/build pipeline. The
+viewer is six such modules loaded as classic scripts in the order of the tree
+above, `viewer-state.js` first because it creates the namespace, the shell
+`viewer.js` last because it wires the events. They share the mutable
+`ZBZ.Viewer.state` and reach each other through `ZBZ.Viewer`, resolved at call
+time so the load order stays the only ordering constraint. State changes several
+modules react to travel as `ZBZ.bus` events, `doc:changed` (the status module
+loads the manifest), `page:changed` (the entity module drops its popover),
+`dirty:changed` (the persistence module re-renders the Save button) and
+`entity-mode:changed` (the page module re-syncs the two dropdowns).
+
+The site requests no third-party resources. OpenSeadragon 5.0.1 for the
+facsimile in view mode (E58) and the three web font families live under
+`docs/assets/`, each with its license text; `infrastructure.md` records the
+reasoning. JSZip 3.10.1 is planned for the ZIP export module (E61) and would be
+vendored the same way.
+
+The corpus overview reads the workflow status of all documents from
+`docs/data/manifest_index.json`, which the mirror step of
+`generate_edition_data.py` writes as the `streams` block of every manifest under
+its document id. A deploy without the file falls back to reading the manifests
+one by one, so an older mirror still shows correct traffic lights.
 
 ### 3.3 Layout Editor
 
@@ -318,10 +350,14 @@ On an entity page the legend splits into the three GND categories (persons,
 organisations, works) plus a chip for the candidates. Marked mentions act as
 buttons, and the popover carries label, category, life dates, and the link to
 lobid.org. Tier-2 candidates are marked inline as well and open the same
-popover, which additionally names the reason the tool held back ("Zur
-Prüfung") and the origin of the matched name form; where several listed bearers
-carry the form, the popover lists all of them, so the position stays visibly
-undecided. Candidates the renderer cannot place inline stay visible as a list
+popover, which additionally names the reason the tool held back ("For review")
+and the origin of the matched name form; where several listed bearers carry the
+form, the popover lists all of them, so the position stays visibly undecided.
+For a mark the matcher actually set, the popover closes with three provenance
+rows read from the mention itself, who asserted it (`@resp`, the matcher alone
+or the matcher plus the adjudication), how certain the assertion is (`@cert`),
+and which rule produced the hit (`@source`, E118). `tei-render.js` carries the
+three attributes into the DOM as data attributes for that purpose. Candidates the renderer cannot place inline stay visible as a list
 above the text, so the page shows the complete worklist either way.
 
 Two tiers meet in this view. What the deterministic rules resolve on their own

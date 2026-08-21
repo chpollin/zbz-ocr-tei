@@ -4,29 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hersch Pipeline Viewer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/tokens.css?v=7">
-  <link rel="stylesheet" href="assets/css/base.css?v=7">
-  <link rel="stylesheet" href="assets/css/viewer.css?v=22">
-  <script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/openseadragon.min.js"></script>
+  <link rel="stylesheet" href="assets/css/fonts.css?v=1">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=8">
+  <link rel="stylesheet" href="assets/css/base.css?v=8">
+  <link rel="stylesheet" href="assets/css/viewer.css?v=23">
+  <script src="assets/vendor/openseadragon/openseadragon.min.js?v=5.0.1"></script>
 </head>
 <body class="viewer-body">
+
+  <a class="sr-only skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================ Site header (shared) ============================================================ -->
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__brand" href="index.html" title="Back to the corpus overview">
+      <a class="site-header__brand" href="index.html">
         <strong>Hersch</strong>
         <span>Pipeline</span>
       </a>
       <div class="site-header__center">
+        <p class="site-header__sub">Jeanne Hersch papers, ZBZ &middot; OCR / Layout / TEI</p>
         <span class="site-header__exp-badge"
               title="Experimental inspection environment of the running OCR/TEI pipeline. Built with the Promptotyping method (dhcraft.org/promptotyping). Contents are generated pipeline results, not editorially reviewed.">Experimental</span>
       </div>
       <nav class="site-header__nav" aria-label="Main navigation">
         <a href="index.html">Corpus</a>
+        <a href="entities.html">Entities</a>
         <a href="methode.html">Method</a>
         <a href="about.html">About</a>
         <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-header__icon" aria-label="GitHub repository" title="GitHub repository"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
@@ -161,24 +163,22 @@
   </div>
 
   <!-- One-time info when first connecting the repo folder -->
-  <div class="modal-overlay" id="fsa-info" hidden>
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="fsa-info-title">
-      <h2 class="modal__title" id="fsa-info-title">Connect repo folder</h2>
-      <p class="modal__text">
-        In the next step, pick the project folder <strong>zbz-ocr-tei</strong>, that is the folder
-        directly containing <code>output/</code>, <code>docs/</code>, and <code>scripts/</code>.
-      </p>
-      <p class="modal__text">
-        Your corrections are then <strong>written directly there</strong>: layout and OCR to
-        <code>output/</code>, workflow status and TEI to <code>output/tei_final/</code>. Nothing is
-        uploaded, everything stays local. The browser asks once for write permission.
-      </p>
-      <div class="modal__actions">
-        <button class="btn btn--ghost btn--sm" id="fsa-info-cancel" type="button">Cancel</button>
-        <button class="btn btn--primary btn--sm" id="fsa-info-go" type="button">Choose folder</button>
-      </div>
+  <dialog class="modal" id="fsa-info" aria-labelledby="fsa-info-title">
+    <h2 class="modal__title" id="fsa-info-title">Connect repo folder</h2>
+    <p class="modal__text">
+      In the next step, pick the project folder <strong>zbz-ocr-tei</strong>, that is the folder
+      directly containing <code>output/</code>, <code>docs/</code>, and <code>scripts/</code>.
+    </p>
+    <p class="modal__text">
+      Your corrections are then <strong>written directly there</strong>: layout and OCR to
+      <code>output/</code>, workflow status and TEI to <code>output/tei_final/</code>. Nothing is
+      uploaded, everything stays local. The browser asks once for write permission.
+    </p>
+    <div class="modal__actions">
+      <button class="btn btn--ghost btn--sm" id="fsa-info-cancel" type="button">Cancel</button>
+      <button class="btn btn--primary btn--sm" id="fsa-info-go" type="button">Choose folder</button>
     </div>
-  </div>
+  </dialog>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
@@ -196,12 +196,17 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="assets/js/core.js?v=7"></script>
-  <script src="assets/js/tei-render.js?v=6"></script>
+  <script src="assets/js/core.js?v=8"></script>
+  <script src="assets/js/tei-render.js?v=7"></script>
   <script src="assets/js/download.js?v=2"></script>
   <script src="assets/js/fs-access.js?v=5"></script>
   <script src="assets/js/layout-editor.js?v=4"></script>
   <script src="assets/js/transcription-editor.js?v=4"></script>
-  <script src="assets/js/viewer.js?v=27"></script>
+  <script src="assets/js/viewer-state.js?v=1"></script>
+  <script src="assets/js/viewer-entities.js?v=1"></script>
+  <script src="assets/js/viewer-status.js?v=1"></script>
+  <script src="assets/js/viewer-persist.js?v=2"></script>
+  <script src="assets/js/viewer-page.js?v=1"></script>
+  <script src="assets/js/viewer.js?v=29"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 /*
  * Base Layer
- * Reset, Typography, Layout-Primitives, allgemeine Komponenten.
- * Geladen nach tokens.css, vor viewer.css.
+ * Reset, typography, layout primitives, shared components.
+ * Loaded after tokens.css, before viewer.css.
  */
 
 /* ---- Reset ---- */
@@ -66,6 +66,27 @@ code, pre, kbd {
   clip: rect(0,0,0,0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Skip link: carries .sr-only until it takes focus, then it becomes visible chrome. */
+.skip-link:focus {
+  position: fixed;
+  top: var(--h-space-sm);
+  left: var(--h-space-sm);
+  z-index: 1000;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: var(--h-space-xs) var(--h-space-sm);
+  overflow: visible;
+  clip: auto;
+  background: var(--h-surface);
+  color: var(--h-text);
+  border: 1px solid var(--h-border-emphasis);
+  border-radius: var(--h-radius);
+  font-family: var(--h-font-heading);
+  font-size: var(--h-sm);
+  text-decoration: none;
 }
 
 /* ---- Buttons ---- */
@@ -160,9 +181,7 @@ select.input {
 }
 .badge--ok      { background: var(--h-olivgruen-subtle); color: var(--h-olivgruen); border-color: var(--h-olivgruen); }
 .badge--warn    { background: var(--h-ocker-subtle); color: var(--h-ocker); border-color: var(--h-ocker); }
-.badge--error   { background: var(--h-ziegelrot-subtle); color: var(--h-ziegelrot); border-color: var(--h-border-accent); }
 .badge--info    { background: var(--h-preussischblau-subtle); color: var(--h-preussischblau); border-color: var(--h-preussischblau); }
-.badge--accent  { background: var(--h-ziegelrot-subtle); color: var(--h-ziegelrot); border-color: var(--h-border-accent); }
 
 /* ---- Cards ---- */
 .card {
@@ -172,30 +191,7 @@ select.input {
   padding: var(--h-space-md);
 }
 
-/* ---- Tabs ---- */
-.tabs {
-  display: flex;
-  gap: 0;
-  border-bottom: 1px solid var(--h-border-emphasis);
-}
-.tab {
-  padding: 0.5em 1em;
-  border: none;
-  background: transparent;
-  color: var(--h-text-secondary);
-  font-family: var(--h-font-heading);
-  font-size: var(--h-sm);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: color var(--h-transition-fast), border-color var(--h-transition-fast);
-}
-.tab:hover { color: var(--h-text); }
-.tab[aria-selected="true"] {
-  color: var(--h-ziegelrot);
-  border-bottom-color: var(--h-ziegelrot);
-}
-
-/* ---- Toast (von core.js verwendet) ---- */
+/* ---- Toast (used by core.js) ---- */
 #zbz-toast-container { position: fixed; top: 70px; right: 20px; z-index: 10000; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
 .toast {
   background: var(--h-anthrazit);
@@ -292,7 +288,7 @@ select.input {
   .site-header__sub { display: none; }
 }
 
-/* ---- Header-Zentrum: Sub-Text + Experimentell-Badge inline ---- */
+/* ---- Header centre: subtitle + experimental badge inline ---- */
 .site-header__center {
   display: flex;
   align-items: center;
@@ -512,4 +508,18 @@ select.input {
   color: var(--h-text-muted);
   font-style: italic;
   margin-top: var(--h-space-sm);
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+/* A viewer who asks the system for less motion gets no transitions and no
+   animations; the states themselves stay, they arrive without movement. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

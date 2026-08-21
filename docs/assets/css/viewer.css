@@ -650,7 +650,6 @@ a.tei__ref { color: var(--h-preussischblau); }
   color: var(--h-text-muted);
   margin-bottom: var(--h-space-xs);
 }
-.entity-worklist__empty { color: var(--h-text-muted); }
 .entity-worklist__list { list-style: none; margin: 0; padding: 0; }
 .entity-worklist__item {
   display: grid;
@@ -730,6 +729,27 @@ a.tei__ref { color: var(--h-preussischblau); }
   color: var(--h-text-muted);
 }
 .entity-pop__link { font-size: var(--h-xs); color: var(--h-preussischblau); }
+/* Provenance of a marked mention: who asserted it, how certain, by which rule. */
+.entity-pop__prov {
+  margin-top: var(--h-space-xs);
+  padding-top: var(--h-space-xs);
+  border-top: 1px solid var(--h-border);
+  font-size: var(--h-xs);
+  color: var(--h-text-secondary);
+}
+.entity-pop__prov-row {
+  display: flex;
+  gap: var(--h-space-sm);
+  line-height: 1.5;
+}
+.entity-pop__prov-label {
+  flex: 0 0 5.5em;
+  color: var(--h-text-muted);
+}
+.entity-pop__prov-value {
+  font-family: var(--h-font-mono);
+  overflow-wrap: anywhere;
+}
 
 /* XML View */
 .xml-view {
@@ -1001,30 +1021,21 @@ a.tei__ref { color: var(--h-preussischblau); }
   margin-right: 2px;
 }
 
-/* ---- Info-Modal (einmalige Erklaerung beim ersten Repo-Verbinden) ---- */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--h-overlay);
-  padding: var(--h-space-md);
-}
-/* WICHTIG: `display:flex` oben wuerde sonst das `hidden`-Attribut aushebeln (Author-Regel
-   schlaegt UA-`[hidden]{display:none}`). Diese Regel (hoehere Spezifitaet) stellt das Verstecken
-   wieder her -- sonst liegt das Overlay dauerhaft ueber der Seite und faengt alle Klicks ab. */
-.modal-overlay[hidden] { display: none; }
+/* ---- Info dialog (one-time explanation on the first repo connect) ---- */
+/* Native <dialog>: modality, backdrop, focus containment and Escape come from the
+   platform; `margin: auto` centres it, `display: none` while closed is the UA default. */
 .modal {
   max-width: 460px;
   width: 100%;
+  margin: auto;
   background: var(--h-paper);
+  color: var(--h-text);
   border: 1px solid var(--h-border);
   border-radius: var(--h-radius-lg);
   box-shadow: var(--h-shadow-md);
   padding: var(--h-space-xl);
 }
+.modal::backdrop { background: var(--h-overlay); }
 .modal__title {
   font-family: var(--h-font-heading);
   color: var(--h-heading);

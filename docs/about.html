@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About &middot; Hersch Pipeline</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/tokens.css?v=3">
-  <link rel="stylesheet" href="assets/css/base.css?v=7">
+  <link rel="stylesheet" href="assets/css/fonts.css?v=1">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=8">
+  <link rel="stylesheet" href="assets/css/base.css?v=8">
 </head>
 <body>
+
+  <a class="sr-only skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="site-header__inner">
@@ -33,7 +33,7 @@
     </div>
   </header>
 
-  <main class="prose">
+  <main class="prose" id="main">
 
     <header class="intro">
       <h1>Pipeline viewer for the Jeanne Hersch papers</h1>
@@ -99,12 +99,18 @@
         <a href="entities.html">entity overview</a> for the corpus-wide entity picture. Data is
         loaded exclusively from static JSON/XML/MD files, no backend. Editor changes are
         saved directly into the local repo clone via the File System Access API (Chromium),
-        with file download as the fallback.
+        with file download as the fallback. The viewer is split into the modules
+        <code>viewer-state</code>, <code>viewer-entities</code>, <code>viewer-status</code>,
+        <code>viewer-persist</code>, <code>viewer-page</code> and the <code>viewer</code> shell,
+        loaded as classic scripts around the shared <code>ZBZ.Viewer</code> namespace.
+        Fonts and OpenSeadragon are served from this repository, so the site requests no
+        third-party resources.
       </p>
       <p>
         Data: catalog.json plus a per-page mirror under
         <code>data/pages/</code> (all 285 docs), thumbnails under <code>data/thumbs/</code>,
-        per-document manifests under <code>data/manifests/</code>, the entity lookup
+        per-document manifests under <code>data/manifests/</code> with the aggregated
+        <code>data/manifest_index.json</code> the corpus overview reads, the entity lookup
         <code>data/entities.json</code>, the entity overview aggregate
         <code>data/entity_overview.json</code>, and the CER statistics
         <code>data/cer_statistics.json</code>.

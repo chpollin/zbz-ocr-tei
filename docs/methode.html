@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Method &amp; Quality &middot; Hersch Pipeline</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/tokens.css?v=3">
-  <link rel="stylesheet" href="assets/css/base.css?v=7">
+  <link rel="stylesheet" href="assets/css/fonts.css?v=1">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=8">
+  <link rel="stylesheet" href="assets/css/base.css?v=8">
 </head>
 <body>
+
+  <a class="sr-only skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="site-header__inner">
@@ -33,7 +33,7 @@
     </div>
   </header>
 
-  <main class="prose">
+  <main class="prose" id="main">
 
     <header class="intro">
       <h1>Method &amp; Quality</h1>
@@ -172,7 +172,7 @@
         <li><strong>Stability measured on a pilot only</strong>: the LLM stages are non-deterministic. A pilot (5 documents, 3 runs each, 2026-07-07) measured a mean run-to-run standard deviation of 0.04&nbsp;pp fidelity CER (max 0.13&nbsp;pp, max range 0.25&nbsp;pp); the variance is negligible at this scale, but the pilot covers 5 of the 25 reference documents.</li>
         <li><strong>HCPR is frequency-based</strong>: it compares diacritics counts, not positions, and underestimates substitution errors.</li>
         <li><strong>Multi-normalization regimes differ little</strong>: the upstream normalization makes the nominal normalization levels practically identical.</li>
-        <li><strong>The corpus proxy does not generalize</strong>: the composite OLS from the dictionary hit rate has LOOCV R&sup2;&nbsp;&lt;&nbsp;0. The corpus estimate of 21.84&nbsp;% mean (full-text scale, scope included) is a plausibility bound, not an estimator.</li>
+        <li><strong>The corpus proxy does not generalize</strong>: the composite OLS from the dictionary hit rate has LOOCV R&sup2;&nbsp;&lt;&nbsp;0. The corpus estimate of 21.96&nbsp;% mean (full-text scale, scope included) is a plausibility bound, not an estimator.</li>
         <li><strong>No inter-engine comparison</strong>: only one OCR engine run (Mistral), no second source as cross-validation.</li>
       </ul>
       <p class="note">

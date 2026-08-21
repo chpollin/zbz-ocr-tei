@@ -217,6 +217,19 @@ Pages every other document shows OCR/layout/TEI text but no facsimile. Full
 online inspection needs an external image host (IIIF server, S3, CDN) and a
 configurable `ZBZ.path.image()` with a base-URL variable.
 
+### No third-party resources
+
+Every asset the site loads comes from `docs/`. OpenSeadragon 5.0.1 sits in
+`docs/assets/vendor/openseadragon/` with its build, its button sprites and its
+BSD-3 license text; the three web font families of the design system sit in
+`docs/assets/fonts/` as WOFF2 in the latin and latin-ext subsets with their SIL
+Open Font License texts, declared in `docs/assets/css/fonts.css`. The pages
+therefore issue no request to a CDN or a font host, the legal notice states that
+plainly, and the viewer keeps working in an environment without outbound
+internet access. A future runtime dependency is vendored the same way rather
+than linked; the token catalog keeps the font stacks, `fonts.css` only adds the
+`@font-face` rules.
+
 ### Regenerating viewer data
 
 Pages delivers the generated mirror `docs/data/`; the pipeline tree `output/` stays local

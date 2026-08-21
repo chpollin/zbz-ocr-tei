@@ -75,12 +75,8 @@ ZBZ.EntityOverview = (() => {
     ],
   };
 
-  const el = (tag, className, text) => {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    if (text !== undefined) node.textContent = text;
-    return node;
-  };
+  // Positional shim over ZBZ.el for the call sites of this module.
+  const el = (tag, className, text) => ZBZ.el(tag, { cls: className, text: text });
 
   // ------------------------------------------------------------ icons
   /* Monochrome 16x16 glyphs drawn in currentColor. Shape carries the distinction,
@@ -181,12 +177,6 @@ ZBZ.EntityOverview = (() => {
 
   const percent = (rate) => `${(rate * 100).toFixed(1)} %`;
 
-  const fold = (value) => (value || '')
-    .normalize('NFD').replace(/[̀-ͯ]/g, '')
-    .toLowerCase()
-    .replace(/ä/g, 'ae').replace(/ö/g, 'oe')
-    .replace(/ü/g, 'ue').replace(/ß/g, 'ss');
-
   // ------------------------------------------------------------ data loading
 
   const load = async () => {
@@ -210,7 +200,7 @@ ZBZ.EntityOverview = (() => {
       altOnly: e.alternative_only || 0,
       docs: e.docs,
       ndocs: Object.keys(e.docs).length,
-      search: fold(`${gid} ${e.label}`),
+      search: ZBZ.fold(`${gid} ${e.label}`),
     }));
     state.byGid = Object.fromEntries(state.entityRows.map((row) => [row.gid, row]));
     state.docRows = catalog.documents.map((doc) => {
@@ -226,7 +216,7 @@ ZBZ.EntityOverview = (() => {
         total: record.auto + record.review,
         classes: record.classes || {},
         entities: record.entities || [],
-        search: fold(`${doc.id} ${doc.title} ${doc.author}`),
+        search: ZBZ.fold(`${doc.id} ${doc.title} ${doc.author}`),
       };
     });
     renderCorpusBar(overview.totals);
@@ -679,7 +669,7 @@ ZBZ.EntityOverview = (() => {
       applyView();
     });
     document.getElementById('eo-search').addEventListener('input', (event) => {
-      state.query = fold(event.target.value.trim());
+      state.query = ZBZ.fold(event.target.value.trim());
       render();
     });
     document.getElementById('eo-sort').addEventListener('change', (event) => {

@@ -1112,7 +1112,7 @@ def main(argv: list[str] | None = None) -> int:
             ],
             "seed": args.seed,
             "bootstrap_n": n_boot,
-            "bootstrap_method": "BCa blockwise (block=doc) + Perzentil for paired/within-doc, Du 2025",
+            "bootstrap_method": "Doc-level Perzentil-Bootstrap (block=doc) for aggregates, paired and within-doc, Du 2025",
             "literature_refs": LITERATURE_REFS,
         },
         "corpus": {

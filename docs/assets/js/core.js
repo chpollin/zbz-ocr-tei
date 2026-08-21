@@ -36,6 +36,15 @@
         return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     };
 
+    // ---- Search folding ----
+    // Diacritic-insensitive comparison key for search haystacks and queries.
+    // The NFD pass already resolves the umlauts to their base letters, so only the
+    // sharp s needs an explicit pair.
+    ZBZ.fold = (value) => (value == null ? '' : String(value))
+        .toLowerCase()
+        .normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .replace(/ß/g, 'ss');
+
     // ---- Markdown ----
     // Minimal renderer for OCR output (Mistral and similar engines deliver Markdown).
     // Supports: # / ## headings, **bold**, *italic*, paragraph blocks via blank lines;
@@ -114,8 +123,6 @@
         const n = parseInt(p, 10);
         return isNaN(n) || n < 0 ? '000' : ('00' + n).slice(-3);
     };
-    ZBZ.fmtNum = (n) => n == null ? '—' : String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-    ZBZ.fmtPct = (v, d) => v == null ? '—' : (v * 100).toFixed(d == null ? 1 : d) + '%';
 
     // ---- XML ----
     ZBZ.parseXml = (xml) => {

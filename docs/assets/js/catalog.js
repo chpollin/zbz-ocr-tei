@@ -96,22 +96,43 @@
 
     // catalog.json is an aggregate that lags behind viewer saves; the manifest
     // mirror is written immediately. Prefer it so the workflow dots are fresh.
+    // manifest_index.json carries the same stream blocks in one file; a deploy that
+    // predates it falls back to reading the manifests one by one.
     async function refreshWorkflowFromManifests() {
-        const BATCH = 24;
+        const index = await ZBZ.fetchJSON('data/manifest_index.json');
+        const changed = index
+            ? adoptStreams(d => index[d.id])
+            : await refreshFromSingleManifests();
+        if (changed) {
+            applyFilters();
+            ZBZ.log('Catalog', 'workflow refreshed from '
+                + (index ? 'manifest index' : 'single manifests')
+                + ' (' + changed + ' docs)');
+        }
+    }
+
+    function adoptStreams(streamsOf) {
         let changed = 0;
+        state.docs.forEach(d => {
+            const streams = streamsOf(d);
+            if (streams && JSON.stringify(streams) !== JSON.stringify(d.streams || {})) {
+                d.streams = streams;
+                changed++;
+            }
+        });
+        return changed;
+    }
+
+    async function refreshFromSingleManifests() {
+        const BATCH = 24;
+        const byId = {};
         for (let i = 0; i < state.docs.length; i += BATCH) {
             await Promise.all(state.docs.slice(i, i + BATCH).map(async d => {
                 const m = await ZBZ.fetchJSON('data/manifests/' + encodeURIComponent(d.id) + '_manifest.json');
-                if (m && m.streams && JSON.stringify(m.streams) !== JSON.stringify(d.streams || {})) {
-                    d.streams = m.streams;
-                    changed++;
-                }
+                if (m && m.streams) byId[d.id] = m.streams;
             }));
         }
-        if (changed) {
-            applyFilters();
-            ZBZ.log('Catalog', 'workflow refreshed from manifests (' + changed + ' docs)');
-        }
+        return adoptStreams(d => byId[d.id]);
     }
 
     // ============================================================ Helpers ============================================================
@@ -180,7 +201,7 @@
 
     function applyFilters() {
         syncStreamControl();
-        const q = state.filters.query.trim().toLowerCase();
+        const q = ZBZ.fold(state.filters.query.trim());
         const fStream = state.filters.stream;
         const fStatus = state.filters.status;
 
@@ -198,7 +219,7 @@
             }
 
             if (q) {
-                const hay = (d.id + ' ' + (d.title || '') + ' ' + (d.author || '') + ' ' + (d.desc || '')).toLowerCase();
+                const hay = ZBZ.fold(d.id + ' ' + (d.title || '') + ' ' + (d.author || '') + ' ' + (d.desc || ''));
                 if (!hay.includes(q)) return false;
             }
             return true;
