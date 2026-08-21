@@ -53,7 +53,7 @@
  ],
  "provenance": {
   "scan": "output/audits/entity_corpus_scan.json",
-  "scan_sha256": "06084b1b2959eba6c86d3e26dfd7a12a8d302c2261f69be04013e69fed9e77ca",
+  "scan_sha256": "8a7461f4b106cf03b684256c17ec85145dd14c10b598ab2c602d2e267f087d86",
   "scan_candidates": 9215,
   "entity_list": "data/entities/all_entities.json",
   "listed_entities": 289
@@ -64,68 +64,64 @@
   "entities_found": 267,
   "entities_alternative_only": 2,
   "mentions": 9215,
-  "auto": 6090,
-  "review": 3125,
+  "auto": 6084,
+  "review": 3131,
   "ambiguous_mentions": 1921
  },
  "quality": {
   "source": "data/entities/mention_verdicts.json",
   "method": "knowledge/verification.md",
-  "snapshot": "2026-08-12",
+  "snapshot": "2026-08-21",
+  "snapshots": [
+   {
+    "snapshot": "2026-08-12",
+    "n": 300,
+    "decidable": 293,
+    "correct": 279,
+    "rate": 0.9522
+   },
+   {
+    "snapshot": "2026-08-21",
+    "n": 300,
+    "decidable": 300,
+    "correct": 296,
+    "rate": 0.9867
+   }
+  ],
   "precision": {
    "n": 300,
    "distribution": {
-    "correct": 279,
-    "not_in_source": 5,
-    "undecidable": 7,
-    "wrong_entity": 5,
-    "wrong_span": 4
+    "correct": 296,
+    "not_in_source": 1,
+    "wrong_entity": 3
    },
-   "decidable": 293,
-   "correct": 279,
-   "rate": 0.9522,
+   "decidable": 300,
+   "correct": 296,
+   "rate": 0.9867,
    "ci95": [
-    0.9249,
-    0.9761
+    0.9733,
+    0.9967
    ],
    "ci_method": "percentile bootstrap, seed 42, 10000 resamples"
   },
   "recall": {
-   "mentions": 67,
+   "mentions": 63,
    "pages_with_mentions": 22,
    "status": {
-    "hit": 20,
-    "missed": 30,
-    "on_worklist": 17
+    "hit": 38,
+    "missed": 3,
+    "on_worklist": 22
    },
    "causes_missed": {
-    "lexicon_gap": 2,
-    "rule_gap": 28
+    "rule_gap": 3
    },
-   "coverage_hit_or_worklist": 0.5522
+   "coverage_hit_or_worklist": 0.9524
   },
   "agreement": {
    "n": 50,
-   "agree": 48,
-   "rate": 0.96,
-   "disagreements": [
-    {
-     "case": "p145",
-     "doc": "1520",
-     "page": 9,
-     "surface": "Jeanne Hersch",
-     "verdict": "not_in_source",
-     "second_verdict": "correct"
-    },
-    {
-     "case": "p193",
-     "doc": "3040",
-     "page": 8,
-     "surface": "Karl Jaspers",
-     "verdict": "wrong_entity",
-     "second_verdict": "correct"
-    }
-   ]
+   "agree": 50,
+   "rate": 1.0,
+   "disagreements": []
   }
  },
  "entities": {
@@ -1294,8 +1290,7 @@
    "review": 5,
    "alternative_only": 0,
    "classes": {
-    "bibliography": 1,
-    "running_head": 3,
+    "bibliography": 4,
     "suspect": 1
    },
    "docs": {
@@ -1662,17 +1657,17 @@
   "118519980": {
    "label": "Chagall, Marc",
    "category": "person",
-   "auto": 4,
-   "review": 4,
+   "auto": 3,
+   "review": 5,
    "alternative_only": 24,
    "classes": {
     "figure": 2,
-    "running_head": 2
+    "running_head": 3
    },
    "docs": {
     "760": [
-     4,
-     4
+     3,
+     5
     ]
    }
   },
@@ -3706,33 +3701,33 @@
   "118815679": {
    "label": "Hersch, Jeanne",
    "category": "person",
-   "auto": 1706,
-   "review": 527,
+   "auto": 1701,
+   "review": 532,
    "alternative_only": 0,
    "classes": {
     "ambiguous": 80,
     "derived": 29,
     "figure": 8,
     "markup": 1,
-    "running_head": 310,
-    "suspect": 99
+    "running_head": 330,
+    "suspect": 84
    },
    "docs": {
     "20": [
-     1,
-     2
+     3,
+     0
     ],
     "30": [
      1,
      0
     ],
     "40": [
-     0,
-     2
+     2,
+     0
     ],
     "50": [
-     1,
-     9
+     2,
+     8
     ],
     "60": [
      1,
@@ -3763,20 +3758,20 @@
      0
     ],
     "130": [
-     1,
-     8
+     5,
+     4
     ],
     "140": [
      18,
      1
     ],
     "150": [
-     3,
-     0
+     1,
+     2
     ],
     "160": [
-     2,
-     0
+     1,
+     1
     ],
     "170": [
      2,
@@ -3831,16 +3826,16 @@
      0
     ],
     "330": [
-     17,
-     2
+     19,
+     0
     ],
     "340": [
-     2,
-     8
+     3,
+     7
     ],
     "350": [
-     1,
-     7
+     0,
+     8
     ],
     "380": [
      1,
@@ -3927,8 +3922,8 @@
      2
     ],
     "600": [
-     0,
-     5
+     1,
+     4
     ],
     "610": [
      2,
@@ -3943,16 +3938,16 @@
      0
     ],
     "650": [
-     8,
-     9
+     7,
+     10
     ],
     "660": [
      1,
      0
     ],
     "670": [
-     24,
-     5
+     25,
+     4
     ],
     "680": [
      1,
@@ -3975,24 +3970,24 @@
      0
     ],
     "740": [
-     2,
-     9
+     1,
+     10
     ],
     "750": [
-     2,
-     9
+     3,
+     8
     ],
     "760": [
      1,
      0
     ],
     "770": [
-     1,
-     3
+     0,
+     4
     ],
     "780": [
-     36,
-     5
+     35,
+     6
     ],
     "790": [
      3,
@@ -4051,8 +4046,8 @@
      0
     ],
     "940": [
-     4,
-     0
+     1,
+     3
     ],
     "950": [
      3,
@@ -4151,8 +4146,8 @@
      0
     ],
     "1270": [
-     3,
-     0
+     0,
+     3
     ],
     "1280": [
      1,
@@ -4179,16 +4174,16 @@
      0
     ],
     "1360": [
-     1,
-     3
+     2,
+     2
     ],
     "1370": [
-     0,
-     3
+     3,
+     0
     ],
     "1380": [
-     1,
-     10
+     0,
+     11
     ],
     "1390": [
      1,
@@ -4231,16 +4226,16 @@
      0
     ],
     "1500": [
-     1,
-     5
+     2,
+     4
     ],
     "1510": [
      3,
      0
     ],
     "1520": [
-     10,
-     3
+     13,
+     0
     ],
     "1530": [
      49,
@@ -4287,8 +4282,8 @@
      0
     ],
     "1650": [
-     0,
-     6
+     1,
+     5
     ],
     "1680": [
      2,
@@ -4331,28 +4326,28 @@
      0
     ],
     "1780": [
-     3,
-     0
+     0,
+     3
     ],
     "1810": [
-     3,
-     0
+     0,
+     3
     ],
     "1820": [
      3,
      0
     ],
     "1830": [
-     2,
-     14
+     4,
+     12
     ],
     "1840": [
      1,
      0
     ],
     "1850": [
-     4,
-     0
+     0,
+     4
     ],
     "1860": [
      3,
@@ -4411,16 +4406,16 @@
      0
     ],
     "2030": [
-     0,
-     4
+     1,
+     3
     ],
     "2040": [
      2,
      0
     ],
     "2050": [
-     3,
-     0
+     0,
+     3
     ],
     "2060": [
      3,
@@ -4483,8 +4478,8 @@
      0
     ],
     "2230": [
-     3,
-     0
+     1,
+     2
     ],
     "2240": [
      1,
@@ -4531,24 +4526,24 @@
      0
     ],
     "2360": [
-     20,
-     0
+     16,
+     4
     ],
     "2370": [
      1,
      0
     ],
     "2380": [
-     1,
-     3
+     0,
+     4
     ],
     "2400": [
      10,
      26
     ],
     "2410": [
-     29,
-     3
+     28,
+     4
     ],
     "2420": [
      4,
@@ -4587,12 +4582,12 @@
      0
     ],
     "2510": [
-     2,
-     4
+     4,
+     2
     ],
     "2520": [
-     2,
-     3
+     5,
+     0
     ],
     "2530": [
      2,
@@ -4675,8 +4670,8 @@
      0
     ],
     "2730": [
-     3,
-     2
+     5,
+     0
     ],
     "2740": [
      3,
@@ -4699,8 +4694,8 @@
      0
     ],
     "2800": [
-     3,
-     4
+     5,
+     2
     ],
     "2805": [
      1,
@@ -4719,8 +4714,8 @@
      0
     ],
     "2840": [
-     1,
-     4
+     3,
+     2
     ],
     "2850": [
      1,
@@ -4731,16 +4726,16 @@
      0
     ],
     "2880": [
-     3,
-     0
+     1,
+     2
     ],
     "2890": [
      1,
      0
     ],
     "2900": [
-     3,
-     0
+     1,
+     2
     ],
     "2910": [
      1,
@@ -4751,12 +4746,12 @@
      1
     ],
     "2930": [
-     27,
-     13
+     22,
+     18
     ],
     "2940": [
-     5,
-     11
+     6,
+     10
     ],
     "2950": [
      2,
@@ -4783,8 +4778,8 @@
      0
     ],
     "3020": [
-     10,
-     6
+     14,
+     2
     ],
     "3040": [
      6,
@@ -4795,8 +4790,8 @@
      0
     ],
     "3070": [
-     17,
-     0
+     15,
+     2
     ],
     "3090": [
      2,
@@ -4811,8 +4806,8 @@
      0
     ],
     "3130": [
-     1,
-     2
+     3,
+     0
     ],
     "3140": [
      3,
@@ -4827,24 +4822,24 @@
      0
     ],
     "3180": [
-     86,
-     10
+     87,
+     9
     ],
     "3190": [
      3,
      29
     ],
     "3200": [
-     24,
-     10
+     21,
+     13
     ],
     "3210": [
      1,
      0
     ],
     "3230": [
-     3,
-     1
+     2,
+     2
     ]
    }
   },
@@ -5558,8 +5553,8 @@
    "alternative_only": 950,
    "classes": {
     "ambiguous": 111,
-    "running_head": 8,
-    "suspect": 21,
+    "running_head": 17,
+    "suspect": 12,
     "unanchored": 6
    },
    "docs": {
@@ -5692,14 +5687,14 @@
   "118557106": {
    "label": "Jaspers, Karl",
    "category": "person",
-   "auto": 1180,
-   "review": 106,
+   "auto": 1177,
+   "review": 109,
    "alternative_only": 128,
    "classes": {
     "ambiguous": 12,
     "figure": 2,
-    "running_head": 21,
-    "suspect": 71
+    "running_head": 26,
+    "suspect": 69
    },
    "docs": {
     "20": [
@@ -5771,8 +5766,8 @@
      0
     ],
     "650": [
-     71,
-     8
+     70,
+     9
     ],
     "680": [
      28,
@@ -5855,8 +5850,8 @@
      1
     ],
     "1520": [
-     170,
-     13
+     175,
+     8
     ],
     "1530": [
      2,
@@ -5899,8 +5894,8 @@
      9
     ],
     "2070": [
-     21,
-     7
+     22,
+     6
     ],
     "2120": [
      3,
@@ -6063,8 +6058,8 @@
      0
     ],
     "3190": [
-     33,
-     3
+     25,
+     11
     ],
     "3200": [
      8,
@@ -6575,8 +6570,8 @@
    "review": 14,
    "alternative_only": 0,
    "classes": {
-    "running_head": 9,
-    "suspect": 2,
+    "running_head": 10,
+    "suspect": 1,
     "unanchored": 3
    },
    "docs": {
@@ -7180,7 +7175,7 @@
    "review": 5,
    "alternative_only": 0,
    "classes": {
-    "bibliography": 3,
+    "running_head": 3,
     "suspect": 2
    },
    "docs": {
@@ -7384,16 +7379,16 @@
   "1388090074": {
    "label": "Le temple et le dieu",
    "category": "work",
-   "auto": 3,
-   "review": 2,
+   "auto": 2,
+   "review": 3,
    "alternative_only": 0,
    "classes": {
-    "running_head": 2
+    "running_head": 3
    },
    "docs": {
     "490": [
-     2,
-     2
+     1,
+     3
     ],
     "570": [
      1,
@@ -7500,17 +7495,16 @@
   "136082637": {
    "label": "Leyvraz, Jean-Pierre",
    "category": "person",
-   "auto": 5,
-   "review": 3,
+   "auto": 7,
+   "review": 1,
    "alternative_only": 0,
    "classes": {
-    "running_head": 2,
     "unanchored": 1
    },
    "docs": {
     "490": [
-     1,
-     2
+     3,
+     0
     ],
     "570": [
      2,
@@ -7607,12 +7601,12 @@
   "118577484": {
    "label": "Marcel, Gabriel",
    "category": "person",
-   "auto": 94,
-   "review": 21,
+   "auto": 93,
+   "review": 22,
    "alternative_only": 0,
    "classes": {
     "markup": 1,
-    "running_head": 5,
+    "running_head": 6,
     "suspect": 10,
     "unanchored": 5
    },
@@ -7670,8 +7664,8 @@
      1
     ],
     "1350": [
-     22,
-     3
+     21,
+     4
     ],
     "1400": [
      0,
@@ -8298,9 +8292,8 @@
    "alternative_only": 0,
    "classes": {
     "derived": 1,
-    "running_head": 3,
     "suspect": 5,
-    "unanchored": 76
+    "unanchored": 79
    },
    "docs": {
     "20": [
@@ -10857,8 +10850,9 @@
    "review": 206,
    "alternative_only": 0,
    "classes": {
-    "ambiguous": 202,
-    "derived": 4
+    "ambiguous": 192,
+    "derived": 4,
+    "running_head": 10
    },
    "docs": {
     "20": [
@@ -11113,13 +11107,12 @@
   "1010450-1": {
    "label": "Université de Genève",
    "category": "organisation",
-   "auto": 106,
-   "review": 5,
+   "auto": 108,
+   "review": 3,
    "alternative_only": 0,
    "classes": {
     "derived": 1,
-    "figure": 2,
-    "running_head": 2
+    "figure": 2
    },
    "docs": {
     "40": [
@@ -11127,8 +11120,8 @@
      0
     ],
     "110": [
-     2,
-     2
+     4,
+     0
     ],
     "220": [
      1,
@@ -11686,9 +11679,8 @@
    "review": 19,
    "alternative_only": 0,
    "classes": {
-    "running_head": 6,
     "suspect": 3,
-    "unanchored": 10
+    "unanchored": 16
    },
    "docs": {
     "160": [
@@ -11785,12 +11777,11 @@
   "139403475X": {
    "label": "Von der Wahrheit",
    "category": "work",
-   "auto": 17,
-   "review": 6,
+   "auto": 19,
+   "review": 4,
    "alternative_only": 0,
    "classes": {
     "bibliography": 2,
-    "running_head": 2,
     "suspect": 2
    },
    "docs": {
@@ -11811,8 +11802,8 @@
      0
     ],
     "1520": [
-     4,
-     4
+     6,
+     2
     ],
     "2030": [
      0,
@@ -11839,11 +11830,11 @@
   "119194589": {
    "label": "Wahl, Jean",
    "category": "person",
-   "auto": 99,
-   "review": 99,
+   "auto": 98,
+   "review": 100,
    "alternative_only": 0,
    "classes": {
-    "running_head": 3,
+    "running_head": 4,
     "suspect": 94,
     "unanchored": 2
    },
@@ -11921,8 +11912,8 @@
      1
     ],
     "1350": [
-     15,
-     15
+     14,
+     16
     ],
     "1390": [
      0,
@@ -12241,7 +12232,8 @@
    "review": 24,
    "alternative_only": 0,
    "classes": {
-    "suspect": 18,
+    "running_head": 9,
+    "suspect": 9,
     "unanchored": 6
    },
    "docs": {
@@ -12492,13 +12484,12 @@
  },
  "documents": {
   "20": {
-   "auto": 343,
-   "review": 56,
+   "auto": 345,
+   "review": 54,
    "classes": {
     "ambiguous": 8,
-    "running_head": 5,
     "suspect": 9,
-    "unanchored": 34
+    "unanchored": 37
    },
    "entities": [
     {
@@ -12530,8 +12521,7 @@
      "auto": 0,
      "review": 19,
      "classes": {
-      "running_head": 3,
-      "unanchored": 16
+      "unanchored": 19
      }
     },
     {
@@ -12618,11 +12608,9 @@
     },
     {
      "gid": "118815679",
-     "auto": 1,
-     "review": 2,
-     "classes": {
-      "running_head": 2
-     }
+     "auto": 3,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "2024349-2",
@@ -12788,20 +12776,17 @@
    ]
   },
   "40": {
-   "auto": 1,
-   "review": 3,
+   "auto": 3,
+   "review": 1,
    "classes": {
-    "ambiguous": 1,
-    "running_head": 2
+    "ambiguous": 1
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 0,
-     "review": 2,
-     "classes": {
-      "running_head": 2
-     }
+     "auto": 2,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "1010450-1",
@@ -12820,20 +12805,20 @@
    ]
   },
   "50": {
-   "auto": 17,
-   "review": 11,
+   "auto": 18,
+   "review": 10,
    "classes": {
-    "running_head": 9,
+    "running_head": 8,
     "short_title": 1,
     "suspect": 1
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 1,
-     "review": 9,
+     "auto": 2,
+     "review": 8,
      "classes": {
-      "running_head": 9
+      "running_head": 8
      }
     },
     {
@@ -13138,12 +13123,11 @@
    ]
   },
   "110": {
-   "auto": 93,
-   "review": 29,
+   "auto": 95,
+   "review": 27,
    "classes": {
     "ambiguous": 2,
     "derived": 1,
-    "running_head": 2,
     "suspect": 9,
     "unanchored": 15
    },
@@ -13194,11 +13178,9 @@
     },
     {
      "gid": "1010450-1",
-     "auto": 2,
-     "review": 2,
-     "classes": {
-      "running_head": 2
-     }
+     "auto": 4,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "118547739",
@@ -13598,19 +13580,19 @@
    ]
   },
   "130": {
-   "auto": 2,
-   "review": 11,
+   "auto": 6,
+   "review": 7,
    "classes": {
     "ambiguous": 3,
-    "running_head": 8
+    "running_head": 4
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 1,
-     "review": 8,
+     "auto": 5,
+     "review": 4,
      "classes": {
-      "running_head": 8
+      "running_head": 4
      }
     },
     {
@@ -13703,17 +13685,20 @@
    ]
   },
   "150": {
-   "auto": 5,
-   "review": 1,
+   "auto": 3,
+   "review": 3,
    "classes": {
+    "running_head": 2,
     "unanchored": 1
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 3,
-     "review": 0,
-     "classes": {}
+     "auto": 1,
+     "review": 2,
+     "classes": {
+      "running_head": 2
+     }
     },
     {
      "gid": "118509578",
@@ -13738,10 +13723,11 @@
    ]
   },
   "160": {
-   "auto": 18,
-   "review": 15,
+   "auto": 17,
+   "review": 16,
    "classes": {
     "derived": 1,
+    "running_head": 1,
     "suspect": 5,
     "unanchored": 9
    },
@@ -13792,9 +13778,11 @@
     },
     {
      "gid": "118815679",
-     "auto": 2,
-     "review": 0,
-     "classes": {}
+     "auto": 1,
+     "review": 1,
+     "classes": {
+      "running_head": 1
+     }
     },
     {
      "gid": "118503251",
@@ -14516,8 +14504,8 @@
    "review": 13,
    "classes": {
     "ambiguous": 8,
+    "running_head": 2,
     "short_title": 1,
-    "suspect": 2,
     "unanchored": 2
    },
    "entities": [
@@ -14527,7 +14515,7 @@
      "review": 10,
      "classes": {
       "ambiguous": 8,
-      "suspect": 2
+      "running_head": 2
      }
     },
     {
@@ -14614,12 +14602,12 @@
    ]
   },
   "330": {
-   "auto": 97,
-   "review": 280,
+   "auto": 99,
+   "review": 278,
    "classes": {
     "ambiguous": 5,
     "markup": 1,
-    "running_head": 254,
+    "running_head": 252,
     "suspect": 3,
     "unanchored": 17
    },
@@ -14643,11 +14631,9 @@
     },
     {
      "gid": "118815679",
-     "auto": 17,
-     "review": 2,
-     "classes": {
-      "running_head": 2
-     }
+     "auto": 19,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "118578537",
@@ -14866,20 +14852,20 @@
    ]
   },
   "340": {
-   "auto": 2,
-   "review": 11,
+   "auto": 3,
+   "review": 10,
    "classes": {
-    "running_head": 8,
+    "running_head": 7,
     "suspect": 1,
     "unanchored": 2
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 2,
-     "review": 8,
+     "auto": 3,
+     "review": 7,
      "classes": {
-      "running_head": 8
+      "running_head": 7
      }
     },
     {
@@ -14901,10 +14887,10 @@
    ]
   },
   "350": {
-   "auto": 52,
-   "review": 13,
+   "auto": 51,
+   "review": 14,
    "classes": {
-    "running_head": 7,
+    "running_head": 8,
     "suspect": 3,
     "unanchored": 3
    },
@@ -14925,10 +14911,10 @@
     },
     {
      "gid": "118815679",
-     "auto": 1,
-     "review": 7,
+     "auto": 0,
+     "review": 8,
      "classes": {
-      "running_head": 7
+      "running_head": 8
      }
     },
     {
@@ -15600,29 +15586,27 @@
    ]
   },
   "490": {
-   "auto": 7,
-   "review": 7,
+   "auto": 8,
+   "review": 6,
    "classes": {
-    "running_head": 4,
+    "running_head": 3,
     "suspect": 1,
     "unanchored": 2
    },
    "entities": [
     {
      "gid": "1388090074",
-     "auto": 2,
-     "review": 2,
+     "auto": 1,
+     "review": 3,
      "classes": {
-      "running_head": 2
+      "running_head": 3
      }
     },
     {
      "gid": "136082637",
-     "auto": 1,
-     "review": 2,
-     "classes": {
-      "running_head": 2
-     }
+     "auto": 3,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "118549421",
@@ -16387,20 +16371,20 @@
    ]
   },
   "600": {
-   "auto": 0,
-   "review": 8,
+   "auto": 1,
+   "review": 7,
    "classes": {
     "derived": 1,
-    "running_head": 5,
+    "running_head": 4,
     "suspect": 2
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 0,
-     "review": 5,
+     "auto": 1,
+     "review": 4,
      "classes": {
-      "running_head": 5
+      "running_head": 4
      }
     },
     {
@@ -16659,32 +16643,32 @@
    ]
   },
   "650": {
-   "auto": 164,
-   "review": 64,
+   "auto": 162,
+   "review": 66,
    "classes": {
     "ambiguous": 9,
     "derived": 7,
-    "running_head": 15,
+    "running_head": 17,
     "suspect": 11,
     "unanchored": 22
    },
    "entities": [
     {
      "gid": "118557106",
-     "auto": 71,
-     "review": 8,
+     "auto": 70,
+     "review": 9,
      "classes": {
-      "running_head": 7,
+      "running_head": 8,
       "suspect": 1
      }
     },
     {
      "gid": "118815679",
-     "auto": 8,
-     "review": 9,
+     "auto": 7,
+     "review": 10,
      "classes": {
       "ambiguous": 1,
-      "running_head": 8
+      "running_head": 9
      }
     },
     {
@@ -17145,22 +17129,22 @@
    ]
   },
   "670": {
-   "auto": 58,
-   "review": 15,
+   "auto": 59,
+   "review": 14,
    "classes": {
     "ambiguous": 1,
     "derived": 1,
-    "running_head": 4,
+    "running_head": 3,
     "unanchored": 9
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 24,
-     "review": 5,
+     "auto": 25,
+     "review": 4,
      "classes": {
       "derived": 1,
-      "running_head": 4
+      "running_head": 3
      }
     },
     {
@@ -17639,12 +17623,12 @@
    ]
   },
   "740": {
-   "auto": 50,
-   "review": 35,
+   "auto": 49,
+   "review": 36,
    "classes": {
     "derived": 5,
-    "running_head": 18,
-    "suspect": 2,
+    "running_head": 20,
+    "suspect": 1,
     "unanchored": 10
    },
    "entities": [
@@ -17653,16 +17637,15 @@
      "auto": 25,
      "review": 10,
      "classes": {
-      "running_head": 9,
-      "suspect": 1
+      "running_head": 10
      }
     },
     {
      "gid": "118815679",
-     "auto": 2,
-     "review": 9,
+     "auto": 1,
+     "review": 10,
      "classes": {
-      "running_head": 9
+      "running_head": 10
      }
     },
     {
@@ -17755,20 +17738,20 @@
    ]
   },
   "750": {
-   "auto": 5,
-   "review": 14,
+   "auto": 6,
+   "review": 13,
    "classes": {
     "ambiguous": 1,
     "derived": 4,
-    "running_head": 9
+    "running_head": 8
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 2,
-     "review": 9,
+     "auto": 3,
+     "review": 8,
      "classes": {
-      "running_head": 9
+      "running_head": 8
      }
     },
     {
@@ -17808,14 +17791,14 @@
    ]
   },
   "760": {
-   "auto": 15,
-   "review": 47,
+   "auto": 14,
+   "review": 48,
    "classes": {
     "ambiguous": 21,
-    "bibliography": 1,
+    "bibliography": 4,
     "derived": 2,
     "figure": 11,
-    "running_head": 5,
+    "running_head": 3,
     "suspect": 7
    },
    "entities": [
@@ -17830,11 +17813,11 @@
     },
     {
      "gid": "118519980",
-     "auto": 4,
-     "review": 4,
+     "auto": 3,
+     "review": 5,
      "classes": {
       "figure": 2,
-      "running_head": 2
+      "running_head": 3
      }
     },
     {
@@ -17851,8 +17834,7 @@
      "auto": 2,
      "review": 5,
      "classes": {
-      "bibliography": 1,
-      "running_head": 3,
+      "bibliography": 4,
       "suspect": 1
      }
     },
@@ -17946,19 +17928,19 @@
    ]
   },
   "770": {
-   "auto": 1,
-   "review": 4,
+   "auto": 0,
+   "review": 5,
    "classes": {
     "derived": 1,
-    "running_head": 3
+    "running_head": 4
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 1,
-     "review": 3,
+     "auto": 0,
+     "review": 4,
      "classes": {
-      "running_head": 3
+      "running_head": 4
      }
     },
     {
@@ -17972,19 +17954,19 @@
    ]
   },
   "780": {
-   "auto": 59,
-   "review": 9,
+   "auto": 58,
+   "review": 10,
    "classes": {
-    "running_head": 5,
+    "running_head": 6,
     "unanchored": 4
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 36,
-     "review": 5,
+     "auto": 35,
+     "review": 6,
      "classes": {
-      "running_head": 5
+      "running_head": 6
      }
     },
     {
@@ -18177,8 +18159,8 @@
    "classes": {
     "ambiguous": 10,
     "derived": 42,
-    "running_head": 2,
-    "suspect": 76,
+    "running_head": 27,
+    "suspect": 51,
     "unanchored": 22
    },
    "entities": [
@@ -18188,8 +18170,8 @@
      "review": 23,
      "classes": {
       "derived": 1,
-      "running_head": 2,
-      "suspect": 20
+      "running_head": 11,
+      "suspect": 11
      }
     },
     {
@@ -18205,7 +18187,8 @@
      "auto": 0,
      "review": 24,
      "classes": {
-      "suspect": 18,
+      "running_head": 9,
+      "suspect": 9,
       "unanchored": 6
      }
     },
@@ -18215,7 +18198,8 @@
      "review": 14,
      "classes": {
       "ambiguous": 1,
-      "suspect": 8,
+      "running_head": 7,
+      "suspect": 1,
       "unanchored": 5
      }
     },
@@ -19197,17 +19181,20 @@
    ]
   },
   "940": {
-   "auto": 7,
-   "review": 4,
+   "auto": 4,
+   "review": 7,
    "classes": {
-    "derived": 4
+    "derived": 4,
+    "running_head": 3
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 4,
-     "review": 0,
-     "classes": {}
+     "auto": 1,
+     "review": 3,
+     "classes": {
+      "running_head": 3
+     }
     },
     {
      "gid": "2023755-8",
@@ -20365,17 +20352,20 @@
    ]
   },
   "1270": {
-   "auto": 10,
-   "review": 1,
+   "auto": 7,
+   "review": 4,
    "classes": {
+    "running_head": 3,
     "unanchored": 1
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 3,
-     "review": 0,
-     "classes": {}
+     "auto": 0,
+     "review": 3,
+     "classes": {
+      "running_head": 3
+     }
     },
     {
      "gid": "118509578",
@@ -20645,30 +20635,30 @@
    ]
   },
   "1350": {
-   "auto": 48,
-   "review": 21,
+   "auto": 46,
+   "review": 23,
    "classes": {
     "ambiguous": 1,
-    "running_head": 6,
+    "running_head": 8,
     "suspect": 13,
     "unanchored": 1
    },
    "entities": [
     {
      "gid": "119194589",
-     "auto": 15,
-     "review": 15,
+     "auto": 14,
+     "review": 16,
      "classes": {
-      "running_head": 3,
+      "running_head": 4,
       "suspect": 12
      }
     },
     {
      "gid": "118577484",
-     "auto": 22,
-     "review": 3,
+     "auto": 21,
+     "review": 4,
      "classes": {
-      "running_head": 3
+      "running_head": 4
      }
     },
     {
@@ -20733,19 +20723,19 @@
    ]
   },
   "1360": {
-   "auto": 7,
-   "review": 4,
+   "auto": 8,
+   "review": 3,
    "classes": {
-    "running_head": 3,
+    "running_head": 2,
     "unanchored": 1
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 1,
-     "review": 3,
+     "auto": 2,
+     "review": 2,
      "classes": {
-      "running_head": 3
+      "running_head": 2
      }
     },
     {
@@ -20783,20 +20773,17 @@
    ]
   },
   "1370": {
-   "auto": 0,
-   "review": 4,
+   "auto": 3,
+   "review": 1,
    "classes": {
-    "running_head": 3,
     "suspect": 1
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 0,
-     "review": 3,
-     "classes": {
-      "running_head": 3
-     }
+     "auto": 3,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "118557513",
@@ -20809,11 +20796,11 @@
    ]
   },
   "1380": {
-   "auto": 65,
-   "review": 13,
+   "auto": 64,
+   "review": 14,
    "classes": {
     "ambiguous": 1,
-    "running_head": 10,
+    "running_head": 11,
     "unanchored": 2
    },
    "entities": [
@@ -20831,10 +20818,10 @@
     },
     {
      "gid": "118815679",
-     "auto": 1,
-     "review": 10,
+     "auto": 0,
+     "review": 11,
      "classes": {
-      "running_head": 10
+      "running_head": 11
      }
     },
     {
@@ -21222,19 +21209,19 @@
    ]
   },
   "1500": {
-   "auto": 5,
-   "review": 6,
+   "auto": 6,
+   "review": 5,
    "classes": {
-    "running_head": 5,
+    "running_head": 4,
     "suspect": 1
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 1,
-     "review": 5,
+     "auto": 2,
+     "review": 4,
      "classes": {
-      "running_head": 5
+      "running_head": 4
      }
     },
     {
@@ -21301,13 +21288,12 @@
    ]
   },
   "1520": {
-   "auto": 307,
-   "review": 107,
+   "auto": 317,
+   "review": 97,
    "classes": {
     "ambiguous": 26,
     "bibliography": 5,
     "derived": 5,
-    "running_head": 10,
     "short_title": 3,
     "suspect": 27,
     "unanchored": 31
@@ -21315,11 +21301,10 @@
    "entities": [
     {
      "gid": "118557106",
-     "auto": 170,
-     "review": 13,
+     "auto": 175,
+     "review": 8,
      "classes": {
       "ambiguous": 6,
-      "running_head": 5,
       "suspect": 2
      }
     },
@@ -21341,11 +21326,9 @@
     },
     {
      "gid": "118815679",
-     "auto": 10,
-     "review": 3,
-     "classes": {
-      "running_head": 3
-     }
+     "auto": 13,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "1088013961",
@@ -21363,11 +21346,10 @@
     },
     {
      "gid": "139403475X",
-     "auto": 4,
-     "review": 4,
+     "auto": 6,
+     "review": 2,
      "classes": {
-      "bibliography": 2,
-      "running_head": 2
+      "bibliography": 2
      }
     },
     {
@@ -22585,21 +22567,21 @@
    ]
   },
   "1650": {
-   "auto": 1,
-   "review": 15,
+   "auto": 2,
+   "review": 14,
    "classes": {
     "derived": 1,
-    "running_head": 6,
+    "running_head": 5,
     "suspect": 5,
     "unanchored": 3
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 0,
-     "review": 6,
+     "auto": 1,
+     "review": 5,
      "classes": {
-      "running_head": 6
+      "running_head": 5
      }
     },
     {
@@ -22948,30 +22930,37 @@
    ]
   },
   "1780": {
-   "auto": 3,
-   "review": 0,
-   "classes": {},
-   "entities": [
-    {
-     "gid": "118815679",
-     "auto": 3,
-     "review": 0,
-     "classes": {}
-    }
-   ]
-  },
-  "1810": {
-   "auto": 3,
-   "review": 1,
+   "auto": 0,
+   "review": 3,
    "classes": {
-    "ambiguous": 1
+    "running_head": 3
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 3,
-     "review": 0,
-     "classes": {}
+     "auto": 0,
+     "review": 3,
+     "classes": {
+      "running_head": 3
+     }
+    }
+   ]
+  },
+  "1810": {
+   "auto": 0,
+   "review": 4,
+   "classes": {
+    "ambiguous": 1,
+    "running_head": 3
+   },
+   "entities": [
+    {
+     "gid": "118815679",
+     "auto": 0,
+     "review": 3,
+     "classes": {
+      "running_head": 3
+     }
     },
     {
      "gid": "2024349-2",
@@ -23007,12 +22996,12 @@
    ]
   },
   "1830": {
-   "auto": 44,
-   "review": 42,
+   "auto": 46,
+   "review": 40,
    "classes": {
     "ambiguous": 13,
     "derived": 2,
-    "running_head": 13,
+    "running_head": 11,
     "suspect": 2,
     "unanchored": 12
    },
@@ -23027,11 +23016,11 @@
     },
     {
      "gid": "118815679",
-     "auto": 2,
-     "review": 14,
+     "auto": 4,
+     "review": 12,
      "classes": {
       "ambiguous": 1,
-      "running_head": 13
+      "running_head": 11
      }
     },
     {
@@ -23234,17 +23223,20 @@
    ]
   },
   "1850": {
-   "auto": 4,
-   "review": 1,
+   "auto": 0,
+   "review": 5,
    "classes": {
+    "running_head": 4,
     "suspect": 1
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 4,
-     "review": 0,
-     "classes": {}
+     "auto": 0,
+     "review": 4,
+     "classes": {
+      "running_head": 4
+     }
     },
     {
      "gid": "118587943",
@@ -23973,11 +23965,11 @@
    ]
   },
   "2030": {
-   "auto": 27,
-   "review": 9,
+   "auto": 28,
+   "review": 8,
    "classes": {
     "ambiguous": 1,
-    "running_head": 6,
+    "running_head": 5,
     "suspect": 2
    },
    "entities": [
@@ -23991,10 +23983,10 @@
     },
     {
      "gid": "118815679",
-     "auto": 0,
-     "review": 4,
+     "auto": 1,
+     "review": 3,
      "classes": {
-      "running_head": 4
+      "running_head": 3
      }
     },
     {
@@ -24059,11 +24051,12 @@
    ]
   },
   "2050": {
-   "auto": 64,
-   "review": 24,
+   "auto": 61,
+   "review": 27,
    "classes": {
     "ambiguous": 5,
     "derived": 1,
+    "running_head": 3,
     "short_title": 1,
     "suspect": 13,
     "unanchored": 4
@@ -24116,9 +24109,11 @@
     },
     {
      "gid": "118815679",
-     "auto": 3,
-     "review": 0,
-     "classes": {}
+     "auto": 0,
+     "review": 3,
+     "classes": {
+      "running_head": 3
+     }
     },
     {
      "gid": "118516221",
@@ -24254,21 +24249,21 @@
    ]
   },
   "2070": {
-   "auto": 32,
-   "review": 21,
+   "auto": 33,
+   "review": 20,
    "classes": {
     "ambiguous": 1,
     "derived": 1,
-    "running_head": 13,
+    "running_head": 12,
     "unanchored": 6
    },
    "entities": [
     {
      "gid": "118557106",
-     "auto": 21,
-     "review": 7,
+     "auto": 22,
+     "review": 6,
      "classes": {
-      "running_head": 7
+      "running_head": 6
      }
     },
     {
@@ -24919,17 +24914,20 @@
    ]
   },
   "2230": {
-   "auto": 4,
-   "review": 1,
+   "auto": 2,
+   "review": 3,
    "classes": {
-    "derived": 1
+    "derived": 1,
+    "running_head": 2
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 3,
-     "review": 0,
-     "classes": {}
+     "auto": 1,
+     "review": 2,
+     "classes": {
+      "running_head": 2
+     }
     },
     {
      "gid": "118524844",
@@ -26110,17 +26108,20 @@
    ]
   },
   "2360": {
-   "auto": 20,
-   "review": 2,
+   "auto": 16,
+   "review": 6,
    "classes": {
+    "running_head": 4,
     "unanchored": 2
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 20,
-     "review": 0,
-     "classes": {}
+     "auto": 16,
+     "review": 4,
+     "classes": {
+      "running_head": 4
+     }
     },
     {
      "gid": "118627813",
@@ -26146,12 +26147,12 @@
    ]
   },
   "2380": {
-   "auto": 23,
-   "review": 6,
+   "auto": 22,
+   "review": 7,
    "classes": {
     "ambiguous": 1,
     "derived": 1,
-    "running_head": 3,
+    "running_head": 4,
     "suspect": 1
    },
    "entities": [
@@ -26165,10 +26166,10 @@
     },
     {
      "gid": "118815679",
-     "auto": 1,
-     "review": 3,
+     "auto": 0,
+     "review": 4,
      "classes": {
-      "running_head": 3
+      "running_head": 4
      }
     },
     {
@@ -26354,21 +26355,21 @@
    ]
   },
   "2410": {
-   "auto": 56,
-   "review": 6,
+   "auto": 55,
+   "review": 7,
    "classes": {
     "derived": 1,
-    "running_head": 3,
+    "running_head": 4,
     "short_title": 1,
     "suspect": 1
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 29,
-     "review": 3,
+     "auto": 28,
+     "review": 4,
      "classes": {
-      "running_head": 3
+      "running_head": 4
      }
     },
     {
@@ -26789,12 +26790,12 @@
    ]
   },
   "2510": {
-   "auto": 93,
-   "review": 18,
+   "auto": 95,
+   "review": 16,
    "classes": {
     "ambiguous": 3,
     "derived": 1,
-    "running_head": 8,
+    "running_head": 6,
     "suspect": 5,
     "unanchored": 1
    },
@@ -26818,10 +26819,10 @@
     },
     {
      "gid": "118815679",
-     "auto": 2,
-     "review": 4,
+     "auto": 4,
+     "review": 2,
      "classes": {
-      "running_head": 4
+      "running_head": 2
      }
     },
     {
@@ -26889,20 +26890,17 @@
    ]
   },
   "2520": {
-   "auto": 6,
-   "review": 4,
+   "auto": 9,
+   "review": 1,
    "classes": {
-    "derived": 1,
-    "running_head": 3
+    "derived": 1
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 2,
-     "review": 3,
-     "classes": {
-      "running_head": 3
-     }
+     "auto": 5,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "118551655",
@@ -27972,11 +27970,10 @@
    ]
   },
   "2730": {
-   "auto": 31,
-   "review": 31,
+   "auto": 33,
+   "review": 29,
    "classes": {
     "derived": 2,
-    "running_head": 2,
     "suspect": 14,
     "unanchored": 13
    },
@@ -28008,11 +28005,9 @@
     },
     {
      "gid": "118815679",
-     "auto": 3,
-     "review": 2,
-     "classes": {
-      "running_head": 2
-     }
+     "auto": 5,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "118555006",
@@ -28425,20 +28420,20 @@
    ]
   },
   "2800": {
-   "auto": 3,
-   "review": 6,
+   "auto": 5,
+   "review": 4,
    "classes": {
     "ambiguous": 1,
     "derived": 1,
-    "running_head": 4
+    "running_head": 2
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 3,
-     "review": 4,
+     "auto": 5,
+     "review": 2,
      "classes": {
-      "running_head": 4
+      "running_head": 2
      }
     },
     {
@@ -28571,18 +28566,18 @@
    ]
   },
   "2840": {
-   "auto": 1,
-   "review": 4,
+   "auto": 3,
+   "review": 2,
    "classes": {
-    "running_head": 4
+    "running_head": 2
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 1,
-     "review": 4,
+     "auto": 3,
+     "review": 2,
      "classes": {
-      "running_head": 4
+      "running_head": 2
      }
     }
    ]
@@ -28636,9 +28631,10 @@
    ]
   },
   "2880": {
-   "auto": 16,
-   "review": 4,
+   "auto": 14,
+   "review": 6,
    "classes": {
+    "running_head": 2,
     "suspect": 4
    },
    "entities": [
@@ -28660,9 +28656,11 @@
     },
     {
      "gid": "118815679",
-     "auto": 3,
-     "review": 0,
-     "classes": {}
+     "auto": 1,
+     "review": 2,
+     "classes": {
+      "running_head": 2
+     }
     },
     {
      "gid": "1088013961",
@@ -28716,15 +28714,19 @@
    ]
   },
   "2900": {
-   "auto": 5,
-   "review": 0,
-   "classes": {},
+   "auto": 3,
+   "review": 2,
+   "classes": {
+    "running_head": 2
+   },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 3,
-     "review": 0,
-     "classes": {}
+     "auto": 1,
+     "review": 2,
+     "classes": {
+      "running_head": 2
+     }
     },
     {
      "gid": "118551655",
@@ -28860,20 +28862,20 @@
    ]
   },
   "2930": {
-   "auto": 32,
-   "review": 22,
+   "auto": 27,
+   "review": 27,
    "classes": {
-    "running_head": 13,
+    "running_head": 18,
     "suspect": 5,
     "unanchored": 4
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 27,
-     "review": 13,
+     "auto": 22,
+     "review": 18,
      "classes": {
-      "running_head": 13
+      "running_head": 18
      }
     },
     {
@@ -28925,22 +28927,22 @@
    ]
   },
   "2940": {
-   "auto": 6,
-   "review": 26,
+   "auto": 7,
+   "review": 25,
    "classes": {
     "derived": 1,
-    "running_head": 3,
-    "suspect": 17,
+    "running_head": 7,
+    "suspect": 12,
     "unanchored": 5
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 5,
-     "review": 11,
+     "auto": 6,
+     "review": 10,
      "classes": {
-      "running_head": 3,
-      "suspect": 8
+      "running_head": 7,
+      "suspect": 3
      }
     },
     {
@@ -29340,8 +29342,7 @@
    "review": 9,
    "classes": {
     "ambiguous": 2,
-    "running_head": 6,
-    "unanchored": 1
+    "unanchored": 7
    },
    "entities": [
     {
@@ -29349,8 +29350,7 @@
      "auto": 2,
      "review": 7,
      "classes": {
-      "running_head": 6,
-      "unanchored": 1
+      "unanchored": 7
      }
     },
     {
@@ -29394,20 +29394,20 @@
    ]
   },
   "3020": {
-   "auto": 11,
-   "review": 15,
+   "auto": 15,
+   "review": 11,
    "classes": {
-    "running_head": 6,
+    "running_head": 2,
     "suspect": 8,
     "unanchored": 1
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 10,
-     "review": 6,
+     "auto": 14,
+     "review": 2,
      "classes": {
-      "running_head": 6
+      "running_head": 2
      }
     },
     {
@@ -29758,20 +29758,23 @@
    ]
   },
   "3070": {
-   "auto": 22,
-   "review": 9,
+   "auto": 20,
+   "review": 11,
    "classes": {
     "ambiguous": 3,
     "derived": 3,
+    "running_head": 2,
     "suspect": 2,
     "unanchored": 1
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 17,
-     "review": 0,
-     "classes": {}
+     "auto": 15,
+     "review": 2,
+     "classes": {
+      "running_head": 2
+     }
     },
     {
      "gid": "2024349-2",
@@ -30304,10 +30307,9 @@
    ]
   },
   "3130": {
-   "auto": 12,
-   "review": 7,
+   "auto": 14,
+   "review": 5,
    "classes": {
-    "running_head": 2,
     "suspect": 5
    },
    "entities": [
@@ -30321,11 +30323,9 @@
     },
     {
      "gid": "118815679",
-     "auto": 1,
-     "review": 2,
-     "classes": {
-      "running_head": 2
-     }
+     "auto": 3,
+     "review": 0,
+     "classes": {}
     },
     {
      "gid": "1088013937",
@@ -30472,22 +30472,22 @@
    ]
   },
   "3180": {
-   "auto": 137,
-   "review": 51,
+   "auto": 138,
+   "review": 50,
    "classes": {
     "ambiguous": 1,
     "derived": 5,
-    "running_head": 10,
+    "running_head": 9,
     "suspect": 16,
     "unanchored": 19
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 86,
-     "review": 10,
+     "auto": 87,
+     "review": 9,
      "classes": {
-      "running_head": 10
+      "running_head": 9
      }
     },
     {
@@ -30689,20 +30689,22 @@
    ]
   },
   "3190": {
-   "auto": 45,
-   "review": 51,
+   "auto": 37,
+   "review": 59,
    "classes": {
-    "ambiguous": 14,
-    "suspect": 33,
+    "ambiguous": 4,
+    "running_head": 20,
+    "suspect": 31,
     "unanchored": 4
    },
    "entities": [
     {
      "gid": "118557106",
-     "auto": 33,
-     "review": 3,
+     "auto": 25,
+     "review": 11,
      "classes": {
-      "suspect": 3
+      "running_head": 10,
+      "suspect": 1
      }
     },
     {
@@ -30718,7 +30720,8 @@
      "auto": 0,
      "review": 14,
      "classes": {
-      "ambiguous": 14
+      "ambiguous": 4,
+      "running_head": 10
      }
     },
     {
@@ -30806,20 +30809,22 @@
    ]
   },
   "3200": {
-   "auto": 45,
-   "review": 24,
+   "auto": 42,
+   "review": 27,
    "classes": {
     "ambiguous": 10,
-    "bibliography": 5,
+    "bibliography": 2,
+    "running_head": 6,
     "suspect": 9
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 24,
-     "review": 10,
+     "auto": 21,
+     "review": 13,
      "classes": {
-      "ambiguous": 10
+      "ambiguous": 10,
+      "running_head": 3
      }
     },
     {
@@ -30849,7 +30854,7 @@
      "auto": 1,
      "review": 3,
      "classes": {
-      "bibliography": 3
+      "running_head": 3
      }
     },
     {
@@ -31005,18 +31010,18 @@
    ]
   },
   "3230": {
-   "auto": 7,
-   "review": 1,
+   "auto": 6,
+   "review": 2,
    "classes": {
-    "suspect": 1
+    "running_head": 2
    },
    "entities": [
     {
      "gid": "118815679",
-     "auto": 3,
-     "review": 1,
+     "auto": 2,
+     "review": 2,
      "classes": {
-      "suspect": 1
+      "running_head": 2
      }
     },
     {

@@ -2,7 +2,33 @@
   "doc": "1850",
   "generator": "scripts/entity/generate_entity_preview_data.py",
   "pages": {
+    "1": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Jeanne Hersch",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Jeanne Hersch",
+        "form_source": "headword",
+        "context": "la Culture Textes de: - Jean Baechler - Jeanne Hersch - Michel Maffesoli - Ion Vianu - Zdzisl",
+        "text": "Jeanne Hersch",
+        "occurrence": 1
+      }
+    ],
     "3": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Jeanne Hersch",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Jeanne Hersch",
+        "form_source": "headword",
+        "context": "aechler Faut-il vivre sans préjugés ? 3 Jeanne Hersch Préjugés, postulats, valeurs : exercice",
+        "text": "Jeanne Hersch",
+        "occurrence": 1
+      },
       {
         "gid": "118587943",
         "category": "person",
@@ -13,6 +39,34 @@
         "form_source": "surname-index",
         "context": "esoli Préjugés et bon sens 32 Ion Vianu Nietzsche et la « fin » du préjugé 46 Zdzislaw Na",
         "text": "Nietzsche",
+        "occurrence": 1
+      }
+    ],
+    "4": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "JEANNE HERSCH",
+        "rule": "caps-full-name:running-head",
+        "alternatives": [],
+        "matched_form": "JEANNE HERSCH",
+        "form_source": "headword",
+        "context": "s, valeurs Exercice de discernement par JEANNE HERSCH I Le terme de « préjugé » est d'un usag",
+        "text": "JEANNE HERSCH",
+        "occurrence": 1
+      }
+    ],
+    "8": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "JEANNE HERSCH",
+        "rule": "caps-full-name:running-head",
+        "alternatives": [],
+        "matched_form": "JEANNE HERSCH",
+        "form_source": "headword",
+        "context": "le traduire en chacun de nos instants ? JEANNE HERSCH",
+        "text": "JEANNE HERSCH",
         "occurrence": 1
       }
     ]

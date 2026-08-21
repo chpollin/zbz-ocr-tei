@@ -7,7 +7,7 @@
         "gid": "118562002",
         "category": "person",
         "surface": "Kierkegaard",
-        "rule": "anchor-free-surname:suspect",
+        "rule": "anchor-free-surname:suspect:running-head",
         "alternatives": [],
         "matched_form": "Kierkegaard",
         "form_source": "surname-index",
@@ -39,6 +39,18 @@
         "form_source": "headword",
         "context": "rkegaard vivant Colloque organisé par l'Unesco à Paris du 21 au 23 avril 1964 ALLOCUTI",
         "text": "Unesco",
+        "occurrence": 1
+      },
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "JEANNE HERSCH",
+        "rule": "caps-full-name:running-head",
+        "alternatives": [],
+        "matched_form": "JEANNE HERSCH",
+        "form_source": "headword",
+        "context": "ER, ENZO PACI, KARL JASPERS, JEAN WAHL, JEANNE HERSCH, NIELS THULSTRUP Gallimard KATALOG JEAN",
+        "text": "JEANNE HERSCH",
         "occurrence": 1
       }
     ],

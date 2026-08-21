@@ -2,6 +2,32 @@
   "doc": "1350",
   "generator": "scripts/entity/generate_entity_preview_data.py",
   "pages": {
+    "1": [
+      {
+        "gid": "119194589",
+        "category": "person",
+        "surface": "JEAN WAHL",
+        "rule": "caps-full-name:running-head",
+        "alternatives": [],
+        "matched_form": "JEAN WAHL",
+        "form_source": "headword",
+        "context": "s pays. © 1976, by EDITIONS BEAUCHESNE. JEAN WAHL ET GABRIEL MARCEL Les trois conférences",
+        "text": "JEAN WAHL",
+        "occurrence": 1
+      },
+      {
+        "gid": "118577484",
+        "category": "person",
+        "surface": "GABRIEL MARCEL",
+        "rule": "caps-full-name:running-head",
+        "alternatives": [],
+        "matched_form": "GABRIEL MARCEL",
+        "form_source": "headword",
+        "context": "6, by EDITIONS BEAUCHESNE. JEAN WAHL ET GABRIEL MARCEL Les trois conférences que contient ce r",
+        "text": "GABRIEL MARCEL",
+        "occurrence": 1
+      }
+    ],
     "2": [
       {
         "gid": "119194589",

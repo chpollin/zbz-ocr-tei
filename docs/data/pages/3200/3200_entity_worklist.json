@@ -2,12 +2,40 @@
   "doc": "3200",
   "generator": "scripts/entity/generate_entity_preview_data.py",
   "pages": {
+    "3": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Jeanne Hersch",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Jeanne Hersch",
+        "form_source": "headword",
+        "context": "m 1. April 1995 mit Prof. Dr. Dr. h. c. Jeanne Hersch MITEINANDER LEBEN IN BERLIN Die Ausländ",
+        "text": "Jeanne Hersch",
+        "occurrence": 1
+      }
+    ],
+    "4": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Jeanne Hersch",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Jeanne Hersch",
+        "form_source": "headword",
+        "context": "m 1. April 1995 mit Prof. Dr. Dr. h. c. Jeanne Hersch 2001 / 165 Impressum Impressum: Herausg",
+        "text": "Jeanne Hersch",
+        "occurrence": 1
+      }
+    ],
     "10": [
       {
         "gid": "1389909646",
         "category": "work",
         "surface": "Le Droit d’être un homme",
-        "rule": "work-variant:in-plain-bibl",
+        "rule": "work-variant:in-plain-bibl:running-head",
         "alternatives": [],
         "matched_form": "Le droit d'être un homme",
         "form_source": "cache-variant",
@@ -87,6 +115,18 @@
     ],
     "16": [
       {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Jeanne Hersch",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Jeanne Hersch",
+        "form_source": "headword",
+        "context": "nz herzlich danken. Prof. Dr. Dr. h. c. Jeanne Hersch Ordinarius für Philosophie an der Unive",
+        "text": "Jeanne Hersch",
+        "occurrence": 1
+      },
+      {
         "gid": "118648802",
         "category": "person",
         "surface": "Amiel",
@@ -104,7 +144,7 @@
         "gid": "1389909646",
         "category": "work",
         "surface": "Le Droit d’être un Homme",
-        "rule": "work-variant:in-plain-bibl",
+        "rule": "work-variant:in-plain-bibl:running-head",
         "alternatives": [],
         "matched_form": "Le droit d'être un homme",
         "form_source": "cache-variant",
@@ -169,7 +209,7 @@
         "gid": "1389909646",
         "category": "work",
         "surface": "Le Droit d’être un homme",
-        "rule": "work-variant:in-plain-bibl",
+        "rule": "work-variant:in-plain-bibl:running-head",
         "alternatives": [],
         "matched_form": "Le droit d'être un homme",
         "form_source": "cache-variant",

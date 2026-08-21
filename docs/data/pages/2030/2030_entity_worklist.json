@@ -2,32 +2,6 @@
   "doc": "2030",
   "generator": "scripts/entity/generate_entity_preview_data.py",
   "pages": {
-    "1": [
-      {
-        "gid": "118815679",
-        "category": "person",
-        "surface": "JEANNE HERSCH",
-        "rule": "caps-full-name:running-head",
-        "alternatives": [],
-        "matched_form": "JEANNE HERSCH",
-        "form_source": "headword",
-        "context": "JEANNE HERSCH KARL JASPERS: IL NON POSSESSO DELL'ESSE",
-        "text": "JEANNE HERSCH",
-        "occurrence": 1
-      },
-      {
-        "gid": "118557106",
-        "category": "person",
-        "surface": "KARL JASPERS",
-        "rule": "caps-full-name:running-head",
-        "alternatives": [],
-        "matched_form": "KARL JASPERS",
-        "form_source": "headword",
-        "context": "JEANNE HERSCH KARL JASPERS: IL NON POSSESSO DELL'ESSERE È difficil",
-        "text": "KARL JASPERS",
-        "occurrence": 1
-      }
-    ],
     "2": [
       {
         "gid": "118815679",
@@ -64,6 +38,18 @@
         "context": "l pensiero di Jaspers — dopo aver letto Sulla verità appena pubblicato, disse: «È un gran li",
         "text": "Sulla verità",
         "occurrence": 2
+      },
+      {
+        "gid": "118557106",
+        "category": "person",
+        "surface": "Karl Jaspers",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Karl Jaspers",
+        "form_source": "headword",
+        "context": "na «l'inglobante» (das Umgreifende). 13 Karl Jaspers: il non possesso dell'essere L'ingloban",
+        "text": "Karl Jaspers",
+        "occurrence": 1
       }
     ],
     "3": [

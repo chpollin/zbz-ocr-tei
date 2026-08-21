@@ -1,20 +1,19 @@
-"""Direct tests for the running-head detection core (scripts/entity/running_heads.py).
+"""Direct tests for the page-apparatus detection core (scripts/entity/running_heads.py).
 
 The module is consumed by two sides: `scripts.entity.running_head_audit` measures it against
 the adjudicated ground truth, and `scripts.entity.entity_matcher` calls `head_spans` to hold
 in-zone candidates out of tier 1 (E105). The audit tests cover the detection rules; this
 module pins the core API the matcher depends on, the page segmentation with its absolute
-offsets, the head window, the raw spans and the zone lookup, on synthetic TEI.
+offsets, the raw spans and the zone lookup, on synthetic TEI.
 """
 
 from scripts.entity.running_heads import (
-    MAX_HEAD_SEGMENTS,
     MIN_RECURRENCE,
     detect_document,
     head_spans,
-    head_window,
     normalize_head,
     page_candidates,
+    page_segments,
     zone_lookup,
 )
 
@@ -33,7 +32,7 @@ def _tei(pages: list[str]) -> str:
 
 def _head_page(number: int) -> str:
     """A page whose first line is the recurring head, followed by unique body prose."""
-    return f"<p>{number}</p><head>Jeanne Hersch</head>{BODY_TEXT}"
+    return f"<p>{number}</p><p>Jeanne Hersch</p>{BODY_TEXT}"
 
 
 # ---------------------------------------------------------------------------
@@ -53,35 +52,39 @@ def test_normalize_of_pure_furniture_is_empty():
 
 
 # ---------------------------------------------------------------------------
-# Head window
+# Page segmentation
 # ---------------------------------------------------------------------------
 
-def test_head_window_offsets_point_into_the_source_string():
+def test_page_segments_offsets_point_into_the_source_string():
     xml = "<p>12</p><head>Jeanne Hersch</head><p>Rest</p>"
-    window = head_window(xml, 0, len(xml))
-    first = window[0]
+    segments = page_segments(xml, 0, len(xml))
+    first = segments[0]
     assert xml[first["start"]:first["end"]] == "Jeanne Hersch"
     assert first["parent"] == "head"
+    assert first["in_head"] is True
     assert first["form"] == "jeanne hersch"
-    assert first["position"] == 0
+    assert first["index"] == 0
 
 
-def test_head_window_skips_number_only_segments_without_consuming_a_slot():
-    xml = "<p>12</p><head>Jeanne Hersch</head><p>Erster Absatz</p><p>Zweiter Absatz</p>"
-    forms = [segment["form"] for segment in head_window(xml, 0, len(xml))]
-    assert forms == ["jeanne hersch", "erster absatz"]
+def test_page_segments_skip_whitespace_and_pure_number_lines():
+    xml = "<p>  </p><p>12</p><p>Jeanne Hersch</p><p>Erster Absatz</p>"
+    assert [s["form"] for s in page_segments(xml, 0, len(xml))] == [
+        "jeanne hersch", "erster absatz"]
 
 
-def test_head_window_is_capped_at_max_head_segments():
-    xml = "".join(f"<p>Segment Nummer {i}</p>" for i in range(MAX_HEAD_SEGMENTS + 3))
-    assert len(head_window(xml, 0, len(xml))) == MAX_HEAD_SEGMENTS
+def test_page_segments_cover_the_whole_page_not_only_its_opening():
+    """The apparatus also arrives as a running foot, so no window bounds the scan."""
+    xml = "".join(f"<p>Segment Nummer {i}</p>" for i in range(6))
+    segments = page_segments(xml, 0, len(xml))
+    assert len(segments) == 6
+    assert [s["index"] for s in segments] == list(range(6))
 
 
 def test_inline_markup_stays_inside_one_segment():
     xml = "<head>Jeanne <hi rend='i'>Hersch</hi></head>"
-    window = head_window(xml, 0, len(xml))
-    assert [segment["form"] for segment in window] == ["jeanne hersch"]
-    assert window[0]["text"] == "Jeanne Hersch"
+    segments = page_segments(xml, 0, len(xml))
+    assert [s["form"] for s in segments] == ["jeanne hersch"]
+    assert segments[0]["text"] == "Jeanne Hersch"
 
 
 # ---------------------------------------------------------------------------
@@ -103,7 +106,7 @@ def test_page_candidates_offsets_resolve_in_the_full_document_string():
         assert xml[occurrence["start"]:occurrence["end"]] == "Jeanne Hersch"
 
 
-def test_page_candidates_ignores_speaker_labels_at_a_page_start():
+def test_page_candidates_ignores_speaker_labels():
     xml = _tei([f"<sp><speaker>Jeanne Hersch</speaker>{BODY_TEXT}</sp>"
                 for _ in range(MIN_RECURRENCE)])
     _, by_form = page_candidates(xml)
@@ -125,7 +128,7 @@ def test_recurring_head_becomes_a_primary_pattern():
     assert [p["form"] for p in result["patterns"]] == ["jeanne hersch"]
     pattern = result["patterns"][0]
     assert pattern["kind"] == "primary"
-    assert pattern["parent_elements"] == ["head"]
+    assert pattern["parent_elements"] == ["p"]
     assert len(pattern["zones"]) == MIN_RECURRENCE
 
 

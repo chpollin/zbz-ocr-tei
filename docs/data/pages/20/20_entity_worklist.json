@@ -2,34 +2,6 @@
   "doc": "20",
   "generator": "scripts/entity/generate_entity_preview_data.py",
   "pages": {
-    "1": [
-      {
-        "gid": "118815679",
-        "category": "person",
-        "surface": "JEANNE HERSCH",
-        "rule": "caps-full-name:running-head",
-        "alternatives": [],
-        "matched_form": "JEANNE HERSCH",
-        "form_source": "headword",
-        "context": "JEANNE HERSCH L'ILLUSION PHILOSOPHIQUE LIBRAIRIE FÉLI",
-        "text": "JEANNE HERSCH",
-        "occurrence": 1
-      }
-    ],
-    "5": [
-      {
-        "gid": "118815679",
-        "category": "person",
-        "surface": "JEANNE HERSCH",
-        "rule": "caps-full-name:running-head",
-        "alternatives": [],
-        "matched_form": "JEANNE HERSCH",
-        "form_source": "headword",
-        "context": "L'ILLUSION PHILOSOPHIQUE 14.16 HE 1E 2 JEANNE HERSCH L'ILLUSION PHILOSOPHIQUE « Et c'est le",
-        "text": "JEANNE HERSCH",
-        "occurrence": 1
-      }
-    ],
     "15": [
       {
         "gid": "118587943",
@@ -327,7 +299,7 @@
         "gid": "118587943",
         "category": "person",
         "surface": "NIETZSCHE",
-        "rule": "caps-surname:running-head",
+        "rule": "caps-surname",
         "alternatives": [],
         "matched_form": "Nietzsche",
         "form_source": "surname-index",
@@ -341,7 +313,7 @@
         "gid": "118587943",
         "category": "person",
         "surface": "NIETZSCHE",
-        "rule": "caps-surname:running-head",
+        "rule": "caps-surname",
         "alternatives": [],
         "matched_form": "Nietzsche",
         "form_source": "surname-index",
@@ -391,7 +363,7 @@
         "gid": "118587943",
         "category": "person",
         "surface": "NIETZSCHE",
-        "rule": "caps-surname:running-head",
+        "rule": "caps-surname",
         "alternatives": [],
         "matched_form": "Nietzsche",
         "form_source": "surname-index",

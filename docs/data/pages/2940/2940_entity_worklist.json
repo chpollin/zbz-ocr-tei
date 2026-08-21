@@ -18,6 +18,18 @@
     ],
     "7": [
       {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Jeanne Hersch",
+        "rule": "full-name:running-head",
+        "alternatives": [],
+        "matched_form": "Jeanne Hersch",
+        "form_source": "headword",
+        "context": "WITZERLAND Das Besondere an der Schweiz Jeanne Hersch Kurt Furgler Curt Gasteyger Guy Marchal",
+        "text": "Jeanne Hersch",
+        "occurrence": 1
+      },
+      {
         "gid": "119012243",
         "category": "person",
         "surface": "Widmer",
@@ -81,32 +93,6 @@
         "form_source": "cache-variant",
         "context": "beweglich genug, auf die als Folge von Napoleons Aufstieg und Sturz rasch wechselnden eu",
         "text": "Napoleons",
-        "occurrence": 1
-      }
-    ],
-    "28": [
-      {
-        "gid": "118815679",
-        "category": "person",
-        "surface": "JEANNE HERSCH",
-        "rule": "caps-full-name:running-head",
-        "alternatives": [],
-        "matched_form": "JEANNE HERSCH",
-        "form_source": "headword",
-        "context": "urch eigene Stellungnahmen zu ergänzen. JEANNE HERSCH Jeanne Hersch Die Schweiz wurde zu dem,",
-        "text": "JEANNE HERSCH",
-        "occurrence": 1
-      },
-      {
-        "gid": "118815679",
-        "category": "person",
-        "surface": "Jeanne Hersch",
-        "rule": "full-name:running-head",
-        "alternatives": [],
-        "matched_form": "Jeanne Hersch",
-        "form_source": "headword",
-        "context": "ellungnahmen zu ergänzen. JEANNE HERSCH Jeanne Hersch Die Schweiz wurde zu dem, was sie heute",
-        "text": "Jeanne Hersch",
         "occurrence": 1
       }
     ],
@@ -183,7 +169,7 @@
         "gid": "118815679",
         "category": "person",
         "surface": "Hersch",
-        "rule": "anchored-surname:suspect",
+        "rule": "anchored-surname:suspect:running-head",
         "alternatives": [
           "118815679",
           "172155800"
@@ -200,7 +186,7 @@
         "gid": "118815679",
         "category": "person",
         "surface": "Hersch",
-        "rule": "anchored-surname:suspect",
+        "rule": "anchored-surname:suspect:running-head",
         "alternatives": [
           "118815679",
           "172155800"
@@ -217,7 +203,7 @@
         "gid": "118815679",
         "category": "person",
         "surface": "Hersch",
-        "rule": "anchored-surname:suspect",
+        "rule": "anchored-surname:suspect:running-head",
         "alternatives": [
           "118815679",
           "172155800"
@@ -246,7 +232,7 @@
         "gid": "118815679",
         "category": "person",
         "surface": "Hersch",
-        "rule": "anchored-surname:suspect",
+        "rule": "anchored-surname:suspect:running-head",
         "alternatives": [
           "118815679",
           "172155800"
@@ -287,7 +273,7 @@
         "gid": "118815679",
         "category": "person",
         "surface": "Hersch",
-        "rule": "anchored-surname:suspect",
+        "rule": "anchored-surname:suspect:running-head",
         "alternatives": [
           "118815679",
           "172155800"

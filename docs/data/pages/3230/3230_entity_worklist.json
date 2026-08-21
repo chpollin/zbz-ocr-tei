@@ -2,12 +2,29 @@
   "doc": "3230",
   "generator": "scripts/entity/generate_entity_preview_data.py",
   "pages": {
+    "2": [
+      {
+        "gid": "118815679",
+        "category": "person",
+        "surface": "Hersch",
+        "rule": "anchored-surname:running-head",
+        "alternatives": [
+          "118815679",
+          "172155800"
+        ],
+        "matched_form": "Hersch",
+        "form_source": "surname-index",
+        "context": "érieur à la moyenne. Or c'est là un 111 Hersch contresens radical. La Déclaration univ",
+        "text": "Hersch",
+        "occurrence": 1
+      }
+    ],
     "4": [
       {
         "gid": "118815679",
         "category": "person",
         "surface": "Hersch",
-        "rule": "anchored-surname:suspect",
+        "rule": "anchored-surname:suspect:running-head",
         "alternatives": [
           "118815679",
           "172155800"
