@@ -68,10 +68,10 @@ OCR (Mistral / Gemini-corrected)           Layout (Docling + Gemini QA)
             (pipeline re-run --reassemble folds the curation into the final TEI)
 ```
 
-Key point (E22, often misunderstood): PAGE-XML is NOT an intermediate step
-toward TEI. TEI is generated DIRECTLY from layout JSON + OCR Markdown via
-`scripts/tei/tei_unified.py`. PAGE-XML is produced IN PARALLEL as an export for
-coOCR / Transkribus (`scripts/layout/page_xml_generator.py`).
+Key point (E22, often misunderstood): the TEI comes directly from layout JSON
+plus OCR Markdown, while PAGE-XML runs beside it as an export for coOCR and
+Transkribus; the clarification with its generating scripts is in
+[pipeline.md](pipeline.md), overview section.
 
 ---
 
@@ -185,11 +185,10 @@ docs/
 │       └── entity-overview.js       # entity overview page
 └── data/                        # generated via scripts/edition/generate_edition_data.py
     ├── catalog.json             # doc list with streams.{ocr,layout,tei}.{status,last_at,last_by}
-    ├── manifests/{doc}.json     # mirror of the per-object manifests (workflow + history + blank pages, E66)
+    ├── manifests/{doc}_manifest.json  # mirror of the per-object manifests (workflow + history + blank pages, E66)
     ├── search_index.json        # full text for doc search
     ├── tei/                     # final TEIs (*_final.xml)
-    ├── pages/                   # per-page mirror: layout JSONs + Mistral OCR + per-page TEI
-    └── examples/                # legacy: 4 DEMO docs (backward compatibility)
+    └── pages/                   # per-page mirror: layout JSONs + Mistral OCR + per-page TEI
 ```
 
 All JS modules are IIFEs in the `ZBZ.*` namespace; no npm/build pipeline.
@@ -275,15 +274,23 @@ Red stays reserved for a future explicit problem/reject status. The default
 is neutral because the pipeline produces OCR/layout/TEI deterministically
 for every document; "present, unverified" is not an alarm (E67). Status is
 set in the viewer via the status pills in the document bar (OCR, Layout,
-TEI, and Entities wherever an entity preview exists); a click cycles forward. The editor identity (initials) sits as a chip next
+TEI, and Entities wherever an entity preview exists); a click cycles forward
+through the three values. The editor identity (initials) sits as a chip next
 to the Save button and goes into the manifest history (`{at, by, from,
-to}`). The first activation of an edit toggle auto-transitions the matching
-stream from `unverifiziert` to `in_arbeit`; deliberate transitions (for
-example to `verifiziert`) happen via the pill. At ZBZ handover
-`tei_status_marker.py` projects the history deterministically as `<change>`
-entries into the `<revisionDesc>` (backup first, removes stale
-agent-screening entries). Data model and commands: CLAUDE.md, per-object
-manifest section; decisions E66/E77.
+to}`), which is the provenance record of the human editing steps. The first
+real change in an editor auto-transitions the matching stream from
+`unverifiziert` to `in_arbeit`; deliberate transitions (for example to
+`verifiziert`) happen via the pill.
+
+`page_manifest.py` creates the fourth stream `entities` only where an entity
+preview exists, and keeps it once created. It carries the same three values,
+but it states the review state of the read-only preview layer rather than of
+the delivered TEI (section 3.7), which is why `tei_status_marker.py` projects
+only `ocr`, `layout` and `tei` into the `<revisionDesc>`. That projection runs
+at ZBZ handover, writes the history deterministically as `<change>` entries,
+backs the file up first and removes stale agent-screening entries; its XML
+shape is in [pipeline.md](pipeline.md), revisionDesc section. Data model and
+commands: CLAUDE.md, per-object manifest section; decisions E66/E77.
 
 ### 3.7 Entity Layer (read-only)
 
@@ -386,12 +393,11 @@ at the same time into the viewer mirror, so that a reload shows the state (E72/E
 ### 4.1 Read Path (read-only)
 
 The viewer loads static files exclusively. The path resolver in
-`docs/assets/js/core.js` uses a three-level fallback chain:
+`docs/assets/js/core.js` uses a two-level fallback chain:
 
 ```
 1. docs/data/pages/{doc}/{doc}_pN.{ext}   (frontend mirror, whole corpus)
-2. docs/data/examples/{doc}/...           (legacy 4 DEMO docs, backward compatibility)
-3. ../output/{stage}/...                  (local fallback for engines not in the mirror)
+2. ../output/{stage}/...                  (local fallback for engines not in the mirror)
 ```
 
 This makes the viewer work on GitHub Pages for the entire corpus. Locally,
@@ -444,7 +450,7 @@ Complete procedure when a user has corrected a layout region:
    ```bash
    python -m scripts.tei.tei_unified --doc {ID} --reassemble
    ```
-   The `--reassemble` flag redoes Step 1 (scaffold from curated OCR/layout) and Step 3 (assembly) and uses the Gemini Step 2 cache. Pages without new curation stay free of charge; pages with newer curated OCR/layout are selectively re-refined by Gemini (1 call each), so that the correction reaches the final TEI (otherwise Step 3 assembles from the stale cache, bypassing the curation). Important: Gemini re-derives the text in the process; an OCR correction is a suggestion, not a verbatim pass-through. For word-exact text changes use the TEI-XML mode; it writes `output/tei_final/{doc}_final.xml` directly, bypassing the pipeline (verbatim, deterministic).
+   This is the run that actually consumes the files saved in step 2; what `--reassemble` redoes and how it uses the Gemini Step 2 cache is described in [methodology.md](methodology.md), conventions section. The consequence for the curating user is that Gemini re-derives the text of every re-refined page, so a saved OCR correction acts as a suggestion and does not pass through verbatim. For word-exact text changes use the TEI-XML mode instead; it writes `output/tei_final/{doc}_final.xml` directly and deterministically, bypassing the pipeline.
 5. revisionDesc update:
    ```bash
    python -m scripts.tei.tei_status_marker --doc {ID}
@@ -597,7 +603,7 @@ In the `<revisionDesc>` of the `_complete.xml`, the items from
     Layout QA by Gemini, 14 corrections</change>
   <change when="2026-05-25T14:00:00Z" who="#person-chpollin" type="layoutEdit">
     Manual layout correction, page 1, 3 regions</change>
-  <change when="2026-05-26T10:23:00Z" who="#person-ek" status="in_arbeit" n="layout">
+  <change when="2026-05-26T10:23:00Z" who="#person-xy" status="in_arbeit" n="layout">
     Workflow status layout: unverifiziert -&gt; in_arbeit (E66/E77)</change>
 </revisionDesc>
 ```

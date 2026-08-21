@@ -9,7 +9,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-02-18
-updated: 2026-07-07
+updated: 2026-08-21
 tags: [zbz-ocr-tei, infrastructure, azure, podman, cicd]
 template:
   name: Vorlage Architecture
@@ -211,23 +211,25 @@ branch `main`, folder `/docs`. The `.nojekyll` file in the directory
 prevents Pages from interpreting the content as a Jekyll site.
 
 Constraint: `docs/images/` is gitignored (the facsimile PNGs are too large
-for Git) except for the four DEMO docs (1000, 1330, 1540, 2310). On GitHub
+for Git) except for the committed demo documents, which
+[pipeline.md](pipeline.md) lists in its online demo section. On GitHub
 Pages every other document shows OCR/layout/TEI text but no facsimile. Full
 online inspection needs an external image host (IIIF server, S3, CDN) and a
 configurable `ZBZ.path.image()` with a base-URL variable.
 
 ### Regenerating viewer data
 
-When pipeline output or workflow status (manifest) changes:
+Pages delivers the generated mirror `docs/data/`; the pipeline tree `output/` stays local
+and never reaches the server. A deployment therefore shows a change only once the mirror
+has been rebuilt and committed:
 
 ```bash
-python -m scripts.edition.generate_edition_data                  # full run incl. per-page mirror
-python -m scripts.edition.generate_edition_data --mirror-only    # rebuild pages/ only
-python -m scripts.edition.generate_edition_data --no-mirror      # catalog + indices only
+python -m scripts.edition.generate_edition_data --mirror-only
 ```
 
-The per-page mirror (`docs/data/pages/`) is large (many thousands of small
-files); regenerate it after every change to `output/tei_final/`.
+The full run and the remaining flags are in [CLAUDE.md](../CLAUDE.md), viewer data
+section; where this step sits in the curation round trip is in
+[workflow.md](workflow.md), section 4.3.
 
 ---
 

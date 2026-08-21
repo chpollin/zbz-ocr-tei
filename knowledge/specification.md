@@ -71,27 +71,31 @@ newest ratified register entry wins and this document is updated to match.
   same state (E72/E78/E79).
 - R-HEADER: header enrichment from Alma is ZBZ domain (E76, O8); the pipeline does not
   fabricate catalog metadata.
+- R-ENTITY: entity markup comes from a deterministic closed-world matcher against the
+  curated ZBZ entity list and is written read-only to `output/entity_preview/`;
+  `output/tei_final/` stays entity-free until an operator releases the stock run (M7).
+  Every preview mark carries `@resp`, `@cert` and `@source`, so the asserting
+  responsibility, the human verification state and the producing rule travel with the
+  mark (E105-E119; design in [entity-integration.md](entity-integration.md)).
 
 ## Quality measurement
 
 The quality measure for the delivered text is the fidelity CER against the 25
 ground-truth reference TEIs, calibrated against print-OCR literature rather than
 HTR quality bands (E80). The method is binding since the correctness wave
-(E70/E73):
+(E70/E73) and is defined in full in [cer-methodology.md](cer-methodology.md),
+which owns the CER formula, the decomposition of edit operations into fidelity and
+scope with its threshold, the TEI extraction rules and the normalization regimes.
+The requirements this document holds are the following.
 
-- CER = `Levenshtein(reference, hypothesis) / max(1, |reference|)`;
-  document-level full-text comparison, no alignment trimming, case-sensitive,
-  NFC-normalized.
-- Every edit operation is classified (`classify_edit_operations`):
-  substitutions, small indels, and all deletions count as fidelity errors;
-  insertions of at least 50 characters count as scope, that is pipeline text
-  beyond the selective reference transcription. The asymmetry is deliberate,
-  being more complete than the reference is no error. Identity:
-  `cer_fidelity + scope_insertion_rate = cer` (full text).
-- Confidence intervals: BCa bootstrap, B=10000, seed 42, the document as the
-  resampling unit (CER distributions are skewed). The pipeline gain over raw
-  OCR uses a paired bootstrap on per-document deltas (Du 2025,
-  arXiv:2511.19794).
+- Every published CER value rests on a document-level full-text comparison against
+  the reference and is decomposed into a fidelity share and a scope share. Pipeline
+  text beyond the selective reference transcription therefore appears as its own
+  share and leaves the fidelity figure untouched.
+- Every published point estimate carries a confidence interval from a percentile
+  bootstrap with the document as the resampling block, B=10000 and seed 42, because
+  the CER distribution is skewed. The pipeline gain over raw OCR uses a paired
+  bootstrap on per-document deltas (Du 2025, arXiv:2511.19794).
 - Published in parallel: four normalization regimes (raw / nfc / nfc_hyphen /
   nfc_hyphen_case) and a frequency-based HCPR adaption for diacritic
   preservation (Levchenko 2025, arXiv:2510.06743).
@@ -107,8 +111,7 @@ HTR quality bands (E80). The method is binding since the correctness wave
   `docs/data/cer_statistics.json` carries the per-document spread and reads
   `status: measured`.
 
-No figure is published without its method. The detailed measurement method is in
-[cer-methodology.md](cer-methodology.md). The measured values live,
+No figure is published without its method. The measured values live,
 deterministically regenerable with seed 42, in `docs/data/cer_statistics.json`
 (rendered by `docs/methode.html`) and are reported in
 `arbeitsbericht-v3.md`, section 6.3.
@@ -155,7 +158,7 @@ markup inside captions) is an open ZBZ question (O27).
 | ZBZ conformity | `pytest tests/test_zbz_conformity.py`, `tei_validator --conformity` | R-CONFORMITY |
 | Validator warnings | `tei_validator --all` (non-blocking curation signals W1-W19) | R-TEI, R-READING-ORDER |
 | Corpus audit | `python -m scripts.eval.corpus_audit` (funnel + drift check) | corpus claims |
-| Reading-order evidence | `reading_order_audit` (triage), `tei_reading_order_fix` (page-wise instrument, dry-run default); the historical `tei_reassemble_preview` and its report `reports/m3-reassemble-preview.md` document the refuted machine rollout (E99) | W19 curation basis |
+| Reading-order evidence | `reading_order_audit` (triage), `tei_reading_order_fix` (page-wise instrument, dry-run default); the machine rollout was refuted and its preview instrument removed in the 2026-08 refactoring, evidence in [decisions.md](decisions.md) E99 | W19 curation basis |
 | Full suite | `python -m pytest` (CI gate on every push) | all of the above |
 
 ## Epics and user stories
@@ -219,7 +222,6 @@ automatic `front`/`back`/`anchor`/`unclear` markup (E83); MMSID projection into 
 (E76); monetary figures and third-party personal names anywhere in the documentation
 (constitution).
 
-The E71 removal concerns free, LLM-driven entity recognition. Since 2026-08 a
-deterministic closed-world entity layer runs against the curated ZBZ entity list and
-writes read-only previews ([entity-integration.md](entity-integration.md)); the delivered
-TEI in `output/tei_final/` stays entity-free until an operator releases a stock run.
+The E71 removal concerns free, LLM-driven entity recognition. The deterministic
+closed-world entity layer that has run since 2026-08 is the requirement R-ENTITY above and
+is not affected by it.

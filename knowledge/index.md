@@ -39,7 +39,6 @@ principle is a single source of truth per domain, one file per topic.
 | [specification.md](specification.md) | What must the system do? Requirements, quality measurement method, validation rule catalog (R/W/Z), gates, epics + user stories, open frontend requirements |
 | [pipeline.md](pipeline.md) | How is the pipeline built? Stages PDF -> TEI, engines (Mistral, Docling, Gemini), TEI mapping (ZBZ Hersch schema), round-trip section |
 | [workflow.md](workflow.md) | How does the end-to-end data flow run? Data-flow diagram, data formats per stage, the viewer (pages, views, editors, blank pages, workflow status, read-only entity layer, design system), the corpus entity overview `docs/entities.html`, save mechanism, round trip from edit to regenerated TEI, provenance concept, planned `_complete.xml` variant, roadmap |
-| [ecosystem-synthesis.md](ecosystem-synthesis.md) | Overall picture of the three projects (zbz / szd-htr / teiCrafter): setup + gates + critical path, per-project pipeline/status, ALL user stories, integration + image gap, methodology, frontend gap survey, open points, SSoT assignment |
 | [infrastructure.md](infrastructure.md) | How is it deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD, viewer deployment (GitHub Pages) |
 | [methodology.md](methodology.md) | How do we work? Epistemic infrastructure, verification cascade, Critical Expert in the Loop, three-layer model, operational CLI |
 | [decisions.md](decisions.md) | What has been decided? Decision register (E entries), open points (O8/O13/O27 with ZBZ, O18 DHCraft; O25/O26 closed), risks |
@@ -51,6 +50,12 @@ principle is a single source of truth per domain, one file per topic.
 | [agent-orchestration.md](agent-orchestration.md) | How multi-agent waves are run verifiably: wave contract, verbatim guardrails, verification of self-reports, roles, transferable core |
 | [arbeitsbericht-v3.md](arbeitsbericht-v3.md) | The project report (German, client-facing): headline CER, per-document breakdown, corpus proxy, stock corrections, limits, outlook; canonical values in `docs/data/cer_statistics.json` |
 | [journal.md](journal.md) | What was done when? Compact session overview (since Jan 2026), recurring patterns |
+| [refactoring-plan.md](refactoring-plan.md) | Temporary working plan of the 2026-08 repository refactoring: findings, work packages, waves, verification per wave. Deleted at closure; the outcome stays in [decisions.md](decisions.md) |
+
+Historical snapshots live in `reports/`. The cross-project picture of zbz, szd-htr and
+teiCrafter as of June 2026 moved there as
+[2026-06-07_ecosystem-synthesis.md](../reports/2026-06-07_ecosystem-synthesis.md); it
+predates the entity layer and the viewer reduction and is read as a dated snapshot.
 
 Constitution + commands: [CLAUDE.md](../CLAUDE.md) (top level, project-wide rules).
 
@@ -78,7 +83,7 @@ Each document carries one function of the [Convention Knowledge Documents](https
 | [entity-evaluation.md](entity-evaluation.md) | Method (sampling evaluation of the entity layer) | freehand: a measurement workflow, follows the CER methodology discipline |
 | [methodology.md](methodology.md) | Working method of the project | freehand: describes the way of working, not the scholarly domain, so Domänenwissen does not carry |
 | [agent-orchestration.md](agent-orchestration.md) | Working method for multi-agent waves, layered above methodology.md | freehand: an orchestration layer the catalogue holds no function for |
-| [ecosystem-synthesis.md](ecosystem-synthesis.md) | Cross-project overall picture | freehand: a survey without the bilateral delivery contract that triggers the Integration function |
+| [refactoring-plan.md](refactoring-plan.md) | Temporary working plan (2026-08 refactoring) | freehand: a dated working plan, the catalogue holds no plan template; the document is deleted at closure |
 
 The action layer lies in the repository root as [CLAUDE.md](../CLAUDE.md), per convention outside `knowledge/`.
 
@@ -104,9 +109,9 @@ project (vision, corpus, ZBZ context)
    `-- methodology (Promptotyping + verification cascade)
           `-- agent-orchestration (multi-agent wave pattern, verification of agent results)
 
-ecosystem-synthesis: cross-project view (zbz / szd-htr / teiCrafter)
 decisions: cross-cutting, decision register
 journal: chronological, compact overview
+refactoring-plan: temporary, working plan of the 2026-08 refactoring
 ```
 
 ---
@@ -124,12 +129,12 @@ journal: chronological, compact overview
 | Workflow status per stream (E66/E67/E77) | unverifiziert \| in_arbeit \| verifiziert per OCR/layout/TEI (three levels since E77), in the manifest with provenance history, projectable into `<revisionDesc>`. Traffic light: grey=unverifiziert, yellow=in_arbeit, green=verifiziert, red reserved | [workflow.md](workflow.md) |
 | Traffic-light reframing (E67) + three-level collapse (E77) | "Pipeline output EXISTS, it is merely unverified"; hence status `offen` renamed to `unverifiziert` and the red default reading abandoned (E67); E77 merges `bearbeitet`+`fertig` into `verifiziert`, one colour per level | [decisions.md §E77](decisions.md) |
 | Fidelity CER (E70/E73/E80/E85) | headline quality measure across the 25 reference docs: full-text Levenshtein, edit operations decomposed into fidelity and scope, print-calibrated | [cer-methodology.md](cer-methodology.md) (method), `docs/data/cer_statistics.json` + [arbeitsbericht-v3.md](arbeitsbericht-v3.md) (values) |
-| CER statistics (E54) | BCa bootstrap CIs, paired E2E vs OCR-only, HCPR | [specification.md](specification.md) |
+| CER statistics (E54) | percentile bootstrap CIs with the document as resampling block, paired E2E vs OCR-only, HCPR | [cer-methodology.md](cer-methodology.md) (method), [specification.md](specification.md) (requirement) |
 | Quality proxy | dictionary hit rate for docs without ground truth; plausibility bound, not a measurement | [specification.md](specification.md) |
 | Validation rule catalog | blocking R1-R7, warnings W1-W19, ZBZ conformity Z1-Z8 (inline GND) | [specification.md](specification.md) |
 | Entity layer (closed world, E105-E119) | deterministic matcher against the curated ZBZ entity list, preview-only; `output/tei_final/` stays entity-free; M0-M3 reached, M4 built as the gold-benchmark instrument, M5-M7 open | [entity-integration.md](entity-integration.md) |
 | Mark provenance and marking policy (E118/E119) | every preview mark carries `@resp`, `@cert` and `@source`; operator marking decisions live in `data/entities/marking_policy.json`, facsimile-adjudicated judgments in the mention verdict store | [entity-integration.md](entity-integration.md), [entity-evaluation.md](entity-evaluation.md) |
-| Reading order / W19 (E90/E99) | column- and band-aware canonical order; W19 scopes the legacy deviations of the delivered corpus. Machine reordering was tested against the 25 references and refuted (E99), so correction runs page-wise and facsimile-verified through `tei_reading_order_fix`; `tei_reassemble_preview` is obsolete and kept as evidence only | [decisions.md §E90](decisions.md), [decisions.md §E99](decisions.md) |
+| Reading order / W19 (E90/E99) | column- and band-aware canonical order; W19 scopes the legacy deviations of the delivered corpus. Machine reordering was tested against the 25 references and refuted (E99), so correction runs page-wise and facsimile-verified through `tei_reading_order_fix`; the preview instrument `tei_reassemble_preview` was deleted in the 2026-08 refactoring, its evidence is the register entry E99 | [decisions.md §E90](decisions.md), [decisions.md §E99](decisions.md) |
 | revisionDesc (E42) | pipeline + workflow status in the TEI header, travels with the document | [pipeline.md](pipeline.md) |
 | `output/tei_final/` (E43) | single source of truth of the delivered TEI data | [pipeline.md](pipeline.md) |
 | Verification cascade | 4 levels: automatic / contextual / visual / domain-expert | [methodology.md](methodology.md) |

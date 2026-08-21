@@ -20,7 +20,7 @@ Thematically separated documents:
 - [specification.md](knowledge/specification.md): requirements, quality method, validation rule catalog, epics + user stories
 - [pipeline.md](knowledge/pipeline.md): 6-stage pipeline, engines, TEI mapping
 - [workflow.md](knowledge/workflow.md): end-to-end data flow, viewer + editors, save/round-trip, provenance
-- [ecosystem-synthesis.md](knowledge/ecosystem-synthesis.md): overall picture of the three projects (zbz / szd-htr / teiCrafter) + frontend gap survey
+- [reports/2026-06-07_ecosystem-synthesis.md](reports/2026-06-07_ecosystem-synthesis.md): historical snapshot, overall picture of the three projects (zbz / szd-htr / teiCrafter) + frontend gap survey
 - [infrastructure.md](knowledge/infrastructure.md): Azure, Podman, CI/CD, viewer deployment
 - [methodology.md](knowledge/methodology.md): Promptotyping + epistemic infrastructure
 - [decisions.md](knowledge/decisions.md): decision register
@@ -32,6 +32,7 @@ Thematically separated documents:
 - [agent-orchestration.md](knowledge/agent-orchestration.md): multi-agent wave pattern (wave contract, protocol files, verdict schemes, verification of self-reports against disk)
 - [arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md): the project report (German, client-facing); measured values are in `docs/data/cer_statistics.json`
 - [journal.md](knowledge/journal.md): chronological session overview
+- [refactoring-plan.md](knowledge/refactoring-plan.md): temporary working plan of the 2026-08 repository refactoring, deleted at closure
 - [index.md](knowledge/index.md): navigation + key concepts
 
 ## Security
@@ -125,7 +126,7 @@ python -m scripts.eval.evaluate_ocr --all                            # OCR metri
 python -m scripts.eval.quality_proxy --all --html                    # quality proxy (hit rate)
 python -m scripts.eval.completeness_check --html                     # completeness check (pages)
 python -m scripts.eval.benchmark_cer --all --html                    # CER benchmark (25 GT docs)
-python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # scientific CER statistics (BCa CIs, paired, HCPR)
+python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # scientific CER statistics (percentile bootstrap CIs, paired, HCPR)
 python -m scripts.eval.corpus_audit                             # corpus audit: corpus funnel + drift check
 python -m scripts.eval.structure_audit                          # structure audit: pipeline TEI vs 25 ground truth (diagnosis, no gate; E84)
 python -m scripts.eval.reading_order_audit                      # W19 triage robust/fragile (E90; --worklist: fragile pages per document)
@@ -138,8 +139,7 @@ python -m scripts.eval.relation_integrity_audit                 # next/prev pair
 python -m scripts.eval.body_note_audit                          # body-as-note candidates (footnote overdetection, E92)
 python -m scripts.eval.blank_text_audit                         # hallucinated text on blank pages: manifest + Docling zero-region channel (diagnosis, no gate)
 python -m scripts.eval.running_head_audit                       # running-head (Kolumnentitel) zones, validated against adjudicated marks (E105 follow-up, diagnosis)
-python -m scripts.tei.tei_reassemble_preview --all              # reassembly preview (obsolete since E99, artifact kept as evidence; never promote)
-python -m pytest tests/test_cer_statistics.py -q                # statistics library (BCa/paired/HCPR)
+python -m pytest tests/test_cer_statistics.py -q                # statistics library (bootstrap CIs, paired, HCPR)
 python -m pytest tests/test_corpus_audit.py -q                  # corpus invariants + delivered distribution + completeness gate
 python -m pytest tests/test_scripts_health.py -q                # script health: syntax + internal imports (all scripts/)
 python -m pytest tests/test_tei_schema.py -q                    # schema gate: tei_final against zbz_hersch.rng (E68)
@@ -147,7 +147,7 @@ python -m pytest tests/test_tei_header.py -q                    # teiHeader deli
 python -m pytest tests/test_tei_validator.py -q                 # validator: reference CER in percent (O24/E69)
 python -m pytest tests/test_pb_split.py -q                      # <pb> segmentation: pb_split.py byte-identical (E69)
 python -m pytest tests/test_tei_conformance.py -q               # conformance fixes: div-n/type, figure-xmlid, head-lemma, title-main, foreign-lang (E84)
-python -m pytest tests/test_reading_order.py tests/test_reading_order_audit.py tests/test_reassemble_preview.py tests/test_reading_order_fix.py -q  # reading order: permutation + W19 triage + preview + in-place instrument (E90/E99)
+python -m pytest tests/test_reading_order.py tests/test_reading_order_audit.py tests/test_reading_order_fix.py -q  # reading order: permutation + W19 triage + in-place instrument (E90/E99)
 python -m pytest tests/test_stability_pilot.py -q               # stability pilot: aggregation + statistics wiring (E100)
 python -m pytest tests/test_char_lint_audit.py tests/test_pb_number_audit.py tests/test_hi_preservation_audit.py tests/test_relation_integrity_audit.py tests/test_body_note_audit.py -q  # guideline-conformity audits (E92)
 python -m pytest tests/test_char_normalize.py tests/test_pb_folio.py tests/test_body_note_demote.py tests/test_marker_common.py tests/test_status_marker.py tests/test_completeness_check.py tests/test_step1_filter.py -q  # stock-correction tools + shared marker scaffolding + step-1 fixes (E92/E94)
@@ -210,7 +210,7 @@ python -m scripts.tei.tei_body_note_demote --promote-footnotes   # run (backup: 
 The demotion run consumes the facsimile-verified verdicts in
 `output/audits/body_note_verdicts.json` (E94) and never touches notes judged genuine.
 
-## Entity integration (M0-M4 reached, M5-M7 open; plan: knowledge/entity-integration.md)
+## Entity integration (M0-M3 reached, M4 instrument built, M5-M7 open; plan: knowledge/entity-integration.md)
 
 The operator marking decisions live in `data/entities/marking_policy.json`, apart from the
 curated list because that list is an external export. It is validated on load and reaches

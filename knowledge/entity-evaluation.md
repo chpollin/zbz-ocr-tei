@@ -113,6 +113,18 @@ The measurement feeds the system rather than only describing it:
 - The numbers gate the stock-marking decision: whether tier-1 marks are written into
   the delivered TEI corpus-wide is decided on measured precision, per category.
 
+## Three kinds of knowledge
+
+The method produces three kinds of knowledge, and only one of them is uncertain.
+Exhaustively checked invariants hold for the whole stock, for instance the proof that
+every assigned id is a member of the curated list, which a test gate runs over all
+shipped artifacts. Verified single knowledge holds for the adjudicated cases, and the
+reliability of the judging itself is quantified by the double assessment. Statistical
+inference generalizes from the sample to the corpus and is reported only with a
+confidence interval. Each additionally verified mark moves a part of the third kind into
+the second, which is why per-mention verification accumulates across runs rather than
+being spent on a single report.
+
 ## Execution record (snapshot 2026-08-12)
 
 The workflow above has run once, over the whole delivered corpus. The draw was seeded
@@ -211,6 +223,12 @@ A single corpus-wide rate returns only when the draw covers the whole population
 The same reasoning applies in reverse to a change that removes marks from tier 1, with the
 difference that a shrinking population keeps its rate conservative rather than making it
 too optimistic.
+
+The consequence for the next step follows directly. A fresh draw over the current mark
+population, the E119 stratum included, together with a remeasurement of recall on newly
+read pages, comes before any further rule work. Rules built on a population whose rate is
+no longer known widen the gap between what is measured and what is delivered, and the
+recall side has stood unmeasured since several of its named rule gaps were closed.
 
 ## Standing layer after the measurement
 

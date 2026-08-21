@@ -32,10 +32,10 @@ The pipeline's fidelity median (n = 25, canonical value in
 (Transkribus with LLM post-correction, 0.84%; Greif et al. 2025) and
 Transkribus alone (3.67%). That is solid for historical print but not at the top;
 only the strongest individual documents of the corpus reach the range of the best
-literature values. The comparison reads print-calibrated, since the Transkribus quality bands
-(under 2% publication-ready, 2 to 5% research-usable) stem primarily from
-handwriting recognition practice and set the bar lower than a pure print OCR task
-warrants.
+literature values. The comparison reads print-calibrated, since the Transkribus
+quality bands quoted in [cer-methodology.md](cer-methodology.md) stem primarily
+from handwriting recognition practice and set the bar lower than a pure print OCR
+task warrants.
 
 ## Comparison Table
 

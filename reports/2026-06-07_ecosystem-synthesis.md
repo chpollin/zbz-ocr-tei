@@ -14,6 +14,8 @@ tags: [ecosystem, synthesis, zbz-ocr-tei, szd-htr, teicrafter]
 authors: [Christopher Pollin]
 ---
 
+Dated snapshot of 2026-06-07, moved from knowledge/ on 2026-08-21; superseded facts live in project.md, pipeline.md, workflow.md, methodology.md and the register.
+
 # Ecosystem Synthesis: Hersch / SZD / teiCrafter
 
 A condensed overall picture of the three edition projects, produced after a complete reading
@@ -71,7 +73,7 @@ teiCrafter is the bottleneck.
   manifest carries workflow status plus history.
   Important: `{id}_final.xml` IS teiCrafter's native format; it opens directly, text editing
   without conversion.
-- Quality (E70/E73/E85, SoT): the measured values live in [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
+- Quality (E70/E73/E85, SoT): the measured values live in [arbeitsbericht-v3.md](../knowledge/arbeitsbericht-v3.md)
   section 6 and `docs/data/cer_statistics.json` (reproducible via
   `python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000`); any citation
   of the fidelity values must name the scope threshold `SCOPE_BLOCK_MIN = 50` (E91).
@@ -251,7 +253,7 @@ live inspection plus static source analysis, measured against the same grid:
 
 | Frontend | Purpose | Maturity | Most urgent gap |
 |---|---|---|---|
-| Hersch (`zbz-ocr-tei/docs`) | OCR/layout/TEI inspection + curation | near production | H and M findings fixed 2026-06-10; N1/N3/N6/N7 open, see [specification.md](specification.md) |
+| Hersch (`zbz-ocr-tei/docs`) | OCR/layout/TEI inspection + curation | near production | H and M findings fixed 2026-06-10; N1/N3/N6/N7 open, see [specification.md](../knowledge/specification.md) |
 | szd-htr (`szd-htr/docs`) | VLM transcription viewer + review | near production (reference) | empty states vault/stats, deeplink nav |
 | teiCrafter (`ResearchTools/teiCrafter`) | lossless TEI editor | advanced prototype | editor not responsive, a11y tabs/modal |
 | SZD (`SZD/docs`) | ontology reference + graph | near production (docs) | D3 CDN without fallback, graph a11y |
@@ -264,7 +266,7 @@ local/remote capability detection); the other frontends should align with
 it. The Hersch viewer's strength is complete token discipline (no hex/rgb
 violations in component CSS, no pure black/white). Its remaining open
 findings live as frontend requirements in
-[specification.md](specification.md).
+[specification.md](../knowledge/specification.md).
 
 Cross-cutting patterns, ecosystem-wide:
 

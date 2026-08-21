@@ -69,6 +69,13 @@ marginalia (`note place="right/left"`), multi-page footnotes with `@next`/`@prev
 `unclear`, `gap`, the div types `conversation` and `dedication`, the renditions
 `#sub` and `#k`. For these only the guideline itself applies.
 
+The document-level and cross-page structures come from curation rather than from the
+generator, and their attestation across the 25 references is thin. `front` occurs in six
+documents (890, 1060, 1180, 1410, 2635, 3020), `back` in five (40, 300, 830, 1410, 1520),
+a cross-page `anchor` in one (760), `epigraph` in one (1440), and `unclear` in none.
+Counted by element occurrence over `data/source/reference_tei/*.xml`; why the pipeline
+leaves these structures to curation is in [pipeline.md](pipeline.md), curation section.
+
 ## Known Deviations of the Ground Truth (Exception Catalog)
 
 1. Header stub instead of ALMA header, all 25 (see above).

@@ -163,7 +163,7 @@ Complete CLI reference: [CLAUDE.md §Commands](CLAUDE.md).
 | Pipeline + engines + TEI mapping | [knowledge/pipeline.md](knowledge/pipeline.md) |
 | End-to-end workflow + viewer + save mechanism + round-trip + provenance concept | [knowledge/workflow.md](knowledge/workflow.md) |
 | Requirements, quality method, validation rules, epics + user stories | [knowledge/specification.md](knowledge/specification.md) |
-| Ecosystem synthesis (zbz / szd-htr / teiCrafter) | [knowledge/ecosystem-synthesis.md](knowledge/ecosystem-synthesis.md) |
+| Ecosystem synthesis (zbz / szd-htr / teiCrafter), dated snapshot | [reports/2026-06-07_ecosystem-synthesis.md](reports/2026-06-07_ecosystem-synthesis.md) |
 | Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastructure.md](knowledge/infrastructure.md) |
 | Methodology + Promptotyping | [knowledge/methodology.md](knowledge/methodology.md) |
 | CER measurement method | [knowledge/cer-methodology.md](knowledge/cer-methodology.md) |

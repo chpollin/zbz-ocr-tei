@@ -1,6 +1,6 @@
 # Die Entitätenschicht des Hersch-Korpus, konzeptioneller Bericht
 
-Stand 2026-08-21. Der Bericht beantwortet vier Fragen zur Erkennung und Erfassung von Personen, Organisationen und Werken im digitalisierten Textkorpus: wie das Verfahren arbeitet, ob seine Konstruktion überarbeitet werden sollte, wie gut es gemessen funktioniert und welche Rolle Sprachmodelle darin spielen. Messwerte stammen aus dem Snapshot vom 2026-08-12.
+Stand 2026-08-21. Der Bericht beantwortet vier Fragen zur Erkennung und Erfassung von Personen, Organisationen und Werken im digitalisierten Textkorpus: wie das Verfahren arbeitet, ob seine Konstruktion überarbeitet werden sollte, wie gut es gemessen funktioniert und welche Rolle Sprachmodelle darin spielen. Messwerte stammen aus dem Snapshot vom 2026-08-12. Die dauerhaften Aussagen dieses Berichts stehen in den Wissensdokumenten des Projekts. Die kategorienweise Lesart des Referenz-Benchmarks und die Entwurfsbedingung für den Bestandslauf gehören zu [knowledge/entity-integration.md](../knowledge/entity-integration.md), die Empfehlung einer neuen Ziehung samt Nachmessung der Vollständigkeit zu [knowledge/entity-evaluation.md](../knowledge/entity-evaluation.md). Dieser Bericht hält sie im Zusammenhang der vier Fragen.
 
 ## Wie das Verfahren arbeitet
 

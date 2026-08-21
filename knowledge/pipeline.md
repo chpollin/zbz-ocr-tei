@@ -83,11 +83,11 @@ the `docs/data/` mirror (File System Access API, download fallback, E72/E78/E79)
 Details: [workflow.md](workflow.md), viewer and persistence sections.
 Previously (E36) a FastAPI curation server ran at localhost:8000; it has been retired.
 
-Quality assurance (E66): the former agent screening is abolished (no human had granted
-the "APPROVED" statuses; the agent certified itself). Replacement: a human-set
-workflow status per stream (`unverifiziert | in_arbeit | verifiziert` for each of OCR/layout/TEI, three levels since E77),
-set in the viewer, with history in the per-object manifest and projection into the `<revisionDesc>`. Status
-distribution: see the manifests (`python -m scripts.edition.page_manifest --dry-run`). Details: [workflow.md](workflow.md), workflow status section.
+Quality assurance (E66): the pipeline asserts no verification state of its own. A human
+sets the workflow status per stream in the viewer; `tei_status_marker.py` projects that
+status deterministically into the `<revisionDesc>` of the final TEI (XML shape in the
+revisionDesc section below). Status values, traffic-light mapping, history semantics and
+the streams they cover are described in [workflow.md](workflow.md), workflow status section.
 
 ---
 
@@ -257,8 +257,12 @@ not functional in the delivered TEI. Since 2026-08 a controlled two-tier entity 
 instead: a deterministic matcher binds mentions to the curated ZBZ entity list (ids never
 assigned by an LLM, E62), sure matches are marked in read-only previews, uncertain candidates
 feed a review worklist, and the layer is measured by facsimile-adjudicated sampling (E105/E106).
-The delivered TEI under `output/tei_final/` carries no entity markup yet; the stock run is
-operator-gated. Design and built state: [entity-integration.md](entity-integration.md), method
+Every mark the preview writes carries its provenance and verification state, `@resp` for the
+asserting agency, `@cert` with the tokens `high` or `medium`, and `@source` for the producing
+rule (E118); which surnames and generic titles the matcher may mark at all is an operator
+decision in `data/entities/marking_policy.json` (E119). The delivered TEI under
+`output/tei_final/` carries no entity markup yet; the stock run is operator-gated. Design,
+attribute model and built state: [entity-integration.md](entity-integration.md), method
 and execution record: [entity-evaluation.md](entity-evaluation.md). In the delivered TEI
 `<bibl>` remains a bibliographic structure without `ref`/`corresp`.
 
@@ -266,18 +270,19 @@ and execution record: [entity-evaluation.md](entity-evaluation.md). In the deliv
 
 The pipeline produces one `<div>` body fragment per page (Step 2, OUTPUT FORMAT in
 `tei_mapping_prompt.py`). Document-level and cross-page structures therefore do
-NOT emerge automatically; they are set during curation (viewer). Rationale per case (with
-frequency in the 25 reference TEIs):
+NOT emerge automatically; they are set during curation (viewer). How often each phenomenon
+is attested in the 25 reference TEIs is recorded in
+[ground-truth-map.md](ground-truth-map.md), phenomenon map. Rationale per case:
 
-- `<front>`/`<back>` (dedication, editorial notes; translation/reprint/otherEdition;
-  front 6/25, back 5/25): document level. The end-matter source in the Masterfile (column
+- `<front>`/`<back>` (dedication, editorial notes; translation/reprint/otherEdition):
+  document level. The end-matter source in the Masterfile (column
   "Anmerkungen") is free text ("deutsche Uebersetzung: ID 320", partly only internal
   references), not a reliable citation, hence deliberately no auto-build (it would produce wrong TEI).
   End-matter citation per MLA 9 plus Swisscovery link remains with ZBZ/curation.
-- Cross-page `<anchor>` (double-page figure, 1/25): needs both pages,
+- Cross-page `<anchor>` (double-page figure): needs both pages,
   too rare and too error-prone for automation.
-- `<unclear>` (0/25): a per-character judgment against the scan image; curation only.
-- `<epigraph>` (1/25): adopted when the AI places it at the div start; a
+- `<unclear>`: a per-character judgment against the scan image; curation only.
+- `<epigraph>`: adopted when the AI places it at the div start; a
   misplaced motto is unpacked by `tei_step2._fix_structural_issues`.
 
 ### Special Document Types
@@ -320,9 +325,12 @@ Citation in `<back>` per MLA 9, with Swisscovery permalink as `<ref target="..."
 ### revisionDesc (Workflow Status, E66/E77)
 
 Every final TEI in `output/tei_final/` contains `<revisionDesc>` directly before `</teiHeader>`.
-The first `<change>` records the pipeline generation; after that follows one summary `<change>`
-per stream (OCR/layout/TEI) with the human-set workflow status. Projected from the manifest
-into the header by `tei_status_marker.py` (E66):
+The first `<change>` records the pipeline generation. After it, `tei_status_marker.py` projects
+the manifest into the header (E66), writing one `<change n="{stream}">` per history entry and
+then one summary `<change n="{stream}-summary">` per stream with the current status. Projected are
+the three pipeline streams `ocr`, `layout` and `tei`; the entities stream stays out, because it
+describes the preview layer rather than the delivered TEI (`STREAMS` in
+[tei_status_marker.py](../scripts/tei/tei_status_marker.py)).
 
 ```xml
 <revisionDesc>
@@ -333,9 +341,10 @@ into the header by `tei_status_marker.py` (E66):
 </revisionDesc>
 ```
 
-Status values (three levels since E77): `unverifiziert` | `in_arbeit` | `verifiziert`. The former
-agent screening (status values `APPROVED`/`NEEDS_REVIEW`/...) was abolished with E66; no human
-had granted those "APPROVED" statuses. All streams start `unverifiziert` as the handover default. The viewer shows the status as a traffic-light pill.
+The `@status` attribute carries the manifest value verbatim; the same run removes the
+`<change>` entries of the abolished agent screening. What the values mean, how the viewer
+displays them and where the history comes from is in [workflow.md](workflow.md), workflow
+status section.
 
 ### Element Inventory
 
@@ -423,8 +432,9 @@ CER success metric; the measured values live in `docs/data/cer_statistics.json`.
 
 ## Online Demo (E28)
 
-The full pipeline output (`output/`) is gitignored and only available locally. For the online demo
-(GitHub Pages) 4 representative documents are committed:
+The full pipeline output (`output/`) is gitignored and only available locally. For the online
+demo (GitHub Pages) the facsimiles of representative documents are committed under
+`docs/images/`; the same ids are the `featured` set in `docs/data/catalog.json`:
 
 | Doc | Type | Language | Pages | Note |
 |---|---|---|---|---|
@@ -432,11 +442,12 @@ The full pipeline output (`output/`) is gitignored and only available locally. F
 | 1000 | B | FR | 4 | two-column |
 | 1330 | D | DE/FR | 6 | bilingual anthology |
 | 1540 | C | DE | 8 | German monograph |
+| 1620 | B | DE | 5 | two-column brochure |
 
 With E57 (per-page mirror), layout, OCR, and TEI data for the whole corpus additionally
 live in `docs/data/pages/`; the viewer therefore works on GitHub Pages for the entire
-corpus, only facsimile images are missing outside the 4 DEMO docs (image delivery
-local-only, 4 GB).
+corpus, only facsimile images are missing outside these demo documents (image delivery
+local-only).
 
 ---
 
@@ -449,9 +460,9 @@ selectively re-refines the changed pages (1 Gemini call each). Complete procedur
 including save mechanism, step sequence, provenance concept, and the planned
 `_complete.xml` variant: [workflow.md §Round Trip](workflow.md).
 
-Data: scan images in `docs/images/{doc_id}/`, OCR/layout/TEI in `docs/data/examples/{doc_id}/`.
-`core.js` path resolver with a three-level fallback chain: `data/pages/` -> `data/examples/{doc_id}/`
--> `../output/...` (E57).
+Data: scan images in `docs/images/{doc_id}/`, OCR/layout/TEI in `docs/data/pages/{doc_id}/`.
+The `core.js` path resolver tries the mirror `data/pages/` first and falls back to
+`../output/...`, which resolves only under a local server rooted at the repository (E57).
 
 ---
 

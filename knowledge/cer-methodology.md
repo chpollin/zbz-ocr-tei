@@ -43,8 +43,9 @@ examples; the distance itself is direction-independent. It is implemented via
 `rapidfuzz.distance.Levenshtein`.
 
 The aggregation unit is the document, not the page. The corpus bootstrap
-procedure (n = 25 reference TEIs, B = 10,000, seed 42, document-level bootstrap)
-derives mean and 95% confidence range from it. For orientation the Transkribus
+procedure (n = 25 reference TEIs, B = 10,000, seed 42, document-level percentile
+bootstrap) derives mean and 95% confidence range from it; the interval method is
+stated exactly in the verification section below. For orientation the Transkribus
 convention grades below 2% as publication-ready, 2 to 5% as research-usable, and
 5 to 10% as usable for full-text search. A high CER does not necessarily mean
 poor text recognition; it can equally follow from faulty reading order on complex
@@ -176,6 +177,24 @@ and per-document value without importing any repo code (extraction re-implemente
 from the specification, python-Levenshtein as a second engine, own aggregation,
 secondary metrics, facsimile spot checks). Details in
 `reports/cer-gegenprobe-2026-07-03.md`; see E91 in [decisions.md](decisions.md).
+
+The interval method behind the published values is the document-level block percentile
+bootstrap. `cer_statistics_full.py` resamples documents with replacement, one value per
+document so the block is the document, with B = 10,000 and seed 42, and reads the 2.5th and
+97.5th percentile of the resampled means and medians (`doc_level_bootstrap`, `_agg_block`);
+every aggregate in `docs/data/cer_statistics.json` names this in its own `ci_method` field.
+The paired comparison of the end-to-end pipeline against OCR-only runs on the per-document
+differences of the fidelity CER, which keeps both sides scope-neutral, and reports the mean
+difference, a percentile interval and a two-sided bootstrap p-value taken as the share of
+resamples that change sign (`paired_bootstrap_diff` in `cer_statistics.py`,
+`build_paired_test` in `cer_statistics_full.py`). One label contradicts this. The library
+`cer_statistics.py` carries a BCa implementation `bca_ci` with its own tests and calls it in
+its own aggregation functions `aggregate_overall` and `aggregate_strata`, which the
+published pipeline does not use; the generator of the published statistics,
+`cer_statistics_full.py`, never calls it, so the computed intervals are percentile
+intervals throughout. The field `meta.bootstrap_method` of the published JSON still claims
+BCa; that label is stale, and whether the generator moves to BCa or the label moves to
+percentile is an open operator decision recorded in the register (E120).
 
 The comparability of CER values between different tools remains limited even under
 a nominally identical metric, among other reasons because already the

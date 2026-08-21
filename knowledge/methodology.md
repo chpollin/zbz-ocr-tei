@@ -110,100 +110,37 @@ The epistemic infrastructure grows reactively on quality signals.
 
 ## Quality Assurance: from Agent Screening to Workflow Status (E66)
 
-Originally an agent-based 7-layer screening lived here; its per-document tallies survive
-only as diagnostic traces in the `_screening_legacy.json` files. It was abolished with E66; no human had granted the "APPROVED" labels, the
-agent certified itself with a built-in ignore list, and the label was misleading toward ZBZ.
-
-The replacement is a human-set workflow status per stream (`unverifiziert | in_arbeit |
-verifiziert` for each of OCR/layout/TEI, three levels since E77), set in the viewer, with a
-provenance history in the per-object manifest and a projection into the `<revisionDesc>`.
-The verification cascade remains the principle; only the domain level is now explicitly
-human instead of agentic. Details in [workflow.md](workflow.md), workflow status section.
+The agent-based screening that once lived here was abolished with E66 and replaced by a
+human-set workflow status per stream, so the verification cascade remains the principle
+while its domain level became explicitly human instead of agentic. The status model, its
+provenance history in the per-object manifest and its projection into the `<revisionDesc>`
+are described in [workflow.md](workflow.md), workflow status section.
 
 ---
 
 ## Operative Tools (CLI)
 
-CLI operations along the pipeline stages. Every operation produces or transforms a knowledge
-artifact and generates machine-readable quality signals.
+The complete CLI reference lives in the project constitution [CLAUDE.md](../CLAUDE.md),
+section Commands, which is the single source of truth for every command and every flag.
+What belongs here is the order in which those commands are used, the operative cycle above
+applied to the artifacts.
 
-The complete CLI reference lives in the project-internal [CLAUDE.md](../CLAUDE.md) §Commands.
-The list below is the methodically ordered selection (diagnosis -> correction ->
-re-validation).
+Diagnosis opens every cycle. The state is read from a diagnostic artifact, in the standard
+case from the corpus validation report that
+`python -m scripts.tei.tei_validator --all --html-report` produces; an assumed state never
+starts a cycle. Exploration ranks the findings by expected quality gain, structural defects
+before reference deviations before formatting. Execution invokes one artifact against the selected case and runs with
+`--dry-run` first wherever API calls or writes into `output/tei_final/` are involved.
+Re-validation repeats the diagnostic command and compares the state before and after,
+because only that comparison shows whether the change improved anything. Escalation hands
+the case to the expert in the loop once the iteration cap or a stagnation indicator is
+reached, which for the delivered corpus means page-wise, facsimile-verified curation in the
+viewer.
 
-### 1. Diagnosis: determine the state
-
-```bash
-python -m scripts.tei.tei_validator --doc {DOC_ID}            # TEI validation
-python -m scripts.tei.tei_validator --all --html-report        # corpus report
-python -m scripts.tei.tei_validator --compare-ref              # reference comparison (25 ZBZ reference TEIs)
-python -m scripts.eval.evaluate_ocr --all                           # OCR metrics
-python -m scripts.eval.quality_proxy --all --html                   # quality proxy (hit rate)
-python -m scripts.eval.completeness_check --html                    # completeness check (pages)
-python -m scripts.eval.benchmark_cer --all --html                   # CER benchmark (25 GT docs)
-python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # scientific CER statistics
-python -m pytest tests/test_cer_statistics.py -q               # statistics library (BCa/paired/HCPR)
-```
-
-The output is `docs/data/cer_statistics.json` (deterministic; the HTML dashboard that
-formerly existed alongside it was abolished with E56, the data remains available as JSON).
-
-### 2. Improve the text layer
-
-```bash
-python scripts/ocr/ocr_pipeline.py -i data/source/pdf/{DOC_ID}.pdf -e mistral   # base OCR
-python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --variant B         # Gemini multimodal
-python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --dry-run           # preview
-```
-
-### 3. Layout
-
-```bash
-python -m scripts.layout.run_layout_analysis --doc {DOC_ID}                    # Docling
-python -m scripts.layout.layout_qa_gemini --doc {DOC_ID}                       # Gemini QA
-python -m scripts.layout.layout_qa_gemini --mode detect --doc {DOC_ID}         # re-detection
-python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare     # overlay
-```
-
-### 4. Generate TEI
-
-```bash
-python -m scripts.tei.tei_unified --doc {DOC_ID}                        # standard (3 steps)
-python -m scripts.tei.tei_unified --doc {DOC_ID} --step 1               # scaffold only (no API call)
-python -m scripts.tei.tei_unified --doc {DOC_ID} --reassemble           # re-assembly (Gemini cache; curated pages 1 call each)
-python -m scripts.tei.tei_unified --doc {DOC_ID} --force                # everything anew (incl. Gemini)
-python -m scripts.tei.tei_unified --doc {DOC_ID} --dry-run              # prompt preview
-python -m scripts.tei.tei_unified --all --reassemble                    # corpus re-assembly
-```
-
-### 5. Validation (quality gate)
-
-```bash
-python -m scripts.tei.tei_validator --doc {DOC_ID}                      # single document
-python -m scripts.tei.tei_validator --all --report                      # JSON report
-python -m scripts.tei.tei_validator --all --html-report                 # HTML report
-```
-
-### 6. Workflow status (replaces agent screening, E66)
-
-The agent screening is abolished. Status is set by humans in the viewer; the CLI covers
-validation and status projection:
-
-```bash
-python -m scripts.tei.tei_validator --doc {DOC_ID}                      # RelaxNG + project rules
-python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID}        # against ZBZ reference
-python -m scripts.tei.tei_status_marker                                 # workflow history -> revisionDesc (ZBZ handover)
-```
-
-The output is `output/tei_final/{DOC_ID}_final.xml` plus `{DOC_ID}_manifest.json` (workflow
-status + history).
-
-### 7. Visual artifacts
-
-```bash
-python scripts/edition/extract_pages.py --pdf {DOC_ID}.pdf --dpi 300            # page images
-python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare     # layout overlay
-```
+Every step produces or transforms a knowledge artifact and emits machine-readable quality
+signals. The statistics artifact `docs/data/cer_statistics.json` is the deterministic
+example of such a signal; the HTML dashboard that formerly stood beside it was abolished
+with E56 and the data remain available as JSON.
 
 ---
 
@@ -211,13 +148,19 @@ python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare     #
 
 - Document IDs follow the pattern `{DOC_ID}` (e.g. 2310, 2530, 1440).
 - Outputs go to `output/` subdirectories (gitignored, except `data/curated_tei/`).
-- `--dry-run` is available on all API-using tools. Use it before batch operations that incur
-  API calls.
-- `--force` overwrites cached results. Only sensible after actual upstream changes.
-- `--reassemble` applies the rule-based fixes (step 1 scaffold + step 3 assembly) and uses
-  the Gemini step 2 cache; only pages with newer curated OCR/layout are selectively
-  re-refined (1 Gemini call each) so the curation reaches the final TEI. `--force` re-refines
-  the whole document.
+- `--dry-run` is available on every tool that calls an API or writes into `output/tei_final/`.
+  It reports the intended change without carrying it out and is the mandatory first run
+  before batch operations and before the stock corrections.
+- `--force` discards cached results and recomputes them, the paid stages included. It is
+  sensible only after an actual upstream change.
+- `--reassemble` redoes the rule-based stages of `tei_unified`, the step-1 scaffold built
+  from the curated OCR and layout and the step-3 assembly, and reuses the Gemini step-2
+  cache. Pages without newer curation need no API call. Pages whose curated OCR or layout is
+  newer than the cache are selectively re-refined with one Gemini call each, because step 3
+  would otherwise assemble from the stale cache and the curation would never reach the final
+  TEI. That refinement re-derives the text, so a corrected OCR line reaches the final TEI as a
+  suggestion and may be reworded. A word-exact change is made in the viewer's TEI-XML mode,
+  which writes `output/tei_final/{DOC_ID}_final.xml` directly and deterministically. `--force` re-refines the whole document instead of selected pages.
 
 ---
 

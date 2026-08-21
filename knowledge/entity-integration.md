@@ -10,7 +10,7 @@ method:
 status: active
 language: en
 created: 2026-08-12
-updated: 2026-08-13
+updated: 2026-08-21
 tags: [zbz-ocr-tei, entities, gnd, design-plan]
 related: [specification, decisions, ground-truth-map, pipeline, entity-evaluation, journal]
 authors: [Christopher Pollin]
@@ -216,7 +216,11 @@ be able to answer "none of them" (E62; lesson from E66: no checker certifies its
    measurement.
 
 The tier borders are empirical: a rule that produces errors on the gold standard moves
-down one tier. A form class whose candidate set systematically misses the true bearer
+down one tier. Measuring in a deterministic system acts class-wise, which is what makes
+the method economical. An adjudicated single case becomes a rule class, and the corpus
+effect of that class is counted against the frozen scan snapshot before the rule is
+adopted, so the operator decides on a change whose reach is already quantified.
+A form class whose candidate set systematically misses the true bearer
 never enters tier 2 either; a judge that only sees wrong candidates is invited to pick
 one, so such mentions go straight to tier 3 (in the pilot's initials case, "J. H."
 meant the interviewee, whose record carries no initials variant, while the one
@@ -318,7 +322,13 @@ Built, each with its pytest suite:
   report lands in `output/audits/entity_gold_benchmark.json`. Facsimile classification
   of its deviations established that the references serve as a trend indicator, which
   is why the truth standard of the entity layer is the facsimile-adjudicated sample
-  ([entity-evaluation.md](entity-evaluation.md)).
+  ([entity-evaluation.md](entity-evaluation.md)). Read per category, the trend orders the
+  classes consistently, persons highest, organisations in the middle, works lowest by a
+  wide margin, and the overall tier-1 figure stays well below the facsimile-adjudicated
+  precision. About half of the counted deviations are convention differences rather than
+  errors, above all the corpus author in bylines, which the references leave unmarked. The
+  weak work class is the empirical backing for keeping works on the worklist in the first
+  stock wave; the current figures live in `output/audits/entity_gold_benchmark.json`.
 - `scripts/eval/build_mention_verdicts.py` builds `data/entities/mention_verdicts.json`,
   the persistence layer of the human and adjudicated judgments. A record is keyed by
   (doc, page, surface, gid, occurrence), where the occurrence index counts over the full
@@ -382,7 +392,13 @@ Planned:
 - `scripts/eval/entity_audit.py` (M6/M7): before-and-after measurement of the stock.
 - `scripts/tei/tei_entity_marker.py` (M7): the operator-gated stock tool on
   `marker_common` (dry-run, backup, byte-splice inside `text`, idempotent,
-  `revisionDesc` entry).
+  `revisionDesc` entry). One design condition binds the milestone, that the marker reuses
+  the wrapping and checking logic of the preview instead of growing a second copy of it.
+  `apply_candidates`, `mark_attributes`,
+  `hi_envelope`, the text-invariance check and the schema check move out of
+  `tei_entity_preview.py` into a shared module both consume, so preview and stock run
+  provably produce the same wrapping. A second implementation of this logic would be the
+  first real occasion for a refactor of the layer.
 
 ## Pilot
 
@@ -491,7 +507,7 @@ Nothing before M7 touches `tei_final`.
 | M4 | Gold benchmark | frozen-rules measurement on the held-out references; evidence JSON under `docs/data/` |
 | M5 | Judge calibration | accuracy and stability measured on gold-resolved ambiguities |
 | M6 | Corpus dry-run | full change preview and distribution report reviewed by the operator |
-| M7 | Stock run | operator-released marker run, gates green, mirror regenerated, register entry |
+| M7 | Stock run | operator-released marker run, gates green, mirror regenerated, register entry, `docs/methode.html` extended by an entity-quality paragraph pointing to [entity-evaluation.md](entity-evaluation.md) |
 
 State on 2026-08-13: M0 to M3 are reached, the pilot and the independent evaluation wave
 included. The preview has since left the ten-document panel: it runs over every delivered
