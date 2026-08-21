@@ -66,6 +66,7 @@ Transkribus (E13). Both derive independently from layout JSON plus OCR.
 | Stage | Task | Script | Output | Status |
 |---|---|---|---|---|
 | 1 | PDF -> PNG | `scripts/edition/extract_pages.py` | PNG (`docs/images/`) | Production |
+| 1b | PNG -> JPEG web mirror | `scripts/edition/export_web_images.py` | JPEG for the facsimile repository (`output/web_images/` or `--out`) | Production (E126) |
 | 1a | Document classification (Gemini) | `scripts/ocr/classify_docs.py` | `data/doc_metadata.json` + `output/classification/` | Production (full corpus, E27) |
 | 2 | OCR | `scripts/ocr/ocr_pipeline.py` (`--engine auto` resolves to Gemini, `-e mistral` reproduces the delivered corpus) | page Markdown (`output/mistral_results/`) | Production |
 | 2a | LLM post-correction (optional) | `scripts/ocr/llm_postprocess.py` | `output/llm_corrected_c/` | Production, E17: optional |
@@ -396,34 +397,43 @@ In the second case the viewer is reachable under
 `output/` tree. The File System Access write path works under `localhost`
 and HTTPS, and every write lands in the local clone.
 
-### GitHub Pages and the online demo (E28)
+### GitHub Pages and the facsimile repository (E28, E126)
 
 The repo settings under Settings > Pages carry Source "Deploy from a branch",
 branch `main`, folder `/docs`. The `.nojekyll` file in the directory
 prevents Pages from interpreting the content as a Jekyll site.
 
-Constraint: `docs/images/` is gitignored (the facsimile PNGs are too large
-for Git) except for the committed demo documents listed below. On GitHub
-Pages every other document shows OCR/layout/TEI text but no facsimile. Full
-online inspection needs an external image host (IIIF server, S3, CDN) and a
-configurable `ZBZ.path.image()` with a base-URL variable.
-
-The full pipeline output under `output/` is gitignored and available locally only. For the
-online demo the facsimiles of a few representative documents are committed under
-`docs/images/`, and the same ids form the `featured` set in `docs/data/catalog.json`. They
-were chosen to cover the layout classes, both main languages and the length range.
-
-| Doc | Type | Language | Pages | Note |
-|---|---|---|---|---|
-| 2310 | A | FR | 3 | journal article, JSTOR cover |
-| 1000 | B | FR | 4 | two-column |
-| 1330 | D | DE/FR | 6 | bilingual anthology |
-| 1540 | C | DE | 8 | German monograph |
-| 1620 | B | DE | 5 | two-column brochure |
-
 Since the per-page mirror (E57), layout, OCR and TEI data for the whole corpus live in
-`docs/data/pages/`, so the viewer works on GitHub Pages for every document and only the
-facsimile images stay local outside this demo set.
+`docs/data/pages/`, so the viewer works on GitHub Pages for every document. The facsimiles
+take a second route (E126). `docs/images/` holds the page PNGs locally and is gitignored,
+because the full set exceeds what a Git repository and a Pages site should carry. The
+published facsimiles live in the separate repository `chpollin/zbz-hersch-images`
+(local checkout beside this one under `Documents/GitHub/`), one folder per document id with
+`{doc}/{doc}_pNNN.jpg`, served by its own GitHub Pages at
+`https://chpollin.github.io/zbz-hersch-images/`. GitHub Pages sends
+`Access-Control-Allow-Origin: *`, so OpenSeadragon loads the images cross-origin without
+further configuration.
+
+The viewer switches by host. `ZBZ.imageBase` in `docs/assets/js/core.js` is set on
+`github.io` hosts and empty everywhere else; `ZBZ.path.image()` and `ZBZ.path.imageFile()`
+prepend the base and replace `.png` by `.jpg` when it is set, so a local docroot keeps
+reading the PNGs under `docs/images/` unchanged and the page-level `facs_image` sidecar
+resolves through the same function.
+
+The JPEGs are produced by `scripts/edition/export_web_images.py` from the local PNGs
+(150 dpi, JPEG quality 80, names and numbering identical, idempotent with `--force` to
+rewrite). `--out` can point straight at the checkout of the facsimile repository, which
+saves a second copy of the set; afterwards commit and push there. The facsimile repository
+is a mirror of generated files. A regeneration of the whole set is committed as a fresh
+orphan history and force-pushed, because appending would keep every earlier encoding in
+the repository and double its size per run.
+
+Before E126 a demo set of five documents (2310, 1000, 1330, 1540, 1620) was committed as
+PNG under `docs/images/` so that the online viewer showed at least those facsimiles; the
+files and the `.gitignore` exceptions are still tracked and have lost their purpose.
+
+The material is the ZB's digitized holdings; the public delivery of the complete set was an
+operator decision on 2026-08-21 and stays subject to the ZB's rights.
 
 ### No third-party resources
 

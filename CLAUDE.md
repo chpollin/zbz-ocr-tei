@@ -288,6 +288,7 @@ dropdown. See [knowledge/workflow.md](knowledge/workflow.md), persistence sectio
 
 ```bash
 python -m scripts.edition.extract_pages --pdf {DOC_ID}.pdf --dpi 300             # page images (300 for OCR input; the web mirror uses WEB_DPI 150)
+python -m scripts.edition.export_web_images [--doc {DOC_ID}] [--out PATH]     # JPEG mirror for the facsimile repo zbz-hersch-images (E126)
 python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      # layout overlay
 ```
 

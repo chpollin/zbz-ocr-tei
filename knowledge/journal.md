@@ -84,6 +84,23 @@ Archive section; sessions 1 to 68 remain in that section as they are.
 
 ## Entries
 
+### 2026-08-21 Session 100: facsimiles online from a separate image repository (E126)
+
+**Occasion** The operator asked where the original images lie, why parts of the repository are gitignored, and how all page images could be made available online.
+
+**Goal** Every document in the online viewer shows its facsimile; the main repository stays small; local use keeps working unchanged.
+
+**Course** Assessment of three routes (ZB image server, object store with access layer, separate GitHub repository) with the rights question named. The operator chose the separate repository and the trial. `scripts/edition/export_web_images.py` with four tests written first, then the viewer switch by host in `core.js` and the sidecar branch in `viewer-page.js`, asset versions raised. Repository `chpollin/zbz-hersch-images` created, Pages enabled, the demo set pushed and the image URL verified (200, `image/jpeg`, `Access-Control-Allow-Origin: *`). On the operator's instruction the complete JPEG set (4152 pages, 867 MB) followed; five non-demo documents verified by URL and by the operator in the browser. Stage table, scripts inventory and register updated once the other instance had released `knowledge/`.
+
+**Decisions**
+- E126: facsimiles online from the separate image repository, viewer switch by host, JPEG export script, orphan-history rule for regenerations.
+- The complete public set was an operator decision after the rights question was raised twice; the rights stay with the ZB.
+- Cleanup of the tracked demo PNGs, the `.gitignore` exceptions and the `featured` catalog set is proposed and awaits the operator.
+
+**Status** Export tests and script health green; main repository commit f8191e34 pushed; image repository at the full-corpus commit, Pages built; documentation follow-up in this commit.
+
+**Next steps** Remove the tracked demo PNGs and the `featured` set (operator go); entry in the vault's repo directory (vault session); ask the ZBZ about absolute facsimile URLs in the delivered TEI.
+
 ### 2026-08-21 Session 99: knowledge base verified claim by claim, client report v3 on the site
 
 **Occasion** After the recut of session 98 the operator asked whether every statement in the ten documents was correct, precise and well formulated, and for the client report to be improved, given an English name and taken out of `knowledge/`.

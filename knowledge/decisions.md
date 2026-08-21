@@ -679,6 +679,18 @@ Recorded, not acted on: unverifiable claims per document are listed in the wave-
 
 Documents: [journal.md](journal.md) session 99, [project-report.md](../docs/project-report.md)
 
+### E126 Facsimiles online from a separate image repository (2026-08-21)
+
+Occasion: the operator asked how all page images could be made available online. `docs/images/` holds the page PNGs locally (about four gigabytes) and is gitignored except for a five-document demo set, so the online viewer showed no facsimile for the rest of the corpus.
+
+Decision: the published facsimiles live in the separate repository `chpollin/zbz-hersch-images`, served by its own GitHub Pages, as JPEG (150 dpi, quality 80) with the same folder and file naming as the local PNGs. The viewer switches by host (`ZBZ.imageBase` in `core.js`, set on `github.io`, empty locally), so local use keeps the PNGs. A new script `scripts/edition/export_web_images.py` writes the JPEG set idempotently; `--out` may target the image repository directly. Regenerations of the whole set are committed as a fresh orphan history and force-pushed, since the repository is a mirror of generated files.
+
+Alternatives weighed: an object store with a private bucket and an access layer in front (fits a delivery restricted to the ZB, needs an account and a CORS rule), a IIIF server on the ZB side (the cleanest route, depends on the ZB), and committing the JPEGs into this repository (fits under the Pages limit but grows the project history with every regeneration). The separate repository needs no account, no CORS configuration and keeps this repository small; it cannot restrict access.
+
+Execution: demo set pushed first as a mechanism test, then the complete set on the operator's instruction after the rights question was raised twice; stage table, scripts inventory and this register updated. Open: the tracked demo PNGs under `docs/images/`, their `.gitignore` exceptions and the `featured` set in the catalog have lost their purpose and await removal; whether the delivered TEI should carry absolute facsimile URLs in its `<graphic>` elements is a question for the ZBZ.
+
+Documents: [pipeline.md](pipeline.md) GitHub Pages and the facsimile repository, [journal.md](journal.md) session 100
+
 ## Plan
 
 This block orders the work still outstanding into phases and milestones, each carrying the
