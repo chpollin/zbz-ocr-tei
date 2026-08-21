@@ -69,3 +69,7 @@ ignore = ["E501"]  # line length is the formatter's business
 # Keeps re-exports (`X as X`) inside their parenthesized block instead of one
 # import statement per aliased name.
 combine-as-imports = true
+
+[tool.pytest.ini_options]
+# Markers are registered in tests/conftest.py; a misspelled marker must fail, not deselect.
+addopts = "--strict-markers"

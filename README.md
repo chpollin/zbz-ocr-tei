@@ -145,8 +145,8 @@ uv sync --extra dev
 # or with pip
 python -m venv .venv
 .venv\Scripts\activate  # Windows
-python -c "import tomllib; p = tomllib.load(open('pyproject.toml', 'rb'))['project']; print('\n'.join(p['dependencies'] + p['optional-dependencies']['dev']))" > /tmp/zbz-requirements.txt
-pip install -r /tmp/zbz-requirements.txt
+python -c "import tomllib; p = tomllib.load(open('pyproject.toml', 'rb'))['project']; print('\n'.join(p['dependencies'] + p['optional-dependencies']['dev']))" > zbz-requirements.txt
+pip install -r zbz-requirements.txt   # generated list, delete afterwards
 
 # Configure API keys: create .env in the repo root (never committed) with
 #   MISTRAL_DOC_AI_ENDPOINT / MISTRAL_DOC_AI_KEY   (OCR, Azure)

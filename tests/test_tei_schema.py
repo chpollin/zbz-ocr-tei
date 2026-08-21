@@ -96,6 +96,9 @@ def test_schema_accepts_pipeline_header():
     """Schema akzeptiert die E68-Header-Elemente (revisionDesc/langUsage/idno/monogr)."""
     relaxng = _etree.RelaxNG(_etree.parse(str(SCHEMA)))
     doc = _etree.fromstring(_PIPELINE_HEADER.encode("utf-8"))
+    # The schema requires only biblStruct; the E68 pin rests on these elements being present.
+    for name in ("revisionDesc", "langUsage", "idno", "monogr"):
+        assert doc.find(f".//{{http://www.tei-c.org/ns/1.0}}{name}") is not None, name
     assert relaxng.validate(doc), (
         "Synthetischer Pipeline-Header nicht schema-valide -- E68-Erweiterung verloren?\n  "
         + "\n  ".join(str(e) for e in relaxng.error_log)
