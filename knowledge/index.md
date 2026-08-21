@@ -50,6 +50,7 @@ principle is a single source of truth per domain, one file per topic.
 | [agent-orchestration.md](agent-orchestration.md) | How multi-agent waves are run verifiably: wave contract, verbatim guardrails, verification of self-reports, roles, transferable core |
 | [arbeitsbericht-v3.md](arbeitsbericht-v3.md) | The project report (German, client-facing): headline CER, per-document breakdown, corpus proxy, stock corrections, limits, outlook; canonical values in `docs/data/cer_statistics.json` |
 | [journal.md](journal.md) | What was done when? Compact session overview (since Jan 2026), recurring patterns |
+| [journal-archive.md](journal-archive.md) | Full journal entries of sessions 69 to 96, moved 2026-08-21; the journal keeps one line per session |
 | [refactoring-plan.md](refactoring-plan.md) | Temporary working plan of the 2026-08 repository refactoring: findings, work packages, waves, verification per wave. Deleted at closure; the outcome stays in [decisions.md](decisions.md) |
 
 Historical snapshots live in `reports/`. The cross-project picture of zbz, szd-htr and
