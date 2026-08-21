@@ -145,7 +145,7 @@ def match_paragraphs_to_regions(
 
     if len(paragraphs) == len(relevant):
         # 1:1 Matching moeglich
-        for i, (para, region) in enumerate(zip(paragraphs, relevant)):
+        for i, (para, region) in enumerate(zip(paragraphs, relevant, strict=True)):
             result.append({
                 "text": para,
                 "zbz_tag": region["zbz_tag"],
@@ -209,16 +209,6 @@ def generate_tei_page(
         title = metadata.get("title") or doc_id
         author = metadata.get("author")
         date = metadata.get("date")
-
-    lang = "und"
-    if metadata:
-        lang_raw = metadata.get("lang", metadata.get("language", "und"))
-        # ISO 639-3 (3 Buchstaben) direkt durchreichen
-        if len(lang_raw) == 3 and lang_raw.isalpha():
-            lang = lang_raw
-        else:
-            lang_map = {"FR": "fra", "DE": "deu", "DE/FR": "fra", "?": "und"}
-            lang = lang_map.get(lang_raw, "und")
 
     lines = []
     lines.append('<?xml version="1.0" encoding="UTF-8"?>')

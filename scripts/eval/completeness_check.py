@@ -90,10 +90,7 @@ def reconcile_page_count(
         diff = abs(effective - expected_pages)
         if diff > 0:
             ratio = effective / expected_pages
-            if ratio < 0.8 or ratio > 1.3:
-                count_status = "MISMATCH"
-            else:
-                count_status = "MINOR"
+            count_status = "MISMATCH" if ratio < 0.8 or ratio > 1.3 else "MINOR"
 
     return {
         "effective_pages": effective,
@@ -141,8 +138,7 @@ def check_text_per_page(tei_path: Path) -> list[dict]:
 def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
     """Fuehrt Vollstaendigkeits-Check durch."""
 
-    with open(DOC_METADATA_PATH, encoding="utf-8") as f:
-        metadata = json.load(f)
+    metadata = json.loads(DOC_METADATA_PATH.read_text(encoding="utf-8"))
     docs_meta = metadata.get("documents", {})
 
     if doc_ids:
@@ -278,8 +274,8 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
 
     output_json = EVALUATION_DIR / "completeness_check.json"
     EVALUATION_DIR.mkdir(parents=True, exist_ok=True)
-    with open(output_json, "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
+    output_json.write_text(
+        json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"\n  JSON: {output_json}")
 
     if generate_html:

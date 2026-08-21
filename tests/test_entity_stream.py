@@ -37,10 +37,16 @@ def _stream(status: str = "verifiziert") -> dict:
 # --- Pfade ----------------------------------------------------------------------------
 
 
-def test_root_points_at_the_project_root():
-    """Regression aus dem scripts-Reorg: ROOT zeigte auf scripts/ statt aufs Repo."""
-    assert (pm.ROOT / "docs" / "data").is_dir()
-    assert (pm.ROOT / "scripts" / "edition" / "page_manifest.py").is_file()
+def test_paths_point_at_the_project_root():
+    """Regression aus dem scripts-Reorg: die Pfade zeigten auf scripts/ statt aufs Repo.
+
+    Seit der Pfad-Konsolidierung stammen sie aus scripts.config; der Test prueft, dass
+    Katalog-Mirror und Liefer-TEI weiterhin unter dem Repo-Wurzelverzeichnis liegen.
+    """
+    assert pm.CATALOG.parent.is_dir()
+    assert pm.MIRROR_PAGES.parent == pm.CATALOG.parent
+    assert pm.OUT_DIR.parent.name == "output"
+    assert (pm.OUT_DIR.parent.parent / "scripts" / "edition" / "page_manifest.py").is_file()
 
 
 # --- Manifest -------------------------------------------------------------------------

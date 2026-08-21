@@ -476,7 +476,7 @@ def _collect_finals(tei_dir: Path) -> list[tuple[str, Path]]:
     return finals
 
 
-def validate_all(tei_dir: Path = None) -> dict:
+def validate_all(tei_dir: Path | None = None) -> dict:
     """Validiert alle TEI-Dateien in einem Verzeichnis (flache oder verschachtelte Ablage).
 
     Default ist die ausgelieferte SoT ``tei_final`` (E43): das No-Argument-Gate prueft den
@@ -514,7 +514,7 @@ def validate_all(tei_dir: Path = None) -> dict:
     return summary
 
 
-def conformity_all(tei_dir: Path = None) -> dict:
+def conformity_all(tei_dir: Path | None = None) -> dict:
     """ZBZ-Konformitaetspruefung (Inline-GND-Modell, E88) ueber alle ausgelieferten TEI.
 
     Ergaenzt die Schema-/Projektregel-Validierung um die Editionsrichtlinien-Regeln, die ein
@@ -581,7 +581,7 @@ def _compute_cer(ref_text: str, hyp_text: str) -> float:
         return round(diff / max(len(ref_text), 1) * 100, 2)
 
 
-def compare_with_reference(tei_dir: Path = None, ref_dir: Path = None) -> dict:
+def compare_with_reference(tei_dir: Path | None = None, ref_dir: Path | None = None) -> dict:
     """Vergleicht Pipeline-TEI mit ZBZ-Referenz-TEI.
 
     Returns:
@@ -595,7 +595,6 @@ def compare_with_reference(tei_dir: Path = None, ref_dir: Path = None) -> dict:
     if not HAS_LXML or not ref_dir.exists():
         return {"total": 0, "docs": [], "error": "lxml oder Referenz-Verzeichnis fehlt"}
 
-    ns = {"tei": TEI_NS}
     results = []
 
     for ref_file in sorted(ref_dir.glob("*.xml")):
@@ -754,7 +753,7 @@ def generate_html_report(summary: dict, output_path: Path) -> None:
     error_counter = Counter()
     warning_counter = Counter()
 
-    for doc_id, result in summary["per_doc"].items():
+    for result in summary["per_doc"].values():
         for err in result.get("errors", []):
             msg = re.sub(r'line \d+', 'line N', err.get("message", ""))
             rule = err.get("rule", "schema")

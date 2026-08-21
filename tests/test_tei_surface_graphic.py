@@ -16,16 +16,10 @@ from __future__ import annotations
 from pathlib import Path
 
 import pytest
+from lxml import etree as _etree
 
 from scripts.tei.tei_step3 import build_facsimile, page_image_url
 from scripts.tei.tei_surface_graphic import project_graphics
-
-try:
-    from lxml import etree as _etree
-    HAS_LXML = True
-except ImportError:  # pragma: no cover
-    HAS_LXML = False
-    _etree = None
 
 REPO = Path(__file__).resolve().parent.parent
 FINAL_DIR = REPO / "output" / "tei_final"
@@ -60,7 +54,6 @@ def test_build_facsimile_graphic_first_child_zoned_and_empty():
     assert '<graphic url="2.png"/>' not in out
 
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 def test_build_facsimile_output_is_schema_valid():
     """graphic-vor-zone muss schema-valide sein (Surface-Modell)."""
     page_facsimiles = {
@@ -96,18 +89,17 @@ def test_project_graphics_inserts_and_is_idempotent():
     assert '<graphic url="110_p002.png"/>' in out  # Platzhalter korrigiert
     assert '<graphic url="2.png"/>' not in out
     # Idempotenz: zweiter Lauf aendert nichts
-    out2, total2, changed2 = project_graphics(out, "110")
+    out2, _, changed2 = project_graphics(out, "110")
     assert changed2 == 0 and out2 == out
 
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 @pytest.mark.skipif(not FINAL_DOCS, reason="output/tei_final leer (gitignored)")
 @pytest.mark.parametrize("doc", FINAL_DOCS, ids=FINAL_IDS)
 def test_final_doc_every_surface_has_graphic(doc: Path):
     """Jede Surface des ausgelieferten TEI traegt ein <graphic> als erstes Kind, URL nach Schema."""
     doc_id = doc.name[: -len("_final.xml")]
     root = _etree.parse(str(doc)).getroot()
-    for i, surface in enumerate(root.iter(f"{{{TEI_NS}}}surface"), start=0):
+    for surface in root.iter(f"{{{TEI_NS}}}surface"):
         children = [c for c in surface if isinstance(c.tag, str)]
         assert children and children[0].tag == f"{{{TEI_NS}}}graphic", (
             f"{doc.name}: Surface ohne <graphic> als erstes Kind")

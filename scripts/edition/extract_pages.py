@@ -130,8 +130,8 @@ def main():
 
     # Metadaten speichern
     metadata_file = output_dir / "manifest.json"
-    with open(metadata_file, "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
+    metadata_file.write_text(
+        json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
 
     print("\n" + "=" * 50)
     print(f"Manifest gespeichert: {metadata_file}")

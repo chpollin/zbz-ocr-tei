@@ -45,8 +45,8 @@ _MARKER_RE = re.compile(
     r'(<note\b[^>]*\bplace="foot"[^>]*>)'   # 1: note-Open-Tag
     r'(\s*(?:<lb\b[^>]*/>\s*)?)'            # 2: optional fuehrendes <lb/> + Whitespace
     r'<hi\b[^>]*\brendition="#sup"[^>]*>'   # der fuehrende #sup-Marker
-    r'([^<]{1,%d})'                         # 3: die Marke (kurz)
-    r'</hi>' % MAX_MARK,
+    rf'([^<]{{1,{MAX_MARK}}})'               # 3: die Marke (kurz)
+    r'</hi>',
     re.DOTALL,
 )
 

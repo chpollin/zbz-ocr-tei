@@ -10,18 +10,11 @@ ein E68-Element aus dem Schema faellt.
 from __future__ import annotations
 
 import pytest
+from lxml import etree as _etree
 
 from scripts.tei.tei_step3 import _language_idents, build_tei_header
 
 REPO_SCHEMA = "data/schema/zbz_hersch.rng"
-
-try:
-    from lxml import etree as _etree
-    HAS_LXML = True
-except ImportError:  # pragma: no cover
-    HAS_LXML = False
-    _etree = None
-
 
 _META_FULL = {
     "title": "Transformer l'ecole",
@@ -91,7 +84,6 @@ def test_language_idents(raw, expected):
 
 # --- Schema-Validierung (der eigentliche A1-Waechter) ----------------------
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 @pytest.mark.parametrize("meta", [
     _META_FULL,
     {**_META_FULL, "date": ""},             # ohne Datum -> leeres imprint

@@ -23,6 +23,7 @@ Quelle der Wahrheit fuer Pfade: scripts/config.py (TEI_FINAL_DIR, LAYOUT_DIR).
 import json
 import re
 from collections import Counter
+from itertools import pairwise
 from pathlib import Path
 
 from scripts.config import LAYOUT_DIR, TEI_NS
@@ -179,10 +180,10 @@ def classify_document(pb_ns, layout_page_numbers=None):
     wild = [i for i, v in numeric if abs(v - (i + 1)) > _WILD_DEVIATION]
 
     seq = [v for _, v in numeric]
-    asc_pairs = sum(1 for a, b in zip(seq, seq[1:]) if b > a)
+    asc_pairs = sum(1 for a, b in pairwise(seq) if b > a)
     asc_ratio = asc_pairs / (len(seq) - 1) if len(seq) > 1 else 0.0
 
-    footer_pages, footer_match, footer_ratio, footer_offset = _footer_stats(
+    footer_pages, _footer_match, footer_ratio, footer_offset = _footer_stats(
         pb_ints, layout_page_numbers
     )
 
@@ -228,7 +229,7 @@ def classify_document(pb_ns, layout_page_numbers=None):
             "footer_offset_mode": footer_offset,
             "bracket_ratio": round(bracket_ratio, 3),
         },
-        "examples": [n for n in pb_ns[:12]],
+        "examples": list(pb_ns[:12]),
     }
 
 

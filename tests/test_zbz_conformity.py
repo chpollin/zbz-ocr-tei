@@ -20,15 +20,9 @@ from __future__ import annotations
 from pathlib import Path
 
 import pytest
+from lxml import etree as _etree
 
 from scripts.tei.zbz_conformity import check_conformity
-
-try:
-    from lxml import etree as _etree
-    HAS_LXML = True
-except ImportError:  # pragma: no cover
-    HAS_LXML = False
-    _etree = None
 
 REPO = Path(__file__).resolve().parent.parent
 FINAL_DIR = REPO / "output" / "tei_final"
@@ -49,7 +43,6 @@ def _violations(root) -> list[str]:
 
 # --- 1. Synthetische Fixtures: jede Regel feuert gezielt --------------------
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 def test_inline_gnd_doc_is_conformant():
     """Ein korrekt inline mit GND ausgezeichnetes Dokument hat keine Verletzung."""
     root = _root(
@@ -61,7 +54,6 @@ def test_inline_gnd_doc_is_conformant():
     assert _violations(root) == []
 
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 @pytest.mark.parametrize("rule,prefix,inner", [
     ("Z1", "", '<pb facs="#f1" n="1"/><p><persName ref="Wikidata:Q1">x</persName></p>'),
     ("Z2", "", '<pb facs="#f1" n="1"/><p><idno type="GeoNames">2657896</idno></p>'),
@@ -76,7 +68,6 @@ def test_each_rule_fires(rule, prefix, inner):
     assert rule in _violations(root), f"{rule} sollte feuern"
 
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 def test_bibliography_bibl_without_gnd_is_ok():
     """README §Lexikonartikel: <bibl> in <div type="bibliography"> bewusst ohne GND -- keine Verletzung."""
     xml = (
@@ -89,7 +80,6 @@ def test_bibliography_bibl_without_gnd_is_ok():
     assert _violations(root) == []
 
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 def test_unlinked_persname_is_advisory_not_violation():
     """persName ohne @ref ist ein Kurationshinweis (advisory), keine Verletzung."""
     root = _root('<pb facs="#f1" n="1"/><p><persName>Hersch</persName></p>')
@@ -100,7 +90,6 @@ def test_unlinked_persname_is_advisory_not_violation():
 
 # --- 2. Realer Bestand: committetes Pruefergebnis ---------------------------
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 @pytest.mark.skipif(not FINAL_DOCS, reason="output/tei_final leer (gitignored, kein lokaler Korpus)")
 @pytest.mark.parametrize("doc", FINAL_DOCS, ids=FINAL_IDS)
 def test_final_doc_zbz_conformant(doc: Path):

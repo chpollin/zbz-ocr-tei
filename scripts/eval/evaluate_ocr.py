@@ -51,8 +51,7 @@ from scripts.utils import get_phase_doc_ids
 
 def extract_text_from_tei(tei_path: Path) -> str:
     """Extrahiert reinen Text aus TEI-XML (ohne Tags)."""
-    with open(tei_path, encoding='utf-8') as f:
-        content = f.read()
+    content = tei_path.read_text(encoding='utf-8')
 
     # XML parsen
     try:
@@ -103,8 +102,7 @@ def extract_pages_from_tei(tei_path: Path) -> dict[int, str]:
     Gibt ein Dict {page_num: normalized_text} zurueck.
     page_num entspricht der physischen PDF-Seite (= OCR-Datei {doc}_p{page_num}.md).
     """
-    with open(tei_path, encoding='utf-8') as f:
-        content = f.read()
+    content = tei_path.read_text(encoding='utf-8')
 
     try:
         root = ET.fromstring(content)
@@ -235,8 +233,7 @@ def extract_text_for_comparison(tei_path: Path, include_footnotes: bool = False,
 
     casefold=True liefert den case-insensitiven Text (Sekundaer-Metrik).
     """
-    with open(tei_path, encoding='utf-8') as f:
-        content = f.read()
+    content = tei_path.read_text(encoding='utf-8')
 
     try:
         root = ET.fromstring(content)
@@ -305,8 +302,7 @@ def extract_pages_for_comparison(tei_path: Path,
     extract_pages_from_tei() liefert Rohtext, diese Funktion liefert
     benchmark-normalisierten Text pro Seite.
     """
-    with open(tei_path, encoding='utf-8') as f:
-        content = f.read()
+    content = tei_path.read_text(encoding='utf-8')
 
     try:
         root = ET.fromstring(content)
@@ -590,10 +586,7 @@ def categorize_errors(differences: list, ref_length: int) -> dict:
             cat = 'punctuation'
         elif any(c in ref + hyp for c in ['-', '\u00AD', '\u2010', '\u2011']):
             # Bindestrich/Trennstrich involviert
-            if len(ref) < 5 and len(hyp) < 5:
-                cat = 'hyphenation'
-            else:
-                cat = 'other'
+            cat = 'hyphenation' if len(ref) < 5 and len(hyp) < 5 else 'other'
         elif diff_type == 'insert' and len(hyp) > 50 and _has_repeated_ngrams(hyp):
             cat = 'ocr_artifact'
         elif (diff_type == 'insert' and len(hyp) > 80) or (diff_type == 'delete' and len(ref) > 80):
@@ -1282,7 +1275,7 @@ def evaluate_tei_vs_tei_pagewise(doc_id: str, ref_dir: Path,
         ref_sorted = sorted(ref_pages.keys())
         pipe_sorted = sorted(pipe_pages.keys())
         n = min(len(ref_sorted), len(pipe_sorted))
-        matched_pairs = list(zip(ref_sorted[:n], pipe_sorted[:n]))
+        matched_pairs = list(zip(ref_sorted[:n], pipe_sorted[:n], strict=True))
     else:
         matched_pairs = [(p, p) for p in matched_pages]
 
@@ -1366,7 +1359,7 @@ def main():
             return 1
     elif args.all:
         ocr_files = list(ocr_dir.glob("*_p*.md"))
-        doc_ids = sorted(set(f.stem.rsplit('_p', 1)[0] for f in ocr_files))
+        doc_ids = sorted({f.stem.rsplit('_p', 1)[0] for f in ocr_files})
     else:
         # Default: Nur 2310 als Beispiel
         doc_ids = ['2310']

@@ -71,7 +71,7 @@ def draw_overlay_from_json(img_path: Path, layout_json: dict, output_path: Path)
         y2 = y1 + h
 
         # Gefuelltes Rechteck mit Transparenz
-        fill_color = color + (40,)
+        fill_color = (*color, 40)
         draw.rectangle([x1, y1, x2, y2], outline=color, fill=fill_color, width=2)
 
         # Label-Text oben links im Rechteck

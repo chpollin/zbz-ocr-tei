@@ -129,7 +129,7 @@ def match_ocr_to_regions(ocr_text, regions):
 
     result = []
     if len(paragraphs) == len(relevant):
-        for para, region in zip(paragraphs, relevant):
+        for para, region in zip(paragraphs, relevant, strict=True):
             result.append((region, para))
     else:
         for i, region in enumerate(relevant):
@@ -178,20 +178,20 @@ def generate_page_xml(doc_id, page_num, matched_regions, img_w, img_h,
     page_padded = str(page_num).zfill(3)
 
     nsmap = {None: PAGE_NS, "xsi": XSI_NS}
-    root = etree.Element("{%s}PcGts" % PAGE_NS, nsmap=nsmap)
-    root.set("{%s}schemaLocation" % XSI_NS, SCHEMA_LOC)
+    root = etree.Element(f"{{{PAGE_NS}}}PcGts", nsmap=nsmap)
+    root.set(f"{{{XSI_NS}}}schemaLocation", SCHEMA_LOC)
 
     # Metadata
-    metadata = etree.SubElement(root, "{%s}Metadata" % PAGE_NS)
-    creator = etree.SubElement(metadata, "{%s}Creator" % PAGE_NS)
+    metadata = etree.SubElement(root, f"{{{PAGE_NS}}}Metadata")
+    creator = etree.SubElement(metadata, f"{{{PAGE_NS}}}Creator")
     creator.text = f"zbz-ocr-tei:page_xml_generator:layout={layout_source}"
-    created = etree.SubElement(metadata, "{%s}Created" % PAGE_NS)
+    created = etree.SubElement(metadata, f"{{{PAGE_NS}}}Created")
     created.text = datetime.now(UTC).isoformat()
-    last_change = etree.SubElement(metadata, "{%s}LastChange" % PAGE_NS)
+    last_change = etree.SubElement(metadata, f"{{{PAGE_NS}}}LastChange")
     last_change.text = datetime.now(UTC).isoformat()
 
     # Page
-    page = etree.SubElement(root, "{%s}Page" % PAGE_NS)
+    page = etree.SubElement(root, f"{{{PAGE_NS}}}Page")
     page.set("imageFilename", f"{doc_id}_p{page_padded}.png")
     page.set("imageWidth", str(img_w or 0))
     page.set("imageHeight", str(img_h or 0))
@@ -200,18 +200,18 @@ def generate_page_xml(doc_id, page_num, matched_regions, img_w, img_h,
         return root
 
     # ReadingOrder
-    reading_order = etree.SubElement(page, "{%s}ReadingOrder" % PAGE_NS)
+    reading_order = etree.SubElement(page, f"{{{PAGE_NS}}}ReadingOrder")
     ordered_group = etree.SubElement(
-        reading_order, "{%s}OrderedGroup" % PAGE_NS
+        reading_order, f"{{{PAGE_NS}}}OrderedGroup"
     )
     ordered_group.set("id", "ro_1")
     ordered_group.set("caption", "Regions reading order")
 
-    for idx, (region, text) in enumerate(matched_regions):
+    for idx, _ in enumerate(matched_regions):
         region_id = f"r_{idx + 1}"
 
         ref = etree.SubElement(
-            ordered_group, "{%s}RegionRefIndexed" % PAGE_NS
+            ordered_group, f"{{{PAGE_NS}}}RegionRefIndexed"
         )
         ref.set("index", str(idx))
         ref.set("regionRef", region_id)
@@ -222,7 +222,7 @@ def generate_page_xml(doc_id, page_num, matched_regions, img_w, img_h,
         zbz_tag = region.get("zbz_tag", "zb_paragraph")
         page_type = ZBZ_TO_PAGE_TYPE.get(zbz_tag, "paragraph")
 
-        text_region = etree.SubElement(page, "{%s}TextRegion" % PAGE_NS)
+        text_region = etree.SubElement(page, f"{{{PAGE_NS}}}TextRegion")
         text_region.set("id", region_id)
         text_region.set(
             "custom",
@@ -233,7 +233,7 @@ def generate_page_xml(doc_id, page_num, matched_regions, img_w, img_h,
         bbox = region.get("bbox")
         if bbox and img_w and img_h:
             coords = etree.SubElement(
-                text_region, "{%s}Coords" % PAGE_NS
+                text_region, f"{{{PAGE_NS}}}Coords"
             )
             coords.set("points", bbox_to_coords(bbox, img_w, img_h))
 
@@ -244,7 +244,7 @@ def generate_page_xml(doc_id, page_num, matched_regions, img_w, img_h,
             clean_text = clean_text.strip()
 
             text_line = etree.SubElement(
-                text_region, "{%s}TextLine" % PAGE_NS
+                text_region, f"{{{PAGE_NS}}}TextLine"
             )
             text_line.set("id", f"{region_id}_tl_1")
             text_line.set("custom", "readingOrder {index:0;}")
@@ -252,24 +252,24 @@ def generate_page_xml(doc_id, page_num, matched_regions, img_w, img_h,
             # TextLine Coords = gleich wie Region
             if bbox and img_w and img_h:
                 tl_coords = etree.SubElement(
-                    text_line, "{%s}Coords" % PAGE_NS
+                    text_line, f"{{{PAGE_NS}}}Coords"
                 )
                 tl_coords.set(
                     "points", bbox_to_coords(bbox, img_w, img_h)
                 )
 
             tl_te = etree.SubElement(
-                text_line, "{%s}TextEquiv" % PAGE_NS
+                text_line, f"{{{PAGE_NS}}}TextEquiv"
             )
-            tl_unicode = etree.SubElement(tl_te, "{%s}Unicode" % PAGE_NS)
+            tl_unicode = etree.SubElement(tl_te, f"{{{PAGE_NS}}}Unicode")
             tl_unicode.text = clean_text
 
         # Region-Level TextEquiv (leer, Transkribus-Konvention)
         region_te = etree.SubElement(
-            text_region, "{%s}TextEquiv" % PAGE_NS
+            text_region, f"{{{PAGE_NS}}}TextEquiv"
         )
         region_unicode = etree.SubElement(
-            region_te, "{%s}Unicode" % PAGE_NS
+            region_te, f"{{{PAGE_NS}}}Unicode"
         )
         region_unicode.text = ""
 
@@ -307,7 +307,7 @@ def process_page(doc_id, page_num, force=False):
         return None
 
     # OCR-Text laden
-    ocr_text, ocr_source = load_ocr_text_for_page(doc_id, page_num)
+    ocr_text, _ocr_source = load_ocr_text_for_page(doc_id, page_num)
 
     # Matching
     matched = match_ocr_to_regions(ocr_text, regions)
@@ -373,10 +373,7 @@ def main():
         count = process_document(args.doc, args.force)
         print(f"  {count} Seiten generiert")
     else:
-        if args.sample:
-            doc_ids = SAMPLE_DOCS
-        else:
-            doc_ids = discover_layout_documents()
+        doc_ids = SAMPLE_DOCS if args.sample else discover_layout_documents()
 
         print(f"Generiere PAGE-XML fuer {len(doc_ids)} Dokumente...")
         total = 0

@@ -6,7 +6,7 @@ result to ``output/entity_preview/{doc}_final.xml``. Tier-2 candidates are repor
 worklist and never written into the XML.
 
 ``output/tei_final`` is never touched: the source of truth is read only, every write goes
-to the preview directory (same reversible pattern as ``tei_reassemble_preview``). The
+to the preview directory (reversible, like the marker tools). The
 stock run on ``tei_final`` is a separate, operator-gated tool (``tei_entity_marker``).
 
 The wrapping itself is pure string splicing on the raw file text, applied back to front so

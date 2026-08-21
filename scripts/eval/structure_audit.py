@@ -26,6 +26,7 @@ import json
 import re
 import xml.etree.ElementTree as ET
 from collections import Counter
+from pathlib import Path
 
 from scripts.config import REFERENCE_TEI_DIR, TEI_FINAL_DIR
 
@@ -83,11 +84,11 @@ def _reference_ids(single=None):
 
 def run(single=None, json_path=None):
     if not REFERENCE_TEI_DIR.exists():
-        print("Referenz-TEIs nicht vorhanden (%s) -- nichts zu vergleichen." % REFERENCE_TEI_DIR)
+        print(f"Referenz-TEIs nicht vorhanden ({REFERENCE_TEI_DIR}) -- nichts zu vergleichen.")
         return 0
 
     ids = _reference_ids(single)
-    print("Objekte mit Ground Truth: %d" % len(ids))
+    print(f"Objekte mit Ground Truth: {len(ids)}")
     print("=" * 96)
     print("{:>6} | {:>9} | {:>9} | {:>11} | {:>9} | {:>9}".format(
         "DOC", "pb r/f", "note r/f", "fig+gra r/f", "front r/f", "back r/f"))
@@ -96,8 +97,8 @@ def run(single=None, json_path=None):
     rows = []
     skipped = []
     for did in ids:
-        ref_path = REFERENCE_TEI_DIR / ("%d.xml" % did)
-        fin_path = TEI_FINAL_DIR / ("%d_final.xml" % did)
+        ref_path = REFERENCE_TEI_DIR / f"{did}.xml"
+        fin_path = TEI_FINAL_DIR / f"{did}_final.xml"
         if not fin_path.exists():
             skipped.append((did, "kein tei_final"))
             print(f"{did:>6} | kein tei_final")
@@ -105,7 +106,7 @@ def run(single=None, json_path=None):
         ref, ref_err = analyze(ref_path)
         fin, fin_err = analyze(fin_path)
         if ref_err or fin_err:
-            skipped.append((did, "parse: ref=%s fin=%s" % (ref_err, fin_err)))
+            skipped.append((did, f"parse: ref={ref_err} fin={fin_err}"))
             print(f"{did:>6} | parse-error ref={ref_err} fin={fin_err}")
             continue
         rk, fk = _key(ref["elements"]), _key(fin["elements"])
@@ -127,23 +128,23 @@ def run(single=None, json_path=None):
         for k in KEY_ELEMENTS:
             agg["ref_" + k] += row["ref"]["elements"].get(k, 0)
             agg["fin_" + k] += row["fin"]["elements"].get(k, 0)
-    print("\nSUMMEN ueber %d vergleichbare Objekte:" % len(rows))
+    print(f"\nSUMMEN ueber {len(rows)} vergleichbare Objekte:")
     for k in KEY_ELEMENTS:
         r, f = agg["ref_" + k], agg["fin_" + k]
-        print("  %-8s ref=%5d  fin=%5d  delta=%+d" % (k, r, f, f - r))
+        print(f"  {k:<8} ref={r:>5}  fin={f:>5}  delta={f - r:+d}")
 
     for label, side in [("Pipeline", "fin"), ("Ground Truth", "ref")]:
         c = Counter()
         for row in rows:
             c.update(row[side]["div_type"])
-        print("\ndiv @type (%s):" % label)
+        print(f"\ndiv @type ({label}):")
         for k, v in c.most_common():
-            print("  %-14s %d" % (k, v))
+            print(f"  {k:<14} {v}")
 
     if skipped:
         print("\nUebersprungen:")
         for did, why in skipped:
-            print("  %6d  %s" % (did, why))
+            print(f"  {did:>6}  {why}")
 
     if json_path:
         payload = {
@@ -152,9 +153,9 @@ def run(single=None, json_path=None):
             "aggregate": {k: {"ref": agg["ref_" + k], "fin": agg["fin_" + k]} for k in KEY_ELEMENTS},
             "per_doc": rows,
         }
-        with open(json_path, "w", encoding="utf-8") as fh:
-            json.dump(payload, fh, ensure_ascii=False, indent=2)
-        print("\nJSON-Report: %s" % json_path)
+        Path(json_path).write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"\nJSON-Report: {json_path}")
 
     return 0
 

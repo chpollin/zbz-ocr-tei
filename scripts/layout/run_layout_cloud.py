@@ -223,10 +223,7 @@ def main():
     print("Server erreichbar.\n")
 
     # Dokument-IDs bestimmen
-    if args.doc:
-        doc_ids = [args.doc]
-    else:
-        doc_ids = discover_doc_ids(IMAGES_DIR)
+    doc_ids = [args.doc] if args.doc else discover_doc_ids(IMAGES_DIR)
 
     print(f"Layout-Analyse fuer {len(doc_ids)} Dokumente...")
 

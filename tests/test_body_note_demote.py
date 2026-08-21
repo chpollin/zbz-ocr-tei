@@ -185,28 +185,60 @@ def _real_doc(doc_id):
     return p.read_text(encoding="utf-8")
 
 
-def test_demoted_real_doc_stays_schema_valid():
+# --- schema-valid fixture: one wrongly framed foot note + following marker <p> ---
+SYN_VALID = (
+    '<?xml version="1.0" encoding="UTF-8"?>\n'
+    '<TEI xmlns="http://www.tei-c.org/ns/1.0">\n'
+    "  <teiHeader>\n"
+    "    <fileDesc>\n"
+    "      <titleStmt><title>Testdokument</title></titleStmt>\n"
+    "      <publicationStmt><p>ZBZ</p></publicationStmt>\n"
+    "      <sourceDesc><p>Testquelle</p></sourceDesc>\n"
+    "    </fileDesc>\n"
+    "  </teiHeader>\n"
+    "  <text>\n"
+    "    <body>\n"
+    '      <div type="text">\n'
+    '        <pb facs="#facs_2" n="2" />\n'
+    '        <p facs="#facs_2_r_1">Erster Absatz der Seite.</p>\n'
+    '        <note place="foot" n="1" xml:id="fn2-1" facs="#facs_2_r_3">'
+    "Dies ist fortlaufender Haupttext, der faelschlich als Fussnote gerahmt wurde. Dies ist fortlaufender Haupttext, der faelschlich als Fussnote gerahmt wurde. Dies ist fortlaufender Haupttext, der faelschlich als Fussnote gerahmt wurde. Dies ist fortlaufender Haupttext, der faelschlich als Fussnote gerahmt wurde. Dies ist fortlaufender Haupttext, der faelschlich als Fussnote gerahmt wurde. Dies ist fortlaufender Haupttext, der faelschlich als Fussnote gerahmt wurde."
+    "</note>\n"
+    "        <p>\n"
+    "          ¹ Echte Fussnote mit vorangestelltem Marker.\n"
+    "        </p>\n"
+    "      </div>\n"
+    "    </body>\n"
+    "  </text>\n"
+    "</TEI>\n"
+)
+
+
+def test_demoted_document_stays_schema_valid():
+    """Der Demotions-Schreibpfad bleibt gegen data/schema/zbz_hersch.rng valide.
+
+    Frueher lief der Fall gegen Dokument 530; nach dem Bestandslauf E94 traegt kein
+    Lieferdokument mehr eine lange fehlgerahmte Fussnote, und der Test uebersprang sich
+    seither selbst. Die synthetische Fixture haelt den Fall deterministisch fest.
+    """
     validator = schema_validator()
-    if validator is None:
-        pytest.skip("lxml/schema nicht verfuegbar")
-    raw = _real_doc("530")
-    assert validator(raw), "Baseline 530 muss valide sein"
-    notes = iter_foot_notes(raw)
-    # demote every foot note >= 400 chars to p, promote following marker paragraphs
-    entries = [{"doc": "530", "page": n.page, "len": n.length,
+    assert validator is not None, "lxml und data/schema/zbz_hersch.rng sind Pflicht"
+    assert validator(SYN_VALID), "Baseline-Fixture muss valide sein"
+    notes = iter_foot_notes(SYN_VALID)
+    entries = [{"doc": "T", "page": n.page, "len": n.length,
                 "verdict": "HAUPTTEXT", "real_footnote_following": True}
-               for n in notes if n.length >= 400]
-    if not entries:
-        pytest.skip("530 traegt keine langen foot-notes mehr (Bestandslauf E94 vollzogen)")
-    new_raw, _ = transform_document(raw, entries, promote=True, validator=validator)
-    assert new_raw != raw
-    assert validator(new_raw), "Demotetes 530 muss valide bleiben"
+               for n in notes]
+    assert entries, "Fixture traegt eine fehlgerahmte Fussnote"
+    new_raw, _ = transform_document(SYN_VALID, entries, promote=True, validator=validator)
+    assert new_raw != SYN_VALID
+    assert 'xml:id="fn2-1"' not in new_raw   # fehlgerahmte Fussnote ist jetzt Haupttext
+    assert '<note place="foot">' in new_raw  # Markerabsatz wurde zur echten Fussnote
+    assert validator(new_raw), "Demotiertes Dokument muss valide bleiben"
 
 
 def test_blockzitat_quote_real_doc_valid():
     validator = schema_validator()
-    if validator is None:
-        pytest.skip("lxml/schema nicht verfuegbar")
+    assert validator is not None, "lxml und data/schema/zbz_hersch.rng sind Pflicht"
     raw = _real_doc("2420")
     notes = iter_foot_notes(raw)
     target = max(notes, key=lambda n: n.length)  # the 1055-char blockzitat note

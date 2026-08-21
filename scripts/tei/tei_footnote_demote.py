@@ -97,7 +97,7 @@ def _demote(doc_id, ids):
     content = pp.read_text(encoding="utf-8")
     changed = 0
     for nid in ids:
-        pat = r'(<note\b[^>]*\bxml:id="%s"[^>]*>)(.*?)(</note>)' % re.escape(nid)
+        pat = rf'(<note\b[^>]*\bxml:id="{re.escape(nid)}"[^>]*>)(.*?)(</note>)'
         m = re.search(pat, content, re.DOTALL)
         if not m:
             continue  # schon <p> (idempotent) oder nicht gefunden

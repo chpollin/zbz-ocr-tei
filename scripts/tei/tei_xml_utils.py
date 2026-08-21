@@ -70,7 +70,7 @@ def _bbox_centre_x(bbox: dict) -> float:
 
 
 def reading_order_permutation(
-    bboxes: list[dict], *, wide_w_pct: float = None, column_gap_pct: float = None
+    bboxes: list[dict], *, wide_w_pct: float | None = None, column_gap_pct: float | None = None
 ) -> list[int]:
     """Original-Indizes der bboxes in kanonischer Lesereihenfolge.
 
@@ -201,7 +201,7 @@ def iter_page_zone_bboxes(root):
         yield page, zids, [zone_bbox[z] for z in zids], page_line.get(page, 0)
 
 
-def make_element(tag: str, tail: str = None, **attribs):
+def make_element(tag: str, tail: str | None = None, **attribs):
     """Erzeugt ein ET.Element mit optionalem tail und Attributen."""
     elem = ET.Element(tag)
     if tail is not None:

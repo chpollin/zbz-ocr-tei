@@ -43,16 +43,19 @@ import argparse
 import json
 import re
 from datetime import date
-from pathlib import Path
 
-# scripts/edition/page_manifest.py -> Projekt-Root sind drei Ebenen hoch (Reorg-Regression:
-# zwei Ebenen zeigten auf scripts/, wodurch Katalog, OCR und Layout-Mirror ins Leere liefen).
-ROOT = Path(__file__).resolve().parents[2]
-CATALOG = ROOT / "docs" / "data" / "catalog.json"
-OCR_DIR = ROOT / "output" / "mistral_results"
-MIRROR_PAGES = ROOT / "docs" / "data" / "pages"
-OUT_DIR = ROOT / "output" / "tei_final"
-ENTITY_PREVIEW_DIR = ROOT / "output" / "entity_preview"
+from scripts.config import (
+    DOCS_DIR,
+    MISTRAL_RESULTS_DIR,
+    OUTPUT_DIR,
+    TEI_FINAL_DIR,
+)
+
+CATALOG = DOCS_DIR / "data" / "catalog.json"
+OCR_DIR = MISTRAL_RESULTS_DIR
+MIRROR_PAGES = DOCS_DIR / "data" / "pages"
+OUT_DIR = TEI_FINAL_DIR
+ENTITY_PREVIEW_DIR = OUTPUT_DIR / "entity_preview"
 
 GENERATOR = "page_manifest-v5"
 ENTITY_STREAM = "entities"

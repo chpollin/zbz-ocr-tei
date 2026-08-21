@@ -9,7 +9,6 @@ Ergebnis: data/doc_metadata.json (kompakt, TEI-mappbar).
 
 import argparse
 import json
-import os
 import sys
 import time
 import warnings
@@ -18,16 +17,15 @@ from datetime import UTC, datetime
 from scripts.config import (
     CLASSIFICATION_DIR,
     DOC_METADATA_PATH,
-    GEMINI_API_KEY,
     GEMINI_MODEL,
     IMAGES_DIR,
 )
+from scripts.core.gemini import get_client
 from scripts.utils import discover_doc_ids, load_json, write_json
 
 # Gemini SDK warnings unterdruecken
 warnings.filterwarnings("ignore", message=".*non-text parts.*thought_signature.*")
 
-_api_key = os.environ.get("GEMINI_API_KEY", "") or GEMINI_API_KEY
 
 MAX_PAGES = 5
 
@@ -99,16 +97,6 @@ Extract the following metadata based ONLY on what is clearly visible:
 Report only what you can clearly determine. Use null for uncertain fields."""
 
 
-def get_client():
-    """Gemini Client erstellen."""
-    from google import genai
-
-    if not _api_key:
-        print("FEHLER: GEMINI_API_KEY nicht gesetzt. Bitte in .env eintragen.")
-        sys.exit(1)
-    return genai.Client(api_key=_api_key)
-
-
 def classify_document(client, doc_id, force=False):
     """Klassifiziert ein Dokument anhand der ersten Seiten."""
     from google.genai import types
@@ -142,7 +130,7 @@ def classify_document(client, doc_id, force=False):
         return None
 
     # Gemini API Call
-    contents = list(images) + [PROMPT]
+    contents = [*list(images), PROMPT]
     t0 = time.time()
     try:
         response = client.models.generate_content(
@@ -225,10 +213,7 @@ def main():
     client = get_client()
 
     # Docs bestimmen
-    if args.doc:
-        doc_ids = [args.doc]
-    else:
-        doc_ids = discover_doc_ids(IMAGES_DIR)
+    doc_ids = [args.doc] if args.doc else discover_doc_ids(IMAGES_DIR)
 
     if not doc_ids:
         print("Keine Dokumente gefunden.")

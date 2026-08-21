@@ -284,7 +284,7 @@ def chi_square_categorical(
         return {"chi2": 0.0, "dof": 0, "p": 1.0, "comparable": True,
                 "n_reference": n_ref, "n_corpus": n_corp, "categories": kept_keys}
 
-    chi2 = float(sum((o - e) ** 2 / e for o, e in zip(obs, exp)))
+    chi2 = float(sum((o - e) ** 2 / e for o, e in zip(obs, exp, strict=True)))
     dof = len(obs) - 1
     if scipy_stats is not None:
         p = float(scipy_stats.chi2.sf(chi2, dof))
@@ -489,7 +489,7 @@ class DocCERRecord:
         total_chars = sum(self.page_ref_chars)
         if total_chars == 0:
             return 0.0
-        total_dist = sum(c * n for c, n in zip(self.page_cers, self.page_ref_chars))
+        total_dist = sum(c * n for c, n in zip(self.page_cers, self.page_ref_chars, strict=True))
         return total_dist / total_chars
 
 
@@ -508,7 +508,8 @@ def aggregate_overall(
     sind korreliert).
     """
     if value_fn is None:
-        value_fn = lambda r: r.weighted_cer
+        def value_fn(r):
+            return r.weighted_cer
     doc_cers = [value_fn(r) for r in records if r.page_ref_chars]
     if not doc_cers:
         return {"n_docs": 0, "n_pages": 0, "mean": None, "median": None,
@@ -774,8 +775,7 @@ def _drift_check_against_diagnostik(records: Sequence[DocCERRecord]) -> dict:
         return {"status": "no_snapshot",
                 "reason": "docs/data/diagnostik_ocr.json nicht gefunden."}
     try:
-        with open(snapshot_path, encoding="utf-8") as f:
-            snap = json.load(f)
+        snap = json.loads(snapshot_path.read_text(encoding="utf-8"))
     except Exception as e:
         return {"status": "snapshot_read_error", "reason": str(e)}
 
@@ -939,8 +939,8 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    with open(args.out, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+    args.out.write_text(
+        json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Wrote {args.out} ({args.out.stat().st_size:,} bytes)")
     return 0
 

@@ -40,21 +40,26 @@ import zipfile
 from collections import defaultdict
 from pathlib import Path
 
+from scripts.config import (
+    DOCS_DIR,
+    IMAGES_DIR,
+    OUTPUT_DIR,
+    PAGE_XML_DIR,
+    TRANSKRIBUS_PAGE_XML_DIR,
+)
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")  # Katalog-Titel enthalten Unicode
 
-ROOT = Path(__file__).resolve().parents[2]
-PAGE_XML_DIR = ROOT / "output" / "page_xml"
-IMAGES_DIR = ROOT / "docs" / "images"
-CATALOG = ROOT / "docs" / "data" / "catalog.json"
-DEFAULT_OUT = ROOT / "output" / "transkribus_upload"
+CATALOG = DOCS_DIR / "data" / "catalog.json"
+DEFAULT_OUT = OUTPUT_DIR / "transkribus_upload"
 PAGE_NS = "{http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15}"
 
 # Objekte, die ZBZ bereits selbst in Transkribus haben (Collection "Jeanne Hersch").
 REFERENCE_DOCS = sorted(
-    p.name for p in (ROOT / "data" / "source" / "transkribus_page_xml").iterdir()
+    p.name for p in TRANSKRIBUS_PAGE_XML_DIR.iterdir()
     if p.is_dir()
-) if (ROOT / "data" / "source" / "transkribus_page_xml").is_dir() else []
+) if TRANSKRIBUS_PAGE_XML_DIR.is_dir() else []
 
 BUCKETS = ["xs", "s", "m", "l", "xl", "xxl"]
 LANGS = ["FR", "DE", "DE_FR", "EN", "IT", "MULTI"]
@@ -101,7 +106,7 @@ def lang_group(raw):
 
 def png_size(path):
     """(width, height) aus dem PNG-Header, ohne Pillow-Abhaengigkeit."""
-    with open(path, "rb") as fh:
+    with Path(path).open("rb") as fh:
         head = fh.read(24)
     if head[:8] != b"\x89PNG\r\n\x1a\n":
         return None
@@ -175,9 +180,8 @@ def stratified_sample(n):
             continue
         opts = sorted(((k, v) for k, v in cells.items() if k[1] == lang),
                       key=lambda kv: -len(kv[1]))
-        if opts:
-            if take(opts[0][1]):
-                covered.add(lang)
+        if opts and take(opts[0][1]):
+            covered.add(lang)
 
     # Pass 3: auffuellen ueber die groessten Zellen (Round-Robin).
     ordered = sorted(cells.items(), key=lambda kv: (-len(kv[1]), kv[0]))
@@ -311,7 +315,7 @@ def main():
             print(f"        - {w}")
 
     write_readme(args.out, selection, catalog)
-    with open(args.out / "_selection.json", "w", encoding="utf-8") as f:
+    with (args.out / "_selection.json").open("w", encoding="utf-8") as f:
         json.dump(
             {"selection": selection, "pages": total_pages},
             f,

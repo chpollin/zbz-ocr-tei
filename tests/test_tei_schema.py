@@ -27,17 +27,11 @@ from __future__ import annotations
 from pathlib import Path
 
 import pytest
+from lxml import etree as _etree
 
 REPO = Path(__file__).resolve().parent.parent
 SCHEMA = REPO / "data" / "schema" / "zbz_hersch.rng"
 FINAL_DIR = REPO / "output" / "tei_final"
-
-try:
-    from lxml import etree as _etree
-    HAS_LXML = True
-except ImportError:  # pragma: no cover - lxml ist Projekt-Dependency
-    HAS_LXML = False
-    _etree = None
 
 FINAL_DOCS = sorted(FINAL_DIR.glob("*_final.xml")) if FINAL_DIR.exists() else []
 FINAL_IDS = [p.name for p in FINAL_DOCS]
@@ -136,14 +130,12 @@ _STANDOFF_DOC = """<?xml version="1.0" encoding="UTF-8"?>
 """
 
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 def test_schema_compiles():
     """Das projektspezifische RelaxNG laedt fehlerfrei (git-getrackt, laeuft immer)."""
     assert SCHEMA.exists(), f"Schema fehlt: {SCHEMA}"
     _etree.RelaxNG(_etree.parse(str(SCHEMA)))  # wirft RelaxNGParseError bei kaputtem Schema
 
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 def test_schema_accepts_pipeline_header():
     """Schema akzeptiert die E68-Header-Elemente (revisionDesc/langUsage/idno/monogr)."""
     relaxng = _etree.RelaxNG(_etree.parse(str(SCHEMA)))
@@ -154,7 +146,6 @@ def test_schema_accepts_pipeline_header():
     )
 
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 def test_schema_accepts_inline_gnd():
     """Schema akzeptiert Inline-GND-Auszeichnung (persName/orgName/bibl mit ref=GND:...)."""
     relaxng = _etree.RelaxNG(_etree.parse(str(SCHEMA)))
@@ -165,7 +156,6 @@ def test_schema_accepts_inline_gnd():
     )
 
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 def test_schema_rejects_standoff_register():
     """Schema lehnt das verworfene standOff-Register und <name>-Mentions ab (Inline-GND-Guard)."""
     relaxng = _etree.RelaxNG(_etree.parse(str(SCHEMA)))
@@ -176,7 +166,6 @@ def test_schema_rejects_standoff_register():
     )
 
 
-@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 @pytest.mark.skipif(not FINAL_DOCS, reason="output/tei_final leer (gitignored, kein lokaler Korpus)")
 @pytest.mark.parametrize("doc", FINAL_DOCS, ids=FINAL_IDS)
 def test_final_doc_valid(doc: Path):

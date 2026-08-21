@@ -25,12 +25,12 @@ import re
 import shutil
 from pathlib import Path
 
+from scripts.config import IMAGES_DIR, OUTPUT_DIR, TEI_FINAL_DIR
 from scripts.tei.tei_step3 import page_image_url
 
-ROOT = Path(__file__).resolve().parent.parent.parent
-FINAL_DIR = ROOT / "output" / "tei_final"
-IMAGE_DIR = ROOT / "docs" / "images"
-BACKUP_DIR = ROOT / "output" / "_backup_pre_surface_graphic"
+FINAL_DIR = TEI_FINAL_DIR
+IMAGE_DIR = IMAGES_DIR
+BACKUP_DIR = OUTPUT_DIR / "_backup_pre_surface_graphic"
 
 # <surface xml:id="facs_N" ...> gefolgt von optionalem ersten <graphic .../>
 _SURFACE_RE = re.compile(

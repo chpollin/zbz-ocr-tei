@@ -78,7 +78,7 @@ def draw_overlay_with_changes(img_path, layout_json, output_path):
                 draw.text((x1 + 3, y1 + 18), change_reason[:70], fill=(180, 140, 0), font=font_small)
         else:
             # Unveraendert: normale Farbe
-            fill_color = color + (40,)
+            fill_color = (*color, 40)
             draw.rectangle([x1, y1, x2, y2], outline=color, fill=fill_color, width=2)
             label_text = f"{label} -> {zbz_tag}"
             draw.text((x1 + 3, y1 + 3), label_text, fill=color, font=font)
@@ -122,7 +122,7 @@ def create_compare_image(img_path, docling_json, gemini_json, output_path):
             y1 = bbox["y_pct"] / 100.0 * img_h
             w = bbox["w_pct"] / 100.0 * img_w
             h = bbox["h_pct"] / 100.0 * img_h
-            fill_color = color + (40,)
+            fill_color = (*color, 40)
             draw_ctx.rectangle([x1, y1, x1 + w, y1 + h], outline=color, fill=fill_color, width=2)
             draw_ctx.text((x1 + 3, y1 + 3), label, fill=color, font=font)
 
@@ -208,10 +208,7 @@ def main():
     parser.add_argument("--force", action="store_true", help="Existierende ueberschreiben")
     args = parser.parse_args()
 
-    if args.doc:
-        doc_ids = [args.doc]
-    else:
-        doc_ids = discover_layout_documents()
+    doc_ids = [args.doc] if args.doc else discover_layout_documents()
 
     if not doc_ids:
         print("Keine Dokumente gefunden.")

@@ -26,6 +26,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import contextlib
 import json
 import platform
 import subprocess
@@ -40,7 +41,9 @@ from scipy import stats as scipy_stats
 
 from scripts.config import (
     DOCS_DIR,
+    EVALUATION_DIR,
     OCR_RESULTS_DIR,
+    OUTPUT_DIR,
     PROJECT_ROOT,
     REFERENCE_TEI_DIR,
     TEI_FINAL_DIR,
@@ -132,7 +135,7 @@ def _load_stability_block() -> dict:
     Ohne Artefakt bleibt der Block offen; mit Artefakt gilt der Pilot als Messung
     und die per-doc-Streuung wandert in das versionierte Statistik-JSON.
     """
-    pilot_path = PROJECT_ROOT / "output" / "audits" / "stability_pilot.json"
+    pilot_path = OUTPUT_DIR / "audits" / "stability_pilot.json"
     if not pilot_path.exists():
         return {
             "status": "open",
@@ -555,7 +558,7 @@ def build_multi_norm(records: list[DocCERRecord], rng: np.random.Generator,
             results[regime]["mean_diff_to_raw"] = 0.0
             results[regime]["diff_ci95_to_raw"] = [0.0, 0.0]
         else:
-            diffs = [a - b for a, b in zip(per_doc, raw_per_doc)]
+            diffs = [a - b for a, b in zip(per_doc, raw_per_doc, strict=True)]
             paired = paired_bootstrap_diff(diffs, n_resamples=n_resamples, seed=42)
             results[regime]["mean_diff_to_raw"] = round(float(paired["mean_diff"]), 6)
             results[regime]["diff_ci95_to_raw"] = [round(float(paired["ci_low"]), 6),
@@ -611,7 +614,6 @@ def build_paired_test(records: list[DocCERRecord], rng: np.random.Generator,
 
 def build_selection_bias(records: list[DocCERRecord], corpus_metadata: dict) -> dict:
     full = [r for r in records if r.scope_status == "full"]
-    eval_ids = {r.doc_id for r in full}
 
     tests = []
     for var in ["language", "layout_type", "pub_form"]:
@@ -643,10 +645,8 @@ def build_selection_bias(records: list[DocCERRecord], corpus_metadata: dict) -> 
     for did in corpus_metadata:
         p = TEI_FINAL_DIR / f"{did}_final.xml"
         if p.exists():
-            try:
+            with contextlib.suppress(Exception):
                 cor_chars.append(len(extract_text_for_comparison(p)))
-            except Exception:
-                pass
     ks_ch = base.ks_continuous(ref_chars, cor_chars)
     tests.append({"variable": "n_chars", "test_type": "ks",
                   "stat": round(ks_ch.get("ks_stat", 0.0), 4),
@@ -817,12 +817,11 @@ def build_per_doc(records: list[DocCERRecord], rng: np.random.Generator,
 
 def build_proxies(records: list[DocCERRecord], all_doc_ids: list[str],
                    rng: np.random.Generator, n_resamples: int) -> dict:
-    cache_path = PROJECT_ROOT / "output" / "evaluation" / "quality_proxy.json"
+    cache_path = EVALUATION_DIR / "quality_proxy.json"
     if not cache_path.exists():
         return {"status": "deferred", "reason": "quality_proxy.json not present"}
 
-    with open(cache_path, encoding="utf-8") as f:
-        cache = json.load(f)
+    cache = json.loads(cache_path.read_text(encoding="utf-8"))
     cache_docs = cache.get("documents", {})
 
     per_doc_n285 = []
@@ -887,8 +886,10 @@ def build_proxies(records: list[DocCERRecord], all_doc_ids: list[str],
 
     loo_preds = np.empty(len(cers))
     for i in range(len(cers)):
-        mask = np.ones(len(cers), dtype=bool); mask[i] = False
-        Xi = X[mask]; yi = cers[mask]
+        mask = np.ones(len(cers), dtype=bool)
+        mask[i] = False
+        Xi = X[mask]
+        yi = cers[mask]
         try:
             w_i, _, _, _ = np.linalg.lstsq(Xi, yi, rcond=None)
             loo_preds[i] = X[i] @ w_i
@@ -900,7 +901,8 @@ def build_proxies(records: list[DocCERRecord], all_doc_ids: list[str],
     boot_r2 = []
     for _ in range(n_resamples):
         idx = rng.integers(0, len(cers), size=len(cers))
-        Xb = X[idx]; yb = cers[idx]
+        Xb = X[idx]
+        yb = cers[idx]
         if np.linalg.matrix_rank(Xb) < Xb.shape[1]:
             continue
         try:
@@ -987,10 +989,13 @@ def _loocv_r2_single(x: np.ndarray, y: np.ndarray) -> float:
         return 0.0
     preds = np.empty(n)
     for i in range(n):
-        mask = np.ones(n, dtype=bool); mask[i] = False
-        xi = x[mask]; yi = y[mask]
+        mask = np.ones(n, dtype=bool)
+        mask[i] = False
+        xi = x[mask]
+        yi = y[mask]
         if xi.std() < 1e-9:
-            preds[i] = yi.mean(); continue
+            preds[i] = yi.mean()
+            continue
         slope = np.cov(xi, yi)[0, 1] / xi.var()
         intercept = yi.mean() - slope * xi.mean()
         preds[i] = slope * x[i] + intercept
@@ -1131,8 +1136,8 @@ def main(argv: list[str] | None = None) -> int:
     }
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    with open(args.out, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False)
+    args.out.write_text(
+        json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
 
     e2e = overall["end_to_end"]
     fid = overall["end_to_end_fidelity"]

@@ -309,7 +309,7 @@ def test_run_change_replaces_own_earlier_entry():
 def test_missing_revision_desc_is_tolerated():
     raw = _flat_doc(_COVER_FIELDS_4)
     raw = re.sub(r"<revisionDesc>.*?</revisionDesc>", "", raw, flags=re.DOTALL)
-    new, report = cs.transform_document(raw, WHEN)
+    _, report = cs.transform_document(raw, WHEN)
     assert report["action"] == "strip"
     assert report["change_entry"] is False
 
@@ -320,8 +320,7 @@ def test_missing_revision_desc_is_tolerated():
 
 def _validator():
     v = cs.schema_validator()
-    if v is None:
-        pytest.skip("lxml oder zbz_hersch.rng nicht verfuegbar")
+    assert v is not None, "lxml und data/schema/zbz_hersch.rng sind Pflicht"
     return v
 
 

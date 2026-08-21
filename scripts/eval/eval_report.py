@@ -174,7 +174,7 @@ def generate_html_report(results: dict, output_path: Path):
                 <div class="value">{results['summary']['total_documents']}</div>
                 <div class="label">Dokumente</div>
             </div>
-            <div class="summary-card {'warning' if results['summary']['avg_cer'] > 0.05 else '' if results['summary']['avg_cer'] > 0.02 else ''}">
+            <div class="summary-card {'warning' if results['summary']['avg_cer'] > 0.05 else ''}">
                 <div class="value">{results['summary']['avg_cer']*100:.2f}%</div>
                 <div class="label">Durchschn. CER</div>
             </div>

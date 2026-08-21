@@ -347,10 +347,7 @@ def main():
     # Alle Engines (auto/mistral/gemini) schreiben die Basis-Textschicht nach
     # mistral_results/, wo load_ocr_text() sie als Basis findet. (Gemini-OCR ist der
     # Ausnahme-Ersatz fuer die Mistral-Basis-OCR -> gleiches Verzeichnis.)
-    if args.output:
-        output_dir = args.output
-    else:
-        output_dir = MISTRAL_RESULTS_DIR
+    output_dir = args.output or MISTRAL_RESULTS_DIR
 
     # PDFs sammeln
     if args.input:

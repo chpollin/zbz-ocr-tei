@@ -44,10 +44,7 @@ def _language_idents(lang_raw) -> list:
         if not tok:
             continue
         t = tok.lower()
-        if len(t) == 3 and t.isalpha():
-            code = t
-        else:
-            code = _LANG_2TO3.get(t, "und")
+        code = t if len(t) == 3 and t.isalpha() else _LANG_2TO3.get(t, "und")
         if code not in out:
             out.append(code)
     return out or ["und"]
@@ -129,7 +126,7 @@ def page_image_url(doc_id: str, page_num: int) -> str:
 
 def build_facsimile(
     page_facsimiles: dict[int, dict],
-    page_teis: dict[int, str] = None,
+    page_teis: dict[int, str] | None = None,
     doc_id: str = "",
 ) -> str:
     """Erzeugt <facsimile> Element aus gesammelten Seitendaten.
@@ -260,7 +257,7 @@ _GENRE_TO_DIV_TYPE = {
 }
 
 
-def _merge_page_divs(xml_text: str, genre: str = None) -> str:
+def _merge_page_divs(xml_text: str, genre: str | None = None) -> str:
     """Mergt aufeinanderfolgende Seiten-divs mit gleichem n zu einem Dokument-div.
 
     Step 1 erzeugt pro Seite ein <div n="1">. Dieses Post-Assembly-Fix
@@ -390,14 +387,12 @@ def _assign_figure_ids(xml_text: str) -> str:
     Audit 2026-06-08, Regel figure-xmlid.
     """
     def mutate(root):
-        counter = 0
-        for fig in root.iter(f"{{{TEI_NS}}}figure"):
-            counter += 1
+        for counter, fig in enumerate(root.iter(f"{{{TEI_NS}}}figure"), start=1):
             fig.set(_XML_ID_ATTR, f"fig{counter}")
     return _transform_tree(xml_text, mutate)
 
 
-def _wrap_first_title(xml_text: str, genre: str = None) -> str:
+def _wrap_first_title(xml_text: str, genre: str | None = None) -> str:
     """Editionsrichtlinie: der Werktitel steht in <head><title type="main">.
 
     Wickelt den Inhalt der ERSTEN <head> im Dokument in <title type="main">. Dokumentweit
@@ -555,8 +550,6 @@ def _fix_post_assembly_schema(xml_text: str) -> str:
                 if tag == "epigraph" and any_content:
                     idx = list(div).index(child)
                     inner = list(child)
-                    # Epigraph-Text an erstes Kind oder als eigenes <p>
-                    epi_text = (child.text or "").strip()
                     div.remove(child)
                     for j, ic in enumerate(inner):
                         div.insert(idx + j, ic)
@@ -699,16 +692,14 @@ def _insert_lb_into_element(elem, lb_tag: str) -> None:
         if len(parts) > 1:
             elem.text = parts[0]
             # Vor dem ersten Kind (oder am Ende) lb + Rest einfuegen
-            insert_pos = 0
-            for part in parts[1:]:
+            for insert_pos, part in enumerate(parts[1:]):
                 lb = _make_lb()
                 lb.tail = part
                 elem.insert(insert_pos, lb)
-                insert_pos += 1
 
     # 2. child.tail aufteilen
     children = list(elem)
-    for i, child in enumerate(children):
+    for child in children:
         if child.tag == lb_tag:
             continue
         if child.tail and len(child.tail) >= _AVG_LINE_CHARS:

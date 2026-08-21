@@ -209,7 +209,7 @@ class TestBlockResample:
         # Total-Length = Summe der gezogenen Block-Laengen.
         assert sample.size > 0
         # Pruefen: jede Wert ist aus einem der Bloecke (kein "Mischen")
-        all_vals = set(v for b in blocks for v in b)
+        all_vals = {v for b in blocks for v in b}
         assert all(v in all_vals for v in sample)
 
     def test_empty_blocks(self):

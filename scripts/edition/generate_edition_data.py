@@ -31,15 +31,16 @@ from pathlib import Path
 from scripts.config import (
     DOC_METADATA_PATH,
     DOCS_DIR,
-    PROJECT_ROOT,
+    LAYOUT_DIR,
+    MISTRAL_RESULTS_DIR,
+    OUTPUT_DIR,
     TEI_CURATED_DIR,
     TEI_FINAL_DIR,
 )
 from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
 from scripts.utils import load_json
 
-LAYOUT_DIR = PROJECT_ROOT / "output" / "layout"
-MISTRAL_DIR = PROJECT_ROOT / "output" / "mistral_results"
+MISTRAL_DIR = MISTRAL_RESULTS_DIR
 PAGES_DIR = DOCS_DIR / "data" / "pages"
 THUMBS_DIR = DOCS_DIR / "data" / "thumbs"
 MANIFESTS_DIR = DOCS_DIR / "data" / "manifests"
@@ -725,7 +726,7 @@ def main():
 
     if args.facs_audit:
         report = audit_facs_mapping()
-        out = PROJECT_ROOT / "output" / "audits" / "facs_mapping_report.json"
+        out = OUTPUT_DIR / "audits" / "facs_mapping_report.json"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         s = report["summary"]

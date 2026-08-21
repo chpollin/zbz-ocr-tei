@@ -204,7 +204,7 @@ def match_paragraphs_to_regions(
 
     result = []
     if len(paragraphs) == len(relevant):
-        for i, (para, region) in enumerate(zip(paragraphs, relevant)):
+        for i, (para, region) in enumerate(zip(paragraphs, relevant, strict=True)):
             result.append({
                 "text": para,
                 "zbz_tag": region["zbz_tag"],
@@ -299,9 +299,7 @@ def _is_interview_turn(raw_text: str, prev_was_question: bool) -> bool:
         return True
     if SPEAKER_PATTERN.match(text):
         return True
-    if prev_was_question:
-        return True
-    return False
+    return bool(prev_was_question)
 
 
 def _compute_facsimile_zones(matched: list[dict], layout: dict | None, page: int) -> dict:

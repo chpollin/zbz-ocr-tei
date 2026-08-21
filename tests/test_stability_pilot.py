@@ -27,7 +27,7 @@ def test_aggregate_single_run_has_zero_std():
 
 def test_stability_block_open_without_artifact(tmp_path, monkeypatch):
     import scripts.eval.cer_statistics_full as csf
-    monkeypatch.setattr(csf, "PROJECT_ROOT", tmp_path)
+    monkeypatch.setattr(csf, "OUTPUT_DIR", tmp_path / "output")
     block = _load_stability_block()
     assert block["status"] == "open"
     assert block["per_doc_std"] is None
@@ -35,7 +35,7 @@ def test_stability_block_open_without_artifact(tmp_path, monkeypatch):
 
 def test_stability_block_measured_from_artifact(tmp_path, monkeypatch):
     import scripts.eval.cer_statistics_full as csf
-    monkeypatch.setattr(csf, "PROJECT_ROOT", tmp_path)
+    monkeypatch.setattr(csf, "OUTPUT_DIR", tmp_path / "output")
     audits = tmp_path / "output" / "audits"
     audits.mkdir(parents=True)
     (audits / "stability_pilot.json").write_text(json.dumps({

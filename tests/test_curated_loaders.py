@@ -44,7 +44,7 @@ def test_ocr_curated_wins_over_engine(ocr_dirs):
 
 
 def test_ocr_falls_back_when_no_curated(ocr_dirs):
-    curated, mistral = ocr_dirs
+    _, mistral = ocr_dirs
     _write(mistral / "100_p3.md", "MISTRAL")
     assert loaders.load_ocr_text("100", 3) == "MISTRAL"
 
@@ -96,7 +96,7 @@ def test_with_source_curated_wins_and_labels(ocr_sources):
 
 
 def test_with_source_falls_back_and_labels(ocr_sources):
-    curated, mistral = ocr_sources
+    _, mistral = ocr_sources
     _write(mistral / "100_p3.md", "MISTRAL")
     text, src = loaders.load_ocr_text_with_source("100", 3)
     assert text == "MISTRAL"

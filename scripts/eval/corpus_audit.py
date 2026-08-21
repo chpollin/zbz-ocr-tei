@@ -21,6 +21,7 @@ Usage:
 """
 
 import argparse
+import contextlib
 import json
 import re
 import statistics
@@ -156,10 +157,8 @@ def audit_masterfile():
 
     pages = []
     for v in vals("Anzahl Seiten"):
-        try:
+        with contextlib.suppress(ValueError, TypeError):
             pages.append(int(float(str(v).replace(",", "."))))
-        except (ValueError, TypeError):
-            pass
 
     # Pro-ID-Map, damit nachgelagert auf eine Teilmenge (z.B. die gelieferten
     # PDFs) gefiltert werden kann, ohne die Masterfile erneut zu lesen.
@@ -422,8 +421,7 @@ def _dist_table(title, dist):
 
 
 def render_markdown(rep):
-    t0, t1, t2, t3 = (rep["tier0_masterfile"], rep["tier1_pdfs"],
-                      rep["tier2_pipeline"], rep["tier3_doc_metadata"])
+    t0, t3 = rep["tier0_masterfile"], rep["tier3_doc_metadata"]
     rec = rep["reconciliation"]
     md = []
     md.append("# Korpus-Audit")

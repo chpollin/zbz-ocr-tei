@@ -37,12 +37,13 @@ from pathlib import Path
 
 import requests
 
+from scripts.config import OUTPUT_DIR
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 BASE = "https://transkribus.eu/TrpServer/rest"
-ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_BUNDLE = ROOT / "output" / "transkribus_upload"
+DEFAULT_BUNDLE = OUTPUT_DIR / "transkribus_upload"
 IMG_EXT = (".png", ".jpg", ".jpeg", ".tif", ".tiff")
 
 
@@ -115,9 +116,9 @@ def create_upload(session, coll, title, pages):
 def put_page(session, uid, img, xml):
     # ExitStack closes both handles even if the second open() fails
     with contextlib.ExitStack() as stack:
-        files = {"img": (img.name, stack.enter_context(open(img, "rb")), "application/octet-stream")}
+        files = {"img": (img.name, stack.enter_context(img.open("rb")), "application/octet-stream")}
         if xml:
-            files["xml"] = (xml.name, stack.enter_context(open(xml, "rb")), "application/octet-stream")
+            files["xml"] = (xml.name, stack.enter_context(xml.open("rb")), "application/octet-stream")
         r = session.put(f"{BASE}/uploads/{uid}", files=files, timeout=300)
         r.raise_for_status()
 

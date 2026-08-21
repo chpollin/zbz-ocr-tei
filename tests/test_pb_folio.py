@@ -266,8 +266,9 @@ def test_rewrite_body_brackets_footer_and_interpolation():
 
 
 def test_rewrite_body_is_idempotent():
-    kwargs = dict(detected_str={2: "248"}, interp={3: 249},
-                  offset=None, offset_ok=False, printed_folio_doc=False, strip_echo=True)
+    kwargs = {"detected_str": {2: "248"}, "interp": {3: 249},
+              "offset": None, "offset_ok": False, "printed_folio_doc": False,
+              "strip_echo": True}
     once, _ = rewrite_body(_FIXTURE_BODY, **kwargs)
     twice, _ = rewrite_body(once, **kwargs)
     assert once == twice  # zweiter Lauf byte-identisch, keine [[...]]

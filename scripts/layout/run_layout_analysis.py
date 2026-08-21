@@ -271,10 +271,7 @@ def main():
                         help="Nur Overlay-PNGs erzeugen (keine Docling-Analyse)")
     args = parser.parse_args()
 
-    if args.doc:
-        doc_ids = [args.doc]
-    else:
-        doc_ids = discover_doc_ids(IMAGES_DIR)
+    doc_ids = [args.doc] if args.doc else discover_doc_ids(IMAGES_DIR)
 
     if args.overlay:
         # Nur Overlay-PNGs erzeugen (aus existierenden Layout-JSONs)

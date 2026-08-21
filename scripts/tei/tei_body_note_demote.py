@@ -41,15 +41,15 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
+from scripts.config import OUTPUT_DIR, TEI_FINAL_DIR, TEI_SCHEMA_PATH
 from scripts.tei.marker_common import backup_and_write
 
-ROOT = Path(__file__).resolve().parent.parent.parent
-FINAL_DIR = ROOT / "output" / "tei_final"
-AUDIT_DIR = ROOT / "output" / "audits"
+FINAL_DIR = TEI_FINAL_DIR
+AUDIT_DIR = OUTPUT_DIR / "audits"
 VERDICTS_PATH = AUDIT_DIR / "body_note_verdicts.json"
 PREVIEW_PATH = AUDIT_DIR / "body_note_demote_preview.json"
-BACKUP_DIR = ROOT / "output" / "_backup_pre_body_note_demote"
-SCHEMA_PATH = ROOT / "data" / "schema" / "zbz_hersch.rng"
+BACKUP_DIR = OUTPUT_DIR / "_backup_pre_body_note_demote"
+SCHEMA_PATH = TEI_SCHEMA_PATH
 
 SNIPPET = 120
 
@@ -450,8 +450,8 @@ def main():
             "schema_checked": validator is not None,
             "counts": counts,
             "changed_docs": changed_docs,
-            "unmatched": [{"doc": d, "page": p, "len": l, "reason": r}
-                          for d, p, l, r in unmatched],
+            "unmatched": [{"doc": d, "page": p, "len": length, "reason": r}
+                          for d, p, length, r in unmatched],
             "promotions": [{"doc": d, "page": p, "para_start": s}
                            for d, p, s in promotions],
             "documents": results,

@@ -30,8 +30,7 @@ def _load_metadata() -> dict[str, dict]:
     """Laedt doc_metadata.json. Field-Normalisierung (layout_type vs type)."""
     if not DOC_METADATA_PATH.exists():
         return {}
-    with open(DOC_METADATA_PATH, encoding="utf-8") as f:
-        data = json.load(f)
+    data = json.loads(DOC_METADATA_PATH.read_text(encoding="utf-8"))
     docs = data.get("documents", data)
     out = {}
     for doc_id, meta in docs.items():
@@ -164,8 +163,6 @@ def collect_records(verbose: bool = True) -> tuple[
 
         # Verwende GLOBAL fuer scope_status + doc_cer.
         scope_status, scope_detail = _detect_scope_mismatch(global_result)
-        # Fallback-Result fuer ref_pages_total etc.
-        result = global_result
 
         meta = dict(metadata.get(doc_id, {}))
         meta.setdefault("language", "unknown")

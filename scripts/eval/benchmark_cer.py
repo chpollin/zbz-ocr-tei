@@ -30,8 +30,7 @@ def load_metadata() -> dict:
     """Laedt doc_metadata.json und gibt Dict {doc_id: metadata} zurueck."""
     if not DOC_METADATA_PATH.exists():
         return {}
-    with open(DOC_METADATA_PATH, encoding='utf-8') as f:
-        data = json.load(f)
+    data = json.loads(DOC_METADATA_PATH.read_text(encoding="utf-8"))
     docs = data.get('documents', data)
     result = {}
     for doc_id, meta in docs.items():
@@ -146,7 +145,7 @@ def aggregate_error_patterns(results: list[dict], metadata: dict) -> dict:
     for r in results:
         lang = metadata.get(r['doc_id'], {}).get('language', 'unknown')
         by_lang.setdefault(lang, []).append(r)
-    patterns['by_language'] = {l: _agg(docs) for l, docs in by_lang.items()}
+    patterns['by_language'] = {code: _agg(docs) for code, docs in by_lang.items()}
 
     return patterns
 
@@ -381,10 +380,7 @@ def main():
     EVALUATION_DIR.mkdir(parents=True, exist_ok=True)
 
     # Dokument-IDs bestimmen
-    if args.docs:
-        doc_ids = args.docs
-    else:
-        doc_ids = get_ground_truth_doc_ids(ref_dir)
+    doc_ids = args.docs or get_ground_truth_doc_ids(ref_dir)
 
     # Metadaten laden
     metadata = load_metadata()
@@ -542,8 +538,8 @@ def main():
               f"(median={s['median_cer']*100:.1f}%)")
 
     print("\nNach Sprache:")
-    for l, s in sorted(stratified['by_language'].items()):
-        print(f"  {l}: n={s['count']}, CER={s['avg_cer']*100:.1f}%")
+    for code, s in sorted(stratified['by_language'].items()):
+        print(f"  {code}: n={s['count']}, CER={s['avg_cer']*100:.1f}%")
 
     if pagewise_results:
         outlier_report = output.get('outlier_report', {})

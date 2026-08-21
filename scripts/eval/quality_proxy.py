@@ -24,6 +24,7 @@ import re
 import statistics
 import unicodedata
 from datetime import datetime
+from functools import cache
 from pathlib import Path
 
 from spellchecker import SpellChecker
@@ -36,11 +37,14 @@ from scripts.config import (
 from scripts.eval.evaluate_ocr import extract_text_for_comparison
 
 # ---------------------------------------------------------------------------
-# Woerterbuecher laden (einmalig)
+# Woerterbuecher (lazy, einmalig pro Sprache)
 # ---------------------------------------------------------------------------
 
-_spell_fr = SpellChecker(language="fr")
-_spell_de = SpellChecker(language="de")
+
+@cache
+def _spell(language: str) -> SpellChecker:
+    """Wortliste einer Sprache; das Laden kostet Zeit und Speicher, daher gecacht."""
+    return SpellChecker(language=language)
 
 
 def _detect_language(doc_id: str, metadata: dict) -> str:
@@ -154,14 +158,14 @@ def dictionary_hit_rate(text: str, language: str) -> dict:
     words_lower = [w.lower() for w in words]
 
     if language == "de":
-        unknown = _spell_de.unknown(words_lower)
+        unknown = _spell("de").unknown(words_lower)
     elif language == "multi":
         # Beide Woerterbuecher pruefen, Union der bekannten Woerter
-        unknown_fr = _spell_fr.unknown(words_lower)
-        unknown_de = _spell_de.unknown(words_lower)
+        unknown_fr = _spell("fr").unknown(words_lower)
+        unknown_de = _spell("de").unknown(words_lower)
         unknown = unknown_fr & unknown_de  # nur unbekannt wenn in BEIDEN unbekannt
     else:
-        unknown = _spell_fr.unknown(words_lower)
+        unknown = _spell("fr").unknown(words_lower)
 
     total = len(words_lower)
     unknown_count = sum(1 for w in words_lower if w in unknown)
@@ -192,8 +196,7 @@ def load_ground_truth_cer() -> dict[str, float]:
     benchmark_path = EVALUATION_DIR / "benchmark_tei_vs_tei.json"
     if not benchmark_path.exists():
         return {}
-    with open(benchmark_path, encoding="utf-8") as f:
-        data = json.load(f)
+    data = json.loads(benchmark_path.read_text(encoding="utf-8"))
     return {
         doc_id: doc["cer"]
         for doc_id, doc in data.get("documents", {}).items()
@@ -221,7 +224,7 @@ def spearman_correlation(x: list[float], y: list[float]) -> float:
         return 0.0
     rx = _rank(x)
     ry = _rank(y)
-    d_sq = sum((a - b) ** 2 for a, b in zip(rx, ry))
+    d_sq = sum((a - b) ** 2 for a, b in zip(rx, ry, strict=True))
     return 1 - (6 * d_sq) / (n * (n ** 2 - 1))
 
 
@@ -350,8 +353,7 @@ def run(doc_ids: list[str] | None = None, all_docs: bool = False,
     """Fuehrt Quality-Proxy-Analyse durch."""
 
     # Metadaten laden
-    with open(DOC_METADATA_PATH, encoding="utf-8") as f:
-        metadata = json.load(f)
+    metadata = json.loads(DOC_METADATA_PATH.read_text(encoding="utf-8"))
 
     # Ground-Truth CER (fuer Validierung)
     gt_cer = load_ground_truth_cer()
@@ -445,7 +447,7 @@ def run(doc_ids: list[str] | None = None, all_docs: bool = False,
         validation = {"n_docs": len(gt_docs), "correlations": {}}
         print()
         print(f"=== Validierung (n={len(gt_docs)}) ===")
-        for name, (values, expected_dir) in signals.items():
+        for name, (values, _expected_dir) in signals.items():
             rho = spearman_correlation(values, cers)
             validation["correlations"][name] = round(rho, 4)
             quality = (
@@ -468,8 +470,8 @@ def run(doc_ids: list[str] | None = None, all_docs: bool = False,
     # JSON speichern
     output_json = EVALUATION_DIR / "quality_proxy.json"
     EVALUATION_DIR.mkdir(parents=True, exist_ok=True)
-    with open(output_json, "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
+    output_json.write_text(
+        json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"\n  JSON: {output_json}")
 
     # HTML-Report

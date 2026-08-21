@@ -308,7 +308,7 @@ def test_build_report_scores_recall_false_alarms_and_corpus_impact(corpus):
 
 
 def test_build_report_flags_ground_truth_offset_drift(corpus):
-    tmp_path, with_head, _ = corpus
+    tmp_path, _, _ = corpus
     documents = audit_corpus(tmp_path)
     verdicts = {"marks": [
         {"doc": "10", "page": 1, "start": 0, "end": 1, "surface": "x", "verdict": "correct",

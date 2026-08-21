@@ -23,14 +23,13 @@ Aufruf:
 import argparse
 import json
 import re
-from pathlib import Path
 
+from scripts.config import OUTPUT_DIR, TEI_FINAL_DIR
 from scripts.tei.marker_common import backup_and_write
 from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
 
-ROOT = Path(__file__).resolve().parent.parent.parent
-FINAL_DIR = ROOT / "output" / "tei_final"
-BACKUP_DIR = ROOT / "output" / "_backup_pre_blank_marker"
+FINAL_DIR = TEI_FINAL_DIR
+BACKUP_DIR = OUTPUT_DIR / "_backup_pre_blank_marker"
 
 # Inhalts-Element einer Leerseite (p oder head); group(2) = Inhalt
 _CONTENT_RE = re.compile(r"<(p|head)\b[^>]*>(.*?)</\1>", re.DOTALL)
