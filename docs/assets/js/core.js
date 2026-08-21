@@ -195,8 +195,16 @@
     // Fallback: ../output/...     (only with a local server using the project root as docroot,
     //                              for alternative OCR engines that are not versioned)
     const padded = (page) => ZBZ.padPage(page);
+    // Facsimiles live outside this repo (docs/images/ is gitignored beyond the demo set).
+    // On GitHub Pages they come as JPEG from the public facsimile repo, locally as the PNGs.
+    ZBZ.imageBase = location.hostname.endsWith('github.io')
+        ? 'https://chpollin.github.io/zbz-hersch-images/' : '';
+    const imageFile = (doc, name) => ZBZ.imageBase
+        ? `${ZBZ.imageBase}${doc}/${name.replace(/\.png$/, '.jpg')}`
+        : `images/${doc}/${name}`;
     ZBZ.path = {
-        image: (doc, page) => `images/${doc}/${doc}_p${padded(page)}.png`,
+        image: (doc, page) => imageFile(doc, `${doc}_p${padded(page)}.png`),
+        imageFile,
 
         // Human-curated layout (written directly by the viewer) takes priority over
         // engine outputs, analogous to loaders.load_layout_gemini (curated > gemini > docling).

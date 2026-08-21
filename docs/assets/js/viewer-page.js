@@ -110,7 +110,7 @@
 
     function facsImageUrl(docId, page) {
         const name = state.facsMap && state.facsMap[String(page)];
-        return name ? 'images/' + docId + '/' + name : ZBZ.path.image(docId, page);
+        return name ? ZBZ.path.imageFile(docId, name) : ZBZ.path.image(docId, page);
     }
 
     // Paging runs over text pages. `page_count` in the catalog counts scans, so a document
