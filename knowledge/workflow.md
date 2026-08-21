@@ -302,7 +302,7 @@ save path; the preview path leaves `output/tei_final/` untouched, and in entity
 mode the text editors stay locked (layout editing remains available).
 
 The data come from the generated mirror.
-`scripts/edition/generate_entity_preview_data.py` reads the previews in
+`scripts/entity/generate_entity_preview_data.py` reads the previews in
 `output/entity_preview/` read-only and writes per document
 `docs/data/pages/{doc}/{doc}_entity_p{N}.xml`, the preview split per page with
 the same splitter the TEI mirror uses, so an entity page sits next to the same
@@ -346,7 +346,7 @@ chips. Certainty is carried by the two-color bar (auto-marked against review),
 the corpus totals sit on the same bar above the list, and every row links into
 the viewer's annotated reading view. The page reads
 `docs/data/entity_overview.json`, generated deterministically by
-`scripts/edition/generate_entity_overview.py` from the corpus scan and the
+`scripts/entity/generate_entity_overview.py` from the corpus scan and the
 curated list; the closed-world gate covers its ids like every other mirror
 file. Deliberately absent after operator feedback: stat cards, intro copy,
 class-definition prose (tooltips instead), the workflow-status dot, and the

@@ -1,4 +1,4 @@
-"""Tests for the risk ranking of the tier-1 entity marks (scripts/eval/entity_risk_ranking).
+"""Tests for the risk ranking of the tier-1 entity marks (scripts/entity/entity_risk_ranking).
 
 The ranking is a read-only instrument over the corpus scan snapshot: it scores every
 tier-1 mark by additive risk features so the false-positive hunt can start with the
@@ -11,7 +11,7 @@ from __future__ import annotations
 import json
 import random
 
-from scripts.eval.entity_risk_ranking import (
+from scripts.entity.entity_risk_ranking import (
     ANOMALY_FEATURE,
     FEATURE_ORDER,
     HIGH_MIN,

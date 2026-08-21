@@ -1,4 +1,4 @@
-"""Tests for the M3 entity pilot preview (scripts/tei/tei_entity_preview).
+"""Tests for the M3 entity pilot preview (scripts/entity/tei_entity_preview).
 
 The preview wraps tier-1 entity candidates in the ZBZ inline GND elements
 (persName / orgName / bibl with ref="GND:...") and proves two things about the
@@ -6,7 +6,7 @@ result: it is valid against data/schema/zbz_hersch.rng, and the text of the
 <text> subtree is character-identical before and after.
 
 All fixtures are synthetic. No test reads output/tei_final, none touches the
-network, and none needs scripts/tei/entity_matcher (the matcher is injected as a
+network, and none needs scripts/entity/entity_matcher (the matcher is injected as a
 plain callable). The only repo file read is the git-tracked RelaxNG schema.
 """
 
@@ -18,7 +18,7 @@ import re
 
 import pytest
 
-from scripts.tei.tei_entity_preview import (
+from scripts.entity.tei_entity_preview import (
     ADJUDICATION_RESP_ID,
     MATCHER_RESP_ID,
     PANEL_DOCS,
@@ -345,7 +345,7 @@ def test_preview_document_writes_outside_tei_final(tmp_path):
 
 
 def test_preview_document_flags_a_failed_text_invariance(tmp_path, monkeypatch):
-    import scripts.tei.tei_entity_preview as mod
+    import scripts.entity.tei_entity_preview as mod
 
     # a wrapper that also drops a character proves the invariance column has teeth
     monkeypatch.setattr(mod, "apply_candidates",
@@ -465,7 +465,7 @@ def test_crlf_line_endings_survive_the_write_path(tmp_path):
 
 def test_end_to_end_with_the_real_matcher_and_idempotence(tmp_path):
     """Integration: real lexicon and matcher; a second pass over the output finds nothing."""
-    from scripts.tei.entity_matcher import build_lexicon, find_candidates
+    from scripts.entity.entity_matcher import build_lexicon, find_candidates
 
     entities = {
         "persons": [{"GND_id": "118557106", "name": "Jaspers, Karl",

@@ -1,10 +1,10 @@
-"""Tests for the entity intake audit (scripts.eval.entity_lint)."""
+"""Tests for the entity intake audit (scripts.entity.entity_lint)."""
 
 import json
 
 import pytest
 
-from scripts.eval.entity_lint import (
+from scripts.entity.entity_lint import (
     CACHE_PATH,
     ENTITIES_PATH,
     LEGACY_PATH,

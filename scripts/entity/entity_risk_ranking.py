@@ -27,8 +27,8 @@ pb reading below stays as the fallback for snapshots written before the scan car
 field, so an archived ranking can still be reproduced from its own inputs.
 
 Usage:
-    python -m scripts.eval.entity_risk_ranking
-    python -m scripts.eval.entity_risk_ranking --scan other_scan.json --out other.json
+    python -m scripts.entity.entity_risk_ranking
+    python -m scripts.entity.entity_risk_ranking --scan other_scan.json --out other.json
 """
 
 from __future__ import annotations
@@ -43,9 +43,9 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from scripts.config import DATA_DIR, TEI_FINAL_DIR
+from scripts.core.pb_split import BODY_INNER_RE, PB_RE
+from scripts.entity.entity_matcher import base_rule
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
-from scripts.tei.entity_matcher import base_rule
-from scripts.tei.pb_split import BODY_INNER_RE, PB_RE
 
 SNAPSHOT = "2026-08-12"
 

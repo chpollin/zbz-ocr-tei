@@ -28,7 +28,7 @@ os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
 from PIL import Image
 
 from scripts.config import DOCLING_TO_ZBZ, IMAGES_DIR, LAYOUT_DIR
-from scripts.layout import draw_overlay_from_json, to_pixel_pct
+from scripts.layout.overlay import draw_overlay_from_json, to_pixel_pct
 from scripts.utils import discover_doc_ids, extract_page_num
 
 # Lazy Docling converter

@@ -1,4 +1,4 @@
-"""Tests fuer scripts/edition/generate_entity_preview_data.py.
+"""Tests fuer scripts/entity/generate_entity_preview_data.py.
 
 Nagelt die drei Vertraege des Entity-Mirrors fest:
 
@@ -23,7 +23,7 @@ import re
 
 import pytest
 
-from scripts.edition.generate_entity_preview_data import (
+from scripts.entity.generate_entity_preview_data import (
     WORKLIST_FIELDS,
     build_entities_index,
     life_dates,
@@ -34,7 +34,7 @@ from scripts.edition.generate_entity_preview_data import (
     worklist_pages,
     write_doc,
 )
-from scripts.tei.tei_entity_preview import apply_candidates
+from scripts.entity.tei_entity_preview import apply_candidates
 
 DOC_ID = "9999"
 
@@ -172,7 +172,7 @@ def test_worklist_survives_the_header_responsibility_declarations():
     The preview runner records that shift; without it every worklist entry of a
     document that declares a responsibility would be dropped as stale.
     """
-    from scripts.tei.tei_entity_preview import insert_resp_stmts
+    from scripts.entity.tei_entity_preview import insert_resp_stmts
 
     statements = [("resp-entity-matcher", "Automatic entity matching")]
     preview = insert_resp_stmts(_preview_xml(), statements)
@@ -350,11 +350,11 @@ def test_split_writes_one_entity_file_per_page(tmp_path):
 
 def test_entity_pages_align_with_the_tei_mirror_pages(tmp_path):
     """Entity page N must be the mirror page N plus the wrappers, nothing else."""
-    from scripts.edition.generate_edition_data import _extract_pages_from_final
+    from scripts.core.pb_split import extract_pages_from_final
 
     source_path = tmp_path / f"{DOC_ID}_final.xml"
     source_path.write_bytes(SOURCE.encode("utf-8"))
-    mirror_pages = _extract_pages_from_final(source_path)
+    mirror_pages = extract_pages_from_final(source_path)
 
     preview_path = tmp_path / "preview.xml"
     preview_path.write_bytes(_preview_xml().encode("utf-8"))

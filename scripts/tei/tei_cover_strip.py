@@ -44,8 +44,8 @@ from functools import lru_cache
 from pathlib import Path
 
 from scripts.config import OUTPUT_DIR, TEI_FINAL_DIR, TEI_SCHEMA_PATH
+from scripts.core.pb_split import BODY_INNER_RE, iter_page_spans
 from scripts.tei.marker_common import backup_and_write
-from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
 
 BACKUP_DIR = OUTPUT_DIR / "_backup_pre_cover_strip"
 REPORT_PATH = OUTPUT_DIR / "audits" / "cover_strip_report.json"

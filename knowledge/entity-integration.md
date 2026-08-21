@@ -114,7 +114,7 @@ Detail rules, settled against the reference corpus and by operator decision:
   as page furniture instead of naming an entity in the text. Title pages, organisation
   names in bylines and picture captions carry marks, because they state provenance with
   research value. The suppression is deterministic and active in the matcher (E108):
-  the shared detection core `scripts/tei/running_heads.py` locates the recurring
+  the shared detection core `scripts/entity/running_heads.py` locates the recurring
   page-head zones, and every candidate inside one is demoted to the worklist with the
   `:running-head` suffix, so nothing in a head zone auto-marks while the mark stays
   visible for curation; a demoted full name keeps its document-wide anchor power. The
@@ -275,14 +275,14 @@ gaps that the recall reading of the executed evaluation named
 
 Built, each with its pytest suite:
 
-- `scripts/tei/fetch_gnd_variants.py` builds the cache; parser pinned against lobid
+- `scripts/entity/fetch_gnd_variants.py` builds the cache; parser pinned against lobid
   format drift; the committed cache carries a shape-contract test.
-- `scripts/eval/entity_lint.py` audits the list offline (labels, id syntax, duplicates,
+- `scripts/entity/entity_lint.py` audits the list offline (labels, id syntax, duplicates,
   DNB links, author resolution) and against the cache (404s, name and type
   consistency); the known real-stock defects are pinned as tests.
-- `scripts/tei/entity_lexicon.py` builds the lexicon (headwords, inverted forms, cache
+- `scripts/entity/entity_lexicon.py` builds the lexicon (headwords, inverted forms, cache
   variants, legacy surface forms, derived-form channels);
-  `scripts/tei/entity_matcher.py` finds candidates with exact offsets and re-exports
+  `scripts/entity/entity_matcher.py` finds candidates with exact offsets and re-exports
   the lexicon API, so both read as one module from the outside. Exclusion
   zones: everything outside `text`, figures, bibliography divs, already marked
   elements. Running-head zones demote instead of excluding (`:running-head`, tier 2).
@@ -304,7 +304,7 @@ Built, each with its pytest suite:
   Removing junk bearers also disambiguates real mentions, so a review pass can raise
   tier 1 while shrinking the total. Tests: `tests/test_variant_review.py` plus the
   review section of `tests/test_entity_matcher.py`.
-- `scripts/tei/tei_entity_preview.py` wraps tier 1 into `output/entity_preview/` and
+- `scripts/entity/tei_entity_preview.py` wraps tier 1 into `output/entity_preview/` and
   proves per document: RelaxNG-valid against `zbz_hersch.rng`, text of the `text`
   subtree character-identical, byte-identical outside the insertions (bytes in, bytes
   out; stripping the wrappers and the header declarations restores the original). Every
@@ -312,12 +312,12 @@ Built, each with its pytest suite:
   "Mark provenance and verification state", and the verification state is read from the
   verdict store through the classification of `entity_verdict_guard`. It refuses to write
   into `output/tei_final` and reports JSON.
-- `scripts/eval/entity_corpus_scan.py` dumps every candidate corpus-wide read-only,
+- `scripts/entity/entity_corpus_scan.py` dumps every candidate corpus-wide read-only,
   with rule, tier, page and context, plus distribution views (per document, per rule, per
   entity) and invariant checks (no tier-1 form on the function-word list, none adjacent
   to a hyphen). The snapshot is diffable, so a rule change shows its exact corpus effect
   before it binds; a frozen copy of the snapshot is what an adjudication wave draws from.
-- `scripts/eval/entity_gold_benchmark.py` measures precision and recall against the ZBZ
+- `scripts/entity/entity_gold_benchmark.py` measures precision and recall against the ZBZ
   reference TEIs, scope-restricted to shared text, with per-mention error lists; the
   report lands in `output/audits/entity_gold_benchmark.json`. Facsimile classification
   of its deviations established that the references serve as a trend indicator, which
@@ -329,7 +329,7 @@ Built, each with its pytest suite:
   errors, above all the corpus author in bylines, which the references leave unmarked. The
   weak work class is the empirical backing for keeping works on the worklist in the first
   stock wave; the current figures live in `output/audits/entity_gold_benchmark.json`.
-- `scripts/eval/build_mention_verdicts.py` builds `data/entities/mention_verdicts.json`,
+- `scripts/entity/build_mention_verdicts.py` builds `data/entities/mention_verdicts.json`,
   the persistence layer of the human and adjudicated judgments. A record is keyed by
   (doc, page, surface, gid, occurrence), where the occurrence index counts over the full
   tier-1 candidate population of the frozen scan snapshot the sample was drawn from
@@ -341,14 +341,14 @@ Built, each with its pytest suite:
   text holds. The build reads its inputs read-only, produces byte-identical output on a
   rerun, and reports a deviation from the adjudicated distribution instead of adjusting
   it.
-- `scripts/tei/running_heads.py` is the shared running-head detection core (the
+- `scripts/entity/running_heads.py` is the shared running-head detection core (the
   recurring normalized page-head line, verso/recto companions, merged one-off
   variants). The matcher consumes its zones for the `:running-head` demotion;
-  `scripts/eval/running_head_audit.py` validates the detection against the
+  `scripts/entity/running_head_audit.py` validates the detection against the
   adjudicated ground truth, counts the corpus suppression scope on the scan snapshot
   and computes the convention reading of the adjudicated precision
   (`convention_precision`, seeded percentile bootstrap).
-- `scripts/eval/entity_risk_ranking.py` is the instrument of the false-positive hunt. It
+- `scripts/entity/entity_risk_ranking.py` is the instrument of the false-positive hunt. It
   scores every tier-1 mark of the scan snapshot with additive deterministic features
   (form from a variant channel, case-tolerant rule, single-token surface, short surface,
   work category, surname shared with another listed person, plus a state the tier rules
@@ -367,7 +367,7 @@ Built, each with its pytest suite:
 - `scripts/tei/tei_cover_strip.py` (operator-gated, E94 pattern) removes E-Periodica
   cover-sheet text from the delivered TEI and keeps the page break with a type marker;
   the corpus-wide run is executed, report in `output/audits/cover_strip_report.json`.
-- The viewer entity stream: `scripts/edition/generate_entity_preview_data.py` splits the
+- The viewer entity stream: `scripts/entity/generate_entity_preview_data.py` splits the
   previews per page into the generated mirror, and the viewer shows them read-only under
   `viewer.html?doc={DOC_ID}&entities=1` as a markup layer with category colors, a
   popover per mention and a per-page worklist panel, so wrappings are verified next to
@@ -375,7 +375,7 @@ Built, each with its pytest suite:
 
 Planned:
 
-- `scripts/eval/entity_lexicon_audit.py` (before M4): groups every form the built
+- `scripts/entity/entity_lexicon_audit.py` (before M4): groups every form the built
   lexicon would match by shape class (dotted initials, single tokens at the length
   floor, all-caps forms, forms with digits, non-Latin scripts) with counts and
   examples, so the operator approves or bans whole classes instead of chasing single
@@ -389,8 +389,8 @@ Planned:
   document count; the densest reference (1520) is measured separately, it carries a
   large share of the gold, a known file defect, and the anchor-collision case the panel
   never saw.
-- `scripts/eval/entity_audit.py` (M6/M7): before-and-after measurement of the stock.
-- `scripts/tei/tei_entity_marker.py` (M7): the operator-gated stock tool on
+- `scripts/entity/entity_audit.py` (M6/M7): before-and-after measurement of the stock.
+- `scripts/entity/tei_entity_marker.py` (M7): the operator-gated stock tool on
   `marker_common` (dry-run, backup, byte-splice inside `text`, idempotent,
   `revisionDesc` entry). One design condition binds the milestone, that the marker reuses
   the wrapping and checking logic of the preview instead of growing a second copy of it.

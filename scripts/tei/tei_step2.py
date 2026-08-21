@@ -18,15 +18,15 @@ from scripts.config import (
     TEI_NS,
 )
 from scripts.core.loaders import load_ocr_text
-from scripts.tei.tei_mapping_prompt import (
-    build_mapping_prompt,
-    build_refinement_input,
-)
-from scripts.tei.tei_xml_utils import (
+from scripts.core.tei_xml_utils import (
     make_element,
     parse_tei_fragment,
     serialize_tei_fragment,
     wrap_orphan_groups,
+)
+from scripts.tei.tei_mapping_prompt import (
+    build_mapping_prompt,
+    build_refinement_input,
 )
 
 # ---------------------------------------------------------------------------

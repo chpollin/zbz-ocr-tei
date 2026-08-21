@@ -7,7 +7,7 @@ language model; ids always come from the curated list.
 Two public functions:
 
     build_lexicon(entities_path, cache_path, legacy_path=None, review_path=None) -> dict
-        Re-exported from scripts.tei.entity_lexicon, which builds the lexicon out of
+        Re-exported from scripts.entity.entity_lexicon, which builds the lexicon out of
         curated list, GND cache, legacy mention index and variant review, and
         documents the form channels behind it.
 
@@ -18,7 +18,7 @@ Two public functions:
         evidence. Hard invariants: xml_string[start:end] == surface, candidates sorted
         by start and free of overlap, spans only inside <text>, and the surface carries
         no markup other than <lb/> tags. Running-head zones (the recurring page-head
-        line, detected by scripts.tei.running_heads) demote their candidates to tier 2
+        line, detected by scripts.entity.running_heads) demote their candidates to tier 2
         with the ":running-head" suffix, so page furniture never auto-marks (E105); a
         demoted full name keeps its anchor power, because the head still names the
         document's subject. Figure zones work the same way with the ":in-figure"
@@ -75,7 +75,7 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   properties of the position), then ":running-head" (a property of the page position,
   appended last).
 - Five derived-form channels close gaps of the facsimile-adjudicated evaluation. They
-  are worklist-only by construction and catalogued in scripts.tei.entity_lexicon; the
+  are worklist-only by construction and catalogued in scripts.entity.entity_lexicon; the
   scan reads them as a lexicon rule that carries a suffix.
 - The adjudicated precision guards (E109) demote a tier-1 hit to the worklist on the
   deterministic signals of the confirmed error classes of the 2026-08-12 evaluation:
@@ -114,7 +114,7 @@ Deliberate simplifications (upgrade path in the milestones M3 to M5):
   guillemets enclose it directly, or when a possessive stands right in front of it
   (POSSESSIVES), else "none". Both stay tier 2 and no class is dropped; the field is
   the measurement basis for that decision. The minimum length such a title needs to
-  enter the lexicon at all is a lexicon rule (scripts.tei.entity_lexicon).
+  enter the lexicon at all is a lexicon rule (scripts.entity.entity_lexicon).
 - A bare or anchored surname drops to tier 2 with the rule suffix ":suspect" on any
   homograph signal: a lowercase twin of the word in the same document, membership in
   FUNCTION_WORDS, an adjacent hyphen, or an adjacent unknown capitalized word. The
@@ -163,7 +163,7 @@ from dataclasses import dataclass, replace
 # The lexicon side lives in entity_lexicon; the names it owns stay importable from
 # here, which is the import surface of the pipeline scripts and the test suite.
 # The `X as X` form marks the names only re-exported, unused inside this module.
-from scripts.tei.entity_lexicon import (
+from scripts.entity.entity_lexicon import (
     _WORD_RUN_RE,
     ANCHOR_FREE_RULE,
     EMPTY_POLICY,
@@ -185,7 +185,7 @@ from scripts.tei.entity_lexicon import (
     normalize_gid as normalize_gid,
     parse_marking_policy as parse_marking_policy,
 )
-from scripts.tei.running_heads import head_spans
+from scripts.entity.running_heads import head_spans
 
 SENTINEL = "\x00"
 CONTEXT_RADIUS = 40
@@ -680,7 +680,7 @@ def base_rule(rule: str) -> str:
     return rule.split(":", 1)[0]
 
 
-# Established import name of the suffix split (scripts.eval.entity_eval_sample).
+# Established import name of the suffix split (scripts.entity.entity_eval_sample).
 _base_rule = base_rule
 
 

@@ -26,7 +26,7 @@ Excluded: everything the matcher already reports as a candidate (listed entities
 their worklist), everything outside <text>, figures, bibliography divs, already marked
 entity elements and the apparatus zones (E-Periodica cover sheet, photo credits). The
 exclusion zones and the offset-preserving text normalization are taken from
-scripts.tei.entity_matcher, so both instruments see literally the same text; its private
+scripts.entity.entity_matcher, so both instruments see literally the same text; its private
 helpers are imported on purpose to keep that single source.
 
 Deliberate simplifications (the report is a proposal channel, not a gate):
@@ -45,9 +45,9 @@ Deliberate simplifications (the report is a proposal channel, not a gate):
 - Month names are stoplisted, so a forename like "August" is lost as a single word.
 
 Usage:
-    python -m scripts.eval.entity_unlisted_scan
-    python -m scripts.eval.entity_unlisted_scan --docs 1540 1350
-    python -m scripts.eval.entity_unlisted_scan --min-count 3
+    python -m scripts.entity.entity_unlisted_scan
+    python -m scripts.entity.entity_unlisted_scan --docs 1540 1350
+    python -m scripts.entity.entity_unlisted_scan --min-count 3
 """
 
 from __future__ import annotations
@@ -61,9 +61,8 @@ from collections import Counter
 from pathlib import Path
 
 from scripts.config import DATA_DIR, DOCS_DIR, TEI_FINAL_DIR
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
-from scripts.eval.entity_corpus_scan import resolve_docs
-from scripts.tei.entity_matcher import (
+from scripts.entity.entity_corpus_scan import resolve_docs
+from scripts.entity.entity_matcher import (
     FUNCTION_WORDS,
     MIN_TOKEN_LEN,
     SENTINEL,
@@ -71,6 +70,7 @@ from scripts.tei.entity_matcher import (
     _scan_zones,
     _starts_sentence,
 )
+from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
@@ -110,75 +110,24 @@ PARTICLES = frozenset({
 # weide"). Standing alone they are German grammar, not a name.
 SECONDARY_PARTICLES = frozenset({"den", "der", "des", "ten", "ter"})
 
-_WEEKDAYS = frozenset("""
-montag dienstag mittwoch donnerstag freitag samstag sonnabend sonntag
-lundi mardi mercredi jeudi vendredi samedi dimanche
-monday tuesday wednesday thursday friday saturday sunday
-lunedi martedi mercoledi giovedi venerdi sabato domenica
-""".split())
+_WEEKDAYS = frozenset(["montag", "dienstag", "mittwoch", "donnerstag", "freitag", "samstag", "sonnabend", "sonntag", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "lunedi", "martedi", "mercoledi", "giovedi", "venerdi", "sabato", "domenica"])
 
-_MONTHS = frozenset("""
-januar februar maerz april mai juni juli august september oktober november dezember
-janvier fevrier mars avril juin juillet aout septembre octobre novembre decembre
-january february march may june july september october december
-gennaio febbraio marzo aprile maggio giugno luglio agosto settembre ottobre dicembre
-""".split()) | {"märz", "février", "août", "décembre"}
+_MONTHS = frozenset(["januar", "februar", "maerz", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "dezember", "janvier", "fevrier", "mars", "avril", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre", "january", "february", "march", "may", "june", "july", "september", "october", "december", "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "dicembre"]) | {"märz", "février", "août", "décembre"}
 
 # Frequent sentence starters and grammatical words. Only closed word classes belong
 # here; common nouns stay out, so a real name ("Thomas Mann") is never split.
-_GRAMMAR_DE = frozenset("""
-aber alle allein allem allen aller alles als also am an andere anderen auch auf aus
-bei beim bis da dabei dadurch dafuer daher damit dann daran darauf daraus darin darum
-das dass dazu dem den denen denn dennoch der deren des deshalb dessen die dies diese
-diesem diesen dieser dieses doch dort du durch ein eine einem einen einer eines er es
-etwa euch fuer gegen hat hatte hier ich ihm ihn ihnen ihr ihre im immer in indem ist ja
-jede jedem jeden jeder jedes jene jener jetzt kann kein keine man mehr mit nach nein
-nicht nichts noch nun nur ob obwohl oder ohne schon sein seine seit sich sie sind so
-sondern sowie ueber um und uns unser unter viel vom von vor waehrend war waren was weil
-weiter welche welcher wenn wer werden wie wir wird wo zu zum zur zwar zwischen
-""".split()) | {"für", "über", "während"}
+_GRAMMAR_DE = frozenset(["aber", "alle", "allein", "allem", "allen", "aller", "alles", "als", "also", "am", "an", "andere", "anderen", "auch", "auf", "aus", "bei", "beim", "bis", "da", "dabei", "dadurch", "dafuer", "daher", "damit", "dann", "daran", "darauf", "daraus", "darin", "darum", "das", "dass", "dazu", "dem", "den", "denen", "denn", "dennoch", "der", "deren", "des", "deshalb", "dessen", "die", "dies", "diese", "diesem", "diesen", "dieser", "dieses", "doch", "dort", "du", "durch", "ein", "eine", "einem", "einen", "einer", "eines", "er", "es", "etwa", "euch", "fuer", "gegen", "hat", "hatte", "hier", "ich", "ihm", "ihn", "ihnen", "ihr", "ihre", "im", "immer", "in", "indem", "ist", "ja", "jede", "jedem", "jeden", "jeder", "jedes", "jene", "jener", "jetzt", "kann", "kein", "keine", "man", "mehr", "mit", "nach", "nein", "nicht", "nichts", "noch", "nun", "nur", "ob", "obwohl", "oder", "ohne", "schon", "sein", "seine", "seit", "sich", "sie", "sind", "so", "sondern", "sowie", "ueber", "um", "und", "uns", "unser", "unter", "viel", "vom", "von", "vor", "waehrend", "war", "waren", "was", "weil", "weiter", "welche", "welcher", "wenn", "wer", "werden", "wie", "wir", "wird", "wo", "zu", "zum", "zur", "zwar", "zwischen"]) | {"für", "über", "während"}
 
-_GRAMMAR_FR = frozenset("""
-afin ainsi alors apres au aussi autre autres aux avant avec car ce cela celle celles
-celui ces cet cette ceux chaque chez comme comment dans de depuis des donc dont du elle
-elles en encore entre est et etre fait il ils je la le les leur leurs lui mais me meme
-moins mon ne ni non nos notre nous on ou par parce pas peu peut plus pour pourquoi quand
-que quel quelle qui quoi sa sans se selon ses si son sont sous sur ta tandis te tes toi
-ton tous tout toute toutes tres tu un une vers voici vos votre vous
-cependant enfin ensuite lorsque puisque toutefois voir cf ibid
-""".split()) | {"après", "être", "même", "très", "où"}
+_GRAMMAR_FR = frozenset(["afin", "ainsi", "alors", "apres", "au", "aussi", "autre", "autres", "aux", "avant", "avec", "car", "ce", "cela", "celle", "celles", "celui", "ces", "cet", "cette", "ceux", "chaque", "chez", "comme", "comment", "dans", "de", "depuis", "des", "donc", "dont", "du", "elle", "elles", "en", "encore", "entre", "est", "et", "etre", "fait", "il", "ils", "je", "la", "le", "les", "leur", "leurs", "lui", "mais", "me", "meme", "moins", "mon", "ne", "ni", "non", "nos", "notre", "nous", "on", "ou", "par", "parce", "pas", "peu", "peut", "plus", "pour", "pourquoi", "quand", "que", "quel", "quelle", "qui", "quoi", "sa", "sans", "se", "selon", "ses", "si", "son", "sont", "sous", "sur", "ta", "tandis", "te", "tes", "toi", "ton", "tous", "tout", "toute", "toutes", "tres", "tu", "un", "une", "vers", "voici", "vos", "votre", "vous", "cependant", "enfin", "ensuite", "lorsque", "puisque", "toutefois", "voir", "cf", "ibid"]) | {"après", "être", "même", "très", "où"}
 
-_GRAMMAR_EN = frozenset("""
-about after all also an and another any are as at be because been before but by can
-could did do does for from had has have her here him his how however if in into is it
-its just may might more most must my no not now of on one only or other our out over
-said same she should since so some such than that the their them then there these they
-this those though through thus to too under until up upon very was we were what when
-where which while who whose why will with within without would you your
-""".split())
+_GRAMMAR_EN = frozenset(["about", "after", "all", "also", "an", "and", "another", "any", "are", "as", "at", "be", "because", "been", "before", "but", "by", "can", "could", "did", "do", "does", "for", "from", "had", "has", "have", "her", "here", "him", "his", "how", "however", "if", "in", "into", "is", "it", "its", "just", "may", "might", "more", "most", "must", "my", "no", "not", "now", "of", "on", "one", "only", "or", "other", "our", "out", "over", "said", "same", "she", "should", "since", "so", "some", "such", "than", "that", "the", "their", "them", "then", "there", "these", "they", "this", "those", "though", "through", "thus", "to", "too", "under", "until", "up", "upon", "very", "was", "we", "were", "what", "when", "where", "which", "while", "who", "whose", "why", "will", "with", "within", "without", "would", "you", "your"])
 
-_GRAMMAR_IT = frozenset("""
-anche che ci coi col come con cui da dal dalla degli dei del della delle dello di due ed
-gli ha hanno il in io la le lo loro ma me mi ne nel nella no noi non per perche piu
-quale quando quanto quel quella quelli quello questa queste questi questo se sono su sua
-sue sui sul sulla suo suoi tra tu tutti tutto un una uno va vi voi
-""".split()) | {"perché", "più"}
+_GRAMMAR_IT = frozenset(["anche", "che", "ci", "coi", "col", "come", "con", "cui", "da", "dal", "dalla", "degli", "dei", "del", "della", "delle", "dello", "di", "due", "ed", "gli", "ha", "hanno", "il", "in", "io", "la", "le", "lo", "loro", "ma", "me", "mi", "ne", "nel", "nella", "no", "noi", "non", "per", "perche", "piu", "quale", "quando", "quanto", "quel", "quella", "quelli", "quello", "questa", "queste", "questi", "questo", "se", "sono", "su", "sua", "sue", "sui", "sul", "sulla", "suo", "suoi", "tra", "tu", "tutti", "tutto", "un", "una", "uno", "va", "vi", "voi"]) | {"perché", "più"}
 
-_POSSESSIVES = frozenset("""
-mein meine meinem meinen meiner meines dein deine deinem deinen deiner deines
-seinem seinen seiner seines ihrem ihren ihrer ihres unsere unserem unseren unserer
-unseres euer eure eurem euren eurer eures
-mon ma mes ton ta tes leur leurs
-my your his her its our their
-""".split())
+_POSSESSIVES = frozenset(["mein", "meine", "meinem", "meinen", "meiner", "meines", "dein", "deine", "deinem", "deinen", "deiner", "deines", "seinem", "seinen", "seiner", "seines", "ihrem", "ihren", "ihrer", "ihres", "unsere", "unserem", "unseren", "unserer", "unseres", "euer", "eure", "eurem", "euren", "eurer", "eures", "mon", "ma", "mes", "ton", "ta", "tes", "leur", "leurs", "my", "your", "his", "her", "its", "our", "their"])
 
 # Apparatus and heading words; a section heading is no entity proposal.
-_HEADINGS = frozenset("""
-introduction sommaire chapitre chapitres preface avant propos annexe annexes notes
-bibliographie table matieres inhalt inhaltsverzeichnis vorwort nachwort einleitung
-kapitel register anhang abbildung abbildungen contents chapter appendix index
-seite seiten page pages band heft nummer jahrgang copyright
-""".split()) | {"préface", "matières"}
+_HEADINGS = frozenset(["introduction", "sommaire", "chapitre", "chapitres", "preface", "avant", "propos", "annexe", "annexes", "notes", "bibliographie", "table", "matieres", "inhalt", "inhaltsverzeichnis", "vorwort", "nachwort", "einleitung", "kapitel", "register", "anhang", "abbildung", "abbildungen", "contents", "chapter", "appendix", "index", "seite", "seiten", "page", "pages", "band", "heft", "nummer", "jahrgang", "copyright"]) | {"préface", "matières"}
 
 STOPWORDS = (_WEEKDAYS | _MONTHS | _GRAMMAR_DE | _GRAMMAR_FR | _GRAMMAR_EN
              | _GRAMMAR_IT | _POSSESSIVES | _HEADINGS)
@@ -547,7 +496,7 @@ def main() -> None:
                         help="Source TEI directory (read only)")
     args = parser.parse_args()
 
-    from scripts.tei.entity_matcher import build_lexicon, find_candidates
+    from scripts.entity.entity_matcher import build_lexicon, find_candidates
 
     doc_ids = [d.strip() for value in (args.docs or []) for d in value.split(",") if d.strip()]
     doc_paths = resolve_docs(args.src_dir, doc_ids or None)

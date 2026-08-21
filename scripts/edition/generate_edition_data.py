@@ -37,7 +37,12 @@ from scripts.config import (
     TEI_CURATED_DIR,
     TEI_FINAL_DIR,
 )
-from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
+from scripts.core.pb_split import (
+    BODY_INNER_RE,
+    NS_RE,
+    extract_pages_from_final,
+    iter_page_spans,
+)
 from scripts.utils import load_json
 
 MISTRAL_DIR = MISTRAL_RESULTS_DIR
@@ -91,85 +96,6 @@ PUB_FORM_LABELS = {
 
 
 # ---------------------------------------------------------------------------
-# Per-Seiten-Mirror: macht den Viewer ohne lokalen Server fuer alle 285 Docs
-# ---------------------------------------------------------------------------
-
-_NS_RE = re.compile(r'\s+xmlns\s*=\s*"[^"]*"')
-_REVISION_RE = re.compile(r"<revisionDesc.*?</revisionDesc>", re.DOTALL)
-# <div>-Tags (offen, nicht self-closing) bzw. schliessend, fuer das Balancieren
-# von Seiten-Chunks, die zwischen zwei <pb> aus dem Dokument geschnitten werden.
-_DIV_TAG_RE = re.compile(r'<div\b[^>]*?(?<!/)>|</div\s*>')
-
-
-def _balance_divs(chunk: str) -> str:
-    """Balanciert <div>-Tags eines zwischen zwei <pb> geschnittenen Chunks.
-
-    Ein Seiten-Chunk kann ein </div> tragen, dessen <div> auf einer frueheren
-    Seite geoeffnet wurde (oder umgekehrt). Fuehrende ueberzaehlige </div>
-    bekommen ein <div> davor, am Ende offene <div> ein </div> dahinter -- damit
-    ist das Fragment standalone wohlgeformt (core.js parst strikt als text/xml).
-    """
-    stack = 0
-    leading_closes = 0
-    for m in _DIV_TAG_RE.finditer(chunk):
-        if m.group().startswith("</"):
-            if stack > 0:
-                stack -= 1
-            else:
-                leading_closes += 1
-        else:
-            stack += 1
-    return ("<div>" * leading_closes) + chunk + ("</div>" * stack)
-
-
-def _extract_pages_from_final(final_path: Path) -> dict:
-    """Splittet ein assembliertes TEI-Dokument in einzelne Seiten-Bodies.
-
-    Seitenzahl = sequenzielle Position der <pb>-Elemente (1-basiert), NICHT
-    das n-Attribut — denn etliche Docs (z. B. 100) tragen die originale
-    Journal-Pagination im n-Attribut (n="56"), wir brauchen aber 1,2,3...
-    passend zu den Bilddateinamen.
-
-    Returns: {page_number: xml_string} (mit minimalem TEI-Envelope).
-    """
-    try:
-        raw = final_path.read_text(encoding="utf-8")
-    except OSError:
-        return {}
-
-    clean = _NS_RE.sub("", raw)
-
-    # Body extrahieren
-    body_match = BODY_INNER_RE.search(clean)
-    if not body_match:
-        return {}
-    body_inner = body_match.group(1)
-
-    spans = iter_page_spans(body_inner)
-    if not spans:
-        return {1: _wrap_page(f"<body>{body_inner}</body>")}
-
-    pages = {}
-    for span in spans:
-        # Chunk inkl. pb-Tag (Seitenanfang) bis zum naechsten pb
-        chunk = _balance_divs(body_inner[span.pb_start:span.content_end])
-        pages[span.page] = _wrap_page(f"<body>{chunk}</body>")
-    return pages
-
-
-def _wrap_page(body_xml: str) -> str:
-    """Umschliesst einen Seiten-Body mit minimalem TEI-Envelope."""
-    return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<TEI xmlns="http://www.tei-c.org/ns/1.0">\n'
-        '  <text>\n'
-        f'    {body_xml}\n'
-        '  </text>\n'
-        '</TEI>\n'
-    )
-
-
-# ---------------------------------------------------------------------------
 # Textseite -> Scanbild: pb@facs statt sequenzieller Annahme
 # ---------------------------------------------------------------------------
 
@@ -205,7 +131,7 @@ def build_facs_map(final_text: str) -> dict:
     Seiten ohne facs-Anker und Anker ohne aufloesbare <surface> bleiben weg; dort
     gilt beim Konsumenten weiter die sequenzielle Konvention.
     """
-    clean = _NS_RE.sub("", final_text)
+    clean = NS_RE.sub("", final_text)
     images = _surface_images(clean)
     out = {}
     for page, idx in enumerate(facs_anchors(clean), start=1):
@@ -244,7 +170,7 @@ def audit_facs_mapping(final_dir: Path = TEI_FINAL_DIR, images_dir: Path = IMAGE
     for final_path in sorted(final_dir.glob("*_final.xml"), key=lambda p: int(p.stem.split("_")[0])):
         doc_id = final_path.stem.replace("_final", "")
         try:
-            clean = _NS_RE.sub("", final_path.read_text(encoding="utf-8"))
+            clean = NS_RE.sub("", final_path.read_text(encoding="utf-8"))
         except (OSError, UnicodeDecodeError):
             continue
         scanned += 1
@@ -427,7 +353,7 @@ def mirror_per_page_data(verbose: bool = False, only_docs=None) -> dict:
         stats["ocr"] += ocr_n
 
         # 3. Per-Seiten-TEI aus tei_final extrahieren
-        pages = _extract_pages_from_final(final_path)
+        pages = extract_pages_from_final(final_path)
         tei_n = 0
         for page_num, xml in pages.items():
             dst = doc_dir / f"{doc_id}_p{page_num}.xml"

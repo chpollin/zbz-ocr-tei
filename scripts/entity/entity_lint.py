@@ -1,7 +1,7 @@
 """Intake audit for the curated entity list (entity integration, M1).
 
 Checks data/entities/all_entities.json on its own terms and, when the GND cache
-built by scripts.tei.fetch_gnd_variants exists, against that cache. When the legacy
+built by scripts.entity.fetch_gnd_variants exists, against that cache. When the legacy
 mention index exists as well, every surface form it pairs with an id is checked
 against that id's own GND record. Reports the defects so the matcher can exclude the
 affected entries; repairing the list is the job of the tool that produced it.
@@ -39,8 +39,8 @@ form does not carry ("Kolumbus" for "Colombo, Cristoforo"). Its strings are comp
 like labels, in NFC with collapsed whitespace and case folded.
 
 Usage:
-    python -m scripts.eval.entity_lint
-    python -m scripts.eval.entity_lint --entities PATH --cache PATH --legacy PATH --out PATH
+    python -m scripts.entity.entity_lint
+    python -m scripts.entity.entity_lint --entities PATH --cache PATH --legacy PATH --out PATH
 """
 import argparse
 import json
@@ -50,13 +50,13 @@ from collections import Counter
 from pathlib import Path
 
 from scripts.config import DATA_DIR
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
-from scripts.tei.entity_lexicon import parse_marking_policy
-from scripts.tei.entity_matcher import (
+from scripts.entity.entity_lexicon import parse_marking_policy
+from scripts.entity.entity_matcher import (
     legacy_form_is_covered,
     legacy_names,
     normalize_gid,
 )
+from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"

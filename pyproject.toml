@@ -17,7 +17,7 @@ ignore = ["E501"]  # line length is the formatter's business
 [tool.ruff.lint.per-file-ignores]
 # The stopword blocks are written as `"""...""".split()`; SIM905 would turn the
 # word lists into hundreds of quoted items.
-"scripts/eval/entity_unlisted_scan.py" = ["SIM905"]
+"scripts/entity/entity_unlisted_scan.py" = ["SIM905"]
 
 # RUF001: the ambiguous characters are the domain data of the character
 # normalization (hyphen and dash classes, no-break space variants, the apostrophe
@@ -34,7 +34,7 @@ ignore = ["E501"]  # line length is the formatter's business
 
 # RUF003: the comments name the characters the mapping table maps.
 "scripts/eval/evaluate_ocr.py" = ["RUF003"]
-"scripts/tei/tei_xml_utils.py" = ["RUF003"]
+"scripts/core/tei_xml_utils.py" = ["RUF003"]
 
 # E402: a warning filter or an environment variable has to be set before the
 # heavy SDK import that reads it.

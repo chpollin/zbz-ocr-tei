@@ -10,7 +10,7 @@ import json
 import pytest
 
 from scripts.config import DATA_DIR
-from scripts.tei.entity_matcher import _collapse
+from scripts.entity.entity_matcher import _collapse
 
 CACHE_FILE = DATA_DIR / "entities" / "gnd_cache.json"
 REVIEW_FILE = DATA_DIR / "entities" / "variant_review.json"
@@ -116,7 +116,7 @@ def test_bearers_are_filed_under_their_curated_category(review):
 
 def test_initials_only_forms_are_rejected(review):
     """The class the matcher drops deterministically must not be approved."""
-    from scripts.tei.entity_matcher import _is_initials_only
+    from scripts.entity.entity_matcher import _is_initials_only
 
     for _category, gid, form, entry in reviewed_forms(review):
         if _is_initials_only(form.replace(",", " ")):

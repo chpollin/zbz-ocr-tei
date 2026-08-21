@@ -1,13 +1,13 @@
-"""Direct tests for the running-head detection core (scripts/tei/running_heads.py).
+"""Direct tests for the running-head detection core (scripts/entity/running_heads.py).
 
-The module is consumed by two sides: `scripts.eval.running_head_audit` measures it against
-the adjudicated ground truth, and `scripts.tei.entity_matcher` calls `head_spans` to hold
+The module is consumed by two sides: `scripts.entity.running_head_audit` measures it against
+the adjudicated ground truth, and `scripts.entity.entity_matcher` calls `head_spans` to hold
 in-zone candidates out of tier 1 (E105). The audit tests cover the detection rules; this
 module pins the core API the matcher depends on, the page segmentation with its absolute
 offsets, the head window, the raw spans and the zone lookup, on synthetic TEI.
 """
 
-from scripts.tei.running_heads import (
+from scripts.entity.running_heads import (
     MAX_HEAD_SEGMENTS,
     MIN_RECURRENCE,
     detect_document,

@@ -36,7 +36,7 @@ from scripts.config import (
     LAYOUT_DIR,
 )
 from scripts.core.gemini import get_client
-from scripts.layout import draw_overlay_from_json
+from scripts.layout.overlay import draw_overlay_from_json
 from scripts.utils import discover_doc_ids
 
 # ---- Dokumenttypspezifische Prompt-Hints (4 Ebenen) ----

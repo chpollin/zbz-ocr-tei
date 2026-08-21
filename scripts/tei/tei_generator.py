@@ -31,7 +31,7 @@ from scripts.core.loaders import (
     discover_pages,
     load_ocr_text,
 )
-from scripts.tei.tei_xml_utils import reading_order_permutation
+from scripts.core.tei_xml_utils import reading_order_permutation
 from scripts.utils import page_layout_name
 
 # ---------------------------------------------------------------------------

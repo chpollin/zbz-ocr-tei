@@ -2,14 +2,14 @@
 
 Operator convention E105 keeps running heads out of the entity layer: the author name
 or work title printed as page furniture on every page is not a mention of the person or
-the work. This module is the shared detection core. `scripts.eval.running_head_audit`
-validates it against the facsimile-adjudicated ground truth; `scripts.tei.entity_matcher`
+the work. This module is the shared detection core. `scripts.entity.running_head_audit`
+validates it against the facsimile-adjudicated ground truth; `scripts.entity.entity_matcher`
 consumes `head_spans` to hold in-zone candidates out of tier 1. Nothing here writes TEI.
 
 Detection, applied per document to a delivered TEI string:
 
   1. Page starts are the `<pb>` positions inside `<body>`, taken from the shared
-     segmentation of scripts.tei.pb_split (read only), so the page numbering matches the
+     segmentation of scripts.core.pb_split (read only), so the page numbering matches the
      rest of the pipeline.
   2. The head window of a page is its first MAX_HEAD_SEGMENTS non-empty segments. A
      segment ends at every line or block tag (`<lb/>`, `<p>`, `<head>`, ...); inline
@@ -43,7 +43,7 @@ import unicodedata
 from bisect import bisect_right
 from collections import defaultdict
 
-from scripts.tei.pb_split import BODY_INNER_RE, PB_RE
+from scripts.core.pb_split import BODY_INNER_RE, PB_RE
 
 # Detection constants. Calibrated against the 25 facsimile-adjudicated running-head marks
 # of data/entities/mention_verdicts.json; every value is deliberately on the conservative

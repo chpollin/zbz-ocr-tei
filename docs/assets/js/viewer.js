@@ -82,7 +82,7 @@
 
     const OSD_PREFIX = 'https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/images/';
 
-    // Entity layer (generated mirror, written by scripts/edition/generate_entity_preview_data.py)
+    // Entity layer (generated mirror, written by scripts/entity/generate_entity_preview_data.py)
     const ENTITY_INDEX_PATH = 'data/entities.json';
     const entityPagePath     = (doc, page) => 'data/pages/' + doc + '/' + doc + '_entity_p' + page + '.xml';
     const entityWorklistPath = (doc) => 'data/pages/' + doc + '/' + doc + '_entity_worklist.json';

@@ -1,6 +1,6 @@
 """M3 entity pilot: preview run of the inline GND markup on ten documents.
 
-Wraps the tier-1 candidates found by ``scripts.tei.entity_matcher`` in the ZBZ inline
+Wraps the tier-1 candidates found by ``scripts.entity.entity_matcher`` in the ZBZ inline
 GND elements (``persName`` / ``orgName`` / ``bibl`` with ``ref="GND:..."``) and writes the
 result to ``output/entity_preview/{doc}_final.xml``. Tier-2 candidates are reported as a
 worklist and never written into the XML.
@@ -37,16 +37,16 @@ stays auditable outside this pipeline (vocabulary: knowledge/entity-integration.
 
 The verdict store ``data/entities/mention_verdicts.json`` stays the source of truth of the
 judgments; the attributes are a regenerable projection of it. The projection reuses the
-classification of ``scripts.eval.entity_verdict_guard``, so a document whose text moved
+classification of ``scripts.entity.entity_verdict_guard``, so a document whose text moved
 since the adjudication (guard class ``text_changed``) falls back to unverified instead of
 claiming a verification its bytes no longer support.
 
 Deterministic, offline, no model call.
 
 Usage:
-    python -m scripts.tei.tei_entity_preview --panel
-    python -m scripts.tei.tei_entity_preview --docs 1060,100
-    python -m scripts.tei.tei_entity_preview --all
+    python -m scripts.entity.tei_entity_preview --panel
+    python -m scripts.entity.tei_entity_preview --docs 1060,100
+    python -m scripts.entity.tei_entity_preview --all
 """
 
 from __future__ import annotations
@@ -67,7 +67,7 @@ from scripts.config import DATA_DIR, OUTPUT_DIR, TEI_FINAL_DIR, TEI_NS, TEI_SCHE
 # The verification state is a projection of the adjudicated judgments, so the key
 # comparison lives in one place: the guard that gates them (E110). Same direction as
 # tei_reading_order_fix, which reuses the classifier of its own audit.
-from scripts.eval.entity_verdict_guard import (
+from scripts.entity.entity_verdict_guard import (
     _doc_index,
     _span_index,
     classify_mark,
@@ -96,7 +96,7 @@ MATCHER_RESP_ID = "resp-entity-matcher"
 ADJUDICATION_RESP_ID = "resp-entity-adjudication"
 RESP_AGENT = "DHCraft"
 MATCHER_RESP_TEXT = ("Automatic entity matching, deterministic and closed-world "
-                     "(scripts/tei/entity_matcher.py, rule set {fingerprint})")
+                     "(scripts/entity/entity_matcher.py, rule set {fingerprint})")
 ADJUDICATION_RESP_TEXT = ("Facsimile adjudication of the entity evaluation sample, "
                           "wave {snapshot}")
 
@@ -485,7 +485,7 @@ def main():
     ap.add_argument("--out-dir", type=Path, default=ENTITY_PREVIEW_DIR, help="Preview directory")
     args = ap.parse_args()
 
-    from scripts.tei.entity_matcher import build_lexicon, find_candidates
+    from scripts.entity.entity_matcher import build_lexicon, find_candidates
 
     if args.all:
         doc_ids = discover_doc_ids(args.src_dir)

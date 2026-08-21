@@ -1,4 +1,4 @@
-"""Tests for the M4 gold benchmark (scripts/eval/entity_gold_benchmark).
+"""Tests for the M4 gold benchmark (scripts/entity/entity_gold_benchmark).
 
 The benchmark scores the matcher against the ZBZ reference TEIs, restricted to the
 text both sides share, and is a read-only diagnosis instrument.
@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import json
 
-from scripts.eval.entity_gold_benchmark import (
+from scripts.entity.entity_gold_benchmark import (
     AUTHOR_GID,
     SPECIAL_DOC,
     benchmark_document,
@@ -64,7 +64,7 @@ def _persname(gid: str, surface: str) -> str:
 
 def _finder(tmp_path):
     """The real matcher, bound to the mini entity list (no cache, no legacy index)."""
-    from scripts.tei.entity_matcher import build_lexicon, find_candidates
+    from scripts.entity.entity_matcher import build_lexicon, find_candidates
 
     path = tmp_path / "entities.json"
     path.write_text(json.dumps(_ENTITIES), encoding="utf-8")
@@ -219,8 +219,8 @@ def test_worklist_available_is_its_own_class_with_the_rule(tmp_path):
 
 def test_an_ambiguous_surname_counts_as_worklist_not_as_miss(tmp_path):
     """Both Jaspers spouses are listed, so the matcher reports one id and defers the choice."""
-    from scripts.eval.entity_gold_benchmark import candidate_alternatives
-    from scripts.tei.entity_matcher import build_lexicon, find_candidates
+    from scripts.entity.entity_gold_benchmark import candidate_alternatives
+    from scripts.entity.entity_matcher import build_lexicon, find_candidates
 
     entities = dict(_ENTITIES, persons=[*_ENTITIES["persons"],
                                         {"GND_id": GERTRUD, "name": "Jaspers, Gertrud"}])

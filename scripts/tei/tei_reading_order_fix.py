@@ -32,10 +32,10 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 
 from scripts.config import OUTPUT_DIR
+from scripts.core.pb_split import BODY_INNER_RE, iter_page_spans
+from scripts.core.tei_xml_utils import build_zone_bbox, reading_order_permutation
 from scripts.eval.reading_order_audit import classify_page
 from scripts.tei.marker_common import backup_and_write, iter_final_files
-from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
-from scripts.tei.tei_xml_utils import build_zone_bbox, reading_order_permutation
 
 BACKUP_DIR = OUTPUT_DIR / "_backup_pre_reading_order_fix"
 REPORT_PATH = OUTPUT_DIR / "audits" / "reading_order_fix_run.json"

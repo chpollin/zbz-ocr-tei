@@ -1,4 +1,4 @@
-"""Tests for scripts/eval/entity_verdict_guard.py.
+"""Tests for scripts/entity/entity_verdict_guard.py.
 
 Synthetic store and scan fixtures only; the classification table of the module
 docstring drives the cases one by one. The real store (300 marks, 67 recall
@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import json
 
-from scripts.eval import entity_verdict_guard as vg
+from scripts.entity import entity_verdict_guard as vg
 
 DIGEST = "a" * 64
 

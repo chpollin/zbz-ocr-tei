@@ -1,4 +1,4 @@
-"""Tests for the unlisted-name scan (scripts/eval/entity_unlisted_scan).
+"""Tests for the unlisted-name scan (scripts/entity/entity_unlisted_scan).
 
 The scan is the proposal channel for list extensions: it collects name-shaped surfaces
 OUTSIDE the curated entity list with frequency, documents and contexts, and it never
@@ -15,7 +15,7 @@ from __future__ import annotations
 import csv
 import json
 
-from scripts.eval.entity_unlisted_scan import (
+from scripts.entity.entity_unlisted_scan import (
     CLASS_CAPS,
     CLASS_MULTI,
     CLASS_SINGLE,
@@ -58,7 +58,7 @@ def _tei(body: str) -> str:
 
 
 def _lexicon(tmp_path):
-    from scripts.tei.entity_matcher import build_lexicon
+    from scripts.entity.entity_matcher import build_lexicon
 
     path = tmp_path / "entities.json"
     path.write_text(json.dumps(_ENTITIES), encoding="utf-8")
@@ -67,7 +67,7 @@ def _lexicon(tmp_path):
 
 def _found(body, tmp_path, allow_single_words=False):
     """Occurrences of one synthetic body, run through the real matcher."""
-    from scripts.tei.entity_matcher import find_candidates
+    from scripts.entity.entity_matcher import find_candidates
 
     return find_unlisted(_tei(body), _lexicon(tmp_path), find_candidates,
                          allow_single_words=allow_single_words)
@@ -369,8 +369,8 @@ def _corpus(tmp_path):
 
 
 def _run(tmp_path):
-    from scripts.eval.entity_corpus_scan import resolve_docs
-    from scripts.tei.entity_matcher import find_candidates
+    from scripts.entity.entity_corpus_scan import resolve_docs
+    from scripts.entity.entity_matcher import find_candidates
 
     src, catalog = _corpus(tmp_path)
     return run_scan(resolve_docs(src), _lexicon(tmp_path), find_candidates,
@@ -401,7 +401,7 @@ def test_run_scan_leaves_the_source_files_untouched(tmp_path):
 
 
 def test_scan_document_stamps_the_document_id(tmp_path):
-    from scripts.tei.entity_matcher import find_candidates
+    from scripts.entity.entity_matcher import find_candidates
 
     xml = _tei("<p>Dazu schrieb Hilde Domin einen Brief.</p>")
     found = scan_document("1540", xml, _lexicon(tmp_path), find_candidates, False)

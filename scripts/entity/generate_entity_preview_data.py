@@ -1,6 +1,6 @@
 """Entity previews as a read-only inspection layer in the generated viewer mirror.
 
-Reads the pilot artifacts of ``scripts.tei.tei_entity_preview`` (``output/entity_preview/``,
+Reads the pilot artifacts of ``scripts.entity.tei_entity_preview`` (``output/entity_preview/``,
 read only) and projects them into ``docs/data/``:
 
 - ``pages/{doc}/{doc}_entity_p{N}.xml``: the preview split per page with the same splitter
@@ -25,8 +25,8 @@ entry is dropped with a visible count instead of being parked on a wrong page.
 Deterministic and idempotent: same inputs, byte-identical outputs, no timestamps.
 
 Usage:
-    python -m scripts.edition.generate_entity_preview_data
-    python -m scripts.edition.generate_entity_preview_data --docs 100,1060
+    python -m scripts.entity.generate_entity_preview_data
+    python -m scripts.entity.generate_entity_preview_data --docs 100,1060
 """
 
 from __future__ import annotations
@@ -42,12 +42,13 @@ from scripts.config import DATA_DIR, DOCS_DIR
 
 # Same splitter as the per-page TEI mirror: page number = sequential <pb> position. A second,
 # diverging implementation would place entity pages next to the wrong facsimile.
-from scripts.edition.generate_edition_data import (
-    _extract_pages_from_final as split_pages,
+from scripts.core.pb_split import (
+    BODY_INNER_RE,
+    PB_RE,
+    extract_pages_from_final as split_pages,
 )
-from scripts.tei.entity_matcher import build_lexicon
-from scripts.tei.pb_split import BODY_INNER_RE, PB_RE
-from scripts.tei.tei_entity_preview import (
+from scripts.entity.entity_matcher import build_lexicon
+from scripts.entity.tei_entity_preview import (
     CATEGORY_ELEMENT,
     ENTITY_PREVIEW_DIR,
     REPORT_STEM,
@@ -61,7 +62,8 @@ GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
 VARIANT_REVIEW_PATH = DATA_DIR / "entities" / "variant_review.json"
 
 LOBID_URL = "https://lobid.org/gnd/{gid}"
-GENERATOR = "scripts/edition/generate_entity_preview_data.py"
+# Provenance label written into every worklist JSON of the git-tracked mirror.
+GENERATOR = "scripts/entity/generate_entity_preview_data.py"
 # Fields copied from the pilot report; offsets and tier stay there. Each entry additionally
 # carries "text" (the surface as the renderer shows it) and "occurrence".
 WORKLIST_FIELDS = ("gid", "category", "surface", "rule", "alternatives", "matched_form",
@@ -276,7 +278,7 @@ def run(
     if not report_path.exists():
         raise FileNotFoundError(
             f"pilot report not found: {report_path} "
-            "(run python -m scripts.tei.tei_entity_preview --panel first)"
+            "(run python -m scripts.entity.tei_entity_preview --panel first)"
         )
     report = json.loads(report_path.read_text(encoding="utf-8"))
     wanted = set(doc_ids) if doc_ids else None
@@ -334,7 +336,7 @@ def main() -> None:
           f"worklist entries: {stats['worklist']}  (not locatable inline: {stats['unplaced']})")
     if stats["stale"]:
         print(f"  WARNUNG: {stats['stale']} worklist entries dropped (offsets do not match "
-              "the preview; rerun scripts.tei.tei_entity_preview)")
+              "the preview; rerun scripts.entity.tei_entity_preview)")
     if stats["skipped"]:
         print(f"  SKIP: {', '.join(stats['skipped'])}")
     print(f"  Entity lookup: {stats['entities']} ids -> {args.entities_json}")

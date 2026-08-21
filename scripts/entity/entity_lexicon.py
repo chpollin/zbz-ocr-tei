@@ -4,7 +4,7 @@ Design plan and rule catalogue: knowledge/entity-integration.md (sections "Targe
 model" and "Matching method"). The module reads the curated entity list, the lobid GND
 cache and the legacy mention index; it never calls a language model, and ids always
 come from the curated list. The scan that consumes the lexicon is
-scripts.tei.entity_matcher, which re-exports `build_lexicon`.
+scripts.entity.entity_matcher, which re-exports `build_lexicon`.
 
 Two public functions:
 

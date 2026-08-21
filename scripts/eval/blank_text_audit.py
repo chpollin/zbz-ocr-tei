@@ -21,7 +21,7 @@ Zwei Leer-Signale, weil eines allein den Anlassfall nicht sieht:
      halluzinierter Text auf leerer Vorlage.
 
 Die Seitenzahl ist die sequenzielle <pb>-Position (NICHT @n), segmentiert ueber
-scripts/tei/pb_split.iter_page_spans -- dieselbe Regel wie Mirror-Splitter und Blank-Marker.
+scripts/core/pb_split.iter_page_spans -- dieselbe Regel wie Mirror-Splitter und Blank-Marker.
 
 Aufruf:
     python -m scripts.eval.blank_text_audit                  # Korpus-Audit + JSON
@@ -35,11 +35,11 @@ import re
 from pathlib import Path
 
 from scripts.config import DOCS_DIR, TEI_FINAL_DIR
+from scripts.core.pb_split import BODY_INNER_RE, iter_page_spans
 from scripts.eval.audit_common import (
     iter_final_tei,
     write_audit_report,
 )
-from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
 
 MIRROR_PAGES_DIR = DOCS_DIR / "data" / "pages"
 

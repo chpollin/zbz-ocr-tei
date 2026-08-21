@@ -1,4 +1,4 @@
-"""Tests for the mention-level verdict store (scripts/eval/build_mention_verdicts).
+"""Tests for the mention-level verdict store (scripts/entity/build_mention_verdicts).
 
 Two layers. The unit layer runs on synthetic fixtures in memory and pins the pure
 functions (occurrence indexing, record construction, validation, serialization). The
@@ -15,7 +15,7 @@ import json
 
 import pytest
 
-from scripts.eval.build_mention_verdicts import (
+from scripts.entity.build_mention_verdicts import (
     ENTITIES_PATH,
     EXPECTED_IAA_CASES,
     EXPECTED_IAA_DISAGREEMENTS,
@@ -53,7 +53,7 @@ def _candidate(doc="100", surface="Jaspers", start=0, gid="TEST-0001", tier=1):
 
 
 def _pb_by_doc(xml=_XML):
-    from scripts.edition.generate_entity_preview_data import pb_offsets
+    from scripts.entity.generate_entity_preview_data import pb_offsets
 
     return {"100": pb_offsets(xml)}
 

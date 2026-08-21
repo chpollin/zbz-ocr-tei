@@ -1,6 +1,6 @@
-"""Tests for the entity corpus digest (scripts.eval.entity_corpus_digest)."""
+"""Tests for the entity corpus digest (scripts.entity.entity_corpus_digest)."""
 
-from scripts.eval.entity_corpus_digest import build_digest
+from scripts.entity.entity_corpus_digest import build_digest
 
 
 def _cand(doc, gid, surface, rule, tier, context="ctx"):

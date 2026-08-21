@@ -11,8 +11,8 @@ the cache file. Standard library only, no API key, deterministic apart from the
 retrieval date.
 
 Usage:
-    python -m scripts.tei.fetch_gnd_variants
-    python -m scripts.tei.fetch_gnd_variants --entities PATH --out PATH
+    python -m scripts.entity.fetch_gnd_variants
+    python -m scripts.entity.fetch_gnd_variants --entities PATH --out PATH
 """
 import argparse
 import json

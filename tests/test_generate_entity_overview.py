@@ -1,4 +1,4 @@
-"""Tests for scripts/edition/generate_entity_overview.py (entity overview mirror).
+"""Tests for scripts/entity/generate_entity_overview.py (entity overview mirror).
 
 Synthetic candidate fixtures for the aggregation contract: class assignment per rule
 string, the per-entity completeness aggregation including zero-mention list entries and
@@ -15,7 +15,7 @@ import json
 import pytest
 
 from scripts.config import DATA_DIR
-from scripts.edition.generate_entity_overview import (
+from scripts.entity.generate_entity_overview import (
     CLASSES,
     build_overview,
     classify,

@@ -1,4 +1,4 @@
-"""Tests for the corpus-wide entity candidate scan (scripts/eval/entity_corpus_scan).
+"""Tests for the corpus-wide entity candidate scan (scripts/entity/entity_corpus_scan).
 
 The scan is a read-only diagnosis instrument: it dumps every candidate the matcher
 finds, with rule, tier and context, and checks two invariants on the tier-1 set.
@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import json
 
-from scripts.eval.entity_corpus_scan import (
+from scripts.entity.entity_corpus_scan import (
     FUNCTION_WORDS,
     INVARIANTS,
     build_scan_report,
@@ -323,7 +323,7 @@ def test_run_scan_leaves_the_source_files_untouched(tmp_path):
 
 
 def test_run_scan_with_the_real_matcher(tmp_path):
-    from scripts.tei.entity_matcher import build_lexicon, find_candidates
+    from scripts.entity.entity_matcher import build_lexicon, find_candidates
 
     src = tmp_path / "src"
     src.mkdir()

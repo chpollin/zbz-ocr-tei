@@ -2,7 +2,7 @@
 
 Operator-freigegebene Bestandskorrektur (Modus hybrid: nur die sichere Klasse;
 Freigabe in decisions.md E94). Korrigiert exakt die Klasse `straight_apostrophe` aus
-scripts/eval/char_lint_audit.py; deren Regex `_APOSTROPHE_RE` wird importiert und 1:1
+scripts/eval/char_lint_audit.py; deren Regex `APOSTROPHE_RE` wird importiert und 1:1
 uebernommen, damit Vorher/Nachher-Messung (char_lint_audit) und Korrektur deckungs-
 gleich sind. KEINE anderen Klassen (keine Guillemets, keine Leerzeichen).
 
@@ -33,7 +33,7 @@ import re
 from pathlib import Path
 
 from scripts.config import OUTPUT_DIR, TEI_FINAL_DIR
-from scripts.eval.char_lint_audit import _APOSTROPHE_RE as APOSTROPHE_RE
+from scripts.eval.char_lint_audit import APOSTROPHE_RE
 from scripts.tei.marker_common import backup_and_write, iter_final_files
 
 BACKUP_DIR = OUTPUT_DIR / "_backup_pre_char_normalize"

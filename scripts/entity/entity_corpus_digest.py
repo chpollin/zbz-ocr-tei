@@ -1,6 +1,6 @@
 """Condense the entity corpus scan into a context-window-sized digest.
 
-Reads the snapshot of scripts.eval.entity_corpus_scan and aggregates the raw
+Reads the snapshot of scripts.entity.entity_corpus_scan and aggregates the raw
 candidate list (one record per mention) into one block per entity: distinct
 surface/rule pairs with counts and a single sample context. Tier 2 follows as
 a per-rule summary. The digest is the review surface for the whole tier-1

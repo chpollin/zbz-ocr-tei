@@ -32,7 +32,8 @@ import shutil
 import xml.etree.ElementTree as ET
 
 from scripts.config import REFERENCE_TEI_DIR, TEI_FINAL_DIR
-from scripts.edition.generate_edition_data import PAGES_DIR, _extract_pages_from_final
+from scripts.core.pb_split import extract_pages_from_final
+from scripts.edition.generate_edition_data import PAGES_DIR
 from scripts.eval.evaluate_ocr import extract_text_for_comparison
 
 MIN_MATCH = 150          # zusammenhaengender Referenz-Treffer = Beweis fuer Fliesstext
@@ -119,7 +120,7 @@ def _mirror(doc_id):
     final = TEI_FINAL_DIR / f"{doc_id}_final.xml"
     ddir = PAGES_DIR / doc_id
     ddir.mkdir(parents=True, exist_ok=True)
-    for pn, xml in _extract_pages_from_final(final).items():
+    for pn, xml in extract_pages_from_final(final).items():
         (ddir / f"{doc_id}_p{pn}.xml").write_text(xml, encoding="utf-8")
     shutil.copy2(final, ddir / f"{doc_id}_final.xml")
 

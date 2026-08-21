@@ -1,4 +1,4 @@
-"""Tests fuer scripts.tei.tei_xml_utils.reading_order_permutation.
+"""Tests fuer scripts.core.tei_xml_utils.reading_order_permutation.
 
 Sichert die EINE Entscheidung ab: in welcher Reihenfolge werden Layout-Regionen gelesen?
 Regel (Defekt 30/760, decisions.md): nicht rein nach y, sondern spalten- und bandbewusst.
@@ -7,7 +7,7 @@ Bands liest man Spalte fuer Spalte links nach rechts (x-Mitten-Abstand > 12% = S
 je Spalte oben nach unten. Einspaltig ist gleich der reinen y-Reihenfolge, also keine
 Regression gegenueber der frueheren Sortierung.
 """
-from scripts.tei.tei_xml_utils import reading_order_permutation
+from scripts.core.tei_xml_utils import reading_order_permutation
 
 
 def bb(x, y, w=20.0, h=8.0):

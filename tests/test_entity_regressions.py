@@ -1,4 +1,4 @@
-"""Frozen corpus findings of the M3 entity pilot (scripts/tei/entity_matcher).
+"""Frozen corpus findings of the M3 entity pilot (scripts/entity/entity_matcher).
 
 Every case is one defect the pilot evaluation wave found in the real stock, reduced
 to a synthetic mini TEI that carries the original sentence. The fixtures need no
@@ -16,7 +16,7 @@ import json
 
 import pytest
 
-from scripts.tei import entity_matcher as em
+from scripts.entity import entity_matcher as em
 
 TEI_HEAD = (
     '<?xml version="1.0" encoding="UTF-8"?>\n'

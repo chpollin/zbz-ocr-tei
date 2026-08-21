@@ -37,13 +37,13 @@ from scripts.eval.audit_common import (
 )
 
 # U+0027 with a Unicode letter on both sides (not digit, not underscore).
-_APOSTROPHE_RE = re.compile(r"(?<=[^\W\d_])'(?=[^\W\d_])")
+APOSTROPHE_RE = re.compile(r"(?<=[^\W\d_])'(?=[^\W\d_])")
 _GUILLEMET_RE = re.compile("[«»]")
 _HYPHEN_RESIDUE_RE = re.compile("¬")
 
 # Pure-regex classes: count = number of matches.
 _REGEX_CATEGORIES = {
-    "straight_apostrophe": _APOSTROPHE_RE,
+    "straight_apostrophe": APOSTROPHE_RE,
     "guillemets": _GUILLEMET_RE,
     "hyphenation_residue": _HYPHEN_RESIDUE_RE,
 }

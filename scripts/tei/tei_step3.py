@@ -12,7 +12,7 @@ import xml.etree.ElementTree as ET
 from xml.sax.saxutils import escape as xml_escape
 
 from scripts.config import TEI_NS
-from scripts.tei.tei_xml_utils import (
+from scripts.core.tei_xml_utils import (
     make_element,
     normalize_lang_code,
     wrap_orphan_groups,

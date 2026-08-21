@@ -297,7 +297,9 @@ def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if engine == "auto":
-        engine = "mistral"
+        # The Mistral endpoint answers 401; "mistral" stays selectable as the
+        # reproducibility record of the delivered corpus.
+        engine = "gemini"
 
     # Skip if first page already exists (resume-capable)
     first_page = output_dir / f"{pdf_path.stem}_p1.md"
@@ -328,7 +330,7 @@ def main():
         "--engine", "-e",
         choices=["auto", "mistral", "gemini"],
         default="auto",
-        help="OCR-Engine (default: auto). 'gemini' = Vision-OCR (Ausnahme, schreibt nach mistral_results/)"
+        help="OCR-Engine (default: auto -> gemini). 'gemini' = Vision-OCR (Ausnahme, schreibt nach mistral_results/)"
     )
     parser.add_argument("--output", "-o", type=Path, help="Ausgabeverzeichnis")
     parser.add_argument("--check-gpu", action="store_true", help="Nur GPU pruefen")

@@ -35,8 +35,8 @@ Exit codes: 0 clean, 1 validation failure (nothing written), 2 written but the w
 distribution deviates from the adjudicated expectation (reported, never adjusted).
 
 Usage:
-    python -m scripts.eval.build_mention_verdicts
-    python -m scripts.eval.build_mention_verdicts --dry-run
+    python -m scripts.entity.build_mention_verdicts
+    python -m scripts.entity.build_mention_verdicts --dry-run
 """
 
 from __future__ import annotations
@@ -50,8 +50,8 @@ from pathlib import Path
 from scripts.config import DATA_DIR, PROJECT_ROOT, TEI_FINAL_DIR
 
 # Page assignment via the pb rule of the sample draw (same helpers as
-# scripts/eval/entity_eval_sample.py); a second implementation would drift.
-from scripts.edition.generate_entity_preview_data import page_of, pb_offsets
+# scripts/entity/entity_eval_sample.py); a second implementation would drift.
+from scripts.entity.generate_entity_preview_data import page_of, pb_offsets
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
 
 SAMPLE_DIR = AUDIT_OUTPUT_DIR / "eval_sample"

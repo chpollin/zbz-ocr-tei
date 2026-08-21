@@ -8,7 +8,7 @@ Erzeugt einen JSON-Report (output/audits/) und eine ASCII-Konsolen-Zusammenfassu
 Regel: fuer jede Seite, deren OCR-Markdown (output/mistral_results/{doc}_p{N}.md) eine Markdown-
 Emphasis (*wort* / **wort** / _wort_) traegt, muss der zugehoerige TEI-Seitenabschnitt mindestens
 ein <hi> enthalten. Die Seite ist die sequenzielle <pb>-Position (NICHT @n), segmentiert ueber
-scripts/tei/pb_split.iter_page_spans (dieselbe Regel wie Mirror-Splitter und Blank-Marker).
+scripts/core/pb_split.iter_page_spans (dieselbe Regel wie Mirror-Splitter und Blank-Marker).
 Gemeldet werden Seiten mit Emphasis-Signal, aber ohne <hi> im TEI-Abschnitt.
 
 Aufruf:
@@ -21,13 +21,13 @@ import re
 from pathlib import Path
 
 from scripts.config import MISTRAL_RESULTS_DIR
+from scripts.core.pb_split import BODY_INNER_RE, iter_page_spans
 from scripts.eval.audit_common import (
     doc_id_from_path,
     iter_final_tei,
     resolve_tei_dir,
     write_audit_report,
 )
-from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
 
 # Markdown emphasis: runs of * or _ around non-space content (bold ** counts as a signal too).
 # Underscore needs non-word boundaries so snake_case identifiers do not match.

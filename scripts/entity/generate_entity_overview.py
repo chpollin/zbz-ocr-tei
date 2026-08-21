@@ -33,7 +33,7 @@ Output docs/data/entity_overview.json is deterministic (no timestamp, fixed orde
 seeded bootstrap), so the git diff of the mirror shows the exact effect of a rule change.
 
 Usage:
-    python -m scripts.edition.generate_entity_overview
+    python -m scripts.entity.generate_entity_overview
 """
 
 from __future__ import annotations
@@ -45,7 +45,7 @@ import sys
 from collections import Counter, defaultdict
 
 from scripts.config import DATA_DIR, DOCS_DIR, OUTPUT_DIR
-from scripts.tei.entity_matcher import base_rule
+from scripts.entity.entity_matcher import base_rule
 
 SCAN_PATH = OUTPUT_DIR / "audits" / "entity_corpus_scan.json"
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"

@@ -2,7 +2,7 @@
 
 Operator convention E105 keeps running heads out of the entity layer: the author name or
 work title printed as page furniture on every page is not a mention of the person or the
-work. The detection core lives in scripts.tei.running_heads (shared with the entity
+work. The detection core lives in scripts.entity.running_heads (shared with the entity
 matcher, which holds in-zone candidates out of tier 1). This module is the measurement
 half: it locates the head zones corpus-wide, scores them against the facsimile-adjudicated
 ground truth, counts the suppression scope on the corpus scan, and computes the convention
@@ -13,8 +13,8 @@ DIAGNOSIS ONLY -- reads output/tei_final, the adjudicated verdicts and the corpu
 snapshot, writes one report and is no pass/fail gate.
 
 Usage:
-    python -m scripts.eval.running_head_audit
-    python -m scripts.eval.running_head_audit --dir other_tei --out other.json
+    python -m scripts.entity.running_head_audit
+    python -m scripts.entity.running_head_audit --dir other_tei --out other.json
 """
 
 from __future__ import annotations
@@ -28,8 +28,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from scripts.config import DATA_DIR, TEI_FINAL_DIR
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, doc_id_from_path
-from scripts.tei.running_heads import (
+from scripts.entity.running_heads import (
     CONTAINS_LENGTH_FACTOR,
     EXCLUDED_PARENT_TAGS,
     MAX_HEAD_CHARS,
@@ -41,6 +40,7 @@ from scripts.tei.running_heads import (
     normalize_head,
     zone_lookup,
 )
+from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, doc_id_from_path
 
 __all__ = [
     "CONTAINS_LENGTH_FACTOR", "MAX_HEAD_CHARS", "MAX_HEAD_SEGMENTS",

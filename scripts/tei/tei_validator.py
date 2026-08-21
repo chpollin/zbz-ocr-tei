@@ -30,7 +30,7 @@ from scripts.config import (
     TEI_UNIFIED_DIR,
     VALID_DIV_TYPES,
 )
-from scripts.tei.tei_xml_utils import (
+from scripts.core.tei_xml_utils import (
     iter_page_zone_bboxes,
     normalize_lang_code,
     reading_order_permutation,

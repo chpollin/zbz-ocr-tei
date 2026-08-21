@@ -1,4 +1,4 @@
-"""Tests fuer scripts/tei/pb_split.py -- die gemeinsame <pb>-Seitensegmentierung.
+"""Tests fuer scripts/core/pb_split.py -- die gemeinsame <pb>-Seitensegmentierung.
 
 Nagelt den Vertrag fest, den frueher zwei Dateien per Kommentar synchron hielten
 (generate_edition_data.py + tei_blank_marker.py): Seitenzahl = 1-basierte
@@ -6,7 +6,7 @@ sequenzielle pb-Position, NICHT das n-Attribut; Chunk-Grenzen liegen an den
 pb-Matches. Drift hier wuerde Leerseiten-Marker auf der falschen Seite platzieren.
 """
 
-from scripts.tei.pb_split import BODY_INNER_RE, PB_RE, iter_page_spans
+from scripts.core.pb_split import BODY_INNER_RE, PB_RE, iter_page_spans
 
 
 def test_no_pb_returns_empty():

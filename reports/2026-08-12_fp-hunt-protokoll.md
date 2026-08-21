@@ -7,7 +7,7 @@ do not regenerate it, do not rerun the corpus scan, do not modify any file outsi
 `output/audits/fp_hunt/verdicts/`.
 
 The hunt adjudicates automatic tier-1 marks in risk order instead of sampling them
-evenly. `scripts/eval/entity_risk_ranking.py` scores every tier-1 mark by additive
+evenly. `scripts/entity/entity_risk_ranking.py` scores every tier-1 mark by additive
 features and sorts the corpus into three strata, so the wave buys its checked cases
 where a false positive is most likely.
 
@@ -95,7 +95,7 @@ reason naming the missing path.
 
 A confirmed false positive is fixed at its root cause, either as a reject verdict on the
 offending name form in `data/entities/variant_review.json` or as a rule guard in
-`scripts/tei/entity_matcher.py`, followed by a rerun of the corpus scan and the ranking.
+`scripts/entity/entity_matcher.py`, followed by a rerun of the corpus scan and the ranking.
 Hand-editing the TEI in `output/tei_final/` or the mirror in `docs/data/` is never the
 fix; it removes the symptom and leaves the rule that produced it in place. Both root-cause
 paths are operator-gated steps outside this wave.

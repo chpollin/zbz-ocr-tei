@@ -32,7 +32,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from scripts.config import TEI_FINAL_DIR
-from scripts.tei.tei_xml_utils import (
+from scripts.core.tei_xml_utils import (
     COLUMN_GAP_PCT,
     WIDE_REGION_W_PCT,
     iter_page_zone_bboxes,

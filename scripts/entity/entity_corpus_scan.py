@@ -1,6 +1,6 @@
 """Corpus-wide dump of the entity candidates (entity integration, M3 fix package).
 
-Runs ``scripts.tei.entity_matcher`` over the delivered TEI and writes every candidate
+Runs ``scripts.entity.entity_matcher`` over the delivered TEI and writes every candidate
 with rule, tier, offsets, page and context into one deterministic JSON snapshot, plus the
 distribution views per document, per rule and per entity. The snapshot is diffable, so
 a rule change shows its exact corpus effect before it binds; the design plan is in
@@ -9,7 +9,7 @@ knowledge/entity-integration.md (section "Instruments").
 The page is resolved here, once per document, and is the snapshot's answer for every
 consumer: a downstream tool reads ``page`` instead of reopening the TEI and rebuilding the
 pb grid, which is where a second, diverging implementation would put marks on wrong pages.
-The rule is the project-wide one of ``scripts.tei.pb_split``, the 1-based sequential
+The rule is the project-wide one of ``scripts.core.pb_split``, the 1-based sequential
 position of the ``<pb>`` element inside ``<body>`` rather than its ``n`` attribute.
 
 DIAGNOSIS ONLY -- reads output/tei_final and the entity data, writes one report to
@@ -23,9 +23,9 @@ than of the data:
                          (the open hyphen-compound question, "Karl-Jaspers-Symposium")
 
 Usage:
-    python -m scripts.eval.entity_corpus_scan
-    python -m scripts.eval.entity_corpus_scan --docs 100 290
-    python -m scripts.eval.entity_corpus_scan --out output/audits/entity_corpus_scan.json
+    python -m scripts.entity.entity_corpus_scan
+    python -m scripts.entity.entity_corpus_scan --docs 100 290
+    python -m scripts.entity.entity_corpus_scan --out output/audits/entity_corpus_scan.json
 """
 
 from __future__ import annotations
@@ -37,9 +37,9 @@ from collections import Counter
 from pathlib import Path
 
 from scripts.config import DATA_DIR, TEI_FINAL_DIR
+from scripts.core.pb_split import BODY_INNER_RE, PB_RE
+from scripts.entity.entity_matcher import FUNCTION_WORDS as _MATCHER_FUNCTION_WORDS
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, iter_final_tei
-from scripts.tei.entity_matcher import FUNCTION_WORDS as _MATCHER_FUNCTION_WORDS
-from scripts.tei.pb_split import BODY_INNER_RE, PB_RE
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
 GND_CACHE_PATH = DATA_DIR / "entities" / "gnd_cache.json"
@@ -293,7 +293,7 @@ def main() -> None:
                         help="Source TEI directory (read only)")
     args = parser.parse_args()
 
-    from scripts.tei.entity_matcher import build_lexicon, find_candidates
+    from scripts.entity.entity_matcher import build_lexicon, find_candidates
 
     doc_paths = resolve_docs(args.src_dir, _parse_doc_ids(args.docs) if args.docs else None)
     legacy = args.legacy if args.legacy and args.legacy.exists() else None

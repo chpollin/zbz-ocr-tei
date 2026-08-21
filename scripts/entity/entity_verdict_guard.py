@@ -27,8 +27,8 @@ byte-identical output.
 Exit codes: 0 no violations, 1 violations found, 2 missing input.
 
 Usage:
-    python -m scripts.eval.entity_verdict_guard
-    python -m scripts.eval.entity_verdict_guard --scan PATH --verdicts PATH
+    python -m scripts.entity.entity_verdict_guard
+    python -m scripts.entity.entity_verdict_guard --scan PATH --verdicts PATH
 """
 
 from __future__ import annotations

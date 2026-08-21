@@ -1,4 +1,4 @@
-"""Tests for scripts/tei/entity_matcher.py (entity integration, milestone M2).
+"""Tests for scripts/entity/entity_matcher.py (entity integration, milestone M2).
 
 Synthetic mini TEI strings and mini lexicon fixtures only: no repo data files, no
 network. The hard cases named in knowledge/entity-integration.md (line breaks inside
@@ -13,7 +13,7 @@ import json
 
 import pytest
 
-from scripts.tei import entity_matcher as em
+from scripts.entity import entity_matcher as em
 
 TEI_HEAD = (
     '<?xml version="1.0" encoding="UTF-8"?>\n'

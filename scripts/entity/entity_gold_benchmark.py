@@ -47,9 +47,9 @@ counts neutral rather than as a miss. The upgrade path is a page-anchored alignm
 the pb sequence, which needs the pb numbering of both sides to be trustworthy.
 
 Usage:
-    python -m scripts.eval.entity_gold_benchmark
-    python -m scripts.eval.entity_gold_benchmark --docs 100 290
-    python -m scripts.eval.entity_gold_benchmark --out output/audits/entity_gold_benchmark.json
+    python -m scripts.entity.entity_gold_benchmark
+    python -m scripts.entity.entity_gold_benchmark --docs 100 290
+    python -m scripts.entity.entity_gold_benchmark --out output/audits/entity_gold_benchmark.json
 """
 
 from __future__ import annotations
@@ -913,7 +913,7 @@ def main() -> int:
                         help="Pipeline TEI directory (read only)")
     args = parser.parse_args()
 
-    from scripts.tei.entity_matcher import build_lexicon, find_candidates
+    from scripts.entity.entity_matcher import build_lexicon, find_candidates
 
     legacy = args.legacy if args.legacy and args.legacy.exists() else None
     review = args.review if args.review.exists() else None

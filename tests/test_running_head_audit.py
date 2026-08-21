@@ -1,4 +1,4 @@
-"""Tests for the deterministic running-head detector (scripts.eval.running_head_audit).
+"""Tests for the deterministic running-head detector (scripts.entity.running_head_audit).
 
 The detector is a measurement instrument: it locates the page-furniture zones at page
 starts so a later suppression step can decide about them. These tests pin the detection
@@ -12,7 +12,7 @@ import json
 
 import pytest
 
-from scripts.eval.running_head_audit import (
+from scripts.entity.running_head_audit import (
     CONTAINS_LENGTH_FACTOR,
     MAX_HEAD_CHARS,
     MAX_HEAD_SEGMENTS,

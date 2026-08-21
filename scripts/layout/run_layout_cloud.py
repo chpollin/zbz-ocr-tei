@@ -22,7 +22,7 @@ import time
 import requests
 
 from scripts.config import DOCLING_SERVE_URL, DOCLING_TO_ZBZ, IMAGES_DIR, LAYOUT_DIR
-from scripts.layout import to_pixel_pct
+from scripts.layout.overlay import to_pixel_pct
 from scripts.utils import discover_doc_ids, extract_page_num
 
 

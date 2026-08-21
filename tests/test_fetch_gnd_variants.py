@@ -1,11 +1,11 @@
-"""Tests for the lobid-GND cache builder (scripts.tei.fetch_gnd_variants).
+"""Tests for the lobid-GND cache builder (scripts.entity.fetch_gnd_variants).
 
 Parser logic only: the fixtures stand in for lobid responses, no network is touched.
 """
 
 import json
 
-from scripts.tei.fetch_gnd_variants import (
+from scripts.entity.fetch_gnd_variants import (
     SOURCE_PATTERN,
     build_payload,
     collect_gnd_ids,

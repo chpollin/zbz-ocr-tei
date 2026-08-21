@@ -12,11 +12,11 @@ import re
 from xml.sax.saxutils import escape as xml_escape
 
 from scripts.core.loaders import load_layout_gemini, load_ocr_text
+from scripts.core.tei_xml_utils import normalize_for_tei, reading_order_permutation
 from scripts.tei.tei_generator import (
     md_to_tei_inline,
     split_paragraphs,
 )
-from scripts.tei.tei_xml_utils import normalize_for_tei, reading_order_permutation
 
 # Speaker-Erkennung: "Name:" am Zeilenanfang (Interview/Debate)
 SPEAKER_PATTERN = re.compile(r'^([A-Z][a-zA-Z\u00e9\u00e8\u00ea\u00e0\u00e2\u00fc\u00f6\u00e4\s.\-]+?):\s*')

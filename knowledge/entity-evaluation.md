@@ -46,7 +46,7 @@ the span covers the mention as the spec defines it.
 
 ### 1. Draw
 
-The instrument `scripts/eval/entity_eval_sample.py` draws two reproducible samples
+The instrument `scripts/entity/entity_eval_sample.py` draws two reproducible samples
 (fixed seed 42, stratified, every draw documented in the output):
 
 - Precision sample: 300 tier-1 marks out of the corpus scan, stratified by category
@@ -153,7 +153,7 @@ been adjudicated, so every measured figure in this document still belongs to the
 2026-08-12 snapshot.
 
 The verdict store `data/entities/mention_verdicts.json` is the durable sink of these
-judgments. `scripts/eval/build_mention_verdicts.py` folds the loose case and verdict
+judgments. `scripts/entity/build_mention_verdicts.py` folds the loose case and verdict
 files into one lookup keyed by (doc, page, surface, gid, occurrence), carrying the
 verdict, its reason, the second judgment where one exists, and a sha256 fingerprint of
 the delivered TEI the judgment was made on. A later text change moves the fingerprint
@@ -162,7 +162,7 @@ and keeps the rest. The store is described as the persistence layer of the archi
 in [entity-integration.md](entity-integration.md).
 
 The even draw of the precision sample has a risk-ordered complement. The ranking
-`scripts/eval/entity_risk_ranking.py` scores every tier-1 mark of the scan by
+`scripts/entity/entity_risk_ranking.py` scores every tier-1 mark of the scan by
 deterministic features and sorts the corpus into strata under
 `output/audits/fp_hunt/risk_ranking.json`, so a hunting wave spends its adjudication
 where a false positive is most likely; its protocol is versioned as
@@ -176,7 +176,7 @@ names in bylines and picture captions are marked. This settles the page-apparatu
 question the executed run left open and makes a second, convention reading of precision
 computable, precision over the marks the convention keeps in scope. The deterministic
 running-head suppression is in place since 2026-08-13 (E108), and the reading is
-computed by `scripts/eval/running_head_audit.py` into
+computed by `scripts/entity/running_head_audit.py` into
 `output/audits/running_head_audit.json` (block `convention_precision`): marks inside a
 detected head zone leave numerator and denominator, `undecidable` verdicts stay
 excluded exactly as in the protocol reading, and the interval is a seeded percentile

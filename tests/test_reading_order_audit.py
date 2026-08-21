@@ -1,12 +1,12 @@
 """Tests fuer das Lesereihenfolge-Audit (scripts/eval/reading_order_audit) und die
 Schwellwert-Override-Parameter von reading_order_permutation."""
 
-from scripts.eval.reading_order_audit import audit_document, classify_page
-from scripts.tei.tei_xml_utils import (
+from scripts.core.tei_xml_utils import (
     COLUMN_GAP_PCT,
     WIDE_REGION_W_PCT,
     reading_order_permutation,
 )
+from scripts.eval.reading_order_audit import audit_document, classify_page
 
 
 def bb(x, y, w, h=8.0):

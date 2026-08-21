@@ -17,8 +17,8 @@ Output (default output/audits/eval_sample/):
   sample_manifest.json  seed, source files with timestamps and counters, strata tables
 
 Usage:
-    python -m scripts.eval.entity_eval_sample
-    python -m scripts.eval.entity_eval_sample --precision-n 100 --recall-pages 20
+    python -m scripts.entity.entity_eval_sample
+    python -m scripts.entity.entity_eval_sample --precision-n 100 --recall-pages 20
 """
 
 from __future__ import annotations
@@ -31,15 +31,15 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from scripts.config import PROJECT_ROOT, TEI_FINAL_DIR
+from scripts.entity.entity_matcher import _base_rule
 
 # Page assignment uses the pb rule of the per-page mirror (page = sequential <pb>
 # position); a second implementation would place cases next to the wrong facsimile.
-from scripts.edition.generate_entity_preview_data import (
+from scripts.entity.generate_entity_preview_data import (
     page_of as page_of_offset,
     pb_offsets as page_starts,
 )
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
-from scripts.tei.entity_matcher import _base_rule
 
 SCAN_PATH = AUDIT_OUTPUT_DIR / "entity_corpus_scan.json"
 CATALOG_PATH = PROJECT_ROOT / "docs" / "data" / "catalog.json"
@@ -51,7 +51,7 @@ DEFAULT_RECALL_PAGES = 40
 PRECISION_MIN_PER_CELL = 3
 RECALL_MIN_PER_CELL = 1
 
-GENERATOR = "scripts/eval/entity_eval_sample.py"
+GENERATOR = "scripts/entity/entity_eval_sample.py"
 CASE_FIELDS = ("doc", "surface", "start", "end", "gid", "category", "rule",
                "matched_form", "form_source", "context")
 

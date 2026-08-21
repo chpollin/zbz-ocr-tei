@@ -1,4 +1,4 @@
-"""Tests for the evaluation sampler (scripts/eval/entity_eval_sample).
+"""Tests for the evaluation sampler (scripts/entity/entity_eval_sample).
 
 The sampler draws the two reproducible samples of the entity evaluation workflow
 (knowledge/entity-evaluation.md, section "1. Draw"): 300 tier-1 marks stratified by
@@ -16,7 +16,7 @@ import json
 
 import pytest
 
-from scripts.eval.entity_eval_sample import (
+from scripts.entity.entity_eval_sample import (
     PRECISION_MIN_PER_CELL,
     RECALL_MIN_PER_CELL,
     allocate,

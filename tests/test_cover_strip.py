@@ -103,7 +103,7 @@ def _visible(fragment):
 
 def _page_texts(raw):
     """Sichtbarer Text je <pb>-Seite (1-basiert), aus dem <body>-Inhalt."""
-    from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
+    from scripts.core.pb_split import BODY_INNER_RE, iter_page_spans
 
     inner = BODY_INNER_RE.search(raw).group(1)
     return {s.page: _visible(inner[s.content_start:s.content_end])

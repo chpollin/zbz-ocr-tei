@@ -42,9 +42,9 @@ from collections import Counter
 
 from scripts.config import LAYOUT_DIR, OUTPUT_DIR, TEI_FINAL_DIR
 from scripts.core.loaders import load_layout_gemini
+from scripts.core.pb_split import BODY_INNER_RE, iter_page_spans
 from scripts.eval.pb_number_audit import classify_document, read_layout_page_numbers
 from scripts.tei.marker_common import backup_and_write, iter_final_files
-from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
 from scripts.tei.tei_step1 import detect_page_number, interpolate_document_pb
 
 BACKUP_DIR = OUTPUT_DIR / "_backup_pre_pb_folio"
