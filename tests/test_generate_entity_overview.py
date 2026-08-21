@@ -4,8 +4,9 @@ Synthetic candidate fixtures for the aggregation contract: class assignment per 
 string, the per-entity completeness aggregation including zero-mention list entries and
 their alternative-bearer count, per-document counts, deterministic ordering,
 closed-world failure on an unknown gid, and byte-identical serialization. The quality
-block is pinned twice, once synthetically for the formula and once against the committed
-verdict store, so the published snapshot figures cannot drift silently.
+block is pinned synthetically for the formula and then against the committed verdict
+store, once per wave that store holds, so the published figures of neither wave can
+drift silently.
 """
 
 from __future__ import annotations
@@ -15,6 +16,7 @@ import json
 import pytest
 
 from scripts.config import DATA_DIR
+from scripts.entity.build_mention_verdicts import record_snapshot
 from scripts.entity.generate_entity_overview import (
     CLASSES,
     build_overview,
@@ -28,15 +30,30 @@ from scripts.entity.generate_entity_overview import (
 VERDICTS_PATH = DATA_DIR / "entities" / "mention_verdicts.json"
 
 
+def _store() -> dict:
+    return json.loads(VERDICTS_PATH.read_text(encoding="utf-8"))
+
+
+def _wave_slice(store: dict, snapshot: str) -> dict:
+    """The store restricted to one wave, shaped the way quality_block reads a store."""
+    return {
+        "snapshot": snapshot,
+        "marks": [m for m in store["marks"] if record_snapshot(m) == snapshot],
+        "recall_mentions": [m for m in store["recall_mentions"]
+                            if record_snapshot(m) == snapshot],
+    }
+
+
 def _cand(doc, gid, tier, rule, category="person", page=1, alternatives=None):
     return {"doc": doc, "gid": gid, "tier": tier, "rule": rule,
             "category": category, "page": page,
             "alternatives": list(alternatives or [])}
 
 
-def _mark(verdict, iaa=None, agrees=None, case="p001"):
+def _mark(verdict, iaa=None, agrees=None, case="p001", wave=None):
     mark = {"doc": "20", "page": 1, "surface": "Jaspers", "gid": "g1",
-            "verdict": verdict, "source": {"case_id": case}}
+            "verdict": verdict, "source": {"case_id": case, "wave": wave} if wave
+            else {"case_id": case}}
     if iaa is not None:
         mark["iaa"] = {"verdict": iaa}
         mark["iaa_agrees"] = agrees
@@ -262,6 +279,47 @@ def test_quality_block_mirrors_the_distributions_and_the_protocol_reading():
     assert agreement["disagreements"][0]["second_verdict"] == "correct"
 
 
+def test_quality_block_reports_the_latest_wave_and_keeps_the_older_one_visible():
+    """Two waves in the store: the figures are the newest wave, the older stays listed."""
+    verdicts = {
+        "snapshot": "2026-08-21",
+        "marks": [_mark("correct", case="p001", wave="adjudication-2026-08-12"),
+                  _mark("wrong_entity", case="p002", wave="adjudication-2026-08-12"),
+                  _mark("correct", case="p001", wave="adjudication-2026-08-21"),
+                  _mark("correct", case="p002", wave="adjudication-2026-08-21"),
+                  _mark("undecidable", case="p003", wave="adjudication-2026-08-21")],
+        "recall_mentions": [
+            {"doc": "20", "page": 1, "status": "hit",
+             "source": {"wave": "recall-adjudication-2026-08-12"}},
+            {"doc": "20", "page": 2, "status": "missed", "cause": "rule_gap",
+             "source": {"wave": "recall-adjudication-2026-08-21"}},
+        ],
+    }
+    quality = quality_block(verdicts)
+    assert quality["snapshot"] == "2026-08-21"
+    assert quality["precision"]["n"] == 3
+    assert quality["precision"]["decidable"] == 2
+    assert quality["precision"]["rate"] == 1.0
+    assert quality["recall"]["mentions"] == 1
+    assert quality["recall"]["status"] == {"missed": 1}
+    assert [entry["snapshot"] for entry in quality["snapshots"]] == ["2026-08-12",
+                                                                     "2026-08-21"]
+    older = quality["snapshots"][0]
+    assert older == {"snapshot": "2026-08-12", "n": 2, "decidable": 2, "correct": 1,
+                     "rate": 0.5}
+    assert quality["snapshots"][1]["n"] == quality["precision"]["n"]
+
+
+def test_quality_block_treats_a_store_without_wave_names_as_one_wave():
+    """A store written before the wave field keeps reporting all of its marks."""
+    verdicts = {"snapshot": "2026-01-01", "marks": [_mark("correct")],
+                "recall_mentions": [{"doc": "20", "page": 1, "status": "hit"}]}
+    quality = quality_block(verdicts)
+    assert quality["precision"]["n"] == 1
+    assert quality["recall"]["mentions"] == 1
+    assert [entry["snapshot"] for entry in quality["snapshots"]] == ["2026-01-01"]
+
+
 def test_quality_block_without_decidable_marks_reports_no_rate():
     quality = quality_block({"marks": [_mark("undecidable")], "recall_mentions": []})
     assert quality["precision"]["rate"] is None
@@ -274,11 +332,42 @@ def test_quality_block_without_decidable_marks_reports_no_rate():
 def test_quality_block_reproduces_the_published_snapshot_figures():
     """The committed verdict store must keep yielding the published evaluation figures.
 
-    Interval procedure and values follow the executed evaluation
-    (knowledge/verification.md, appendix, output/audits/entity_eval_report.json).
+    The reported wave is the newest one; `snapshots` carries one entry per wave in the
+    store, so the earlier measurement stays pinned beside the current one. Interval
+    procedure and values follow the executed evaluation (knowledge/verification.md,
+    appendix, output/audits/entity_eval_report.json).
     """
-    quality = quality_block(json.loads(VERDICTS_PATH.read_text(encoding="utf-8")))
-    assert quality["snapshot"] == "2026-08-12"
+    quality = quality_block(_store())
+    assert quality["snapshot"] == "2026-08-21"
+    precision = quality["precision"]
+    assert precision["n"] == 300
+    assert precision["distribution"] == {"correct": 296, "not_in_source": 1,
+                                         "wrong_entity": 3}
+    assert precision["decidable"] == 300 and precision["correct"] == 296
+    assert precision["rate"] == 0.9867
+    assert precision["ci95"] == [0.9733, 0.9967]
+    assert quality["recall"]["mentions"] == 63
+    assert quality["recall"]["status"] == {"hit": 38, "missed": 3, "on_worklist": 22}
+    assert quality["agreement"] == {"n": 50, "agree": 50, "rate": 1.0,
+                                    "disagreements": []}
+    assert quality["snapshots"] == [
+        {"snapshot": "2026-08-12", "n": 300, "decidable": 293, "correct": 279,
+         "rate": 0.9522},
+        {"snapshot": "2026-08-21", "n": 300, "decidable": 300, "correct": 296,
+         "rate": 0.9867},
+    ]
+
+
+@pytest.mark.skipif(not VERDICTS_PATH.exists(), reason="verdict store not available")
+@pytest.mark.requires_mirror
+def test_quality_block_reproduces_the_published_figures_of_the_earlier_wave():
+    """Read on its own, the 2026-08-12 wave still yields its published figures.
+
+    Two waves are drawn over different candidate populations, so the block reports the
+    newest alone and the earlier interval, the recall statuses and the two known IAA
+    disagreements would otherwise stop being pinned anywhere.
+    """
+    quality = quality_block(_wave_slice(_store(), "2026-08-12"))
     precision = quality["precision"]
     assert precision["n"] == 300
     assert precision["distribution"] == {"correct": 279, "not_in_source": 5,

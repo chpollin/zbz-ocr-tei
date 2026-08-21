@@ -15,10 +15,13 @@ DIGEST = "a" * 64
 
 
 def _mark(verdict, start=10, end=16, doc="1", gid="g1", surface="Hersch",
-          text_sha256=DIGEST, page=1):
-    return {"doc": doc, "page": page, "gid": gid, "surface": surface,
+          text_sha256=DIGEST, page=1, wave=None):
+    mark = {"doc": doc, "page": page, "gid": gid, "surface": surface,
             "verdict": verdict, "start": start, "end": end,
             "text_sha256": text_sha256}
+    if wave:
+        mark["source"] = {"wave": wave, "case_id": "p001"}
+    return mark
 
 
 def _cand(tier, start=10, end=16, doc="1", gid="g1", surface="Hersch",
@@ -158,3 +161,44 @@ def test_guard_report_is_deterministic():
     a = vg.guard_report(_store(), _cands(), {"1": DIGEST})
     b = vg.guard_report(_store(), _cands(), {"1": DIGEST})
     assert json.dumps(a, sort_keys=True) == json.dumps(b, sort_keys=True)
+
+
+# --- several adjudication waves ---------------------------------------------------
+
+_WAVE_A = "adjudication-2026-08-12"
+_WAVE_B = "adjudication-2026-08-21"
+
+
+def _two_wave_store():
+    """One wave per judgment: the older one honored, the newer one violated."""
+    return {
+        "snapshot": "2026-08-21",
+        "marks": [_mark("correct", wave=_WAVE_A),
+                  _mark("wrong_entity", start=30, end=36, gid="g2", wave=_WAVE_B)],
+        "recall_mentions": [_recall("hit", surface="Hersch")],
+    }
+
+
+def test_every_wave_is_checked_and_counted_apart():
+    report = vg.guard_report(_two_wave_store(), _cands(), {"1": DIGEST})
+    assert report["summary"]["marks"] == {"kept_tier1": 1, "still_tier1": 1}
+    by_wave = report["summary"]["by_wave"]
+    assert list(by_wave) == sorted(by_wave)
+    assert by_wave[_WAVE_A] == {"records": 1, "classes": {"kept_tier1": 1},
+                                "violations": 0}
+    assert by_wave[_WAVE_B] == {"records": 1, "classes": {"still_tier1": 1},
+                                "violations": 1}
+    assert report["summary"]["violations"] == 1
+
+
+def test_a_violation_names_the_wave_it_comes_from():
+    report = vg.guard_report(_two_wave_store(), _cands(), {"1": DIGEST})
+    assert report["violations"][0]["wave"] == _WAVE_B
+    assert {m["wave"] for m in report["marks"]} == {_WAVE_A, _WAVE_B}
+
+
+def test_records_without_a_wave_are_still_checked():
+    """A store written before the wave field stays fully covered."""
+    report = vg.guard_report(_store(), _cands(), {"1": DIGEST})
+    assert sum(report["summary"]["marks"].values()) == 3
+    assert set(report["summary"]["by_wave"]) == {"unknown"}

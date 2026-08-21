@@ -29,6 +29,11 @@ decidable verdicts, with the seeded percentile interval of the executed evaluati
 Recall has no single defined rate there, so the status counts travel raw next to the
 coverage share the executed evaluation reports.
 
+The store holds one wave per evaluation, each drawn from its own frozen scan. The
+reported figures are the newest wave alone, because two draws over different candidate
+populations are no common sample; ``quality.snapshots`` lists the precision counts of
+every wave, so the earlier measurement stays readable next to the current one.
+
 Output docs/data/entity_overview.json is deterministic (no timestamp, fixed ordering,
 seeded bootstrap), so the git diff of the mirror shows the exact effect of a rule change.
 
@@ -45,6 +50,7 @@ import sys
 from collections import Counter, defaultdict
 
 from scripts.config import DATA_DIR, DOCS_DIR, OUTPUT_DIR
+from scripts.entity.build_mention_verdicts import record_snapshot
 from scripts.entity.entity_matcher import base_rule
 
 SCAN_PATH = OUTPUT_DIR / "audits" / "entity_corpus_scan.json"
@@ -253,16 +259,36 @@ def build_overview(candidates: list[dict], entries: dict[str, dict], *,
 # ---------------------------------------------------------------------------
 
 
+def _precision_counts(marks: list[dict]) -> dict:
+    """The bare precision reading of one wave, without the bootstrap interval."""
+    decidable = [m for m in marks if m.get("verdict") in DECIDABLE_VERDICTS]
+    correct = sum(1 for m in decidable if m["verdict"] == CORRECT_VERDICT)
+    return {"n": len(marks), "decidable": len(decidable), "correct": correct,
+            "rate": round(correct / len(decidable), 4) if decidable else None}
+
+
+def _by_snapshot(records: list[dict], latest: str) -> dict[str, list[dict]]:
+    """Records grouped by their wave; a record without one belongs to the latest wave."""
+    grouped: dict[str, list[dict]] = defaultdict(list)
+    for record in records:
+        grouped[record_snapshot(record, latest)].append(record)
+    return grouped
+
+
 def quality_block(verdicts: dict) -> dict:
     """Mirror of the facsimile-adjudicated sample (knowledge/verification.md).
 
     Precision follows the protocol reading, correct over the decidable verdicts, with
     `undecidable` outside numerator and denominator. Recall carries no defined single
     rate, so the three adjudicated statuses travel as counts beside the coverage share
-    (hit or on the worklist) the executed evaluation reports.
+    (hit or on the worklist) the executed evaluation reports. Every figure is the newest
+    wave alone; `snapshots` keeps the precision counts of the earlier waves visible.
     """
-    marks = verdicts.get("marks") or []
-    recall = verdicts.get("recall_mentions") or []
+    latest = verdicts.get("snapshot") or ""
+    marks_by_wave = _by_snapshot(verdicts.get("marks") or [], latest)
+    recall_by_wave = _by_snapshot(verdicts.get("recall_mentions") or [], latest)
+    marks = marks_by_wave.get(latest, [])
+    recall = recall_by_wave.get(latest, [])
     decidable = [m for m in marks if m.get("verdict") in DECIDABLE_VERDICTS]
     correct = sum(1 for m in decidable if m["verdict"] == CORRECT_VERDICT)
     judged = [m for m in marks if m.get("iaa")]
@@ -272,7 +298,9 @@ def quality_block(verdicts: dict) -> dict:
     return {
         "source": VERDICTS_LABEL,
         "method": "knowledge/verification.md",
-        "snapshot": verdicts.get("snapshot") or "",
+        "snapshot": latest,
+        "snapshots": [dict(snapshot=snapshot, **_precision_counts(marks_by_wave[snapshot]))
+                      for snapshot in sorted(marks_by_wave)],
         "precision": {
             "n": len(marks),
             "distribution": _plain(Counter(m.get("verdict") for m in marks)),

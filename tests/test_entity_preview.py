@@ -35,6 +35,7 @@ from scripts.entity.tei_entity_preview import (
     text_signature,
     validate_rng,
     verified_spans,
+    verifying_snapshots,
 )
 from tests.conftest import delivery_doc
 
@@ -518,15 +519,18 @@ _DIGEST = "a" * 64
 _OTHER_DIGEST = "b" * 64
 
 
-def _store(marks) -> dict:
-    return {"snapshot": "2026-08-12", "marks": marks, "recall_mentions": []}
+def _store(marks, snapshot="2026-08-12") -> dict:
+    return {"snapshot": snapshot, "marks": marks, "recall_mentions": []}
 
 
-def _store_mark(cand, doc="9999", verdict="correct", text_sha256=_DIGEST):
+def _store_mark(cand, doc="9999", verdict="correct", text_sha256=_DIGEST, wave=None):
     """Verdict-store record for a candidate, keyed as build_mention_verdicts keys it."""
-    return {"doc": doc, "page": 1, "gid": cand["gid"], "surface": cand["surface"],
+    mark = {"doc": doc, "page": 1, "gid": cand["gid"], "surface": cand["surface"],
             "verdict": verdict, "start": cand["start"], "end": cand["end"],
             "text_sha256": text_sha256}
+    if wave:
+        mark["source"] = {"wave": wave, "case_id": "p001"}
+    return mark
 
 
 def test_unverified_mark_is_medium_and_names_only_the_matcher():
@@ -682,6 +686,28 @@ def test_a_judgment_about_another_entity_does_not_verify_this_mark():
     assert verified_spans(_store([mark]), "9999", [cand], {"9999": _DIGEST}) == set()
 
 
+def test_a_correct_judgment_of_any_wave_verifies_its_mark():
+    """The store holds several waves; each of them lifts the certainty of its own marks."""
+    cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
+    for wave in ("adjudication-2026-08-12", "adjudication-2026-08-21"):
+        store = _store([_store_mark(cand, wave=wave)], snapshot="2026-08-21")
+        assert verified_spans(store, "9999", [cand], {"9999": _DIGEST}) == {
+            (cand["start"], cand["end"], "118557505")}
+
+
+def test_the_verifying_waves_are_the_ones_that_actually_judged_the_document():
+    cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
+    other = _cand(_VALID_DOC, "Universitaet Basel", "1010450-1",
+                  category="organisation", rule="org-token")
+    store = _store([_store_mark(cand, wave="adjudication-2026-08-12"),
+                    _store_mark(other, verdict="wrong_entity",
+                                wave="adjudication-2026-08-21")],
+                   snapshot="2026-08-21")
+    spans = verified_spans(store, "9999", [cand, other], {"9999": _DIGEST})
+    assert verifying_snapshots(store, "9999", spans) == ["2026-08-12"]
+    assert verifying_snapshots(store, "8888", spans) == []
+
+
 def test_a_judgment_about_another_document_does_not_verify_this_mark():
     cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
     store = _store([_store_mark(cand, doc="8888")])
@@ -710,6 +736,18 @@ def _preview_run(tmp_path, store=None, marks_verdict="correct"):
     report = run_preview(["9999"], fake_matcher, {}, src_dir=src, out_dir=out,
                          verdicts_path=verdicts)
     return report, (out / "9999_final.xml").read_text(encoding="utf-8")
+
+
+def test_run_preview_names_the_wave_that_verified_the_document(tmp_path):
+    """The store's newest label would misname a mark that an older wave verified."""
+    cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
+    digest = hashlib.sha256(_VALID_DOC.encode("utf-8")).hexdigest()
+    store = _store([_store_mark(cand, text_sha256=digest,
+                                wave="adjudication-2026-08-12")],
+                   snapshot="2026-08-21")
+    _, written = _preview_run(tmp_path, store=store)
+    assert "wave 2026-08-12" in written
+    assert "2026-08-21" not in written
 
 
 def test_run_preview_projects_the_verdict_store_into_the_marks(tmp_path):

@@ -1,13 +1,16 @@
 """Verdict guard: holds the adjudicated mention verdicts against the current scan.
 
-The facsimile adjudication of 2026-08-12 (knowledge/verification.md) left a store
-of mention-level judgments, data/entities/mention_verdicts.json. After any matcher or
-lexicon change this audit answers, per judgment, whether the current corpus scan still
-honors it: marks adjudicated correct must survive, marks adjudicated wrong must stay
-out of tier 1, and mentions the matcher was known to miss should have become hits.
-The store is the immutable oracle; the scan under output/audits/ is the state under
-test. Read-only with respect to both; the single output is
-output/audits/verdict_guard_report.json.
+The facsimile adjudication (knowledge/verification.md) left a store of mention-level
+judgments, data/entities/mention_verdicts.json. After any matcher or lexicon change this
+audit answers, per judgment, whether the current corpus scan still honors it: marks
+adjudicated correct must survive, marks adjudicated wrong must stay out of tier 1, and
+mentions the matcher was known to miss should have become hits. The store is the
+immutable oracle; the scan under output/audits/ is the state under test. Read-only with
+respect to both; the single output is output/audits/verdict_guard_report.json.
+
+Waves. The store holds the judgments of every adjudication wave, and every one of them
+binds: each record is classified regardless of the wave it comes from. Each record names
+its wave, and the summary counts the classes per wave next to the total.
 
 Comparability. Mark offsets index the delivered TEI of the snapshot. The guard
 recomputes each document's sha256 and compares spans only where the text is unchanged;
@@ -41,7 +44,7 @@ from collections import Counter
 from pathlib import Path
 
 from scripts.config import DATA_DIR, PROJECT_ROOT, TEI_FINAL_DIR
-from scripts.eval.audit_common import AUDIT_OUTPUT_DIR
+from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, text_digests
 from scripts.utils import read_json_strict
 
 VERDICTS_PATH = DATA_DIR / "entities" / "mention_verdicts.json"
@@ -58,15 +61,6 @@ def _repo_path(path: Path) -> str:
         return Path(path).resolve().relative_to(PROJECT_ROOT).as_posix()
     except ValueError:
         return Path(path).as_posix()
-
-
-def text_digests(docs, tei_dir: Path) -> dict[str, str | None]:
-    """doc -> sha256 of the delivered TEI bytes, None where the document is missing."""
-    digests: dict[str, str | None] = {}
-    for doc in sorted(set(docs)):
-        path = Path(tei_dir) / f"{doc}_final.xml"
-        digests[doc] = hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else None
-    return digests
 
 
 def _gid_matches(candidate: dict, gid: str) -> bool:
@@ -93,6 +87,11 @@ def _page_index(candidates) -> dict[tuple, list[dict]]:
     for c in candidates:
         index.setdefault((c["doc"], c["page"]), []).append(c)
     return index
+
+
+def _wave(record: dict) -> str:
+    """Adjudication wave of a stored record; a store written before the field has none."""
+    return (record.get("source") or {}).get("wave") or "unknown"
 
 
 def _current(candidate: dict | None) -> dict | None:
@@ -173,23 +172,25 @@ def guard_report(store: dict, candidates: list[dict],
     page_index = _page_index(candidates)
 
     marks_out = []
-    for mark in sorted(store["marks"], key=lambda m: (m["doc"], m["start"], m["gid"])):
+    for mark in sorted(store["marks"],
+                       key=lambda m: (m["doc"], m["start"], m["gid"], _wave(m))):
         cls, current = classify_mark(mark, span_index, doc_index, digests)
         marks_out.append({
             "doc": mark["doc"], "page": mark["page"], "gid": mark["gid"],
             "surface": mark["surface"], "verdict": mark["verdict"],
-            "start": mark["start"], "end": mark["end"],
+            "start": mark["start"], "end": mark["end"], "wave": _wave(mark),
             "class": cls, "current": current,
         })
 
     recall_out = []
     for mention in sorted(store["recall_mentions"],
-                          key=lambda m: (m["doc"], m["page"], m["surface"], m["gid"])):
+                          key=lambda m: (m["doc"], m["page"], m["surface"], m["gid"],
+                                         _wave(m))):
         cls, current = classify_recall(mention, page_index)
         recall_out.append({
             "doc": mention["doc"], "page": mention["page"], "gid": mention["gid"],
             "surface": mention["surface"], "status": mention["status"],
-            "class": cls, "current": current,
+            "wave": _wave(mention), "class": cls, "current": current,
         })
 
     violations = ([m for m in marks_out if m["class"] in MARK_VIOLATIONS]
@@ -198,12 +199,30 @@ def guard_report(store: dict, candidates: list[dict],
         "summary": {
             "marks": dict(sorted(Counter(m["class"] for m in marks_out).items())),
             "recall": dict(sorted(Counter(m["class"] for m in recall_out).items())),
+            "by_wave": wave_summary(marks_out, recall_out, violations),
             "violations": len(violations),
         },
         "marks": marks_out,
         "recall": recall_out,
         "violations": violations,
     }
+
+
+def wave_summary(marks_out: list[dict], recall_out: list[dict],
+                 violations: list[dict]) -> dict:
+    """Per-wave class counts, so an older adjudication stays readable next to a newer."""
+    per_wave: dict[str, dict] = {}
+    for record in (*marks_out, *recall_out):
+        entry = per_wave.setdefault(record["wave"],
+                                    {"records": 0, "classes": Counter(), "violations": 0})
+        entry["records"] += 1
+        entry["classes"][record["class"]] += 1
+    for record in violations:
+        per_wave[record["wave"]]["violations"] += 1
+    return {wave: {"records": entry["records"],
+                   "classes": dict(sorted(entry["classes"].items())),
+                   "violations": entry["violations"]}
+            for wave, entry in sorted(per_wave.items())}
 
 
 def main() -> int:
@@ -240,6 +259,10 @@ def main() -> int:
     for scope in ("marks", "recall"):
         parts = ", ".join(f"{k}={v}" for k, v in report["summary"][scope].items())
         print(f"OK {scope}: {parts}")
+    for wave, entry in report["summary"]["by_wave"].items():
+        parts = ", ".join(f"{k}={v}" for k, v in entry["classes"].items())
+        print(f"OK wave {wave}: {entry['records']} record(s), "
+              f"violations={entry['violations']} [{parts}]")
     for v in report["violations"]:
         where = f"doc {v['doc']} p{v['page']} '{v['surface']}' gid {v['gid']}"
         print(f"FEHLER {v['class']}: {where}", file=sys.stderr)

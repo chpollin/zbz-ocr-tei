@@ -46,6 +46,7 @@ from scripts.core.pb_split import page_of, pb_offsets
 from scripts.entity.entity_matcher import base_rule
 from scripts.eval.audit_common import AUDIT_OUTPUT_DIR, ascii_only, facsimile_path
 
+# Label of the fp-hunt ranking wave (PROTOCOL.md); the ranking reads no verdict store.
 SNAPSHOT = "2026-08-12"
 
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"

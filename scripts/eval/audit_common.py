@@ -8,6 +8,7 @@ small console/report helpers the entity and eval diagnoses repeat (ASCII folding
 Windows console, doc-id argument parsing, the facsimile path, deterministic count views).
 """
 import argparse
+import hashlib
 import json
 import xml.etree.ElementTree as ET
 from collections import Counter
@@ -62,6 +63,19 @@ def ascii_only(value) -> str:
 def parse_doc_ids(values: list[str]) -> list[str]:
     """Accept both comma-separated and space-separated document ids."""
     return [d.strip() for value in values for d in value.split(",") if d.strip()]
+
+
+def text_digests(docs, tei_dir) -> dict[str, str | None]:
+    """doc -> sha256 of the delivered TEI bytes, None where the document is missing.
+
+    A stored judgment binds the bytes it was made on, so every consumer of the verdict
+    store fingerprints the same way.
+    """
+    digests: dict[str, str | None] = {}
+    for doc in sorted(set(docs)):
+        path = Path(tei_dir) / f"{doc}_final.xml"
+        digests[doc] = hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else None
+    return digests
 
 
 def facsimile_path(doc_id: str, page: int) -> str:

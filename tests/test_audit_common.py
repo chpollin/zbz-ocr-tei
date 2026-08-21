@@ -17,6 +17,7 @@ from scripts.eval.audit_common import (
     iter_final_tei,
     parse_tei,
     resolve_tei_dir,
+    text_digests,
     write_audit_report,
 )
 
@@ -93,3 +94,20 @@ def test_resolve_tei_dir_rejects_unknown_flag(monkeypatch):
     monkeypatch.setattr("sys.argv", ["audit", "--unknown"])
     with pytest.raises(SystemExit):
         resolve_tei_dir("demo")
+
+
+def test_text_digests_fingerprints_the_bytes_and_reports_a_missing_document(tmp_path):
+    import hashlib
+
+    final = _final_dir(tmp_path)
+    digests = text_digests(["20", "110", "999"], final)
+    expected = hashlib.sha256((final / "20_final.xml").read_bytes()).hexdigest()
+    assert digests["20"] == expected
+    assert digests["110"] == expected
+    assert digests["999"] is None
+    assert list(digests) == ["110", "20", "999"]
+
+
+def test_text_digests_deduplicates_its_input(tmp_path):
+    final = _final_dir(tmp_path)
+    assert list(text_digests(["20", "20", "20"], final)) == ["20"]

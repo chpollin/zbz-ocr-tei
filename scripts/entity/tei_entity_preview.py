@@ -41,6 +41,9 @@ classification of ``scripts.entity.entity_verdict_guard``, so a document whose t
 since the adjudication (guard class ``text_changed``) falls back to unverified instead of
 claiming a verification its bytes no longer support.
 
+Every adjudication wave in the store verifies, and the ``respStmt`` of a document names
+the waves whose judgments actually carry its marks, not the newest label of the store.
+
 Deterministic, offline, no model call.
 
 Usage:
@@ -67,13 +70,13 @@ from scripts.config import DATA_DIR, OUTPUT_DIR, TEI_FINAL_DIR, TEI_NS, TEI_SCHE
 # The verification state is a projection of the adjudicated judgments, so the key
 # comparison lives in one place: the guard that gates them (E110). Same direction as
 # tei_reading_order_fix, which reuses the classifier of its own audit.
+from scripts.entity.build_mention_verdicts import record_snapshot
 from scripts.entity.entity_verdict_guard import (
     _doc_index,
     _span_index,
     classify_mark,
-    text_digests,
 )
-from scripts.eval.audit_common import parse_doc_ids, sorted_counts
+from scripts.eval.audit_common import parse_doc_ids, sorted_counts, text_digests
 
 ENTITY_PREVIEW_DIR = OUTPUT_DIR / "entity_preview"
 ENTITIES_PATH = DATA_DIR / "entities" / "all_entities.json"
@@ -217,6 +220,16 @@ def verified_spans(store: dict, doc_id: str, candidates: list[dict],
         if klass == "kept_tier1":
             verified.add((mark["start"], mark["end"], mark["gid"]))
     return verified
+
+
+def verifying_snapshots(store: dict, doc_id: str,
+                        spans: set[tuple[int, int, str]]) -> list[str]:
+    """Snapshot labels of the waves whose correct judgments carry this document's marks."""
+    latest = store.get("snapshot") or ""
+    labels = {record_snapshot(mark, latest) for mark in store.get("marks", ())
+              if mark["doc"] == doc_id and mark["verdict"] == "correct"
+              and (mark["start"], mark["end"], mark["gid"]) in spans}
+    return sorted(label for label in labels if label)
 
 
 def flag_verified(candidates: list[dict], spans: set[tuple[int, int, str]]) -> None:
@@ -400,10 +413,13 @@ def run_preview(doc_ids: list[str], find_candidates, lexicon: dict,
             continue
         xml_string = src.read_bytes().decode("utf-8")
         candidates = find_candidates(xml_string, lexicon)
+        doc_snapshot = snapshot
         if store:
-            flag_verified(candidates, verified_spans(store, doc_id, candidates, digests))
+            spans = verified_spans(store, doc_id, candidates, digests)
+            flag_verified(candidates, spans)
+            doc_snapshot = ", ".join(verifying_snapshots(store, doc_id, spans)) or snapshot
         res = preview_document(doc_id, xml_string, candidates, out_dir, relaxng,
-                               snapshot=snapshot)
+                               snapshot=doc_snapshot)
         results.append(res)
         verified = res["counts"]["by_certainty"].get("high", 0)
         print(f"  [{i}/{len(doc_ids)}] {doc_id}: wrapped {res['counts']['wrapped']}, "
