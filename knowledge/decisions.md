@@ -85,7 +85,7 @@ Consolidated register of all decisions and open questions. Cross-cutting, collec
 
 ---
 
-## Decided (E64-E121, detail)
+## Decided (E64-E122, detail)
 
 More recent decisions with full rationale as dedicated sections.
 
@@ -676,6 +676,18 @@ Verified on disk by two verifiers and the orchestrator: 2204 tests passed, 0 ski
 Latent findings recorded, not acted on: `tei_step3` Fix-D unwrap drops text standing directly inside `<epigraph>` before its first child (empirically inert on the corpus, guideline decision pending); `eval_report.py` lost a nested conditional whose two else branches were both empty, so a second CSS class for the middle CER band existed as intent only; `meta.bootstrap_method` in the generator still says BCa (operator decision, default is the percentile label); `reports/2026-08-12_viewer-ui-analyse.md` names the deleted 2026-08-12 paper in an inline code span and stays byte-unchanged by decision.
 
 Documents: [refactoring-plan.md](refactoring-plan.md), [journal.md](journal.md) session 97
+
+### E122 Refactoring wave 2: scripts layout, journal archive, frontend (2026-08-21)
+
+Occasion: after waves 0 and 1 the remaining structural items were the scripts layout (generic libraries under `tei/`, the entity layer over three folders), the journal's length, and the frontend findings of the audit (cache versions, chrome drift, 286 requests per catalog load, German strings in the English viewer, dropped mark provenance, missing keyboard paths, third-party resources, one viewer file with seven concerns).
+
+Decision and execution: WP4 moved `pb_split` and `tei_xml_utils` into `scripts/core/` and seventeen modules into the new package `scripts/entity/` (the fifteen entity modules plus `running_heads` and `running_head_audit`, because the matcher imports the running-head core), basenames kept by operator decision; `layout/__init__.py` lost its executable body to `layout/overlay.py` so package imports no longer load PIL; private cross-imports became public in their owning module; `ocr_pipeline --engine auto` resolves to gemini. The preview fingerprint digests module bytes including import lines, so every preview's `respStmt` now records the new digest without any rule change; accepted, previews are regenerable. The worklist provenance label in the mirror follows the new path (285 files, label line only). WP5 moved the full entries of sessions 69 to 96 byte-identically into `journal-archive.md`, left one compact line per session carrying decision ids and commit hashes, and raised the entry template to v0.3 (past tense, length cap, mandatory register reference, archiving rule); CLAUDE.md rule 1 follows. WP6 unified the asset versions, re-synced the page chrome and restored the Entities link, replaced the 285 manifest fetches of the catalog by one generated `manifest_index.json` with a fallback, loaded `core.js` on the entities page and promoted diacritic folding into `ZBZ.fold`, translated the viewer strings, rendered `@resp/@cert/@source` in the entity popover, added keyboard navigation to the menus, a native dialog, skip links and reduced-motion support, deleted five dead rules and two dead exports (two rules the audit called dead are live through string-built class names), split `viewer.js` into six `ZBZ.Viewer` modules with four `ZBZ.bus` events, vendored OpenSeadragon 5.0.1 and the three font families with their licenses (no third-party requests, data-protection section on the imprint). The bootstrap label of the statistics generator moved to percentile and `docs/data/cer_statistics.json` was regenerated with seed 42: every CER block identical, only `meta` and the proxy block changed, because the proxy cache the published file carried predated the 2026-07-07 stock corrections (verified on the pre-run backup); the corpus estimate on methode.html follows.
+
+Verified on disk: 2212 tests, ruff 0, all CLAUDE.md commands resolve, corpus scan and benchmark hashes identical, mirror regeneration leaves `docs/data` unchanged, 285/285 valid, every asset 200 under a local server, zero third-party hosts, headless Chrome without console errors on all pages and the interaction list. One regression of the module split found by the verifier and fixed before commit: the dialog cancel listener in `viewer.js` read a variable that had become private to `viewer-persist.js`; the listener now calls the exported `cancelFsaInfo`.
+
+Latent and deferred: `scripts/eval/cer_statistics.py` still computes and labels BCa in its own aggregation and defaults its output to the published path, so a run of that second generator would overwrite the file with BCa labels (WP7, single source); the viewer page carries no `aria-current`; `reports/2026-08-12_viewer-ui-analyse.md` cites pre-split viewer line numbers; the preview fingerprint stays path-dependent until the digest normalizes import lines.
+
+Documents: [refactoring-plan.md](refactoring-plan.md), [workflow.md](workflow.md), [journal.md](journal.md) session 97
 
 ## Open items
 

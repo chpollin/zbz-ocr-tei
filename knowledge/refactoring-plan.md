@@ -384,6 +384,11 @@ links resolve. Deleted: `scripts/tei/tei_reassemble_preview.py`, `tests/test_rea
 four reports (last carried by f6eba697). Moved: ecosystem synthesis and slide deck to
 `reports/`. WP1a, WP1b, WP2, WP3 closed.
 
+Wave 2 executed and verified on 2026-08-21 (E122): WP4 (seventeen modules into `scripts/entity/`,
+two into `scripts/core/`, basenames kept), WP5 (journal archive, template v0.3), WP6 (frontend,
+vendoring), bootstrap label percentile with regenerated statistics. 2212 tests, ruff 0, anchors
+identical, headless-browser check clean. WP4, WP5, WP6 closed.
+
 ## Homeless findings from the deleted 2026-07-07 verification report (operator decision)
 
 WP2 deleted `reports/2026-07-07_verifikation-berichtsfragen.md` after tracing every finding;

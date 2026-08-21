@@ -83,7 +83,9 @@ to 68 remain in that block as they are.
 
 **Status** Wave 0 committed in three commits (documentation, code, plan and register). Wave 1 ran in the same session (E121): four build agents (knowledge ownership in two halves, reports consolidation, code hygiene), two verifiers, three defects found by the document verifier and fixed before commit (a frontmatter date, two sentences in cer-methodology.md that claimed a completed label fix and misnamed the `bca_ci` caller). Result: one owner per duplicated fact, four reports deleted after securing their unique content, the ecosystem snapshot and the slide deck moved to reports/, `tei_reassemble_preview` deleted, ruff 0 under the unchanged configuration, 2204 tests passed with zero skips, all gates green. A test-quality audit ran in parallel and became package WP8 in the plan (generator end-to-end contract without Gemini, direct validator rule tests, blank-page rule, one-sided guards, conftest and a `requires_corpus` marker, catalog field contract). The bootstrap-label item is documented; the generator field `meta.bootstrap_method` stays BCa until the operator decides (default: percentile label).
 
-**Next steps** 1. Operator decisions 1 to 5 of the plan plus the five homeless findings. 2. Wave 2 (WP4 scripts layout, WP5 journal, WP6 frontend). 3. Wave 3 (WP7 shared helpers and tooling, WP8 tests).
+Wave 2 ran in the same session as well (E122): scripts layout (`scripts/core/`, `scripts/entity/`), journal archive with template v0.3, frontend (asset versions, manifest index, viewer split into six modules, vendored OpenSeadragon and fonts, popover provenance, keyboard menus, native dialog), bootstrap label percentile with regenerated statistics; one split regression found by the verifier and fixed before commit.
+
+**Next steps** 1. Wave 3 (WP7 shared helpers and tooling including the single-writer rule for the statistics file, WP8 tests). 2. The five homeless findings and the remaining operator items of the plan.
 
 ---
 
