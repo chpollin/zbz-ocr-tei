@@ -16,10 +16,12 @@ data/
 │   ├── reference_tei/           # Transkribus-made reference/gold TEI (.xml)        [gitignored]
 │   ├── transkribus_page_xml/    # Transkribus PAGE-XML exports, one folder per doc  [gitignored]
 │   ├── masterfile/              # Masterfile.xlsx (catalog + workflow steering)     [gitignored]
-│   └── guidelines/              # editorial guidelines (text + DTA link)            [tracked]
+│   ├── guidelines/              # editorial guidelines (text + DTA link)            [tracked]
+│   └── zbz-lieferung-2026-06-21/ # June delivery: guideline copy, ZBZ schema template, provenance record [tracked]
 │
 ├── schema/                      # zbz_hersch.rng (project-specific TEI schema)      [tracked]
 ├── curated_tei/                 # reserved for human-verified TEI (currently empty)  [tracked]
+├── entities/                    # curated entity list, GND variant cache, variant review, verdict store, marking policy [tracked]
 └── doc_metadata.json            # GENERATED Gemini classification (committed cache)  [tracked]
 ```
 

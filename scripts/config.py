@@ -94,8 +94,8 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL = "gemini-3.1-flash-lite-preview"
 GEMINI_DETECT_MODEL = GEMINI_MODEL  # gleich; bei Bedarf separat ueberschreiben
 
-# Gemini-OCR (Vision -> Text): stabiles Modell, opt-in via OCR-Engine "gemini".
-# Ausnahme-Pfad (z.B. wenn Azure/Mistral nicht verfuegbar) -- die normale OCR bleibt Mistral.
+# Gemini vision OCR model; engine "auto" resolves to it since the Mistral endpoint went away,
+# the Mistral path stays selectable as the reproducibility record of the delivered corpus.
 GEMINI_OCR_MODEL = "gemini-3.1-flash-lite"
 
 

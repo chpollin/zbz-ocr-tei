@@ -41,10 +41,12 @@ DTA schema and dropped (E102); the guidelines keep their own DTA reference, docu
 
 Four principles carry the whole mapping.
 
-1. Reading-text transcription true to the original, with index annotation.
-2. The project schema as the single format authority.
-3. Defined normalizations rather than diplomatic transcription.
-4. Transcription faithful to the source.
+1. The delivered text is a reading text that follows the printed original.
+2. Persons, organisations and works are annotated so the indexes can be built from the
+   text.
+3. Normalization stays inside the defined character rules; every other feature of the
+   source keeps its shape.
+4. The project schema is the single format authority.
 
 The binding entity convention is the inline GND model (E88), as the reference TEIs show
 it. A reference sits directly at the mention and is repeated at every repetition, with no
@@ -76,14 +78,16 @@ How often each phenomenon is attested in the reference corpus is recorded in
 ### Document structure
 
 ```xml
-<?xml version='1.0' encoding='UTF-8'?>
-<TEI xmlns='http://www.tei-c.org/ns/1.0' type="naegeli">
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
   <teiHeader><!-- from doc_metadata.json via build_tei_header; Alma metadata (MMSID) = ZBZ domain, O8 --></teiHeader>
   <text>
     <front><!-- optional: prefaces, dedications --></front>
     <body>
-      <pb facs="#f0001" n="1"/>  <!-- first pb BEFORE div n="1" -->
-      <div n="1"><!-- main structure --></div>
+      <div n="1">
+        <pb facs="#facs_1" n="1"/>  <!-- first pb is the first child of div n="1" -->
+        <!-- main structure -->
+      </div>
     </body>
     <back><!-- optional: translations, reprints --></back>
   </text>
@@ -101,21 +105,23 @@ How often each phenomenon is attested in the reference corpus is recorded in
 ### Page structure and page breaks
 
 ```xml
-<pb facs="#f0001" n="1"/>
-<pb facs="#f0002" n="2"/>
-<pb facs="#f0003" n="[3]"/>  <!-- page number not printed -->
+<pb facs="#facs_1" n="1"/>
+<pb facs="#facs_2" n="2"/>
+<pb facs="#facs_3" n="[3]"/>  <!-- page number not printed -->
 ```
 
 `@facs` references the digitized image, `@n` carries the page number. A page break stands
-at the start of its page, and the first page break comes before `<div n="1">`. Square
-brackets mark a number the page itself does not show, so the edition supplies it; the
-delivered stock is lifted to that form by the operator-gated correction `tei_pb_folio`,
-which brackets a derived printed folio and leaves the running scan number unbracketed
-where no folio can be derived safely.
+at the start of its page, so the first page break of a document is the first child of
+`<div n="1">`. Square brackets mark a number the page itself does not show, so the edition
+supplies it. The delivered stock is lifted to that form by the operator-gated correction
+`tei_pb_folio`, which brackets a derived printed folio and leaves the running scan number
+unbracketed where no folio can be derived safely.
 
-Line breaks are preserved at the data level and hidden in the frontend. Where the OCR text
-carries no line information, the generator injects `<lb>` at word boundaries around a
-fixed column width of sixty characters.
+Line breaks are preserved at the data level and hidden in the frontend. A paragraph that
+reaches document assembly without a single `<lb>` and whose text runs past one and a half
+column widths receives line breaks at word boundaries, computed against a fixed column
+width of sixty characters; a paragraph that already carries line information keeps it
+unchanged.
 
 ### Character normalization
 
@@ -127,16 +133,20 @@ two texts comparable at measurement time live in
 |---|---|---|---|
 | dashes and list dashes, ranges | en dash `–` | U+2013 | all horizontal strokes except hyphenation and compound hyphens |
 | hyphenation and compound hyphens | hyphen `‐` | U+2010 | word breaks, compounds |
-| quotation marks | `“`/`”` | U+201C / U+201D | typographic |
-| single quotation marks | `‘`/`’` | U+2018 / U+2019 | typographic |
-| apostrophes | `’` | U+2019 | `l'homme` |
+| double quotation marks, guillemets included | `"` | U+0022 | straight quote |
+| single quotation marks | `'` | U+0027 | straight quote |
+| apostrophe between letters | `’` | U+2019 | `l’homme` |
 | non-representable characters | `~` | U+007E | placeholder |
 
-Spaces before `:`, `;`, `?`, `!` and quotation marks are deleted. Enumerations written
-with dashes are normalized to `/` (Zuerich/Bern/Basel). Retained are `ß` (U+00DF),
-brackets as in the original, accents and ligatures. In the delivered stock the safe
-apostrophe class is corrected by `tei_char_normalize`, which reuses the regex of
-`char_lint_audit` so that measurement and correction cover exactly the same class.
+Spaces before `:`, `;`, `?`, `!` and quotation marks are deleted. In a French-language
+document the typographic convention keeps a narrow no-break space (U+202F) in those
+positions and before the closing guillemet, which `char_lint_audit` measures as a
+space-type finding instead of an extra character. Enumerations written with dashes are
+normalized to `/` (Zürich/Bern/Basel). Retained are `ß` (U+00DF), brackets as in the
+original, accents and ligatures. In the delivered stock the safe apostrophe class is
+corrected by `tei_char_normalize`, which reuses the regex of `char_lint_audit` so that
+measurement and correction cover exactly the same class; the guillemet class is measured
+and left in place, because only the apostrophe class was released for a stock run.
 
 ### Highlighting
 
@@ -180,10 +190,16 @@ figure marks its span with `<anchor xml:id="figN-start"/>` and `<anchor xml:id="
 ### Special document types
 
 - `<div type="review">` with `<bibl>` in the `<head>`
-- `<div type="interview">` with `<sp>` and `<speaker>` (E47 replaced `essay` by `text`)
+- `<div type="interview">` with `<sp>` and `<speaker>`
 - `<div type="conversation">` for panel discussions
-- `<div type="entry">` for encyclopedia entries, with `<div type="bibliography">` and `<listBibl>`
+- `<div type="entry">` for encyclopedia entries, with `<head type="lemma">`, a
+  `<div type="bibliography">` and `<listBibl>`
 - `<ab type="redactional" hand="xy">` for redactional texts that the corpus author did not write
+
+A text belonging to none of these genres carries the generic `<div type="text">`, the
+value E47 put in place of the earlier `essay`. The complete set of admitted values lives
+in `VALID_DIV_TYPES` ([scripts/config.py](../scripts/config.py)), which the validator
+rule R5 enforces.
 
 Paratexts use `<front>` with `editorial` and `dedication`, and `<back>` with
 `translation`, `reprint` and `otherEdition`. Citations in `<back>` follow MLA 9 and carry
@@ -200,11 +216,11 @@ The reading text leaves the following out of the transcription.
 | Running heads | |
 | Blurbs | |
 | Author attribution | the author line appears only in the header |
-| Initials | not annotated |
-| Multi-column layout | not reproduced as such |
+| Initials | left unannotated in the text |
+| Multi-column layout | the text runs on across a column break, and the `<p>` the zoning generates there is dropped |
 
-Library apparatus follows the same rule. E-Periodica cover sheets leave the delivered TEI
-altogether (operator decision 2026-08-12), through the operator-gated marker run
+Library apparatus is left out on the same ground. E-Periodica cover sheets leave the
+delivered TEI altogether (operator decision 2026-08-12), through the operator-gated marker run
 `tei_cover_strip`. It removes the page content and keeps the page break with
 `type="cover"`, so pagination, facsimile links, the completeness gate and the Transkribus
 round trip survive. Detection is deterministic and demands at least three of the four
@@ -216,22 +232,25 @@ in that class.
 
 The delivered corpus under `output/tei_final/` carries no entity markup today. The
 controlled entity layer writes read-only previews, and the stock run into the delivery is
-operator-gated (see [decisions.md](decisions.md), plan section). The rules below are the target model that the
-previews already realize.
+operator-gated (see [decisions.md](decisions.md), plan section). The rules below are the
+target model, which the previews realize for every rule that has a producer today.
 
 Detail rules of the inline model, settled against the reference corpus and by operator
 decision, hold as follows.
 
-- `bibl` wraps an existing `<hi rendition="#i">` and the italics stay inside.
+- `bibl` wraps an existing `<hi>` element whose whole content is the title, so the
+  emphasis stays inside the reference.
 - For works only the title is marked, in footnotes as well; the imprint stays outside the
   element. Title-only binding holds even where a reference wraps the wider citation span
   including imprint, and wider spans stay manual curation.
 - Footnote citations receive references. Only `bibl` inside `div type="bibliography"`
-  stays without one (conformity rule Z1).
+  stays without one, which the ZBZ guidelines set in their encyclopedia-entry section and
+  the matcher realizes by excluding that zone from the scan.
 - Nesting is permitted, so a `persName` with its own reference may stand inside a `bibl`;
   this validates against `zbz_hersch.rng`.
 - Existing entity elements without `@ref` are enriched with the attribute in place, only
-  where the tier rules verify the assignment.
+  where the tier rules verify the assignment. This rule waits for its producer, since the
+  matcher treats an existing `persName` or `orgName` as an excluded zone.
 - Particles stay outside the element and the whole inflected word goes inside; an element
   boundary never splits a word. Genitive endings belong to the surface, a trailing
   apostrophe does not.
@@ -248,20 +267,22 @@ decision, hold as follows.
 
 Every mark carries its provenance and its verification state, and three things stay
 separate (E118). Provenance says who asserted the mark and sits in `@resp` as a pointer to
-a `respStmt` of the preview header. Two responsibilities exist. `resp-entity-matcher` is
-the deterministic closed-world matcher, named together with a digest over the rule-bearing
-modules, so the rule state behind a mark is identifiable rather than merely dated.
+a `respStmt` that the preview run declares in the `titleStmt` of the header. Two
+responsibilities exist. `resp-entity-matcher` is the deterministic closed-world matcher,
+named together with a digest over the rule-bearing modules, so the rule state behind a
+mark is identifiable rather than merely dated.
 `resp-entity-adjudication` is the facsimile adjudication of the evaluation wave, named
 with the wave's snapshot. A document declares only the responsibilities its own marks
 point to, and nothing is declared for a model judge, because no producer writes such
 marks.
 
 Verification state sits in `@cert` and takes only the tokens the schema names, `high`,
-`medium`, `low` and `unknown`. An adjudicated-correct mark is `high`, a plain matcher
-assertion is `medium`, and a mark whose adjudicated judgment reads wrong is never written;
-the verdict guard reports such a mark as a violation. The tokens `low` and `unknown` stay
-unassigned until a producer needs them. Measured reliability stays a property of the rule
-class and comes from the adjudicated sample next to its sample size
+`medium`, `low` and `unknown`. An adjudicated-correct mark is `high` and a plain matcher
+assertion is `medium`. A mark the adjudication judged a wrong entity or absent from the
+source has to leave tier one, and the verdict guard reports it as a violation for as long
+as it stands there. The tokens `low` and `unknown` stay unassigned until a producer needs
+them. Measured reliability stays a property of the rule class and comes from the
+adjudicated sample next to its sample size
 ([verification.md](verification.md)). A model-produced confidence number never enters the
 data; the schema would accept a numeric `@cert`, so this ban is a project rule rather than
 a format constraint.
@@ -289,8 +310,9 @@ answer that none of them fits (E62).
    document anchor.
 2. Tier two, judge. Ambiguous hits such as bare surnames without anchor or colliding with
    common words, single-word titles, candidates inside plain `bibl`, and markup-crossing
-   hits. A calibrated model chooses between the deterministic candidates, and verdicts are
-   persisted and sampled by humans.
+   hits. A calibrated model is to choose among the deterministic candidates, with its
+   verdicts persisted and sampled by humans; that judge stage is milestone M5 and carries
+   no calibration run yet ([decisions.md](decisions.md), plan section).
 3. Tier three, worklist. What no rule can find, such as allusions and badly recognized
    names, goes to human curation.
 
@@ -334,17 +356,20 @@ which never enters the lexicon because it would fire on every date while naming 
 Which surnames and generic titles the matcher may mark at all is an operator decision in
 `data/entities/marking_policy.json` (E119), kept apart from the curated list because that
 list is an external export and may be replaced wholesale. Named surnames are released from
-the anchor requirement for exactly the keys their entry names, so nothing derived from a
-released key inherits the release, and every demotion suffix keeps its effect. Generic
-titles either leave the marking scope or are bound to typographic corroboration. The policy
-is a trust boundary, validated on load, and a key absent from the entity list is an error
-rather than a silent skip.
+the anchor requirement for exactly the keys their entry names, under the rule id
+`anchor-free-surname`; a released hit anchors nothing itself and every demotion suffix
+keeps its effect. Generic titles either leave the marking scope or are bound to
+typographic corroboration. A surname the operator weighed and did not release stays in
+`held_out_surnames`, which records the decision without changing what the matcher does.
+The policy is a trust boundary, validated on load, and a key absent from the entity list
+is an error rather than a silent skip.
 
 Page apparatus follows the operator convention of 2026-08-12. Running heads stay outside
 the marking scope, because such a line repeats the document or section title as page
-furniture instead of naming an entity in the text. Title pages, organisation names in
-bylines and picture captions carry marks, because they state provenance with research
-value. The suppression is deterministic and active in the matcher (E108). The shared
+furniture instead of naming an entity in the text. Title pages and organisation names in
+bylines carry marks, because they state provenance with research value; picture captions
+are in scope by the same convention, and their candidates reach the worklist while O27 is
+open. The suppression is deterministic and active in the matcher (E108). The shared
 detection core `scripts/entity/running_heads.py` locates the recurring page-head zones, and
 every candidate inside one is demoted to the worklist with the `:running-head` suffix, so
 nothing in a head zone auto-marks while the mark stays visible for curation. A demoted full
@@ -417,7 +442,7 @@ Element inventory of the delivered TEI.
 | `<space>` | `dim` | spacing |
 | `<list>`, `<item>`, `<table>`, `<row>`, `<cell>` | | lists and tables |
 | `<figure>` | `xml:id` | figure |
-| `<graphic>` | `xml:id`, `url` | image reference |
+| `<graphic>` | `url`, `facs` | image reference |
 | `<choice>`, `<sic>`, `<corr>` | | printing errors |
 | `<sp>`, `<speaker>` | `type` | speech act |
 | `<listBibl>` | | bibliography |
@@ -443,21 +468,23 @@ The delivered header follows the delivery contract that E68 and E69 fixed, and
 `build_tei_header` ([tei_step3.py](../scripts/tei/tei_step3.py)) produces it congruently,
 so a regeneration cannot regress an already delivered header. The contract demands
 `<idno type="docID">` in the `publicationStmt`, a `<biblStruct type="{pub_form}">` in the
-`sourceDesc` carrying `<analytic>` with title and author plus `<monogr>` with `<imprint>`
-and `<date>`, and a `<profileDesc>/<langUsage>` with one `<language ident="...">` per
-language code. The requirement itself is owned by [specification.md](specification.md)
-(R-SCHEMA, R-TEI); the test gates that hold it are described in [verification.md](verification.md), quality assurance section.
-`build_tei_header` never emits `<revisionDesc>`; the status marker projects it afterwards.
+`sourceDesc` carrying `<analytic>` with title and author plus `<monogr>` with an
+`<imprint>` that holds the `<date>` where the metadata knows one, and a
+`<profileDesc>/<langUsage>` with one `<language ident="...">` per language code. The
+requirement itself is owned by [specification.md](specification.md) (R-SCHEMA, R-TEI); the
+test gates that hold it are described in [verification.md](verification.md), quality
+assurance section. `build_tei_header` never emits `<revisionDesc>`; the status marker
+projects it afterwards.
 
 Catalogue metadata from Alma, in particular the MMSID, stays outside the pipeline header
-and remains ZBZ domain (O13 in [decisions.md](decisions.md), plan section).
+and remains ZBZ domain (O8 in [decisions.md](decisions.md), plan section).
 
 The RelaxNG declarations that govern the entity attributes were read off
 `data/schema/zbz_hersch.rng` directly.
 
 - `persName` declares `@ref` inline with the pattern `GND:[0-9A-Za-z\-]+` (lines
-  5837 to 5844).
-- `orgName` declares the same inline pattern on `@ref` (lines 5812 to 5819).
+  5836 to 5843).
+- `orgName` declares the same inline pattern on `@ref` (lines 5811 to 5818).
 - `bibl` carries the GND pattern on `@corresp` (lines 3753 to 3760) and inherits an
   unconstrained `@ref` through `tei_att.canonical.attributes` (line 3747), which resolves
   to a list of `anyURI` values matching `\S+` (lines 130 to 141).
@@ -466,7 +493,8 @@ The RelaxNG declarations that govern the entity attributes were read off
 
 Tightening therefore means narrowing the inherited `@ref` on `bibl` the way `persName` and
 `orgName` already do, or removing `att.canonical` from `bibl`, with `rs` following through
-`att.naming`. That schema hardening is open and belongs to [decisions.md](decisions.md), plan section.
+`att.naming`. That schema hardening is open and belongs to
+[decisions.md](decisions.md), plan section.
 
 ## Unresolved phenomena
 
@@ -475,9 +503,11 @@ them unmarked, the guideline gives no direction, and the tool decides them incon
 so a suspicion signal parks them on the worklist until the library decides.
 
 Image captions are unresolved at the guideline level, because the ZBZ guideline
-contradicts itself (O27). The operator convention of 2026-08-12 puts captions in scope,
-while the matcher still skips figure contexts and reports caption candidates separately, so
-the figure zone widens only once ZBZ confirms the reading. Both items are tracked in
+contradicts itself (O27), banning entities in captions in its index section while its own
+figure example carries an `orgName` in one. The operator convention of 2026-08-12 puts
+captions in scope, while the matcher scans a figure zone and demotes every candidate
+inside it to the worklist with the `:in-figure` suffix, so a caption mention stays a
+proposal until ZBZ confirms the reading. Both items are tracked in
 [decisions.md](decisions.md), plan section.
 
 ## Conventions for the whole project

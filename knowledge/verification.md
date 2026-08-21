@@ -28,10 +28,10 @@ This document carries two functions that answer to the same standard of evidence
 automated test suite checks system behaviour against the specification, and verification
 checks whether the empirical claims the project carries outward are covered by the raw data.
 The verification part holds each such claim, the evidence behind it, the procedure that
-produced that evidence, and what remains open. Lesson L13 of
-[journal.md](journal.md) fixes the standard it works to. A figure written into prose, "285/285 valid" being the
-original case, is no evidence, so every claim named here is bound to a regenerable artifact
-or to an automated gate.
+produced that evidence, and what remains open. Lesson L13 of [journal.md](journal.md)
+fixes the standard that part works to. A figure written into prose, "285/285 valid" being
+the original case, is no evidence, so every claim named here is bound to a regenerable
+artifact or to an automated gate.
 
 ## Quality assurance (test suite)
 
@@ -78,8 +78,9 @@ by a test and fail the build when they break.
 - The delivery contract of the produced `teiHeader`, meaning `idno` of type docID, `biblStruct` with analytic, monogr and imprint, and `langUsage` (`tests/test_tei_header.py`).
 - The ZBZ conformity rules over the delivered corpus and the generator fixes behind them (`tests/test_zbz_conformity.py`, `tests/test_tei_conformance.py`).
 - The project rules of the validator, errors R1 to R7 and warnings W1 to W7 and W11 to W18, each with one firing fixture and one silent counter-fixture that carries the same construct in correct form; W19 is covered through `tests/test_tei_validator.py` (`tests/test_tei_validator_rules.py`).
-- Corpus invariants, the delivered distribution and the completeness gate over the funnel from Masterfile to delivered PDF (`tests/test_corpus_audit.py`, `tests/test_completeness_check.py`).
-- Determinism of the CER statistics, the bootstrap and paired-difference machinery, HCPR, and the extraction and normalization rules indexed to the catalog of [methodology.md](methodology.md), CER measurement section (`tests/test_cer_statistics.py`, `tests/test_cer_extraction.py`, `tests/test_guard_pins.py`).
+- Corpus invariants and the delivered distribution over the funnel from Masterfile to final TEI, together with the known completeness gap as an exact document list (`tests/test_corpus_audit.py`), and the page-count reconciliation rule that neutralizes split double pages and leading cover leaves (`tests/test_completeness_check.py`).
+- Determinism of the CER statistics, the bootstrap and paired-difference machinery, HCPR, and the extraction and normalization rules indexed to the catalog of [methodology.md](methodology.md), CER measurement section (`tests/test_cer_statistics.py`, `tests/test_cer_extraction.py`).
+- The deciding side of two thresholds that were pinned on one side only, the doubling of the two-sided bootstrap p-value and the number of field lines at which the entity matcher reads a first page as a library cover sheet (`tests/test_guard_pins.py`).
 - The step-1 scaffold plus assembly as an end-to-end contract without any API call, asserting `pb` numbering, region-to-paragraph mapping, facsimile zones and RelaxNG validity of the assembled document (`tests/test_step1_assembly.py`).
 - The step-2 repair path on malformed model output, including the guard that refuses an empty or whitespace-only answer instead of replacing the page scaffold with nothing (`tests/test_tei_step2_repair.py`).
 - The closed world of the entity layer, meaning every GND id that reaches the viewer through the generated mirror compared as a raw string against the curated list, so a formatting drift fails as loudly as an unknown id (`tests/test_entity_ref_invariant.py`).
@@ -91,10 +92,10 @@ by a test and fail the build when they break.
 
 ### Acceptance
 
-The gate table in [specification.md](specification.md) names which check answers which
-requirement, which owns that mapping. A change is acceptable when those gates
-pass and, where the change was meant to preserve behaviour, the anchor set named in the
-strategy section is unchanged.
+[specification.md](specification.md) owns the mapping from check to requirement, and its
+gate table names which check answers which requirement. A change is acceptable when those
+gates pass and, where the change was meant to preserve behaviour, the anchor set named in
+the strategy section is unchanged.
 
 Continuous integration runs the gates on every push and pull request.
 `.github/workflows/tests.yml` defines a single job on Ubuntu with Python 3.11, materializes
@@ -109,30 +110,31 @@ hook and CI report the same findings. Deployment and repository topology are in
 
 ### What is deliberately not checked
 
-The guarantee above has named borders. The following classes lie outside it, and a green
-suite says nothing about them.
+The guarantee above is bounded. The following classes lie outside it, and a green suite
+says nothing about them.
 
-Stamps, shelf marks and catalogue notes that land in running text have no check. No
-validator rule and no audit detects that class, so the schema plus W-rule layer is blind to
-it. Neighbouring classes do have deterministic instruments, E-Periodica cover sheets
-through `tei_cover_strip`, running heads through `running_head_audit` and the shared
-detection core, folio echoes through `pb_number_audit`, and the entity matcher excludes
-apparatus zones; none of these reaches library apparatus inside the body text.
+Stamps, shelf marks and catalogue notes that land in running text have no check, since no
+validator rule and no audit detects that class. Neighbouring classes do have deterministic
+instruments, E-Periodica cover sheets through `tei_cover_strip`, running heads through
+`running_head_audit` and the shared detection core, folio echoes through
+`pb_number_audit`, and the entity matcher excludes apparatus zones; none of these reaches
+library apparatus inside the body text.
 
-Two latent defects are recorded and not fixed, so no test asserts the correct behaviour.
-`serialize_tei_fragment` drops the namespace declaration of a foreign-namespace element and
-returns an unparsable fragment; no corpus impact is known. The catalog JavaScript carries a
-fourth status token `ausstehend` that exists in the UI layer alone and in no data model, so
-the status contract test pins the three data values and tolerates the fourth. Both are
-recorded in [decisions.md](decisions.md) E123.
+Two latent defects are recorded and left unfixed; in both cases the suite pins the state
+as it stands instead of the correct behaviour. `serialize_tei_fragment` drops the
+namespace declaration of a foreign-namespace element and returns an unparsable fragment,
+and no corpus impact is known. The catalog JavaScript carries a fourth status token
+`ausstehend` that exists in the UI layer alone and in no data model, so the status
+contract test pins the three data values and tolerates the fourth. Both are recorded in
+[decisions.md](decisions.md) E123.
 
 Behaviour under a missing corpus is checked only to the extent that the marked tests skip.
 Whether a script degrades usefully when `output/` is empty stays untested.
 
 Content of language-model output is asserted nowhere. Step 2, the layout QA and the OCR
 correction are non-deterministic, so the tests pin the repair path and the guards around
-the call instead of the answer. Run-to-run variation is a measurement
-question and belongs to the verification part below, which holds the stability pilot.
+the call instead of the answer. Run-to-run variation is a measurement question and belongs
+to the verification part below, which holds the stability pilot.
 
 Visual correctness of the viewer sits outside the suite. The frontend is covered by a
 headless browser check during a refactoring wave, which finds console errors, failed asset
@@ -188,10 +190,11 @@ the register entry instead of being absorbed silently.
 
 ### Known exceptions and limits
 
-Tests that need the delivered corpus or tracked repository data carry a `skipif` guard beside
-their marker, so a fresh clone reports skips rather than failures while the collection stays
-the same; the marker makes the class selectable with `-m`. The consequence
-is that the CI signal is systematically weaker than the local one, which is the reason the
+Tests that need the delivered corpus or tracked repository data carry a skip guard beside
+their marker, either a `skipif` on the test or a `pytest.skip` where the missing input only
+shows at call time, so a fresh clone reports skips rather than failures while the collection
+stays the same; the marker makes the class selectable with `-m`. The consequence is that
+the CI signal is systematically weaker than the local one, which is the reason the
 validator rules and the generator contract were rebuilt on synthetic fixtures.
 
 Verification runs name an allowlist of scripts, and anything that writes under
@@ -223,9 +226,9 @@ time, and the registration of the two markers.
 - tei, markers and stock corrections: `test_blank_marker.py`, `test_status_marker.py`, `test_char_normalize.py`, `test_pb_folio.py`, `test_body_note_demote.py`, `test_footnote_demote.py`, `test_footnote_marker_strip.py`, `test_cover_strip.py`, `test_reading_order_fix.py`.
 - layout: `test_page_xml_generator.py` and `test_mets_generator.py` cover the PAGE-XML and METS export as pure transforms.
 - eval, metrics and audits: `test_cer_statistics.py`, `test_cer_extraction.py`, `test_guard_pins.py`, `test_corpus_audit.py`, `test_completeness_check.py`, `test_stability_pilot.py`, plus the guideline-conformity audits `test_char_lint_audit.py`, `test_pb_number_audit.py`, `test_hi_preservation_audit.py`, `test_relation_integrity_audit.py`, `test_body_note_audit.py`, `test_blank_text_audit.py`, `test_reading_order_audit.py`.
-- edition, viewer data: `test_catalog_contract.py`, `test_manifest_index.py`, `test_workflow_status.py`, `test_facs_mapping.py`.
+- edition, viewer data: `test_catalog_contract.py`, `test_manifest_index.py`, `test_workflow_status.py`, `test_facs_mapping.py`, and `test_export_web_images.py` for the JPEG web mirror of the page images.
 - entity: the matcher and its rules in `test_entity_matcher.py`, `test_entity_regressions.py`, `test_running_heads.py`, `test_running_head_audit.py`; the intake and cache side in `test_entity_lint.py`, `test_fetch_gnd_variants.py`, `test_variant_review.py`; the preview and mirror generators in `test_entity_preview.py`, `test_generate_entity_preview_data.py`, `test_generate_entity_overview.py`, `test_entity_stream.py`; the corpus instruments in `test_entity_corpus_scan.py`, `test_entity_corpus_digest.py`, `test_entity_unlisted_scan.py`, `test_entity_risk_ranking.py`; the measurement and gate side in `test_entity_eval_sample.py`, `test_entity_gold_benchmark.py`, `test_entity_ref_invariant.py`, `test_mention_verdicts.py`, `test_entity_verdict_guard.py`.
-- repository health: `test_scripts_health.py` compiles every module under `scripts/` and resolves its internal imports.
+- repository health: `test_scripts_health.py` compiles every module under `scripts/` and resolves its internal imports; `test_knowledge_frontmatter.py` pins the ten documents of this knowledge base, their frontmatter contract, the equal schema version, resolvable links and the absence of horizontal rules.
 
 The OCR scripts under `scripts/ocr/` have no dedicated test module. The text layer they
 produce enters the suite through the loaders and through the step-1 contract, which reads
@@ -234,8 +237,8 @@ OCR markdown from a synthetic fixture directory; the API adapters themselves sta
 ### Current state
 
 Snapshot of 2026-08-21. The suite passes with no skips, ruff reports no finding, and the
-clone-safe subset covers the validator rules and the generator contract. The two counting
-commands above produce the current sizes.
+clone-safe subset covers the validator rules and the generator contract. The two commands
+below produce the current sizes.
 
 ```bash
 python -m pytest --collect-only -q
@@ -301,8 +304,8 @@ carries its date and the file that regenerates it.
 
 ## Verdict vocabulary
 
-The entity adjudication uses a five-value ballot, one value per drawn mark, as the binding
-protocol the adjudication protocol in the appendix defines it:
+The entity adjudication uses a five-value ballot, one value per drawn mark, in the wording
+the adjudication protocol of the appendix makes binding:
 
 - `correct`: the surface is on the page, refers to exactly the linked entity, and the span
   covers the mention
@@ -354,8 +357,8 @@ paths return the same number for the same document.
 
 An independent counter-check of 2026-07-03 recomputed everything without importing repo
 code, with extraction re-implemented from the specification, a second distance engine, its
-own aggregation, four secondary metrics and facsimile spot checks. The record is
-the counter-check in the appendix, the provenance E91.
+own aggregation, four secondary metrics and facsimile spot checks. Its record is the
+counter-check in the appendix, and the register entry behind it is E91.
 
 Every stock repair that moves the number is verified against evidence before it is applied
 and re-measured afterwards. The footnote demotion accepted a block only where a contiguous
@@ -367,14 +370,15 @@ The stability pilot measures run-to-run variance of the refinement stage in isol
 directories, without touching the production caches or the delivered TEI (E100). Its result
 is the `stability` block of `docs/data/cer_statistics.json`.
 
-The interval method behind every published aggregate is the document-level block percentile
-bootstrap, seed 42, B = 10,000, resampling documents with replacement and reading the 2.5th
-and 97.5th percentile; each aggregate names it in its own `ci_method` field. The paired
-comparison against OCR-only runs on per-document differences of the fidelity CER and reports
-a percentile interval with a two-sided bootstrap p-value. No BCa interval is computed for
-any published value. The statistics library carries a BCa implementation that the publishing
-generator never calls; the label in the published JSON was aligned to percentile in E122, and
-the remaining library question is a register and planning item.
+The interval method behind every published aggregate is the document-level block
+percentile bootstrap, seed 42, B = 10,000, resampling documents with replacement and
+reading the 2.5th and 97.5th percentile; every aggregate of the `overall` block names it
+in its own `ci_method` field. The paired comparison against OCR-only runs on per-document
+differences of the fidelity CER and reports a percentile interval with a two-sided
+bootstrap p-value. No BCa interval is computed for any published value. The statistics
+library carries a BCa implementation that the publishing generator never calls; the label in
+the published JSON was aligned to percentile in E122, and the remaining library question is a
+register and planning item.
 
 ### The entity claim
 
@@ -384,11 +388,14 @@ in the register below.
 1. Draw. `scripts/entity/entity_eval_sample.py` cuts two seeded samples from a frozen corpus
    scan, a precision sample of tier-1 marks stratified by category and rule family, and a
    recall sample of pages stratified by layout type and language. Every stratification cell
-   enters the sample manifest with what was available and what was drawn. Output is one case
-   file per drawn unit, carrying document, page, surface, offsets, linked entity, rule,
-   context excerpt and facsimile path.
+   enters the sample manifest with what was available and what was drawn. The precision output
+   holds one case record per drawn mark in `precision_cases.json`, with document, page,
+   surface, offsets, linked entity, rule, matched form, context excerpt and facsimile path;
+   the recall output holds one record per drawn page in `recall_pages.json`, with document,
+   page, language, layout type and facsimile path.
 2. Adjudicate precision. Every drawn mark receives one of the five verdicts at the facsimile
-   with a one-sentence reason, written into the case file, so the sample stays re-checkable.
+   with a one-sentence reason, recorded in the adjudicating agent's own file under
+   `output/audits/eval_sample/verdicts/`, so the sample stays re-checkable.
 3. Adjudicate recall. Every drawn page is read exhaustively against the curated list, each
    recorded mention is compared with the pipeline output of the same page, and every miss
    gets its cause label.
@@ -399,8 +406,8 @@ in the register below.
    from numerator and denominator, and reported with a seeded percentile bootstrap interval
    of the mean (seed 42, 10,000 resamples). The reproducible computation lives in
    `scripts/entity/generate_entity_overview.py` and, for the convention reading, in
-   `scripts/entity/running_head_audit.py`; the stored field of the executed run is named
-   `ci95_bootstrap_percentile_seed42`.
+   `scripts/entity/running_head_audit.py`; the executed run stores the interval as
+   `ci95_bootstrap_percentile_seed42` in `output/audits/entity_eval_report.json`.
 6. Consequences. Every confirmed error becomes a pinned regression fixture, systematic causes
    become matcher rules, variant-review verdicts or list proposals to ZBZ, and the measured
    precision per category gates the decision whether tier-1 marks are written into the
@@ -421,20 +428,20 @@ without counting as violations, because rule changes move marks legitimately.
 
 `scripts.eval.corpus_audit` reconciles the Masterfile as the gold source against delivered
 scans, processed OCR pages and final TEIs as a funnel and reports drift against the claims
-the knowledge base states. `tests/test_corpus_audit.py` pins four invariants over the real
+the knowledge base states. `tests/test_corpus_audit.py` pins five invariants over the real
 data, namely that the funnel is monotonically decreasing, that no final TEI exists without a
-source PDF, that every delivered scan is catalogued in the Masterfile, and that the known
-completeness gap matches an exact document list, so a new loss and a silent closing of the
-gap both fail the gate.
+source PDF, that every delivered scan is catalogued in the Masterfile, that every page count
+of the funnel stays positive, and that the known completeness gap matches an exact document
+list, so a new loss and a silent closing of the gap both fail the gate.
 `scripts.eval.completeness_check` works per document, reconciling the expected physical page
 count against the `pb` structure of the final TEI, with capped adjustments for page splits and
-leading cover leaves so that a facsimile labelling issue does not masquerade as a missing
-page, and classifies each document as OK, MINOR, WARNING or MISMATCH. What these gates run on
+leading cover leaves so that a facsimile labelling issue is not reported as a missing page,
+and classifies each document as OK, MINOR, WARNING or MISMATCH. What these gates run on
 and how they are invoked is in the quality assurance section above.
 
 ## Anti-anchoring protocol
 
-Adjudication is organized so that the judgment cannot lean on the artifact it judges.
+Adjudication is organized so that a judgment cannot be derived from the artifact it judges.
 
 Agents work on disjoint ranges and are instructed not to read another agent's verdict file,
 so a doubtful case is decided without knowing how a neighbour decided it. A fixed subsample
@@ -460,24 +467,25 @@ in [methodology.md](methodology.md), governance section.
 Three claims of this project are comparative, and only the first reaches outside the
 repository. The fidelity CER of the delivered corpus is set against published print-OCR
 values; that comparison, its sources and its caveats live in
-[methodology.md](methodology.md), CER measurement section. The pipeline is compared against its own raw OCR in
-a paired test over the same documents, which is internal and free of cross-tool
-comparability problems. The entity layer is compared against the reference TEIs, which yields
-a trend across the categories.
+[methodology.md](methodology.md), CER measurement section. The pipeline is compared
+against its own raw OCR in a paired test over the same documents, which is internal and
+free of cross-tool comparability problems. The entity layer is compared against the
+reference TEIs, which yields a trend across the categories.
 
-The comparability caveat for the first claim is substantive. CER values between different
-tools stay limited in comparability even under a nominally identical metric, because already
-the transformation of structured ground truth into comparison text is an error source when
-reading order is not considered, and because the scope threshold of the fidelity
-decomposition changes the value. Any citation names the threshold, the reference count and
-the date, as the counter-check of 2026-07-03 established.
+The first claim carries a caveat. CER values between different tools stay limited in
+comparability even under a nominally identical metric, because already the transformation
+of structured ground truth into comparison text is an error source when reading order is
+not considered, and because the scope threshold of the fidelity decomposition changes the
+value. Any citation names the threshold, the reference count and the date, as the counter-
+check of 2026-07-03 established.
 
 ## Finding register
 
-Dated findings, each with the file that carries its evidence. The decision provenance behind
-them is the register in [decisions.md](decisions.md), the session-level record is [journal.md](journal.md).
+Dated findings, each with the file that carries its evidence. The decision provenance
+behind them is the register in [decisions.md](decisions.md), and the session-level record
+is [journal.md](journal.md).
 
-2026-07-07, concordance of the reference corpus (three parallel readers, provenance E85).
+2026-07-07, concordance of the reference corpus (three parallel readers, provenance E92).
 The body coding of the references follows the editorial guidelines in the load-bearing
 conventions, among them genre div types, bracketed supplied page numbers, the hyphenation
 rule across page breaks, the footnote id scheme, the inline GND entity model and the
@@ -507,10 +515,11 @@ fidelity CER fell from 11.59 % to 0.90 %, and the corpus headline moved to fidel
 2026-07-07, stability pilot (E100). Five documents, three full regenerations each, in
 isolated run directories. The per-document standard deviation of the fidelity CER across runs
 stayed between 0.000 and 0.129 percentage points, so the refinement stage is practically
-deterministic in its text effect. A side finding of the pilot is that the absolute fidelity
-of fresh regenerations lies far above the delivered values, because the delivered TEI embodies accumulated
-corrections the pipeline caches do not reproduce, so only the within-pilot spread is the
-measurement. Evidence in the `stability` block of `docs/data/cer_statistics.json`.
+deterministic in its text effect. A side finding of the pilot is that the absolute
+fidelity of fresh regenerations lies far above the delivered values, because the delivered
+TEI carries accumulated corrections the pipeline caches do not reproduce, so only the
+within-pilot spread is the measurement. Evidence in the `stability` block of
+`docs/data/cer_statistics.json`.
 
 2026-08-12, entity evaluation, executed run. Nine independent agents adjudicated at the
 facsimile under the versioned protocol, six on precision ranges, two reading drawn pages
@@ -520,9 +529,9 @@ against disk before aggregation. Precision over 293 decidable cases of 300 drawn
 judged cases is 48 of 50, and both disagreements are documented and went to the operator.
 Recall over 40 drawn pages covers 67 mentions of listed entities, of which 20 were marked and
 17 stood on the worklist, giving a coverage of 0.552; of the 30 misses, 28 are rule gaps and
-2 are lexicon gaps. Error classes and repair classes by yield are in
-the evaluation result in the appendix, the aggregate in
-`output/audits/entity_eval_report.json`, the raw evidence under `output/audits/eval_sample/`.
+2 are lexicon gaps. Error classes and repair classes by yield are in the evaluation result
+in the appendix, the aggregate in `output/audits/entity_eval_report.json` and the raw
+evidence under `output/audits/eval_sample/`.
 
 2026-08-13, convention reading of the precision figure (E105, E108). After the operator set
 the page-apparatus convention, running heads left the marking scope and the second reading
@@ -530,9 +539,9 @@ became computable from the persisted verdicts without drawing again.
 `scripts/entity/running_head_audit.py` computes it at 0.9511 over 266 in-scope decidable
 cases, inside the interval of the protocol reading, so the running heads were not inflating
 the published figure. One ground-truth caveat is recorded, since a single adjudicated mark
-counts as a running head only through the keyword in its verdict reason while being body text
-(doc 2510), so the keyword criterion reads detector recall as 24 of 25 without a real head being
-missed.
+counts as a running head only through the keyword in its verdict reason while being body
+text (doc 2510), so the keyword criterion reads detector recall as 24 of 25 without a real
+head being missed.
 
 2026-08-13, gold benchmark read as a trend. `scripts/entity/entity_gold_benchmark.py` measures
 against the reference TEIs, scope-restricted to shared text. Facsimile classification of its
@@ -543,16 +552,17 @@ middle, works lowest by a wide margin, and the overall tier-1 figure stays well 
 facsimile-adjudicated precision. The weak work class is the empirical backing for keeping
 works on the worklist in the first stock wave. After the guard wave the reference trend rose
 to tier-1 precision 0.67 with recall and coverage unchanged, which is the expected signature
-of pure false-positive removal (E109). The figure is the state at that date as the register
-records it; `output/audits/entity_gold_benchmark.json` regenerates with every run and carries the
-current trend.
+of pure false-positive removal (E109). The figure is the state at that date as the
+register records it; `output/audits/entity_gold_benchmark.json` regenerates with every run
+and carries the current trend.
 
 2026-08-13, first verdict-guard run (E110), on the scan of the repaired state. All 279
 adjudicated correct marks survive, 252 in tier 1 and 27 as legitimate moves to the worklist;
 10 of 14 wrong marks are repaired, and the remaining 4 are text-side defects outside the
 matcher's reach, an OCR phantom on a blank leaf, a hallucination loop and a generated speaker
-duplication. Of the 30 adjudicated misses 27 now surface. The figures are the state at that date as E110
-records it; `output/audits/verdict_guard_report.json` regenerates with every guard run.
+duplication. Of the 30 adjudicated misses 27 now surface. The figures are the state at
+that date as E110 records it; `output/audits/verdict_guard_report.json` regenerates with
+every guard run.
 
 2026-08-21, reconstruction of the frozen draw (E123, incident). A verification run executed
 the draw script as a smoke test and overwrote the frozen evaluation sample, which the
@@ -575,12 +585,12 @@ Population validity is broken for the current mark population. The anchor-free s
 release (E119) lifts bare surnames of canonical authors into tier 1 without a document
 anchor, and those marks exist in no earlier draw, so the published rate no longer describes
 the whole auto-marked layer even though every sampled mark still holds. Until a supplementary
-draw over the new stratum is adjudicated, the rate is reported per stratum, the covered one
-and the new one. A fresh draw over the current population together with a recall
+draw over the new stratum is adjudicated, the rate is reported per stratum, the covered
+one and the new one. A fresh draw over the current population together with a recall
 remeasurement on newly read pages comes before further rule work, and
-[decisions.md](decisions.md), plan section, carries it as a work item. The same reasoning applies in reverse to a
-change that removes marks from tier 1, with the difference that a shrinking population keeps
-its rate conservative.
+[decisions.md](decisions.md), plan section, carries it as a work item. The same reasoning
+applies in reverse to a change that removes marks from tier 1, with the difference that a
+shrinking population keeps its rate conservative.
 
 Targeted re-OCR stays operator-gated. The doc-30 case was executed after adjudication (E98);
 any further single-page re-OCR of a tail document needs the same adjudication first and an
@@ -597,10 +607,10 @@ marks outside it. Ground truth exists only for the 25 reference documents, so fo
 the corpus no CER is measurable and only the documented proxies apply, schema validity,
 layout QA and the dictionary plausibility band.
 
-The measured rates calibrate how much trust the unverified mass deserves. The decision per
-object stays with the human, who sets a document's workflow status per stream in the viewer;
-that standing layer is described in [workflow.md](workflow.md), section on the per-object
-manifest and workflow status.
+The measured rates inform the judgment about the unverified remainder without settling it.
+The decision per object stays with the human, who sets a document's workflow status per
+stream in the viewer; that standing layer is described in [workflow.md](workflow.md),
+workflow status per stream section.
 
 Reference-based checks measure against a ground truth that is guideline-true in the body,
 empty in the header and locally flawed, so the exception catalog belongs in every scoring

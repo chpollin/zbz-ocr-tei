@@ -23,9 +23,9 @@ The entry point is [knowledge/index.md](knowledge/index.md), covering navigation
 - [methodology.md](knowledge/methodology.md): epistemic infrastructure, verification cascade, operative cycle, conventions, the CER measurement method with extraction and normalization rules and the print-OCR state of research, governance of agents and operator decisions
 - [verification.md](knowledge/verification.md): quality assurance (test strategy, guarantees, clone-safe subset, deliberately unchecked classes), the verification of claims (CER headline, entity precision and recall, corpus completeness) with the finding register, and the dated protocols and results as appendix
 - [decisions.md](knowledge/decisions.md): decision register E1 onward plus the plan (milestones, status tracker, open decisions, deviations)
-- [journal.md](knowledge/journal.md): chronological session overview with the archive of the full entries of sessions 69 to 96
+- [journal.md](knowledge/journal.md): chronological session overview with the compact archive and the archive of the older full entries
 
-The client report [arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md) is a dated snapshot and moves to `docs/` once its pending edit is committed.
+The client report is a dated snapshot (Reporting function, German) and lives on the static site as [docs/project-report.md](docs/project-report.md); its measured values come from `docs/data/cer_statistics.json`.
 
 ## Security
 
@@ -45,7 +45,7 @@ The client report [arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md) is a da
 - Frontend: ES6+ JavaScript (`const`/`let`, arrow functions, template literals, IIFE wrappers), `ZBZ.*` namespaces (viewer code under `ZBZ.Viewer`)
 - Frontend dependencies: vendored under `docs/assets/vendor/` and `docs/assets/fonts/`, no CDN, no npm/build pipeline (E122):
   - OpenSeadragon 5.0.1 (vendored): facsimile renderer in view mode (E58)
-  - JSZip 3.10.1 (cdnjs): planned for the ZIP export module (E61), not yet included in the code
+  - a future ZIP export (E61, open plan item in [knowledge/decisions.md](knowledge/decisions.md)) vendors its library the same way
 
 ## Design
 
@@ -62,10 +62,10 @@ The token catalog lives in `docs/assets/css/tokens.css`, base components in `doc
 
 ### Directories (orientation)
 
-- `data/`: input and reference data. `source/` = ZB delivery (immutable input, mostly gitignored) with `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, and `guidelines/` (editorial guidelines, Editionsrichtlinien). Project authority (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (reserved for hand-verified TEI, currently empty) and `entities/` (curated entity list, GND variant cache, variant review, mention verdict store, legacy mention index `legacy_mentions.json`, operator marking policy). Generated: `doc_metadata.json` (Gemini cache)
+- `data/`: input and reference data. `source/` = ZB delivery (immutable input, mostly gitignored) with `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, `guidelines/` (editorial guidelines, Editionsrichtlinien) and the tracked delivery folder `zbz-lieferung-2026-06-21/` (provenance record, guideline copy, ZBZ schema template). Project authority (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (reserved for hand-verified TEI, currently empty) and `entities/` (curated entity list, GND variant cache, variant review, mention verdict store, legacy mention index `legacy_mentions.json`, operator marking policy). Generated: `doc_metadata.json` (Gemini cache)
 - `scripts/`: pipeline + tools, grouped by domain into `ocr/`, `layout/`, `tei/`, `eval/`, `edition/`, `entity/` (the closed-world entity layer, from lexicon and matcher to previews, audits and mirror generators) and `core/`, the domain-free shared library (`loaders`, `gemini`, `pb_split`, `tei_xml_utils`); only `config.py` + `utils.py` stay top-level. Inventory: [scripts/README.md](scripts/README.md)
 - `output/`: all generated data streams (gitignored, NOT versioned)
-- `docs/`: static inspection/demo site (GitHub-Pages-ready) with HTML, `assets/` (`css/` + `js/`), `data/` (generated mirror), `images/`
+- `docs/`: static inspection/demo site (GitHub-Pages-ready) with HTML, `assets/` (`css/`, `js/`, `vendor/`, `fonts/`), `data/` (generated mirror), `images/`
 - `knowledge/`: knowledge base, entry point [knowledge/index.md](knowledge/index.md)
 - `tests/`: pytest suites
 
@@ -96,8 +96,6 @@ Three-layer split Command / Artifact / Tool; details in [knowledge/methodology.m
 
 Verification cascade (ordered by economy): automatic -> contextual -> visual -> domain-expert.
 Operative tools and the working cycle are in [knowledge/methodology.md](knowledge/methodology.md).
-
----
 
 # Commands (CLI reference)
 
@@ -134,6 +132,7 @@ python -m scripts.entity.running_head_audit                     # running-head (
 python -m pytest tests/test_cer_statistics.py -q                # statistics library (bootstrap CIs, paired, HCPR)
 python -m pytest tests/test_corpus_audit.py -q                  # corpus invariants + delivered distribution + completeness gate
 python -m pytest tests/test_scripts_health.py -q                # script health: syntax + internal imports (all scripts/)
+python -m pytest tests/test_knowledge_frontmatter.py -q         # knowledge base: ten carriers, frontmatter contract, resolvable links (E124)
 python -m pytest tests/test_tei_schema.py -q                    # schema gate: tei_final against zbz_hersch.rng (E68)
 python -m pytest tests/test_tei_header.py -q                    # teiHeader delivery contract: idno + biblStruct + langUsage (E69)
 python -m pytest tests/test_tei_validator.py -q                 # validator: reference CER in percent (O24/E69)
@@ -226,18 +225,17 @@ python -m scripts.entity.entity_eval_sample --seed 42                # evaluatio
 python -m scripts.entity.build_mention_verdicts                      # mention verdict store: adjudicated judgments -> data/entities/mention_verdicts.json (snapshot-bound, deterministic)
 python -m scripts.entity.entity_verdict_guard                        # regression gate: adjudicated verdicts vs current scan, exit 1 on violations (E110)
 python -m scripts.entity.entity_risk_ranking                         # rank tier-1 marks by FP risk -> output/audits/fp_hunt/ (wave protocol: PROTOCOL.md)
-python -m pytest tests/test_entity_matcher.py tests/test_entity_lint.py tests/test_entity_regressions.py tests/test_entity_preview.py tests/test_entity_corpus_scan.py tests/test_generate_entity_preview_data.py tests/test_cover_strip.py tests/test_fetch_gnd_variants.py tests/test_mention_verdicts.py tests/test_entity_verdict_guard.py tests/test_entity_ref_invariant.py tests/test_entity_risk_ranking.py tests/test_entity_corpus_digest.py tests/test_entity_eval_sample.py tests/test_entity_gold_benchmark.py tests/test_entity_stream.py tests/test_entity_unlisted_scan.py tests/test_variant_review.py -q  # entity gates
+python -m pytest tests/test_entity_matcher.py tests/test_entity_lint.py tests/test_entity_regressions.py tests/test_entity_preview.py tests/test_entity_corpus_scan.py tests/test_generate_entity_preview_data.py tests/test_cover_strip.py tests/test_fetch_gnd_variants.py tests/test_mention_verdicts.py tests/test_entity_verdict_guard.py tests/test_entity_ref_invariant.py tests/test_entity_risk_ranking.py tests/test_entity_corpus_digest.py tests/test_entity_eval_sample.py tests/test_entity_gold_benchmark.py tests/test_entity_stream.py tests/test_entity_unlisted_scan.py tests/test_variant_review.py tests/test_generate_entity_overview.py tests/test_running_heads.py tests/test_running_head_audit.py -q  # entity gates
 ```
 
-The viewer shows the previews read-only via `viewer.html?doc={DOC_ID}&entities=1` or the viewer's view selection.
+The viewer shows the previews read-only; the annotated reading view is its default (E107), and `viewer.html?doc={DOC_ID}&entities=0` switches the entity layer off.
 
 ## Quality screening (deprecated, E66)
 
-The agent-based 7-layer screening has been abolished since E66 (2026-05-26). None of the
-285/285 "APPROVED" statuses came from a human; the agent certified itself with a built-in
-ignore list (W3/W6/W10 as "normal"). Findings now live as `_screening_legacy.json`
-(a pure diagnostic trace, not in the mirror). The replacement is the workflow status
-per stream (see below).
+The agent-based screening was abolished with E66 (2026-05-26), since it certified itself
+without a human; the account is in [knowledge/decisions.md](knowledge/decisions.md) E66. Its
+findings survive only as the gitignored diagnostic trace `_screening_legacy.json`; the
+replacement is the workflow status per stream (see below).
 
 Tools for validation remain:
 
@@ -259,12 +257,13 @@ python -m scripts.tei.tei_status_marker                                  # write
 ```
 
 The per-object manifest `output/tei_final/{DOC_ID}_manifest.json` is the annotation slot per object:
-- `streams.{ocr,layout,tei,entities}.status`: workflow status (unverifiziert | in_arbeit | verifiziert, three levels since E77). Traffic-light mapping in the UI: neutral/gray for `unverifiziert`, yellow for `in_arbeit`, green for `verifiziert`, red reserved for a future problem status.
-- `streams.{ocr,layout,tei,entities}.history`: provenance of the human editing steps (the `entities` stream mirrors the preview layer, not the delivered TEI)
+- `streams.{ocr,layout,tei}.status`: workflow status (unverifiziert | in_arbeit | verifiziert, three levels since E77). Traffic-light mapping in the UI: neutral/gray for `unverifiziert`, yellow for `in_arbeit`, green for `verifiziert`, red reserved for a future problem status.
+- `streams.{ocr,layout,tei}.history`: provenance of the human editing steps
+- `streams.entities`: present only where an entity preview exists; it mirrors the preview layer, carries no viewer pill and stays at the default status
 - `pages.{N}`: exception pages (currently only safe blank pages; OCR rule + Docling=0)
 
 `page_manifest` automatically fills only engine descriptors and the safe `blank` class;
-status/history are added exclusively by the viewer (click on the status pill) and survive
+status/history of the three delivered streams are added exclusively by the viewer (click on the status pill) and survive
 re-runs. `tei_blank_marker` projects blank pages as `<pb type="blank"/>`;
 `tei_status_marker` deterministically projects the workflow history as `<change>` entries into the
 `<revisionDesc>` and clears away the misleading agent-screening entries in the process. Afterwards
@@ -274,7 +273,7 @@ Details are in [knowledge/decisions.md](knowledge/decisions.md) E63/E65/E66.
 ## Viewer data
 
 ```bash
-python -m scripts.edition.generate_edition_data                                  # catalog (data/catalog.json) + per-page mirror
+python -m scripts.edition.generate_edition_data                                  # catalog (docs/data/catalog.json) + per-page mirror
 ```
 
 The viewer (`docs/viewer.html`) is a static single-page app without a backend. A single "Save"
@@ -288,7 +287,7 @@ dropdown. See [knowledge/workflow.md](knowledge/workflow.md), persistence sectio
 ## Visual artifacts
 
 ```bash
-python -m scripts.edition.extract_pages --pdf {DOC_ID}.pdf --dpi 300             # page images
+python -m scripts.edition.extract_pages --pdf {DOC_ID}.pdf --dpi 300             # page images (300 for OCR input; the web mirror uses WEB_DPI 150)
 python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      # layout overlay
 ```
 
@@ -314,8 +313,6 @@ python -m scripts.edition.transkribus_upload --dry-run --collection {COLL}      
 python -m scripts.edition.transkribus_upload --doc {DOC_ID} --collection {COLL}  # upload one object as a test
 python -m scripts.edition.transkribus_upload --collection {COLL}                 # upload the whole bundle
 ```
-
----
 
 # Help
 

@@ -1,7 +1,7 @@
 # Editionsrichtlinien (Quelle)
 
 Verbindliche Auszeichnungsregeln der Edition, von der ZB geliefert. Quelldaten, keine
-Projekt-Interpretation -- diese leben in [knowledge/pipeline.md](../../../knowledge/pipeline.md).
+Projekt-Interpretation, diese lebt in [knowledge/tei-mapping.md](../../../knowledge/tei-mapping.md).
 
 ## Inhalt
 

@@ -17,8 +17,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 KNOWLEDGE = ROOT / "knowledge"
 
-# The ten carriers of the knowledge base. The client report is a dated snapshot that
-# moves to docs/ once its pending edit is committed; until then it is tolerated here.
+# The ten carriers of the knowledge base; the client report lives under docs/.
 CARRIERS = {
     "index.md",
     "project.md",
@@ -31,7 +30,6 @@ CARRIERS = {
     "decisions.md",
     "journal.md",
 }
-TOLERATED = {"arbeitsbericht-v3.md"}
 
 CORE_KEYS = {"title", "project", "method", "status", "language", "version", "created", "updated", "authors", "related"}
 FORBIDDEN_KEYS = {"type", "tags", "dependencies", "source"}
@@ -51,7 +49,7 @@ def _frontmatter(path: Path) -> dict:
 
 
 def _docs() -> list[Path]:
-    return sorted(p for p in KNOWLEDGE.glob("*.md") if p.name not in TOLERATED)
+    return sorted(KNOWLEDGE.glob("*.md"))
 
 
 def test_exactly_the_ten_carriers_exist():
@@ -100,8 +98,7 @@ def test_template_block_shape(path: Path):
 @pytest.mark.parametrize("path", _docs(), ids=lambda p: p.name)
 def test_related_entries_name_existing_documents(path: Path):
     for name in _frontmatter(path)["related"]:
-        target = KNOWLEDGE / f"{name}.md"
-        assert target.exists() or (ROOT / "reports" / f"{name}.md").exists(), f"{path.name}: related {name}"
+        assert (KNOWLEDGE / f"{name}.md").exists(), f"{path.name}: related {name}"
 
 
 @pytest.mark.parametrize("path", _docs(), ids=lambda p: p.name)

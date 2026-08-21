@@ -16,18 +16,16 @@ project schema `zbz_hersch.rng` (test-gated, E68).
 
 ### Verification status of the delivered data
 
-The per-stream workflow status (OCR / Layout / TEI / Entities, E66/E67/E77) is `unverified` as
-the handover default ("pipeline output exists, not yet human-checked"); isolated documents are
-already advanced (see the live catalog). Content verification by a domain expert is ZBZ's task,
-tracked via this status.
-
-In short, this repository delivers a high-quality, schema-valid data starting point plus curation
-tooling for the ZBZ edition; the edition itself is ZBZ's downstream product. See
-[Scope & limitations](#scope--limitations) for what is in scope, out of scope, and pending.
+The per-stream workflow status (OCR / Layout / TEI, E66/E67/E77; an `entities` stream exists only
+where an entity preview does) is `unverifiziert` as the handover default, meaning the pipeline
+output exists and is not yet human-checked; isolated documents are already advanced (see the live
+catalog). Content verification by a domain expert is ZBZ's task, tracked via this status. The
+edition itself is ZBZ's downstream product; see [Scope & limitations](#scope--limitations) for what
+is in scope, out of scope, and pending.
 
 ## What does this repo do?
 
-End-to-end pipeline for the estate of Jeanne Hersch: the delivered PDFs are turned into OCR text,
+End-to-end pipeline for the estate of Jeanne Hersch. The delivered PDFs are turned into OCR text,
 layout, and schema-valid TEI. The corpus funnel from catalogued texts to digitized to delivered
 as PDF to final TEI is generated and drift-checked by `python -m scripts.eval.corpus_audit`; the
 current figures and the four-unit page reconciliation live in
@@ -60,13 +58,16 @@ Engines: [knowledge/pipeline.md](knowledge/pipeline.md); TEI mapping: [knowledge
 
 The quality measure is the fidelity character error rate against the fixed set of 25 ZBZ reference
 TEIs (Transkribus ground truth), which isolates real OCR and transcription errors from cases where
-the pipeline produced more text than the selective reference. It is calibrated against print-OCR
-literature rather than HTR quality bands (E80), placing the pipeline in the solid range for
-historical print. Caveat: the ZBZ reference TEIs are partial transcriptions, so naive full-text CER
-is a diagnostic artifact, not a quality measure. Full methodology, stratified values, limitations,
-and the literature comparison, with all current values: [docs/methode.html](docs/methode.html) and
-[knowledge/arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md); the normative method is in
-[knowledge/specification.md](knowledge/specification.md).
+the pipeline produced more text than the selective reference. It is calibrated against the
+print-OCR literature (E80). The ZBZ reference TEIs are partial transcriptions, so a naive full-text
+CER measures the difference in scope between reference and pipeline and serves as a diagnostic.
+Full methodology, stratified values, limitations and the literature comparison, with all current
+values, are on two pages.
+
+- [docs/methode.html](docs/methode.html), the method page of the site
+- [docs/project-report.md](docs/project-report.md), the client report
+
+The normative method is in [knowledge/specification.md](knowledge/specification.md).
 
 Live corpus overview with current per-document status:
 [chpollin.github.io/zbz-ocr-tei](https://chpollin.github.io/zbz-ocr-tei/) (or `docs/index.html`
@@ -87,9 +88,9 @@ the delivered TEI under `output/tei_final/` carries no entity markup yet, the st
 operator-gated. Rules: [knowledge/tei-mapping.md](knowledge/tei-mapping.md); instruments: [knowledge/pipeline.md](knowledge/pipeline.md), entity stage;
 measurement: [knowledge/verification.md](knowledge/verification.md).
 
-ZBZ domain (not produced here): TEI header metadata from Alma (project id / MMSID / PubForm, as
-required by the editorial guidelines). An earlier MMSID projection was removed (E76); header
-enrichment is the library's Alma-to-header workflow (open item O8). Consequently most delivered
+Header metadata from Alma (project id / MMSID / PubForm, as required by the editorial guidelines)
+comes from the library's own Alma-to-header workflow (open item O8); an earlier MMSID projection
+in the pipeline was removed (E76). Consequently most delivered
 headers still carry an empty container/journal title.
 
 Known limitation, reading order: on two-column and double-page layouts the delivered TEI can
@@ -110,8 +111,8 @@ Pending / not done:
 - Live facsimile images: only five demo documents are committed (`1000`, `1330`, `1540`, `1620`,
   `2310`); the rest are local-only, so the GitHub Pages viewer shows scans only for those five.
 
-Measurement caveat: ground truth exists only for the 25 reference documents, so corpus-wide quality
-(dictionary hit rate) is an estimate, not a measurement. See
+Ground truth exists only for the 25 reference documents, so corpus-wide quality (dictionary hit
+rate) remains an estimate. See
 [knowledge/specification.md](knowledge/specification.md), quality measurement section.
 
 ## Frontend
@@ -130,8 +131,11 @@ python -m http.server 8000 -d docs    # http://localhost:8000/
 
 ## Getting started
 
-Re-running any stage requires valid API keys in `.env`. The existing pipeline output lives under
-`output/` (gitignored, regenerable).
+The source PDFs and the Masterfile are the ZBZ delivery and are not part of the repository, and
+the pipeline output under `output/` is gitignored, so a fresh clone reproduces the environment and
+the test suite (data-bound tests skip themselves) while the pipeline commands need the delivery.
+The model-backed stages (OCR, layout QA, TEI refinement) need API keys in `.env`; validation and
+the audits run without.
 
 `pyproject.toml` is the only manifest; the repo declares no build backend, because it is a
 dependency set and script pipeline rather than an installable package. The heavy layout
@@ -148,11 +152,8 @@ python -m venv .venv
 python -c "import tomllib; p = tomllib.load(open('pyproject.toml', 'rb'))['project']; print('\n'.join(p['dependencies'] + p['optional-dependencies']['dev']))" > zbz-requirements.txt
 pip install -r zbz-requirements.txt   # generated list, delete afterwards
 
-# Configure API keys: create .env in the repo root (never committed) with
-#   MISTRAL_DOC_AI_ENDPOINT / MISTRAL_DOC_AI_KEY   (OCR, Azure)
-#   GEMINI_API_KEY                                 (layout QA, TEI refinement)
-#   ANTHROPIC_API_KEY                              (optional, correction variant C)
-#   TRANSKRIBUS_USER / TRANSKRIBUS_PASSWORD        (only for the Transkribus upload)
+# Configure API keys: create .env in the repo root (never committed); the variable table is in
+# knowledge/pipeline.md, environment variables section
 
 # Representative commands
 python -m scripts.ocr.ocr_pipeline -i data/source/pdf/2310.pdf -e mistral   # OCR (Mistral)
@@ -182,15 +183,22 @@ The knowledge base holds ten documents; [knowledge/index.md](knowledge/index.md)
 | Quality assurance (test suite), verification of claims, dated protocols and results | [knowledge/verification.md](knowledge/verification.md) |
 | Decision register and plan (milestones, open decisions) | [knowledge/decisions.md](knowledge/decisions.md) |
 | Session journal with archive | [knowledge/journal.md](knowledge/journal.md) |
-| Final work report (delivery synthesis, German) | [knowledge/arbeitsbericht-v3.md](knowledge/arbeitsbericht-v3.md) |
+
+The client report for ZBZ (German, a dated snapshot) lives on the site as
+[docs/project-report.md](docs/project-report.md).
 
 ## Team
 
-A project of the Zentralbibliothek Zurich (ZBZ) in collaboration with DHCraft.
+A project of the Zentralbibliothek Zürich (ZBZ) in collaboration with DHCraft.
 
-## Licence
+## Citation
 
-The code in this repository is released under the MIT Licence (see `LICENSE`).
+`CITATION.cff` at the repository root is the canonical citation record; `codemeta.json` carries
+the same metadata for software catalogues.
+
+## License
+
+The code in this repository is released under the MIT License (see `LICENSE`).
 Documentation, knowledge documents, and other textual content are licensed under
 CC BY 4.0. Third-party research data is excluded from these terms; the source
 material and the edition texts remain with the Zentralbibliothek Zürich.

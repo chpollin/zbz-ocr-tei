@@ -18,7 +18,7 @@ absorbed: [plan (Vorlage Plan 0.2)]
 
 # Decisions
 
-Consolidated register of the decisions taken in the project, cross-cutting and collected from all documents. Entries are dated records; later corrections are inline update annotations, never silent rewrites. The register holds the dated decision records, the plan block below holds the forward programme with its milestones, its open decisions and its deviations, and the chronological course of the work lives in [journal.md](journal.md).
+Consolidated register of the decisions taken in the project, cross-cutting and collected from all documents. Entries are dated records. A later correction is added as an inline update annotation inside the entry it corrects, and an entry is never rewritten silently. The plan block below holds the forward programme with its milestones, its open decisions and its deviations. The chronological course of the work lives in [journal.md](journal.md).
 
 ## Decided (E1-E63)
 
@@ -71,8 +71,8 @@ Consolidated register of the decisions taken in the project, cross-cutting and c
 | E48 | Project-specific schema `zbz_hersch.rng` | generic `tei_all.rng` replaced by a project schema (from ODD, 551 definitions) | 2026-03-26 | [specification.md](specification.md) |
 | E49 | ZBZ editorial guidelines as binding reference | full guidelines as `data/source/guidelines/Editionsrichtlinien_ZBZ.md` | 2026-03-26 | [specification.md](specification.md) |
 | E50 | Dual-attribute strategy for entity references | `ref="GND:..."` (primary) plus `corresp="#zbz-p.N"` (internal) | 2026-03-26 | removed by E71 |
-| E51 | End-to-end CER benchmark (TEI versus TEI) | 25 ZBZ reference TEIs as ground truth, `benchmark_cer.py` with stratified analysis | 2026-03-26 | [specification.md](specification.md), [arbeitsbericht-v3.md](arbeitsbericht-v3.md) |
-| E54 | Scientific CER re-evaluation | BCa bootstrap (B=10000, seed 42), paired bootstrap E2E versus OCR-only, HCPR, multi-norm, content-aligned eval. Headline then n=19: mean 4.10 % [2.01, 6.75], median 1.83 % [0.84, 5.14] (historical state 2026-04-27; current headline see E98/E99: mean 2.08 % / median 1.28 %, n=25) | 2026-04-27 | [arbeitsbericht-v3.md](arbeitsbericht-v3.md) |
+| E51 | End-to-end CER benchmark (TEI versus TEI) | 25 ZBZ reference TEIs as ground truth, `benchmark_cer.py` with stratified analysis | 2026-03-26 | [specification.md](specification.md), [project-report.md](../docs/project-report.md) |
+| E54 | Scientific CER re-evaluation | BCa bootstrap (B=10000, seed 42), paired bootstrap E2E versus OCR-only, HCPR, multi-norm, content-aligned eval. Headline then n=19: mean 4.10 % [2.01, 6.75], median 1.83 % [0.84, 5.14] (historical state 2026-04-27; current headline see E98/E99: mean 2.08 % / median 1.28 %, n=25) | 2026-04-27 | [project-report.md](../docs/project-report.md) |
 | E55 | Interactive CER dashboard | 12 sections, vanilla SVG. Abolished with E56; data remains as `docs/data/cer_statistics.json` | 2026-04-27 | superseded |
 | E56 | Frontend reduction to the pipeline viewer | edition site, curation editor (FastAPI), diagnostics, and CER dashboard abolished without replacement. New single-page app `docs/viewer.html` (sidebar, facsimile plus layout overlay plus OCR/TEI panel; layout editor with bbox drag, resize, add, delete, reading-order drag; persistence via file download at that time). Volume 9 to 1 HTML, 23 to 6 JS (minus 81 %), CSS minus 84 %. E33/E36 superseded | 2026-04-27 | [workflow.md](workflow.md) |
 | E57 | Per-page mirror plus GitHub Pages deploy | `generate_edition_data.py` mirrors layout JSON, Mistral OCR, and per-page TEI (split from `_final.xml` via `<pb>` at sequential position 1..N because of pagination drift) for all 285 documents to `docs/data/pages/`; three-stage path resolver in `core.js`; `.nojekyll`; image delivery stays local (only demo images versioned) | 2026-05-25 | [workflow.md](workflow.md) |
@@ -83,7 +83,7 @@ Consolidated register of the decisions taken in the project, cross-cutting and c
 | E62 | Method page `docs/methode.html` | lean static page with headline CER, stratified values, literature comparison, limitations, tool documentation; deliberately no interactive dashboard. Implicit methodology position: never LLMs for entity-id linking | 2026-05-26 | [specification.md](specification.md) |
 | E63 | Blank-page detection plus viewer handling (phase 1) | 79 blank pages corpus-wide; phantom regions from layout QA hallucination countered by the Docling zero signal; viewer fix interim/heuristic; phase 2 in E65 | 2026-05-26 | [workflow.md](workflow.md) |
 
-## Decided (E64-E124, detail)
+## Decided (E64-E125, detail)
 
 More recent decisions with full rationale as dedicated sections.
 
@@ -121,7 +121,7 @@ Documents: [workflow.md](workflow.md), [specification.md](specification.md)
 
 Deep audit of CER production, externally verified against OCR-D/dinglehopper/Transkribus/jiwer. Core finding: the ZBZ reference TEIs are selective partial transcriptions; the pipeline is often more complete. The old alignment trimming hid insertions and losses; naive full-text CER conversely punishes completeness (doc 570: 113 %). Solution: `classify_edit_operations` decomposes every edit operation into fidelity CER (substitutions, small indels, all deletions = real errors) versus scope rate (insertions >= 50 characters = pipeline surplus text, not an error); fidelity plus scope equals full CER. Headline = fidelity over ALL 25 documents (no circular exclusion). Further fixes: case-sensitive default; three CER paths unified on `extract_text_for_comparison` plus `calculate_cer`; circular exclusion criterion removed; error categories via rapidfuzz opcodes (sum exactly to the Levenshtein distance); paired test like-for-like on fidelity (then -7.12 pp, p=0.14, n=19, not significant; the earlier "-14.83 pp p=0.0004" was a trimming artifact and is withdrawn). Citation corrected (arXiv:2510.06743 is Levchenko 2025). 18 golden tests.
 
-Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
+Documents: [project-report.md](../docs/project-report.md)
 
 ### E69 Correctness wave: O24 fix, `<pb>` segmentation centralised, teiHeader generator on the delivery contract (2026-05-27)
 
@@ -145,7 +145,7 @@ Documents: [workflow.md](workflow.md)
 
 Raw-data verification: the list followed no reproducible criterion (it did not exclude doc 570 with 112 % surplus, but flagged documents whose scope insertion was negligible), and two code comments were factually wrong. `_override_scope` now sets all documents to full scope. Fidelity CER unchanged (it already computes over all documents and is scope-robust); the raw end-to-end figure is marked as diagnosis, not a quality measure. Paired test then n=25: -7.90 pp, p=0.07, not significant. Closes the OPEN point from E70.
 
-Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
+Documents: [project-report.md](../docs/project-report.md)
 
 ### E74 Embedded Schematron rules deliberately NOT executed (documented instead of built) (2026-05-27)
 
@@ -187,7 +187,7 @@ Documents: [workflow.md](workflow.md)
 
 User finding (critical expert): the corpus is pure print, not handwriting; the Transkribus quality bands (below 2 % excellent / publication-ready) come from HTR practice and flatter a print OCR task. Headline words like "excellent/state of the art/publication-ready" contradicted the project's own print literature comparison (Crosilla et al. 2025: best specialised stack 0.84 %, Transkribus alone 3.67 %). Correction without changing any number: the median is solid for historical print, not state of the art; SotA only for the best individual documents; CER additionally measures against a reference that itself contains errors, so it is an upper bound.
 
-Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [methode.html](../docs/methode.html)
+Documents: [project-report.md](../docs/project-report.md), [methode.html](../docs/methode.html)
 
 ### E81 Transkribus export plus REST upload: PAGE-XML round trip into a collection (2026-06-08)
 
@@ -199,7 +199,7 @@ Documents: [project.md](project.md), integration section
 
 In document 30 a duplicated OCR block was removed; fidelity CER 18.25 to 11.59 %, published to the SoT and mirror. Corpus mean fidelity 4.26 to 3.99 % (CI [2.36; 5.96]), median unchanged; statistics JSON regenerated (seed 42). The old figure is retired (user decision: only the current CER counts). Caveat: 3.99 = 24 documents pure pipeline output plus one manually deduplicated, because no automatic block deduplication exists; the `ocr_dedup.py` once referenced in work-report appendix A and CLAUDE.md is not in the repo [update 2026-07-07: clarified; CLAUDE.md has not referenced it since Session 73, the script itself was removed with E75]. Tail causes documented: the high CER values are structural, not character recognition. Open defects registered: (a) the layout QA over-detects footnotes, body-as-note on 290/1910/90, not safely auto-fixable because of real long footnotes in 1520/40/3040; (b) double-page reading order, sorted only by y [update E90 (2026-06-21): (b) fixed generator-side, validator warning W19 scopes the not-yet-regenerated corpus, delivery M3 operator-gated; (a) remains open]. E80 remains valid.
 
-Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
+Documents: [project-report.md](../docs/project-report.md)
 
 ### E83 Code-doc drift fixed; header metadata stays ZBZ domain (E76/O8 confirmed) (2026-06-08)
 
@@ -217,7 +217,7 @@ Documents: [pipeline.md](pipeline.md), [specification.md](specification.md)
 
 Two reference-backed footnote conformity corrections as idempotent, reversible post-passes on `tei_final`. (a) Demotion: some `<note place="foot">` actually carried body text; if a contiguous stretch of at least 150 characters appears in the ground-truth body (footnotes excluded), the block is provably body text and is demoted to `<p>`. 14 blocks in 5 documents (290/1910/90 plus, on operator instruction, 40/1520). Corpus fidelity mean 3.99 to 2.71 %, median 1.40 %; the pipeline's advantage over raw OCR thereby significant (-9.45 pp, p=0.013). Tool `tei_footnote_demote.py` (backup, hold list, `--include-hold`). (b) Sup-marker strip: leading print markers removed from note text per the guidelines (mark only via `@n`); 16 notes in 4 documents, CER-neutral. Wave-2 remainder classified by a ground-truth-based adversarial workflow; footnote-n was the only safe fix. The note "3 W19 diagnosis specs handed over" was a provisional label, superseded by E90.
 
-Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
+Documents: [project-report.md](../docs/project-report.md)
 
 ### E86 Repo audit wave: viewer data-loss fix (H1) plus CI gate plus documentation consistency (2026-06-10)
 
@@ -293,17 +293,17 @@ report with its measured values is
 cer-gegenprobe-2026-07-03.md (verification.md, appendix), and the counter-check
 scripts live in the paper repo (DHCraft/promptotyping-paper, `verification/`).
 
-Consequence: the upper-bound passage in [arbeitsbericht-v3.md](arbeitsbericht-v3.md) is concretized by the
+Consequence: the upper-bound passage in [project-report.md](../docs/project-report.md) is concretized by the
 two cause classes that inflate fidelity without a recognition error (apparatus insertions,
 capitalization divergence). Open follow-up: ellipsis normalization (U+2026 versus `...`), a
 possible dedicated reporting category for apparatus insertions, and the doc 30/760 stock
 correction via M3 (operator-gated, E90).
 
-Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md), cer-gegenprobe-2026-07-03.md (verification.md, appendix)
+Documents: [project-report.md](../docs/project-report.md), cer-gegenprobe-2026-07-03.md (verification.md, appendix)
 
 ### E92 Guideline conformity quantified corpus-wide: five audit instruments plus step-1 generator fixes (2026-07-07)
 
-Occasion: operator question whether the delivered TEI satisfies the ZBZ editorial guidelines beyond schema validity. The session built a ground-truth map of the 25 reference TEIs (consolidated as Appendix B of [arbeitsbericht-v3.md](arbeitsbericht-v3.md), including the exception catalog of reference-side defects and the ill-formed 1520.xml) and quantified every suspicion with five new offline audit instruments in `scripts/eval/`, each test-gated, JSON output to `output/audits/`:
+Occasion: operator question whether the delivered TEI satisfies the ZBZ editorial guidelines beyond schema validity. The session built a ground-truth map of the 25 reference TEIs (consolidated as Appendix B of [project-report.md](../docs/project-report.md), including the exception catalog of reference-side defects and the ill-formed 1520.xml) and quantified every suspicion with five new offline audit instruments in `scripts/eval/`, each test-gated, JSON output to `output/audits/`:
 
 - `char_lint_audit.py`: typewriter apostrophe U+0027 between letters, guillemet deviations, space before punctuation (incl. U+00A0), U+00AC residue.
 - `pb_number_audit.py`: scan-sequence suspicion on pb@n, digit-only paragraphs in the body, cross-check against layout footer regions.
@@ -315,7 +315,7 @@ Measured state (snapshot 2026-07-07): character normalization is the largest gap
 
 Generator fixes (step 1, test-first): `detect_page_number` reads the printed page number from layout `_filter`/`_skip` footer regions into pb@n (fallback stays the scan number), and `drop_filter_echoes` stops filtered-region text (footer page numbers, cover boilerplate) from leaking into the body through positional paragraph matching. Verified on the doc 570 scaffold regeneration. Both act on regeneration; correcting the delivered corpus runs over the operator-gated marker path (deterministic post-steps on `tei_final` with backup and before/after audit measurement).
 
-Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md) (Appendix B), [journal.md](journal.md) session 83
+Documents: [project-report.md](../docs/project-report.md) (Appendix B), [journal.md](journal.md) session 83
 
 ### E93 Image-based italics re-detection rejected; `<hi>` stays OCR-signal-bound (2026-07-07)
 
@@ -325,7 +325,7 @@ The apparent fixes, sharpening the Gemini prompt from verify to detect or adding
 
 Consequence: `<hi>` in pipeline output remains bound to the OCR emphasis signal, guarded by `hi_preservation_audit` (E92). Complete rendering markup per guideline vocabulary (`#i` etc.) is downstream curation at the facsimile, in the viewer or in teiCrafter.
 
-Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [specification.md](specification.md)
+Documents: [project-report.md](../docs/project-report.md), [specification.md](specification.md)
 
 ### E94 Stock-correction wave ratified: printed-folio pb@n, hybrid correction mode, targeted verification depth (2026-07-07)
 
@@ -415,7 +415,7 @@ Verification against the data (2026-07-08): the decomposition reproduces exactly
 
 Decision (resolves W5.1): keep all 25 ground-truth documents in the CER measurement; the reported quality figure is the end-to-end fidelity CER, mean 2.08 percent and median 1.28 percent (n=25, `docs/data/cer_statistics.json`). It is stated as an upper bound of the recognition error rate (E80, E91: the reference itself is fallible, and apparatus insertions inflate it without a recognition error). The scope-inclusive end-to-end CER stays a diagnosis figure, never a quality measure. Consequence for the talk and the project report: cite the fidelity headline with n=25 and the source file, name the `SCOPE_BLOCK_MIN = 50` threshold when the fidelity values are quoted (E91), and carry the `n_chars` selection-bias caveat when generalizing beyond the 25 documents (`selection_bias` in the JSON). No document is dropped, no separate mismatch metric is introduced.
 
-Documents: [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [journal.md](journal.md), cer-gegenprobe-2026-07-03.md (verification.md, appendix)
+Documents: [project-report.md](../docs/project-report.md), [journal.md](journal.md), cer-gegenprobe-2026-07-03.md (verification.md, appendix)
 
 ### E102 DTA-Basisformat conformity claim empirically refuted and removed; `zbz_hersch.rng` is the single format authority (2026-07-09)
 
@@ -425,7 +425,7 @@ Finding (2026-07-09, official `basisformat.rng` fetched from deutschestextarchiv
 
 Decision (operator, 2026-07-09): the project's format claim is the project schema `zbz_hersch.rng`, a TEI P5 subset formalizing the binding ZBZ editorial guidelines; the DTA-Basisformat conformity claim is removed from all living documents (report, pipeline.md, index.md, project.md, data READMEs, step-2 prompt, docstrings). No parallel DTA validation is introduced. Rejected alternatives: (a) transforming the corpus to DTA validity, which would strip delivered features and move the output away from the ZBZ reference style; (b) a stripped-down "DTA view" gate, tested and refuted because even the text bodies fail the DTA content models, so the gate would guard a format no project consumer requires. The guidelines' own DTA reference remains documented as source data (`data/source/guidelines/`); dated register and journal entries mentioning the DTA stay unchanged as snapshots.
 
-Documents: [pipeline.md](pipeline.md), [arbeitsbericht-v3.md](arbeitsbericht-v3.md), [journal.md](journal.md) session 91
+Documents: [pipeline.md](pipeline.md), [project-report.md](../docs/project-report.md), [journal.md](journal.md) session 91
 
 ### E103 Print-OCR comparison values re-attributed from Crosilla to Greif et al.; Levchenko peer-reviewed version added (2026-07-09)
 
@@ -435,7 +435,7 @@ Finding (2026-07-09): the four values stem from Greif, Griesshaber and Greif, "M
 
 Decision: the misattribution is corrected everywhere the four values appear (literature-comparison.md, docs/methode.html, the COMPARISON_LIT/LITERATURE_REFS blocks in scripts/eval/cer_statistics_full.py and cer_statistics.py, and the regenerated docs/data/cer_statistics.json). The "like-for-like" characterization tied to the old Crosilla reference was false (Greif is printed OCR, Crosilla is HTR) and was dropped. The Crosilla HTR paper is not retained as a separate reference in these documents because it served no independent function there. Regeneration of docs/data/cer_statistics.json changed only literature and meta fields; all measured CER values, confidence intervals and per_doc records stayed byte-identical.
 
-Documents: [methodology.md](methodology.md), CER measurement section, [arbeitsbericht-v3.md](arbeitsbericht-v3.md)
+Documents: [methodology.md](methodology.md), CER measurement section, [project-report.md](../docs/project-report.md)
 
 ### E104 Knowledge base aligned post hoc with the Promptotyping convention Knowledge Documents; frontmatter only, no renames (2026-07-31)
 
@@ -667,15 +667,27 @@ Recorded, not acted on: the CER counter-check in the verification appendix keeps
 
 Documents: [index.md](index.md), [journal.md](journal.md) session 98
 
+### E125 Knowledge base verified claim by claim against code and data; client report rewritten as v3 and moved to the site (2026-08-21)
+
+Occasion: after E124 the operator asked whether the ten documents were correct, precise and well formulated, and for the client report to be improved, given an English name and taken out of `knowledge/`.
+
+Decision and execution: one Opus agent per document, nine in parallel and the index last, each with an exclusive file, checked every verifiable statement against code, schema, tests and data, fixed wrong claims in place with `path:line` evidence in `output/refactoring/wave5_*.md`, rewrote imprecise sentences and applied the house style; dated register entries, journal entries and the verification appendix kept their content. The agents reported their sibling findings instead of editing siblings, and the orchestrator settled them: the O27 source (editorial guidelines), lesson L5 (`--force` bypasses the step-2 cache), the E92 provenance of the reference reading, the caption sentence of the plan (figure zones scanned and demoted, E115), the viewer entity switch (`entities=0` opts out since E107), the stale W18 label (639-2/T), the config comment on the OCR default, the data README tree (`entities/`, June delivery folder), the guideline README pointer (tei-mapping.md), and the method page (methodology.md pointers, Levchenko range, regeneration date). The client report was rewritten as v3 from the operator's working state: export artefacts removed, facts aligned with the repository (engine default and Mistral endpoint, the ten-document base, the entity preview layer with its measured precision and coverage, literature attribution to Greif et al. per E103, full-text and scope means of the current regeneration, the 1520 value, the script inventory including `entity/`, footnotes deduplicated and renumbered), frontmatter to Vorlage Report 0.2 with `status: snapshot`, English title and file name, moved to `docs/project-report.md`; every pointer followed (CLAUDE.md, README, index, register links, methodology, specification, project, method page) and the gate's tolerated set removed, so `knowledge/` holds exactly the ten carriers. A tenth agent reviewed README.md and CLAUDE.md read-only; the defects it found were fixed (status literal `unverifiziert`, catalog path, conditional `entities` stream without a pill, JSZip line, stale session range, screening count, horizontal rules, missing gate lines, quick-start premise, credentials pointer, license spelling, citation section), and its proposal to subtract the passages CLAUDE.md duplicates from the knowledge base (manifest semantics, save mechanism, marking-policy rationale, per-document gloss) stays with the operator.
+
+Verified on disk: 2393 tests passed (2350 in the suite plus the 43 of the knowledge gate), ruff 0, frontmatter gate green over the ten carriers, every relative link in README, CLAUDE.md, data README, the report and `knowledge/` resolves.
+
+Recorded, not acted on: unverifiable claims per document are listed in the wave-5 reports (engine figures without code evidence, Transkribus band edges, the commission date, the methodology literature without identifiers); E80 keeps its Crosilla attribution as a dated record superseded by E103; the `comparison_lit` block of `docs/data/cer_statistics.json` and the comparison tables differ in the Levchenko GPT-4o row and the guide-value row; the demo table names five documents while `.gitignore` whitelists four image folders, moot once the external image repository (f8191e34) carries the facsimiles; `output/audits/entity_eval_report.json` carries a method string naming dissolved documents and regenerates with the next run.
+
+Documents: [journal.md](journal.md) session 99, [project-report.md](../docs/project-report.md)
+
 ## Plan
 
 This block orders the work still outstanding into phases and milestones, each carrying the
 condition under which it counts as finished. It is the forward-looking pendant to
 [journal.md](journal.md), which records how the project reached its current state, and it is
 rewritten as milestones close. Completed work leaves the active phases and stays visible in the
-status tracker. What has been decided lives in the register above; what is required and against
-which gates it is measured lives in [specification.md](specification.md), and the plan anchors
-its exit conditions there instead of restating them.
+status tracker. What has been decided lives in the register above. What is required, and against
+which gates it is measured, lives in [specification.md](specification.md); the plan anchors its
+exit conditions there instead of restating them.
 
 ### Target state
 
@@ -753,8 +765,8 @@ The adjudicated sample belongs to a mark population that the marking policy of E
 widened, and the released marks appear in no earlier draw. The recall side has stood unmeasured
 since several of its named rule gaps were closed. A fresh stratified draw over the current
 population, the E119 stratum included, and a recall remeasurement on newly read pages come before
-any further rule work, because rules built on a population whose rate is unknown widen the gap
-between what is measured and what is delivered. A second draw already lies frozen and unadjudicated
+any further rule work. Rules built on a population whose rate is unknown widen the gap between
+what is measured and what is delivered. A second draw already lies frozen and unadjudicated
 under `output/audits/eval_sample_2026-08-13/`; whether it is adjudicated as it stands or re-cut is
 the re-freeze decision.
 
@@ -802,16 +814,17 @@ released the stock run.
 `scripts/entity/tei_entity_marker.py` does not exist yet, and `tei_entity_preview.py` refuses to
 write into `output/tei_final/`. The marker is built on `marker_common` with dry-run, backup,
 byte-splice inside `text`, idempotence and a `revisionDesc` entry. One design condition binds the
-milestone, that the marker reuses the wrapping and checking logic of the preview instead of growing
-a second copy of it. `apply_candidates`, `mark_attributes`, `hi_envelope`, the text-invariance
-check and the schema check move out of `tei_entity_preview.py` into a shared module both consume,
-so preview and stock run provably produce the same wrapping. Whether the `@resp`, `@cert` and
+milestone. The marker reuses the wrapping and checking logic of the preview instead of growing a
+second copy of it. `apply_candidates`, `mark_attributes`, `hi_envelope`, the text-invariance check
+and the schema check move out of `tei_entity_preview.py` into a shared module both consume, so
+preview and stock run provably produce the same wrapping. Whether the `@resp`, `@cert` and
 `@source` attributes travel into the delivered TEI is decided before the run.
 
-Done when the released run has written the marks into `output/tei_final/`, the technical gates of
-[verification.md](verification.md), quality assurance section, are green (byte-identical text extraction, deterministic CER reproduction,
-schema gate, conformity rules, idempotence proof, closed-world invariant over every identifier in
-the shipped mirror), the mirror is regenerated, the register carries the entry, and
+Done when the released run has written the marks into `output/tei_final/` and the technical gates
+of [verification.md](verification.md), quality assurance section, are green, meaning byte-identical
+text extraction, deterministic CER reproduction, the schema gate, the conformity rules, the
+idempotence proof and the closed-world invariant over every identifier in the shipped mirror. The
+milestone also requires that the mirror is regenerated, the register carries the entry, and
 `docs/methode.html` has gained its entity-quality paragraph pointing to
 [verification.md](verification.md).
 
@@ -832,10 +845,10 @@ log per object and carries these fields:
   a kind (OCR, layout QA, layout edit, text edit, workflow status), a scope (page or whole
   document), an optional detail string, and a `ref` to the concrete file under `output/`
 
-Actor entries name engines and roles. The log answers in one place what the current split cannot,
-the edit history per object, an audit trail per agent decision, a roll-back to an earlier state
-without git history, and the direct link between a layout region and a body element, which is
-implicit in the reading order today.
+Actor entries name engines and roles. The log answers four questions in one place that the current
+split answers nowhere. It gives the edit history per object, an audit trail per agent decision, a
+roll-back to an earlier state without git history, and the direct link between a layout region and
+a body element, which today is implicit in the reading order.
 
 Done when every delivered object carries a `provenance.json` whose history reproduces the
 `<change>` entries of its `<revisionDesc>` and whose `ref` values resolve to existing files.
@@ -879,10 +892,10 @@ OCR text and its manifest, and the catalog offers the multi-select path.
 
 ##### Round-trip wrapper for the curated edit
 
-Steps four to seven of the round trip described in [workflow.md](workflow.md), round-trip section,
-run manually today, the reassembly, the status projection into the `revisionDesc`, the validation
-and the mirror regeneration. A wrapper command, `scripts/apply_curated.py --doc {ID}`, runs them in
-order and stops at the first failing gate.
+Steps three to six of the round trip described in [workflow.md](workflow.md), round-trip section,
+run manually today. They are the reassembly, the status projection into the `revisionDesc`, the
+validation and the mirror regeneration. A wrapper command, `scripts/apply_curated.py --doc {ID}`,
+runs them in order and stops at the first failing gate.
 
 Done when one command takes a curated edit from the viewer save through to a regenerated mirror and
 the validator reports no error for that document.
@@ -891,21 +904,22 @@ the validator reports no error for that document.
 
 Deferred until after acceptance by ZBZ. N3 records that OpenSeadragon loads an untiled full
 PNG and re-instantiates on every page switch, to be fixed through tiling or neighbour preload. N6
-records that the mobile catalog below 1000px hides date, language, type, form and pages entirely,
-of which date and type stay visible. N7 records that the contrast of `--h-text-muted` sits below
-WCAG AA for small text, so the token is restricted to auxiliary text. Two further items belong
-here, the page strip with per-page status markers as QA navigation, a follow-up idea from the
-go-to-page fix, and the missing `aria-current` in the viewer. One feature of the edition uplift is
-still outstanding as well, the integration of the layout editor into the OpenSeadragon facsimile
-view, so a region is corrected on the image instead of beside it. Four quick wins of the
-2026-08-12 UI analysis stay open and are decided together with them (the analysis itself was
+records that the mobile catalog below 1000px hides date, language, type, form and pages entirely;
+the recorded remedy keeps date and type visible. N7 records that the contrast of
+`--h-text-muted` sits below WCAG AA for small text, so the token is restricted to auxiliary text.
+Two further items belong here. One is the page strip with per-page status markers as QA
+navigation, a follow-up idea from the go-to-page fix; the other is the missing `aria-current` in
+the viewer. One feature of the edition uplift is still outstanding as well, the integration of the
+layout editor into the OpenSeadragon facsimile view, so a region is corrected on the image instead
+of beside it. Four quick wins of the 2026-08-12 UI analysis stay open and are decided together
+with them (the analysis itself was
 deleted with E124, git holds it at ec42a613; the other quick wins of that analysis went in with
 E107). Q1, layout overlays switchable in the reading view through a control in the facsimile
 header that toggles a class hiding the region boxes, off by default, while the layout edit mode
-always shows them. Q3, the export tooltip corrected to what the menu offers, since it offers no
-merge. Q5, the triple marking of the export menu reduced to one, the menu label and the four
-arrows dropped and the button kept. Q10, `--h-filter` switched to `var(--h-text-muted)` and the
-dead CSS around it removed.
+always shows them. Q3, the export tooltip corrected to what the menu offers, since it names a
+repo-folder connection the menu does not contain. Q5, the triple marking of the export menu
+reduced to one, the menu label and the four arrows dropped and the button kept. Q10, `--h-filter`
+switched to `var(--h-text-muted)` and the dead CSS around it removed.
 
 Done when each finding is implemented or recorded in the register as declined, and the page checks
 named in [verification.md](verification.md), quality assurance section, pass.
@@ -936,9 +950,8 @@ recorded seed.
 The CER tail is structural. It is not a failure of character recognition. The documents whose tail
 traces to a doubled-page reading order, 760 and 1440, stay facsimile-verified curation cases.
 Machine reordering of the corpus was refuted empirically (E99) and is banned on every path, so
-W19 is read as a suspect signal for text or zones.
-Targeted per-page re-reading is the pattern E96 and E98 established and stays operator-gated per
-page.
+W19 is read as a suspect signal for text or zones. Targeted per-page re-reading is the pattern E96
+and E98 established, and it stays operator-gated per page.
 
 Done when both documents are curated page by page against the facsimile, or the operator records
 that they stay as they are.
@@ -1047,7 +1060,8 @@ outstanding), open, and blocked-by with the named party.
 
 ### Open decisions and dependencies
 
-Four questions sit with ZBZ, and two of them shape the entity layer.
+Four open questions are recorded here. Three of them have ZBZ as decider, and O27 among those
+shapes the entity layer.
 
 - O8, header metadata from Alma including the MMSID. Decider is ZBZ together with DHCraft.
   While it is open, most delivered headers carry an empty container title by intention.
@@ -1073,10 +1087,11 @@ the dry run would show.
 Three modelling points stay open and fall before the stock run.
 
 - Image captions, tied to O27. The operator convention of 2026-08-12 puts captions in scope, while
-  the matcher still skips figure contexts and reports caption candidates separately.
+  the matcher scans figure zones, demotes their candidates to tier 2 (E115) and reports caption
+  candidates separately.
 - Empty `speaker` elements stay curation slots (W17); the matcher never invents text.
-- Adjective forms of names. The guideline excludes them, the references mark at least one. The
-  automatic tiers exclude them and candidates go to the worklist.
+- Adjective forms of names. The guideline excludes them while the references mark at least one.
+  The automatic tiers exclude them and candidates go to the worklist.
 
 Two further decisions belong to single milestones. Whether the `@resp`, `@cert` and `@source`
 attributes travel from the preview layer into the delivered TEI falls before the stock run and is a
@@ -1087,10 +1102,10 @@ Feedback from ZBZ is unavailable in this project phase, so open convention quest
 entity layer fall to the operator; that rule and the verification of agent self-reports are
 recorded in [methodology.md](methodology.md), governance section.
 
-Hard ordering across the phases. Schema hardening and the lexicon audit precede the gold benchmark.
-The fresh draw precedes any further rule work. The corpus dry run precedes the stock run. The
-provenance log precedes both the extended `<revisionDesc>` and the viewer drawer. The round-trip
-wrapper presupposes none of them and may be pulled forward.
+Four orderings across the phases are binding. Schema hardening and the lexicon audit precede the
+gold benchmark. The fresh draw precedes any further rule work. The corpus dry run precedes the
+stock run. The provenance log precedes both the extended `<revisionDesc>` and the viewer drawer.
+The round-trip wrapper presupposes none of them and may be pulled forward.
 
 ### Deviations
 

@@ -21,10 +21,10 @@ related: [decisions, index]
 
 # Work Journal
 
-Chronological development history of the project, newest entries first. The journal
-condenses occasion, course, decisions, and status for each session. It is neither a git
-log nor a meeting protocol: individual commits belong in the git history, decision
-rationale in the register [decisions.md](decisions.md).
+Chronological development history of the project, newest entries first. Each entry
+condenses the occasion, the course, the decisions and the status of one session.
+Individual commits stay in the git history, and the rationale behind a decision stays in
+the register [decisions.md](decisions.md).
 
 ## Format Contract
 
@@ -32,31 +32,43 @@ Each entry is written at the end of the session; on re-entry, the topmost entry 
 first. New entries always appear directly under the heading "Entries". Existing entries
 are never changed retroactively; corrections are new entries referencing the old one.
 
-Fixed field order per entry, with the bold field labels kept: **Occasion** (one
-sentence: why this work now), **Goal** (one sentence: what should exist at the end),
-**Course** (past tense, at most 120 words, with references), **Decisions** (per point:
-what, why, rejected alternative; each point carries its register id or the note "no
-register entry"), **Status** (past tense, self-contained, with the savepoint commit hash
-where one exists), **Next steps** (numbered and executable), **Dead Ends** (optional,
-with rationale). Required fields: Occasion, Goal, Course, Status, Next steps. This is
-Journal template v0.3, which tightens the v0.2 fields by tense, length cap, mandatory
-decision reference and self-contained status.
+Every entry carries its fields in one fixed order, each field introduced by its bold
+label.
 
-Compact standard: an entry carries distilled knowledge, and the protocol of the session
-stays in the git history. Every decision identifier, every figure with its unit, every
-commit hash and every document id is kept; narrative detail is dropped.
+- **Occasion**, one sentence stating why this work happens now.
+- **Goal**, one sentence stating what should exist at the end.
+- **Course**, past tense, at most 120 words, with references.
+- **Decisions**, one point per decision, each naming what was decided, why, and the
+  rejected alternative, and each carrying its register id or the note "no register
+  entry".
+- **Status**, past tense, self-contained, with the savepoint commit hash where one
+  exists.
+- **Next steps**, numbered and executable.
+- **Dead Ends**, optional, with rationale.
 
-Archiving: the Entries section holds at most five full entries. Once it grows beyond
-that, every entry older than the current session moves verbatim into
-the archive section at the end of this document and leaves one compact line in the archive
-block below, carrying date, session number and title, the decision ids taken, the key figures
+Occasion, Goal, Course, Status and Next steps are required. Decisions and Dead Ends are
+written where the session produced them. This entry format is the project's journal entry
+template v0.3. It tightens the fields of the Promptotyping catalogue template Vorlage
+Journal 0.2, which the frontmatter names, by tense, by the length cap on Course, by the
+mandatory register reference per decision and by the self-contained Status. A copyable
+entry template sits as an HTML comment at the end of this document.
+
+An entry carries distilled knowledge while the protocol of the session stays in the git
+history. Every decision identifier, every figure with its unit, every commit hash and
+every document id is kept, and narrative detail is dropped.
+
+The Entries section holds at most five full entries. Once it grows beyond that, every
+entry older than the current session moves verbatim into the archive of full entries at the
+end of this document and leaves one compact line in the Compact Archive section. A compact
+line carries the date, the session number and title, the decision ids taken, the key figures
 with their units, the commit hashes the entry names, and the outcome in one clause.
 
-Style rules: formal and project-specific; explain technical terms on first use within
-the entry; quantities with reference unit. Not included here: specifications (they
-belong in [decisions.md](decisions.md) or the domain docs), code diffs and commit
-texts, hour-by-hour protocols, self-assessments, notes on documentation maintenance
-itself, personal names (use roles and organisations instead).
+Entries are written formally and stay project-specific. A technical term is explained on
+first use within the entry, and every quantity carries its reference unit. Specifications
+stay out of the journal and belong in [decisions.md](decisions.md) or the domain documents.
+Out of scope as well are code diffs and commit texts, hour-by-hour protocols,
+self-assessments, notes on documentation maintenance itself, and personal names, for which
+roles and organisations stand in.
 
 Translated to English and compacted on 2026-07-07 by operator decision; knowledge
 preserved, pre-compaction entries in git history.
@@ -67,10 +79,31 @@ in git history.
 
 Sessions 69 to 96 moved to the archive section at the end of this document on 2026-08-21
 by operator decision (first into a separate archive document, folded back the same day when
-the knowledge base was capped at ten documents), each leaving one compact line in the archive
-block below; sessions 1 to 68 remain in that block as they are.
+the knowledge base was capped at ten documents), each leaving one compact line in the Compact
+Archive section; sessions 1 to 68 remain in that section as they are.
 
 ## Entries
+
+### 2026-08-21 Session 99: knowledge base verified claim by claim, client report v3 on the site
+
+**Occasion** After the recut of session 98 the operator asked whether every statement in the ten documents was correct, precise and well formulated, and for the client report to be improved, given an English name and taken out of `knowledge/`.
+
+**Goal** Every verifiable claim in the ten carriers checked against code, schema, tests and data and corrected in place; the prose precise and in house style; the client report rewritten as v3 and moved to `docs/`; README.md and CLAUDE.md assessed.
+
+**Course** Ten Opus agents, one per document with an exclusive file and a report under `output/refactoring/wave5_*.md`, verified and polished the carriers (index last, against the edited siblings); a further agent reviewed README.md and CLAUDE.md read-only. The orchestrator settled the cross-document findings the agents reported, rewrote the client report from the operator's working state (export artefacts removed, facts aligned with the repository, entity preview layer added, literature attribution corrected, footnotes renumbered, Vorlage Report 0.2 frontmatter), moved it to `docs/project-report.md`, followed every pointer, removed the gate's tolerated set, and fixed the README and CLAUDE.md defects the review found. The working-tree edit of the report that another instance had left was the v3 base; its content is absorbed.
+
+**Decisions**
+- Verification wave recorded as E125; the agents' unverifiable claims and sibling findings are listed in the wave-5 reports rather than silently dropped.
+- The client report lives on the site as `docs/project-report.md` with `status: snapshot`; `knowledge/` holds exactly the ten carriers and the gate pins that set without exception.
+- CLAUDE.md keeps its duplicated passages for now; the subtraction the review proposes is an operator decision (E125).
+
+**Status** 2393 tests passed (2350 in the suite plus the 43 of the knowledge gate), ruff 0, frontmatter gate green; committed with this entry and pushed.
+
+**Next steps**
+1. Operator decision on the CLAUDE.md subtraction (manifest semantics, save mechanism, marking-policy rationale, per-document gloss) and on `uv lock`.
+2. The plan block of decisions.md: re-freeze of the evaluation draw, the four entity operator questions, O8/O13/O27 with ZBZ.
+3. Align the literature comparison tables with `comparison_lit` in `docs/data/cer_statistics.json` (Levchenko GPT-4o row, guide-value row), one source of truth for both.
+
 
 ### 2026-08-21 Session 98: knowledge base recut by function, capped at ten, reports dissolved
 
@@ -107,12 +140,15 @@ Wave 2 ran in the same session as well (E122): scripts layout (`scripts/core/`, 
 
 Wave 3 closed the plan in the same session (E123): shared helpers and tooling gates, the test suite strengthened to 2344 tests of which 1447 run on a fresh clone, one data-loss defect in the step-2 repair path fixed, one incident recorded (a verification run overwrote the frozen evaluation draw under the gitignored audit folder; reconstructed, tracked data unchanged).
 
-**Next steps** 1. Operator decisions: the five homeless findings, the re-freeze of the evaluation draw, the CER catalog corrections. 2. `uv lock` once uv is installed. 3. Regular work resumes on the entity layer (M4 frozen-rules run, redraw and recall remeasurement).
+**Next steps**
+1. Operator decisions: the five homeless findings, the re-freeze of the evaluation draw, the CER catalog corrections.
+2. `uv lock` once uv is installed.
+3. Regular work resumes on the entity layer (M4 frozen-rules run, redraw and recall remeasurement).
 
 ## Compact Archive (Sessions 1 to 96)
 
-One line per session, newest first. Rationale in the [decision register](decisions.md),
-details in the git history.
+One line per session, newest first; for the earliest sessions one line covers a range of
+several. Rationale in the [decision register](decisions.md), details in the git history.
 
 ### August 2026: GND entity layer
 
@@ -230,7 +266,7 @@ details in the git history.
 | 11 | 2026-03-05 | Gemini document classification (E27), online demo (E28), Gemini OCR correction stage 2b (E29). |
 | 9-10 | 2026-03-03 to 04 | docling-serve API (E24), Gemini layout QA plus detect (E25/E26): three modes. |
 
-### February 2026: pipeline build-up
+### January to February 2026: pipeline build-up
 
 | # | Date | Topic |
 |---|---|---|
@@ -242,11 +278,14 @@ Older detail entries preserved in the git history.
 
 ## Lessons
 
-Observations distilled from the sessions that stay relevant for future work:
+Observations distilled from the sessions that stay relevant for future work. Identifiers
+are stable, so a lesson whose subject disappeared was dropped and its number stays unused;
+this covers the LLM NER lessons removed with E71 and the agent-screening lesson abolished
+with E66.
 
 - L1: Validation must be actionable. A false-positive rate above 50 % makes reports useless; every warning needs a concrete action.
 - L4: Merge page fragments into document structure; the ZBZ reference has one top-level div, and the post-assembly merge is deterministic and free.
-- L5: Invalidate the step-2 cache on prompt changes; `--force` does not regenerate it.
+- L5: Invalidate the step-2 cache on prompt changes; `--reassemble` reuses it and only `--force` bypasses it (`tei_unified.py`).
 - L7: Page-numbering drift breaks pagewise CER; content-aligned evaluation is immune.
 - L8: Parse multilingual codes correctly ("fra/deu" otherwise decays to "und").
 - L9: Keep facsimile and pb in sync; empty surfaces for pages without layout zones.
@@ -258,12 +297,13 @@ Observations distilled from the sessions that stay relevant for future work:
 
 ## Archive: full entries of sessions 69 to 96
 
-The full entries of sessions 69 to 96, moved out of the Entries section on 2026-08-21 by operator
-decision and kept verbatim, newest first; the compact lines of the archive block above point
-here. Entries are never changed retroactively, so corrections are written as new entries and
-reference the entry they correct. Links inside the entries name the documents that carried the
-subject at the time; where those documents were dissolved in the 2026-08 refactoring the link
-points at the carrier that holds the subject today.
+The full entries of sessions 69 to 96, moved out of the Entries section on 2026-08-21 by
+operator decision and kept verbatim, newest first; the compact lines of the Compact Archive
+section above point here. Entries are never changed retroactively, so corrections are written
+as new entries and reference the entry they correct. Links inside the entries name the
+documents that carried the subject at the time; where those documents were dissolved in the
+knowledge-base recut of 2026-08 (E124) the link points at the carrier that holds the subject
+today.
 
 ### 2026-08-13 Session 96 (continued): marking policy in force, corpus-wide preview run (E119)
 
@@ -521,8 +561,8 @@ variant, Freund/Freud, cross-bearer collisions) are now held back structurally.
 Wave 6, the evaluation. Nine Opus agents adjudicated per the versioned protocol, six
 precision ranges (300 cases), one blind second adjudicator (50 cases), and two recall
 readers (40 pages), with every verdict file verified against disk; the protocol itself
-was corrected mid-wave (wrong Hersch gid), found by an agent. Results in
-the evaluation result (verification.md, appendix) and
+was corrected mid-wave (wrong Hersch gid), found by an agent. Results in the evaluation
+appendix of [verification.md](verification.md) and
 `output/audits/entity_eval_report.json`: precision 0.952 (CI 0.925-0.976) over decidable
 cases, raw agreement 0.96, and recall coverage 0.552 with 28 of 30 misses being rule
 gaps (speaker initials, acronym casing, GND qualifier, byline exception). The agents
@@ -542,7 +582,8 @@ nowhere in the corpus; five matcher repairs as derived channels that stay tier 2
 (acronym case tolerance, parenthetical qualifier strip, static place-adjective
 inversion, superscript digits as word boundaries, person initials); and the
 false-positive risk ranking `scripts/eval/entity_risk_ranking.py` plus the wave protocol
-`output/audits/fp_hunt/PROTOCOL.md` (versioned copy in reports/), which scores 4043
+`output/audits/fp_hunt/PROTOCOL.md` (versioned copy then in reports/, dissolved with E124
+into the appendix of [verification.md](verification.md)), which scores 4043
 tier-1 marks into high 1517 / medium 960 / low 1566, the high stratum dominated by
 anchored-surname hits on 39 gids. Impact measured against the frozen scan (copy in
 `output/audits/eval_sample/`): the worklist grows by 1657 proposals while tier 1 changes
@@ -630,7 +671,7 @@ carried it and was verified against the catalogue), six stay freehand with a sta
 [index.md](index.md) gained a function table, [decisions.md](decisions.md) the register entry E104
 with the full rationale. `generated-with` was set nowhere, because the co-author trailers of each
 document span several model versions and a per-document value would state less than the git history.
-[arbeitsbericht-v3.md](arbeitsbericht-v3.md) was excluded from the pass, since it carried an
+[project-report.md](../docs/project-report.md) was excluded from the pass, since it carried an
 uncommitted working state.
 
 **Decisions** E104: post-hoc convention alignment, additive frontmatter only, no renames and no
@@ -667,7 +708,7 @@ classes: the delivery-contract header (idno types, biblStruct), `revisionDesc` a
 `div type="text"`, `pb type="blank"`, and `head@facs`. The operator decided to drop
 the DTA claim entirely; the format authority is the project schema `zbz_hersch.rng`
 (TEI P5 subset formalizing the ZBZ editorial guidelines). All living documents were
-reworded ([arbeitsbericht-v3.md](arbeitsbericht-v3.md) including footnote 2,
+reworded ([project-report.md](../docs/project-report.md) including footnote 2,
 [pipeline.md](pipeline.md) TEI-mapping section, [index.md](index.md),
 [project.md](project.md) M4, data READMEs) and the step-2 prompt plus two docstrings
 (`tei_mapping_prompt.py`, `tei_generator.py`) updated; the prompt change affects only
@@ -832,8 +873,9 @@ two facsimile-confirmed genuine footnotes in 1530 and 3040 plus one new
 borderline case, doc 20 page 196, curation worklist); `char_lint_audit` keeps
 straight apostrophes at zero. CER re-measured (seed 42, B = 10 000): fidelity
 mean 2.50% (CI [1.65%; 3.54%]), median 1.37% (CI [1.08%; 2.56%]); paired against
-raw OCR 17/25 documents improved, -9.66 pp, p = 0.0066. `docs/data/
-cer_statistics.json` regenerated (also carries the corrected citation strings).
+raw OCR 17/25 documents improved, -9.66 pp, p = 0.0066.
+`docs/data/cer_statistics.json` regenerated (also carries the corrected citation
+strings).
 Both stock-run slots in `reports/arbeitsbericht-v3.md` filled, its 6.3 figures
 updated, `knowledge/final-report.md` 6.3 updated, E94/E95 register entries closed
 as executed.
@@ -930,8 +972,9 @@ value.
 pending and their verified dry-run figures still hold on the refactored code.
 
 **Next steps**
-1. Operator runs `tei_pb_folio --strip-folio-echo`, then `tei_body_note_demote
-   --promote-footnotes`, then gates (`pytest`, `tei_validator --all`, after-audits).
+1. Operator runs `tei_pb_folio --strip-folio-echo`, then
+   `tei_body_note_demote --promote-footnotes`, then gates (`pytest`,
+   `tei_validator --all`, after-audits).
 2. Operator adjudications: document 30 (E91 conflict), 1520 page 70 re-OCR.
 3. Fill the marked slots in `reports/arbeitsbericht-v3.md` and update
    `final-report.md` once runs and adjudications are through.
@@ -982,10 +1025,9 @@ ecosystem-synthesis, and the effort-hours table in workflow.md replaced by an
 implementation-state note.
 
 **Status** Knowledge corrections done; the ground-truth map and the ground-truth
-exception catalog are consolidated as Appendix B of
-`final-report.md` (superseded by arbeitsbericht-v3.md) (operator decision: one final report instead of
-scattered report files; the 1520 repair proposal lives there too, corrected copy under
-`output/`). Four implementation agents delivered the diagnostic audits (character lint,
+exception catalog are consolidated as Appendix B of `final-report.md`, since superseded by
+arbeitsbericht-v3.md (operator decision: one final report instead of scattered report
+files; the 1520 repair proposal lives there too, corrected copy under `output/`). Four implementation agents delivered the diagnostic audits (character lint,
 pb@n plausibility, hi survival, relation integrity), the deterministic pb@n projection
 plus filter-leak fix in step 1, the rendering-loss root cause (Mistral OCR is the main
 loss source, the Gemini image channel is practically unused because the prompt verifies
@@ -1142,14 +1184,15 @@ conflicts in quality.md and reports/2026-05-27_arbeitsbericht.md.
 counter-check knowledge.
 
 **Course** The deletions of quality.md and of the 2026-05-27 work report were accepted;
-their substance lives in [specification.md](specification.md) and
-`final-report.md` (superseded by arbeitsbericht-v3.md). The E91 entry was rewritten in English after E90 in
-[decisions.md](decisions.md). Section 6.3 of final-report.md received the two ported
+their substance lives in [specification.md](specification.md) and in `final-report.md`,
+since superseded by arbeitsbericht-v3.md. The E91 entry was rewritten in English after E90
+in [decisions.md](decisions.md). Section 6.3 of final-report.md received the two ported
 passages, the concretization of the upper-bound statement (apparatus insertions under 50
 characters, capitalization divergence of the reference) and a paragraph on the
-independent counter-check with a pointer to
-cer-gegenprobe-2026-07-03.md (verification.md, appendix). That report
-stays unchanged as a German snapshot with its measured values.
+independent counter-check with a pointer to the counter-check report
+`cer-gegenprobe-2026-07-03.md`, whose content now sits in the appendix of
+[verification.md](verification.md). That report stays unchanged as a German snapshot with
+its measured values.
 
 **Decisions** Ported knowledge-document passages carry no measured values; where a
 figure matters they name the producing script (`scripts.eval.benchmark_cer`,
@@ -1360,11 +1403,11 @@ Entry template (insert new entries directly under "## Entries"):
 
 ### YYYY-MM-DD Session N: session title
 
-**Occasion** [One sentence: why this work now.]
+**Occasion** [One sentence stating why this work happens now.]
 
-**Goal** [One sentence: what should exist at the end.]
+**Goal** [One sentence stating what should exist at the end.]
 
-**Course** [Past tense, at most 120 words: what happened, with references. Distill.]
+**Course** [Past tense, at most 120 words. What happened, with references. Distill.]
 
 **Decisions**
 - [What, why, rejected alternative. Register id, or the note "no register entry".]
@@ -1372,7 +1415,7 @@ Entry template (insert new entries directly under "## Entries"):
 **Status** [Past tense, self-contained; savepoint commit hash where one exists.]
 
 **Next steps**
-1. [Numbered and executable: concrete enough to start the next session.]
+1. [Numbered and executable, concrete enough to start the next session.]
 
-**Dead Ends** [Optional: tried and rejected, with rationale.]
+**Dead Ends** [Optional, tried and rejected, with rationale.]
 -->

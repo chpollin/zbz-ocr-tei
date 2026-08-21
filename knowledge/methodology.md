@@ -34,12 +34,11 @@ verifiable.
 
 ## Epistemic Infrastructure
 
-Agent reliability does not scale with model capability alone but with the quality of the
-epistemic infrastructure in which the model operates (evidenced by SWE-bench vs. SWE-bench
-Pro, ~60 percentage points difference with identical models).
+Agent reliability scales with the quality of the epistemic infrastructure the model
+operates in. Model capability alone does not carry it; the gap between SWE-bench and
+SWE-bench Pro reaches about 60 percentage points with identical models.
 
-For agents the repository is not a storage location but their primary interface. Three
-properties must hold:
+For agents the repository is the primary interface. Three properties must hold:
 
 - Readability: every artifact has a documented purpose ([CLAUDE.md](../CLAUDE.md), knowledge
   docs); new artifacts must be reflected there (maintenance duty).
@@ -52,12 +51,13 @@ properties must hold:
 
 Four levels, ordered economically (cheap first, expensive last):
 
-1. Automatic: schema validation, Python tests. Binary, fast, filters obvious errors.
+1. Automatic: schema validation, Python tests. Binary and fast, this level filters the
+   obvious errors.
 2. Contextual: an LLM checks content plausibility against the project context. Graded result
    (plausible/questionable/implausible).
 3. Visual: facsimile comparison by a vision-capable agent or LLM-as-judge. A different
    modality means epistemic diversity.
-4. Domain: domain expertise, not delegable. The edition scholar decides on ambiguities.
+4. Domain: expertise that cannot be delegated. The edition scholar decides on ambiguities.
 
 The operative effect is that each level reduces the case set for the next. Domain expertise
 is focused on its highest-value area of application (asymmetric amplification).
@@ -67,12 +67,12 @@ is focused on its highest-value area of application (asymmetric amplification).
 Five steps, iterative (aligned with ReAct's thought-action-observation loop):
 
 1. Diagnosis: the agent determines the state via diagnostic artifacts (read the validation
-   report). Act on findings, not on assumptions.
+   report), and the findings drive the step that follows.
 2. Exploration: prioritize the corrective measure by the largest quality gain. Structural
    errors before reference errors before formatting.
 3. Execution: the agent invokes an artifact, under the flag conventions stated below.
-4. Re-validation: run the diagnosis again, compare before and after. Every unverified change
-   is a hypothesis, not an improvement.
+4. Re-validation: run the diagnosis again, compare before and after. A change stays a
+   hypothesis until that comparison confirms it.
 5. Escalation: after a defined number of iterations or on stagnation, hand the problem to the
    right expert in the loop.
 
@@ -102,12 +102,12 @@ and the authority to accept a self-report belong to the Governance section below
 | Artifact | material tool (versioned, maintainable) | `tei_validator.py`, `corpus_audit.py`, [CLAUDE.md](../CLAUDE.md) |
 | Tool | concrete invocation by the agent | `python -m scripts.tei.tei_validator --doc 290` |
 
-Commands without artifacts stay abstract. Artifacts without commands lie unused. Tools
-without commands are ad-hoc actions. Only the interplay of all three layers produces the
-cyclic, quality-assured work process.
+Each layer depends on the other two. A command without a matching artifact cannot be
+executed. An artifact that no command calls for stays unused. An invocation that no command
+governs is an ad-hoc action whose result nobody expects to reproduce.
 
 Artifacts are fed-back output, at once a result of the process and input for the next cycle.
-The epistemic infrastructure grows reactively on quality signals.
+The epistemic infrastructure grows in reaction to the quality signals the artifacts emit.
 
 ## Operative Tools (CLI)
 
@@ -133,14 +133,18 @@ example of such a signal.
 ## Conventions
 
 - Document IDs follow the pattern `{DOC_ID}` (e.g. 2310, 2530, 1440).
-- Outputs go to `output/` subdirectories (gitignored, except `data/curated_tei/`).
-- `--dry-run` is available on every tool that calls an API or writes into `output/tei_final/`.
-  It reports the intended change without carrying it out and is the mandatory first run
-  before batch operations and before the stock corrections.
+- Generated files go to `output/`, which is gitignored. Two holdings are versioned anyway,
+  `data/curated_tei/` reserved for hand-verified TEI and the delivery mirror `docs/data/`.
+- `--dry-run` reports the intended change without carrying it out. Every tool that writes
+  into `output/tei_final/` carries the flag, as do `tei_unified` and the Transkribus upload,
+  and it is the mandatory first run before batch operations and before the stock
+  corrections.
 - `--force` discards cached results and recomputes them, the paid stages included. It is
   sensible only after an actual upstream change.
-- A changed step-2 prompt requires invalidating the step-2 cache by hand, because `--force`
-  does not regenerate it (lesson L5 of [journal.md](journal.md)).
+- A changed step-2 prompt requires invalidating the cached refinements, because a default
+  run and `--reassemble` both reuse the `_refined.xml` of a page and would assemble the old
+  prompt's output. `--force` recomputes step 2 for the whole document (the subject of lesson
+  L5 of [journal.md](journal.md)).
 - `--reassemble` redoes the rule-based stages of `tei_unified`, the step-1 scaffold built
   from the curated OCR and layout and the step-3 assembly, and reuses the Gemini step-2
   cache. Pages without newer curation need no API call. Pages whose curated OCR or layout is
@@ -148,20 +152,21 @@ example of such a signal.
   would otherwise assemble from the stale cache and the curation would never reach the final
   TEI. That refinement re-derives the text, so a corrected OCR line reaches the final TEI as a
   suggestion and may be reworded. A word-exact change is made in the viewer's TEI-XML mode,
-  which writes `output/tei_final/{DOC_ID}_final.xml` directly and deterministically. `--force` re-refines the whole document instead of selected pages.
+  which writes `output/tei_final/{DOC_ID}_final.xml` directly and deterministically.
+  `--force` re-refines the whole document instead of selected pages.
 
 ## CER measurement method
 
-Reference part for the character error rate (CER) measurement of the pipeline against the 25
-manually created reference TEIs. It fixes the definition of the measure, the choice of
-reference, the fidelity/scope decomposition, and the extraction and normalization rules that
-turn structured TEI into comparison text. It also places the resulting values in the
-print-OCR state of research. The consolidated requirement view is in
-[specification.md](specification.md), quality-measurement section; the measured values live
-in `docs/data/cer_statistics.json` (deterministically regenerable, seed 42) and are reported
-in `arbeitsbericht-v3.md`, section 6.3. This part carries the detailed method behind those
-values. The verification chain behind the published values, from the hand-computed
-regression tests to the independent counter-check, is in
+This part is the reference for the character error rate (CER) measurement of the
+pipeline against the 25 manually created reference TEIs. It fixes the definition of the
+measure, the choice of reference, the fidelity/scope decomposition, and the extraction
+and normalization rules that turn structured TEI into comparison text. It also places
+the resulting values in the print-OCR state of research. The consolidated requirement
+view is in [specification.md](specification.md), quality-measurement section; the
+measured values live in `docs/data/cer_statistics.json` (deterministically regenerable,
+seed 42) and are reported in `docs/project-report.md`, section 6.3. This part carries the
+detailed method behind those values. The verification chain behind the published values,
+from the hand-computed regression tests to the independent counter-check, is in
 [verification.md](verification.md).
 
 ### What the CER measures and how it is defined here
@@ -171,35 +176,38 @@ It is defined as the Levenshtein distance between reference and hypothesis, divi
 character count of the reference.
 
 The Levenshtein distance is the minimal number of single-character operations (insertion,
-deletion, substitution) needed to transfer the hypothesis into the reference. These
-operations are not prescribed but result from the distance computation. The transfer
-direction (hypothesis to reference) is uniform throughout, so the naming of operation types
-stays consistent across all examples; the distance itself is direction-independent. It is
-implemented via `rapidfuzz.distance.Levenshtein`.
+deletion, substitution) needed to transform the reference into the hypothesis. The
+computation derives these operations; nothing prescribes them. The direction is uniform
+throughout, reference to hypothesis, as in `rapidfuzz.Levenshtein.opcodes(reference,
+hypothesis)`, so an insertion is text the pipeline carries and the reference lacks, and a
+deletion is reference text the pipeline missed. The distance itself is
+direction-independent. `rapidfuzz.distance.Levenshtein` computes it, with a pure-Python
+fallback when rapidfuzz is absent.
 
-The aggregation unit is the document. A pagewise CER breaks as soon as the page numbering of
-reference and pipeline drifts apart, so the evaluation aligns on content and stays immune to
-that drift (lesson L7 of [journal.md](journal.md)). The corpus bootstrap procedure (n = 25
-reference TEIs, B = 10,000, seed 42, document-level percentile bootstrap) derives mean and
-95% confidence range from it; the interval method is stated exactly in
-[verification.md](verification.md). For orientation the Transkribus convention grades below
-2% as publication-ready, 2 to 5% as research-usable, and 5 to 10% as usable for full-text
-search. A high CER does not necessarily mean poor text recognition; it can equally follow
-from faulty reading order on complex layout or from Mistral Document AI being a general
-model not specialized on historical type. The computation itself is a single function call;
-the methodological substance lies in the preparation of the two texts and in the choice of
-reference.
+The aggregation unit is the document. A pagewise CER breaks as soon as the page
+numbering of reference and pipeline drifts apart, so the evaluation aligns on content
+and stays immune to that drift (lesson L7 of [journal.md](journal.md)). The corpus
+bootstrap procedure (n = 25 reference TEIs, B = 10,000, seed 42, document-level
+percentile bootstrap) derives mean and 95% confidence range from it; the interval method
+is stated exactly in [verification.md](verification.md). For orientation the Transkribus
+convention grades below 2% as publication-ready, 2 to 5% as research-usable, and 5 to
+10% as usable for full-text search. A high CER does not necessarily mean poor text
+recognition; it can equally follow from faulty reading order on complex layout or from
+Mistral Document AI, the engine behind the delivered text layer, being a general model
+without specialization on historical type. The computation itself is a single function
+call; the methodological substance lies in the preparation of the two texts and in the
+choice of reference.
 
 ### Which reference is measured against
 
-The CER measures deviation from a chosen reference, not objective correctness. With TEI
-ground truth it must therefore be fixed in advance which reading forms the reference, for
-TEI keeps two competing versions of the same text in several places. Two element pairs are
-relevant. `<sic>`/`<corr>` marks a transmitted faulty form against an editorial correction.
-`<abbr>`/`<expan>` marks an abbreviation against its expansion. The difference is that
-`<expan>` contains text that never physically stood on the source (the expansion of "Dr." to
-"Doctor"), while `<corr>` is a plausible reading-text variant that usually differs from
-`<sic>` by only a few characters.
+The CER measures deviation from a chosen reference. It says nothing about objective
+correctness. With TEI ground truth it must therefore be fixed in advance which reading
+forms the reference, for TEI keeps two competing versions of the same text in several
+places. Two element pairs are relevant. `<sic>`/`<corr>` marks a transmitted faulty form
+against an editorial correction. `<abbr>`/`<expan>` marks an abbreviation against its
+expansion. The difference is that `<expan>` contains text that never physically stood on
+the source (the expansion of "Dr." to "Doctor"), while `<corr>` is a plausible
+reading-text variant that usually differs from `<sic>` by only a few characters.
 
 The experiment measures against the edited, curated target version. With `<sic>`/`<corr>`
 the corrected form `<corr>` is chosen (rule E3).
@@ -210,36 +218,37 @@ comparison. `extract_text_for_comparison()` contains no dedicated handling of th
 future occurrence would fall under the generic rule E9 and would then need separate
 regulation.
 
-This choice has a measurable consequence: where the reference itself contains a
-transcription error, a more correct recognition counts as a difference. Such cases raise the
-measured CER, are no pipeline error, and bound what this methodology can reach. The known
-reference defects are catalogued in [project.md](project.md), data section, exception
-catalog of the reference corpus.
+This choice has a measurable consequence. Where the reference itself contains a
+transcription error, a more correct recognition counts as a difference. Such cases raise
+the measured CER with no pipeline error behind them, and they bound what this
+methodology can reach. The known reference defects are catalogued in
+[project.md](project.md), data section, exception catalog of the reference corpus.
 
 ### Decomposing errors into fidelity and scope
 
-The edit operations are decomposed into two categories that separate different error causes.
-Fidelity captures real recognition errors, that is substitutions, deletions, and small
-insertions, and forms the measure of reading quality in the narrow sense. Scope captures
-large insertions from a threshold of 50 characters, which typically stem not from
-recognition errors but from text components the pipeline captures that the selectively
-transcribed reference does not contain, such as mastheads, author lines, or edition
-metadata. The fidelity CER evaluates only the first category; the full-text CER includes the
-scope share as a diagnostic quantity. Both categories sum character-exactly to the
-Levenshtein distance.
+The edit operations are decomposed into two categories that separate different error
+causes. Fidelity captures real recognition errors, that is substitutions, deletions, and
+small insertions, and forms the measure of reading quality in the narrow sense. Scope
+captures large insertions from a threshold of 50 characters. These typically stem from
+text components the pipeline captures that the selectively transcribed reference does
+not contain, such as mastheads, author lines, or edition metadata. The fidelity CER
+evaluates only the first category; the full-text CER includes the scope share as a
+diagnostic quantity. Both categories sum character-exactly to the Levenshtein distance.
 
-This assignment is confirmed at the code: `SCOPE_BLOCK_MIN = 50` in
-`classify_edit_operations()`; substitutions, deletions, and insertions under 50 characters
-count toward fidelity, insertions of 50 characters and more toward scope. Because the
-fidelity values depend on this threshold, every citation names the threshold with them, a
-rule that arose from the independent counter-check.
+The code fixes this assignment. `SCOPE_BLOCK_MIN = 50` in `scripts/eval/evaluate_ocr.py`
+is the default threshold of `classify_edit_operations()`; substitutions, deletions, and
+insertions under 50 characters count toward fidelity, insertions of 50 characters and
+more toward scope. Because the fidelity values depend on this threshold, every citation
+names the threshold, the reference count and the date with them, a rule that arose from
+the independent counter-check.
 
 ### TEI extraction
 
 Before the comparison, a comparison text is produced from each TEI in
-`extract_text_for_comparison()`. The same function processes both sides, the reference TEI
-and the pipeline-produced TEI, so measured differences stem exclusively from text content
-and not from unequal treatment of the sides.
+`extract_text_for_comparison()` of `scripts/eval/evaluate_ocr.py`. The same function
+processes both sides, the reference TEI and the pipeline-produced TEI, so measured
+differences stem exclusively from text content and not from unequal treatment of the
+sides.
 
 | No. | Rule | Effect |
 | :---- | :---- | :---- |
@@ -285,11 +294,11 @@ sides. The rules unify typographic variants that are not substantive differences
 | N21 | Unicode normal form NFC | `unicodedata.normalize('NFC', text)` |
 
 Deliberately not normalized are upper and lower case, diacritics, punctuation, the
-distinction of ss and eszett, and numbers, since these are substantive and not typographic
-differences. The case-sensitive default follows the tool practice of dinglehopper and jiwer,
-which carry lowercasing as opt-in; an optional case-insensitive secondary metric exists
-(`casefold=True`). The preservation of accents is checked separately via its own metric
-(HCPR).
+distinction of ss and eszett, and numbers, because a deviation in any of them is a
+deviation in the text itself. The case-sensitive default follows the tool practice of
+dinglehopper and jiwer, which carry lowercasing as opt-in; an optional case-insensitive
+secondary metric exists (`casefold=True`). The preservation of accents is checked
+separately via its own metric (HCPR).
 
 ### State of research (print OCR)
 
@@ -318,7 +327,7 @@ task warrants.
 | Kanerva and Ledins 2025 | GPT-4o LLM-as-judge (no ground truth) | multilingual historical | 6.30% |
 | Levchenko 2025 | Gemini 2.5 Pro | rus (18th c.) | 3.36% |
 | Levchenko 2025 | Gemini 2.5 Flash | rus | 4.94% |
-| Levchenko 2025 | traditional OCR | rus | 21-45% |
+| Levchenko 2025 | traditional OCR | rus | 21.55-45.96% |
 | Transkribus documentation | guide value | general | 0.5-2% |
 
 #### Comparability caveats
@@ -327,23 +336,23 @@ No entry is a like-for-like benchmark; each differs from the Hersch corpus in at
 dimension. The machine-readable comparability flags in `docs/data/cer_statistics.json`
 (block `comparison_lit`) record these dimensions per entry.
 
-- Greif et al. 2025 (arXiv:2504.00414): German-language address books 1754-1870,
-  predominantly Fraktur with one Antiqua source, a different corpus, and in the
-  leading row a multimodal post-correction. This is the lower bound of the state
-  of research and the most demanding reference point; comparability partial
-  (script, corpus, method). These four rows are the print-OCR comparison values
+- Greif et al. 2025 (arXiv:2504.00414) measured German-language address books
+  1754-1870, predominantly Fraktur with one Antiqua source, and the leading row
+  adds a multimodal post-correction. This is the lower bound of the state of
+  research and the most demanding reference point, with comparability partial on
+  script, corpus and method. These four rows are the print-OCR comparison values
   of this document.
-- Kanerva and Ledins 2025 (arXiv:2502.01205): GPT-4o-class, no-ground-truth
-  evaluation. Methodologically related to the dictionary-hit-rate proxy but on
-  different corpora; comparability partial (method, corpus).
+- Kanerva and Ledins 2025 (arXiv:2502.01205) ran a GPT-4o-class evaluation without
+  ground truth, methodologically related to the dictionary-hit-rate proxy and on
+  different corpora, with comparability partial on method and corpus.
 - Levchenko 2025 (LM4DH 2025 workshop at RANLP 2025, Varna, pages 75-85, DOI
-  10.26615/978-954-452-106-6-007; preprint arXiv:2510.06743): Russian,
+  10.26615/978-954-452-106-6-007; preprint arXiv:2510.06743) measured Russian
   18th-century Civil Font, which is not like-for-like with French and German
-  Antiqua, so comparability is false on language, script and corpus. It is also
-  the source of the frequency-based HCPR adaption used for diacritic
+  Antiqua, so comparability is false on language, script and corpus. That paper
+  is also the source of the frequency-based HCPR adaption used for diacritic
   preservation.
-- The Transkribus guide value is a general orientation band and no measured
-  corpus result.
+- The Transkribus guide value is a general orientation band and carries no
+  measured corpus result.
 
 Why CER values stay of limited comparability between tools even under a nominally identical
 metric is stated in [verification.md](verification.md), novelty claims section; the
@@ -352,11 +361,12 @@ ground-truth-to-text transformation that section names as the error source.
 
 ## Governance
 
-Who decides what in this project, and how multi-agent work is run so that its results are
-verifiable. The scholarly role model with its separated competencies lives in the Critical
-Expert in the Loop section above; this part holds the wave roles, the authority to release
-and to commit, and the rules that make an agent report count as evidence. The claims that
-verification produces are recorded in [verification.md](verification.md).
+This part records who decides what in this project and how multi-agent work is run so
+that its results are verifiable. The scholarly role model with its separated
+competencies lives in the Critical Expert in the Loop section above; this part holds the
+wave roles, the authority to release and to commit, and the rules that make an agent
+report count as evidence. The claims that verification produces are recorded in
+[verification.md](verification.md).
 
 ### Authority and decisions
 
@@ -366,13 +376,14 @@ release, always with a dry run first and always reversible through their backup 
 Merges, tags and releases stay operator-gated. Agents never commit and never push; the
 orchestrator commits after verification.
 
-ZBZ decides the editorial and cataloguing questions, which cover the guidelines and their
-interpretation, the header metadata drawn from Alma, subject headings, and the caption
-contradiction of the ZBZ README (O8, O13, O27 in [decisions.md](decisions.md)). ZBZ also
-answers what counts as a mention in its editorial practice and supplies list extensions
-that recall causes reveal. Because ZBZ feedback is not available in this project phase, the
-open convention questions of the entity layer fall to the operator, who decided them on
-the record from 2026-08-12 onward (E105, E108, E119).
+ZBZ decides the editorial and cataloguing questions, which cover the guidelines and
+their interpretation, the header metadata drawn from Alma, subject headings, and the
+caption contradiction of the editorial guidelines (O8, O13, O27 in
+[decisions.md](decisions.md)). ZBZ also answers what counts as a mention in its
+editorial practice and supplies list extensions that recall causes reveal. Because ZBZ
+feedback is not available in this project phase, the open convention questions of the
+entity layer fall to the operator, who decided them on the record from 2026-08-12 onward
+(E105, E108, E119).
 
 DHCraft carries project management, which sets priorities and accepts results, and the
 development side, which configures the process, under the separation of competencies stated
@@ -439,13 +450,14 @@ counts in the produced JSON, before integrating or committing anything. Adversar
 verification is used where findings are cheap to claim and expensive to trust, so
 independent verifier agents try to refute findings before they enter the record.
 
-Each wave of the refactoring closed with two independent verifiers, one over code and one
-over documents, and the orchestrator spot-checked at least three claims per report against
-the disk before committing (E120 to E123). The code side re-ran the full test suite, the
-linter, the command reference and the mirror regeneration; the document side checked that
-every relative link resolves, that no removed statement lost its owner, and that no new
-volatile quantity entered a durable document. The gates themselves are described in
-[verification.md](verification.md), quality assurance section.
+The refactoring waves closed with independent verification, waves 1 and 2 each with two
+verifiers, one over the code side and one over the documents, and the orchestrator
+checked the reports against the disk before committing (E120 to E124). The code side
+re-ran the full test suite, the linter, the command reference and the mirror
+regeneration; the document side checked that every relative link resolves, that no
+removed statement lost its owner, and that no new volatile quantity entered a durable
+document. The gates themselves are described in [verification.md](verification.md),
+quality assurance section.
 
 Every wave also starts by checking that the artifacts under review match the current code
 state, because an audit of a stale artifact produces findings that were already fixed.
@@ -477,27 +489,27 @@ explicit paths.
 
 ### What made the pattern work
 
-The corpus-scale evaluation waves became reliable only after three ingredients were in
-place, and they are the transferable core. A frozen, seeded sample lets agents judge a
+The corpus-scale evaluation waves became reliable only once three conditions held, and
+those conditions are the transferable core. A frozen, seeded sample lets agents judge a
 fixed set, so results merge without coordination. A written verdict scheme with exactly one
 value per case keeps agents from drifting into free-form prose. Per-agent output files
-avoid write conflicts and keep every judgment attributable. The three apply wherever many
-agents assess many items, independent of the domain.
+avoid write conflicts and keep every judgment attributable. These three conditions apply
+wherever many agents assess many items, independent of the domain.
 
 Two further lessons come from the entity waves. Evaluation panels are drawn by impact and
-class coverage, top-wrap documents, excluded-zone classes, German prose; a draw by document
-count alone misses the classes that matter. Evaluator schemas separate a genuinely lost
+class coverage, meaning top-wrap documents, excluded-zone classes and German prose, because
+a draw by document count alone misses the classes that matter. Evaluator schemas separate a genuinely lost
 mention from a mention that sits on the worklist, because a schema that conflates them
 produces a number nobody can act on.
 
 ### Known limits
 
-Agent self-reports overstate completion under ambiguity, so verification against disk is
-not optional. Long waves outlive a context window, so all state that matters lives in
-files, in samples, protocols and verdicts; conversation alone holds none of it. Permission
-boundaries differ per environment, so an agent may be unable to perform an operator-gated
-action the orchestrator predicted it could, and the wave design has to tolerate that by
-letting the agent report and hand back instead of working around the boundary.
+Agent self-reports overstate completion under ambiguity, so every self-report is checked
+against the real file state. Long waves outlive a context window, so all state that
+matters lives in files, in samples, protocols and verdicts. Permission boundaries differ
+per environment, so an agent may be unable to perform an operator-gated action the
+orchestrator predicted it could, and the wave design has to tolerate that by letting the
+agent report and hand back instead of working around the boundary.
 
 ## Literature and references
 

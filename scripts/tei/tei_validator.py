@@ -776,7 +776,7 @@ def generate_html_report(summary: dict, output_path: Path) -> None:
         "W15": "div mit type UND n (exklusiv)",
         "W16": "figure ohne xml:id (figN)",
         "W17": "speaker ohne Inhalt (Kurations-Slot, E71)",
-        "W18": "foreign xml:lang nicht normalisiert (639-2/B)",
+        "W18": "foreign xml:lang nicht normalisiert (639-2/T)",
         "W19": "Lesereihenfolge Seite nicht kanonisch (Spalten-/Band-Ordnung)",
     }
 

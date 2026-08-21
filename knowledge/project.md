@@ -46,11 +46,11 @@ and teiCrafter are in the Integration section below.
 ## What it is about
 
 The mission is to turn scanned pages into schema-valid TEI that a curator can verify page by
-page against the facsimile, so edition work starts from structured data rather than from
-scans. Three commitments follow from that. The delivered TEI validates against the project
-schema and carries its own provenance in the `revisionDesc`. Every published quality figure
-rests on a stated method and is reproducible from a command. Every human verification step
-is recorded per stream and travels with the object.
+page against the facsimile, so edition work starts from structured data. Three commitments
+follow from that. The delivered TEI validates against the project schema and carries its own
+provenance in the `revisionDesc`. Every published quality figure rests on a stated method and
+is reproducible from a command. Every human verification step is recorded per stream and
+travels with the object.
 
 The corpus splits into four layout classes, from single-column prose over two-column journal
 pages and long monographs to special cases such as historical print, interview transcripts
@@ -90,14 +90,14 @@ What the repository delivers today, by component.
 | Component | Delivered function |
 |---|---|
 | Image extraction | page images per document at a configurable resolution (`scripts/edition/extract_pages.py`) |
-| OCR | base text layer per page for every delivered PDF; Gemini is the resolved default engine, the Mistral path stays selectable as the reproducibility record of the delivered corpus (E64) |
+| OCR | base text layer per page for every delivered PDF; `--engine auto` resolves to Gemini, while the Mistral path that produced the delivered corpus stays selectable as its reproducibility record (E6) |
 | OCR post-correction | optional LLM post-correction (E17) and a Gemini correction variant on a sample (E29) |
 | Layout analysis | Docling regions with bounding boxes plus Gemini quality assurance in `--mode auto` (E19/E20, E25/E26/E31) |
 | PAGE-XML export | PAGE-XML per page with a METS wrapper, plus the Transkribus upload bundle (E13/E81) |
 | Document classification | one-shot classification into the four document types, cached in `data/doc_metadata.json` (E27) |
 | TEI generation | the unified pipeline of scaffold, model refinement, assembly and validation, schema-valid across the corpus (E32/E102) |
 | TEI validation | RelaxNG plus the project rules R1 to R7, the warning rules and the ZBZ conformity rules; catalog owned by [specification.md](specification.md) |
-| Entity layer | deterministic closed-world matcher against the curated ZBZ entity list, written read-only to a preview layer with per-page views in the viewer and the corpus overview `docs/entities.html`; the delivered TEI stays entity-free until an operator releases the stock run |
+| Entity layer | deterministic closed-world matcher against the curated ZBZ entity list; its marks land in a read-only preview layer with per-page views in the viewer and the corpus overview `docs/entities.html`, and the delivered TEI stays entity-free until an operator releases the stock run |
 | Workflow status | three-level status per stream with human-only transitions, provenance history in the per-object manifest and deterministic projection into the TEI `revisionDesc` (E66/E67/E77) |
 | Blank pages | safe blank pages detected per object and projected as `<pb type="blank"/>` (E63/E65) |
 | Viewer | static single-page app with facsimile, OCR, TEI and layout side by side, layout and text editing, one save that writes into the working tree and the mirror, and per-stream export (E56/E58/E60/E72/E78/E79/E107) |
@@ -128,9 +128,10 @@ MIT, `LICENSE` at the repository root.
 
 This section carries the material of the project. It states what the corpus is, where every
 input comes from and under which versioning rule it lives, how the delivered and the
-project-built data are structured, and where the material stops carrying an inference. What
-the pipeline does with the material is in [pipeline.md](pipeline.md), and the claims measured
-on it are checked in [verification.md](verification.md).
+project-built data are structured, and which limits and biases bound what may be inferred
+from it.
+What the pipeline does with the material is in [pipeline.md](pipeline.md), and the claims
+measured on it are checked in [verification.md](verification.md).
 
 ### Subject
 
@@ -255,13 +256,17 @@ document their deviations from it; the format authority for project output is
 A second, dated delivery lies under `data/source/zbz-lieferung-2026-06-21/` and is git-tracked. It
 holds the fuller current version of the ZBZ editorial guidelines and the matching ZBZ RelaxNG
 template, secured unchanged from a transient inbox. It serves as a reference; the active schema
-stays `data/schema/zbz_hersch.rng`, because the ZBZ template omits header elements the delivery
-contract requires. Reconciling the two schema versions is a contract point, see
-the Integration section below.
+stays `data/schema/zbz_hersch.rng`, which is exactly that template plus the header elements the
+pipeline regularly produces, `revisionDesc`/`change`, `langUsage`, `idno` in the
+`publicationStmt` and `monogr`/`imprint` (E68/E88). The template alone declares those elements
+`notAllowed` and would invalidate the delivered stock. One contradiction inside the ZBZ material
+remains open, since the guidelines demand ID, MMSID and publication form in the header while the
+template forbids `idno` in the `publicationStmt`; it goes back to ZBZ as O8, see the Integration
+section below.
 
-The reference TEIs deserve their own reading. They are the 25 objects ZBZ annotated in
+The reference TEIs need a description of their own. They are the 25 objects ZBZ annotated in
 Transkribus, and they are the only ground truth the project has. Three parallel readers read them
-in full against the editorial guidelines on 2026-07-07 (E85). Their body coding follows the
+in full against the editorial guidelines on 2026-07-07 (E92). Their body coding follows the
 guidelines in the load-bearing conventions, that is genre div types, page breaks with bracketed
 supplied numbers, hyphenation including the page-break rule, the footnote ID scheme
 `fn{page}-{no}`, the inline GND entity model and the rendition vocabulary. The concordance finding
@@ -284,12 +289,12 @@ it deviates is in Limits and Examples below.
 | Document classification | `data/doc_metadata.json` | generated Gemini classification, committed cache |
 
 The curated entity list is an external export and no repo tool produces its format, so defects in
-it are reported by the intake audit and fixed at the producing tool. One defect class only the API
-lookup exposes, ids that are formally plausible but unknown to the GND, typically catalogue
-numbers mistaken for GND ids. The legacy mention index is a remnant of the removed LLM entity
-phase, kept because it contributes surface forms attested in reference TEIs; its ids lack the GND
-check character and are normalized before joining. The marking policy is held apart from the
-entity list deliberately, because the list may be replaced wholesale while the policy records
+it are reported by the intake audit and fixed at the producing tool. One defect class shows up
+only in the API lookup, ids that are formally plausible yet unknown to the GND, typically
+catalogue numbers mistaken for GND ids. The legacy mention index is a remnant of the removed LLM
+entity phase, kept because it contributes surface forms attested in reference TEIs; its ids lack
+the GND check character and are normalized before joining. The marking policy is held apart from
+the entity list deliberately, because the list may be replaced wholesale while the policy records
 decisions taken on evidence.
 
 ### Model
@@ -335,7 +340,10 @@ The entity list has three categories, persons, organisations and works, and ever
 GND id. A person entry carries `GND_id`, `name`, `lifetime`, `description`, `listBibl` and
 `editor_reviewed`; an organisation entry carries `GND_id`, `orgName`, `listBibl` and
 `editor_reviewed`; a work entry carries `GND_id`, `title`, `author_gnd_id`, `listBibl` and
-`editor_reviewed`. The list defines the closed world, so a name absent from it is never marked.
+`editor_reviewed`. An entry of any category may add an optional `variants` field, the operator
+channel for a corpus spelling the GND norm form does not carry; each of its strings runs through
+the form derivation of its category and takes the tier its own shape earns. The list defines the
+closed world, so a name absent from it is never marked.
 
 The GND cache keys its entries by id and records `http_status`, `preferred_name`, `variant_names`,
 `types`, `date_of_birth`, `date_of_death` and the Wikidata QID, with the retrieval date and the
@@ -346,7 +354,8 @@ the same pass validates the list.
 The variant review holds a verdict per cache-derived form, `approve`, `suspect` or `reject`, with
 a reason. The lexicon builder consumes it deterministically, a rejected form never enters, a
 suspect form yields lower-tier candidates only, and a form the review does not know counts as
-suspect until the next review pass. Curated headwords and legacy forms stay outside its reach.
+suspect until the next review pass. Curated headwords, curated variants and legacy forms stay
+outside its reach.
 
 The marking policy carries two decision families, both taken on the evidence tables of 2026-08-13
 (E119). `anchor_free_surnames` releases a surname from the document-anchor requirement for exactly
@@ -377,7 +386,7 @@ following as expected material properties. The numbering is load-bearing, becaus
 individual entries by number.
 
 1. Header stub instead of ALMA header, all 25.
-2. Root `type="naegeli"`, all 25; in 2310 with a whitespace defect.
+2. Root `type="naegeli"`, all 25; in 130 and 2310 with a whitespace defect (`type= "naegeli"`).
 3. Foreign-language practice split between document groups: correct `foreign xml:lang` in one
    group (300, 2635, 3020, 90), italics-only marking in another (1060, 1180, 1520); 1910 carries
    the literal placeholder `xml:lang="[fre]"`.
@@ -393,18 +402,18 @@ individual entries by number.
 10. Entities inside picture captions despite the explicit ban: 760 (systematic).
 11. Data hygiene singletons: doubled uncorrected `choice` text (1910), trailing slash in `graphic`
     URLs (760, 2635, 830), a line-region ID as page `facs` (830), whitespace in a page number
-    (560), `@n` on `p` instead of `lb` (90), `pb` without `facs` (1910, 3020), `pb` inside a
-    paragraph (1060, 1440), lowercase line numbering with leading space (130), author credit in
-    the text body (1410).
+    (560), `@n` on `p` instead of `lb` (90), `pb` without `facs` (300 throughout, 1910, 3020),
+    `pb` inside a paragraph (1060 and 1440 repeatedly, 90 and 1410 once each), lowercase line
+    numbering with leading space (130), author credit in the text body (1410).
 12. 3020 types a panel discussion as `interview` where the guideline reserves `conversation`;
     spoken exchange is coded as `sp` in 3020 and as a dash `list` in 300.
 
 Reference 1520 is not well-formed. Three structurally identical crossed `item`/`p` nestings sit
 around lines 6936, 6979 and 6995, and the parser reveals them only one at a time. The original
-stays untouched as the ZBZ source datum. The document is measured inside the 25-document
-benchmark either way, because the text extraction falls back to the regex rule E12 on a parse
-error. The repair proposal that goes back to ZBZ is a contract point, see
-the Integration section below.
+stays untouched as the ZBZ source datum. The document is measured inside the 25-document benchmark
+either way, because the text extraction falls back on a parse error to the regex rule E12 of the
+extraction catalog in [methodology.md](methodology.md). The repair proposal that goes back to ZBZ
+is a contract point, see the Integration section below.
 
 #### Phenomena the ground truth never shows
 
@@ -437,7 +446,7 @@ Newspaper layouts fail systematically, with many small zones per page and OCR ha
 ### Authority data and links
 
 GND ids are the only entity identifiers the material carries, and the binding markup convention
-puts them inline at the mention (E88), as the reference TEIs show it. The project resolves them
+puts them inline at the mention (E88), as the reference TEIs attest. The project resolves them
 through lobid (`https://lobid.org/gnd/{id}.json`), which also yields the Wikidata QID per entity.
 The lookup is deterministic; entity identity is never inferred by a language model.
 
@@ -485,15 +494,16 @@ correction run or stock correction marks its records stale. Without that binding
 would displace the stored offsets silently.
 
 Every data channel, present or future, is its own trust boundary and passes three steps before its
-forms may match, an intake lint, a shape-class review of the forms it contributes, and a pilot
-round. Which tier a form may serve follows from the form's own distinctiveness; the authority of a
-source never lifts a form class into a higher tier. The lobid variants set the precedent, since
-`variantName` mixes transliterations, translations, pseudonyms, inverted forms and abbreviations,
-and only the shape-based filters in the matcher make the usable subset explicit.
+forms may match, namely an intake lint, a shape-class review of the forms it contributes and a
+pilot round. Which tier a form may serve follows from the form's own distinctiveness; the
+authority of a source never lifts a form class into a higher tier. The lobid variants set the
+precedent, since `variantName` mixes transliterations, translations, pseudonyms, inverted forms
+and abbreviations, and only the shape-based filters in the matcher make the usable subset
+explicit.
 
 ### Relation to the external source
 
-The ZB delivery is input and stays input. Nothing in the pipeline writes into `data/source/`, no
+The ZB delivery serves as input throughout. Nothing in the pipeline writes into `data/source/`, no
 correction travels back into a delivered file, and the source of truth for the scans, the
 reference annotations and the catalogue remains with ZBZ. Where the project finds a defect in
 delivered data, the finding travels as a proposal and the corrected copy lives outside
@@ -514,8 +524,10 @@ Material enters in four steps.
 1. Delivery. ZBZ hands over scans, reference annotations, PAGE-XML exports, the Masterfile and the
    editorial guidelines; the files land under `data/source/` unchanged.
 2. Funnel. `python -m scripts.eval.corpus_audit` reconciles the Masterfile, the delivered PDFs, the
-   OCR results and the final TEI into one funnel, with a drift check against the figures this
-   document carries, so a divergence between claim and disk surfaces as a test failure.
+   OCR results and the final TEI into one funnel and holds the figures this document carries
+   against the computed ones, reporting every metric as OK or DRIFT. The corpus-bound tests in
+   `tests/test_corpus_audit.py` guard the funnel invariants and pin the known completeness gap, so
+   a silent document loss becomes a test failure.
 3. Classification. `python -m scripts.ocr.classify_docs` assigns the document type per object into
    the committed cache, which steers the layout and OCR strategy per type.
 4. Processing. The stages from image extraction to final TEI are described in
@@ -537,7 +549,7 @@ clearly. It is the lookup for anyone who needs an attested instance of a markup 
 | Review (`div type="review"`, head as `bibl` with GND) | 2310, 570; 560 with footnote in the review head |
 | Interview (`sp`/`speaker`, speaker with GND persName) | 3020, 1440 |
 | Double page (two `pb` sharing one `facs`, distinct `n`) | 760, 30, 2635 |
-| Figures (`figure` with `xml:id`, `graphic`, `anchor` start/end pairs) | 760, 2635, 830 |
+| Figures (`figure` with `xml:id` and `graphic`; `anchor` start/end pairs only in 760) | 760, 2635, 830 |
 | Footnotes (`note place="foot"`, `@n`, `xml:id` per scheme) | 290, 130, 560 |
 | Title structure (`title type="main"` plus several `sub`, persName in title) | 1060, 290, 100, 40 |
 | Hyphenation across the page break | 1910 |
@@ -588,10 +600,10 @@ of them.
    TEI header.
 3. Correction loop, from Oxygen as PDF to external reviewers and back into Oxygen.
 
-The Masterfile coordinates all three tracks. Almost every step is manual, the Transkribus
-process is not standardized, external corrections travel as PDF rather than as XML, and
-GND linking happens by hand in Oxygen. Since E21 the pipeline replaces or complements
-three steps of the transcription track.
+The Masterfile coordinates all three tracks. Almost every step there is manual; the
+Transkribus process is not standardized, external corrections travel as PDF rather than as
+XML, and GND linking happens by hand in Oxygen. Since E21 the pipeline replaces or
+complements three steps of the transcription track.
 
 | Existing step at ZBZ | Replaced by the pipeline |
 |---|---|
@@ -675,8 +687,8 @@ The dialect is compatible out of the box, with `TextRegion`, `Coords`, `TextLine
 `TextEquiv` and `ReadingOrder` plus `custom` structure types. The pipeline PAGE carries
 line polygons and no baselines, which is sufficient for import, display and structure;
 only HTR model training in Transkribus needs baselines, and the ZBZ originals carry them.
-The pipeline images are 1240x1754 (150 dpi), the ZBZ originals 2479x3508 (300 dpi); each
-state is internally consistent.
+The pipeline images measure about 1240x1754 pixels (150 dpi, the exact value follows the page),
+the ZBZ originals 2479x3508 (300 dpi); each state is internally consistent.
 
 The upload runs over the legacy TrpServer REST API at `transkribus.eu/TrpServer/rest`,
 with `POST /auth/login`, then `POST /uploads?collId=` carrying a JSON manifest with
@@ -765,9 +777,12 @@ and Z8 of `zbz_conformity.py` turn sharp on curated teiCrafter output, while Z5
 #### Transkribus
 
 R7, PAGE-XML incompatibility, is partly resolved by E23 and E81. The schema version, the
-id scheme `{NNNN}_p{NNN}` and the image format are settled; `@type` and `@custom` remain
-unverifiable, because the delivered TextRegions came empty and offer nothing to compare
-against.
+id scheme `{NNNN}_p{NNN}` and the image format are settled. The delivered TextRegions carry
+no `@type` attribute; they hold the reading order and, on many regions, a structure type
+inside `@custom`, in the same `readingOrder {index:n;} structure {type:x;}` form the
+pipeline writes. Their type vocabulary is the wider one, since it also uses `page-number`
+and `header`, which the pipeline mapping `ZBZ_TO_PAGE_TYPE` in `scripts/config.py` never
+emits. Open is whether the two vocabularies have to be aligned for re-import.
 
 #### teiCrafter
 
@@ -775,7 +790,7 @@ against.
   side builds a bridge.
 - The teiCrafter output-model switch to the inline-GND delivery model is pending, and Epic
   D stays cross-lane until it happens.
-- O27, the ZBZ README contradicts itself on captions. The register section says entities
+- O27, the ZBZ editorial guidelines contradict themselves on captions. The register section says entities
   in captions are not tagged, while the figures example tags an `<orgName ref="GND:...">`
   inside a `<figure>`. The open question is whether the ban covers the caption `<head>` or
   the whole `<figure>` block including its explanatory `<p>`. ZBZ decides. The rule is
@@ -846,4 +861,4 @@ must satisfy, [tei-mapping.md](tei-mapping.md) for how the markup is shaped, and
 - [methodology.md](methodology.md): Promptotyping, governance, CER measurement method
 - [verification.md](verification.md): quality assurance and the verification of the claims
 - [decisions.md](decisions.md): the dated decision register and the open milestones
-- `arbeitsbericht-v3.md`: the project report; measured values in `docs/data/cer_statistics.json`
+- `docs/project-report.md`: the client report, a dated snapshot; measured values in `docs/data/cer_statistics.json`

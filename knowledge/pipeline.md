@@ -58,8 +58,8 @@ OCR (base text layer)          Layout (Docling + Gemini QA)
                                      Evaluation + Viewer
 ```
 
-PAGE-XML is an export that runs beside the TEI path rather than a station on it (E22, a
-recurring misreading). TEI is generated DIRECTLY from layout JSON plus OCR Markdown
+PAGE-XML is a parallel export beside the TEI path; the recurring misreading treats it as a
+station on that path (E22). TEI is generated directly from layout JSON plus OCR Markdown
 via `scripts/tei/tei_unified.py`, and PAGE-XML is produced in parallel for coOCR and
 Transkribus (E13). Both derive independently from layout JSON plus OCR.
 
@@ -87,14 +87,14 @@ files return into the pipeline through `tei_unified --reassemble`, which selecti
 re-refines the changed pages; the round trip with its step sequence, the save mechanism
 and the editors are described in [workflow.md](workflow.md), round-trip section.
 
-Quality assurance (E66): the pipeline asserts no verification state of its own. A human
-sets the workflow status per stream in the viewer; `tei_status_marker.py` projects that
-status deterministically into the `<revisionDesc>` of the final TEI (XML shape in
-[tei-mapping.md](tei-mapping.md), revision description section). Status values,
+Quality assurance follows E66. The pipeline asserts no verification state of its own. A
+human sets the workflow status per stream in the viewer, and `tei_status_marker.py`
+projects that status deterministically into the `<revisionDesc>` of the final TEI (XML
+shape in [tei-mapping.md](tei-mapping.md), revision description section). Status values,
 traffic-light mapping, history semantics and the streams they cover are described in
 [workflow.md](workflow.md), workflow status section.
 
-OCR quality is measured rather than asserted. The measurement method is in
+OCR quality is a measured value. The measurement method is in
 [methodology.md](methodology.md), CER measurement section, the requirement in
 [specification.md](specification.md), the verification of the published claim in
 [verification.md](verification.md), and the measured values in
@@ -102,14 +102,14 @@ OCR quality is measured rather than asserted. The measurement method is in
 `scripts/eval/benchmark_cer.py`, `scripts/eval/cer_statistics.py` and
 `scripts/eval/cer_statistics_full.py`.
 
-Where the pipeline output is published and which facsimiles the online demo carries is
-described below in the GitHub Pages and online demo section.
+The GitHub Pages and online demo section below states where the pipeline output is
+published and which facsimiles the online demo carries.
 
 ## Engines
 
-Active engines in two roles. Pipeline design carries more weight than model choice, since
-the investments that pay off are chunking, page matching and quality routing. LLM
-post-correction hurts at CER below five per cent (E17).
+Three engines are active, one per subsection below. Pipeline design carries more weight
+than model choice, since the investments that pay off are chunking, page matching and
+quality routing. LLM post-correction hurts at CER below five per cent (E17).
 
 `ocr_pipeline --engine auto` is the documented default and resolves to Gemini
 ([ocr_pipeline.py](../scripts/ocr/ocr_pipeline.py), lines 295 to 298), which makes Gemini
@@ -150,31 +150,33 @@ Document AI on Azure section below.
 | Detection | 17 block types (Title, Section-header, Text, Footnote, Caption, Page-header/footer, Picture, Table, Formula, ...) |
 | API | `scripts/layout/run_layout_cloud.py` -> docling-serve (Docker, IBM official) |
 
-Coverage-based quality scoring is a strong proxy for layout quality; no ML needed.
-Landscape and multi-column pages are the hard cases (~64% bad vs. ~14% portrait).
+Coverage-based quality scoring is a strong proxy for layout quality and runs on the region
+geometry alone. Landscape and multi-column pages are the hard cases (~64% bad vs. ~14%
+portrait).
 
 ### Gemini 3.1 Flash Lite: Layout QA + Detect + Refinement
 
 | Aspect | Details |
 |---|---|
-| Model | `gemini-3.1-flash-lite-preview` |
+| Model | `gemini-3.1-flash-lite-preview` (`GEMINI_MODEL`); the vision-OCR path uses `gemini-3.1-flash-lite` (`GEMINI_OCR_MODEL`) |
 | Roles | layout correction, layout detect (fallback for Docling failures, ~15%), document classification, OCR correction, vision OCR (`-e gemini`, writes to `output/mistral_results/`), TEI refinement |
 | SDK | `google-genai` |
 
-3 modes in `layout_qa_gemini.py`:
+Three modes run in `layout_qa_gemini.py`:
 - `--mode qa`: overlay PNG + layout JSON to Gemini, labels corrected, false positives removed, quality score 0-100
 - `--mode detect`: full re-detection with `box_2d` coordinates (0-1000 scale -> x_pct/y_pct/w_pct/h_pct)
 - `--mode auto`: routes per page via `compute_page_quality()` (detect for bad/empty, qa for good/warning)
 
 The routing value is an area coverage. `compute_page_quality`
 ([layout_qa_gemini.py](../scripts/layout/layout_qa_gemini.py), lines 319 to 344) returns a
-quality class, an area-coverage value and the region count per page; its single call site
-(line 691) sends a page below the threshold into re-detection and prints the coverage. The
-quality figure that reaches a layout JSON is the Gemini `score` (line 239), so the coverage
-steers the run while the score is what later stages read.
+quality class, an area-coverage value and the region count per page. Its single call site
+(line 691) sends a page classed `bad` or `empty` into re-detection and prints the coverage.
+The quality figure that reaches a layout JSON is the Gemini `score` (line 239), so the
+coverage steers the run while the score is what later stages read.
 
-Structured outputs via `response_schema`. Both versions are kept (`_layout.json` +
-`_layout_gemini.json`); in DH, provenance is as important as quality.
+Both calls request structured output through `response_schema`. Both layout versions are
+kept, `_layout.json` and `_layout_gemini.json`, so the Docling result stays inspectable
+beside the Gemini-corrected one and the provenance of a region stays reconstructable.
 
 ## TEI mapping
 
@@ -196,19 +198,18 @@ states which phenomena those are.
 
 A controlled entity layer sits beside the TEI stages and writes read-only previews. It
 binds mentions to the curated ZBZ entity list with a deterministic matcher, marks sure
-hits, and parks ambiguous candidates on a review worklist. The markup rules and the
-provenance vocabulary are in [tei-mapping.md](tei-mapping.md), the measured precision and
-recall in [verification.md](verification.md), the gates in
-[verification.md](verification.md), quality assurance section, and the open milestones
-together with the instruments still to be built in [decisions.md](decisions.md), plan
-section. The curated list, the GND variant cache, the legacy mention index, the variant
-review and the marking policy are described as input data in [project.md](project.md),
-data section.
+hits, and holds ambiguous candidates on a review worklist. The markup rules and the
+provenance vocabulary are in [tei-mapping.md](tei-mapping.md). The measured precision and
+recall live in [verification.md](verification.md), the gates that hold them in its quality
+assurance section. The open milestones and the instruments still to be built are in
+[decisions.md](decisions.md), plan section. The curated list, the GND variant cache, the
+legacy mention index, the variant review and the marking policy are described as input
+data in [project.md](project.md), data section.
 
-One rule binds the whole stage, nothing writes into `output/tei_final/`.
-`tei_entity_preview.py` refuses that directory outright, and the operator-gated stock tool
-`scripts/entity/tei_entity_marker.py` remains to be built ([decisions.md](decisions.md),
-plan section, phase A).
+One rule binds the whole stage. Every instrument leaves `output/tei_final/` untouched and
+writes into an output directory of its own; `tei_entity_preview.py` refuses that directory
+outright. The operator-gated stock tool `scripts/entity/tei_entity_marker.py` remains to be
+built ([decisions.md](decisions.md), plan section, phase A).
 
 | Instrument | Reads | Writes |
 |---|---|---|
@@ -231,7 +232,7 @@ plan section, phase A).
 | `scripts/entity/generate_entity_overview.py` | scan snapshot, entity list, verdict store | `docs/data/entity_overview.json` for `docs/entities.html` |
 | `scripts/tei/tei_cover_strip.py` | `output/tei_final/` | operator-gated cover-sheet removal with backup, report under `output/audits/` |
 
-The variant review is an operator-gated channel rather than a script.
+The variant review is an operator-gated channel maintained by hand.
 `data/entities/variant_review.json` carries one verdict per cache-derived name form
 (approve, suspect, reject, each with a reason), and `build_lexicon` consumes it
 deterministically. A rejected form stays out of the lexicon, a suspect form yields tier-2
@@ -241,21 +242,24 @@ The operator worklist of all suspect and reject forms lands in
 `output/audits/variant_review_report.md`.
 
 Four contracts hold the stage together. The matcher returns candidates that are
-offset-verified, non-overlapping and embed at most `lb` tags, and it excludes everything
-outside `text` as well as figures, bibliography divs and already marked elements. The
-preview run proves per document that the result is RelaxNG-valid against `zbz_hersch.rng`,
-that the text of the `text` subtree is character-identical, and that the bytes outside the
-insertions are unchanged, so stripping the wrappers and the header declarations restores
-the original. The corpus scan is a diffable snapshot, which lets a rule change show its
-exact corpus effect before it binds, and a frozen copy of that snapshot is what an
-adjudication wave draws from. The verdict store keys a judgment by document, page, surface,
-identifier and occurrence index over the frozen snapshot and carries a sha256 fingerprint
-of the TEI it was judged on, so a later text change marks the affected records stale for
-re-adjudication.
+offset-verified, non-overlapping and embed at most `lb` tags; it scans only inside `text`
+and skips the bibliography div, `bibl` elements that already carry a reference, the library
+apparatus and already marked `persName` and `orgName`. Figure captions take part in the
+scan and reach the worklist through the `:in-figure` demotion. The preview run proves per
+document that the result is RelaxNG-valid against `zbz_hersch.rng` and that the text of the
+`text` subtree is character-identical; the test gate adds that stripping the wrappers and
+the header declarations restores the original byte for byte. The corpus scan is a diffable
+snapshot, so a rule change shows its exact corpus effect before it binds, and a frozen copy
+of that snapshot is what an adjudication wave draws from. The verdict store keys a judgment
+by document, page, surface, identifier and occurrence index over the frozen snapshot and
+carries a sha256 fingerprint of the TEI it was judged on, so a later text change marks the
+affected records stale for re-adjudication.
 
-The viewer shows the previews read-only under `viewer.html?doc={DOC_ID}&entities=1` with
-category colours, a popover per mention and a per-page worklist panel; the rendering is
-described in [workflow.md](workflow.md), entity layer section.
+The viewer shows the previews read-only in `viewer.html?doc={DOC_ID}`. The annotated
+reading view is the default for every document that has a preview, and `&entities=0` opts
+out (E107). It renders category colours, a popover per mention with label, category and
+GND link, and a panel for the worklist entries that carry no position in the text; the
+rendering is described in [workflow.md](workflow.md), entity layer section.
 
 ## ZBZ Structural Tags (Docling -> ZBZ -> PAGE-XML)
 
@@ -268,7 +272,7 @@ described in [workflow.md](workflow.md), entity layer section.
 | Page-header, Page-footer | `_filter` | (removed) |
 | Picture, Figure | `_skip` | - |
 
-The PAGE-XML of stage 4 also travels outbound as a Transkribus bundle; folder convention,
+The PAGE-XML of stage 4 is also exported as a Transkribus bundle; folder convention,
 dialect and upload are in [project.md](project.md), integration section.
 
 ## Model APIs and credentials
@@ -284,8 +288,8 @@ dialect and upload are in [project.md](project.md), integration section.
 | Delivery | static GitHub Pages site served from `docs/`, no backend |
 | Pipeline execution | local clone or the production fork; no hosted runtime |
 
-The production fork, its container image and its own CI are planned rather than built; the
-items and their conditions are in [decisions.md](decisions.md), plan section, phase E, and
+The production fork, its container image and its own CI exist as plan only; the items and
+their conditions are in [decisions.md](decisions.md), plan section, phase E, and
 the counterpart relationship is in [project.md](project.md), integration section.
 
 ### API access
@@ -302,10 +306,10 @@ The roles these engines play in the pipeline are described in the Engines sectio
 
 ### Environment variables
 
-Credentials live in a `.env` file at the repository root. The file is never committed, never
-read and never printed, and no example file is tracked, so the following list is the
-reference for the variable names. `scripts.config` is the single loader; other modules read
-the values from there.
+Credentials live in a `.env` file at the repository root. The file stays uncommitted, and
+the project neither reads nor prints it; no example file is tracked either, so the table
+below is the reference for the variable names. `scripts.config` is the single loader, and
+other modules read the values from there.
 
 | Variable | Consumer |
 |---|---|
@@ -323,18 +327,18 @@ Central US, North Central US and Sweden Central. The endpoint has the shape
 `https://<deployment>.<region>.models.ai.azure.com/v1/ocr`. The call is
 `POST {endpoint}/v1/ocr` with a bearer token, the PDF travels base64-encoded in the
 `document.document_url` field, and the response returns `pages[]` with `index`, `markdown`,
-`images[]` and `dimensions`. The per-request limit named in the engine table above is
+`images[]` and `dimensions`. The page limit per request named in the engine table above is
 enforced by `MistralOCR._split_pdf()`, which splits an oversized document. Bounding-box and
 document annotations are available for at most eight pages per request.
 
-Failure modes seen during setup, kept because they cost time to rediscover.
+The failure modes seen during setup are kept here because they cost time to rediscover.
 
 - A 404 after deployment means the endpoint URL lacks `/v1/ocr`; the host must be
   `*.models.ai.azure.com` and never `*.services.ai.azure.com`.
 - A 413 means the PDF is too large and needs compression or splitting.
 - Base64 errors come from line breaks inside the encoded string.
-- The catalog entry appears under "Mistral Document AI" rather than "Mistral OCR"
-  (`mistral-document-ai-2505` and `-2512`).
+- The catalog entry is named "Mistral Document AI" (`mistral-document-ai-2505` and
+  `-2512`); a search for "Mistral OCR" finds nothing.
 
 Engine configuration currently lives in `scripts/config.py` and
 `scripts/ocr/ocr_pipeline.py`. Moving it into one configuration file is a planned item in
@@ -349,10 +353,10 @@ Engine configuration currently lives in `scripts/config.py` and
 a fresh checkout, and which markers select it, is owned by
 [verification.md](verification.md), quality assurance section.
 
-`pyproject.toml` is the only manifest. The repository declares no build backend, because it
-is a dependency set and a script pipeline rather than an installable package, so the workflow
-materializes the dependency list from `[project] dependencies` plus the `dev` extra and
-installs it with pip. The `dev` extra pins ruff to one version, which the local
+`pyproject.toml` is the only manifest and declares no build backend, because the repository
+is a dependency set and a script pipeline. The workflow therefore materializes the
+dependency list from `[project] dependencies` plus the `dev` extra and installs it with
+pip. The `dev` extra pins ruff to one version, which the local
 `.pre-commit-config.yaml` hook reuses, so hook and CI report the same findings. The heavy
 layout engines are the separate optional extra `layout` and stay uninstalled in CI.
 
@@ -367,10 +371,10 @@ configuration and the merge strategy for upstream changes are planned and specif
 ### Local development
 
 Setup, dependency installation and the `.env` keys are in the README, section "Getting
-started". What the README does not carry is the optional local layout stack. Docling runs
-locally only with CUDA 12.4 or newer and a GPU with at least 8 GB VRAM; without it, layout
-analysis goes through a Docling Serve instance named by `DOCLING_SERVE_URL`. The hardware
-check is one command.
+started". The optional local layout stack has its own requirement, kept here. Docling runs
+locally only with CUDA 12.4 or newer and a GPU with at least 8 GB VRAM; on other machines
+layout analysis goes through a Docling Serve instance named by `DOCLING_SERVE_URL`. The
+hardware check is one command.
 
 ```bash
 python -m scripts.ocr.ocr_pipeline --check-gpu
@@ -380,7 +384,7 @@ Python 3.11 or newer is required, matching the CI environment.
 
 ### Viewer deployment and local server
 
-The viewer (`docs/`) is a purely static site; no backend is needed.
+The viewer (`docs/`) is a purely static site and runs from any file server.
 
 ```bash
 python -m http.server 8000 -d docs           # docroot docs/ (mirror data only)
@@ -390,11 +394,11 @@ python -m http.server 8000                   # repo root: enables ../output/ fal
 In the second case the viewer is reachable under
 `http://localhost:8000/docs/viewer.html` and can read all OCR engines in the
 `output/` tree. The File System Access write path works under `localhost`
-and HTTPS; writes always go to the local clone, never to a server.
+and HTTPS, and every write lands in the local clone.
 
 ### GitHub Pages and the online demo (E28)
 
-In the repo settings under Settings > Pages: Source "Deploy from a branch",
+The repo settings under Settings > Pages carry Source "Deploy from a branch",
 branch `main`, folder `/docs`. The `.nojekyll` file in the directory
 prevents Pages from interpreting the content as a Jekyll site.
 
@@ -427,13 +431,12 @@ Every asset the site loads comes from `docs/`. OpenSeadragon 5.0.1 sits in
 `docs/assets/vendor/openseadragon/` with its build, its button sprites and its
 BSD-3 license text; the three web font families of the design system sit in
 `docs/assets/fonts/` as WOFF2 in the latin and latin-ext subsets with their SIL
-Open Font License texts, declared in `docs/assets/css/fonts.css`. The pages
-therefore issue no request to a CDN or a font host, the legal notice states that
-plainly, and the viewer keeps working in an environment without outbound
-internet access. A future runtime dependency is vendored the same way rather
-than linked; the token catalog keeps the font stacks, `fonts.css` only adds the
-`@font-face` rules. The design rationale behind the token catalog is in
-[workflow.md](workflow.md), design section.
+Open Font License texts, declared in `docs/assets/css/fonts.css`. Every request the
+pages issue therefore stays inside the site; the legal notice states that, and the
+viewer keeps working in an environment without outbound internet access. A future
+runtime dependency is vendored the same way. The token catalog keeps the font stacks,
+and `fonts.css` adds the `@font-face` rules alone. The design rationale behind the
+token catalog is in [workflow.md](workflow.md), design section.
 
 ### Regenerating viewer data
 
@@ -451,9 +454,9 @@ section; where this step sits in the curation round trip is in
 
 ### Security convention
 
-Credentials live in environment variables only, never in code, documents or commits. The
-binding rules, including the prohibition on reading or printing `.env`, are in
-[CLAUDE.md](../CLAUDE.md), section Security.
+Credentials live exclusively in environment variables, and code, documents and commits
+stay free of them. The binding rules, including the prohibition on reading or printing
+`.env`, are in [CLAUDE.md](../CLAUDE.md), section Security.
 
 ## References
 
