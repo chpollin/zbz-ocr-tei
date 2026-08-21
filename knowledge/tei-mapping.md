@@ -480,21 +480,23 @@ Catalogue metadata from Alma, in particular the MMSID, stays outside the pipelin
 and remains ZBZ domain (O8 in [decisions.md](decisions.md), plan section).
 
 The RelaxNG declarations that govern the entity attributes were read off
-`data/schema/zbz_hersch.rng` directly.
+`data/schema/zbz_hersch.rng` directly. Since E127 all four name-bearing elements declare
+`@ref` inline with the pattern `GND:[0-9A-Za-z\-]+`, so the closed world of the entity
+layer is a format constraint and no longer only a test over the mirror.
 
-- `persName` declares `@ref` inline with the pattern `GND:[0-9A-Za-z\-]+` (lines
-  5836 to 5843).
-- `orgName` declares the same inline pattern on `@ref` (lines 5811 to 5818).
-- `bibl` carries the GND pattern on `@corresp` (lines 3753 to 3760) and inherits an
-  unconstrained `@ref` through `tei_att.canonical.attributes` (line 3747), which resolves
-  to a list of `anyURI` values matching `\S+` (lines 130 to 141).
-- `rs` inherits the same unconstrained `@ref` through `tei_att.naming.attributes` (line
-  3323, resolving via lines 1254 to 1258).
+- `persName` and `orgName` carry the pattern as the ZBZ template delivered it.
+- `bibl` carries the same pattern on `@ref` (E127) and keeps the template's pattern on
+  `@corresp` as well as `@key` from `att.canonical`; the ZBZ guideline and the reference
+  corpus write `bibl@ref`, and `@corresp` appears in the references only twice.
+- `rs` carries the pattern on `@ref` (E127) and keeps `@role`, `@nymRef` and `@key`;
+  neither the corpus nor the references use the element.
+- `placeName` inherits the template's unconstrained `@ref`, untouched because Z3 forbids
+  the element and nothing uses it.
 
-Tightening therefore means narrowing the inherited `@ref` on `bibl` the way `persName` and
-`orgName` already do, or removing `att.canonical` from `bibl`, with `rs` following through
-`att.naming`. That schema hardening is open and belongs to
-[decisions.md](decisions.md), plan section.
+The hardening is a pure narrowing, so every file valid under the project schema stays
+valid under the ZBZ check template. The guard that holds it is described in
+[verification.md](verification.md), quality assurance section; the decision is E127 in
+[decisions.md](decisions.md).
 
 ## Unresolved phenomena
 

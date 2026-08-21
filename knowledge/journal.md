@@ -84,6 +84,23 @@ Archive section; sessions 1 to 68 remain in that section as they are.
 
 ## Entries
 
+### 2026-08-21 Session 101: schema hardening for the entity attributes (E127)
+
+**Occasion** The operator asked how the quality of the entity annotation and its formal cleanliness in the TEI can be established, and whether the schema should be tightened first.
+
+**Goal** The GND pattern on `@ref` is a format constraint on all four name-bearing elements, the gates stay green, and the open plan item "schema hardening" is closed.
+
+**Course** Assessment first: the measured quality (precision 0.952 on the 2026-08-12 draw, coverage 0.552) describes an older mark population, the formal side was held only by the ref-invariant test over the mirror. Usage checked before the change: `bibl@ref` in the ZBZ guideline and 53 times in the references against 2 `@corresp`, `rs` and `placeName` unused everywhere, two references (290, 1520) with bare GND numbers, both already invalid for other reasons. Guard test written, then `bibl` and `rs` narrowed in `data/schema/zbz_hersch.rng`. Verified: schema gate and neighbouring suites 393 passed, 285/285 `tei_final`, 285/285 whole-document previews with 393 `bibl` marks, references unchanged at 17 of 25 valid. Register, plan, mapping and verification updated.
+
+**Decisions**
+- E127: `bibl` and `rs` take `@ref` only in the GND pattern, keeping `@key`, `@corresp` and the naming attributes; a pure narrowing, so the delivery stays valid under the ZBZ template. Rejected: dropping `att.canonical` from `bibl`, and leaving the constraint to the mirror test alone.
+
+**Status** Schema hardened and gated; documentation in this commit; the entity quality question stays with the population redraw, which waits on the operator's re-freeze decision.
+
+**Next steps**
+1. Re-freeze decision on the 2026-08-13 draw, then adjudicate a fresh draw over the current population including the E119 stratum and remeasure recall.
+2. Lexicon shape audit (`entity_lexicon_audit.py`) as the next plan item before the frozen-rules gold benchmark.
+
 ### 2026-08-21 Session 100: facsimiles online from a separate image repository (E126)
 
 **Occasion** The operator asked where the original images lie, why parts of the repository are gitignored, and how all page images could be made available online.

@@ -3320,7 +3320,17 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <ref name="tei_macro.phraseSeq"/>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.cmc.attributes"/>
-         <ref name="tei_att.naming.attributes"/>
+         <ref name="tei_att.naming.attribute.role"/>
+         <ref name="tei_att.naming.attribute.nymRef"/>
+         <ref name="tei_att.canonical.attribute.key"/>
+         <optional>
+            <attribute name="ref">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs.</a:documentation>
+               <data type="string">
+                  <param name="pattern">GND:[0-9A-Za-z\-]+</param>
+               </data>
+            </attribute>
+         </optional>
          <ref name="tei_att.typed.attributes"/>
          <empty/>
       </element>
@@ -3744,7 +3754,15 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
          <ref name="tei_att.global.responsibility.attribute.cert"/>
          <ref name="tei_att.global.responsibility.attribute.resp"/>
          <ref name="tei_att.global.source.attribute.source"/>
-         <ref name="tei_att.canonical.attributes"/>
+         <ref name="tei_att.canonical.attribute.key"/>
+         <optional>
+            <attribute name="ref">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs.</a:documentation>
+               <data type="string">
+                  <param name="pattern">GND:[0-9A-Za-z\-]+</param>
+               </data>
+            </attribute>
+         </optional>
          <ref name="tei_att.cmc.attributes"/>
          <ref name="tei_att.declarable.attributes"/>
          <ref name="tei_att.docStatus.attributes"/>

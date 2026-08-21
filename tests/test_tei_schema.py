@@ -125,6 +125,25 @@ def test_schema_rejects_standoff_register():
     )
 
 
+def _entity_doc(element: str, ref: str) -> str:
+    return delivery_doc(
+        f'<div type="article"><pb facs="#facs_1" n="1"/>'
+        f'<p>Text <{element} ref="{ref}">Titel</{element}>.</p></div>',
+        text_attrs='type="naegeli"',
+    )
+
+
+@pytest.mark.parametrize("element", ["bibl", "rs"])
+def test_schema_rejects_non_gnd_ref(element: str):
+    """bibl/rs nehmen @ref nur im GND-Muster, wie persName/orgName (Schemahaertung E127)."""
+    relaxng = _etree.RelaxNG(_etree.parse(str(SCHEMA)))
+    for bad in ("1088036961", "http://d-nb.info/gnd/1088036961", "#zbz-w.1"):
+        doc = _etree.fromstring(_entity_doc(element, bad).encode("utf-8"))
+        assert not relaxng.validate(doc), f"{element} ref={bad!r} weiterhin schema-valide"
+    good = _etree.fromstring(_entity_doc(element, "GND:1088036961").encode("utf-8"))
+    assert relaxng.validate(good), "\n  ".join(str(e) for e in relaxng.error_log)
+
+
 @pytest.mark.skipif(not FINAL_DOCS, reason="output/tei_final leer (gitignored, kein lokaler Korpus)")
 @pytest.mark.parametrize("doc", FINAL_DOCS, ids=FINAL_IDS)
 @pytest.mark.requires_corpus

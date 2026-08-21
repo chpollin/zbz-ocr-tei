@@ -74,7 +74,7 @@ verification of agent self-reports against disk, is in
 The following properties of the delivered data and of the tools that produce it are pinned
 by a test and fail the build when they break.
 
-- Schema validity of every document in `output/tei_final/` against `data/schema/zbz_hersch.rng` (`tests/test_tei_schema.py`).
+- Schema validity of every document in `output/tei_final/` against `data/schema/zbz_hersch.rng`, together with the data-independent pins of the schema itself, the E68 header elements, the inline GND model, the rejected standOff register and the GND pattern on `@ref` of all four name-bearing elements (`tests/test_tei_schema.py`, E127).
 - The delivery contract of the produced `teiHeader`, meaning `idno` of type docID, `biblStruct` with analytic, monogr and imprint, and `langUsage` (`tests/test_tei_header.py`).
 - The ZBZ conformity rules over the delivered corpus and the generator fixes behind them (`tests/test_zbz_conformity.py`, `tests/test_tei_conformance.py`).
 - The project rules of the validator, errors R1 to R7 and warnings W1 to W7 and W11 to W18, each with one firing fixture and one silent counter-fixture that carries the same construct in correct form; W19 is covered through `tests/test_tei_validator.py` (`tests/test_tei_validator_rules.py`).

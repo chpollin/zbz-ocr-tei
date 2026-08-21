@@ -691,6 +691,18 @@ Execution: demo set pushed first as a mechanism test, then the complete set on t
 
 Documents: [pipeline.md](pipeline.md) GitHub Pages and the facsimile repository, [journal.md](journal.md) session 100
 
+### E127 Schema hardening: `bibl` and `rs` take `@ref` only in the GND pattern (2026-08-21)
+
+Occasion: the operator asked how the quality of the entity annotation and its formal cleanliness in the TEI can be established. The formal side rested on one gap the plan had carried as "schema hardening": the ZBZ check template constrains `@ref` on `persName` and `orgName` to the pattern `GND:[0-9A-Za-z\-]+` but lets `bibl` inherit an unconstrained `@ref` through `att.canonical` (a list of `anyURI`) and `rs` the same through `att.naming`, while the template's GND pattern for `bibl` sits on `@corresp`. The ZBZ guideline itself writes `<bibl ref="GND:...">` (delivery README, sections on works and review heads), the reference TEIs do so 53 times against 2 uses of `@corresp`, and the preview layer writes `bibl@ref` throughout. Until now only `tests/test_entity_ref_invariant.py` held the closed world for works, and only over the generated mirror.
+
+Decision: `bibl` and `rs` declare `@ref` inline with the same GND pattern as `persName` and `orgName`; `bibl` keeps `@key` from `att.canonical` and its `@corresp` pattern, `rs` keeps `@role`, `@nymRef` and `@key`. `placeName` stays untouched, since Z3 forbids it and neither the corpus nor the references use it; `rs` likewise has no usage anywhere and is narrowed for consistency only. The change is a pure narrowing, so everything valid under the hardened schema stays valid under the ZBZ template, and the delivery is unaffected. A parametrized guard test rejects a bare GND number, a GND URL and a local pointer on both elements and accepts the prefixed form.
+
+Alternatives weighed: removing `att.canonical` from `bibl` altogether (rejected, it drops `@key` and moves further from the template than the narrowing requires); leaving the constraint to the ref-invariant test alone (rejected, that gate reads the mirror, so the file format itself would stay lax and a stock run into `tei_final` would be validated only indirectly).
+
+Verified: schema compiles; 285/285 `tei_final` valid through the schema gate; 285/285 whole-document previews under `output/entity_preview/` valid with 393 `bibl` GND marks covered; the reference corpus unchanged at 17 of 25 valid, the other 8 invalid for pre-existing reasons. Finding recorded for the reference corpus: documents 290 and 1520 carry bare GND numbers without prefix on `bibl@ref`, both already invalid against the template for unrelated reasons, so the hardened schema does not change their count; this is a reference deviation from the ZBZ guideline that the reference exception catalog already lists (exception 7 in [project.md](project.md), data section) and the gold benchmark already normalizes.
+
+Documents: [tei-mapping.md](tei-mapping.md) header and schema declarations, [verification.md](verification.md) quality assurance section, [journal.md](journal.md) session 101
+
 ## Plan
 
 This block orders the work still outstanding into phases and milestones, each carrying the
@@ -735,17 +747,13 @@ live in [tei-mapping.md](tei-mapping.md), the measurement method and its finding
 
 ##### Schema hardening
 
-Begins immediately, since the schema is the format authority of the delivery (E102) and every
-measurement whose numbers should survive belongs after it. `persName@ref` and `orgName@ref` already
-carry the `GND:` pattern inline. `bibl` pulls `tei_att.canonical.attributes` and inherits an
-unconstrained `@ref` through it, while its GND pattern sits on `@corresp`; `rs` inherits the same
-unconstrained `@ref` through `tei_att.naming.attributes`. Tightening means narrowing the inherited
-`@ref` on `bibl` the way `persName` and `orgName` do, or dropping `att.canonical` from `bibl`, and
-handling `rs` the same way through `att.naming`. `placeName` stays untouched, since Z3 forbids it
-and the corpus has no usage. The change takes its own commit and register entry.
-
-Done when all delivered TEI and the valid reference TEIs still validate against
-`data/schema/zbz_hersch.rng` and the schema gate named in [verification.md](verification.md), quality assurance section, is green.
+Done with E127. The schema is the format authority of the delivery (E102), so every measurement
+whose numbers should survive belongs after it. `bibl` and `rs` now declare `@ref` inline with the
+`GND:` pattern that `persName` and `orgName` already carried; `placeName` stays untouched, since Z3
+forbids it and the corpus has no usage. All delivered TEI, all whole-document previews and the
+valid reference TEIs validate against the hardened `data/schema/zbz_hersch.rng`, and the schema
+gate named in [verification.md](verification.md), quality assurance section, carries a guard for
+the narrowed attributes.
 
 ##### Lexicon shape audit
 
@@ -1046,7 +1054,7 @@ outstanding), open, and blocked-by with the named party.
 | Corpus handover to ZBZ | done | E66/E67, every stream `unverifiziert` as handover default |
 | Entity layer to preview (M0 to M3) | done | E105 to E119, [verification.md](verification.md) |
 | CER catalog corrections | done | [methodology.md](methodology.md), CER measurement section, extraction rules |
-| Schema hardening | open | `data/schema/zbz_hersch.rng`, `bibl` via `att.canonical`, `rs` via `att.naming` |
+| Schema hardening | done | E127, `tests/test_tei_schema.py` (`test_schema_rejects_non_gnd_ref`) |
 | Lexicon shape audit | open | `entity_lexicon_audit.py` does not exist |
 | Gold benchmark (M4) | built | `entity_gold_benchmark` writes `output/audits/entity_gold_benchmark.json`; no evidence under `docs/data/` |
 | Population redraw and recall remeasurement | blocked-by operator (re-freeze decision) | `output/audits/eval_sample_2026-08-13/` frozen and unadjudicated |
