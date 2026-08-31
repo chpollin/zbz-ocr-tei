@@ -14,7 +14,7 @@ status: complete
 language: en
 version: 1.0
 created: 2026-08-21
-updated: 2026-08-21
+updated: 2026-08-26
 authors: [Christopher Pollin]
 related: [specification, pipeline, project, verification, decisions]
 ---
@@ -265,39 +265,41 @@ decision, hold as follows.
   `revisionDesc`, idempotent, in the E42 convention. Preview files carry no `revisionDesc`
   entry; their header declares the responsibilities their own marks point to.
 
-Every mark carries its provenance and its verification state, and three things stay
-separate (E118). Provenance says who asserted the mark and sits in `@resp` as a pointer to
-a `respStmt` that the preview run declares in the `titleStmt` of the header. Two
-responsibilities exist. `resp-entity-matcher` is the deterministic closed-world matcher,
-named together with a digest over the rule-bearing modules, so the rule state behind a
-mark is identifiable rather than merely dated.
-`resp-entity-adjudication` is the facsimile adjudication of the evaluation wave, named
-with the wave's snapshot. A document declares only the responsibilities its own marks
-point to, and nothing is declared for a model judge, because no producer writes such
-marks.
+Every mark carries activity provenance in `@resp` and no entity mark carries `@cert`
+(E131, which corrects E118). Certainty tokens collapse unlike evidence paths into an
+ordinal scale whose values do not say what happened. Responsibility pointers retain that
+distinction. The preview declares only the roles its own marks use in `respStmt` elements
+inside `titleStmt`:
 
-Verification state sits in `@cert` and takes only the tokens the schema names, `high`,
-`medium`, `low` and `unknown`. An adjudicated-correct mark is `high` and a plain matcher
-assertion is `medium`. A mark the adjudication judged a wrong entity or absent from the
-source has to leave tier one, and the verdict guard reports it as a violation for as long
-as it stands there. The tokens `low` and `unknown` stay unassigned until a producer needs
-them. Measured reliability stays a property of the rule class and comes from the
-adjudicated sample next to its sample size
-([verification.md](verification.md)). A model-produced confidence number never enters the
-data; the schema would accept a numeric `@cert`, so this ban is a project rule rather than
-a format constraint.
+- `resp-entity-matcher` records deterministic closed-world matching and names
+  `scripts/entity/entity_matcher.py` together with a digest over the rule-bearing modules.
+- `resp-entity-agent-review` records the existing facsimile-based evaluation judgment as
+  machine review. It never asserts editorial verification.
+- `resp-entity-agent-annotation` records a context-aware selection or promotion made by an
+  AI agent through a bound context packet.
+- `resp-entity-llm-judge` records an independent LLM review whose run differs from the
+  producing agent run.
+- `resp-entity-editor-verification` records a person-bound editorial verification.
 
-The producing rule travels in `@source`, so the reason for a mark is readable in the file
-without a report beside it. Among the candidate attributes only `@source` is legal on all
-three wrapped elements, since `@evidence` validates on `persName` and `orgName` and fails
-on `bibl`, and `@ana` is absent from the schema altogether.
+The detailed run record stays in `output/entity_agent_review/{run_id}.json`, where context
+hashes, harness, model, prompt digest, tool calls, evidence references and an optional judge
+record remain machine-readable. The current schema offers `respStmt` but no `appInfo` or
+`application`, so the TEI carries compact role pointers and readable declarations. Measured
+reliability remains a property of the evaluated rule class and is reported with its sample
+size in [verification.md](verification.md).
+
+The producing matcher rule travels in `@source`; image, transcription and guideline
+evidence stay in the bound context packet rather than overloading the rule attribute. Among
+the candidate attributes only `@source` is legal on all three wrapped elements, since
+`@evidence` validates on `persName` and `orgName` and fails on `bibl`, and `@ana` is absent
+from the schema altogether.
 
 The verdict store `data/entities/mention_verdicts.json` stays the source of truth of the
-judgments, and the attributes are a regenerable projection of it. A judgment binds the
-bytes it was made on, so a document whose sha256 fingerprint has moved since the
-adjudication falls back to `medium` throughout instead of claiming a verification its
-current text no longer supports. The same fallback holds where the adjudicated span or the
-adjudicated entity is no longer what the matcher would write.
+evaluation judgments, and the `resp-entity-agent-review` pointer is a regenerable
+projection. A judgment binds the bytes it was made on. If the document digest, span or
+entity has changed, that review role disappears from the mark; the matcher provenance
+remains. A wrong-entity or not-in-source judgment still has to leave tier one, and the
+verdict guard fails while it stands there.
 
 Finding mentions runs in three tiers, and one principle binds every tier, that a language
 model never assigns identifiers. Candidates and their GND identifiers come from the
@@ -309,11 +311,14 @@ answer that none of them fits (E62).
    organisation names, multi-word work titles, speaker slots, speaker initials at the
    label position resolved by a document anchor or by list-unique initials of at least
    three letters (E128), and bare surnames with a document anchor.
-2. Tier two, judge. Ambiguous hits such as bare surnames without anchor or colliding with
-   common words, single-word titles, candidates inside plain `bibl`, and markup-crossing
-   hits. A calibrated model is to choose among the deterministic candidates, with its
-   verdicts persisted and sampled by humans; that judge stage is milestone M5 and carries
-   no calibration run yet ([decisions.md](decisions.md), plan section).
+2. Tier two, contextual decision. Ambiguous hits such as bare surnames without anchor or
+   colliding with common words, single-word titles, candidates inside plain `bibl`, and markup-crossing
+   hits. `entity_agent_context.py` binds the facsimile, transcription, TEI page, schema,
+   guidelines and candidate identities into one packet. `entity_agent_review.py` accepts
+   structured decisions, permits only supplied identifiers, writes a separate preview and
+   validates schema and text invariance. A calibrated independent judge may contribute its
+   own role, while M5 still carries no calibration run ([decisions.md](decisions.md), plan
+   section).
 3. Tier three, worklist. What no rule can find, such as allusions and badly recognized
    names, goes to human curation.
 
@@ -463,9 +468,9 @@ Entity elements of the preview layer, which the delivered corpus does not yet ca
 
 | Element | Attributes | Use |
 |---|---|---|
-| `<persName>` | `ref`, `resp`, `cert`, `source` | person mention with GND reference |
-| `<orgName>` | `ref`, `resp`, `cert`, `source` | organisation mention with GND reference |
-| `<bibl>` | `ref`, `resp`, `cert`, `source` | work mention with GND reference, title span only |
+| `<persName>` | `ref`, `resp`, `source` | person mention with GND reference |
+| `<orgName>` | `ref`, `resp`, `source` | organisation mention with GND reference |
+| `<bibl>` | `ref`, `resp`, `source` | work mention with GND reference, title span only |
 | `<respStmt>` | `xml:id` | responsibility declaration in the preview header |
 
 ## Header and schema declarations
@@ -527,8 +532,8 @@ zero-padded number.
 
 The `xml:id` schemes in use are `facs_N` for a surface, the layout zone identifier for a
 zone, `fn{page}-{no}` for a footnote, `figN` for a figure with `figN-start` and `figN-end`
-for its anchors, and `resp-entity-matcher` and `resp-entity-adjudication` for the
-responsibility declarations of the preview layer.
+for its anchors, and the `resp-entity-*` vocabulary in the entities section for the
+responsibility declarations of the preview and agent-review layers.
 
 Language codes follow ISO 639-3. A multilingual value from the Masterfile is parsed into
 one `<language>` element per code, because a compound value such as "fra/deu" otherwise

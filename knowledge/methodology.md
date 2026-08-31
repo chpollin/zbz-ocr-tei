@@ -14,7 +14,7 @@ status: complete
 language: en
 version: 1.0
 created: 2026-03-15
-updated: 2026-08-21
+updated: 2026-08-26
 authors: [Christopher Pollin]
 related: [index, project, specification, pipeline, workflow, verification, decisions, journal]
 absorbed:
@@ -61,6 +61,17 @@ Four levels, ordered economically (cheap first, expensive last):
 
 The operative effect is that each level reduces the case set for the next. Domain expertise
 is focused on its highest-value area of application (asymmetric amplification).
+
+The entity workflow makes this cascade executable in three different loops. First, the
+developer changes deterministic matching rules in response to inspected false positives
+and missed forms; every run remains reproducible. Second, an AI agent receives a
+SHA-256-bound packet containing facsimile, transcription, TEI page, candidate identities,
+schema and guidelines. It may inspect the image, compare the two text representations,
+validate the resulting TEI and request an independent LLM judgment. Its decision stays
+inside the supplied GND candidate set and writes a separate preview with a run record.
+Third, the edition scholar supplies person-bound verification for the cases that require
+domain knowledge. The data records these activities as distinct responsibility roles;
+ordinal certainty labels do not substitute for provenance.
 
 ## Operative Cycle (Promptotyping)
 

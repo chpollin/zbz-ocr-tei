@@ -7,7 +7,7 @@ status: snapshot
 language: de
 version: 1.0
 created: 2026-05-27
-updated: 2026-08-21
+updated: 2026-08-26
 authors: [Christopher Pollin]
 generated-with: Claude Code (Opus, Fable)
 method:
@@ -22,7 +22,7 @@ audience:
   name: Zentralbibliothek Zürich (ZBZ)
 report-period:
   from: 2026-01-29
-  to: 2026-08-21
+  to: 2026-08-26
 report-genre: abschlussbericht
 ---
 
@@ -135,9 +135,9 @@ sodass die Bearbeitungsgeschichte mit dem ausgelieferten Dokument selbst reist.
 
 ### Entitätsschicht (Vorschau)
 
-Seit August 2026 steht neben den TEI-Stufen eine kontrollierte Entitätsschicht, die Nennungen von Personen, Organisationen und Werken an die kuratierte Entitätenliste der ZBZ bindet. Ein deterministischer Matcher arbeitet in geschlossener Welt, das heißt ausschließlich über die Namensformen der Liste, ihren Normdaten-Cache (GND-Varianten über lobid) und die ratifizierten Markierungsregeln; ein Sprachmodell kommt für die Zuordnung von Identifikatoren nirgends zum Einsatz. Sichere Treffer werden markiert, mehrdeutige Kandidaten auf eine Arbeitsliste gestellt, und jede Markierung trägt ihre Herkunft, ihren Verifikationsstand und ihre Quelle in den Attributen `@resp`, `@cert` und `@source`. Die Schicht schreibt ausschließlich Vorschauen nach `output/entity_preview/`; das ausgelieferte TEI unter `output/tei_final/` bleibt entitätsfrei, und die Übernahme in den Bestand ist eine gesonderte, mit der ZBZ zu treffende Entscheidung. Der Viewer zeigt die Vorschau schreibgeschützt als voreingestellte annotierte Leseansicht (abschaltbar über `viewer.html?doc={DOC_ID}&entities=0`), eine Übersichtsseite (`entities.html`) führt die Treffer je Dokument mit ihrer adjudizierten Qualität.
+Seit August 2026 steht neben den TEI-Stufen eine kontrollierte Entitätsschicht, die Nennungen von Personen, Organisationen und Werken an die kuratierte Entitätenliste der ZBZ bindet. Ein deterministischer Matcher arbeitet in geschlossener Welt, das heißt ausschließlich über die Namensformen der Liste, ihren Normdaten-Cache (GND-Varianten über lobid) und die ratifizierten Markierungsregeln. Sichere Treffer werden markiert, mehrdeutige Kandidaten auf eine Arbeitsliste gestellt. Jede Markierung führt die beteiligten Aktivitäten über `@resp` und die erzeugende Matcher-Regel über `@source`; Entitäten erhalten kein `@cert`, weil Kategorien wie high oder medium den zugrunde liegenden Prüfweg nicht benennen. Die Rollen unterscheiden deterministisches Matching, Agentenprüfung, Agentenannotation, eine unabhängige LLM-Prüfung und personengebundene editorische Verifikation. Für die Agentenphase bindet ein Kontextpaket Faksimile, Transkription, TEI-Seite, Schema, Editionsrichtlinien und die zulässigen GND-Kandidaten per SHA-256. Eine strukturierte Agentenantwort kann nur einen vorgegebenen Identifikator wählen und erzeugt eine gesonderte, schema-validierte Vorschau samt Laufprovenienz. Die Schicht schreibt weder in das ausgelieferte TEI unter `output/tei_final/` noch direkt in den Viewer-Mirror. Der Viewer zeigt die deterministische Vorschau schreibgeschützt als voreingestellte annotierte Leseansicht, abschaltbar über `viewer.html?doc={DOC_ID}&entities=0`.
 
-Die Qualität der Schicht ist am Faksimile gemessen. Bei der Evaluation vom 12.08.2026 wurden 300 gezogene Markierungen und 40 gezogene Seiten unabhängig adjudiziert; die Präzision über die 293 entscheidbaren Fälle beträgt 0,952 (Intervall 0,925 bis 0,976), und auf den 40 Seiten waren von 67 Nennungen gelisteter Entitäten 20 markiert und 17 auf der Arbeitsliste, eine Abdeckung von 0,552, deren Lücken fast vollständig auf nachbesserbare Regeln zurückgehen. Die adjudizierten Urteile sind versioniert abgelegt und dienen seither als Regressionsschranke, sodass eine Regeländerung ein bestätigtes Urteil nicht stillschweigend umkehren kann. Die vollständige Messung samt Protokoll steht in `knowledge/verification.md`, das Regelwerk in `knowledge/tei-mapping.md`.
+Die Qualität der Schicht ist am Faksimile gemessen. Die Evaluation vom 21.08.2026 umfasst 300 gezogene Markierungen und 40 gezogene Seiten. Die Präzision über die 300 entscheidbaren Fälle beträgt 0,9867 mit einem Perzentil-Bootstrap-Intervall von 0,9733 bis 0,9967. Auf den gezogenen Seiten wurden 63 Nennungen gelisteter Entitäten gelesen; 38 waren markiert, 22 standen auf der Arbeitsliste und 3 wurden verfehlt. Die Abdeckung durch Markierung oder Arbeitsliste beträgt 0,9524. Eine blinde Zweitprüfung stimmte in 50 von 50 Fällen mit dem ersten Urteil überein. Diese protokollgebundenen Agentenurteile sind als maschinelle Prüfevidenz versioniert und dienen als Regressionsschranke; sie stellen keine editorische Verifikation dar. Die vollständige Messung samt Protokoll steht in `knowledge/verification.md`, das Regelwerk in `knowledge/tei-mapping.md`.
 
 ## 5 Webinterface und Kuration
 
@@ -457,6 +457,8 @@ Aufruf als Modul (`python -m scripts.<paket>.<modul>`); das gepflegte Inventar s
 - `entity/running_heads.py`, `entity/running_head_audit.py`: Kolumnentitel-Zonen und ihre Validierung gegen adjudizierte Urteile.
 - `entity/entity_lint.py`: Prüfung von Entitätenliste, Cache, Altbestand und Markierungsregeln.
 - `entity/tei_entity_preview.py`: schreibt die Vorschau nach `output/entity_preview/`, verweigert `output/tei_final/`.
+- `entity/entity_provenance.py`: erzeugt die rollenbasierte TEI-Provenienz ohne Entitäten-`@cert`.
+- `entity/entity_agent_context.py`, `entity/entity_agent_review.py`: binden den multimodalen Agentenkontext, prüfen geschlossene Kandidatenentscheidungen und schreiben eine gesonderte, validierte Vorschau samt Laufprovenienz.
 - `entity/entity_corpus_scan.py`, `entity/entity_corpus_digest.py`: schreibgeschützter Korpus-Scan als diffbarer Snapshot und seine Verdichtung.
 - `entity/entity_unlisted_scan.py`: namensförmige Oberflächen außerhalb der Liste als Vorschlagskanal.
 - `entity/entity_gold_benchmark.py`: Präzision und Recall gegen die 25 Referenz-TEIs.

@@ -1,5 +1,5 @@
 /* Entity overview page (docs/entities.html). Consumes --h-* tokens only.
-   Certainty semantics follow the badge palette of base.css: auto-marked mentions in
+   Annotation-path semantics follow the badge palette of base.css: auto-marked mentions in
    Olivgruen (the measured, trusted layer), review candidates in Ocker (worklist).
    Entity category icons reuse the viewer legend colours: person Preussischblau,
    organisation Olivgruen, work Ziegelrot; the glyph shape carries the distinction on
@@ -53,7 +53,7 @@
   font-weight: 500;
 }
 
-/* Adjudicated evidence: one strip under the corpus bar, never a stat card.
+/* Agent-reviewed evidence: one strip under the corpus bar, never a stat card.
    Every item names its sample size next to its rate. */
 .eo-quality {
   display: flex;
@@ -201,7 +201,7 @@
 .eo-doc__counts strong { color: var(--h-olivgruen); font-weight: 600; }
 .eo-doc__counts em { color: var(--h-ocker); font-style: normal; font-weight: 600; }
 
-/* Stacked certainty bar */
+/* Stacked annotation-path bar */
 .eo-bar {
   height: 0.5rem;
   border-radius: 3px;

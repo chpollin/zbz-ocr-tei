@@ -14,7 +14,7 @@ status: active
 language: en
 version: 1.0
 created: 2026-01-29
-updated: 2026-08-21
+updated: 2026-08-26
 authors: [Christopher Pollin]
 related: [decisions, index]
 ---
@@ -83,6 +83,26 @@ the knowledge base was capped at ten documents), each leaving one compact line i
 Archive section; sessions 1 to 68 remain in that section as they are.
 
 ## Entries
+
+### 2026-08-26 Session 105: entity provenance recast as activity roles, AI-agent phase made executable (E131)
+
+**Occasion** The operator rejected ordinal certainty labels for entity annotations and asked for the third workflow phase, in which an AI agent inspects the available evidence, annotates TEI and invokes validation or an independent language-model judgment.
+
+**Goal** Entity marks state the activities that produced and checked them, and the AI-agent phase has an executable, evidence-bound path from context assembly to a separate validated TEI preview.
+
+**Course** Extracted entity provenance into `entity_provenance.py`, removed entity `@cert`, remapped facsimile judgments to agent review, and taught viewer and overview to display provenance and annotation path. Built `entity_agent_context.py` to bind facsimile, TEI, transcription, schema, guidelines and closed candidates; built `entity_agent_review.py` to validate complete structured decisions, independent judge records, hashes, RelaxNG and text invariance into a separate preview. Added synthetic gates, regenerated the 285-document preview and 4115-page mirror, updated the client report, knowledge base and command inventory, then inspected the facsimile and completed a real agent run for document 1060 page 5.
+
+**Decisions**
+- E131: entity evidence is recorded as ordered activity roles in `@resp`, while the deterministic matcher rule remains in `@source`; rejected `high`, `medium` and `low` in entity `@cert`, because those labels do not identify the evidential path.
+- Agent review, agent annotation, independent language-model judgment and person-bound editorial verification remain separate responsibility statements; rejected mapping a machine judgment to editorial verification, because that would erase the accountable human act (E131).
+- Agent output remains a separate preview with a run-provenance record and never writes the delivered TEI or viewer mirror; rejected autonomous stock writes before the existing release gate (E131).
+
+**Status** Ruff and the three JavaScript syntax checks passed; 2452 repository tests passed. The corpus preview was schema-valid and text-invariant for 285 of 285 documents, with 6084 deterministic marks and 482 marks carrying an additional agent-review role. The mirror reproduced byte-identically at 4115 pages and contains no entity `@cert`. Context `ctx-f166fce9686870d563c6` binds ten inputs for the two closed candidates on document 1060 page 5; the live agent run accepted both supplied identities and produced a schema-valid, text-invariant preview with the agent-annotation role and no editor-verification role. Code, tests, generated mirror and documentation stand in the working tree uncommitted; `output/tei_final/` is unchanged.
+
+**Next steps**
+1. Run the M5 calibration over an adjudicated subset and compare agent decisions with the existing verdict store.
+2. Bind the editorial-verification role to a named editor account in the curation tool before that role is emitted.
+3. Decide with ZBZ whether `@resp` and `@source` enter delivery, then release the existing M7 stock-write gate separately.
 
 ### 2026-08-21 Session 104: running-head detection rebuilt on repetition, audit ground truth corrected (E130)
 
@@ -159,24 +179,7 @@ Archive section; sessions 1 to 68 remain in that section as they are.
 1. Re-freeze decision on the 2026-08-13 draw, then adjudicate a fresh draw over the current population including the E119 stratum and remeasure recall.
 2. Lexicon shape audit (`entity_lexicon_audit.py`) as the next plan item before the frozen-rules gold benchmark.
 
-### 2026-08-21 Session 100: facsimiles online from a separate image repository (E126)
-
-**Occasion** The operator asked where the original images lie, why parts of the repository are gitignored, and how all page images could be made available online.
-
-**Goal** Every document in the online viewer shows its facsimile; the main repository stays small; local use keeps working unchanged.
-
-**Course** Assessment of three routes (ZB image server, object store with access layer, separate GitHub repository) with the rights question named. The operator chose the separate repository and the trial. `scripts/edition/export_web_images.py` with four tests written first, then the viewer switch by host in `core.js` and the sidecar branch in `viewer-page.js`, asset versions raised. Repository `chpollin/zbz-hersch-images` created, Pages enabled, the demo set pushed and the image URL verified (200, `image/jpeg`, `Access-Control-Allow-Origin: *`). On the operator's instruction the complete JPEG set (4152 pages, 867 MB) followed; five non-demo documents verified by URL and by the operator in the browser. Stage table, scripts inventory and register updated once the other instance had released `knowledge/`.
-
-**Decisions**
-- E126: facsimiles online from the separate image repository, viewer switch by host, JPEG export script, orphan-history rule for regenerations.
-- The complete public set was an operator decision after the rights question was raised twice; the rights stay with the ZB.
-- Cleanup of the tracked demo PNGs, the `.gitignore` exceptions and the `featured` catalog set is proposed and awaits the operator.
-
-**Status** Export tests and script health green; main repository commit f8191e34 pushed; image repository at the full-corpus commit, Pages built; documentation follow-up in this commit.
-
-**Next steps** Remove the tracked demo PNGs and the `featured` set (operator go); entry in the vault's repo directory (vault session); ask the ZBZ about absolute facsimile URLs in the delivered TEI.
-
-## Compact Archive (Sessions 1 to 99)
+## Compact Archive (Sessions 1 to 100)
 
 One line per session, newest first; for the earliest sessions one line covers a range of
 several. Rationale in the [decision register](decisions.md), details in the git history.
@@ -185,6 +188,7 @@ several. Rationale in the [decision register](decisions.md), details in the git 
 
 | # | Date | Topic |
 |---|---|---|
+| 100 | 2026-08-21 | Facsimiles online from a separate image repository (E126): viewer host switch, JPEG export and complete public set of 4152 pages (867 MB); main repository commit `f8191e34`, image repository and Pages verified. Full entry in the archive section below. |
 | 99 | 2026-08-21 | Knowledge base verified claim by claim, client report v3 on the site (E125): ten Opus agents, one per document with an exclusive file and a report under `output/refactoring/wave5_*.md`, checked every verifiable claim against code, schema, tests and data and corrected it in place, an eleventh reviewed README.md and CLAUDE.md read-only; the orchestrator settled the cross-document findings, rewrote the client report as v3 and moved it to `docs/project-report.md` with `status: snapshot`, followed every pointer and removed the gate's tolerated set, so `knowledge/` holds exactly the ten carriers; the CLAUDE.md subtraction the review proposed stays an operator decision; 2393 tests passed (2350 in the suite plus the 43 of the knowledge gate), ruff 0, frontmatter gate green, committed and pushed. Full entry in the archive section below. |
 | 98 | 2026-08-21 | Knowledge base recut by function, capped at ten documents, reports folder dissolved (E124): three explorer agents supplied the section ownership map, the fact check against code and data and the inventory of external pointers; eight function documents extracted from the untouched sources, the sources pruned with every removal confirmed in its owner, the eight merged into ten carriers with the reports holdings absorbed into the verification appendix and the journal archive, index.md rebuilt, fourteen documents and the reports folder deleted, pointers rewritten in CLAUDE.md, README, scripts, tests, the site tooltip and the mirror string, the slide deck moved to `workshops/` and the frontmatter gate added; engine picture stated once from the code, CER catalog corrected to the extractor, percentile interval method stated for the entity statistics; two verifier rounds found nine defects each, all fixed before the commits; commits `f5261ae5`, `ec42a613` and the closure commit; 2344 tests, ruff 0, frontmatter gate green. Full entry in the archive section below. |
 | 97 | 2026-08-21 | Repository refactoring, diagnosis and wave 0 (E120), waves 1 to 3 in the same session (E121-E123): six read-only audits, plan with work packages, stale statements corrected, ruff to zero, scripts layout `core/` and `entity/`, journal archive v0.3, viewer split and vendoring, shared helpers and tooling gates; 2344 tests, one evaluation-draw incident reconstructed. Full entry in the archive section below. |
@@ -329,15 +333,32 @@ with E66.
 - L14: A green conformity gate is only as sharp as the corpus it runs over; on the entity-free `tei_final`, "285/285 conformant" means "no violation", not "entities correctly GND-tagged". The entity rules Z1-Z4 bite only after inline-GND curation.
 - L15: Newspaper layouts fail systematically (>40 zones, OCR hallucinations); ~3 % of the corpus.
 
-## Archive: full entries of sessions 69 to 99
+## Archive: full entries of sessions 69 to 100
 
-The full entries of sessions 69 to 99, moved out of the Entries section under the five-entry
+The full entries of sessions 69 to 100, moved out of the Entries section under the five-entry
 cap and kept verbatim, newest first; the compact lines of the Compact Archive
 section above point here. Entries are never changed retroactively, so corrections are written
 as new entries and reference the entry they correct. Links inside the entries name the
 documents that carried the subject at the time; where those documents were dissolved in the
 knowledge-base recut of 2026-08 (E124) the link points at the carrier that holds the subject
 today.
+
+### 2026-08-21 Session 100: facsimiles online from a separate image repository (E126)
+
+**Occasion** The operator asked where the original images lie, why parts of the repository are gitignored, and how all page images could be made available online.
+
+**Goal** Every document in the online viewer shows its facsimile; the main repository stays small; local use keeps working unchanged.
+
+**Course** Assessment of three routes (ZB image server, object store with access layer, separate GitHub repository) with the rights question named. The operator chose the separate repository and the trial. `scripts/edition/export_web_images.py` with four tests written first, then the viewer switch by host in `core.js` and the sidecar branch in `viewer-page.js`, asset versions raised. Repository `chpollin/zbz-hersch-images` created, Pages enabled, the demo set pushed and the image URL verified (200, `image/jpeg`, `Access-Control-Allow-Origin: *`). On the operator's instruction the complete JPEG set (4152 pages, 867 MB) followed; five non-demo documents verified by URL and by the operator in the browser. Stage table, scripts inventory and register updated once the other instance had released `knowledge/`.
+
+**Decisions**
+- E126: facsimiles online from the separate image repository, viewer switch by host, JPEG export script, orphan-history rule for regenerations.
+- The complete public set was an operator decision after the rights question was raised twice; the rights stay with the ZB.
+- Cleanup of the tracked demo PNGs, the `.gitignore` exceptions and the `featured` catalog set is proposed and awaits the operator.
+
+**Status** Export tests and script health green; main repository commit f8191e34 pushed; image repository at the full-corpus commit, Pages built; documentation follow-up in this commit.
+
+**Next steps** Remove the tracked demo PNGs and the `featured` set (operator go); entry in the vault's repo directory (vault session); ask the ZBZ about absolute facsimile URLs in the delivered TEI.
 
 ### 2026-08-21 Session 99: knowledge base verified claim by claim, client report v3 on the site
 

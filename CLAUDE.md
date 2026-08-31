@@ -17,7 +17,7 @@ The entry point is [knowledge/index.md](knowledge/index.md), covering navigation
 - [index.md](knowledge/index.md): navigation, reading paths, function map, glossary
 - [project.md](knowledge/project.md): charter (commission, context, standards, scope of functions), the material (corpus funnel, document types, delivery structure, entity input data, reference corpus with its exception catalog, known problem cases) and the integration contracts with ZBZ, Transkribus and teiCrafter
 - [specification.md](knowledge/specification.md): requirements, quality measurement, validation rule catalog, gates, epics and user stories, scope
-- [tei-mapping.md](knowledge/tei-mapping.md): the markup rulebook of the delivered TEI (structure, normalization, page breaks, highlighting, figures, omissions, revisionDesc, facsimile binding, element inventory) and the entity target model (ref pattern, @resp/@cert/@source vocabulary, tiers, anchor rule, marking policy)
+- [tei-mapping.md](knowledge/tei-mapping.md): the markup rulebook of the delivered TEI (structure, normalization, page breaks, highlighting, figures, omissions, revisionDesc, facsimile binding, element inventory) and the entity target model (ref pattern, role-based @resp provenance, matcher-rule @source, tiers, anchor rule, marking policy)
 - [pipeline.md](knowledge/pipeline.md): stages, engines, the entity preview stage and its instruments, deployment, credentials, CI, viewer delivery and the online demo
 - [workflow.md](knowledge/workflow.md): end-to-end data flow, the viewer and its editors, persistence and round trip, provenance as built, the Hersch design system
 - [methodology.md](knowledge/methodology.md): epistemic infrastructure, verification cascade, operative cycle, conventions, the CER measurement method with extraction and normalization rules and the print-OCR state of research, governance of agents and operator decisions
@@ -243,10 +243,12 @@ the matcher through `build_lexicon(..., policy_path=...)`; the matcher-driving e
 python -m scripts.entity.fetch_gnd_variants                          # build/refresh the GND variant cache (lobid)
 python -m scripts.entity.entity_lint                                 # entity list + cache + legacy pairing + marking policy audit
 python -m scripts.entity.tei_entity_preview --panel                  # preview over the 10 pilot documents (tei_final untouched)
-python -m scripts.entity.tei_entity_preview --all                    # preview over the whole corpus; every mark carries @resp/@cert/@source (E118)
+python -m scripts.entity.tei_entity_preview --all                    # preview over the whole corpus; every mark carries role-based @resp and matcher-rule @source, no entity @cert (E131)
 python -m scripts.entity.entity_corpus_scan                          # read-only corpus scan: candidates, distributions, invariants
 python -m scripts.entity.generate_entity_preview_data                # viewer entity mirror (docs/data) from the previews
 python -m scripts.entity.generate_entity_overview                    # per-document entity overview (docs/entities.html) from the corpus scan
+python -m scripts.entity.entity_agent_context --doc 1060 --page 5    # bind image, transcription, TEI, schema, guidelines and page candidates into one context packet
+python -m scripts.entity.entity_agent_review output/entity_agent_context/1060_p5.json {RESPONSE_JSON}  # closed-world agent decision -> validated preview + run provenance, tei_final untouched
 python -m scripts.tei.tei_cover_strip --dry-run                      # E-Periodica cover sheets: strip preview (real run operator-gated)
 python -m scripts.entity.entity_gold_benchmark                       # M4: precision/recall against the 25 reference TEIs
 python -m scripts.entity.entity_corpus_digest                        # tier-1 harvest as one context-window digest
@@ -255,7 +257,7 @@ python -m scripts.entity.entity_eval_sample --seed 42 --out output/audits/eval_s
 python -m scripts.entity.build_mention_verdicts --sample-dir {DIR}   # mention verdict store: one wave per run from the sample directory -> data/entities/mention_verdicts.json (multi-snapshot, deterministic)
 python -m scripts.entity.entity_verdict_guard                        # regression gate: adjudicated verdicts vs current scan, exit 1 on violations (E110)
 python -m scripts.entity.entity_risk_ranking                         # rank tier-1 marks by FP risk -> output/audits/fp_hunt/ (wave protocol: PROTOCOL.md)
-python -m pytest tests/test_entity_matcher.py tests/test_entity_lint.py tests/test_entity_regressions.py tests/test_entity_preview.py tests/test_entity_corpus_scan.py tests/test_generate_entity_preview_data.py tests/test_cover_strip.py tests/test_fetch_gnd_variants.py tests/test_mention_verdicts.py tests/test_entity_verdict_guard.py tests/test_entity_ref_invariant.py tests/test_entity_risk_ranking.py tests/test_entity_corpus_digest.py tests/test_entity_eval_sample.py tests/test_entity_gold_benchmark.py tests/test_entity_stream.py tests/test_entity_unlisted_scan.py tests/test_variant_review.py tests/test_generate_entity_overview.py tests/test_running_heads.py tests/test_running_head_audit.py -q  # entity gates
+python -m pytest tests/test_entity_matcher.py tests/test_entity_lint.py tests/test_entity_regressions.py tests/test_entity_preview.py tests/test_entity_agent_workflow.py tests/test_entity_corpus_scan.py tests/test_generate_entity_preview_data.py tests/test_cover_strip.py tests/test_fetch_gnd_variants.py tests/test_mention_verdicts.py tests/test_entity_verdict_guard.py tests/test_entity_ref_invariant.py tests/test_entity_risk_ranking.py tests/test_entity_corpus_digest.py tests/test_entity_eval_sample.py tests/test_entity_gold_benchmark.py tests/test_entity_stream.py tests/test_entity_unlisted_scan.py tests/test_variant_review.py tests/test_generate_entity_overview.py tests/test_running_heads.py tests/test_running_head_audit.py -q  # entity gates
 ```
 
 An evaluation wave runs in a directory of its own. `entity_eval_sample --out

@@ -1,4 +1,4 @@
-"""Entity overview mirror: completeness and certainty of the annotation layer.
+"""Entity overview mirror: completeness and pathways of the annotation layer.
 
 Feeds docs/entities.html, a developer instrument for the question "do we really have
 every listed entity". The primary aggregation is per entity: every entry of the curated
@@ -8,7 +8,7 @@ aggregation stays as the secondary view. Source of the candidate population is t
 corpus scan snapshot (output/audits/entity_corpus_scan.json), the same stream the
 previews are cut from.
 
-Certainty model, aligned with the tier architecture of the matcher
+Annotation-path model, aligned with the tier architecture of the matcher
 (knowledge/tei-mapping.md): tier 1 counts as "auto" (auto-marked, the layer the
 measured precision covers), tier 2 as "review" (held on the worklist), broken down into
 the classes of CLASSES. Classification is by rule string only, so the overview follows
@@ -108,7 +108,7 @@ _DERIVED_BASES = frozenset({"legacy-form", "adjective-form"})
 
 
 def classify(rule: str, tier: int) -> str:
-    """Certainty class of one candidate; priority mirrors the suffix semantics.
+    """Annotation-path class of one candidate; priority mirrors suffix semantics.
 
     The running-head demotion is a position property appended last and outranks every
     other reading; a suspicion signal outranks ambiguity because it questions the

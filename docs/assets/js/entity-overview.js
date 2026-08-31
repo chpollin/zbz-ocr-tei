@@ -1,4 +1,4 @@
-/* Entity overview: completeness and certainty instrument over the annotation layer.
+/* Entity overview: completeness and annotation-path instrument over the entity layer.
    Primary view aggregates per listed entity (zero-mention entries first, the
    "do we have all" check); secondary view aggregates per document.
    Data: data/entity_overview.json + data/catalog.json (titles). Read-only;
@@ -29,8 +29,8 @@ ZBZ.EntityOverview = (() => {
   };
 
   const TIPS = {
-    auto: 'Auto-marked mentions are tier 1 of the matcher, the layer the adjudicated '
-      + 'precision covers.',
+    auto: 'Auto-marked mentions are tier 1 of the matcher, the layer the agent-reviewed '
+      + 'precision sample covers.',
     review: 'Review candidates are tier 2, held on the worklist until a human or a '
       + 'calibrated judge decides them.',
     mentions: 'Every candidate the corpus scan reports, auto-marked plus review.',
@@ -39,7 +39,7 @@ ZBZ.EntityOverview = (() => {
       + 'mentions are missing from the counts of the other possible bearers.',
     found: 'Curated list entries with at least one reported mention. The remainder '
       + 'is either absent from the corpus or hidden behind an ambiguous surface.',
-    sample: 'Facsimile-adjudicated sample of the annotation layer, drawn seeded and '
+    sample: 'Facsimile-reviewed sample of the annotation layer, drawn seeded and '
       + 'stratified (method in knowledge/verification.md). It measures the drawn '
       + 'cases, it does not count the corpus.',
   };
@@ -283,7 +283,7 @@ ZBZ.EntityOverview = (() => {
     if (!precision || !recall) return;
 
     strip.appendChild(qualityItem('sample',
-      `Adjudicated sample ${quality.snapshot}`,
+      `Agent-reviewed sample ${quality.snapshot}`,
       `${TIPS.sample} Scan snapshot ${(provenance.scan_sha256 || '').slice(0, 12)}, `
       + `${num(provenance.scan_candidates || 0)} candidates over `
       + `${provenance.listed_entities || 0} listed entities.`));
@@ -316,7 +316,7 @@ ZBZ.EntityOverview = (() => {
         .join('; ');
       strip.appendChild(qualityItem('agreement',
         `Second judgment ${agreement.agree} of ${agreement.n} agree`,
-        'Blind second adjudication of a subsample; raw agreement '
+        'Blind second review of a subsample; raw agreement '
         + `${percent(agreement.rate)}. `
         + (cases ? `The judgments differed on ${cases}.`
                  : 'No judgment differed.')));
@@ -399,7 +399,7 @@ ZBZ.EntityOverview = (() => {
     bar.setAttribute('aria-label', total
       ? `${auto} auto-marked, ${review} review` : 'no mentions');
     bar.title = total
-      ? `Certainty split of ${num(total)} mentions: ${num(auto)} auto-marked, `
+      ? `Annotation path of ${num(total)} mentions: ${num(auto)} auto-marked, `
         + `${num(review)} on review.`
       : 'No mention reports this entity.';
     if (total) {

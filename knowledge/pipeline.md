@@ -14,7 +14,7 @@ status: complete
 language: en
 version: 1.0
 created: 2026-01-29
-updated: 2026-08-21
+updated: 2026-08-26
 authors: [Christopher Pollin]
 related: [index, project, specification, tei-mapping, workflow, methodology, verification, decisions]
 absorbed: [infrastructure (Vorlage Architecture 0.3)]
@@ -218,9 +218,12 @@ built ([decisions.md](decisions.md), plan section, phase A).
 | `scripts/entity/entity_lint.py` | entity list, GND cache, legacy mention index, marking policy | `output/audits/entity_lint.json` |
 | `scripts/entity/entity_lexicon.py` | entity list, GND cache, variant review, legacy mentions, marking policy | the in-memory lexicon (headwords, inverted forms, cache variants, legacy surfaces, derived-form channels) |
 | `scripts/entity/entity_matcher.py` | the lexicon plus a TEI document | candidates with exact offsets, tier and rule; re-exports the lexicon API, so both read as one module from outside |
+| `scripts/entity/entity_provenance.py` | one candidate and its contributing activity records | ordered `@resp` and `@source` attributes plus the `respStmt` declarations used by preview writers; no entity `@cert` |
 | `scripts/entity/running_heads.py` | every page segment of a document, since repetition alone identifies the apparatus wherever the reading order left it | the zones of the repeated page apparatus, running feet and repeated stamps included, which the matcher demotes into tier 2 |
 | `scripts/entity/running_head_audit.py` | scan snapshot, adjudicated verdicts | running-head validation report under `output/audits/` |
 | `scripts/entity/tei_entity_preview.py` | `output/tei_final/` read-only, entity data, verdict store | `output/entity_preview/` plus a JSON report |
+| `scripts/entity/entity_agent_context.py` | facsimile, transcription, entity TEI page, worklist, source TEI, entity index, schema and guidelines | a SHA-256-bound multimodal packet under `output/entity_agent_context/`, with a closed GND candidate set |
+| `scripts/entity/entity_agent_review.py` | one context packet and one structured agent response | a schema-valid, text-invariant full-document preview and a run provenance record under `output/entity_agent_review/`; never `output/tei_final/` |
 | `scripts/entity/entity_corpus_scan.py` | `output/tei_final/` read-only, entity data | `output/audits/entity_corpus_scan.json` |
 | `scripts/entity/entity_corpus_digest.py` | scan snapshot, entity list | `output/audits/entity_corpus_digest.md` |
 | `scripts/entity/entity_unlisted_scan.py` | `output/tei_final/`, entity data, viewer catalog | `output/audits/entity_unlisted_report.json` plus a CSV |
@@ -242,7 +245,7 @@ next review pass. Headwords of the curated list and legacy forms stay outside it
 The operator worklist of all suspect and reject forms lands in
 `output/audits/variant_review_report.md`.
 
-Four contracts hold the stage together. The matcher returns candidates that are
+Five contracts hold the stage together. The matcher returns candidates that are
 offset-verified, non-overlapping and embed at most `lb` tags; it scans only inside `text`
 and skips the bibliography div, `bibl` elements that already carry a reference, the library
 apparatus and already marked `persName` and `orgName`. Figure captions take part in the
@@ -254,7 +257,11 @@ snapshot, so a rule change shows its exact corpus effect before it binds, and a 
 of that snapshot is what an adjudication wave draws from. The verdict store keys a judgment
 by document, page, surface, identifier and occurrence index over the frozen snapshot and
 carries a sha256 fingerprint of the TEI it was judged on, so a later text change marks the
-affected records stale for re-adjudication.
+affected records stale for re-adjudication. The agent phase binds every input by path and
+SHA-256, requires facsimile inspection, TEI/transcription comparison and RelaxNG validation,
+and accepts only `accept`, `reject` or `needs_expert`; an accepted GND id must belong to the
+candidate packet. Its output carries agent annotation and optional independent-judge roles,
+while editorial verification remains a separate person-bound activity.
 
 The viewer shows the previews read-only in `viewer.html?doc={DOC_ID}`. The annotated
 reading view is the default for every document that has a preview, and `&entities=0` opts

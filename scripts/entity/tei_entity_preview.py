@@ -20,26 +20,21 @@ convention for work titles set in italics (knowledge/tei-mapping.md, target mode
 
 Mark provenance
 ---------------
-Every wrapped mark carries its own provenance and verification state, so the annotation
-stays auditable outside this pipeline (vocabulary: knowledge/tei-mapping.md, section
-"Mark provenance and verification state"). Three separate things:
+Every wrapped mark carries its own provenance, so the annotation stays auditable outside
+this pipeline (vocabulary: knowledge/tei-mapping.md, entities section). Two attributes
+carry separate claims:
 
 ``@resp``   who asserted the mark, as a pointer into the ``respStmt`` declarations this
             runner adds to the preview ``teiHeader``. Only responsibilities a document's
             own marks use are declared.
-``@cert``   whether a human checked the mark. ``high`` for a mark the facsimile
-            adjudication judged correct and whose document text still carries the digest
-            that judgment was made on, ``medium`` for a plain matcher assertion. Never a
-            number, although the schema would take one.
 ``@source`` the matcher rule that produced the mark. It is the one attribute the schema
             allows on all three wrapped elements; ``@evidence`` fails on ``bibl`` and
             ``@ana`` exists nowhere in ``zbz_hersch.rng``.
 
 The verdict store ``data/entities/mention_verdicts.json`` stays the source of truth of the
-judgments; the attributes are a regenerable projection of it. The projection reuses the
-classification of ``scripts.entity.entity_verdict_guard``, so a document whose text moved
-since the adjudication (guard class ``text_changed``) falls back to unverified instead of
-claiming a verification its bytes no longer support.
+agentic evaluation judgments. Its projection adds the machine-review responsibility to a
+mark only while the document still carries the digest that judgment was made on. It never
+adds editorial verification.
 
 Every adjudication wave in the store verifies, and the ``respStmt`` of a document names
 the waves whose judgments actually carry its marks, not the newest label of the store.
@@ -55,22 +50,28 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import re
 from collections import Counter
 from functools import lru_cache
 from pathlib import Path
-from xml.sax.saxutils import escape, quoteattr
+from xml.sax.saxutils import quoteattr
 
 from lxml import etree
 
 from scripts.config import DATA_DIR, OUTPUT_DIR, TEI_FINAL_DIR, TEI_NS, TEI_SCHEMA_PATH
 
-# The verification state is a projection of the adjudicated judgments, so the key
+# The agent-review role is a projection of the adjudicated judgments, so the key
 # comparison lives in one place: the guard that gates them (E110). Same direction as
 # tei_reading_order_fix, which reuses the classifier of its own audit.
 from scripts.entity.build_mention_verdicts import record_snapshot
+from scripts.entity.entity_provenance import (
+    AGENT_REVIEW_RESP_ID,
+    candidate_responsibility_ids,
+    insert_resp_stmts,
+    mark_attributes,
+    resp_statements,
+)
 from scripts.entity.entity_verdict_guard import (
     _doc_index,
     _span_index,
@@ -94,54 +95,8 @@ PANEL_DOCS = ["1060", "100", "290", "1440", "890", "1350", "1360", "2030", "1220
 # ZBZ inline GND model (E88): one element per category, ref carries the GND id.
 CATEGORY_ELEMENT = {"person": "persName", "organisation": "orgName", "work": "bibl"}
 
-# The two responsibilities that exist today. No third one is declared: a model judge has
-# no producer yet, and an unused declaration would assert a provenance nothing carries.
-MATCHER_RESP_ID = "resp-entity-matcher"
-ADJUDICATION_RESP_ID = "resp-entity-adjudication"
-RESP_AGENT = "DHCraft"
-MATCHER_RESP_TEXT = ("Automatic entity matching, deterministic and closed-world "
-                     "(scripts/entity/entity_matcher.py, rule set {fingerprint})")
-ADJUDICATION_RESP_TEXT = ("Facsimile adjudication of the entity evaluation sample, "
-                          "wave {snapshot}")
-
-# The modules that decide which mention becomes a mark; their digest is the version of
-# the assertion. The lexicon inputs (curated list, GND cache, variant review) are data
-# and are not part of it.
-RULE_MODULES = ("entity_matcher.py", "entity_lexicon.py", "running_heads.py")
-
 _HI_OPEN_RE = re.compile(r"<hi(?:\s[^<>]*)?>")
 _HI_CLOSE_RE = re.compile(r"</hi\s*>")
-_TITLESTMT_CLOSE_RE = re.compile(r"([ \t]*)</titleStmt>")
-
-
-# ---------------------------------------------------------------------------
-# Mark provenance
-# ---------------------------------------------------------------------------
-
-@lru_cache(maxsize=1)
-def matcher_fingerprint(module_dir: Path | None = None) -> str:
-    """Short digest over the rule-bearing matcher modules."""
-    module_dir = module_dir or Path(__file__).parent
-    digest = hashlib.sha256()
-    for name in RULE_MODULES:
-        digest.update((module_dir / name).read_bytes())
-    return digest.hexdigest()[:12]
-
-
-def mark_attributes(cand: dict) -> dict[str, str]:
-    """Attributes of one wrapped mark, in emission order.
-
-    ``verified`` on the candidate is the only input for the certainty: it is set by the
-    verdict projection and absent for every mark no adjudication reaches.
-    """
-    verified = bool(cand.get("verified"))
-    attributes = {"ref": f"GND:{cand['gid']}"}
-    if cand.get("rule"):
-        attributes["source"] = cand["rule"]
-    attributes["cert"] = "high" if verified else "medium"
-    attributes["resp"] = (f"#{MATCHER_RESP_ID} #{ADJUDICATION_RESP_ID}" if verified
-                          else f"#{MATCHER_RESP_ID}")
-    return attributes
 
 
 def opening_tag(cand: dict) -> str:
@@ -152,74 +107,37 @@ def opening_tag(cand: dict) -> str:
     return f"<{element} {attributes}>"
 
 
-def resp_statements(candidates: list[dict], snapshot: str | None) -> list[tuple[str, str]]:
-    """(xml:id, prose) of the responsibilities this document's own marks point to."""
-    tier1 = [c for c in candidates if c.get("tier") == 1]
-    if not tier1:
-        return []
-    statements = [(MATCHER_RESP_ID,
-                   MATCHER_RESP_TEXT.format(fingerprint=matcher_fingerprint()))]
-    if any(c.get("verified") for c in tier1):
-        statements.append((ADJUDICATION_RESP_ID,
-                           ADJUDICATION_RESP_TEXT.format(snapshot=snapshot or "unnamed")))
-    return statements
-
-
-def insert_resp_stmts(xml_string: str, statements: list[tuple[str, str]]) -> str:
-    """Declare the responsibilities in the ``titleStmt``; idempotent, header only.
-
-    Runs after the wrapping, never before: the header sits in front of the body, so an
-    insertion here would shift every candidate offset.
-    """
-    match = _TITLESTMT_CLOSE_RE.search(xml_string)
-    if match is None:
-        return xml_string
-    pending = [(rid, text) for rid, text in statements
-               if f'<respStmt xml:id="{rid}">' not in xml_string]
-    if not pending:
-        return xml_string
-    at = match.start()
-    block = xml_string[:at].endswith("\n")
-    indent = match.group(1) + "  " if block else ""
-    rendered = "".join(
-        f'{indent}<respStmt xml:id="{rid}"><resp>{escape(text)}</resp>'
-        f"<orgName>{RESP_AGENT}</orgName></respStmt>" + ("\n" if block else "")
-        for rid, text in pending
-    )
-    return xml_string[:at] + rendered + xml_string[at:]
-
-
 # ---------------------------------------------------------------------------
-# Verification state (projection of the adjudicated verdict store)
+# Agent review state (projection of the adjudicated verdict store)
 # ---------------------------------------------------------------------------
 
 def load_verdict_store(path: Path) -> dict | None:
-    """The mention verdict store, or None where it is absent (everything unverified)."""
+    """Return the mention verdict store, or None when no agent review is available."""
     path = Path(path)
     if not path.exists():
         return None
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def verified_spans(store: dict, doc_id: str, candidates: list[dict],
-                   digests: dict[str, str | None]) -> set[tuple[int, int, str]]:
-    """(start, end, gid) of every candidate an adjudication verifies as it stands.
+def agent_reviewed_spans(store: dict, doc_id: str, candidates: list[dict],
+                         digests: dict[str, str | None]) -> set[tuple[int, int, str]]:
+    """Return current tier-1 spans judged correct in an agentic evaluation wave.
 
-    Verification survives only what the guard calls ``kept_tier1``: the judgment was
+    Agent review survives only what the guard calls ``kept_tier1``: the judgment was
     ``correct``, the document digest still matches the one it was made on, and the mark
     sits at exactly the adjudicated span in tier 1. The gid is compared strictly, so a
-    judgment about another bearer of an ambiguous surface verifies nothing.
+    judgment about another bearer of an ambiguous surface reviews nothing.
     """
     scoped = [dict(cand, doc=doc_id) for cand in candidates]
     span_index, doc_index = _span_index(scoped), _doc_index(scoped)
-    verified = set()
+    reviewed = set()
     for mark in store.get("marks", ()):
         if mark["doc"] != doc_id or mark["verdict"] != "correct":
             continue
         klass, _ = classify_mark(mark, span_index, doc_index, digests)
         if klass == "kept_tier1":
-            verified.add((mark["start"], mark["end"], mark["gid"]))
-    return verified
+            reviewed.add((mark["start"], mark["end"], mark["gid"]))
+    return reviewed
 
 
 def verifying_snapshots(store: dict, doc_id: str,
@@ -232,11 +150,11 @@ def verifying_snapshots(store: dict, doc_id: str,
     return sorted(label for label in labels if label)
 
 
-def flag_verified(candidates: list[dict], spans: set[tuple[int, int, str]]) -> None:
-    """Set the ``verified`` flag on the tier-1 candidates the adjudication covers."""
+def flag_agent_reviewed(candidates: list[dict], spans: set[tuple[int, int, str]]) -> None:
+    """Mark tier-1 candidates covered by a current agentic evaluation judgment."""
     for cand in candidates:
         if cand.get("tier") == 1:
-            cand["verified"] = (cand["start"], cand["end"], cand["gid"]) in spans
+            cand["agent_reviewed"] = (cand["start"], cand["end"], cand["gid"]) in spans
 
 
 # ---------------------------------------------------------------------------
@@ -368,10 +286,11 @@ def preview_document(doc_id: str, xml_string: str, candidates: list[dict],
             "by_evidence": sorted_counts(
                 Counter(c["evidence"] for c in candidates if c.get("evidence"))
             ),
-            # certainty of the written marks; tier 2 is not wrapped and carries none
-            "by_certainty": sorted_counts(
-                Counter(mark_attributes(c)["cert"] for c in tier1)
-            ),
+            "by_responsibility": sorted_counts(Counter(
+                responsibility_id
+                for candidate in tier1
+                for responsibility_id in candidate_responsibility_ids(candidate)
+            )),
         },
         "rng_valid": not rng_errors,
         "rng_errors": rng_errors[:5],
@@ -402,7 +321,7 @@ def run_preview(doc_ids: list[str], find_candidates, lexicon: dict,
     relaxng = load_schema()
     store = load_verdict_store(VERDICTS_PATH if verdicts_path is None else verdicts_path)
     # digests of the very files the offsets index into, so a judgment made on other
-    # bytes shows up as text_changed rather than as a claimed verification
+    # bytes shows up as text_changed rather than as a claimed agent review
     digests = text_digests(doc_ids, src_dir) if store else {}
     snapshot = store.get("snapshot") if store else None
     results = []
@@ -415,15 +334,15 @@ def run_preview(doc_ids: list[str], find_candidates, lexicon: dict,
         candidates = find_candidates(xml_string, lexicon)
         doc_snapshot = snapshot
         if store:
-            spans = verified_spans(store, doc_id, candidates, digests)
-            flag_verified(candidates, spans)
+            spans = agent_reviewed_spans(store, doc_id, candidates, digests)
+            flag_agent_reviewed(candidates, spans)
             doc_snapshot = ", ".join(verifying_snapshots(store, doc_id, spans)) or snapshot
         res = preview_document(doc_id, xml_string, candidates, out_dir, relaxng,
                                snapshot=doc_snapshot)
         results.append(res)
-        verified = res["counts"]["by_certainty"].get("high", 0)
+        agent_reviewed = res["counts"]["by_responsibility"].get(AGENT_REVIEW_RESP_ID, 0)
         print(f"  [{i}/{len(doc_ids)}] {doc_id}: wrapped {res['counts']['wrapped']}, "
-              f"verified {verified}, "
+              f"agent-reviewed {agent_reviewed}, "
               f"worklist {res['counts']['worklist']}, schema "
               f"{'PASS' if res['rng_valid'] else 'FAIL'}, text "
               f"{'PASS' if res['text_invariant'] else 'FAIL'}")
@@ -436,12 +355,13 @@ def run_preview(doc_ids: list[str], find_candidates, lexicon: dict,
 
 def build_report(results: list[dict]) -> dict:
     """Per-document results plus corpus totals."""
-    by_rule, by_category, by_evidence, by_certainty = Counter(), Counter(), Counter(), Counter()
+    by_rule, by_category = Counter(), Counter()
+    by_evidence, by_responsibility = Counter(), Counter()
     for res in results:
         by_rule.update(res["counts"]["by_rule"])
         by_category.update(res["counts"]["by_category"])
         by_evidence.update(res["counts"].get("by_evidence", {}))
-        by_certainty.update(res["counts"].get("by_certainty", {}))
+        by_responsibility.update(res["counts"].get("by_responsibility", {}))
     return {
         "documents": results,
         "totals": {
@@ -452,7 +372,7 @@ def build_report(results: list[dict]) -> dict:
             "by_rule": sorted_counts(by_rule),
             "by_category": sorted_counts(by_category),
             "by_evidence": sorted_counts(by_evidence),
-            "by_certainty": sorted_counts(by_certainty),
+            "by_responsibility": sorted_counts(by_responsibility),
             "rng_valid": sum(1 for r in results if r["rng_valid"]),
             "text_invariant": sum(1 for r in results if r["text_invariant"]),
         },
@@ -487,7 +407,7 @@ def main():
     ap.add_argument("--policy", type=Path, default=MARKING_POLICY_PATH,
                         help="Markierungspolitik (JSON, optional)")
     ap.add_argument("--verdicts", type=Path, default=VERDICTS_PATH,
-                    help="Mention verdict store (optional; absent means every mark unverified)")
+                    help="Mention verdict store (optional; supplies agent-review provenance)")
     ap.add_argument("--src-dir", type=Path, default=TEI_FINAL_DIR, help="Source TEI directory (read only)")
     ap.add_argument("--out-dir", type=Path, default=ENTITY_PREVIEW_DIR, help="Preview directory")
     args = ap.parse_args()
@@ -512,8 +432,10 @@ def main():
     totals = report["totals"]
     print(f"\n  Documents: {totals['documents']}  wrapped: {totals['wrapped']}  "
           f"worklist: {totals['worklist']}  ambiguous: {totals['ambiguous']}")
-    certainty = "  ".join(f"{k}: {v}" for k, v in totals["by_certainty"].items()) or "-"
-    print(f"  Mark certainty: {certainty}")
+    provenance = "  ".join(
+        f"{key}: {value}" for key, value in totals["by_responsibility"].items()
+    ) or "-"
+    print(f"  Mark provenance: {provenance}")
     if totals["by_evidence"]:
         evidence = "  ".join(f"{k}: {v}" for k, v in totals["by_evidence"].items())
         print(f"  One-word titles by evidence: {evidence}")

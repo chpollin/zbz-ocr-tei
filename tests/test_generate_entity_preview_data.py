@@ -172,9 +172,13 @@ def test_worklist_survives_the_header_responsibility_declarations():
     The preview runner records that shift; without it every worklist entry of a
     document that declares a responsibility would be dropped as stale.
     """
-    from scripts.entity.tei_entity_preview import insert_resp_stmts
+    from scripts.entity.entity_provenance import Responsibility, insert_resp_stmts
 
-    statements = [("resp-entity-matcher", "Automatic entity matching")]
+    statements = [Responsibility(
+        "resp-entity-matcher",
+        "Automatic entity matching",
+        "DHCraft",
+    )]
     preview = insert_resp_stmts(_preview_xml(), statements)
     result = _doc_result()
     shift = len(preview) - len(_preview_xml())

@@ -15,10 +15,10 @@
         '#sup': 'tei__hi--sup', '#sub': 'tei__hi--sub'
     };
 
-    // Provenance of an entity mention (E118): who asserted it, how certain, by which
-    // rule. Carried into the DOM so the viewer popover can show it without re-parsing.
+    // Provenance of an entity mention (E118): contributing roles and producing rule.
+    // Carried into the DOM so the viewer popover can show it without re-parsing.
     function provenanceAttrs(node, attrs) {
-        ['resp', 'cert', 'source'].forEach(name => {
+        ['resp', 'source'].forEach(name => {
             const v = node.getAttribute(name);
             if (v) attrs['data-' + name] = v;
         });

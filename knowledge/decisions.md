@@ -10,7 +10,7 @@ status: active
 language: en
 version: 1.0
 created: 2026-02-18
-updated: 2026-08-21
+updated: 2026-08-26
 authors: [Christopher Pollin]
 related: [index, journal, specification, project, verification]
 absorbed: [plan (Vorlage Plan 0.2)]
@@ -83,7 +83,7 @@ Consolidated register of the decisions taken in the project, cross-cutting and c
 | E62 | Method page `docs/methode.html` | lean static page with headline CER, stratified values, literature comparison, limitations, tool documentation; deliberately no interactive dashboard. Implicit methodology position: never LLMs for entity-id linking | 2026-05-26 | [specification.md](specification.md) |
 | E63 | Blank-page detection plus viewer handling (phase 1) | 79 blank pages corpus-wide; phantom regions from layout QA hallucination countered by the Docling zero signal; viewer fix interim/heuristic; phase 2 in E65 | 2026-05-26 | [workflow.md](workflow.md) |
 
-## Decided (E64-E130, detail)
+## Decided (E64-E131, detail)
 
 More recent decisions with full rationale as dedicated sections.
 
@@ -583,6 +583,11 @@ Documents: [verification.md](verification.md), [journal.md](journal.md) session 
 
 ### E118 Every mark carries its provenance and verification state (2026-08-13)
 
+Update 2026-08-26: E131 supersedes the entity-`@cert` part of this decision and splits
+the former adjudication responsibility into machine-review, agent-annotation,
+independent-judge and person-bound editorial roles. The historical decision text remains
+below as the record of the earlier model.
+
 Occasion: the operator asked that an annotation state in the data itself who asserted it and whether a human checked it, so a later pass can separate settled marks from open ones and so the annotation stays auditable outside this pipeline.
 
 Decision: three things stay separate and never merge. Provenance names the asserting agency and travels as `@resp` pointing to a `respStmt` this run declares per document, so no document declares a responsibility none of its marks uses. The verification state travels as `@cert` and takes only the tokens `high` for an adjudicated-correct mark and `medium` for a plain matcher assertion; a number never enters, although the schema would accept a double, so the ban is a project rule with its own test rather than a schema effect. The producing rule travels as `@source`, the one attribute the delivery schema permits on `persName`, `orgName` and `bibl` alike, since `bibl` carries no `@evidence` and `@ana` exists nowhere in the schema. The measured reliability of a rule class stays out of the individual mark and remains a property of the adjudicated sample. Only responsibilities with a real producer are declared, so no model judge appears until one exists. The verdict store stays the source of truth of the judgments; the attributes are a regenerable projection that reuses the classification of the verdict guard, so a document whose text moved since the adjudication falls back to unverified instead of claiming a verification its bytes no longer support. The version of the assertion is a digest over the rule-bearing modules, because a hand-maintained version constant ages silently.
@@ -752,6 +757,52 @@ Open after the repair: two residues of the detector and one defect left out of s
 
 Documents: [verification.md](verification.md) finding register, open findings and appendix, [pipeline.md](pipeline.md) entity instruments table, [journal.md](journal.md) session 104
 
+### E131 Entity provenance records activities instead of certainty levels; agent context and review become executable (2026-08-26)
+
+Occasion: the operator rejected `cert="medium"`, `high` and `low` as categories that do
+not identify why an entity assertion should be trusted. The presentation distinguishes
+three iterative phases, deterministic rule improvement with developer feedback,
+person-bound expert verification, and context-aware AI-agent annotation with image, TEI,
+transcription, schema tools and an optional independent LLM judgment. The code still
+projected agent-produced facsimile judgments as human verification and compressed the
+difference into `@cert`.
+
+Decision: entity marks carry `@resp` and `@source`, with no entity `@cert`. `@resp` points
+to ordered activity roles: `resp-entity-matcher`, `resp-entity-agent-review`,
+`resp-entity-agent-annotation`, `resp-entity-llm-judge` and
+`resp-entity-editor-verification`. The existing evaluation waves supply machine-review
+provenance only. Editorial verification requires a person-bound record and cannot be
+claimed by an agent response. `@source` remains the deterministic matcher rule. Detailed
+evidence and run metadata live in a separate provenance record because the active schema
+has `respStmt` but no `appInfo` or `application`.
+
+The third phase is executable through two bounded instruments. `entity_agent_context.py`
+binds facsimile, transcription, current entity TEI page, source TEI, page worklist,
+curated identities, schema and guidelines by SHA-256 and exposes only the supplied GND
+candidate set. `entity_agent_review.py` accepts `accept`, `reject` or `needs_expert`,
+rejects invented identifiers and agent claims of editorial verification, records harness,
+model, prompt digest, tool calls and an optional independent judge, and writes a separate
+full-document preview plus run record. Every accepted preview must validate against
+`zbz_hersch.rng` and preserve the text subtree. Neither instrument writes
+`output/tei_final/` or the generated viewer mirror.
+
+Alternatives weighed: retain the certainty tokens beside richer provenance (rejected,
+because two competing summaries invite contradictory states); point `@resp` directly at a
+Python file (rejected, because `@resp` denotes responsibility, while the matcher statement
+already names the script and its rule digest); let the agent search for arbitrary GND ids
+(rejected by the closed-world rule E62); treat the independent LLM judgment as editorial
+verification (rejected because model agreement is another machine activity).
+
+Verified: the provenance writer emits no entity `@cert`; the preview, generated mirror
+tests and the new closed-world agent workflow tests pass; the context builder produced a
+real packet for document 1060 page 5 with facsimile, TEI, transcription and two worklist
+candidates; all three changed frontend modules pass JavaScript syntax checks. M5 remains
+open because an executable judge path is not a calibration measurement.
+
+Documents: [tei-mapping.md](tei-mapping.md) entities section,
+[pipeline.md](pipeline.md) entity stage, [workflow.md](workflow.md) entity layer,
+[methodology.md](methodology.md) verification cascade, [journal.md](journal.md) session 105
+
 ## Plan
 
 This block orders the work still outstanding into phases and milestones, each carrying the
@@ -767,7 +818,7 @@ exit conditions there instead of restating them.
 The plan runs toward a handover state with five properties.
 
 - The delivered TEI carries the entity layer, released by the operator on a measured gold
-  benchmark, and every mark carries its provenance and its verification state.
+  benchmark, and every mark carries role-based provenance plus its producing matcher rule.
 - The editing history of an object is machine-readable and travels inside the TEI, so an object can
   be read without the repository beside it.
 - The curation loop closes inside the viewer without manual pipeline steps, and an object leaves
@@ -850,9 +901,10 @@ Entities the corpus names frequently while the curated list omits them are admit
 itself and marked in the data as an addition from outside that list (operator decision of
 2026-08-13). The proposal channel `entity_unlisted_scan` supplies the candidates. The dossier
 collects, per candidate, the textual evidence and a deterministic lobid lookup; a language model
-never assigns an identifier. The provenance vocabulary carries the distinction through a third
-responsibility declaration with `cert="low"`, and a reference is written only once an
-identification is confirmed.
+never assigns an identifier. The provenance vocabulary carries the distinction through a
+dedicated admission responsibility whose dossier reference identifies the external decision
+path; a reference is written only once an identification is confirmed. No certainty token
+substitutes for that record (E131).
 
 Done when every admitted entity has a dossier entry with its evidence and its lookup result, and
 the marks it produces validate under the vocabulary described in [tei-mapping.md](tei-mapping.md).
@@ -862,7 +914,9 @@ the marks it produces validate under the vocabulary described in [tei-mapping.md
 Begins once the gold benchmark and the redraw have fixed the current rates. A model judge is
 measured against ambiguities the reference TEIs already resolve, repeat-run stability included, so
 its role in tiers two and three is bounded by a measured accuracy. The judge picks among presented
-candidates; identifiers come from the curated list.
+candidates; identifiers come from the curated list. E131 supplies the context packet, structured
+response contract, independent-judge record and validated preview path, while the calibration run
+itself remains outstanding.
 
 Done when accuracy and repeat-run stability on gold-resolved ambiguities are measured and recorded
 in [verification.md](verification.md).
@@ -887,8 +941,9 @@ byte-splice inside `text`, idempotence and a `revisionDesc` entry. One design co
 milestone. The marker reuses the wrapping and checking logic of the preview instead of growing a
 second copy of it. `apply_candidates`, `mark_attributes`, `hi_envelope`, the text-invariance check
 and the schema check move out of `tei_entity_preview.py` into a shared module both consume, so
-preview and stock run provably produce the same wrapping. Whether the `@resp`, `@cert` and
-`@source` attributes travel into the delivered TEI is decided before the run.
+preview and stock run provably produce the same wrapping. E131 settles the attribute model as
+`@resp` plus `@source` without entity `@cert`; ZBZ still decides whether those provenance
+attributes travel from the preview into the delivered TEI.
 
 Done when the released run has written the marks into `output/tei_final/` and the technical gates
 of [verification.md](verification.md), quality assurance section, are green, meaning byte-identical
@@ -1093,7 +1148,7 @@ recorded seed, or the code is removed with a register entry.
 
 ### Status tracker
 
-Snapshot of 2026-08-21. States used here are done, built (the instrument exists, the run is
+Snapshot of 2026-08-26. States used here are done, built (the instrument exists, the run is
 outstanding), open, and blocked-by with the named party.
 
 | Milestone | State | Evidence |
@@ -1109,7 +1164,7 @@ outstanding), open, and blocked-by with the named party.
 | Gold benchmark (M4) | built | `entity_gold_benchmark` writes `output/audits/entity_gold_benchmark.json`; no evidence under `docs/data/` |
 | Population redraw and recall remeasurement | done | E129, `output/audits/eval_sample_2026-08-21/`, [verification.md](verification.md) finding register |
 | Admission dossier for unlisted entities | open | `entity_unlisted_scan` supplies the candidates |
-| Judge calibration (M5) | open | no calibration run recorded |
+| Judge calibration (M5) | built | E131 context/review contract exists; no calibration run recorded |
 | Corpus dry run (M6) | open | `entity_audit.py` does not exist |
 | Stock run (M7) | open | `tei_entity_marker.py` does not exist; `tei_entity_preview.py` refuses `output/tei_final/` |
 | Provenance log per object | open | [workflow.md](workflow.md), provenance section |
@@ -1163,10 +1218,9 @@ Three modelling points stay open and fall before the stock run.
 - Adjective forms of names. The guideline excludes them while the references mark at least one.
   The automatic tiers exclude them and candidates go to the worklist.
 
-Two further decisions belong to single milestones. Whether the `@resp`, `@cert` and `@source`
+One further decision belongs to the stock milestone. Whether the `@resp` and `@source`
 attributes travel from the preview layer into the delivered TEI falls before the stock run and is a
-decision for ZBZ. The re-freeze of the reconstructed evaluation draw falls before the
-population redraw and is the operator's.
+decision for ZBZ. The entity attribute vocabulary itself is settled by E131.
 
 Feedback from ZBZ is unavailable in this project phase, so open convention questions of the
 entity layer fall to the operator; that rule and the verification of agent self-reports are

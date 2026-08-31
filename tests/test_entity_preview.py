@@ -18,23 +18,30 @@ import re
 
 import pytest
 
-from scripts.entity.tei_entity_preview import (
-    ADJUDICATION_RESP_ID,
+from scripts.entity.entity_provenance import (
+    AGENT_ANNOTATION_RESP_ID,
+    AGENT_REVIEW_RESP_ID,
+    EDITOR_VERIFICATION_RESP_ID,
+    LLM_JUDGE_RESP_ID,
     MATCHER_RESP_ID,
+    RESP_ORG_DHCRAFT,
+    Responsibility,
+    insert_resp_stmts,
+    mark_attributes,
+    matcher_fingerprint,
+    resp_statements,
+)
+from scripts.entity.tei_entity_preview import (
     PANEL_DOCS,
+    agent_reviewed_spans,
     apply_candidates,
     build_report,
     check_text_invariance,
     discover_final_doc_ids,
-    insert_resp_stmts,
-    mark_attributes,
-    matcher_fingerprint,
     preview_document,
-    resp_statements,
     run_preview,
     text_signature,
     validate_rng,
-    verified_spans,
     verifying_snapshots,
 )
 from tests.conftest import delivery_doc
@@ -42,15 +49,15 @@ from tests.conftest import delivery_doc
 # --- fixtures ---------------------------------------------------------------
 
 # The wrapper format restated independently of the implementation: a mark names its
-# GND id, the rule that produced it, its certainty token and the responsibilities.
+# GND id, the rule that produced it and the contributing responsibilities.
 _MATCHER_RESP = f"#{MATCHER_RESP_ID}"
-_BOTH_RESP = f"#{MATCHER_RESP_ID} #{ADJUDICATION_RESP_ID}"
+_MATCHER_REVIEW_RESP = f"#{MATCHER_RESP_ID} #{AGENT_REVIEW_RESP_ID}"
 
 
-def _open(element: str, gid: str, rule: str = "full_name", cert: str = "medium",
+def _open(element: str, gid: str, rule: str = "full_name",
           resp: str = _MATCHER_RESP) -> str:
     """Expected opening tag of a wrapped mark."""
-    return f'<{element} ref="GND:{gid}" source="{rule}" cert="{cert}" resp="{resp}">'
+    return f'<{element} ref="GND:{gid}" source="{rule}" resp="{resp}">'
 
 _MINI = (
     '<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body><div type="text">'
@@ -505,14 +512,14 @@ def test_report_totals_tolerate_documents_without_the_new_counts():
     totals = build_report(_results())["totals"]
     assert totals["ambiguous"] == 0
     assert totals["by_evidence"] == {}
-    assert totals["by_certainty"] == {}
+    assert totals["by_responsibility"] == {}
 
 
-# --- provenance, certainty, verification state --------------------------------------
+# --- provenance and agent-review state -----------------------------------------------
 #
-# Three separate things, never merged: @resp says who asserted the mark, @cert says
-# whether a human checked it, @source says which rule produced it. Measured reliability
-# of a rule class is a property of the adjudicated sample and stays out of the mark.
+# Two separate things travel with the entity mark: @resp records the contributing
+# activities, while @source records the deterministic rule that produced the candidate.
+# Measured reliability of a rule class stays in the evaluation report.
 
 
 _DIGEST = "a" * 64
@@ -533,26 +540,41 @@ def _store_mark(cand, doc="9999", verdict="correct", text_sha256=_DIGEST, wave=N
     return mark
 
 
-def test_unverified_mark_is_medium_and_names_only_the_matcher():
+def test_plain_matcher_mark_names_only_the_matcher_and_has_no_certainty():
     cand = _cand(_MINI, "Karl Jaspers", "118557505", rule="full-name")
     assert mark_attributes(cand) == {
         "ref": "GND:118557505", "source": "full-name",
-        "cert": "medium", "resp": _MATCHER_RESP,
+        "resp": _MATCHER_RESP,
     }
+    assert "cert" not in mark_attributes(cand)
 
 
-def test_verified_mark_is_high_and_names_the_adjudication_too():
-    cand = dict(_cand(_MINI, "Karl Jaspers", "118557505", rule="full-name"), verified=True)
+def test_agent_review_adds_its_role_without_claiming_editorial_verification():
+    cand = dict(
+        _cand(_MINI, "Karl Jaspers", "118557505", rule="full-name"),
+        agent_reviewed=True,
+    )
     assert mark_attributes(cand) == {
         "ref": "GND:118557505", "source": "full-name",
-        "cert": "high", "resp": _BOTH_RESP,
+        "resp": _MATCHER_REVIEW_RESP,
     }
 
 
-def test_certainty_is_only_ever_a_schema_token_never_a_number():
-    for verified in (False, True):
-        cand = dict(_cand(_MINI, "Karl Jaspers", "1", rule="full-name"), verified=verified)
-        assert mark_attributes(cand)["cert"] in {"high", "medium", "low", "unknown"}
+def test_all_provenance_roles_are_ordered_and_remain_distinguishable():
+    cand = dict(
+        _cand(_MINI, "Karl Jaspers", "1", rule="full-name"),
+        agent_reviewed=True,
+        agent_annotation_run="agent-run-17",
+        llm_judge_run="judge-run-4",
+        editor_verification_ref="editorial-record-9",
+    )
+    assert mark_attributes(cand)["resp"] == " ".join((
+        f"#{MATCHER_RESP_ID}",
+        f"#{AGENT_REVIEW_RESP_ID}",
+        f"#{AGENT_ANNOTATION_RESP_ID}",
+        f"#{LLM_JUDGE_RESP_ID}",
+        f"#{EDITOR_VERIFICATION_RESP_ID}",
+    ))
 
 
 def test_a_candidate_without_a_rule_omits_the_source_attribute():
@@ -565,7 +587,7 @@ def test_the_rule_travels_on_source_because_evidence_is_illegal_on_bibl():
     """@source is the one candidate the schema allows on all three wrapped elements."""
     with_source = _VALID_DOC_HI.replace(
         '<hi rendition="#i">Von der Wahrheit</hi>',
-        '<bibl ref="GND:TEST-0001" source="work-title" cert="medium" resp="#r">'
+        '<bibl ref="GND:TEST-0001" source="work-title" resp="#r">'
         '<hi rendition="#i">Von der Wahrheit</hi></bibl>')
     assert validate_rng(with_source) == []
     for illegal in ('evidence="work-title"', 'ana="work-title"'):
@@ -575,7 +597,10 @@ def test_the_rule_travels_on_source_because_evidence_is_illegal_on_bibl():
 
 def test_wrapped_marks_of_every_category_stay_schema_valid_with_the_attributes():
     cands = [
-        dict(_cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name"), verified=True),
+        dict(
+            _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name"),
+            agent_reviewed=True,
+        ),
         _cand(_VALID_DOC, "Universitaet Basel", "1010450-1",
               category="organisation", rule="org-token"),
     ]
@@ -590,11 +615,14 @@ def test_wrapped_marks_of_every_category_stay_schema_valid_with_the_attributes()
 
 def test_resp_statements_declare_only_the_responsibilities_in_use():
     plain = [_cand(_MINI, "Karl Jaspers", "1", rule="full-name")]
-    assert [rid for rid, _ in resp_statements(plain, "2026-08-12")] == [MATCHER_RESP_ID]
+    assert [statement.xml_id for statement in resp_statements(plain, "2026-08-12")] == [
+        MATCHER_RESP_ID,
+    ]
 
-    verified = [dict(plain[0], verified=True)]
-    assert [rid for rid, _ in resp_statements(verified, "2026-08-12")] == [
-        MATCHER_RESP_ID, ADJUDICATION_RESP_ID]
+    reviewed = [dict(plain[0], agent_reviewed=True)]
+    assert [statement.xml_id for statement in resp_statements(reviewed, "2026-08-12")] == [
+        MATCHER_RESP_ID, AGENT_REVIEW_RESP_ID,
+    ]
 
 
 def test_no_responsibility_is_declared_without_a_wrapped_mark():
@@ -606,92 +634,106 @@ def test_the_matcher_responsibility_carries_a_stable_rule_fingerprint():
     fingerprint = matcher_fingerprint()
     assert re.fullmatch(r"[0-9a-f]{12}", fingerprint)
     assert fingerprint == matcher_fingerprint()
-    _, text = resp_statements([_cand(_MINI, "K", "1", rule="full-name")], None)[0]
-    assert fingerprint in text
+    statement = resp_statements([_cand(_MINI, "K", "1", rule="full-name")], None)[0]
+    assert fingerprint in statement.text
 
 
-def test_the_adjudication_responsibility_names_the_wave_snapshot():
-    verified = [dict(_cand(_MINI, "K", "1", rule="full-name"), verified=True)]
-    _, text = resp_statements(verified, "2026-08-12")[1]
-    assert "2026-08-12" in text
+def test_the_agent_review_responsibility_names_the_wave_snapshot_and_scope():
+    reviewed = [dict(
+        _cand(_MINI, "K", "1", rule="full-name"),
+        agent_reviewed=True,
+    )]
+    statement = resp_statements(reviewed, "2026-08-12")[1]
+    assert "2026-08-12" in statement.text
+    assert "without editorial verification" in statement.text
 
 
 def test_resp_stmts_land_in_the_titlestmt_and_keep_the_document_valid():
-    out = insert_resp_stmts(_VALID_DOC, [(MATCHER_RESP_ID, "Automatic entity matching")])
+    statement = Responsibility(MATCHER_RESP_ID, "Automatic entity matching", RESP_ORG_DHCRAFT)
+    out = insert_resp_stmts(_VALID_DOC, [statement])
     assert f'<respStmt xml:id="{MATCHER_RESP_ID}">' in out
     assert out.index("<respStmt") < out.index("</titleStmt>")
     assert validate_rng(out) == []
 
 
 def test_resp_stmt_insertion_is_idempotent():
-    once = insert_resp_stmts(_VALID_DOC, [(MATCHER_RESP_ID, "Automatic entity matching")])
-    assert insert_resp_stmts(once, [(MATCHER_RESP_ID, "Automatic entity matching")]) == once
+    statement = Responsibility(MATCHER_RESP_ID, "Automatic entity matching", RESP_ORG_DHCRAFT)
+    once = insert_resp_stmts(_VALID_DOC, [statement])
+    assert insert_resp_stmts(once, [statement]) == once
 
 
 def test_resp_stmt_insertion_leaves_a_header_less_fragment_alone():
-    assert insert_resp_stmts(_MINI, [(MATCHER_RESP_ID, "x")]) == _MINI
+    statement = Responsibility(MATCHER_RESP_ID, "x", RESP_ORG_DHCRAFT)
+    assert insert_resp_stmts(_MINI, [statement]) == _MINI
 
 
 def test_resp_stmt_insertion_does_not_touch_the_text_subtree():
-    out = insert_resp_stmts(_VALID_DOC, [(MATCHER_RESP_ID, "Automatic entity matching")])
+    statement = Responsibility(MATCHER_RESP_ID, "Automatic entity matching", RESP_ORG_DHCRAFT)
+    out = insert_resp_stmts(_VALID_DOC, [statement])
     assert check_text_invariance(_VALID_DOC, out)
 
 
-# --- verification state against the verdict store ------------------------------------
+# --- agent-review state against the verdict store ------------------------------------
 
 
-def test_an_adjudicated_correct_mark_at_its_exact_span_counts_as_verified():
+def test_an_adjudicated_correct_mark_at_its_exact_span_counts_as_agent_reviewed():
     cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
-    spans = verified_spans(_store([_store_mark(cand)]), "9999", [cand], {"9999": _DIGEST})
+    spans = agent_reviewed_spans(
+        _store([_store_mark(cand)]), "9999", [cand], {"9999": _DIGEST}
+    )
     assert spans == {(cand["start"], cand["end"], "118557505")}
 
 
-def test_a_moved_text_digest_falls_back_to_unverified():
-    """A judgment made on other bytes never claims verification (guard: text_changed)."""
+def test_a_moved_text_digest_drops_the_agent_review_projection():
+    """A judgment made on other bytes never claims review (guard: text_changed)."""
     cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
     store = _store([_store_mark(cand, text_sha256=_OTHER_DIGEST)])
-    assert verified_spans(store, "9999", [cand], {"9999": _DIGEST}) == set()
+    assert agent_reviewed_spans(store, "9999", [cand], {"9999": _DIGEST}) == set()
 
 
-def test_a_missing_document_digest_falls_back_to_unverified():
+def test_a_missing_document_digest_drops_the_agent_review_projection():
     cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
     store = _store([_store_mark(cand)])
-    assert verified_spans(store, "9999", [cand], {"9999": None}) == set()
+    assert agent_reviewed_spans(store, "9999", [cand], {"9999": None}) == set()
 
 
-def test_a_changed_span_falls_back_to_unverified():
+def test_a_changed_span_drops_the_agent_review_projection():
     cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
     mark = _store_mark(cand)
     mark["end"] -= 3  # the adjudicated extent is not the extent we would wrap
-    assert verified_spans(_store([mark]), "9999", [cand], {"9999": _DIGEST}) == set()
+    assert agent_reviewed_spans(
+        _store([mark]), "9999", [cand], {"9999": _DIGEST}
+    ) == set()
 
 
-def test_a_wrong_verdict_never_verifies_a_mark():
+def test_a_wrong_verdict_never_adds_agent_review_provenance():
     cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
     for verdict in ("wrong_entity", "wrong_span", "not_in_source", "undecidable"):
         store = _store([_store_mark(cand, verdict=verdict)])
-        assert verified_spans(store, "9999", [cand], {"9999": _DIGEST}) == set()
+        assert agent_reviewed_spans(store, "9999", [cand], {"9999": _DIGEST}) == set()
 
 
-def test_a_worklist_candidate_is_never_verified():
+def test_a_worklist_candidate_is_never_projected_as_agent_reviewed():
     cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", tier=2, rule="bare-surname")
     store = _store([_store_mark(cand)])
-    assert verified_spans(store, "9999", [cand], {"9999": _DIGEST}) == set()
+    assert agent_reviewed_spans(store, "9999", [cand], {"9999": _DIGEST}) == set()
 
 
-def test_a_judgment_about_another_entity_does_not_verify_this_mark():
+def test_a_judgment_about_another_entity_does_not_review_this_mark():
     cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
     mark = _store_mark(cand)
     mark["gid"] = "999999999"
-    assert verified_spans(_store([mark]), "9999", [cand], {"9999": _DIGEST}) == set()
+    assert agent_reviewed_spans(
+        _store([mark]), "9999", [cand], {"9999": _DIGEST}
+    ) == set()
 
 
-def test_a_correct_judgment_of_any_wave_verifies_its_mark():
-    """The store holds several waves; each of them lifts the certainty of its own marks."""
+def test_a_correct_judgment_of_any_wave_reviews_its_mark():
+    """The store holds several waves; each adds its own machine-review provenance."""
     cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
     for wave in ("adjudication-2026-08-12", "adjudication-2026-08-21"):
         store = _store([_store_mark(cand, wave=wave)], snapshot="2026-08-21")
-        assert verified_spans(store, "9999", [cand], {"9999": _DIGEST}) == {
+        assert agent_reviewed_spans(store, "9999", [cand], {"9999": _DIGEST}) == {
             (cand["start"], cand["end"], "118557505")}
 
 
@@ -703,15 +745,15 @@ def test_the_verifying_waves_are_the_ones_that_actually_judged_the_document():
                     _store_mark(other, verdict="wrong_entity",
                                 wave="adjudication-2026-08-21")],
                    snapshot="2026-08-21")
-    spans = verified_spans(store, "9999", [cand, other], {"9999": _DIGEST})
+    spans = agent_reviewed_spans(store, "9999", [cand, other], {"9999": _DIGEST})
     assert verifying_snapshots(store, "9999", spans) == ["2026-08-12"]
     assert verifying_snapshots(store, "8888", spans) == []
 
 
-def test_a_judgment_about_another_document_does_not_verify_this_mark():
+def test_a_judgment_about_another_document_does_not_review_this_mark():
     cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
     store = _store([_store_mark(cand, doc="8888")])
-    assert verified_spans(store, "9999", [cand], {"9999": _DIGEST}) == set()
+    assert agent_reviewed_spans(store, "9999", [cand], {"9999": _DIGEST}) == set()
 
 
 # --- end to end through run_preview ---------------------------------------------------
@@ -738,8 +780,8 @@ def _preview_run(tmp_path, store=None, marks_verdict="correct"):
     return report, (out / "9999_final.xml").read_text(encoding="utf-8")
 
 
-def test_run_preview_names_the_wave_that_verified_the_document(tmp_path):
-    """The store's newest label would misname a mark that an older wave verified."""
+def test_run_preview_names_the_wave_that_reviewed_the_document(tmp_path):
+    """The store's newest label must not misname a mark reviewed in an older wave."""
     cand = _cand(_VALID_DOC, "Karl Jaspers", "118557505", rule="full-name")
     digest = hashlib.sha256(_VALID_DOC.encode("utf-8")).hexdigest()
     store = _store([_store_mark(cand, text_sha256=digest,
@@ -752,19 +794,26 @@ def test_run_preview_names_the_wave_that_verified_the_document(tmp_path):
 
 def test_run_preview_projects_the_verdict_store_into_the_marks(tmp_path):
     report, written = _preview_run(tmp_path)
-    assert _open("persName", "118557505", "full-name", "high", _BOTH_RESP) in written
+    assert _open("persName", "118557505", "full-name", _MATCHER_REVIEW_RESP) in written
     assert _open("orgName", "1010450-1", "org-token") in written
-    assert f'<respStmt xml:id="{ADJUDICATION_RESP_ID}">' in written
-    assert report["documents"][0]["counts"]["by_certainty"] == {"high": 1, "medium": 1}
-    assert report["totals"]["by_certainty"] == {"high": 1, "medium": 1}
+    assert ' cert=' not in written
+    assert f'<respStmt xml:id="{AGENT_REVIEW_RESP_ID}">' in written
+    assert report["documents"][0]["counts"]["by_responsibility"] == {
+        AGENT_REVIEW_RESP_ID: 1,
+        MATCHER_RESP_ID: 2,
+    }
+    assert report["totals"]["by_responsibility"] == {
+        AGENT_REVIEW_RESP_ID: 1,
+        MATCHER_RESP_ID: 2,
+    }
 
 
-def test_run_preview_without_a_verdict_store_marks_everything_unverified(tmp_path):
+def test_run_preview_without_verdicts_names_only_the_matcher(tmp_path):
     report, written = _preview_run(tmp_path, store=_store([]))
-    assert 'cert="high"' not in written
-    assert f'<respStmt xml:id="{ADJUDICATION_RESP_ID}">' not in written
+    assert ' cert=' not in written
+    assert f'<respStmt xml:id="{AGENT_REVIEW_RESP_ID}">' not in written
     assert f'<respStmt xml:id="{MATCHER_RESP_ID}">' in written
-    assert report["totals"]["by_certainty"] == {"medium": 2}
+    assert report["totals"]["by_responsibility"] == {MATCHER_RESP_ID: 2}
 
 
 def test_run_preview_tolerates_a_missing_verdict_store(tmp_path):
@@ -773,7 +822,7 @@ def test_run_preview_tolerates_a_missing_verdict_store(tmp_path):
     (src / "9999_final.xml").write_bytes(_VALID_DOC.encode("utf-8"))
     report = run_preview(["9999"], lambda xml, lex: [], {}, src_dir=src, out_dir=out,
                          verdicts_path=tmp_path / "absent.json")
-    assert report["totals"]["by_certainty"] == {}
+    assert report["totals"]["by_responsibility"] == {}
 
 
 def test_the_preview_stays_valid_and_text_invariant_end_to_end(tmp_path):

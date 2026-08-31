@@ -14,7 +14,7 @@ status: complete
 language: en
 version: 1.0
 created: 2026-07-07
-updated: 2026-08-21
+updated: 2026-08-26
 authors: [Christopher Pollin]
 related: [project, tei-mapping, pipeline, workflow, verification, decisions]
 ---
@@ -82,9 +82,13 @@ newest ratified register entry wins and this document is updated to match.
   becoming markup. Which surfaces are eligible for a mark, which tier a hit belongs to and
   which zones are excluded is the marking scope defined in
   [tei-mapping.md](tei-mapping.md), which owns the entity target model together with the
-  `ref` pattern and the attribute vocabulary. Every preview mark carries `@resp`, `@cert`
-  and `@source`, so the asserting responsibility, the human verification state and the
-  producing rule travel with the mark (E105-E119).
+  `ref` pattern and the attribute vocabulary. Every preview mark carries `@resp` and
+  `@source`. The former distinguishes deterministic matching, agent review, agent
+  annotation, independent LLM review and person-bound editorial verification; the latter
+  names the producing matcher rule. Entity marks carry no `@cert` because an ordinal token
+  does not identify the evidence path (E105-E131). Agentic promotion remains a preview-only
+  operation, accepts only GND identifiers supplied in the bound candidate set, preserves
+  text byte-equivalence and must validate against the project schema.
 
 ## Quality measurement
 

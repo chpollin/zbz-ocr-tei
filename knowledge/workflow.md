@@ -14,7 +14,7 @@ status: complete
 language: en
 version: 1.0
 created: 2026-05-25
-updated: 2026-08-21
+updated: 2026-08-26
 authors: [Christopher Pollin]
 related: [index, project, pipeline, tei-mapping, specification, verification, decisions]
 absorbed: [design (Vorlage Design 0.2)]
@@ -378,12 +378,22 @@ lobid.org. Tier-2 candidates are marked inline as well and open the same
 popover, which additionally names the reason the tool held back ("For review")
 and the origin of the matched name form; where several listed bearers carry the
 form, the popover lists all of them, so the position stays visibly undecided.
-For a mark the matcher set, the popover closes with three provenance rows read from
-the mention itself, `@resp`, `@cert` and `@source`, which `tei-render.js` carries into
-the DOM as data attributes (E118). What those attributes assert, which tier produced a
-mark and which rules bind the markup is in [tei-mapping.md](tei-mapping.md), entities
-section. Candidates the renderer cannot place inline stay visible as a list above the
-text, so the page shows the complete worklist either way.
+For a marked mention the popover closes with provenance and rule rows read from `@resp`
+and `@source`, which `tei-render.js` carries into the DOM as data attributes. Role labels
+distinguish deterministic matching, AI-agent review, AI-agent annotation, independent LLM
+review and editorial verification. The viewer does not infer a certainty level from these
+activities (E131). What the roles assert, which tier produced a mark and which rules bind
+the markup is in [tei-mapping.md](tei-mapping.md), entities section. Candidates the
+renderer cannot place inline stay visible as a list above the text, so the page shows the
+complete worklist either way.
+
+The third, agentic phase remains outside the browser save path. An AI harness opens a
+packet produced by `entity_agent_context.py`, which binds the page image, transcription,
+TEI page, schema, guidelines and the page's candidate identities by SHA-256. The agent may
+inspect those inputs, call the schema validator and request an independent LLM judgment.
+`entity_agent_review.py` then checks the structured response against the closed candidate
+set and writes a separate full-document preview plus the run record. The delivered TEI and
+the viewer mirror change only through later operator-released paths.
 
 Wherever an entity preview exists, `page_manifest` adds a fourth stream
 `entities` to the per-object manifest; its status pill sits next to OCR, Layout
@@ -401,10 +411,10 @@ entry without a single corpus mention (sorted first by default), with
 auto-marked against review counts, the review classes as tooltip chips, the
 documents each entity occurs in, and, where the entity appears only as the other
 possible bearer of an ambiguous surface, a note counting those mentions (E117).
-The secondary view aggregates per document with the same class chips. Certainty
+The secondary view aggregates per document with the same class chips. Annotation path
 is carried by the two-colour bar (auto-marked against review), the corpus totals
 appear in a bar of the same grammar above the list, and every row links into the
-viewer's annotated reading view. Above the list a quality strip projects the adjudicated
+viewer's annotated reading view. Above the list a quality strip projects the agent-reviewed
 sample from the verdict store, precision with its confidence interval, the raw
 recall status counts, the second-judgment agreement, and a provenance line naming
 the scan digest and the list size (E117); every rate stands next to its sample
@@ -622,7 +632,7 @@ data model knows the three stored values only.
 
 Entity categories are distinguished by accent, persons in Prussian blue, organisations in
 olive green and works in brick red, and the review class of a mention takes the ochre.
-Certainty on the entity overview page is carried by a two-colour stacked bar, auto-marked
+Annotation path on the entity overview page is carried by a two-colour stacked bar, auto-marked
 against review, with the corpus totals sitting on the same bar above the list, so a document
 row and the corpus aggregate are read with the same visual grammar.
 

@@ -3,7 +3,7 @@
  *
  * Loads the generated entity preview of a document, marks the worklist candidates in
  * the rendered text, and drives the mention popover with label, category, GND link and
- * the provenance the TEI carries (@resp, @cert, @source, E118). No save path writes
+ * the provenance the TEI carries (@resp, @source, E118). No save path writes
  * this layer.
  *
  * Namespace: ZBZ.Viewer
@@ -82,11 +82,14 @@
         return source ? 'matched via ' + source + ': ' + entry.matched_form : '';
     }
 
-    // Provenance of a marked mention (E118): the TEI carries @resp, @cert and @source
+    // Provenance of a marked mention (E118): the TEI carries @resp and @source
     // on the mention itself, the renderer passes them through as data attributes.
     const ENTITY_RESP_LABEL = {
-        'resp-entity-matcher':      'matcher',
-        'resp-entity-adjudication': 'adjudication'
+        'resp-entity-matcher':             'deterministic matcher',
+        'resp-entity-agent-review':         'AI-agent review',
+        'resp-entity-agent-annotation':     'AI-agent annotation',
+        'resp-entity-llm-judge':            'independent LLM review',
+        'resp-entity-editor-verification':  'editor verified'
     };
 
     function entityRespLabel(raw) {
@@ -99,9 +102,8 @@
 
     function entityProvenanceRows(el) {
         return [
-            ['Asserted by',  entityRespLabel(el.getAttribute('data-resp'))],
-            ['Verification', el.getAttribute('data-cert') || ''],
-            ['Rule',         el.getAttribute('data-source') || '']
+            ['Provenance', entityRespLabel(el.getAttribute('data-resp'))],
+            ['Rule',       el.getAttribute('data-source') || '']
         ].filter(row => row[1]);
     }
 

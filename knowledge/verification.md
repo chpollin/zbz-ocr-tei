@@ -14,7 +14,7 @@ status: complete
 language: en
 version: 1.0
 created: 2026-08-21
-updated: 2026-08-21
+updated: 2026-08-26
 scope: [empirical-claims]
 verdict-vocabulary: see section Verdict vocabulary
 authors: [Christopher Pollin]
@@ -229,7 +229,7 @@ time, and the registration of the two markers.
 - layout: `test_page_xml_generator.py` and `test_mets_generator.py` cover the PAGE-XML and METS export as pure transforms.
 - eval, metrics and audits: `test_cer_statistics.py`, `test_cer_extraction.py`, `test_guard_pins.py`, `test_corpus_audit.py`, `test_completeness_check.py`, `test_stability_pilot.py`, plus the guideline-conformity audits `test_char_lint_audit.py`, `test_pb_number_audit.py`, `test_hi_preservation_audit.py`, `test_relation_integrity_audit.py`, `test_body_note_audit.py`, `test_blank_text_audit.py`, `test_reading_order_audit.py`.
 - edition, viewer data: `test_catalog_contract.py`, `test_manifest_index.py`, `test_workflow_status.py`, `test_facs_mapping.py`, and `test_export_web_images.py` for the JPEG web mirror of the page images.
-- entity: the matcher and its rules in `test_entity_matcher.py`, `test_entity_regressions.py`, `test_running_heads.py`, `test_running_head_audit.py`; the intake and cache side in `test_entity_lint.py`, `test_fetch_gnd_variants.py`, `test_variant_review.py`; the preview and mirror generators in `test_entity_preview.py`, `test_generate_entity_preview_data.py`, `test_generate_entity_overview.py`, `test_entity_stream.py`; the corpus instruments in `test_entity_corpus_scan.py`, `test_entity_corpus_digest.py`, `test_entity_unlisted_scan.py`, `test_entity_risk_ranking.py`; the measurement and gate side in `test_entity_eval_sample.py`, `test_entity_gold_benchmark.py`, `test_entity_ref_invariant.py`, `test_mention_verdicts.py`, `test_entity_verdict_guard.py`.
+- entity: the matcher and its rules in `test_entity_matcher.py`, `test_entity_regressions.py`, `test_running_heads.py`, `test_running_head_audit.py`; the intake and cache side in `test_entity_lint.py`, `test_fetch_gnd_variants.py`, `test_variant_review.py`; the preview, provenance and agent contract in `test_entity_preview.py`, `test_entity_agent_workflow.py`, `test_generate_entity_preview_data.py`, `test_generate_entity_overview.py`, `test_entity_stream.py`; the corpus instruments in `test_entity_corpus_scan.py`, `test_entity_corpus_digest.py`, `test_entity_unlisted_scan.py`, `test_entity_risk_ranking.py`; the measurement and gate side in `test_entity_eval_sample.py`, `test_entity_gold_benchmark.py`, `test_entity_ref_invariant.py`, `test_mention_verdicts.py`, `test_entity_verdict_guard.py`.
 - repository health: `test_scripts_health.py` compiles every module under `scripts/` and resolves its internal imports; `test_knowledge_frontmatter.py` pins the ten documents of this knowledge base, their frontmatter contract, the equal schema version, resolvable links and the absence of horizontal rules.
 
 The OCR scripts under `scripts/ocr/` have no dedicated test module. The text layer they
@@ -261,8 +261,10 @@ and decomposed into fidelity and scope. The published values live in
 report quote that file. Metric definition, extraction and normalization rules are in
 [methodology.md](methodology.md), CER measurement section.
 
-The precision and recall of the entity preview layer, measured on a facsimile-adjudicated
-sample of the closed-world marking. The published block is `quality` in
+The precision and recall of the entity preview layer, measured on a facsimile-reviewed
+sample of the closed-world marking. The judgments were produced by agents under a fixed
+protocol and therefore constitute machine-review evidence rather than person-bound
+editorial verification. The published block is `quality` in
 `docs/data/entity_overview.json`, rendered on the entities page; the readable result of the
 executed run is the evaluation result in the appendix, the aggregate
 `output/audits/entity_eval_report.json`. The marking rules the adjudication judges against
